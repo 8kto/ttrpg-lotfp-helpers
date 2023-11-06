@@ -1,0 +1,78 @@
+import {ArmorEntry, ArmorType, EncumbrancePoint} from "@/shared/types"
+
+export const Armor: ArmorEntry[] = [
+  {
+    id: 1,
+    name: "Leather",
+    type: ArmorType.Armor,
+    cityCost: 25,
+    ruralCost: 50,
+    armorClass: 14,
+    weight: EncumbrancePoint.None,
+    isRecorded: false,
+  },
+  {
+    id: 2,
+    name: "Chain",
+    type: ArmorType.Armor,
+    cityCost: 100,
+    ruralCost: null,
+    armorClass: 16,
+    weight: EncumbrancePoint.Oversized,
+    isRecorded: false,
+  },
+  {
+    id: 3,
+    name: "Plate",
+    type: ArmorType.Armor,
+    cityCost: 1000,
+    ruralCost: null,
+    armorClass: 18,
+    weight: EncumbrancePoint.Heavy,
+    isRecorded: false,
+  },
+  {
+    id: 4,
+    name: "Shield",
+    type: ArmorType.Shield,
+    cityCost: 10,
+    ruralCost: 25,
+    armorClass: '+1,+2',
+    weight: EncumbrancePoint.Oversized,
+    isRecorded: false,
+  },
+  {
+    id: 5,
+    name: "Leather Barding",
+    type: ArmorType.Barding,
+    cityCost: 250,
+    ruralCost: null,
+    armorClass: 14,
+    weight: EncumbrancePoint.None,
+    isRecorded: false,
+  },
+  {
+    id: 6,
+    name: "Chain Barding",
+    type: ArmorType.Barding,
+    cityCost: 500,
+    ruralCost: null,
+    armorClass: 16,
+    weight: EncumbrancePoint.Oversized,
+    isRecorded: false,
+  },
+  {
+    id: 7,
+    name: "Plate Barding",
+    type: ArmorType.Barding,
+    cityCost: 1000,
+    ruralCost: null,
+    armorClass: 18,
+    weight: EncumbrancePoint.Heavy,
+    isRecorded: false,
+  },
+]
+
+export const Equipment = {
+  Armor,
+}
