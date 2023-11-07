@@ -21,6 +21,7 @@ interface DataGridProps<T> {
   onSortChange?: (key: string, direction: 'asc' | 'desc') => void;
   filterFn: (item: T, filter: string) => boolean;
   isCheckedFn: (item: T) => boolean;
+  filterPlaceholder?: string
 }
 
 const DataGrid = <T extends EquipmentItem>({
@@ -31,6 +32,7 @@ const DataGrid = <T extends EquipmentItem>({
   onSortChange,
   filterFn,
   isCheckedFn,
+  filterPlaceholder = 'Filter',
 }: DataGridProps<T>) => {
   const [sortConfig, setSortConfig] = useState<SortConfig>({
     key: initialSortState?.key || '',
@@ -77,7 +79,7 @@ const DataGrid = <T extends EquipmentItem>({
         type="text"
         value={filter}
         onChange={(e) => setFilter(e.target.value)}
-        placeholder="Filter"
+        placeholder={filterPlaceholder}
         className="block w-full border-0 py-1.5 pl-7 pr-20 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
       />
       <table className="min-w-full">
