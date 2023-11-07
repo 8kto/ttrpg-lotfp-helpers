@@ -1,48 +1,24 @@
 'use client'
 
-import React, {useEffect, useMemo, useState} from 'react'
+import React, {useEffect, useState} from 'react'
+import { useHookstate } from '@hookstate/core'
 
 import {ArmorEntry, ArmorType, EncumbrancePoint} from "@/shared/types"
 import {Armor} from "@/shared/config/equipment"
-
-const sortTypes = {
-  asc: (a, b) => a > b ? 1 : -1,
-  desc: (a, b) => a < b ? 1 : -1,
-}
-
-type ArmorKey = keyof ArmorEntry
+import {Equipment} from "@/state/Equipment"
 
 const ArmorTable = () => {
-  const [checkedItems, setCheckedItems] = useState<Record<number, boolean>>({})
+  const equipmentState = useHookstate(Equipment)
   const [sortConfig, setSortConfig] = useState({ key: 'name', direction: 'asc' })
   const [filter, setFilter] = useState('')
   const [filteredArmor, setFilteredArmor] = useState(Armor)
 
-
-  const [totalWeight, setTotalWeight] = useState(0)
-  const [totalCost, setTotalCost] = useState(0)
-
   const handleCheckboxChange = (id: number) => {
-    setCheckedItems((prevState) => ({
-      ...prevState,
-      [id]: !prevState[id],
-    }))
+    const item = Armor.find(i => i.id === id)
+    if (item) {
+      equipmentState.items[id].set(item)
+    }
   }
-
-  useEffect(() => {
-    let weight = 0
-    let cost = 0
-
-    Armor.forEach((item) => {
-      if (checkedItems[item.id]) {
-        weight += item.weight
-        cost += item.cityCost ?? 0
-      }
-    })
-
-    setTotalWeight(weight)
-    setTotalCost(cost)
-  }, [checkedItems])
 
   // Sorting function
   const onSortChange = (key: string) => {
@@ -58,7 +34,9 @@ const ArmorTable = () => {
     let sortedArmor = Armor
       .filter((item) => item.name.toLocaleLowerCase().includes(filter.toLocaleLowerCase()))
       .sort((a, b) => {
+        // @ts-ignore
         if (a[sortConfig.key] < b[sortConfig.key]) return sortConfig.direction === 'asc' ? -1 : 1
+        // @ts-ignore
         if (a[sortConfig.key] > b[sortConfig.key]) return sortConfig.direction === 'asc' ? 1 : -1
 
         return 0
@@ -86,23 +64,21 @@ const ArmorTable = () => {
           <th scope="col" className={headerCellClassnames} onClick={() => onSortChange('type')}>Type</th>
           <th scope="col" className={headerCellClassnames} onClick={() => onSortChange('cityCost')}>City Cost</th>
           <th scope="col" className={headerCellClassnames} onClick={() => onSortChange('ruralCost')}>Rural Cost</th>
-          <th scope="col" className={headerCellClassnames} onClick={() => onSortChange('baseAC')}>Base AC</th>
+          <th scope="col" className={headerCellClassnames} onClick={() => onSortChange('baseAC')}>AC</th>
           <th scope="col" className={headerCellClassnames} onClick={() => onSortChange('weight')}>Weight</th>
         </tr>
         </thead>
         <tbody className="bg-white dark:bg-gray-800">
-        {/* Map over filteredArmor instead of Armor */}
         {filteredArmor.map((armor, index) => (
           <tr key={armor.id} className={index % 2 ? 'bg-gray-50 dark:bg-gray-700': ''}>
             <td className={cellClassnames}>
               <input
                 type="checkbox"
-                checked={!!checkedItems[armor.id]}
+                checked={!!equipmentState.items.get()[armor.id]}
                 onChange={() => handleCheckboxChange(armor.id)}
                 onClick={(e) => e.stopPropagation()}
               />
             </td>
-            {/* Wrap each cell in a div and add onClick handler to toggle the checkbox */}
             <td className={cellClassnames} onClick={() => handleCheckboxChange(armor.id)}>{armor.name}</td>
             <td className={cellClassnames} onClick={() => handleCheckboxChange(armor.id)}>{ArmorType[armor.type]}</td>
             <td className={cellClassnames} onClick={() => handleCheckboxChange(armor.id)}>{armor.cityCost}</td>
@@ -113,14 +89,6 @@ const ArmorTable = () => {
         ))}
         </tbody>
       </table>
-      <button
-        className="px-4 py-2 text-base bg-indigo-500 hover:bg-indigo-600 text-white my-2"
-        onClick={() => setCheckedItems({})}
-      >
-        Reset
-      </button>
-      <div>Weight: {totalWeight} slots</div>
-      <div>Total Cost: {totalCost} sp</div>
     </>
   )
 }
