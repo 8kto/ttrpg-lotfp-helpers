@@ -1,4 +1,4 @@
-import {Metadata} from "next";
+import {Metadata} from "next"
 
 export const AppMetadata: Metadata = {
   title: 'LotFP Helpers',

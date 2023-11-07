@@ -2,10 +2,10 @@ import { hookstate } from '@hookstate/core'
 
 import {EquipmentItem} from "@/shared/types"
 
-type EquipmentState = {
+type EquipmentStateType = {
   items: Record<string, EquipmentItem>
 }
 
-export const Equipment = hookstate<EquipmentState>({
+export const EquipmentState = hookstate<EquipmentStateType>({
   items: {},
 })

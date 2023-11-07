@@ -1,7 +1,7 @@
 import {ArmorEntry, ArmorType, EncumbrancePoint} from "@/shared/types"
 
-export const Armor: ArmorEntry[] = [
-  {
+export const Armor: Record<number, ArmorEntry> = {
+  1: {
     id: 1,
     name: "Leather",
     type: ArmorType.Armor,
@@ -11,7 +11,7 @@ export const Armor: ArmorEntry[] = [
     weight: EncumbrancePoint.None,
     isRecorded: false,
   },
-  {
+  2: {
     id: 2,
     name: "Chain",
     type: ArmorType.Armor,
@@ -21,7 +21,7 @@ export const Armor: ArmorEntry[] = [
     weight: EncumbrancePoint.Oversized,
     isRecorded: false,
   },
-  {
+  3: {
     id: 3,
     name: "Plate",
     type: ArmorType.Armor,
@@ -31,7 +31,7 @@ export const Armor: ArmorEntry[] = [
     weight: EncumbrancePoint.Heavy,
     isRecorded: false,
   },
-  {
+  4: {
     id: 4,
     name: "Shield",
     type: ArmorType.Shield,
@@ -41,7 +41,7 @@ export const Armor: ArmorEntry[] = [
     weight: EncumbrancePoint.Oversized,
     isRecorded: false,
   },
-  {
+  5: {
     id: 5,
     name: "Leather Barding",
     type: ArmorType.Barding,
@@ -51,7 +51,7 @@ export const Armor: ArmorEntry[] = [
     weight: EncumbrancePoint.None,
     isRecorded: false,
   },
-  {
+  6: {
     id: 6,
     name: "Chain Barding",
     type: ArmorType.Barding,
@@ -61,7 +61,7 @@ export const Armor: ArmorEntry[] = [
     weight: EncumbrancePoint.Oversized,
     isRecorded: false,
   },
-  {
+  7: {
     id: 7,
     name: "Plate Barding",
     type: ArmorType.Barding,
@@ -71,7 +71,7 @@ export const Armor: ArmorEntry[] = [
     weight: EncumbrancePoint.Heavy,
     isRecorded: false,
   },
-]
+}
 
 export const Equipment = {
   Armor,
