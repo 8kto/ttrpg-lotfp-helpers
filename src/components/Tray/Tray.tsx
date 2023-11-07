@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react'
 import {useHookstate} from "@hookstate/core"
 
-import {Equipment} from "@/state/Equipment"
+import {EquipmentState} from "@/state/EquipmentState"
 import {ArmorEntry, ArmorType, EncumbrancePoint} from "@/shared/types"
 import {Armor} from "@/shared/config/equipment"
 
 const Tray = () => {
-  const equipmentState = useHookstate(Equipment)
+  const equipmentState = useHookstate(EquipmentState)
   const itemsArray = Object
     .entries(equipmentState.items.get())
     .map(([, item]) => item)
