@@ -2,6 +2,7 @@
 
 import EquipmentTable from "@/components/EquipmentList/EquipmentTable"
 import {useState} from "react"
+import Tray from "@/components/Tray/Tray"
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
                 <EquipmentTable />
               </div>
               <div className="p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 sm:p-6 dark:bg-gray-800 col-span-1">
-                Sidebar
+                <Tray />
               </div>
             </div>
           </div>

@@ -11,7 +11,7 @@ export enum EncumbrancePoint {
   Heavy = 2
 }
 
-interface EquipmentItem {
+export interface EquipmentItem {
   id: number;
   name: string;
   cityCost: number;
