@@ -3,7 +3,7 @@ import {useHookstate} from "@hookstate/core"
 
 import {EquipmentState} from "@/state/EquipmentState"
 import {ArmorEntry, ArmorType, EncumbrancePoint} from "@/shared/types"
-import {Armor} from "@/shared/config/equipment"
+import {Armor} from "@/shared/config/Equipment"
 import EncumbranceBadge from "@/components/EncumbranceBadge/EncumbranceBadge"
 
 const Tray = () => {

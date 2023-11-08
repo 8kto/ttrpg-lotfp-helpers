@@ -10,7 +10,10 @@ const Header = () => {
             <a href="/" className="flex mr-14">
               <img src="https://fastly.picsum.photos/id/237/200/300.jpg" className="mr-3 h-8" alt=""/>
               <span
-                className="self-center hidden sm:flex text-2xl font-semibold whitespace-nowrap dark:text-white">Home</span>
+                className="self-center hidden sm:flex text-2xl font-semibold whitespace-nowrap dark:text-white"
+              >
+                Flame Princess little helpers
+              </span>
             </a>
 
             <div className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1">

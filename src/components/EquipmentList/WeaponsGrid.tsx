@@ -11,11 +11,11 @@ const columns = [
     key: 'name',
     title: 'Name',
   },
-  {
-    key: 'type',
-    title: 'Type',
-    render: (item: ArmorEntry) => <span>{ArmorType[item.type]}</span>,
-  },
+  // {
+  //   key: 'type',
+  //   title: 'Type',
+  //   render: (item: ArmorEntry) => <span>{ArmorType[item.type]}</span>,
+  // },
   {
     key: 'cityCost',
     title: 'City Cost',
@@ -24,10 +24,10 @@ const columns = [
     key: 'ruralCost',
     title: 'Rural Cost',
   },
-  {
-    key: 'armorClass',
-    title: 'AC',
-  },
+  // {
+  //   key: 'armorClass',
+  //   title: 'AC',
+  // },
   {
     key: 'points',
     title: 'Points',
@@ -35,7 +35,7 @@ const columns = [
   },
 ]
 
-const ArmorGrid = () => {
+const WeaponsGrid = () => {
   const equipmentState = useHookstate(EquipmentState)
   const handleCheckboxChange = (id: number) => {
     const item = Equipment.Armor[id]
@@ -54,7 +54,7 @@ const ArmorGrid = () => {
 
   return (
     <DataGrid
-      data={Object.values(Equipment.Armor)}
+      data={Object.values(Equipment.Weapons)}
       columns={columns}
       onCheckboxChange={handleCheckboxChange}
       filterFn={filterName}
@@ -64,7 +64,7 @@ const ArmorGrid = () => {
   )
 }
 
-// TODO sort numericals (AC, cost...)
-// TODO cost switcher
+// TODO sort numericals (cost...)
+// TODO sort damage
 // TODO checkbox isRecorded
-export default ArmorGrid
+export default WeaponsGrid
