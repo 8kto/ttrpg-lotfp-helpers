@@ -183,5 +183,3 @@ export const Weapons: WeaponEntry[] = [
     range: 10,
   },
 ]
-
-// FIXME points

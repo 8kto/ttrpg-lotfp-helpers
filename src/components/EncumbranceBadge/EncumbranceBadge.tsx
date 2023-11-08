@@ -10,7 +10,7 @@ const EncumbranceBadge = () => {
   let totalPoints: number = 0
   let totalCost: number = 0
   Object
-    .values(equipmentState.items.get())
+    .values(equipmentState.armor.get())
     .forEach((item) => {
       totalPoints += item.isRecorded ? item.points : 0
       totalCost += item.cityCost

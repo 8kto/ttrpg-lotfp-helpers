@@ -2,7 +2,7 @@ import React from 'react'
 
 import {Equipment} from "@/shared/config/Equipment"
 import DataGrid from "@/components/Grid/DataGrid"
-import {useHookstate} from "@hookstate/core"
+import {none, useHookstate} from "@hookstate/core"
 import {EquipmentState} from "@/state/EquipmentState"
 import {WeaponEntry} from "@/shared/types/weapon"
 import {EncumbrancePoint} from "@/shared/types/encumbrance"
@@ -39,9 +39,15 @@ const columns = [
 const WeaponsGrid = () => {
   const equipmentState = useHookstate(EquipmentState)
   const handleCheckboxChange = (id: number) => {
-    const item = Equipment.Armor[id]
-    if (item) {
-      equipmentState.items[id].set(item)
+    const currentItem = equipmentState.weapons[id].get()
+
+    if (currentItem) {
+      equipmentState.weapons[id].set(none)
+    } else {
+      const newItem= Equipment.Weapons[id]
+      if (newItem){
+        equipmentState.weapons[id].set(newItem)
+      }
     }
   }
 
@@ -50,7 +56,7 @@ const WeaponsGrid = () => {
   }
 
   const isChecked = (item: WeaponEntry) => {
-    return !!equipmentState.items.get()[item.id]
+    return !!equipmentState.weapons.get()[item.id]
   }
 
   return (

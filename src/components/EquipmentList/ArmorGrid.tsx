@@ -4,8 +4,8 @@ import {Equipment} from "@/shared/config/Equipment"
 import DataGrid from "@/components/Grid/DataGrid"
 import {useHookstate, none} from "@hookstate/core"
 import {EquipmentState} from "@/state/EquipmentState"
-import {ArmorEntry, ArmorType} from "@/shared/types/armor";
-import {EncumbrancePoint} from "@/shared/types/encumbrance";
+import {ArmorEntry, ArmorType} from "@/shared/types/armor"
+import {EncumbrancePoint} from "@/shared/types/encumbrance"
 
 const columns = [
   {
@@ -39,14 +39,14 @@ const columns = [
 const ArmorGrid = () => {
   const equipmentState = useHookstate(EquipmentState)
   const handleCheckboxChange = (id: number) => {
-    const currentItem = equipmentState.items[id].get()
+    const currentItem = equipmentState.armor[id].get()
 
     if (currentItem) {
-      equipmentState.items[id].set(none)
+      equipmentState.armor[id].set(none)
     } else {
       const newItem = Equipment.Armor[id]
       if (newItem) {
-        equipmentState.items[id].set(newItem)
+        equipmentState.armor[id].set(newItem)
       }
     }
   }
@@ -56,11 +56,11 @@ const ArmorGrid = () => {
   }
 
   const isChecked = (item: ArmorEntry) => {
-    return !!equipmentState.items.get()[item.id]
+    return !!equipmentState.armor.get()[item.id]
   }
 
   return (
-    <DataGrid
+    <DataGrid<ArmorEntry>
       data={Object.values(Equipment.Armor)}
       columns={columns}
       onCheckboxChange={handleCheckboxChange}

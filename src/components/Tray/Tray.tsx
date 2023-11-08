@@ -9,14 +9,14 @@ import {EncumbrancePoint} from "@/shared/types/encumbrance"
 const Tray = () => {
   const equipmentState = useHookstate(EquipmentState)
   const itemsArray = Object
-    .entries(equipmentState.items.get())
+    .entries(equipmentState.armor.get())
     .map(([, item]) => item)
 
   const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase dark:text-white`
   const cellClassnames = `p-4 text-sm font-normal text-gray-900 whitespace-nowrap dark:text-white`
 
   const handleReset = () => {
-    equipmentState.items.set({})
+    equipmentState.armor.set({})
   }
 
   return (

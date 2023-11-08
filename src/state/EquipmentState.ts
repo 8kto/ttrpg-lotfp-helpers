@@ -1,11 +1,14 @@
 import { hookstate } from '@hookstate/core'
 
-import {EquipmentItem} from "@/shared/types"
+import {ArmorEntry} from "@/shared/types/armor"
+import {WeaponEntry} from "@/shared/types/weapon"
 
 type EquipmentStateType = {
-  items: Record<string, EquipmentItem>
+  armor: Record<string, ArmorEntry>
+  weapons: Record<string, WeaponEntry>
 }
 
 export const EquipmentState = hookstate<EquipmentStateType>({
-  items: {},
+  armor: {},
+  weapons: {},
 })
