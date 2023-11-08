@@ -1,12 +1,12 @@
-import {Inter, Neucha, Roboto_Mono} from 'next/font/google'
+import {Inter, Philosopher} from 'next/font/google'
 
-export const interFont = Inter({
+export const regularFont = Inter({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-regular',
 })
 
-export const neuchaFont = Neucha({
+export const cursiveFont = Philosopher({
   subsets: ['latin'],
   weight: "400",
-  variable: '--font-neucha',
+  variable: '--font-cursive',
 })

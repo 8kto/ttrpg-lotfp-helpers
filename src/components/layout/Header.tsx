@@ -1,4 +1,5 @@
 import React from 'react'
+import {cursiveFont} from "@/app/fonts";
 
 const Header = () => {
   return (
@@ -10,9 +11,9 @@ const Header = () => {
             <a href="/" className="flex mr-14">
               <img src="https://fastly.picsum.photos/id/237/200/300.jpg" className="mr-3 h-8" alt=""/>
               <span
-                className="self-center hidden sm:flex text-2xl font-semibold whitespace-nowrap dark:text-white"
+                className={`${cursiveFont.className} self-center hidden sm:flex text-2xl font-semibold whitespace-nowrap dark:text-white`}
               >
-                Flame Princess little helpers
+                Princess Helpers
               </span>
             </a>
 

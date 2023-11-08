@@ -3,7 +3,7 @@ import {Inter} from 'next/font/google'
 import {AppMetadata} from "@/shared/config/AppMetadata"
 import Header from "@/components/layout/Header"
 import Footer from "@/components/layout/Footer"
-import {interFont, neuchaFont} from "@/app/fonts"
+import {regularFont, cursiveFont} from "@/app/fonts"
 
 import './globals.css'
 
@@ -13,8 +13,8 @@ export default function RootLayout({children}: {
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={interFont.variable}>
-      <body className={`${neuchaFont.variable} bg-none bg-gray-50`}>
+    <html lang="en" className={regularFont.variable}>
+      <body className={`${cursiveFont.variable} bg-none bg-gray-50`}>
         <Header />
         {children}
         <Footer />
