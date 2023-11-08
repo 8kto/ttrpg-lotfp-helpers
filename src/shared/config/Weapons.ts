@@ -1,4 +1,6 @@
-import {Dice, EncumbrancePoint, WeaponEntry} from "@/shared/types"
+import {WeaponEntry} from "@/shared/types/weapon"
+import {EncumbrancePoint} from "@/shared/types/encumbrance"
+import {Dice} from "@/shared/types"
 
 export const Weapons: WeaponEntry[] = [
   {
@@ -6,57 +8,70 @@ export const Weapons: WeaponEntry[] = [
     name: 'Cestus',
     cityCost: 10,
     ruralCost: null,
-    points: EncumbrancePoint.Regular,
+    points: EncumbrancePoint.None,
     isRecorded: true,
     damage: {
-      multiplier: 1,
+      x: 1,
       dice: Dice.d3,
     },
+    range: 0,
   },
   {
     id: 2,
     name: 'Garrote',
     cityCost: 5,
     ruralCost: null,
-    points: EncumbrancePoint.Regular,
+    points: EncumbrancePoint.None,
     isRecorded: true,
     damage: {
-      multiplier: 1,
+      x: 1,
       dice: Dice.d6,
     },
+    range: 0,
   },
   {
     id: 3,
     name: 'Lance',
     cityCost: 30,
     ruralCost: null,
-    points: EncumbrancePoint.Regular,
+    points: EncumbrancePoint.Oversized,
     isRecorded: true,
     damage: {
-      multiplier: 1,
+      x: 1,
       dice: Dice.d10,
     },
+    range: 10,
+    isAbleToReceiveCharge: false,
+    twoHanded: true,
+    isSecondRank: true,
   },
   {
     id: 4,
     name: 'Mancatcher',
     cityCost: 20,
     ruralCost: null,
-    points: EncumbrancePoint.Regular,
+    points: EncumbrancePoint.Oversized,
     isRecorded: true,
     damage: null,
+    isAbleToReceiveCharge: false,
+    range: 5,
+    twoHanded: true,
   },
   {
     id: 5,
     name: 'Polearm',
     cityCost: 30,
     ruralCost: null,
-    points: EncumbrancePoint.Regular,
+    points: EncumbrancePoint.Oversized,
     isRecorded: true,
     damage: {
-      multiplier: 1,
+      x: 1,
       dice: Dice.d8,
     },
+    twoHanded: true,
+    isAbleToReceiveCharge: true,
+    range: 10,
+    isSecondRank: true,
   },
   {
     id: 6,
@@ -66,9 +81,10 @@ export const Weapons: WeaponEntry[] = [
     points: EncumbrancePoint.Regular,
     isRecorded: true,
     damage: {
-      multiplier: 1,
+      x: 1,
       dice: Dice.d8,
     },
+    range: 5,
   },
   {
     id: 7,
@@ -78,9 +94,13 @@ export const Weapons: WeaponEntry[] = [
     points: EncumbrancePoint.Regular, 
     isRecorded: true, 
     damage: {
-      multiplier: 1,
+      x: 1,
       dice: Dice.d6,
     },
+    range: 10,
+    isAbleToReceiveCharge: true,
+    twoHanded: false,
+    isSecondRank: true,
   },
   {
     id: 8,
@@ -90,21 +110,24 @@ export const Weapons: WeaponEntry[] = [
     points: EncumbrancePoint.Regular, 
     isRecorded: true, 
     damage: {
-      multiplier: 1,
+      x: 1,
       dice: Dice.d4,
     },
+    range: 5,
   },
   {
     id: 9,
     name: 'Weapon, Great',
     cityCost: 50,
     ruralCost: null,
-    points: EncumbrancePoint.Regular,
+    points: EncumbrancePoint.Oversized,
     isRecorded: true,
     damage: {
-      multiplier: 1,
+      x: 1,
       dice: Dice.d10,
     },
+    range: 5,
+    twoHanded: true,
   },
   {
     id: 10,
@@ -114,9 +137,11 @@ export const Weapons: WeaponEntry[] = [
     points: EncumbrancePoint.Regular, 
     isRecorded: true, 
     damage: {
-      multiplier: 1,
+      x: 1,
       dice: Dice.d8,
     },
+    range: 5,
+    twoHanded: false,
   },
   {
     id: 11,
@@ -126,9 +151,10 @@ export const Weapons: WeaponEntry[] = [
     points: EncumbrancePoint.Regular, 
     isRecorded: true, 
     damage: {
-      multiplier: 1,
+      x: 1,
       dice: Dice.d4,
     },
+    range: 5,
   },
   {
     id: 12,
@@ -138,9 +164,10 @@ export const Weapons: WeaponEntry[] = [
     points: EncumbrancePoint.Regular, 
     isRecorded: true, 
     damage: {
-      multiplier: 1,
+      x: 1,
       dice: Dice.d6,
     },
+    range: 5,
   },
   {
     id: 13,
@@ -150,9 +177,10 @@ export const Weapons: WeaponEntry[] = [
     points: EncumbrancePoint.Regular, 
     isRecorded: true, 
     damage: {
-      multiplier: 1,
+      x: 1,
       dice: Dice.d3,
     },
+    range: 10,
   },
 ]
 

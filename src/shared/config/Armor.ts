@@ -1,4 +1,5 @@
-import {ArmorEntry, ArmorType, EncumbrancePoint} from "@/shared/types"
+import {ArmorEntry, ArmorType} from "@/shared/types/armor"
+import {EncumbrancePoint} from "@/shared/types/encumbrance"
 
 export const Armor: Record<number, ArmorEntry> = {
   1: {
