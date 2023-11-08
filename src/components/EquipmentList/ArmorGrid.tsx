@@ -29,9 +29,9 @@ const columns = [
     title: 'AC',
   },
   {
-    key: 'weight',
-    title: 'Weight',
-    render: (item: ArmorEntry) => <span>{EncumbrancePoint[item.weight]}</span>,
+    key: 'points',
+    title: 'Points',
+    render: (item: ArmorEntry) => <span>{EncumbrancePoint[item.points]}</span>,
   },
 ]
 
@@ -66,4 +66,5 @@ const ArmorGrid = () => {
 
 // TODO sort numericals (AC, cost...)
 // TODO cost switcher
+// TODO checkbox isRecorded
 export default ArmorGrid

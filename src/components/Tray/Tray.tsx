@@ -4,6 +4,7 @@ import {useHookstate} from "@hookstate/core"
 import {EquipmentState} from "@/state/EquipmentState"
 import {ArmorEntry, ArmorType, EncumbrancePoint} from "@/shared/types"
 import {Armor} from "@/shared/config/equipment"
+import EncumbranceBadge from "@/components/EncumbranceBadge/EncumbranceBadge"
 
 const Tray = () => {
   const equipmentState = useHookstate(EquipmentState)
@@ -18,16 +19,6 @@ const Tray = () => {
     equipmentState.items.set({})
   }
 
-  // TODO Costs fix
-  let totalWeight: number = 0
-  let totalCost: number = 0
-  Object
-    .values(equipmentState.items.get())
-    .forEach((item) => {
-      totalWeight += item.weight
-      totalCost += item.cityCost
-    })
-  
   return (
     <>
       <h1 className="inline-block text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight dark:text-slate-200 mb-4">Tray</h1>
@@ -38,10 +29,7 @@ const Tray = () => {
         Reset
       </button>
 
-      <ul className="list-disc pl-4 mb-4 space-y-3 text-gray-500 dark:text-gray-400">
-        <li>Weight: {totalWeight} slots</li>
-        <li>Total Cost: {totalCost} sp</li>
-      </ul>
+      <EncumbranceBadge />
 
       <table className="min-w-full">
         <thead className="bg-gray-50 dark:bg-gray-700">
@@ -60,7 +48,7 @@ const Tray = () => {
             <td className={cellClassnames}>{ArmorType[(armor as ArmorEntry).type]}</td>
             <td className={cellClassnames}>{armor.cityCost}</td>
             <td className={cellClassnames}>{(armor as ArmorEntry).armorClass}</td>
-            <td className={cellClassnames}>{EncumbrancePoint[armor.weight]}</td>
+            <td className={cellClassnames}>{EncumbrancePoint[armor.points]}</td>
           </tr>
         ))}
         </tbody>
