@@ -8,7 +8,7 @@ export const Armor: Record<number, ArmorEntry> = {
     cityCost: 25,
     ruralCost: 50,
     armorClass: 14,
-    weight: EncumbrancePoint.None,
+    points: EncumbrancePoint.None,
     isRecorded: false,
   },
   2: {
@@ -18,7 +18,7 @@ export const Armor: Record<number, ArmorEntry> = {
     cityCost: 100,
     ruralCost: null,
     armorClass: 16,
-    weight: EncumbrancePoint.Oversized,
+    points: EncumbrancePoint.Oversized,
     isRecorded: false,
   },
   3: {
@@ -28,7 +28,7 @@ export const Armor: Record<number, ArmorEntry> = {
     cityCost: 1000,
     ruralCost: null,
     armorClass: 18,
-    weight: EncumbrancePoint.Heavy,
+    points: EncumbrancePoint.Heavy,
     isRecorded: false,
   },
   4: {
@@ -38,7 +38,7 @@ export const Armor: Record<number, ArmorEntry> = {
     cityCost: 10,
     ruralCost: 25,
     armorClass: '+1,+2',
-    weight: EncumbrancePoint.Oversized,
+    points: EncumbrancePoint.Oversized,
     isRecorded: false,
   },
   5: {
@@ -48,7 +48,7 @@ export const Armor: Record<number, ArmorEntry> = {
     cityCost: 250,
     ruralCost: null,
     armorClass: 14,
-    weight: EncumbrancePoint.None,
+    points: EncumbrancePoint.None,
     isRecorded: false,
   },
   6: {
@@ -58,7 +58,7 @@ export const Armor: Record<number, ArmorEntry> = {
     cityCost: 500,
     ruralCost: null,
     armorClass: 16,
-    weight: EncumbrancePoint.Oversized,
+    points: EncumbrancePoint.Oversized,
     isRecorded: false,
   },
   7: {
@@ -68,7 +68,7 @@ export const Armor: Record<number, ArmorEntry> = {
     cityCost: 1000,
     ruralCost: null,
     armorClass: 18,
-    weight: EncumbrancePoint.Heavy,
+    points: EncumbrancePoint.Heavy,
     isRecorded: false,
   },
 }

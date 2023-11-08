@@ -16,11 +16,19 @@ export interface EquipmentItem {
   name: string;
   cityCost: number;
   ruralCost: number | null;
-  weight: EncumbrancePoint;
+  points: EncumbrancePoint;
   isRecorded: boolean;
 }
 
 export interface ArmorEntry extends EquipmentItem {
   type: ArmorType;
   armorClass: number | string;
+}
+
+export enum Encumbrance {
+  Unencumbered = 'Unencumbered',
+  Lightly = 'Lightly',
+  Heavily = 'Heavily',
+  Severely = 'Severely',
+  OverEncumbered = 'OverEncumbered'
 }
