@@ -5,18 +5,21 @@ import {EquipmentState} from "@/state/EquipmentState"
 import EncumbranceBadge from "@/components/EncumbranceBadge/EncumbranceBadge"
 import {ArmorEntry, ArmorType} from "@/shared/types/armor"
 import {EncumbrancePoint} from "@/shared/types/encumbrance"
+import {EquipmentItem} from "@/shared/types"
 
 const Tray = () => {
   const equipmentState = useHookstate(EquipmentState)
-  const itemsArray = Object
-    .entries(equipmentState.armor.get())
-    .map(([, item]) => item)
+  const itemsArray: Array<EquipmentItem> = Object
+    .values<EquipmentItem>(equipmentState.armor.get())
+    .concat(Object.values<EquipmentItem>(equipmentState.weapons.get()))
 
   const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase dark:text-white`
   const cellClassnames = `p-4 text-sm font-normal text-gray-900 whitespace-nowrap dark:text-white`
 
   const handleReset = () => {
     equipmentState.armor.set({})
+    equipmentState.weapons.set({})
+    // equipmentState.reset() TODO ?
   }
 
   return (

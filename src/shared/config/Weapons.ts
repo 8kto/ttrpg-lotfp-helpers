@@ -15,6 +15,7 @@ export const Weapons: WeaponEntry[] = [
       dice: Dice.d3,
     },
     range: 0,
+    isRecorded: false, // FIXME drop isRecorded at all?
   },
   {
     id: 2,

@@ -2,6 +2,7 @@ import React from 'react'
 import {useHookstate} from "@hookstate/core"
 import {EquipmentState} from "@/state/EquipmentState"
 import {getEncumbrance} from "@/components/EncumbranceBadge/helpers"
+import {EquipmentItem} from "@/shared/types"
 
 const EncumbranceBadge = () => {
   const equipmentState = useHookstate(EquipmentState)
@@ -10,7 +11,8 @@ const EncumbranceBadge = () => {
   let totalPoints: number = 0
   let totalCost: number = 0
   Object
-    .values(equipmentState.armor.get())
+    .values<EquipmentItem>(equipmentState.armor.get())
+    .concat(Object.values(equipmentState.weapons.get()))
     .forEach((item) => {
       totalPoints += item.isRecorded ? item.points : 0
       totalCost += item.cityCost
