@@ -2,7 +2,7 @@ import React from 'react'
 
 import {Equipment} from "@/shared/config/Equipment"
 import DataGrid from "@/components/Grid/DataGrid"
-import {useHookstate} from "@hookstate/core"
+import {useHookstate, none} from "@hookstate/core"
 import {EquipmentState} from "@/state/EquipmentState"
 import {ArmorEntry, ArmorType, EncumbrancePoint} from "@/shared/types"
 
@@ -38,9 +38,15 @@ const columns = [
 const ArmorGrid = () => {
   const equipmentState = useHookstate(EquipmentState)
   const handleCheckboxChange = (id: number) => {
-    const item = Equipment.Armor[id]
-    if (item) {
-      equipmentState.items[id].set(item)
+    const currentItem = equipmentState.items[id].get()
+
+    if (currentItem) {
+      equipmentState.items[id].set(none)
+    } else {
+      const newItem = Equipment.Armor[id]
+      if (newItem) {
+        equipmentState.items[id].set(newItem)
+      }
     }
   }
 

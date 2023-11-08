@@ -131,5 +131,3 @@ const DataGrid = <T extends EquipmentItem>({
 }
 
 export default DataGrid
-
-// TODO uncheck
