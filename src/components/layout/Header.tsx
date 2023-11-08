@@ -1,5 +1,5 @@
 import React from 'react'
-import {cursiveFont} from "@/app/fonts";
+import {cursiveFont} from "@/app/fonts"
 
 const Header = () => {
   return (

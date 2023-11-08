@@ -2,9 +2,9 @@ import React, {useEffect, useState} from 'react'
 import {useHookstate} from "@hookstate/core"
 
 import {EquipmentState} from "@/state/EquipmentState"
-import {ArmorEntry, ArmorType, EncumbrancePoint} from "@/shared/types"
-import {Armor} from "@/shared/config/Equipment"
 import EncumbranceBadge from "@/components/EncumbranceBadge/EncumbranceBadge"
+import {ArmorEntry, ArmorType} from "@/shared/types/armor"
+import {EncumbrancePoint} from "@/shared/types/encumbrance"
 
 const Tray = () => {
   const equipmentState = useHookstate(EquipmentState)

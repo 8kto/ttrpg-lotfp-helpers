@@ -4,7 +4,8 @@ import {Equipment} from "@/shared/config/Equipment"
 import DataGrid from "@/components/Grid/DataGrid"
 import {useHookstate, none} from "@hookstate/core"
 import {EquipmentState} from "@/state/EquipmentState"
-import {ArmorEntry, ArmorType, EncumbrancePoint} from "@/shared/types"
+import {ArmorEntry, ArmorType} from "@/shared/types/armor";
+import {EncumbrancePoint} from "@/shared/types/encumbrance";
 
 const columns = [
   {

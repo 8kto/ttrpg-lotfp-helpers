@@ -1,4 +1,4 @@
-import {Encumbrance} from "@/shared/types"
+import {Encumbrance} from "@/shared/types/encumbrance"
 
 // TODO tests
 export const getEncumbrance = (points: number): Encumbrance => {
