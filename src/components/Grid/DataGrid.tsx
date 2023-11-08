@@ -75,13 +75,15 @@ const DataGrid = <T extends EquipmentItem>({
 
   return (
     <>
-      <input
-        type="text"
-        value={filter}
-        onChange={(e) => setFilter(e.target.value)}
-        placeholder={filterPlaceholder}
-        className="block w-full border-0 py-1.5 pl-7 pr-20 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-      />
+      <div className="items-center justify-between lg:flex my-4">
+        <input
+          type="text"
+          value={filter}
+          onChange={(e) => setFilter(e.target.value)}
+          placeholder={filterPlaceholder}
+          className="block w-full border-0 py-1.5 pl-7 pr-20 ring-1 ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6"
+        />
+      </div>
       <table className="min-w-full">
         <thead className="bg-gray-50">
         <tr>
