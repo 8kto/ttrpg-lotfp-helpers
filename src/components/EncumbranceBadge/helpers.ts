@@ -1,6 +1,5 @@
 import type {EquipmentItem} from "@/shared/types"
 import { Encumbrance } from '@/shared/types/encumbrance'
-import {combineEquipment} from "@/state/helpers"
 
 export const getEncumbrance = (points: number): Encumbrance => {
   if (points >= 26) {
