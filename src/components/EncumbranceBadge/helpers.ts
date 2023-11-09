@@ -1,4 +1,4 @@
-import {Encumbrance} from "@/shared/types/encumbrance"
+import { Encumbrance } from '@/shared/types/encumbrance'
 
 // TODO tests
 export const getEncumbrance = (points: number): Encumbrance => {
@@ -15,5 +15,5 @@ export const getEncumbrance = (points: number): Encumbrance => {
     return Encumbrance.Lightly
   }
 
- return Encumbrance.Unencumbered
+  return Encumbrance.Unencumbered
 }

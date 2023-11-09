@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import {EquipmentItem} from "@/shared/types"
+import type { EquipmentItem } from '@/shared/types'
 
 interface DataGridColumn<T> {
-  key: string;
-  title: string;
-  render?: (item: T) => React.ReactNode;
+  key: string
+  title: string
+  render?: (item: T) => React.ReactNode
 }
 
 type SortOrder = 'asc' | 'desc'
@@ -14,13 +14,13 @@ type SortConfig = {
 }
 
 interface DataGridProps<T> {
-  data: Array<T>;
-  columns: Array<DataGridColumn<T>>;
-  initialSortState?: SortConfig;
-  onCheckboxChange: (id: number) => void;
-  onSortChange?: (key: string, direction: 'asc' | 'desc') => void;
-  filterFn: (item: T, filter: string) => boolean;
-  isCheckedFn: (item: T) => boolean;
+  data: Array<T>
+  columns: Array<DataGridColumn<T>>
+  initialSortState?: SortConfig
+  onCheckboxChange: (id: number) => void
+  onSortChange?: (key: string, direction: 'asc' | 'desc') => void
+  filterFn: (item: T, filter: string) => boolean
+  isCheckedFn: (item: T) => boolean
   filterPlaceholder?: string
 }
 
@@ -42,15 +42,17 @@ const DataGrid = <T extends EquipmentItem>({
   const [filteredData, setFilteredData] = useState(data)
 
   useEffect(() => {
-    let sortedData = [...data]
+    const sortedData = [...data]
       .filter((item) => filterFn(item, filter))
       // FIXME types
       .sort((a, b) => {
         if (sortConfig.key) {
-          // @ts-ignore
-          if (a[sortConfig.key] < b[sortConfig.key]) return sortConfig.direction === 'asc' ? -1 : 1
-          // @ts-ignore
-          if (a[sortConfig.key] > b[sortConfig.key]) return sortConfig.direction === 'asc' ? 1 : -1
+          if (a[sortConfig.key] < b[sortConfig.key]) {
+            return sortConfig.direction === 'asc' ? -1 : 1
+          }
+          if (a[sortConfig.key] > b[sortConfig.key]) {
+            return sortConfig.direction === 'asc' ? 1 : -1
+          }
         }
         return 0
       })
@@ -67,7 +69,9 @@ const DataGrid = <T extends EquipmentItem>({
   }
 
   const sortIcon = (key: string) => {
-    if (sortConfig.key !== key) return null
+    if (sortConfig.key !== key) {
+      return null
+    }
     return sortConfig.direction === 'asc' ? '↑' : '↓'
   }
 
@@ -75,55 +79,57 @@ const DataGrid = <T extends EquipmentItem>({
 
   return (
     <>
-      <div className="items-center justify-between lg:flex my-4">
+      <div className='my-4 items-center justify-between lg:flex'>
         <input
-          type="text"
+          type='text'
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
           placeholder={filterPlaceholder}
-          className="block w-full border-0 py-1.5 pl-7 pr-20 ring-1 ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6"
+          className='block w-full border-0 py-1.5 pl-7 pr-20 ring-1 ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6'
         />
       </div>
-      <table className="min-w-full">
-        <thead className="bg-gray-50">
-        <tr>
-          <th scope="col" className={headerCellClassnames}></th>
-          {columns.map((column) => (
-            <th
-              key={column.key}
-              className={`${headerCellClassnames} ${sortConfig.key === column.key ? 'font-bold' : ''}`}
-              onClick={() => handleSortClick(column.key)}
-            >
-              {column.title} {sortIcon(column.key)}
-            </th>
-          ))}
-        </tr>
-        </thead>
-        <tbody className="bg-white">
-        {filteredData.map((item, index) => (
-          <tr key={item.id} className={index % 2 ? 'bg-gray-50' : ''}>
-            <td className="p-4 text-sm font-normal text-gray-900 whitespace-nowrap">
-              <input
-                type="checkbox"
-                checked={isCheckedFn(item)}
-                onChange={() => onCheckboxChange(item.id)}
-                onClick={(e) => e.stopPropagation()}
-              />
-            </td>
+      <table className='min-w-full'>
+        <thead className='bg-gray-50'>
+          <tr>
+            <th scope='col' className={headerCellClassnames}></th>
             {columns.map((column) => (
-              <td
+              <th
                 key={column.key}
-                className="p-4 text-sm font-normal text-gray-900 whitespace-nowrap"
-                onClick={() => onCheckboxChange(item.id)}
+                className={`${headerCellClassnames} ${
+                  sortConfig.key === column.key ? 'font-bold' : ''
+                }`}
+                onClick={() => handleSortClick(column.key)}
               >
-                {column.render
-                  ? column.render(item)
-                  // FIXME types
-                  : (item as unknown as Record<string, string>)[column.key]}
-              </td>
+                {column.title} {sortIcon(column.key)}
+              </th>
             ))}
           </tr>
-        ))}
+        </thead>
+        <tbody className='bg-white'>
+          {filteredData.map((item, index) => (
+            <tr key={item.id} className={index % 2 ? 'bg-gray-50' : ''}>
+              <td className='whitespace-nowrap p-4 text-sm font-normal text-gray-900'>
+                <input
+                  type='checkbox'
+                  checked={isCheckedFn(item)}
+                  onChange={() => onCheckboxChange(item.id)}
+                  onClick={(e) => e.stopPropagation()}
+                />
+              </td>
+              {columns.map((column) => (
+                <td
+                  key={column.key}
+                  className='whitespace-nowrap p-4 text-sm font-normal text-gray-900'
+                  onClick={() => onCheckboxChange(item.id)}
+                >
+                  {column.render
+                    ? column.render(item)
+                    : // FIXME types
+                      (item as unknown as Record<string, string>)[column.key]}
+                </td>
+              ))}
+            </tr>
+          ))}
         </tbody>
       </table>
     </>

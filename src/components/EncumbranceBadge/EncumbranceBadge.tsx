@@ -1,9 +1,8 @@
 import React from 'react'
-import {useHookstate} from "@hookstate/core"
-import {EquipmentState} from "@/state/EquipmentState"
-import {getEncumbrance} from "@/components/EncumbranceBadge/helpers"
-import {EquipmentItem} from "@/shared/types"
-import {combineEquipment} from "@/state/helpers"
+import { useHookstate } from '@hookstate/core'
+import { EquipmentState } from '@/state/EquipmentState'
+import { getEncumbrance } from '@/components/EncumbranceBadge/helpers'
+import { combineEquipment } from '@/state/helpers'
 
 const EncumbranceBadge = () => {
   const equipmentState = useHookstate(EquipmentState)
@@ -19,8 +18,10 @@ const EncumbranceBadge = () => {
   )
 
   return (
-    <ul className="list-disc pl-4 mb-4 space-y-3 text-gray-500 dark:text-gray-400">
-      <li>{getEncumbrance(totalPoints)} ({totalPoints})</li>
+    <ul className='mb-4 list-disc space-y-3 pl-4 text-gray-500 dark:text-gray-400'>
+      <li>
+        {getEncumbrance(totalPoints)} ({totalPoints})
+      </li>
       <li>Total: {totalCost} sp</li>
     </ul>
   )

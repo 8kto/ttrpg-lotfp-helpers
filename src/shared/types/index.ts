@@ -1,12 +1,12 @@
-import {EncumbrancePoint} from "@/shared/types/encumbrance"
+import type { EncumbrancePoint } from '@/shared/types/encumbrance'
 
 export interface EquipmentItem {
-  id: number;
-  name: string;
-  cityCost: number;
-  ruralCost: number | null;
-  points: EncumbrancePoint;
-  isRecorded: boolean;
+  id: number
+  name: string
+  cityCost: number
+  ruralCost: number | null
+  points: EncumbrancePoint
+  isRecorded: boolean
 }
 
 export enum Dice {

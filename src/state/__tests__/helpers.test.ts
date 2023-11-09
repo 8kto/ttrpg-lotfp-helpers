@@ -1,10 +1,10 @@
-import {hookstate} from "@hookstate/core"
+import { hookstate } from '@hookstate/core'
 
-import {EquipmentStateType} from "@/state/EquipmentState"
-import {combineEquipment} from "@/state/helpers"
-import {ArmorType} from "@/shared/types/armor"
-import {EncumbrancePoint} from "@/shared/types/encumbrance"
-import {Dice} from "@/shared/types"
+import type { EquipmentStateType } from '@/state/EquipmentState'
+import { combineEquipment } from '@/state/helpers'
+import { ArmorType } from '@/shared/types/armor'
+import { EncumbrancePoint } from '@/shared/types/encumbrance'
+import { Dice } from '@/shared/types'
 
 const createStateMock = (payload: EquipmentStateType) => {
   return hookstate<EquipmentStateType>(payload)
@@ -18,7 +18,7 @@ describe('Tray helpers', () => {
         armor: {
           1: {
             id: 1,
-            name: "Leather",
+            name: 'Leather',
             type: ArmorType.Armor,
             cityCost: 25,
             ruralCost: 50,
@@ -28,7 +28,7 @@ describe('Tray helpers', () => {
           },
           2: {
             id: 2,
-            name: "Chain",
+            name: 'Chain',
             type: ArmorType.Armor,
             cityCost: 100,
             ruralCost: null,
@@ -73,7 +73,7 @@ describe('Tray helpers', () => {
       const expected = [
         {
           id: 1,
-          name: "Leather",
+          name: 'Leather',
           type: ArmorType.Armor,
           cityCost: 25,
           ruralCost: 50,
@@ -83,7 +83,7 @@ describe('Tray helpers', () => {
         },
         {
           id: 2,
-          name: "Chain",
+          name: 'Chain',
           type: ArmorType.Armor,
           cityCost: 100,
           ruralCost: null,

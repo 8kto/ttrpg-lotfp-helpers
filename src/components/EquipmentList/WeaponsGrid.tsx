@@ -1,11 +1,11 @@
 import React from 'react'
 
-import {Equipment} from "@/shared/config/Equipment"
-import DataGrid from "@/components/Grid/DataGrid"
-import {none, useHookstate} from "@hookstate/core"
-import {EquipmentState} from "@/state/EquipmentState"
-import {WeaponEntry} from "@/shared/types/weapon"
-import {EncumbrancePoint} from "@/shared/types/encumbrance"
+import { Equipment } from '@/shared/config/Equipment'
+import DataGrid from '@/components/Grid/DataGrid'
+import { none, useHookstate } from '@hookstate/core'
+import { EquipmentState } from '@/state/EquipmentState'
+import type { WeaponEntry } from '@/shared/types/weapon'
+import { EncumbrancePoint } from '@/shared/types/encumbrance'
 
 const columns = [
   {
@@ -44,8 +44,8 @@ const WeaponsGrid = () => {
     if (currentItem) {
       equipmentState.weapons[id].set(none)
     } else {
-      const newItem= Equipment.Weapons[id]
-      if (newItem){
+      const newItem = Equipment.Weapons[id]
+      if (newItem) {
         equipmentState.weapons[id].set(newItem)
       }
     }

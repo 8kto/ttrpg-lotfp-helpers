@@ -1,6 +1,6 @@
-import {WeaponEntry} from "@/shared/types/weapon"
-import {EncumbrancePoint} from "@/shared/types/encumbrance"
-import {Dice} from "@/shared/types"
+import type { WeaponEntry } from '@/shared/types/weapon'
+import { EncumbrancePoint } from '@/shared/types/encumbrance'
+import { Dice } from '@/shared/types'
 
 export const Weapons: WeaponEntry[] = [
   {
@@ -89,10 +89,10 @@ export const Weapons: WeaponEntry[] = [
   {
     id: 7,
     name: 'Spear',
-    cityCost: 5, 
-    ruralCost: 3, 
-    points: EncumbrancePoint.Regular, 
-    isRecorded: true, 
+    cityCost: 5,
+    ruralCost: 3,
+    points: EncumbrancePoint.Regular,
+    isRecorded: true,
     damage: {
       x: 1,
       dice: Dice.d6,
@@ -104,11 +104,11 @@ export const Weapons: WeaponEntry[] = [
   },
   {
     id: 8,
-    name: 'Staff', 
-    cityCost: 5, 
-    ruralCost: 3, 
-    points: EncumbrancePoint.Regular, 
-    isRecorded: true, 
+    name: 'Staff',
+    cityCost: 5,
+    ruralCost: 3,
+    points: EncumbrancePoint.Regular,
+    isRecorded: true,
     damage: {
       x: 1,
       dice: Dice.d4,
@@ -133,9 +133,9 @@ export const Weapons: WeaponEntry[] = [
     id: 10,
     name: 'Medium',
     cityCost: 20,
-    ruralCost: 50, 
-    points: EncumbrancePoint.Regular, 
-    isRecorded: true, 
+    ruralCost: 50,
+    points: EncumbrancePoint.Regular,
+    isRecorded: true,
     damage: {
       x: 1,
       dice: Dice.d8,
@@ -147,9 +147,9 @@ export const Weapons: WeaponEntry[] = [
     id: 11,
     name: 'Minor',
     cityCost: 5,
-    ruralCost: 5, 
-    points: EncumbrancePoint.Regular, 
-    isRecorded: true, 
+    ruralCost: 5,
+    points: EncumbrancePoint.Regular,
+    isRecorded: true,
     damage: {
       x: 1,
       dice: Dice.d4,
@@ -160,9 +160,9 @@ export const Weapons: WeaponEntry[] = [
     id: 12,
     name: 'Small',
     cityCost: 10,
-    ruralCost: 10, 
-    points: EncumbrancePoint.Regular, 
-    isRecorded: true, 
+    ruralCost: 10,
+    points: EncumbrancePoint.Regular,
+    isRecorded: true,
     damage: {
       x: 1,
       dice: Dice.d6,
@@ -173,9 +173,9 @@ export const Weapons: WeaponEntry[] = [
     id: 13,
     name: 'Whip',
     cityCost: 10,
-    ruralCost: 25, 
-    points: EncumbrancePoint.Regular, 
-    isRecorded: true, 
+    ruralCost: 25,
+    points: EncumbrancePoint.Regular,
+    isRecorded: true,
     damage: {
       x: 1,
       dice: Dice.d3,

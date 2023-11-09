@@ -2,7 +2,7 @@ export enum EncumbrancePoint {
   None = 0,
   Regular = 0.2,
   Oversized = 1,
-  Heavy = 2
+  Heavy = 2,
 }
 
 export enum Encumbrance {
@@ -10,5 +10,5 @@ export enum Encumbrance {
   Lightly = 'Lightly',
   Heavily = 'Heavily',
   Severely = 'Severely',
-  OverEncumbered = 'OverEncumbered'
+  OverEncumbered = 'OverEncumbered',
 }

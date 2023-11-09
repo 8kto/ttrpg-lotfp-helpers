@@ -1,10 +1,11 @@
-import {ArmorEntry, ArmorType} from "@/shared/types/armor"
-import {EncumbrancePoint} from "@/shared/types/encumbrance"
+import type { ArmorEntry } from '@/shared/types/armor'
+import { ArmorType } from '@/shared/types/armor'
+import { EncumbrancePoint } from '@/shared/types/encumbrance'
 
 export const Armor: Record<number, ArmorEntry> = {
   1: {
     id: 1,
-    name: "Leather",
+    name: 'Leather',
     type: ArmorType.Armor,
     cityCost: 25,
     ruralCost: 50,
@@ -14,7 +15,7 @@ export const Armor: Record<number, ArmorEntry> = {
   },
   2: {
     id: 2,
-    name: "Chain",
+    name: 'Chain',
     type: ArmorType.Armor,
     cityCost: 100,
     ruralCost: null,
@@ -24,7 +25,7 @@ export const Armor: Record<number, ArmorEntry> = {
   },
   3: {
     id: 3,
-    name: "Plate",
+    name: 'Plate',
     type: ArmorType.Armor,
     cityCost: 1000,
     ruralCost: null,
@@ -34,7 +35,7 @@ export const Armor: Record<number, ArmorEntry> = {
   },
   4: {
     id: 4,
-    name: "Shield",
+    name: 'Shield',
     type: ArmorType.Shield,
     cityCost: 10,
     ruralCost: 25,
@@ -44,7 +45,7 @@ export const Armor: Record<number, ArmorEntry> = {
   },
   5: {
     id: 5,
-    name: "Leather Barding",
+    name: 'Leather Barding',
     type: ArmorType.Barding,
     cityCost: 250,
     ruralCost: null,
@@ -54,7 +55,7 @@ export const Armor: Record<number, ArmorEntry> = {
   },
   6: {
     id: 6,
-    name: "Chain Barding",
+    name: 'Chain Barding',
     type: ArmorType.Barding,
     cityCost: 500,
     ruralCost: null,
@@ -64,7 +65,7 @@ export const Armor: Record<number, ArmorEntry> = {
   },
   7: {
     id: 7,
-    name: "Plate Barding",
+    name: 'Plate Barding',
     type: ArmorType.Barding,
     cityCost: 1000,
     ruralCost: null,

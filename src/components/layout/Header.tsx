@@ -1,27 +1,30 @@
 import React from 'react'
-import {cursiveFont} from "@/app/fonts"
+import { cursiveFont } from '@/app/fonts'
 
 const Header = () => {
   return (
     <header>
-      <nav
-        className="fixed z-30 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700 py-3 px-4">
-        <div className="flex justify-between items-center max-w-screen-2xl mx-auto">
-          <div className="flex justify-start items-center">
-            <a href="/" className="flex mr-14">
-              <img src="https://fastly.picsum.photos/id/237/200/300.jpg" className="mr-3 h-8" alt=""/>
-              <span
-                className={`${cursiveFont.className} self-center hidden sm:flex text-2xl font-semibold whitespace-nowrap dark:text-white`}
+      <nav className='fixed z-30 w-full border-b border-gray-200 bg-white px-4 py-3 dark:border-gray-700 dark:bg-gray-800'>
+        <div className='mx-auto flex max-w-screen-2xl items-center justify-between'>
+          <div className='flex items-center justify-start'>
+            <a href='/' className='mr-14 flex'>
+              <h1
+                className={`${cursiveFont.className} hidden self-center whitespace-nowrap text-2xl font-semibold dark:text-white sm:flex`}
               >
                 Princess Helpers
-              </span>
+              </h1>
             </a>
 
-            <div className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1">
-              <ul className="flex flex-col mt-4 space-x-6 text-sm font-medium lg:flex-row xl:space-x-8 lg:mt-0">
+            <div className='hidden w-full items-center justify-between lg:order-1 lg:flex lg:w-auto'>
+              <ul className='mt-4 flex flex-col space-x-6 text-sm font-medium lg:mt-0 lg:flex-row xl:space-x-8'>
                 <li>
-                  <a href="#" className="block rounded text-primary-700 dark:text-primary-500"
-                     aria-current="page">Home</a>
+                  <a
+                    href='#'
+                    className='block rounded text-primary-700 dark:text-primary-500'
+                    aria-current='page'
+                  >
+                    Home
+                  </a>
                 </li>
               </ul>
             </div>

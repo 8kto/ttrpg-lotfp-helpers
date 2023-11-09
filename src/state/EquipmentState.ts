@@ -1,7 +1,7 @@
 import { hookstate } from '@hookstate/core'
 
-import {ArmorEntry} from "@/shared/types/armor"
-import {WeaponEntry} from "@/shared/types/weapon"
+import type { ArmorEntry } from '@/shared/types/armor'
+import type { WeaponEntry } from '@/shared/types/weapon'
 
 export type EquipmentStateType = {
   armor: Record<string, ArmorEntry>
@@ -15,7 +15,5 @@ export const EquipmentState = hookstate<EquipmentStateType>({
   // reset: () => {},
 })
 
-export const EquipmentStateKeys: ReadonlyArray<keyof EquipmentStateType> = Object.freeze([
-  'armor',
-  'weapons',
-])
+export const EquipmentStateKeys: ReadonlyArray<keyof EquipmentStateType> =
+  Object.freeze(['armor', 'weapons'])

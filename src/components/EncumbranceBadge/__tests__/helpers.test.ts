@@ -1,5 +1,5 @@
-import {getEncumbrance} from "@/components/EncumbranceBadge/helpers"
-import {Encumbrance} from "@/shared/types/encumbrance"
+import { getEncumbrance } from '@/components/EncumbranceBadge/helpers'
+import { Encumbrance } from '@/shared/types/encumbrance'
 
 describe('helpers', () => {
   describe('getEncumbrance', () => {

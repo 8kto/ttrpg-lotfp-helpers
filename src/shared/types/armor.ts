@@ -1,12 +1,12 @@
-import {EquipmentItem} from "@/shared/types/index"
+import type { EquipmentItem } from '@/shared/types/index'
 
 export enum ArmorType {
   Armor = 'Armor',
   Barding = 'Barding',
-  Shield = 'Shield'
+  Shield = 'Shield',
 }
 
 export interface ArmorEntry extends EquipmentItem {
-  type: ArmorType;
-  armorClass: number | string;
+  type: ArmorType
+  armorClass: number | string
 }

@@ -1,4 +1,4 @@
-import {Inter, Philosopher} from 'next/font/google'
+import { Inter, Philosopher } from 'next/font/google'
 
 export const regularFont = Inter({
   subsets: ['latin'],
@@ -7,6 +7,6 @@ export const regularFont = Inter({
 
 export const cursiveFont = Philosopher({
   subsets: ['latin'],
-  weight: "400",
+  weight: '400',
   variable: '--font-cursive',
 })
