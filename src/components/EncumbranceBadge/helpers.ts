@@ -1,4 +1,4 @@
-import type {EquipmentItem} from "@/shared/types"
+import type { EquipmentItem } from '@/shared/types'
 import { Encumbrance } from '@/shared/types/encumbrance'
 
 export const getEncumbrance = (points: number): Encumbrance => {

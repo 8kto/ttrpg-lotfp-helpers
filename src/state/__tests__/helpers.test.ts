@@ -1,10 +1,10 @@
 import { hookstate } from '@hookstate/core'
 
-import {Dice} from '@/shared/types'
-import type {ArmorEntry} from '@/shared/types/armor'
-import { ArmorType} from '@/shared/types/armor'
+import { Dice } from '@/shared/types'
+import type { ArmorEntry } from '@/shared/types/armor'
+import { ArmorType } from '@/shared/types/armor'
 import { EncumbrancePoint } from '@/shared/types/encumbrance'
-import type {MeleeWeaponEntry} from "@/shared/types/weapon"
+import type { MeleeWeaponEntry } from '@/shared/types/weapon'
 import type { EquipmentStateType } from '@/state/EquipmentState'
 import { combineEquipment } from '@/state/helpers'
 
@@ -66,7 +66,7 @@ describe('Tray helpers', () => {
       const combinedEquipment = combineEquipment(mockEquipmentState)
 
       // Expected combined array
-      const expected: Array<ArmorEntry|MeleeWeaponEntry> = [
+      const expected: Array<ArmorEntry | MeleeWeaponEntry> = [
         {
           armorClass: 14,
           cityCost: 25,
