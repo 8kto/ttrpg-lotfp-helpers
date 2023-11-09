@@ -1,8 +1,8 @@
-import { Dice } from '@/shared/types'
-import { EncumbrancePoint } from '@/shared/types/encumbrance'
-import type { WeaponEntry } from '@/shared/types/weapon'
+import {Dice} from '@/shared/types'
+import {EncumbrancePoint} from '@/shared/types/encumbrance'
+import type {MeleeWeaponEntry} from '@/shared/types/weapon'
 
-export const Weapons: WeaponEntry[] = [
+export const Weapons: MeleeWeaponEntry[] = [
   {
     id: 1,
     name: 'Cestus',
@@ -13,7 +13,6 @@ export const Weapons: WeaponEntry[] = [
       x: 1,
       dice: Dice.d3,
     },
-    range: 0,
     isRecorded: false, // FIXME drop isRecorded at all?
   },
   {
@@ -27,7 +26,6 @@ export const Weapons: WeaponEntry[] = [
       x: 1,
       dice: Dice.d6,
     },
-    range: 0,
   },
   {
     id: 3,
@@ -40,8 +38,7 @@ export const Weapons: WeaponEntry[] = [
       x: 1,
       dice: Dice.d10,
     },
-    range: 10,
-    isAbleToReceiveCharge: false,
+    isAbleToReceiveCharge: true,
     twoHanded: true,
     isSecondRank: true,
   },
@@ -117,7 +114,7 @@ export const Weapons: WeaponEntry[] = [
   },
   {
     id: 9,
-    name: 'Weapon, Great',
+    name: 'Weapon, Great: Two-handed sword, maul, great axe',
     cityCost: 50,
     ruralCost: null,
     points: EncumbrancePoint.Oversized,
@@ -131,7 +128,7 @@ export const Weapons: WeaponEntry[] = [
   },
   {
     id: 10,
-    name: 'Medium',
+    name: 'Weapon, Medium: sword, battle axe, mace',
     cityCost: 20,
     ruralCost: 50,
     points: EncumbrancePoint.Regular,
@@ -145,20 +142,7 @@ export const Weapons: WeaponEntry[] = [
   },
   {
     id: 11,
-    name: 'Minor',
-    cityCost: 5,
-    ruralCost: 5,
-    points: EncumbrancePoint.Regular,
-    isRecorded: true,
-    damage: {
-      x: 1,
-      dice: Dice.d4,
-    },
-    range: 5,
-  },
-  {
-    id: 12,
-    name: 'Small',
+    name: 'Weapon, Small: short sword, hand axe',
     cityCost: 10,
     ruralCost: 10,
     points: EncumbrancePoint.Regular,
@@ -166,6 +150,19 @@ export const Weapons: WeaponEntry[] = [
     damage: {
       x: 1,
       dice: Dice.d6,
+    },
+    range: 5,
+  },
+  {
+    id: 12,
+    name: 'Weapon, Minor: daggers, clubs',
+    cityCost: 5,
+    ruralCost: 5,
+    points: EncumbrancePoint.Regular,
+    isRecorded: true,
+    damage: {
+      x: 1,
+      dice: Dice.d4,
     },
     range: 5,
   },
