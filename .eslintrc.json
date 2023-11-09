@@ -25,7 +25,11 @@
     "comma-dangle": ["error", "always-multiline"],
     "curly": ["error", "all"],
     "import/order": "off",
-    "sort-keys": ["error", "asc", {"natural":  true, "allowLineSeparatedGroups":  true}],
+    "sort-keys": [
+      "error",
+      "asc",
+      { "natural": true, "allowLineSeparatedGroups": true }
+    ],
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
     "@typescript-eslint/consistent-type-imports": [
@@ -39,7 +43,7 @@
     {
       "files": ["src/**/*.ts"],
       "rules": {
-        "sort-keys-fix/sort-keys-fix": ["error", "asc", {"natural":  true}],
+        "sort-keys-fix/sort-keys-fix": ["error", "asc", { "natural": true }],
         "sort-destructure-keys/sort-destructure-keys": [
           "error",
           { "caseSensitive": false }
