@@ -1,8 +1,10 @@
 import { hookstate } from '@hookstate/core'
 
-import { Dice } from '@/shared/types'
-import { ArmorType } from '@/shared/types/armor'
+import {Dice} from '@/shared/types'
+import type {ArmorEntry} from '@/shared/types/armor'
+import { ArmorType} from '@/shared/types/armor'
 import { EncumbrancePoint } from '@/shared/types/encumbrance'
+import type {MeleeWeaponEntry} from "@/shared/types/weapon"
 import type { EquipmentStateType } from '@/state/EquipmentState'
 import { combineEquipment } from '@/state/helpers'
 
@@ -64,12 +66,11 @@ describe('Tray helpers', () => {
       const combinedEquipment = combineEquipment(mockEquipmentState)
 
       // Expected combined array
-      const expected = [
+      const expected: Array<ArmorEntry|MeleeWeaponEntry> = [
         {
           armorClass: 14,
           cityCost: 25,
           id: 1,
-          isRecorded: false,
           name: 'Leather',
           points: EncumbrancePoint.None,
           ruralCost: 50,
@@ -79,7 +80,6 @@ describe('Tray helpers', () => {
           armorClass: 16,
           cityCost: 100,
           id: 2,
-          isRecorded: false,
           name: 'Chain',
           points: EncumbrancePoint.Oversized,
           ruralCost: null,
@@ -92,10 +92,8 @@ describe('Tray helpers', () => {
             x: 1,
           },
           id: 1,
-          isRecorded: false,
           name: 'Cestus',
           points: EncumbrancePoint.None,
-          range: 0,
           ruralCost: null,
         },
         {
@@ -105,10 +103,8 @@ describe('Tray helpers', () => {
             x: 1,
           },
           id: 2,
-          isRecorded: false,
           name: 'Garrote',
           points: EncumbrancePoint.None,
-          range: 0,
           ruralCost: null,
         },
       ]
