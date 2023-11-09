@@ -2,9 +2,10 @@
   "extends": [
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
     "prettier"
   ],
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "import", "simple-import-sort"],
   "parserOptions": {
     "ecmaVersion": 2020
   },
@@ -12,11 +13,19 @@
     "semi": ["error", "never"],
     "comma-dangle": ["error", "always-multiline"],
     "curly": ["error", "all"],
+    "import/order": "off",
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
     "@typescript-eslint/consistent-type-imports": [
       "error",
       {
         "prefer": "type-imports"
       }
     ]
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
   }
 }
