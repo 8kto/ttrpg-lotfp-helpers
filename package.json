@@ -9,7 +9,7 @@
     "lint": "next lint",
     "test": "jest",
     "format": "prettier --check --ignore-path .gitignore .",
-    "format:fix": "prettier --write --ignore-path .gitignore ."
+    "format:fix": "yarn lint -- --fix; prettier --write --ignore-path .gitignore ."
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
@@ -25,6 +25,8 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.0.1",
