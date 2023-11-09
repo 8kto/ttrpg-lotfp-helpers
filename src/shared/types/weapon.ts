@@ -1,12 +1,5 @@
 import type { Dice, EquipmentItem } from '@/shared/types/index'
 
-export enum WeaponType {
-  Great,
-  Medium,
-  Minor,
-  Small,
-}
-
 export type Range = {
   short: number
   medium: number
