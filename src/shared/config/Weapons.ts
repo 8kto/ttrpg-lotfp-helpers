@@ -9,7 +9,6 @@ export const Weapons: WeaponEntry[] = [
     cityCost: 10,
     ruralCost: null,
     points: EncumbrancePoint.None,
-    isRecorded: true,
     damage: {
       x: 1,
       dice: Dice.d3,
@@ -23,7 +22,7 @@ export const Weapons: WeaponEntry[] = [
     cityCost: 5,
     ruralCost: null,
     points: EncumbrancePoint.None,
-    isRecorded: true,
+    isRecorded: false,
     damage: {
       x: 1,
       dice: Dice.d6,
