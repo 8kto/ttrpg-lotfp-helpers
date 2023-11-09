@@ -1,6 +1,7 @@
+import type {EquipmentItem} from "@/shared/types"
 import { Encumbrance } from '@/shared/types/encumbrance'
+import {combineEquipment} from "@/state/helpers"
 
-// TODO tests
 export const getEncumbrance = (points: number): Encumbrance => {
   if (points >= 26) {
     return Encumbrance.OverEncumbered
@@ -16,4 +17,16 @@ export const getEncumbrance = (points: number): Encumbrance => {
   }
 
   return Encumbrance.Unencumbered
+}
+
+export const getTotal = (items: Array<EquipmentItem>) => {
+  return items.reduce(
+    (totals, item) => {
+      return {
+        totalCost: totals.totalCost + (item.cityCost || 0),
+        totalPoints: totals.totalPoints + item.points,
+      }
+    },
+    { totalCost: 0, totalPoints: 0 },
+  )
 }

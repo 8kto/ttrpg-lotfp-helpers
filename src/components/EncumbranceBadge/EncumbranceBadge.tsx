@@ -1,22 +1,14 @@
 import { useHookstate } from '@hookstate/core'
 import React from 'react'
 
-import { getEncumbrance } from '@/components/EncumbranceBadge/helpers'
+import {getEncumbrance, getTotal} from '@/components/EncumbranceBadge/helpers'
 import { EquipmentState } from '@/state/EquipmentState'
 import { combineEquipment } from '@/state/helpers'
 
 const EncumbranceBadge = () => {
   const equipmentState = useHookstate(EquipmentState)
 
-  const { totalPoints, totalCost } = combineEquipment(equipmentState).reduce(
-    (totals, item) => {
-      return {
-        totalCost: totals.totalCost + (item.cityCost || 0), // Assuming cityCost can be null/undefined
-        totalPoints: totals.totalPoints + (item.isRecorded ? item.points : 0),
-      }
-    },
-    { totalCost: 0, totalPoints: 0 },
-  )
+  const { totalPoints, totalCost } = getTotal(combineEquipment(equipmentState))
 
   return (
     <ul className='mb-4 list-disc space-y-3 pl-4 text-gray-500 dark:text-gray-400'>
