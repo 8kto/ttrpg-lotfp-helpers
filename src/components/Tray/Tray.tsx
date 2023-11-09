@@ -1,11 +1,11 @@
-import React from 'react'
 import { useHookstate } from '@hookstate/core'
+import React from 'react'
 
-import { EquipmentState } from '@/state/EquipmentState'
 import EncumbranceBadge from '@/components/EncumbranceBadge/EncumbranceBadge'
 import type { ArmorEntry } from '@/shared/types/armor'
 import { ArmorType } from '@/shared/types/armor'
 import { EncumbrancePoint } from '@/shared/types/encumbrance'
+import { EquipmentState } from '@/state/EquipmentState'
 import { combineEquipment } from '@/state/helpers'
 
 const Tray = () => {

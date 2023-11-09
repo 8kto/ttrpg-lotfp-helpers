@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+
 import type { EquipmentItem } from '@/shared/types'
 
 interface DataGridColumn<T> {

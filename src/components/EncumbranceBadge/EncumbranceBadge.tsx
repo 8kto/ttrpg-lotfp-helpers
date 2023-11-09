@@ -1,7 +1,8 @@
-import React from 'react'
 import { useHookstate } from '@hookstate/core'
-import { EquipmentState } from '@/state/EquipmentState'
+import React from 'react'
+
 import { getEncumbrance } from '@/components/EncumbranceBadge/helpers'
+import { EquipmentState } from '@/state/EquipmentState'
 import { combineEquipment } from '@/state/helpers'
 
 const EncumbranceBadge = () => {

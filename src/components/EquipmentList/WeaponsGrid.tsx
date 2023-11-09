@@ -1,11 +1,11 @@
+import { none, useHookstate } from '@hookstate/core'
 import React from 'react'
 
-import { Equipment } from '@/shared/config/Equipment'
 import DataGrid from '@/components/Grid/DataGrid'
-import { none, useHookstate } from '@hookstate/core'
-import { EquipmentState } from '@/state/EquipmentState'
-import type { WeaponEntry } from '@/shared/types/weapon'
+import { Equipment } from '@/shared/config/Equipment'
 import { EncumbrancePoint } from '@/shared/types/encumbrance'
+import type { WeaponEntry } from '@/shared/types/weapon'
+import { EquipmentState } from '@/state/EquipmentState'
 
 const columns = [
   {

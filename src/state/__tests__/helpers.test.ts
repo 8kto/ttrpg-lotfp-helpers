@@ -1,10 +1,10 @@
 import { hookstate } from '@hookstate/core'
 
-import type { EquipmentStateType } from '@/state/EquipmentState'
-import { combineEquipment } from '@/state/helpers'
+import { Dice } from '@/shared/types'
 import { ArmorType } from '@/shared/types/armor'
 import { EncumbrancePoint } from '@/shared/types/encumbrance'
-import { Dice } from '@/shared/types'
+import type { EquipmentStateType } from '@/state/EquipmentState'
+import { combineEquipment } from '@/state/helpers'
 
 const createStateMock = (payload: EquipmentStateType) => {
   return hookstate<EquipmentStateType>(payload)

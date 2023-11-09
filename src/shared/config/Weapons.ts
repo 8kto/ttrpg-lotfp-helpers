@@ -1,6 +1,6 @@
-import type { WeaponEntry } from '@/shared/types/weapon'
-import { EncumbrancePoint } from '@/shared/types/encumbrance'
 import { Dice } from '@/shared/types'
+import { EncumbrancePoint } from '@/shared/types/encumbrance'
+import type { WeaponEntry } from '@/shared/types/weapon'
 
 export const Weapons: WeaponEntry[] = [
   {
