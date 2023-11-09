@@ -12,3 +12,5 @@ export enum Encumbrance {
   Severely = 'Severely',
   OverEncumbered = 'OverEncumbered',
 }
+
+// NB Oversized is as tall as Character

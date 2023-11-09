@@ -7,7 +7,11 @@ export enum WeaponType {
   Small,
 }
 
-export type Range = number
+export type Range = {
+  short: number
+  medium: number
+  long: number
+}
 
 export interface WeaponEntry extends EquipmentItem {
   damage: DamageDice | null
