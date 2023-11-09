@@ -2,8 +2,8 @@ import { Dice } from '@/shared/types'
 import { EncumbrancePoint } from '@/shared/types/encumbrance'
 import type { MeleeWeaponEntry } from '@/shared/types/weapon'
 
-export const MeleeWeapons: MeleeWeaponEntry[] = [
-  {
+export const MeleeWeapons: Record<number, MeleeWeaponEntry> = {
+  1: {
     cityCost: 10,
     damage: {
       dice: Dice.d3,
@@ -14,7 +14,7 @@ export const MeleeWeapons: MeleeWeaponEntry[] = [
     points: EncumbrancePoint.None,
     ruralCost: null,
   },
-  {
+  2: {
     cityCost: 5,
     damage: {
       dice: Dice.d6,
@@ -25,7 +25,7 @@ export const MeleeWeapons: MeleeWeaponEntry[] = [
     points: EncumbrancePoint.None,
     ruralCost: null,
   },
-  {
+  3: {
     cityCost: 30,
     damage: {
       dice: Dice.d10,
@@ -39,7 +39,7 @@ export const MeleeWeapons: MeleeWeaponEntry[] = [
     ruralCost: null,
     twoHanded: true,
   },
-  {
+  4: {
     cityCost: 20,
     damage: null,
     id: 4,
@@ -49,7 +49,7 @@ export const MeleeWeapons: MeleeWeaponEntry[] = [
     ruralCost: null,
     twoHanded: true,
   },
-  {
+  5: {
     cityCost: 30,
     damage: {
       dice: Dice.d8,
@@ -63,7 +63,7 @@ export const MeleeWeapons: MeleeWeaponEntry[] = [
     ruralCost: null,
     twoHanded: true,
   },
-  {
+  6: {
     cityCost: 15,
     damage: {
       dice: Dice.d8,
@@ -74,7 +74,7 @@ export const MeleeWeapons: MeleeWeaponEntry[] = [
     points: EncumbrancePoint.Regular,
     ruralCost: null,
   },
-  {
+  7: {
     cityCost: 5,
     damage: {
       dice: Dice.d6,
@@ -88,7 +88,7 @@ export const MeleeWeapons: MeleeWeaponEntry[] = [
     ruralCost: 3,
     twoHanded: false,
   },
-  {
+  8: {
     cityCost: 5,
     damage: {
       dice: Dice.d4,
@@ -99,7 +99,7 @@ export const MeleeWeapons: MeleeWeaponEntry[] = [
     points: EncumbrancePoint.Regular,
     ruralCost: 3,
   },
-  {
+  9: {
     cityCost: 50,
     damage: {
       dice: Dice.d10,
@@ -111,7 +111,7 @@ export const MeleeWeapons: MeleeWeaponEntry[] = [
     ruralCost: null,
     twoHanded: true,
   },
-  {
+  10: {
     cityCost: 20,
     damage: {
       dice: Dice.d8,
@@ -123,7 +123,7 @@ export const MeleeWeapons: MeleeWeaponEntry[] = [
     ruralCost: 50,
     twoHanded: false,
   },
-  {
+  11: {
     cityCost: 10,
     damage: {
       dice: Dice.d6,
@@ -134,7 +134,7 @@ export const MeleeWeapons: MeleeWeaponEntry[] = [
     points: EncumbrancePoint.Regular,
     ruralCost: 10,
   },
-  {
+  12: {
     cityCost: 5,
     damage: {
       dice: Dice.d4,
@@ -145,7 +145,7 @@ export const MeleeWeapons: MeleeWeaponEntry[] = [
     points: EncumbrancePoint.Regular,
     ruralCost: 5,
   },
-  {
+  13: {
     cityCost: 10,
     damage: {
       dice: Dice.d3,
@@ -156,4 +156,4 @@ export const MeleeWeapons: MeleeWeaponEntry[] = [
     points: EncumbrancePoint.Regular,
     ruralCost: 25,
   },
-]
+}

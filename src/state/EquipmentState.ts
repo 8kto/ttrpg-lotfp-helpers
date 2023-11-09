@@ -6,11 +6,13 @@ import type { WeaponEntry } from '@/shared/types/weapon'
 export type EquipmentStateType = {
   armor: Record<string, ArmorEntry>
   weapons: Record<string, WeaponEntry>
+  isCostRural: boolean
   // reset: CallableFunction
 }
 
 export const EquipmentState = hookstate<EquipmentStateType>({
   armor: {},
+  isCostRural: true,
   weapons: {},
   // reset: () => {},
 })
