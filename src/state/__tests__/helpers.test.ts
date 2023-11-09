@@ -37,6 +37,7 @@ describe('Tray helpers', () => {
             type: ArmorType.Armor,
           },
         },
+        isCostRural: false,
         weapons: {
           1: {
             cityCost: 10,
@@ -117,6 +118,7 @@ describe('Tray helpers', () => {
       // Mock empty equipment state
       const mockEmptyEquipmentState = createStateMock({
         armor: {},
+        isCostRural: false,
         weapons: {},
       })
 
