@@ -5,15 +5,27 @@
     "plugin:import/recommended",
     "prettier"
   ],
-  "plugins": ["@typescript-eslint", "import", "simple-import-sort"],
+  "plugins": [
+    "@typescript-eslint",
+    "import",
+    "simple-import-sort",
+    "sort-keys-fix",
+    "sort-destructure-keys"
+  ],
   "parserOptions": {
     "ecmaVersion": 2020
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
   },
   "rules": {
     "semi": ["error", "never"],
     "comma-dangle": ["error", "always-multiline"],
     "curly": ["error", "all"],
     "import/order": "off",
+    "sort-keys": "error",
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
     "@typescript-eslint/consistent-type-imports": [
@@ -23,9 +35,16 @@
       }
     ]
   },
-  "settings": {
-    "import/resolver": {
-      "typescript": {}
+  "overrides": [
+    {
+      "files": ["src/**/*.ts"],
+      "rules": {
+        "sort-keys-fix/sort-keys-fix": "error",
+        "sort-destructure-keys/sort-destructure-keys": [
+          "error",
+          { "caseSensitive": false }
+        ]
+      }
     }
-  }
+  ]
 }
