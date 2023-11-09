@@ -1,17 +1,15 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import {useHookstate} from "@hookstate/core"
 
 import {EquipmentState} from "@/state/EquipmentState"
 import EncumbranceBadge from "@/components/EncumbranceBadge/EncumbranceBadge"
 import {ArmorEntry, ArmorType} from "@/shared/types/armor"
 import {EncumbrancePoint} from "@/shared/types/encumbrance"
-import {EquipmentItem} from "@/shared/types"
+import {combineEquipment} from "@/state/helpers"
 
 const Tray = () => {
   const equipmentState = useHookstate(EquipmentState)
-  const itemsArray: Array<EquipmentItem> = Object
-    .values<EquipmentItem>(equipmentState.armor.get())
-    .concat(Object.values<EquipmentItem>(equipmentState.weapons.get()))
+  const itemsArray = combineEquipment(equipmentState)
 
   const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase dark:text-white`
   const cellClassnames = `p-4 text-sm font-normal text-gray-900 whitespace-nowrap dark:text-white`
@@ -40,7 +38,6 @@ const Tray = () => {
           <th scope="col" className={headerCellClassnames}>Name</th>
           <th scope="col" className={headerCellClassnames}>Type</th>
           <th scope="col" className={headerCellClassnames}>Cost</th>
-          <th scope="col" className={headerCellClassnames}>AC</th>
           <th scope="col" className={headerCellClassnames}>Weight</th>
         </tr>
         </thead>
@@ -50,7 +47,6 @@ const Tray = () => {
             <td className={cellClassnames}>{armor.name}</td>
             <td className={cellClassnames}>{ArmorType[(armor as ArmorEntry).type]}</td>
             <td className={cellClassnames}>{armor.cityCost}</td>
-            <td className={cellClassnames}>{(armor as ArmorEntry).armorClass}</td>
             <td className={cellClassnames}>{EncumbrancePoint[armor.points]}</td>
           </tr>
         ))}
