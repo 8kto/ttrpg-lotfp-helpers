@@ -1,7 +1,7 @@
 import { none, useHookstate } from '@hookstate/core'
 import React from 'react'
 
-import type {DataGridColumn} from '@/components/Grid/DataGrid'
+import type { DataGridColumn } from '@/components/Grid/DataGrid'
 import DataGrid from '@/components/Grid/DataGrid'
 import { Equipment } from '@/shared/config/Equipment'
 import type { ArmorEntry } from '@/shared/types/armor'
@@ -16,8 +16,8 @@ const columns: ReadonlyArray<DataGridColumn<ArmorEntry>> = [
   },
   {
     key: 'type',
-    title: 'Type',
     render: (item: ArmorEntry) => <span>{ArmorType[item.type]}</span>,
+    title: 'Type',
   },
   {
     key: 'cityCost',
@@ -33,8 +33,8 @@ const columns: ReadonlyArray<DataGridColumn<ArmorEntry>> = [
   },
   {
     key: 'points',
-    title: 'Points',
     render: (item: ArmorEntry) => <span>{EncumbrancePoint[item.points]}</span>,
+    title: 'Points',
   },
 ]
 

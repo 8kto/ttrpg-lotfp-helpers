@@ -11,10 +11,17 @@ export type Range = number
 
 export interface WeaponEntry extends EquipmentItem {
   damage: DamageDice | null
-  range: Range
+  details?: string
+}
+
+export interface MeleeWeaponEntry extends WeaponEntry {
   isAbleToReceiveCharge?: boolean
   twoHanded?: boolean
   isSecondRank?: boolean
+}
+
+export interface MissileWeaponEntry extends WeaponEntry {
+  range: Range
 }
 
 export type DamageDice = {

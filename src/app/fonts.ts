@@ -7,6 +7,6 @@ export const regularFont = Inter({
 
 export const cursiveFont = Philosopher({
   subsets: ['latin'],
-  weight: '400',
   variable: '--font-cursive',
+  weight: '400',
 })

@@ -36,8 +36,8 @@ const DataGrid = <T extends EquipmentItem>({
   filterPlaceholder = 'Filter',
 }: DataGridProps<T>) => {
   const [sortConfig, setSortConfig] = useState<SortConfig<T>>({
-    key: (initialSortState?.key || '') as keyof T,
     direction: initialSortState?.direction || 'asc',
+    key: (initialSortState?.key || '') as keyof T,
   })
   const [filter, setFilter] = useState('')
   const [filteredData, setFilteredData] = useState(data)
@@ -64,7 +64,7 @@ const DataGrid = <T extends EquipmentItem>({
     if (sortConfig.key === key && sortConfig.direction === 'asc') {
       direction = 'desc'
     }
-    setSortConfig({ key, direction })
+    setSortConfig({ direction, key })
     onSortChange?.(key, direction)
   }
 
@@ -124,8 +124,7 @@ const DataGrid = <T extends EquipmentItem>({
                 >
                   {column.render
                     ? column.render(item)
-                    : item[column.key] as string
-                  }
+                    : (item[column.key] as string)}
                 </td>
               ))}
             </tr>

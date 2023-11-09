@@ -6,7 +6,7 @@ export interface EquipmentItem {
   cityCost: number
   ruralCost: number | null
   points: EncumbrancePoint
-  isRecorded: boolean
+  isRecorded?: boolean
 }
 
 export enum Dice {

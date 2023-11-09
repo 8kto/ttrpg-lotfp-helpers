@@ -1,7 +1,7 @@
 import { Armor } from './Armor'
-import { Weapons } from './Weapons'
+import { MeleeWeapons } from './MeleeWeapons'
 
 export const Equipment = {
   Armor,
-  Weapons,
+  Weapons: MeleeWeapons,
 }

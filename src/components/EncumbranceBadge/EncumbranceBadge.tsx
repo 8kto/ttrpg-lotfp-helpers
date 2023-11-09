@@ -11,11 +11,11 @@ const EncumbranceBadge = () => {
   const { totalPoints, totalCost } = combineEquipment(equipmentState).reduce(
     (totals, item) => {
       return {
-        totalPoints: totals.totalPoints + (item.isRecorded ? item.points : 0),
         totalCost: totals.totalCost + (item.cityCost || 0), // Assuming cityCost can be null/undefined
+        totalPoints: totals.totalPoints + (item.isRecorded ? item.points : 0),
       }
     },
-    { totalPoints: 0, totalCost: 0 },
+    { totalCost: 0, totalPoints: 0 },
   )
 
   return (
