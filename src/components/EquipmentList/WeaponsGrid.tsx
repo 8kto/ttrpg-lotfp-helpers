@@ -1,13 +1,14 @@
 import { none, useHookstate } from '@hookstate/core'
 import React from 'react'
 
+import type {DataGridColumn} from '@/components/Grid/DataGrid'
 import DataGrid from '@/components/Grid/DataGrid'
 import { Equipment } from '@/shared/config/Equipment'
 import { EncumbrancePoint } from '@/shared/types/encumbrance'
 import type { WeaponEntry } from '@/shared/types/weapon'
 import { EquipmentState } from '@/state/EquipmentState'
 
-const columns = [
+const columns: ReadonlyArray<DataGridColumn<WeaponEntry>> = [
   {
     key: 'name',
     title: 'Name',

@@ -2,24 +2,24 @@ import React, { useEffect, useState } from 'react'
 
 import type { EquipmentItem } from '@/shared/types'
 
-interface DataGridColumn<T> {
-  key: string
+export interface DataGridColumn<T extends EquipmentItem> {
+  key: keyof T
   title: string
   render?: (item: T) => React.ReactNode
 }
 
 type SortOrder = 'asc' | 'desc'
-type SortConfig = {
-  key: string
+type SortConfig<T extends EquipmentItem> = {
+  key: keyof T
   direction: SortOrder
 }
 
-interface DataGridProps<T> {
-  data: Array<T>
-  columns: Array<DataGridColumn<T>>
-  initialSortState?: SortConfig
+interface DataGridProps<T extends EquipmentItem> {
+  data: ReadonlyArray<T>
+  columns: ReadonlyArray<DataGridColumn<T>>
+  initialSortState?: SortConfig<T>
   onCheckboxChange: (id: number) => void
-  onSortChange?: (key: string, direction: 'asc' | 'desc') => void
+  onSortChange?: (key: keyof T, direction: SortOrder) => void
   filterFn: (item: T, filter: string) => boolean
   isCheckedFn: (item: T) => boolean
   filterPlaceholder?: string
@@ -35,8 +35,8 @@ const DataGrid = <T extends EquipmentItem>({
   isCheckedFn,
   filterPlaceholder = 'Filter',
 }: DataGridProps<T>) => {
-  const [sortConfig, setSortConfig] = useState<SortConfig>({
-    key: initialSortState?.key || '',
+  const [sortConfig, setSortConfig] = useState<SortConfig<T>>({
+    key: (initialSortState?.key || '') as keyof T,
     direction: initialSortState?.direction || 'asc',
   })
   const [filter, setFilter] = useState('')
@@ -45,7 +45,6 @@ const DataGrid = <T extends EquipmentItem>({
   useEffect(() => {
     const sortedData = [...data]
       .filter((item) => filterFn(item, filter))
-      // FIXME types
       .sort((a, b) => {
         if (sortConfig.key) {
           if (a[sortConfig.key] < b[sortConfig.key]) {
@@ -60,7 +59,7 @@ const DataGrid = <T extends EquipmentItem>({
     setFilteredData(sortedData)
   }, [data, filter, filterFn, sortConfig])
 
-  const handleSortClick = (key: string) => {
+  const handleSortClick = (key: keyof T) => {
     let direction: SortOrder = 'asc'
     if (sortConfig.key === key && sortConfig.direction === 'asc') {
       direction = 'desc'
@@ -95,13 +94,13 @@ const DataGrid = <T extends EquipmentItem>({
             <th scope='col' className={headerCellClassnames}></th>
             {columns.map((column) => (
               <th
-                key={column.key}
+                key={column.key as string}
                 className={`${headerCellClassnames} ${
                   sortConfig.key === column.key ? 'font-bold' : ''
                 }`}
                 onClick={() => handleSortClick(column.key)}
               >
-                {column.title} {sortIcon(column.key)}
+                {column.title} {sortIcon(column.key as string)}
               </th>
             ))}
           </tr>
@@ -119,14 +118,14 @@ const DataGrid = <T extends EquipmentItem>({
               </td>
               {columns.map((column) => (
                 <td
-                  key={column.key}
+                  key={column.key as string}
                   className='whitespace-nowrap p-4 text-sm font-normal text-gray-900'
                   onClick={() => onCheckboxChange(item.id)}
                 >
                   {column.render
                     ? column.render(item)
-                    : // FIXME types
-                      (item as unknown as Record<string, string>)[column.key]}
+                    : item[column.key] as string
+                  }
                 </td>
               ))}
             </tr>
