@@ -1,7 +1,6 @@
 'use client'
 
 import { useHookstate } from '@hookstate/core'
-import type {ChangeEventHandler} from "react"
 
 import ArmorGrid from '@/components/EquipmentList/ArmorGrid'
 import WeaponsGrid from '@/components/EquipmentList/WeaponsGrid'
@@ -11,7 +10,9 @@ export default function EquipmentTable() {
   const equipmentState = useHookstate(EquipmentState)
   const { isCostRural } = equipmentState
 
-  const handleCostToggle:React.ChangeEventHandler<HTMLInputElement> = (event) => {
+  const handleCostToggle: React.ChangeEventHandler<HTMLInputElement> = (
+    event,
+  ) => {
     equipmentState.isCostRural.set(event.target.value === 'rural')
   }
 
