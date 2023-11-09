@@ -9,7 +9,8 @@
     "lint": "next lint",
     "test": "jest",
     "format": "prettier --check --ignore-path .gitignore .",
-    "format:fix": "yarn lint -- --fix && prettier --write --ignore-path .gitignore ."
+    "format:fix": "yarn lint -- --fix && prettier --write --ignore-path .gitignore .",
+    "weok": "yarn tsc && yarn lint && yarn format && yarn test"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
