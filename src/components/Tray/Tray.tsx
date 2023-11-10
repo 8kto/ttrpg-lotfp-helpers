@@ -2,9 +2,9 @@ import { useHookstate } from '@hookstate/core'
 import React from 'react'
 
 import EncumbranceBadge from '@/components/EncumbranceBadge/EncumbranceBadge'
-import type { ArmorEntry } from '@/shared/types/armor'
-import { ArmorType } from '@/shared/types/armor'
-import { EncumbrancePoint } from '@/shared/types/encumbrance'
+import type { ArmorEntry } from '@/domain/armor'
+import { ArmorType } from '@/domain/armor'
+import { EncumbrancePoint } from '@/domain/encumbrance'
 import { EquipmentState } from '@/state/EquipmentState'
 import { combineEquipment } from '@/state/helpers'
 

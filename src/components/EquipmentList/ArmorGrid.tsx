@@ -3,10 +3,10 @@ import React from 'react'
 
 import type { DataGridColumn } from '@/components/Grid/DataGrid'
 import DataGrid from '@/components/Grid/DataGrid'
-import { Equipment } from '@/shared/config/Equipment'
-import type { ArmorEntry } from '@/shared/types/armor'
-import { ArmorType } from '@/shared/types/armor'
-import { EncumbrancePoint } from '@/shared/types/encumbrance'
+import { Equipment } from '@/config/Equipment'
+import type { ArmorEntry } from '@/domain/armor'
+import { ArmorType } from '@/domain/armor'
+import { EncumbrancePoint } from '@/domain/encumbrance'
 import { EquipmentState } from '@/state/EquipmentState'
 
 const columns: ReadonlyArray<DataGridColumn<ArmorEntry>> = [

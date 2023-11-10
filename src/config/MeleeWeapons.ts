@@ -1,4 +1,4 @@
-import { Dice } from '../../domain'
+import { Dice } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { MeleeWeaponEntry } from '@/domain/weapon'
 

@@ -1,10 +1,10 @@
 import { hookstate } from '@hookstate/core'
 
-import { Dice } from '@/shared/types'
-import type { ArmorEntry } from '@/shared/types/armor'
-import { ArmorType } from '@/shared/types/armor'
-import { EncumbrancePoint } from '@/shared/types/encumbrance'
-import type { MeleeWeaponEntry } from '@/shared/types/weapon'
+import { Dice } from '@/domain'
+import type { ArmorEntry } from '@/domain/armor'
+import { ArmorType } from '@/domain/armor'
+import { EncumbrancePoint } from '@/domain/encumbrance'
+import type { MeleeWeaponEntry } from '@/domain/weapon'
 import type { EquipmentStateType } from '@/state/EquipmentState'
 import { combineEquipment } from '@/state/helpers'
 

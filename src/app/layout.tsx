@@ -3,7 +3,7 @@ import './globals.css'
 import { cursiveFont, regularFont } from '@/app/fonts'
 import Footer from '@/components/layout/Footer'
 import Header from '@/components/layout/Header'
-import { AppMetadata } from '@/shared/config/AppMetadata'
+import { AppMetadata } from '@/config/AppMetadata'
 
 export const metadata = AppMetadata
 

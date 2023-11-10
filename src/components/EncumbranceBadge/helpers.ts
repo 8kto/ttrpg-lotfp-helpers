@@ -1,5 +1,5 @@
-import type { EquipmentItem } from '@/shared/types'
-import { Encumbrance } from '@/shared/types/encumbrance'
+import type { EquipmentItem } from '@/domain'
+import { Encumbrance } from '@/domain/encumbrance'
 
 export const getEncumbrance = (points: number): Encumbrance => {
   if (points >= 26) {

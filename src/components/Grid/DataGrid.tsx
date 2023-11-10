@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import type { EquipmentItem } from '@/shared/types'
+import type { EquipmentItem } from '@/domain'
 
 export interface DataGridColumn<T extends EquipmentItem> {
   key: keyof T

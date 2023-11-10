@@ -27,4 +27,3 @@ export type MovementTuple = {
   [Movement.Running]: number
   [Movement.MilesPerDay]: number
 }
-

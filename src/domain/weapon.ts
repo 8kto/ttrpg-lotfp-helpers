@@ -1,4 +1,4 @@
-import type { Dice, EquipmentItem } from '@/shared/types/index'
+import type { Dice, EquipmentItem } from '@/domain/index'
 
 export type Range = {
   short: number

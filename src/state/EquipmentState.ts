@@ -1,7 +1,7 @@
 import { hookstate } from '@hookstate/core'
 
-import type { ArmorEntry } from '@/shared/types/armor'
-import type { WeaponEntry } from '@/shared/types/weapon'
+import type { ArmorEntry } from '@/domain/armor'
+import type { WeaponEntry } from '@/domain/weapon'
 
 export type EquipmentStateType = {
   armor: Record<string, ArmorEntry>

@@ -4,9 +4,9 @@ import React from 'react'
 import DamageLabel from '@/components/DamageLabel'
 import type { DataGridColumn } from '@/components/Grid/DataGrid'
 import DataGrid from '@/components/Grid/DataGrid'
-import { Equipment } from '@/shared/config/Equipment'
-import { EncumbrancePoint } from '@/shared/types/encumbrance'
-import type { WeaponEntry } from '@/shared/types/weapon'
+import { Equipment } from '@/config/Equipment'
+import { EncumbrancePoint } from '@/domain/encumbrance'
+import type { WeaponEntry } from '@/domain/weapon'
 import { EquipmentState } from '@/state/EquipmentState'
 
 const columns: ReadonlyArray<DataGridColumn<WeaponEntry>> = [

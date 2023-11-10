@@ -1,4 +1,4 @@
-import type { EncumbrancePoint } from '@/shared/types/encumbrance'
+import type { EncumbrancePoint } from '@/domain/encumbrance'
 
 export interface EquipmentItem {
   id: number

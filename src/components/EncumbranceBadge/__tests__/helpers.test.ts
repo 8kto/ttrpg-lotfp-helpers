@@ -1,6 +1,6 @@
 import { getEncumbrance, getTotal } from '@/components/EncumbranceBadge/helpers'
-import type { EquipmentItem } from '@/shared/types'
-import { Encumbrance, EncumbrancePoint } from '@/shared/types/encumbrance'
+import type { EquipmentItem } from '@/domain'
+import { Encumbrance, EncumbrancePoint } from '@/domain/encumbrance'
 
 describe('helpers', () => {
   describe('getEncumbrance', () => {

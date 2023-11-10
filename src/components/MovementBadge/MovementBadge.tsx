@@ -1,10 +1,10 @@
 import React from 'react'
 
-import type { Encumbrance } from '@/shared/types/encumbrance'
-import { MovementMap } from '@/shared/types/encumbrance'
+import { MovementRates } from '@/config/MovementRates'
+import type { Encumbrance } from '@/domain/encumbrance'
 
 const MovementBadge = ({ encumbrance }: { encumbrance: Encumbrance }) => {
-  const movement = MovementMap[encumbrance]
+  const movement = MovementRates[encumbrance]
 
   return (
     <>
