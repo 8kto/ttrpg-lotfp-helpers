@@ -1,4 +1,4 @@
-import { none, useHookstate } from '@hookstate/core'
+import { useHookstate } from '@hookstate/core'
 import React from 'react'
 
 import type { DataGridColumn } from '@/components/DataGrid/DataGrid'
@@ -40,25 +40,23 @@ const columns: ReadonlyArray<DataGridColumn<ArmorEntry>> = [
 
 const ArmorGrid = () => {
   const equipmentState = useHookstate(EquipmentState)
-  const handleCheckboxChange = (id: number) => {
-    const currentItem = equipmentState.armor[id].get()
 
-    if (currentItem) {
-      equipmentState.armor[id].set(none)
+  const handleCheckboxChange = (item: ArmorEntry) => {
+    const isAdded = equipmentState.armor.get().some(i => item.name === i.name)
+
+    if (isAdded) {
+      equipmentState.armor.set(a => a.filter(i => item.name !== i.name))
     } else {
-      const newItem = Equipment.Armor[id]
-      if (newItem) {
-        equipmentState.armor[id].set(newItem)
-      }
+      equipmentState.armor.set(a => a.concat(item))
     }
   }
 
-  const filterName = (item: ArmorEntry, filter: string) => {
-    return item.name.toLowerCase().includes(filter.toLowerCase())
+  const filterName = (item: ArmorEntry, filterBy: string) => {
+    return item.name.toLocaleLowerCase().includes(filterBy.toLocaleLowerCase())
   }
 
   const isChecked = (item: ArmorEntry) => {
-    return !!equipmentState.armor.get()[item.id]
+    return equipmentState.armor.get().some(i => item.name === i.name)
   }
 
   return (
