@@ -1,4 +1,4 @@
-import {none, useHookstate} from '@hookstate/core'
+import { none, useHookstate } from '@hookstate/core'
 import React from 'react'
 
 import type { DataGridColumn } from '@/components/DataGrid/DataGrid'

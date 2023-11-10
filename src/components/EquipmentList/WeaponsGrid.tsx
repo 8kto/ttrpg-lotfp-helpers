@@ -49,7 +49,7 @@ const WeaponsGrid = () => {
     if (index === -1) {
       equipmentState.weapons.merge([item])
     } else {
-     equipmentState.weapons[index].set(none)
+      equipmentState.weapons[index].set(none)
     }
   }
 

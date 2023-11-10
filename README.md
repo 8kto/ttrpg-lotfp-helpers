@@ -11,7 +11,7 @@ Lamentations of the Flame Princess helpers.
   - [ ] Weapon, melee and missile
   - [ ] Common items
   - [ ] Details for each item
-- [ ] Extended list of equipment 
+- [ ] Extended list of equipment
 - [ ] Costs, encumbrance and movement calculation
   - [ ] Terrain type factor
   - [ ] Mounted
