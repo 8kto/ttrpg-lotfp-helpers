@@ -6,7 +6,7 @@ import ArmorGrid from '@/components/EquipmentList/ArmorGrid'
 import WeaponsGrid from '@/components/EquipmentList/WeaponsGrid'
 import { EquipmentState } from '@/state/EquipmentState'
 
-export default function EquipmentTable() {
+export default function EquipmentList() {
   const equipmentState = useHookstate(EquipmentState)
   const { isCostRural } = equipmentState
 

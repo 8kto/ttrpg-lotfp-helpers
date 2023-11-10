@@ -1,7 +1,7 @@
 'use client'
 
-import EquipmentTable from '@/components/EquipmentList/EquipmentTable'
-import Tray from '@/components/Tray/Tray'
+import EquipmentList from '@/components/EquipmentList/EquipmentList'
+import Inventory from '@/components/Inventory/Inventory'
 
 export default function Home() {
   return (
@@ -10,10 +10,10 @@ export default function Home() {
         <div className='px-4 pt-6 2xl:px-0'>
           <div className='grid gap-4 xl:grid-cols-3'>
             <div className='col-span-2 rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6'>
-              <EquipmentTable />
+              <EquipmentList />
             </div>
             <div className='col-span-1 rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6'>
-              <Tray />
+              <Inventory />
             </div>
           </div>
         </div>

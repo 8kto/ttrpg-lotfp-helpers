@@ -12,7 +12,7 @@ const createStateMock = (payload: EquipmentStateType) => {
   return hookstate<EquipmentStateType>(payload)
 }
 
-describe('Tray helpers', () => {
+describe('Inventory helpers', () => {
   describe('combineEquipment', () => {
     it('should combine state props', () => {
       // Mock equipment state

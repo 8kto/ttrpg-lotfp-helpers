@@ -1,8 +1,8 @@
 import { none, useHookstate } from '@hookstate/core'
 import React from 'react'
 
-import type { DataGridColumn } from '@/components/Grid/DataGrid'
-import DataGrid from '@/components/Grid/DataGrid'
+import type { DataGridColumn } from '@/components/DataGrid/DataGrid'
+import DataGrid from '@/components/DataGrid/DataGrid'
 import { Equipment } from '@/config/Equipment'
 import type { ArmorEntry } from '@/domain/armor'
 import { ArmorType } from '@/domain/armor'

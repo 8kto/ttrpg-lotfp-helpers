@@ -8,7 +8,7 @@ import { EncumbrancePoint } from '@/domain/encumbrance'
 import { EquipmentState } from '@/state/EquipmentState'
 import { combineEquipment } from '@/state/helpers'
 
-const Tray = () => {
+const Inventory = () => {
   const equipmentState = useHookstate(EquipmentState)
   const itemsArray = combineEquipment(equipmentState)
 
@@ -74,4 +74,4 @@ const Tray = () => {
   )
 }
 
-export default Tray
+export default Inventory
