@@ -1,4 +1,4 @@
-import { none, useHookstate } from '@hookstate/core'
+import { useHookstate } from '@hookstate/core'
 import React from 'react'
 
 import DamageFragment from '@/components/DamageFragment'
@@ -17,7 +17,7 @@ const columns: ReadonlyArray<DataGridColumn<WeaponEntry>> = [
   // {
   //   key: 'type',
   //   title: 'Type',
-  //   render: (item: ArmorEntry) => <span>{ArmorType[item.type]}</span>,
+  //   render: (item: WeaponEntry) => <span>{ArmorType[item.type]}</span>,
   // },
   {
     key: 'cityCost',
@@ -41,25 +41,22 @@ const columns: ReadonlyArray<DataGridColumn<WeaponEntry>> = [
 
 const WeaponsGrid = () => {
   const equipmentState = useHookstate(EquipmentState)
-  const handleCheckboxChange = (id: number) => {
-    const currentItem = equipmentState.weapons[id].get()
+  const handleCheckboxChange = (item: WeaponEntry) => {
+    const isAdded = equipmentState.weapons.get().some(i => item.name === i.name)
 
-    if (currentItem) {
-      equipmentState.weapons[id].set(none)
+    if (isAdded) {
+      equipmentState.weapons.set(a => a.filter(i => item.name !== i.name))
     } else {
-      const newItem = Equipment.Weapons[id]
-      if (newItem) {
-        equipmentState.weapons[id].set(newItem)
-      }
+      equipmentState.weapons.set(a => a.concat(item))
     }
   }
 
-  const filterName = (item: WeaponEntry, filter: string) => {
-    return item.name.toLowerCase().includes(filter.toLowerCase())
+  const filterName = (item: WeaponEntry, filterBy: string) => {
+    return item.name.toLocaleLowerCase().includes(filterBy.toLocaleLowerCase())
   }
 
   const isChecked = (item: WeaponEntry) => {
-    return !!equipmentState.weapons.get()[item.id]
+    return equipmentState.weapons.get().some(i => item.name === i.name)
   }
 
   return (
