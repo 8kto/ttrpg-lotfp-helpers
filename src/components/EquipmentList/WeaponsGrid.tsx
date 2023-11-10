@@ -1,4 +1,4 @@
-import { useHookstate } from '@hookstate/core'
+import { none, useHookstate } from '@hookstate/core'
 import React from 'react'
 
 import DamageFragment from '@/components/DamageFragment'
@@ -42,14 +42,14 @@ const columns: ReadonlyArray<DataGridColumn<WeaponEntry>> = [
 const WeaponsGrid = () => {
   const equipmentState = useHookstate(EquipmentState)
   const handleCheckboxChange = (item: WeaponEntry) => {
-    const isAdded = equipmentState.weapons
+    const index = equipmentState.weapons
       .get()
-      .some((i) => item.name === i.name)
+      .findIndex((i) => item.name === i.name)
 
-    if (isAdded) {
-      equipmentState.weapons.set((a) => a.filter((i) => item.name !== i.name))
+    if (index === -1) {
+      equipmentState.weapons.merge([item])
     } else {
-      equipmentState.weapons.set((a) => a.concat(item))
+     equipmentState.weapons[index].set(none)
     }
   }
 

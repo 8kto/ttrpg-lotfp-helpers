@@ -1,4 +1,4 @@
-import { useHookstate } from '@hookstate/core'
+import {none, useHookstate} from '@hookstate/core'
 import React from 'react'
 
 import type { DataGridColumn } from '@/components/DataGrid/DataGrid'
@@ -42,12 +42,14 @@ const ArmorGrid = () => {
   const equipmentState = useHookstate(EquipmentState)
 
   const handleCheckboxChange = (item: ArmorEntry) => {
-    const isAdded = equipmentState.armor.get().some((i) => item.name === i.name)
+    const index = equipmentState.armor
+      .get()
+      .findIndex((i) => item.name === i.name)
 
-    if (isAdded) {
-      equipmentState.armor.set((a) => a.filter((i) => item.name !== i.name))
+    if (index === -1) {
+      equipmentState.armor.merge([item])
     } else {
-      equipmentState.armor.set((a) => a.concat(item))
+      equipmentState.armor[index].set(none)
     }
   }
 
