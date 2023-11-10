@@ -1,7 +1,7 @@
 import type { MovementTuple } from '@/domain/encumbrance'
 import { Encumbrance, Movement } from '@/domain/encumbrance'
 
-export const MovementRates: Record<Encumbrance, MovementTuple> = {
+export const MovementRates: Readonly<Record<Encumbrance, MovementTuple>> = {
   [Encumbrance.Unencumbered]: {
     [Movement.Exploration]: 120,
     [Movement.Combat]: 40,

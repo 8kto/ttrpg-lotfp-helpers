@@ -1,7 +1,6 @@
 import type { EncumbrancePoint } from '@/domain/encumbrance'
 
 export interface EquipmentItem {
-  id: number
   name: string
   cityCost: number
   ruralCost: number | null
