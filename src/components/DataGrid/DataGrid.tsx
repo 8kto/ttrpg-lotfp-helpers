@@ -18,7 +18,7 @@ interface DataGridProps<T extends EquipmentItem> {
   data: ReadonlyArray<T>
   columns: ReadonlyArray<DataGridColumn<T>>
   initialSortState?: SortConfig<T>
-  onCheckboxChange: (id: number) => void
+  onCheckboxChange: (item: T) => void
   onSortChange?: (key: keyof T, direction: SortOrder) => void
   filterFn: (item: T, filter: string) => boolean
   isCheckedFn: (item: T) => boolean
@@ -107,12 +107,12 @@ const DataGrid = <T extends EquipmentItem>({
         </thead>
         <tbody className='bg-white'>
           {filteredData.map((item, index) => (
-            <tr key={item.id} className={index % 2 ? 'bg-gray-50' : ''}>
+            <tr key={item.name} className={index % 2 ? 'bg-gray-50' : ''}>
               <td className='whitespace-nowrap p-4 text-sm font-normal text-gray-900'>
                 <input
                   type='checkbox'
                   checked={isCheckedFn(item)}
-                  onChange={() => onCheckboxChange(item.id)}
+                  onChange={() => onCheckboxChange(item)}
                   onClick={(e) => e.stopPropagation()}
                 />
               </td>
@@ -120,7 +120,7 @@ const DataGrid = <T extends EquipmentItem>({
                 <td
                   key={column.key as string}
                   className='whitespace-nowrap p-4 text-sm font-normal text-gray-900'
-                  onClick={() => onCheckboxChange(item.id)}
+                  onClick={() => onCheckboxChange(item)}
                 >
                   {column.render
                     ? column.render(item)

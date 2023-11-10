@@ -16,15 +16,15 @@ const Inventory = () => {
   const cellClassnames = `p-4 text-sm font-normal text-gray-900 whitespace-nowrap dark:text-white`
 
   const handleReset = () => {
-    equipmentState.armor.set({})
-    equipmentState.weapons.set({})
+    equipmentState.armor.set([])
+    equipmentState.weapons.set([])
     // equipmentState.reset() TODO ?
   }
 
   return (
     <>
       <h1 className='mb-4 inline-block text-2xl font-extrabold tracking-tight text-slate-900 dark:text-slate-200 sm:text-3xl'>
-        Tray
+        Inventory
       </h1>
       <button
         className='float-right my-2 bg-gray-500 px-3 py-1 text-base text-white hover:bg-gray-400'
@@ -55,7 +55,7 @@ const Inventory = () => {
         <tbody className='bg-white dark:bg-gray-800'>
           {itemsArray.map((armor, index) => (
             <tr
-              key={armor.id}
+              key={armor.name}
               className={index % 2 ? 'bg-gray-50 dark:bg-gray-700' : ''}
             >
               <td className={cellClassnames}>{armor.name}</td>

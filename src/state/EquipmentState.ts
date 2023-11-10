@@ -4,16 +4,17 @@ import type { ArmorEntry } from '@/domain/armor'
 import type { WeaponEntry } from '@/domain/weapon'
 
 export type EquipmentStateType = {
-  armor: Record<string, ArmorEntry>
-  weapons: Record<string, WeaponEntry>
+  armor: ReadonlyArray<ArmorEntry>
+  weapons: ReadonlyArray<WeaponEntry>
   isCostRural: boolean
   // reset: CallableFunction
 }
 
+// TODO rename to InventoryState
 export const EquipmentState = hookstate<EquipmentStateType>({
-  armor: {},
+  armor: [],
   isCostRural: true,
-  weapons: {},
+  weapons: [],
   // reset: () => {},
 })
 
