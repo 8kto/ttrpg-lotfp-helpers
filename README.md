@@ -6,7 +6,7 @@ Lamentations of the Flame Princess helpers.
 
 ## Features list
 * [ ] Equipment list from the core book
-    * [ ] Armor
+    * [x] Armor
     * [ ] Weapon, melee and missile
     * [ ] Common items
     * [ ] Details for each item
