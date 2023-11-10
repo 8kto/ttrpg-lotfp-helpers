@@ -1,17 +1,26 @@
 ![build](https://github.com/8kto/ttrpg-lotfp-helpers/actions/workflows/main.yml/badge.svg)
 
 # Princess Helpers
-
 Lamentations of the Flame Princess helpers.
 
-- Equipment lists and encumbrance
+
+## Features list
+* [ ] Equipment list from the core book
+    * [ ] Armor
+    * [ ] Weapon, melee and missile
+    * [ ] Common items
+    * [ ] Details for each item
+* [ ] Costs, encumbrance and movement calculation
+    * [ ]  Terrain type factor
+* [ ] Custom equipment entries
+* [ ] Inventory saved in session and survives the page reload
+
 
 ## Getting Started
-
-First, run the development server:
+Run the development server:
 
 ```bash
-npm run dev
+yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
