@@ -1,6 +1,6 @@
-import { Dice } from '@/shared/types'
-import { EncumbrancePoint } from '@/shared/types/encumbrance'
-import type { MeleeWeaponEntry } from '@/shared/types/weapon'
+import { Dice } from '../../domain'
+import { EncumbrancePoint } from '@/domain/encumbrance'
+import type { MeleeWeaponEntry } from '@/domain/weapon'
 
 export const MeleeWeapons: Record<number, MeleeWeaponEntry> = {
   1: {
