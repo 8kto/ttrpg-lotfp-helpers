@@ -28,19 +28,3 @@ export type MovementTuple = {
   [Movement.MilesPerDay]: number
 }
 
-// FIXME better name + move values out of types
-export const MovementMap: Record<Encumbrance, MovementTuple> = {
-  [Encumbrance.Unencumbered]: {
-    [Movement.Exploration]: 12,
-    [Movement.Combat]: 40,
-    [Movement.Running]: 120,
-    [Movement.MilesPerDay]: 24,
-  },
-  // TODO
-  [Encumbrance.Lightly]: {
-    [Movement.Exploration]: 12,
-    [Movement.Combat]: 40,
-    [Movement.Running]: 120,
-    [Movement.MilesPerDay]: 24,
-  },
-}
