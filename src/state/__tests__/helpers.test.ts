@@ -17,51 +17,47 @@ describe('Inventory helpers', () => {
     it('should combine state props', () => {
       // Mock equipment state
       const mockEquipmentState = createStateMock({
-        armor: {
-          1: {
+        armor: [
+          {
             armorClass: 14,
             cityCost: 25,
-            id: 1,
             name: 'Leather',
             points: EncumbrancePoint.None,
             ruralCost: 50,
             type: ArmorType.Armor,
           },
-          2: {
+          {
             armorClass: 16,
             cityCost: 100,
-            id: 2,
             name: 'Chain',
             points: EncumbrancePoint.Oversized,
             ruralCost: null,
             type: ArmorType.Armor,
           },
-        },
+        ],
         isCostRural: false,
-        weapons: {
-          1: {
+        weapons: [
+          {
             cityCost: 10,
             damage: {
               dice: Dice.d3,
               x: 1,
             },
-            id: 1,
             name: 'Cestus',
             points: EncumbrancePoint.None,
             ruralCost: null,
           },
-          2: {
+          {
             cityCost: 5,
             damage: {
               dice: Dice.d6,
               x: 1,
             },
-            id: 2,
             name: 'Garrote',
             points: EncumbrancePoint.None,
             ruralCost: null,
           },
-        },
+        ],
       })
 
       const combinedEquipment = combineEquipment(mockEquipmentState)
@@ -71,7 +67,6 @@ describe('Inventory helpers', () => {
         {
           armorClass: 14,
           cityCost: 25,
-          id: 1,
           name: 'Leather',
           points: EncumbrancePoint.None,
           ruralCost: 50,
@@ -80,7 +75,6 @@ describe('Inventory helpers', () => {
         {
           armorClass: 16,
           cityCost: 100,
-          id: 2,
           name: 'Chain',
           points: EncumbrancePoint.Oversized,
           ruralCost: null,
@@ -92,7 +86,6 @@ describe('Inventory helpers', () => {
             dice: Dice.d3,
             x: 1,
           },
-          id: 1,
           name: 'Cestus',
           points: EncumbrancePoint.None,
           ruralCost: null,
@@ -103,7 +96,6 @@ describe('Inventory helpers', () => {
             dice: Dice.d6,
             x: 1,
           },
-          id: 2,
           name: 'Garrote',
           points: EncumbrancePoint.None,
           ruralCost: null,
@@ -117,9 +109,9 @@ describe('Inventory helpers', () => {
     it('should return an empty array if there are no items', () => {
       // Mock empty equipment state
       const mockEmptyEquipmentState = createStateMock({
-        armor: {},
+        armor: [],
         isCostRural: false,
-        weapons: {},
+        weapons: [],
       })
 
       const combinedEquipment = combineEquipment(mockEmptyEquipmentState)

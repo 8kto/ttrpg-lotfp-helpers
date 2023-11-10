@@ -28,21 +28,18 @@ describe('helpers', () => {
       const items: EquipmentItem[] = [
         {
           cityCost: 100,
-          id: 1,
           name: 'Sword',
           points: EncumbrancePoint.Regular,
           ruralCost: null,
         },
         {
           cityCost: 50,
-          id: 2,
           name: 'Shield',
           points: EncumbrancePoint.Oversized,
           ruralCost: null,
         },
         {
           cityCost: 200,
-          id: 3,
           name: 'Armor',
           points: EncumbrancePoint.Heavy,
           ruralCost: null,
