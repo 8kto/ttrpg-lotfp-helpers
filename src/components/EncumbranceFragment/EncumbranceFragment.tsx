@@ -1,12 +1,15 @@
 import { useHookstate } from '@hookstate/core'
 import React from 'react'
 
-import { getEncumbrance, getTotal } from '@/components/EncumbranceBadge/helpers'
-import MovementBadge from '@/components/MovementBadge/MovementBadge'
+import {
+  getEncumbrance,
+  getTotal,
+} from '@/components/EncumbranceFragment/helpers'
+import MovementFragment from '@/components/MovementFragment/MovementFragment'
 import { EquipmentState } from '@/state/EquipmentState'
 import { combineEquipment } from '@/state/helpers'
 
-const EncumbranceBadge = () => {
+const EncumbranceFragment = () => {
   const equipmentState = useHookstate(EquipmentState)
 
   const { totalPoints, totalCost } = getTotal(combineEquipment(equipmentState))
@@ -18,10 +21,10 @@ const EncumbranceBadge = () => {
       </li>
       <li>Total: {totalCost} sp</li>
       <li>
-        <MovementBadge encumbrance={encumbrance} />
+        <MovementFragment encumbrance={encumbrance} />
       </li>
     </ul>
   )
 }
 
-export default EncumbranceBadge
+export default EncumbranceFragment

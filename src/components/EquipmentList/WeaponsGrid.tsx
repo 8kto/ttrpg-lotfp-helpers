@@ -1,7 +1,7 @@
 import { none, useHookstate } from '@hookstate/core'
 import React from 'react'
 
-import DamageLabel from '@/components/DamageLabel'
+import DamageFragment from '@/components/DamageFragment'
 import type { DataGridColumn } from '@/components/DataGrid/DataGrid'
 import DataGrid from '@/components/DataGrid/DataGrid'
 import { Equipment } from '@/config/Equipment'
@@ -29,7 +29,7 @@ const columns: ReadonlyArray<DataGridColumn<WeaponEntry>> = [
   },
   {
     key: 'damage',
-    render: (item: WeaponEntry) => <DamageLabel damage={item.damage} />,
+    render: (item: WeaponEntry) => <DamageFragment damage={item.damage} />,
     title: 'Damage',
   },
   {

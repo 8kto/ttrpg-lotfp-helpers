@@ -3,7 +3,7 @@ import React from 'react'
 import { MovementRates } from '@/config/MovementRates'
 import type { Encumbrance } from '@/domain/encumbrance'
 
-const MovementBadge = ({ encumbrance }: { encumbrance: Encumbrance }) => {
+const MovementFragment = ({ encumbrance }: { encumbrance: Encumbrance }) => {
   const movement = MovementRates[encumbrance]
 
   return (
@@ -19,4 +19,4 @@ const MovementBadge = ({ encumbrance }: { encumbrance: Encumbrance }) => {
   )
 }
 
-export default MovementBadge
+export default MovementFragment

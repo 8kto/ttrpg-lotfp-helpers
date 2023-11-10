@@ -1,4 +1,7 @@
-import { getEncumbrance, getTotal } from '@/components/EncumbranceBadge/helpers'
+import {
+  getEncumbrance,
+  getTotal,
+} from '@/components/EncumbranceFragment/helpers'
 import type { EquipmentItem } from '@/domain'
 import { Encumbrance, EncumbrancePoint } from '@/domain/encumbrance'
 

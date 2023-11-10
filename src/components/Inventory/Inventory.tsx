@@ -1,7 +1,7 @@
 import { useHookstate } from '@hookstate/core'
 import React from 'react'
 
-import EncumbranceBadge from '@/components/EncumbranceBadge/EncumbranceBadge'
+import EncumbranceFragment from '@/components/EncumbranceFragment/EncumbranceFragment'
 import type { ArmorEntry } from '@/domain/armor'
 import { ArmorType } from '@/domain/armor'
 import { EncumbrancePoint } from '@/domain/encumbrance'
@@ -33,7 +33,7 @@ const Inventory = () => {
         Reset
       </button>
 
-      <EncumbranceBadge />
+      <EncumbranceFragment />
 
       <table className='min-w-full'>
         <thead className='bg-gray-50 dark:bg-gray-700'>
