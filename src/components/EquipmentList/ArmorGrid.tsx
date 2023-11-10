@@ -42,12 +42,12 @@ const ArmorGrid = () => {
   const equipmentState = useHookstate(EquipmentState)
 
   const handleCheckboxChange = (item: ArmorEntry) => {
-    const isAdded = equipmentState.armor.get().some(i => item.name === i.name)
+    const isAdded = equipmentState.armor.get().some((i) => item.name === i.name)
 
     if (isAdded) {
-      equipmentState.armor.set(a => a.filter(i => item.name !== i.name))
+      equipmentState.armor.set((a) => a.filter((i) => item.name !== i.name))
     } else {
-      equipmentState.armor.set(a => a.concat(item))
+      equipmentState.armor.set((a) => a.concat(item))
     }
   }
 
@@ -56,7 +56,7 @@ const ArmorGrid = () => {
   }
 
   const isChecked = (item: ArmorEntry) => {
-    return equipmentState.armor.get().some(i => item.name === i.name)
+    return equipmentState.armor.get().some((i) => item.name === i.name)
   }
 
   return (

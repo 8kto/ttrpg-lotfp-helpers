@@ -42,12 +42,14 @@ const columns: ReadonlyArray<DataGridColumn<WeaponEntry>> = [
 const WeaponsGrid = () => {
   const equipmentState = useHookstate(EquipmentState)
   const handleCheckboxChange = (item: WeaponEntry) => {
-    const isAdded = equipmentState.weapons.get().some(i => item.name === i.name)
+    const isAdded = equipmentState.weapons
+      .get()
+      .some((i) => item.name === i.name)
 
     if (isAdded) {
-      equipmentState.weapons.set(a => a.filter(i => item.name !== i.name))
+      equipmentState.weapons.set((a) => a.filter((i) => item.name !== i.name))
     } else {
-      equipmentState.weapons.set(a => a.concat(item))
+      equipmentState.weapons.set((a) => a.concat(item))
     }
   }
 
@@ -56,7 +58,7 @@ const WeaponsGrid = () => {
   }
 
   const isChecked = (item: WeaponEntry) => {
-    return equipmentState.weapons.get().some(i => item.name === i.name)
+    return equipmentState.weapons.get().some((i) => item.name === i.name)
   }
 
   return (
