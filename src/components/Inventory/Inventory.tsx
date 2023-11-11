@@ -1,8 +1,6 @@
 import React from 'react'
 
 import InventoryDetails from '@/components/EncumbranceFragment/InventoryDetails'
-import type { ArmorEntry } from '@/domain/armor'
-import { ArmorType } from '@/domain/armor'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import { combineEquipment } from '@/state/helpers'
 import { useInventoryState } from '@/state/InventoryState'
@@ -70,18 +68,16 @@ const Inventory = () => {
           </tr>
         </thead>
         <tbody className='bg-white dark:bg-gray-800'>
-          {itemsArray.map((armor, index) => (
+          {itemsArray.map((item, index) => (
             <tr
-              key={armor.name}
+              key={item.name}
               className={index % 2 ? 'bg-gray-50 dark:bg-gray-700' : ''}
             >
-              <td className={`${cellClassnames} truncate`}>{armor.name}</td>
+              <td className={`${cellClassnames} truncate`}>{item.name}</td>
+              <td className={cellClassnames}>{item.type}</td>
+              <td className={cellClassnames}>{item.cityCost}</td>
               <td className={cellClassnames}>
-                {ArmorType[(armor as ArmorEntry).type]}
-              </td>
-              <td className={cellClassnames}>{armor.cityCost}</td>
-              <td className={cellClassnames}>
-                {EncumbrancePoint[armor.points]}
+                {EncumbrancePoint[item.points]}
               </td>
             </tr>
           ))}
