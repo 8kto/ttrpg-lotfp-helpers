@@ -5,11 +5,11 @@ import type { ArmorEntry } from '@/domain/armor'
 import { ArmorType } from '@/domain/armor'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { MeleeWeaponEntry } from '@/domain/weapon'
-import type { EquipmentStateType } from '@/state/EquipmentState'
 import { combineEquipment } from '@/state/helpers'
+import type { InventoryStateType } from '@/state/InventoryState'
 
-const createStateMock = (payload: EquipmentStateType) => {
-  return hookstate<EquipmentStateType>(payload)
+const createStateMock = (payload: InventoryStateType) => {
+  return hookstate<InventoryStateType>(payload)
 }
 
 describe('Inventory helpers', () => {

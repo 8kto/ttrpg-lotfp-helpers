@@ -7,7 +7,7 @@ import DataGrid from '@/components/DataGrid/DataGrid'
 import { Equipment } from '@/config/Equipment'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { WeaponEntry } from '@/domain/weapon'
-import { EquipmentState } from '@/state/EquipmentState'
+import { InventoryState } from '@/state/InventoryState'
 
 const columns: ReadonlyArray<DataGridColumn<WeaponEntry>> = [
   {
@@ -40,7 +40,7 @@ const columns: ReadonlyArray<DataGridColumn<WeaponEntry>> = [
 ]
 
 const WeaponsGrid = () => {
-  const equipmentState = useHookstate(EquipmentState)
+  const equipmentState = useHookstate(InventoryState)
   const handleCheckboxChange = (item: WeaponEntry) => {
     const index = equipmentState.weapons
       .get()

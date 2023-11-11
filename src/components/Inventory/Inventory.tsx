@@ -1,25 +1,20 @@
-import { useHookstate } from '@hookstate/core'
 import React from 'react'
 
 import EncumbranceFragment from '@/components/EncumbranceFragment/EncumbranceFragment'
 import type { ArmorEntry } from '@/domain/armor'
 import { ArmorType } from '@/domain/armor'
 import { EncumbrancePoint } from '@/domain/encumbrance'
-import { EquipmentState } from '@/state/EquipmentState'
 import { combineEquipment } from '@/state/helpers'
+import { useInventoryState } from '@/state/InventoryState'
 
 const Inventory = () => {
-  const equipmentState = useHookstate(EquipmentState)
+  const { state: equipmentState, resetEquipment } = useInventoryState()
   const itemsArray = combineEquipment(equipmentState)
 
   const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase dark:text-white`
   const cellClassnames = `p-4 text-sm font-normal text-gray-900 whitespace-nowrap dark:text-white`
 
-  const handleReset = () => {
-    equipmentState.armor.set([])
-    equipmentState.weapons.set([])
-    // equipmentState.reset() TODO ?
-  }
+  const handleReset = () => resetEquipment()
 
   return (
     <>

@@ -1,10 +1,10 @@
 import { useHookstate } from '@hookstate/core'
 import React from 'react'
 
-import { EquipmentState } from '@/state/EquipmentState'
+import { InventoryState } from '@/state/InventoryState'
 
 const CommandBar = () => {
-  const equipmentState = useHookstate(EquipmentState)
+  const equipmentState = useHookstate(InventoryState)
   const { isCostRural } = equipmentState
 
   const handleCostToggle: React.ChangeEventHandler<HTMLInputElement> = (

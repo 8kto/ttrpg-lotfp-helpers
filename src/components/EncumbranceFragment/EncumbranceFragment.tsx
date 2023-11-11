@@ -6,11 +6,11 @@ import {
   getTotal,
 } from '@/components/EncumbranceFragment/helpers'
 import MovementFragment from '@/components/MovementFragment/MovementFragment'
-import { EquipmentState } from '@/state/EquipmentState'
 import { combineEquipment } from '@/state/helpers'
+import { InventoryState } from '@/state/InventoryState'
 
 const EncumbranceFragment = () => {
-  const equipmentState = useHookstate(EquipmentState)
+  const equipmentState = useHookstate(InventoryState)
 
   const { totalPoints, totalCost } = getTotal(combineEquipment(equipmentState))
   const encumbrance = getEncumbrance(totalPoints)

@@ -7,7 +7,7 @@ import { Equipment } from '@/config/Equipment'
 import type { ArmorEntry } from '@/domain/armor'
 import { ArmorType } from '@/domain/armor'
 import { EncumbrancePoint } from '@/domain/encumbrance'
-import { EquipmentState } from '@/state/EquipmentState'
+import { InventoryState } from '@/state/InventoryState'
 
 const columns: ReadonlyArray<DataGridColumn<ArmorEntry>> = [
   {
@@ -39,7 +39,7 @@ const columns: ReadonlyArray<DataGridColumn<ArmorEntry>> = [
 ]
 
 const ArmorGrid = () => {
-  const equipmentState = useHookstate(EquipmentState)
+  const equipmentState = useHookstate(InventoryState)
 
   const handleCheckboxChange = (item: ArmorEntry) => {
     const index = equipmentState.armor
