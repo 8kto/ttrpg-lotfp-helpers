@@ -85,5 +85,4 @@ const ArmorGrid = () => {
 }
 
 // TODO sort numericals (AC, cost...)
-// TODO checkbox isRecorded
 export default ArmorGrid

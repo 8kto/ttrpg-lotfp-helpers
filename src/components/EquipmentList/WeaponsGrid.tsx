@@ -81,5 +81,4 @@ const WeaponsGrid = () => {
 }
 
 // TODO sort damage
-// TODO checkbox isRecorded
 export default WeaponsGrid
