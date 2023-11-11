@@ -12,7 +12,7 @@ export type InventoryStateType = {
 
 const initialInventoryState: Readonly<InventoryStateType> = {
   armor: [],
-  isCostRural: true,
+  isCostRural: false,
   weapons: [],
 }
 

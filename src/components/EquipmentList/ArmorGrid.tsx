@@ -1,5 +1,5 @@
 import { none, useHookstate } from '@hookstate/core'
-import React from 'react'
+import React, { useMemo } from 'react'
 
 import type { DataGridColumn } from '@/components/DataGrid/DataGrid'
 import DataGrid from '@/components/DataGrid/DataGrid'
@@ -20,14 +20,6 @@ const columns: ReadonlyArray<DataGridColumn<ArmorEntry>> = [
     title: 'Type',
   },
   {
-    key: 'cityCost',
-    title: 'City Cost',
-  },
-  {
-    key: 'ruralCost',
-    title: 'Rural Cost',
-  },
-  {
     key: 'armorClass',
     title: 'AC',
   },
@@ -38,18 +30,37 @@ const columns: ReadonlyArray<DataGridColumn<ArmorEntry>> = [
   },
 ]
 
+const cityCostColumn: DataGridColumn<ArmorEntry> = {
+  key: 'cityCost',
+  title: 'City Cost',
+}
+const ruralCostColumn: DataGridColumn<ArmorEntry> = {
+  key: 'ruralCost',
+  title: 'Rural Cost',
+}
+
 const ArmorGrid = () => {
   const equipmentState = useHookstate(InventoryState)
+  const { armor, isCostRural } = equipmentState
+  const columnsFilteredByCost = useMemo(() => {
+    return isCostRural.get()
+      ? [...columns, ruralCostColumn]
+      : [...columns, cityCostColumn]
+  }, [isCostRural])
+
+  const dataFilteredByCost = useMemo(() => {
+    const data = Object.values(Equipment.Armor)
+
+    return isCostRural.get() ? data.filter((i) => i.ruralCost !== null) : data
+  }, [isCostRural])
 
   const handleCheckboxChange = (item: ArmorEntry) => {
-    const index = equipmentState.armor
-      .get()
-      .findIndex((i) => item.name === i.name)
+    const index = armor.get().findIndex((i) => item.name === i.name)
 
     if (index === -1) {
-      equipmentState.armor.merge([item])
+      armor.merge([item])
     } else {
-      equipmentState.armor[index].set(none)
+      armor[index].set(none)
     }
   }
 
@@ -58,13 +69,13 @@ const ArmorGrid = () => {
   }
 
   const isChecked = (item: ArmorEntry) => {
-    return equipmentState.armor.get().some((i) => item.name === i.name)
+    return armor.get().some((i) => item.name === i.name)
   }
 
   return (
     <DataGrid<ArmorEntry>
-      data={Object.values(Equipment.Armor)}
-      columns={columns}
+      data={dataFilteredByCost}
+      columns={columnsFilteredByCost}
       onCheckboxChange={handleCheckboxChange}
       filterFn={filterName}
       isCheckedFn={isChecked}
@@ -74,6 +85,5 @@ const ArmorGrid = () => {
 }
 
 // TODO sort numericals (AC, cost...)
-// TODO cost switcher
 // TODO checkbox isRecorded
 export default ArmorGrid
