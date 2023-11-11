@@ -6,7 +6,7 @@ import DataGrid from '@/components/DataGrid/DataGrid'
 import { Equipment } from '@/config/Equipment'
 import type { ArmorEntry } from '@/domain/armor'
 import { EncumbrancePoint } from '@/domain/encumbrance'
-import deepclone from "@/shared/helpers/deepclone"
+import deepclone from '@/shared/helpers/deepclone'
 import { InventoryState } from '@/state/InventoryState'
 
 const columns: ReadonlyArray<DataGridColumn<ArmorEntry>> = [
@@ -38,8 +38,6 @@ const ruralCostColumn: DataGridColumn<ArmorEntry> = {
   key: 'ruralCost',
   title: 'Rural Cost',
 }
-
-
 
 const ArmorGrid = () => {
   const { armor, isCostRural } = useHookstate(InventoryState)

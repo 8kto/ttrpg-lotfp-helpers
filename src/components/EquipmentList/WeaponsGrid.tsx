@@ -60,7 +60,6 @@ const WeaponsGrid = () => {
     weapons[weapons.length].set(deepclone(item))
   }
 
-
   const filterName = (item: WeaponEntry, filterBy: string) => {
     return item.name.toLocaleLowerCase().includes(filterBy.toLocaleLowerCase())
   }

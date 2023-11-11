@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 
 import type { EquipmentItem } from '@/domain'
 
-
 export interface DataGridColumn<T extends EquipmentItem> {
   key: keyof T
   title: string
@@ -123,10 +122,10 @@ const DataGrid = <T extends EquipmentItem>({
               ))}
               <td className='whitespace-nowrap p-4 text-sm font-normal text-gray-900'>
                 <button
-                  className="bg-red-800 hover:bg-red-500 text-white font-bold py-2 px-4 rounded inline-flex items-center"
+                  className='inline-flex items-center rounded bg-red-800 px-4 py-2 font-bold text-white hover:bg-red-500'
                   onClick={() => onAddClick(item)}
                 >
-                  <PlusIcon className="h-5 w-5 mr-2" />
+                  <PlusIcon className='mr-2 h-5 w-5' />
                   Add
                 </button>
               </td>
