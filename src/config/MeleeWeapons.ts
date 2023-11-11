@@ -13,7 +13,7 @@ export const MeleeWeapons: ReadonlyArray<MeleeWeaponEntry> = [
     name: 'Cestus',
     points: EncumbrancePoint.None,
     ruralCost: null,
-    type: WeaponType.MeleeWeapon,
+    type: WeaponType.Melee,
   },
   {
     cityCost: 5,
@@ -24,7 +24,7 @@ export const MeleeWeapons: ReadonlyArray<MeleeWeaponEntry> = [
     name: 'Garrote',
     points: EncumbrancePoint.None,
     ruralCost: null,
-    type: WeaponType.MeleeWeapon,
+    type: WeaponType.Melee,
   },
   {
     cityCost: 30,
@@ -38,7 +38,7 @@ export const MeleeWeapons: ReadonlyArray<MeleeWeaponEntry> = [
     points: EncumbrancePoint.Oversized,
     ruralCost: null,
     twoHanded: true,
-    type: WeaponType.MeleeWeapon,
+    type: WeaponType.Melee,
   },
   {
     cityCost: 20,
@@ -48,7 +48,7 @@ export const MeleeWeapons: ReadonlyArray<MeleeWeaponEntry> = [
     points: EncumbrancePoint.Oversized,
     ruralCost: null,
     twoHanded: true,
-    type: WeaponType.MeleeWeapon,
+    type: WeaponType.Melee,
   },
   {
     cityCost: 30,
@@ -62,7 +62,7 @@ export const MeleeWeapons: ReadonlyArray<MeleeWeaponEntry> = [
     points: EncumbrancePoint.Oversized,
     ruralCost: null,
     twoHanded: true,
-    type: WeaponType.MeleeWeapon,
+    type: WeaponType.Melee,
   },
   {
     cityCost: 15,
@@ -73,7 +73,7 @@ export const MeleeWeapons: ReadonlyArray<MeleeWeaponEntry> = [
     name: 'Rapier',
     points: EncumbrancePoint.Regular,
     ruralCost: null,
-    type: WeaponType.MeleeWeapon,
+    type: WeaponType.Melee,
   },
   {
     cityCost: 5,
@@ -87,7 +87,7 @@ export const MeleeWeapons: ReadonlyArray<MeleeWeaponEntry> = [
     points: EncumbrancePoint.Regular,
     ruralCost: 3,
     twoHanded: false,
-    type: WeaponType.MeleeWeapon,
+    type: WeaponType.Melee,
   },
   {
     cityCost: 5,
@@ -98,7 +98,7 @@ export const MeleeWeapons: ReadonlyArray<MeleeWeaponEntry> = [
     name: 'Staff',
     points: EncumbrancePoint.Regular,
     ruralCost: 3,
-    type: WeaponType.MeleeWeapon,
+    type: WeaponType.Melee,
   },
   {
     cityCost: 50,
@@ -155,6 +155,6 @@ export const MeleeWeapons: ReadonlyArray<MeleeWeaponEntry> = [
     name: 'Whip',
     points: EncumbrancePoint.Regular,
     ruralCost: 25,
-    type: WeaponType.MeleeWeapon,
+    type: WeaponType.Melee,
   },
 ]

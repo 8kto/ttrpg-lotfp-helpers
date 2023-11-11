@@ -47,7 +47,7 @@ describe('Inventory helpers', () => {
             name: 'Cestus',
             points: EncumbrancePoint.None,
             ruralCost: null,
-            type: WeaponType.MeleeWeapon,
+            type: WeaponType.Melee,
           },
           {
             cityCost: 5,
@@ -58,7 +58,7 @@ describe('Inventory helpers', () => {
             name: 'Garrote',
             points: EncumbrancePoint.None,
             ruralCost: null,
-            type: WeaponType.MeleeWeapon,
+            type: WeaponType.Melee,
           },
         ],
       })
@@ -92,7 +92,7 @@ describe('Inventory helpers', () => {
           name: 'Cestus',
           points: EncumbrancePoint.None,
           ruralCost: null,
-          type: WeaponType.MeleeWeapon,
+          type: WeaponType.Melee,
         },
         {
           cityCost: 5,
@@ -103,7 +103,7 @@ describe('Inventory helpers', () => {
           name: 'Garrote',
           points: EncumbrancePoint.None,
           ruralCost: null,
-          type: WeaponType.MeleeWeapon,
+          type: WeaponType.Melee,
         },
       ]
 

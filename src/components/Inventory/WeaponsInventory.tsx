@@ -1,5 +1,6 @@
 import React from 'react'
 
+import DamageFragment from '@/components/DamageFragment'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import { useInventoryState } from '@/state/InventoryState'
 
@@ -7,20 +8,17 @@ const WeaponsInventory = () => {
   const { state: equipmentState } = useInventoryState()
   const { weapons } = equipmentState
 
-  const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase dark:text-white`
-  const cellClassnames = `p-4 text-sm font-normal text-gray-900 whitespace-nowrap dark:text-white`
+  const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase`
+  const cellClassnames = `p-4 text-sm font-normal text-gray-900`
 
   return (
     <table className='w-full table-fixed'>
       <thead className='bg-gray-50 dark:bg-gray-700'>
         <tr>
-          <th scope='col' className={`${headerCellClassnames} w-1/3 truncate`}>
+          <th scope='col' className={`${headerCellClassnames} w-2/3 truncate`}>
             Name
           </th>
           <th scope='col' className={`${headerCellClassnames} w-1/4`}>
-            Type
-          </th>
-          <th scope='col' className={`${headerCellClassnames} w-1/6`}>
             Cost
           </th>
           <th scope='col' className={`${headerCellClassnames} w-1/4`}>
@@ -30,12 +28,20 @@ const WeaponsInventory = () => {
       </thead>
       <tbody className='bg-white dark:bg-gray-800'>
         {weapons.get().map((item, index) => (
-          <tr
-            key={item.name}
-            className={index % 2 ? 'bg-gray-50 dark:bg-gray-700' : ''}
-          >
-            <td className={`${cellClassnames} truncate`}>{item.name}</td>
-            <td className={cellClassnames}>{item.type}</td>
+          <tr key={item.name} className={index % 2 ? 'bg-gray-50' : ''}>
+            <td className={`${cellClassnames} truncate`}>
+              <details>
+                <summary className='cursor-pointer truncate p-4 pl-0'>
+                  {item.name} (<DamageFragment damage={item.damage} />)
+                </summary>
+                <>{item.details}</>
+                <ul className='ml-4 list-disc pl-4'>
+                  <li>
+                    Damage: (<DamageFragment damage={item.damage} />)
+                  </li>
+                </ul>
+              </details>
+            </td>
             <td className={cellClassnames}>{item.cityCost}</td>
             <td className={cellClassnames}>{EncumbrancePoint[item.points]}</td>
           </tr>

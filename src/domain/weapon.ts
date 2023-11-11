@@ -13,9 +13,9 @@ export enum WeaponType {
   Medium = 'Medium',
   Great = 'Great',
   // General type for any other melee weapon
-  MeleeWeapon = 'MeleeWeapon',
+  Melee = 'Melee',
   // Missiles: bow, crossbow, sling etc.
-  MissileWeapon = 'MissileWeapon',
+  Missile = 'Missile',
 }
 
 export interface WeaponEntry extends EquipmentItem {
