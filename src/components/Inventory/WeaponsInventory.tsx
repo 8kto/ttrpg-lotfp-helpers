@@ -9,7 +9,7 @@ const WeaponsInventory = () => {
   const { weapons } = equipmentState
 
   const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase`
-  const cellClassnames = `p-4 text-sm font-normal text-gray-900`
+  const cellClassnames = `px-4 text-sm font-normal text-gray-900`
 
   return (
     <table className='w-full table-fixed'>
@@ -32,14 +32,23 @@ const WeaponsInventory = () => {
             <td className={`${cellClassnames} truncate`}>
               <details>
                 <summary className='cursor-pointer truncate p-4 pl-0'>
-                  {item.name} (<DamageFragment damage={item.damage} />)
+                  {item.name}{' '}
+                  {item.damage ? (
+                    <>
+                      (<DamageFragment damage={item.damage} />)
+                    </>
+                  ) : (
+                    ''
+                  )}
                 </summary>
-                <>{item.details}</>
-                <ul className='ml-4 list-disc pl-4'>
-                  <li>
-                    Damage: (<DamageFragment damage={item.damage} />)
-                  </li>
-                </ul>
+                <div className='pb-4'>
+                  <>{item.details}</>
+                  <ul className='ml-4 list-disc pl-4'>
+                    <li>
+                      Damage: (<DamageFragment damage={item.damage} />)
+                    </li>
+                  </ul>
+                </div>
               </details>
             </td>
             <td className={cellClassnames}>{item.cityCost}</td>
