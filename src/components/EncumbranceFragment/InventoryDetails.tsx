@@ -9,7 +9,7 @@ import MovementFragment from '@/components/MovementFragment/MovementFragment'
 import { combineEquipment } from '@/state/helpers'
 import { InventoryState } from '@/state/InventoryState'
 
-const EncumbranceFragment = () => {
+const InventoryDetails = () => {
   const equipmentState = useHookstate(InventoryState)
 
   const { totalPoints, totalCost } = getTotal(combineEquipment(equipmentState))
@@ -20,7 +20,7 @@ const EncumbranceFragment = () => {
         Total: <strong>{totalCost}</strong> sp
       </li>
       <li>
-        <strong>{encumbrance}</strong> ({totalPoints})
+        <strong>{encumbrance}</strong> ({totalPoints.toPrecision(2)})
       </li>
       <li>
         <MovementFragment encumbrance={encumbrance} />
@@ -29,4 +29,4 @@ const EncumbranceFragment = () => {
   )
 }
 
-export default EncumbranceFragment
+export default InventoryDetails

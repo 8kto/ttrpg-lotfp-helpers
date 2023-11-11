@@ -1,6 +1,6 @@
 import React from 'react'
 
-import EncumbranceFragment from '@/components/EncumbranceFragment/EncumbranceFragment'
+import InventoryDetails from '@/components/EncumbranceFragment/InventoryDetails'
 import type { ArmorEntry } from '@/domain/armor'
 import { ArmorType } from '@/domain/armor'
 import { EncumbrancePoint } from '@/domain/encumbrance'
@@ -48,7 +48,7 @@ const Inventory = () => {
         </div>
       </div>
 
-      <EncumbranceFragment />
+      <InventoryDetails />
 
       <table className='min-w-full'>
         <thead className='bg-gray-50 dark:bg-gray-700'>
