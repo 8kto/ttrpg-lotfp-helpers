@@ -6,7 +6,7 @@ import { useInventoryState } from '@/state/InventoryState'
 
 const WeaponsInventory = () => {
   const { state: equipmentState } = useInventoryState()
-  const { weapons, isCostRural } = equipmentState
+  const { weapons } = equipmentState
 
   const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase`
   const cellClassnames = `px-4 text-sm font-normal text-gray-900`
@@ -57,7 +57,7 @@ const WeaponsInventory = () => {
               </details>
             </td>
             <td className={cellClassnames}>
-              {isCostRural.get() ? item.ruralCost : item.cityCost}
+              {item.cityCost !== undefined ? item.cityCost : item.ruralCost}
             </td>
             <td className={cellClassnames}>{EncumbrancePoint[item.points]}</td>
           </tr>

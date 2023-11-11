@@ -55,7 +55,13 @@ const ArmorGrid = () => {
   }, [isCostRural])
 
   const handleAddClick = (item: ArmorEntry) => {
-    armor[armor.length].set(deepclone(item))
+    const clone = deepclone(item)
+    // Workaround to drop cost variant in inventory
+    if (isCostRural.get()) {
+      delete clone[isCostRural ? 'cityCost' : 'ruralCost']
+    }
+
+    armor[armor.length].set(clone)
   }
 
   const filterName = (item: ArmorEntry, filterBy: string) => {
