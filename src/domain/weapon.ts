@@ -21,7 +21,6 @@ export enum WeaponType {
 export interface WeaponEntry extends EquipmentItem {
   damage: DamageDice | null
   type: WeaponType
-  details?: string
 }
 
 export interface MeleeWeaponEntry extends WeaponEntry {

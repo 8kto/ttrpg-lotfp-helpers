@@ -5,6 +5,7 @@ export interface EquipmentItem {
   cityCost: number
   ruralCost: number | null
   points: EncumbrancePoint
+  details?: string
 }
 
 export enum Dice {

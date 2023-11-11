@@ -84,4 +84,6 @@ const ArmorGrid = () => {
 }
 
 // TODO sort numericals (AC, cost...)
+// TODO copy value to fix the city/rural cost switch
+// TODO add button instead of checkbox
 export default ArmorGrid
