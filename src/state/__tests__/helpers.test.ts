@@ -5,6 +5,7 @@ import type { ArmorEntry } from '@/domain/armor'
 import { ArmorType } from '@/domain/armor'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { MeleeWeaponEntry } from '@/domain/weapon'
+import { WeaponType } from '@/domain/weapon'
 import { combineEquipment } from '@/state/helpers'
 import type { InventoryStateType } from '@/state/InventoryState'
 
@@ -46,6 +47,7 @@ describe('Inventory helpers', () => {
             name: 'Cestus',
             points: EncumbrancePoint.None,
             ruralCost: null,
+            type: WeaponType.MeleeWeapon,
           },
           {
             cityCost: 5,
@@ -56,6 +58,7 @@ describe('Inventory helpers', () => {
             name: 'Garrote',
             points: EncumbrancePoint.None,
             ruralCost: null,
+            type: WeaponType.MeleeWeapon,
           },
         ],
       })
@@ -89,6 +92,7 @@ describe('Inventory helpers', () => {
           name: 'Cestus',
           points: EncumbrancePoint.None,
           ruralCost: null,
+          type: WeaponType.MeleeWeapon,
         },
         {
           cityCost: 5,
@@ -99,6 +103,7 @@ describe('Inventory helpers', () => {
           name: 'Garrote',
           points: EncumbrancePoint.None,
           ruralCost: null,
+          type: WeaponType.MeleeWeapon,
         },
       ]
 
