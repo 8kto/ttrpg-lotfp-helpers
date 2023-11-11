@@ -77,7 +77,7 @@ const WeaponsGrid = () => {
     <DataGrid<WeaponEntry>
       data={dataFilteredByCost}
       columns={columnsFilteredByCost}
-      onCheckboxChange={handleCheckboxChange}
+      onAddClick={handleCheckboxChange}
       filterFn={filterName}
       isCheckedFn={isChecked}
       filterPlaceholder={'Filter by name'}

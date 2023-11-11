@@ -1,6 +1,8 @@
+import { PlusCircleIcon as PlusIcon } from '@heroicons/react/24/solid'
 import React, { useEffect, useState } from 'react'
 
 import type { EquipmentItem } from '@/domain'
+
 
 export interface DataGridColumn<T extends EquipmentItem> {
   key: keyof T
@@ -19,10 +21,9 @@ interface DataGridProps<T extends EquipmentItem> {
   data: ReadonlyArray<T>
   columns: ReadonlyArray<DataGridColumn<T>>
   initialSortState?: SortConfig<T>
-  onCheckboxChange: (item: T) => void
+  onAddClick: (item: T) => void
   onSortChange?: (key: keyof T, direction: SortOrder) => void
   filterFn: (item: T, filter: string) => boolean
-  isCheckedFn: (item: T) => boolean
   filterPlaceholder?: string
 }
 
@@ -30,10 +31,9 @@ const DataGrid = <T extends EquipmentItem>({
   data,
   columns,
   initialSortState,
-  onCheckboxChange,
+  onAddClick,
   onSortChange,
   filterFn,
-  isCheckedFn,
   filterPlaceholder = 'Filter',
 }: DataGridProps<T>) => {
   const [sortConfig, setSortConfig] = useState<SortConfig<T>>({
@@ -94,7 +94,6 @@ const DataGrid = <T extends EquipmentItem>({
       <table className='min-w-full'>
         <thead className='bg-gray-50'>
           <tr>
-            <th scope='col' className={headerCellClassnames}></th>
             {columns.map((column) => (
               <th
                 key={column.key as string}
@@ -106,30 +105,31 @@ const DataGrid = <T extends EquipmentItem>({
                 {column.title} {sortIcon(column.key as string)}
               </th>
             ))}
+            <th scope='col' className={headerCellClassnames}></th>
           </tr>
         </thead>
         <tbody className='bg-white'>
           {filteredData.map((item, index) => (
             <tr key={item.name} className={index % 2 ? 'bg-gray-50' : ''}>
-              <td className='whitespace-nowrap p-4 text-sm font-normal text-gray-900'>
-                <input
-                  type='checkbox'
-                  checked={isCheckedFn(item)}
-                  onChange={() => onCheckboxChange(item)}
-                  onClick={(e) => e.stopPropagation()}
-                />
-              </td>
               {columns.map((column) => (
                 <td
                   key={column.key as string}
                   className='whitespace-nowrap p-4 text-sm font-normal text-gray-900'
-                  onClick={() => onCheckboxChange(item)}
                 >
                   {column.render
                     ? column.render(item)
                     : (item[column.key] as string)}
                 </td>
               ))}
+              <td className='whitespace-nowrap p-4 text-sm font-normal text-gray-900'>
+                <button
+                  className="bg-red-800 hover:bg-red-500 text-white font-bold py-2 px-4 rounded inline-flex items-center"
+                  onClick={() => onAddClick(item)}
+                >
+                  <PlusIcon className="h-5 w-5 mr-2" />
+                  Add
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>
