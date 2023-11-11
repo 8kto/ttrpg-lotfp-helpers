@@ -14,7 +14,7 @@ Lamentations of the Flame Princess helpers.
   - [x] Filter by city/rural cost
 - [ ] Extended list of equipment
 - [ ] Calculation
-  - [x] Cost 
+  - [x] Cost
   - [x] Encumbrance
   - [x] Movement
   - [ ] Terrain type factor

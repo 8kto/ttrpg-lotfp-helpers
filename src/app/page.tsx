@@ -12,7 +12,7 @@ export default function Home() {
             <div className='col-span-2 rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6'>
               <EquipmentList />
             </div>
-            <div className='md:col-span-1 sm:col-span-2 rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:p-6'>
+            <div className='rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:col-span-2 sm:p-6 md:col-span-1'>
               <Inventory />
             </div>
           </div>
