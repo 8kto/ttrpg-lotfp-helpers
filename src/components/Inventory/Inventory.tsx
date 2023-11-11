@@ -10,12 +10,10 @@ import { useInventoryState } from '@/state/InventoryState'
 const Inventory = () => {
   const { state: equipmentState, resetEquipment } = useInventoryState()
   const itemsArray = combineEquipment(equipmentState)
+  const handleReset = () => resetEquipment()
 
   const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase dark:text-white`
   const cellClassnames = `p-4 text-sm font-normal text-gray-900 whitespace-nowrap dark:text-white`
-
-  const handleReset = () => resetEquipment()
-
   return (
     <>
       <div className='flex w-full items-center justify-between'>
@@ -50,19 +48,19 @@ const Inventory = () => {
 
       <InventoryDetails />
 
-      <table className='min-w-full'>
+      <table className='w-full table-fixed'>
         <thead className='bg-gray-50 dark:bg-gray-700'>
           <tr>
-            <th scope='col' className={headerCellClassnames}>
+            <th scope='col' className={headerCellClassnames + ' w-1/3 truncate'}>
               Name
             </th>
-            <th scope='col' className={headerCellClassnames}>
+            <th scope='col' className={headerCellClassnames + ' w-1/4'}>
               Type
             </th>
-            <th scope='col' className={headerCellClassnames}>
+            <th scope='col' className={headerCellClassnames + ' w-1/6'}>
               Cost
             </th>
-            <th scope='col' className={headerCellClassnames}>
+            <th scope='col' className={headerCellClassnames + ' w-1/4'}>
               Weight
             </th>
           </tr>
@@ -73,7 +71,7 @@ const Inventory = () => {
               key={armor.name}
               className={index % 2 ? 'bg-gray-50 dark:bg-gray-700' : ''}
             >
-              <td className={cellClassnames}>{armor.name}</td>
+              <td className={cellClassnames + ' truncate'}>{armor.name}</td>
               <td className={cellClassnames}>
                 {ArmorType[(armor as ArmorEntry).type]}
               </td>
