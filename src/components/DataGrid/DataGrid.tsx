@@ -54,6 +54,7 @@ const DataGrid = <T extends EquipmentItem>({
             return sortConfig.direction === 'asc' ? 1 : -1
           }
         }
+
         return 0
       })
     setFilteredData(sortedData)
@@ -72,6 +73,7 @@ const DataGrid = <T extends EquipmentItem>({
     if (sortConfig.key !== key) {
       return null
     }
+
     return sortConfig.direction === 'asc' ? '↑' : '↓'
   }
 
