@@ -11,15 +11,18 @@ import { InventoryState } from '@/state/InventoryState'
 
 const columns: ReadonlyArray<DataGridColumn<WeaponEntry>> = [
   {
+    className: 'w-1/2 truncate',
     key: 'name',
     title: 'Name',
   },
   {
+    className: 'w-1/6',
     key: 'damage',
     render: (item: WeaponEntry) => <DamageFragment damage={item.damage} />,
     title: 'Damage',
   },
   {
+    className: 'w-1/6',
     key: 'points',
     render: (item: WeaponEntry) => <span>{EncumbrancePoint[item.points]}</span>,
     title: 'Weight',
@@ -27,10 +30,12 @@ const columns: ReadonlyArray<DataGridColumn<WeaponEntry>> = [
 ]
 
 const cityCostColumn: DataGridColumn<WeaponEntry> = {
+  className: 'w-1/6',
   key: 'cityCost',
   title: 'City Cost',
 }
 const ruralCostColumn: DataGridColumn<WeaponEntry> = {
+  className: 'w-1/6',
   key: 'ruralCost',
   title: 'Rural Cost',
 }

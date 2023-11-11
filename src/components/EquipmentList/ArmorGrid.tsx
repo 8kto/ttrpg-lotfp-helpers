@@ -5,25 +5,22 @@ import type { DataGridColumn } from '@/components/DataGrid/DataGrid'
 import DataGrid from '@/components/DataGrid/DataGrid'
 import { Equipment } from '@/config/Equipment'
 import type { ArmorEntry } from '@/domain/armor'
-import { ArmorType } from '@/domain/armor'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import { InventoryState } from '@/state/InventoryState'
 
 const columns: ReadonlyArray<DataGridColumn<ArmorEntry>> = [
   {
+    className: 'w-1/2',
     key: 'name',
     title: 'Name',
   },
   {
-    key: 'type',
-    render: (item: ArmorEntry) => <span>{ArmorType[item.type]}</span>,
-    title: 'Type',
-  },
-  {
+    className: 'w-1/6',
     key: 'armorClass',
     title: 'AC',
   },
   {
+    className: 'w-1/6',
     key: 'points',
     render: (item: ArmorEntry) => <span>{EncumbrancePoint[item.points]}</span>,
     title: 'Weight',
@@ -31,10 +28,12 @@ const columns: ReadonlyArray<DataGridColumn<ArmorEntry>> = [
 ]
 
 const cityCostColumn: DataGridColumn<ArmorEntry> = {
+  className: 'w-1/6',
   key: 'cityCost',
   title: 'City Cost',
 }
 const ruralCostColumn: DataGridColumn<ArmorEntry> = {
+  className: 'w-1/6',
   key: 'ruralCost',
   title: 'Rural Cost',
 }

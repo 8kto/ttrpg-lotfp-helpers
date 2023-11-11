@@ -5,6 +5,7 @@ import type { EquipmentItem } from '@/domain'
 export interface DataGridColumn<T extends EquipmentItem> {
   key: keyof T
   title: string
+  className?: string
   render?: (item: T) => React.ReactNode
 }
 
@@ -99,7 +100,7 @@ const DataGrid = <T extends EquipmentItem>({
                 key={column.key as string}
                 className={`${headerCellClassnames} ${
                   sortConfig.key === column.key ? 'font-bold' : ''
-                }`}
+                } ${column.className ?? ''}`}
                 onClick={() => handleSortClick(column.key)}
               >
                 {column.title} {sortIcon(column.key as string)}
