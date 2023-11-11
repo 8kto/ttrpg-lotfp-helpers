@@ -4,8 +4,12 @@ import InventoryDetails from '@/components/EncumbranceFragment/InventoryDetails'
 import ArmorInventory from '@/components/Inventory/ArmorInventory'
 import InventoryControls from '@/components/Inventory/InventoryControls'
 import WeaponsInventory from '@/components/Inventory/WeaponsInventory'
+import { useInventoryState } from '@/state/InventoryState'
 
 const Inventory = () => {
+  const { state: equipmentState } = useInventoryState()
+  const { armor, weapons } = equipmentState
+
   return (
     <>
       <div className='flex w-full items-center justify-between'>
@@ -16,11 +20,19 @@ const Inventory = () => {
       </div>
       <InventoryDetails />
 
-      <h2 className='my-4'>Armor</h2>
-      <ArmorInventory />
+      {!!armor.get().length && (
+        <>
+          <h2 className='my-4'>Armor</h2>
+          <ArmorInventory />
+        </>
+      )}
 
-      <h2 className='my-8 mb-4'>Weapons</h2>
-      <WeaponsInventory />
+      {!!weapons.get().length && (
+        <>
+          <h2 className='my-8 mb-4'>Weapons</h2>
+          <WeaponsInventory />
+        </>
+      )}
     </>
   )
 }

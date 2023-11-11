@@ -12,10 +12,10 @@ export default function EquipmentList() {
       </h1>
       <CommandBar />
 
-      <h3 className='mb-2 text-xl font-bold text-gray-900'>Armor</h3>
+      <h3 className='mb-4 mt-8 text-xl font-bold text-gray-900'>Armor</h3>
       <ArmorGrid />
 
-      <h3 className='mb-2 text-xl font-bold text-gray-900'>Weapons</h3>
+      <h3 className='mb-4 mt-8 text-xl font-bold text-gray-900'>Weapons</h3>
       <WeaponsGrid />
     </>
   )
