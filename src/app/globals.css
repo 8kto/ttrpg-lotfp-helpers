@@ -39,3 +39,21 @@ h6,
 .ph-font-cursive {
   font-family: var(--font-cursive);
 }
+
+details.ph-details-bullet > summary {
+  list-style: none;
+}
+
+details.ph-details-bullet > summary::-webkit-details-marker {
+  display: none;
+}
+
+.ph-custom-indicator {
+  transition: transform 0.3s ease;
+  font-size: 0.65rem;
+  line-height: 0.5rem;
+}
+
+details.ph-details-bullet[open] .ph-custom-indicator {
+  transform: rotate(90deg);
+}
