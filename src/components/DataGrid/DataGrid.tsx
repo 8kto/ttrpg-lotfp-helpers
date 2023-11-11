@@ -64,7 +64,7 @@ const DataGrid = <T extends EquipmentItem>({
           className='block w-full border-0 py-1.5 pl-7 pr-20 ring-1 ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6'
         />
       </div>
-      <table className='min-w-full'>
+      <table className='min-w-full table-fixed'>
         <thead className='bg-gray-50'>
           <tr>
             {columns.map((column) => (
@@ -78,7 +78,7 @@ const DataGrid = <T extends EquipmentItem>({
                 {column.title} {sortIcon(column.key as string)}
               </th>
             ))}
-            <th scope='col' className={headerCellClassnames}></th>
+            <th scope='col' className={`${headerCellClassnames} w-1/12`}></th>
           </tr>
         </thead>
         <tbody className='bg-white'>

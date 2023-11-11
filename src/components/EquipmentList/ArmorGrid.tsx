@@ -13,7 +13,7 @@ import { InventoryState } from '@/state/InventoryState'
 
 const columns: ReadonlyArray<DataGridColumn<ArmorEntry>> = [
   {
-    className: 'w-1/2',
+    className: 'w-1/3',
     key: 'name',
     title: 'Name',
   },
