@@ -14,18 +14,34 @@ const InventoryDetails = () => {
 
   const { totalPoints, totalCost } = getTotal(combineEquipment(equipmentState))
   const encumbrance = getEncumbrance(totalPoints)
+
   return (
-    <ul className='mb-4 list-disc space-y-3 pl-4 text-gray-500 dark:text-gray-400'>
-      <li>
-        Total: <strong>{totalCost}</strong> sp
-      </li>
-      <li>
-        <strong>{encumbrance}</strong> ({totalPoints.toPrecision(2)})
-      </li>
-      <li>
-        <MovementFragment encumbrance={encumbrance} />
-      </li>
-    </ul>
+    <div className='mt-6 border-t border-gray-100'>
+      <dl className='divide-y divide-gray-100'>
+        <div className='px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0'>
+          <dt className='text-sm font-medium leading-6 text-gray-900'>Total</dt>
+          <dd className='mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0'>
+            <strong>{totalCost}</strong> sp
+          </dd>
+        </div>
+        <div className='px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0'>
+          <dt className='text-sm font-medium leading-6 text-gray-900'>
+            Encumbrance
+          </dt>
+          <dd className='mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0'>
+            {encumbrance} ({totalPoints.toPrecision(2)})
+          </dd>
+        </div>
+        <div className='px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0'>
+          <dt className='text-sm font-medium leading-6 text-gray-900'>
+            Movement
+          </dt>
+          <dd className='mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0'>
+            <MovementFragment encumbrance={encumbrance} />
+          </dd>
+        </div>
+      </dl>
+    </div>
   )
 }
 

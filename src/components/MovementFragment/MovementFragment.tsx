@@ -8,12 +8,11 @@ const MovementFragment = ({ encumbrance }: { encumbrance: Encumbrance }) => {
 
   return (
     <>
-      Movement
-      <ul className='mb-4 ml-4 list-disc space-y-3 pl-4 text-gray-500'>
-        <li>Exploration: {movement['Exploration']}</li>
-        <li>Combat: {movement['Combat']}</li>
-        <li>Running: {movement['Running']}</li>
-        <li>Miles per day: {movement['MilesPerDay']}</li>
+      <ul className='list-disc pl-4'>
+        <li>Exploration: {movement['Exploration']} feet</li>
+        <li>Combat: {movement['Combat']} feet</li>
+        <li>Running: {movement['Running']} feet</li>
+        <li>Per day: {movement['MilesPerDay']} miles</li>
       </ul>
     </>
   )
