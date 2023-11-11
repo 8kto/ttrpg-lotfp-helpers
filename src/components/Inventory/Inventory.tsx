@@ -16,10 +16,10 @@ const Inventory = () => {
       </div>
       <InventoryDetails />
 
-      <h2>Armor</h2>
+      <h2 className='my-4'>Armor</h2>
       <ArmorInventory />
 
-      <h2>Weapons</h2>
+      <h2 className='my-8 mb-4'>Weapons</h2>
       <WeaponsInventory />
     </>
   )
