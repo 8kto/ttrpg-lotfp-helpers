@@ -19,7 +19,6 @@ Lamentations of the Flame Princess helpers.
   - [x] Encumbrance
   - [x] Movement
   - [ ] Terrain type factor
-  - [ ] Mounted
 - [ ] Custom equipment entries
 - [ ] Inventory is saved in session and survives the page reload
 - [ ] Languages support

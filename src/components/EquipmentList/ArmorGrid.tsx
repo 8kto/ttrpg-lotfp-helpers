@@ -1,9 +1,11 @@
 import { useHookstate } from '@hookstate/core'
 import React, { useMemo } from 'react'
 
-import type { DataGridColumn } from '@/components/DataGrid/DataGrid'
 import DataGrid from '@/components/DataGrid/DataGrid'
+import { trivialSort } from '@/components/DataGrid/helpers'
+import type { DataGridColumn, SortConfig } from '@/components/DataGrid/types'
 import { Equipment } from '@/config/Equipment'
+import type { EquipmentItem } from '@/domain'
 import type { ArmorEntry } from '@/domain/armor'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import deepclone from '@/shared/helpers/deepclone'
@@ -68,6 +70,31 @@ const ArmorGrid = () => {
     return item.name.toLocaleLowerCase().includes(filterBy.toLocaleLowerCase())
   }
 
+  const handleSort =
+    (sortConfig: SortConfig<EquipmentItem>) =>
+    (a: ArmorEntry, b: ArmorEntry): 1 | -1 | 0 => {
+      const isSpecialSort = (value: number | string) =>
+        typeof value === 'string' &&
+        value.startsWith('+') &&
+        (sortConfig as SortConfig<ArmorEntry>).key === 'armorClass'
+
+      // NB Extra logic just for a Shield, worth introducing an ArmorClass type?
+      if (isSpecialSort(a.armorClass) || isSpecialSort(b.armorClass)) {
+        if (a.armorClass === b.armorClass) {
+          return 0
+        }
+        if (isSpecialSort(a.armorClass)) {
+          return sortConfig.direction === 'asc' ? -1 : 1
+        }
+        if (isSpecialSort(b.armorClass)) {
+          return sortConfig.direction === 'asc' ? 1 : -1
+        }
+      }
+
+      // Fallback to the trivialSort function for other cases
+      return trivialSort(sortConfig)(a, b)
+    }
+
   return (
     <DataGrid<ArmorEntry>
       data={dataFilteredByCost}
@@ -75,9 +102,9 @@ const ArmorGrid = () => {
       onAddClick={handleAddClick}
       filterFn={filterName}
       filterPlaceholder={'Filter by name'}
+      handleSort={handleSort as typeof trivialSort}
     />
   )
 }
 
-// TODO sort numericals (AC, cost...)
 export default ArmorGrid

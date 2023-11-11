@@ -1,30 +1,13 @@
 import { PlusCircleIcon as PlusIcon } from '@heroicons/react/24/solid'
 import React, { useEffect, useState } from 'react'
 
+import { trivialSort } from '@/components/DataGrid/helpers'
+import type {
+  DataGridProps,
+  SortConfig,
+  SortOrder,
+} from '@/components/DataGrid/types'
 import type { EquipmentItem } from '@/domain'
-
-export interface DataGridColumn<T extends EquipmentItem> {
-  key: keyof T
-  title: string
-  className?: string
-  render?: (item: T) => React.ReactNode
-}
-
-type SortOrder = 'asc' | 'desc'
-type SortConfig<T extends EquipmentItem> = {
-  key: keyof T
-  direction: SortOrder
-}
-
-interface DataGridProps<T extends EquipmentItem> {
-  data: ReadonlyArray<T>
-  columns: ReadonlyArray<DataGridColumn<T>>
-  initialSortState?: SortConfig<T>
-  onAddClick: (item: T) => void
-  onSortChange?: (key: keyof T, direction: SortOrder) => void
-  filterFn: (item: T, filter: string) => boolean
-  filterPlaceholder?: string
-}
 
 const DataGrid = <T extends EquipmentItem>({
   data,
@@ -33,6 +16,7 @@ const DataGrid = <T extends EquipmentItem>({
   onAddClick,
   onSortChange,
   filterFn,
+  handleSort,
   filterPlaceholder = 'Filter',
 }: DataGridProps<T>) => {
   const [sortConfig, setSortConfig] = useState<SortConfig<T>>({
@@ -45,18 +29,8 @@ const DataGrid = <T extends EquipmentItem>({
   useEffect(() => {
     const sortedData = [...data]
       .filter((item) => filterFn(item, filter))
-      .sort((a, b) => {
-        if (sortConfig.key) {
-          if (a[sortConfig.key] < b[sortConfig.key]) {
-            return sortConfig.direction === 'asc' ? -1 : 1
-          }
-          if (a[sortConfig.key] > b[sortConfig.key]) {
-            return sortConfig.direction === 'asc' ? 1 : -1
-          }
-        }
+      .sort(handleSort ? handleSort(sortConfig) : trivialSort(sortConfig))
 
-        return 0
-      })
     setFilteredData(sortedData)
   }, [data, filter, filterFn, sortConfig])
 

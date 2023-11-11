@@ -6,6 +6,7 @@ export enum ArmorType {
   Shield = 'Shield',
 }
 
+// fixme align names Entry/Item
 export interface ArmorEntry extends EquipmentItem {
   type: ArmorType
   armorClass: number | string
