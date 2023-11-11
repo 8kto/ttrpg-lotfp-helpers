@@ -21,7 +21,7 @@ export enum Movement {
   MilesPerDay = 'MilesPerDay',
 }
 
-export type MovementTuple = {
+export type MovementDict = {
   [Movement.Exploration]: number
   [Movement.Combat]: number
   [Movement.Running]: number
