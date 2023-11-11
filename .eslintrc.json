@@ -25,6 +25,11 @@
     "comma-dangle": ["error", "always-multiline"],
     "curly": ["error", "all"],
     "import/order": "off",
+    "prefer-template": "error",
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": "*", "next": "return" }
+    ],
     "sort-keys": [
       "error",
       "asc",
