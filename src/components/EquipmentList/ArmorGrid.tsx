@@ -1,4 +1,4 @@
-import { none, useHookstate } from '@hookstate/core'
+import { useHookstate } from '@hookstate/core'
 import React, { useMemo } from 'react'
 
 import type { DataGridColumn } from '@/components/DataGrid/DataGrid'
@@ -6,6 +6,7 @@ import DataGrid from '@/components/DataGrid/DataGrid'
 import { Equipment } from '@/config/Equipment'
 import type { ArmorEntry } from '@/domain/armor'
 import { EncumbrancePoint } from '@/domain/encumbrance'
+import deepclone from "@/shared/helpers/deepclone"
 import { InventoryState } from '@/state/InventoryState'
 
 const columns: ReadonlyArray<DataGridColumn<ArmorEntry>> = [
@@ -38,6 +39,8 @@ const ruralCostColumn: DataGridColumn<ArmorEntry> = {
   title: 'Rural Cost',
 }
 
+
+
 const ArmorGrid = () => {
   const { armor, isCostRural } = useHookstate(InventoryState)
 
@@ -53,37 +56,24 @@ const ArmorGrid = () => {
     return isCostRural.get() ? data.filter((i) => i.ruralCost !== null) : data
   }, [isCostRural])
 
-  const handleCheckboxChange = (item: ArmorEntry) => {
-    const index = armor.get().findIndex((i) => item.name === i.name)
-
-    if (index === -1) {
-      armor.merge([item])
-    } else {
-      armor[index].set(none)
-    }
+  const handleAddClick = (item: ArmorEntry) => {
+    armor[armor.length].set(deepclone(item))
   }
 
   const filterName = (item: ArmorEntry, filterBy: string) => {
     return item.name.toLocaleLowerCase().includes(filterBy.toLocaleLowerCase())
   }
 
-  const isChecked = (item: ArmorEntry) => {
-    return armor.get().some((i) => item.name === i.name)
-  }
-
   return (
     <DataGrid<ArmorEntry>
       data={dataFilteredByCost}
       columns={columnsFilteredByCost}
-      onCheckboxChange={handleCheckboxChange}
+      onAddClick={handleAddClick}
       filterFn={filterName}
-      isCheckedFn={isChecked}
       filterPlaceholder={'Filter by name'}
     />
   )
 }
 
 // TODO sort numericals (AC, cost...)
-// TODO copy value to fix the city/rural cost switch
-// TODO add button instead of checkbox
 export default ArmorGrid
