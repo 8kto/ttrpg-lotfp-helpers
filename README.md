@@ -22,6 +22,7 @@ Lamentations of the Flame Princess helpers.
 - [ ] Custom equipment entries
 - [ ] Inventory is saved in session and survives the page reload
 - [ ] Languages support
+- [ ] Responsive layout, mobile devices support
 
 ## Getting Started
 
