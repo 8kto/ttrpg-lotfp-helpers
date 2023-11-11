@@ -11,12 +11,14 @@ Lamentations of the Flame Princess helpers.
   - [ ] Weapon, melee and missile
   - [ ] Common items
   - [ ] Details for each item
+  - [ ] Filter by city/rural cost
 - [ ] Extended list of equipment
 - [ ] Costs, encumbrance and movement calculation
   - [ ] Terrain type factor
   - [ ] Mounted
 - [ ] Custom equipment entries
 - [ ] Inventory saved in session and survives the page reload
+- [ ] Languages support
 
 ## Getting Started
 
