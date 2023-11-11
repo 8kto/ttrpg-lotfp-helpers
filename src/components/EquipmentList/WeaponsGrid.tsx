@@ -1,5 +1,5 @@
 import { none, useHookstate } from '@hookstate/core'
-import React from 'react'
+import React, { useMemo } from 'react'
 
 import DamageFragment from '@/components/DamageFragment'
 import type { DataGridColumn } from '@/components/DataGrid/DataGrid'
@@ -14,19 +14,6 @@ const columns: ReadonlyArray<DataGridColumn<WeaponEntry>> = [
     key: 'name',
     title: 'Name',
   },
-  // {
-  //   key: 'type',
-  //   title: 'Type',
-  //   render: (item: WeaponEntry) => <span>{ArmorType[item.type]}</span>,
-  // },
-  {
-    key: 'cityCost',
-    title: 'City Cost',
-  },
-  {
-    key: 'ruralCost',
-    title: 'Rural Cost',
-  },
   {
     key: 'damage',
     render: (item: WeaponEntry) => <DamageFragment damage={item.damage} />,
@@ -35,21 +22,41 @@ const columns: ReadonlyArray<DataGridColumn<WeaponEntry>> = [
   {
     key: 'points',
     render: (item: WeaponEntry) => <span>{EncumbrancePoint[item.points]}</span>,
-    title: 'Points',
+    title: 'Weight',
   },
 ]
 
+const cityCostColumn: DataGridColumn<WeaponEntry> = {
+  key: 'cityCost',
+  title: 'City Cost',
+}
+const ruralCostColumn: DataGridColumn<WeaponEntry> = {
+  key: 'ruralCost',
+  title: 'Rural Cost',
+}
+
 const WeaponsGrid = () => {
-  const equipmentState = useHookstate(InventoryState)
+  const { weapons, isCostRural } = useHookstate(InventoryState)
+
+  const columnsFilteredByCost = useMemo(() => {
+    return isCostRural.get()
+      ? [...columns, ruralCostColumn]
+      : [...columns, cityCostColumn]
+  }, [isCostRural])
+
+  const dataFilteredByCost = useMemo(() => {
+    const data = Object.values(Equipment.Weapons)
+
+    return isCostRural.get() ? data.filter((i) => i.ruralCost !== null) : data
+  }, [isCostRural])
+
   const handleCheckboxChange = (item: WeaponEntry) => {
-    const index = equipmentState.weapons
-      .get()
-      .findIndex((i) => item.name === i.name)
+    const index = weapons.get().findIndex((i) => item.name === i.name)
 
     if (index === -1) {
-      equipmentState.weapons.merge([item])
+      weapons.merge([item])
     } else {
-      equipmentState.weapons[index].set(none)
+      weapons[index].set(none)
     }
   }
 
@@ -58,13 +65,13 @@ const WeaponsGrid = () => {
   }
 
   const isChecked = (item: WeaponEntry) => {
-    return equipmentState.weapons.get().some((i) => item.name === i.name)
+    return weapons.get().some((i) => item.name === i.name)
   }
 
   return (
     <DataGrid<WeaponEntry>
-      data={Object.values(Equipment.Weapons)}
-      columns={columns}
+      data={dataFilteredByCost}
+      columns={columnsFilteredByCost}
       onCheckboxChange={handleCheckboxChange}
       filterFn={filterName}
       isCheckedFn={isChecked}

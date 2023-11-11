@@ -26,7 +26,7 @@ const columns: ReadonlyArray<DataGridColumn<ArmorEntry>> = [
   {
     key: 'points',
     render: (item: ArmorEntry) => <span>{EncumbrancePoint[item.points]}</span>,
-    title: 'Points',
+    title: 'Weight',
   },
 ]
 
@@ -40,8 +40,8 @@ const ruralCostColumn: DataGridColumn<ArmorEntry> = {
 }
 
 const ArmorGrid = () => {
-  const equipmentState = useHookstate(InventoryState)
-  const { armor, isCostRural } = equipmentState
+  const { armor, isCostRural } = useHookstate(InventoryState)
+
   const columnsFilteredByCost = useMemo(() => {
     return isCostRural.get()
       ? [...columns, ruralCostColumn]
