@@ -1,6 +1,6 @@
 import { hookstate, useHookstate } from '@hookstate/core'
 
-import type {InventoryItem} from "@/domain"
+import type { InventoryItem } from '@/domain'
 import type { ArmorItem } from '@/domain/armor'
 import type { WeaponItem } from '@/domain/weapon'
 

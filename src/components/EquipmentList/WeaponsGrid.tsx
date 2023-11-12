@@ -7,7 +7,7 @@ import type { DataGridColumn } from '@/components/DataGrid/types'
 import { Equipment } from '@/config/Equipment'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { WeaponItem } from '@/domain/weapon'
-import {autoincrement} from "@/shared/helpers/autoincrement"
+import { autoincrement } from '@/shared/helpers/autoincrement'
 import deepclone from '@/shared/helpers/deepclone'
 import { InventoryState } from '@/state/InventoryState'
 
@@ -56,7 +56,7 @@ const WeaponsGrid = () => {
 
     return isCostRural.get() ? data.filter((i) => i.ruralCost !== null) : data
   }, [isCostRural])
-  
+
   const autoinc = useMemo(() => {
     return autoincrement()
   }, [])

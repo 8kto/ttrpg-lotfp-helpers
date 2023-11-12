@@ -5,10 +5,10 @@ import DataGrid from '@/components/DataGrid/DataGrid'
 import { trivialSort } from '@/components/DataGrid/helpers'
 import type { DataGridColumn, SortConfig } from '@/components/DataGrid/types'
 import { Equipment } from '@/config/Equipment'
-import type { EquipmentItem ,InventoryItem} from '@/domain'
+import type { EquipmentItem, InventoryItem } from '@/domain'
 import type { ArmorItem } from '@/domain/armor'
 import { EncumbrancePoint } from '@/domain/encumbrance'
-import {autoincrement} from "@/shared/helpers/autoincrement"
+import { autoincrement } from '@/shared/helpers/autoincrement'
 import deepclone from '@/shared/helpers/deepclone'
 import { InventoryState } from '@/state/InventoryState'
 
@@ -67,7 +67,7 @@ const ArmorGrid = () => {
       delete clone[isCostRural ? 'cityCost' : 'ruralCost']
     }
 
-    (clone as InventoryItem<ArmorItem>).inventoryId = autoinc.next().value
+    ;(clone as InventoryItem<ArmorItem>).inventoryId = autoinc.next().value
     armor[armor.length].set(clone)
   }
 

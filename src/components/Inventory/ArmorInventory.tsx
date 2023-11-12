@@ -1,7 +1,7 @@
 import { MinusCircleIcon as MinusIcon } from '@heroicons/react/24/solid'
 import React from 'react'
 
-import type {InventoryItem} from "@/domain"
+import type { InventoryItem } from '@/domain'
 import type { ArmorItem } from '@/domain/armor'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import { useInventoryState } from '@/state/InventoryState'
