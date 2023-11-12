@@ -7,6 +7,7 @@ import type { DataGridColumn } from '@/components/DataGrid/types'
 import { Equipment } from '@/config/Equipment'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { WeaponEntry } from '@/domain/weapon'
+import {autoincrement} from "@/shared/helpers/autoincrement"
 import deepclone from '@/shared/helpers/deepclone'
 import { InventoryState } from '@/state/InventoryState'
 
@@ -55,14 +56,20 @@ const WeaponsGrid = () => {
 
     return isCostRural.get() ? data.filter((i) => i.ruralCost !== null) : data
   }, [isCostRural])
+  
+  const autoinc = useMemo(() => {
+    return autoincrement()
+  }, [])
 
   const handleAddClick = (item: WeaponEntry) => {
     const clone = deepclone(item)
     // Workaround to drop cost variant in inventory
+    // FIXME use lockedPrice prop, don't remove anything from the VO
     if (isCostRural.get()) {
       delete clone[isCostRural ? 'cityCost' : 'ruralCost']
     }
 
+    clone.inventoryId = autoinc.next().value
     weapons[weapons.length].set(clone)
   }
 

@@ -8,6 +8,7 @@ import { Equipment } from '@/config/Equipment'
 import type { EquipmentItem } from '@/domain'
 import type { ArmorEntry } from '@/domain/armor'
 import { EncumbrancePoint } from '@/domain/encumbrance'
+import {autoincrement} from "@/shared/helpers/autoincrement"
 import deepclone from '@/shared/helpers/deepclone'
 import { InventoryState } from '@/state/InventoryState'
 
@@ -43,6 +44,9 @@ const ruralCostColumn: DataGridColumn<ArmorEntry> = {
 
 const ArmorGrid = () => {
   const { armor, isCostRural } = useHookstate(InventoryState)
+  const autoinc = useMemo(() => {
+    return autoincrement()
+  }, [])
 
   const columnsFilteredByCost = useMemo(() => {
     return isCostRural.get()
@@ -63,6 +67,7 @@ const ArmorGrid = () => {
       delete clone[isCostRural ? 'cityCost' : 'ruralCost']
     }
 
+    clone.inventoryId = autoinc.next().value
     armor[armor.length].set(clone)
   }
 
