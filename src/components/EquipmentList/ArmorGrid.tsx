@@ -5,14 +5,14 @@ import DataGrid from '@/components/DataGrid/DataGrid'
 import { trivialSort } from '@/components/DataGrid/helpers'
 import type { DataGridColumn, SortConfig } from '@/components/DataGrid/types'
 import { Equipment } from '@/config/Equipment'
-import type { EquipmentItem } from '@/domain'
-import type { ArmorEntry } from '@/domain/armor'
+import type { EquipmentItem ,InventoryItem} from '@/domain'
+import type { ArmorItem } from '@/domain/armor'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import {autoincrement} from "@/shared/helpers/autoincrement"
 import deepclone from '@/shared/helpers/deepclone'
 import { InventoryState } from '@/state/InventoryState'
 
-const columns: ReadonlyArray<DataGridColumn<ArmorEntry>> = [
+const columns: ReadonlyArray<DataGridColumn<ArmorItem>> = [
   {
     className: 'w-1/3',
     key: 'name',
@@ -26,17 +26,17 @@ const columns: ReadonlyArray<DataGridColumn<ArmorEntry>> = [
   {
     className: 'w-1/6',
     key: 'points',
-    render: (item: ArmorEntry) => <span>{EncumbrancePoint[item.points]}</span>,
+    render: (item: ArmorItem) => <span>{EncumbrancePoint[item.points]}</span>,
     title: 'Weight',
   },
 ]
 
-const cityCostColumn: DataGridColumn<ArmorEntry> = {
+const cityCostColumn: DataGridColumn<ArmorItem> = {
   className: 'w-1/6',
   key: 'cityCost',
   title: 'City Cost',
 }
-const ruralCostColumn: DataGridColumn<ArmorEntry> = {
+const ruralCostColumn: DataGridColumn<ArmorItem> = {
   className: 'w-1/6',
   key: 'ruralCost',
   title: 'Rural Cost',
@@ -60,28 +60,28 @@ const ArmorGrid = () => {
     return isCostRural.get() ? data.filter((i) => i.ruralCost !== null) : data
   }, [isCostRural])
 
-  const handleAddClick = (item: ArmorEntry) => {
+  const handleAddClick = (item: ArmorItem) => {
     const clone = deepclone(item)
     // Workaround to drop cost variant in inventory
     if (isCostRural.get()) {
       delete clone[isCostRural ? 'cityCost' : 'ruralCost']
     }
 
-    clone.inventoryId = autoinc.next().value
+    (clone as InventoryItem<ArmorItem>).inventoryId = autoinc.next().value
     armor[armor.length].set(clone)
   }
 
-  const filterName = (item: ArmorEntry, filterBy: string) => {
+  const filterName = (item: ArmorItem, filterBy: string) => {
     return item.name.toLocaleLowerCase().includes(filterBy.toLocaleLowerCase())
   }
 
   const handleSort =
     (sortConfig: SortConfig<EquipmentItem>) =>
-    (a: ArmorEntry, b: ArmorEntry): 1 | -1 | 0 => {
+    (a: ArmorItem, b: ArmorItem): 1 | -1 | 0 => {
       const isSpecialSort = (value: number | string) =>
         typeof value === 'string' &&
         value.startsWith('+') &&
-        (sortConfig as SortConfig<ArmorEntry>).key === 'armorClass'
+        (sortConfig as SortConfig<ArmorItem>).key === 'armorClass'
 
       // NB Extra logic just for a Shield, worth introducing an ArmorClass type?
       if (isSpecialSort(a.armorClass) || isSpecialSort(b.armorClass)) {
@@ -101,7 +101,7 @@ const ArmorGrid = () => {
     }
 
   return (
-    <DataGrid<ArmorEntry>
+    <DataGrid<ArmorItem>
       data={dataFilteredByCost}
       columns={columnsFilteredByCost}
       onAddClick={handleAddClick}

@@ -1,7 +1,8 @@
 import { MinusCircleIcon as MinusIcon } from '@heroicons/react/24/solid'
 import React from 'react'
 
-import type { ArmorEntry } from '@/domain/armor'
+import type {InventoryItem} from "@/domain"
+import type { ArmorItem } from '@/domain/armor'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import { useInventoryState } from '@/state/InventoryState'
 
@@ -9,7 +10,7 @@ const ArmorInventory = () => {
   const { state: equipmentState } = useInventoryState()
   const { armor } = equipmentState
 
-  const onRemoveClick = (item: ArmorEntry) => {
+  const onRemoveClick = (item: InventoryItem<ArmorItem>) => {
     console.log(item.inventoryId)
     // equipmentState.set(state => {
     //
@@ -38,7 +39,7 @@ const ArmorInventory = () => {
       <tbody className='bg-white dark:bg-gray-800'>
         {armor.get().map((item, index) => (
           <tr
-            key={item.name}
+            key={item.inventoryId}
             className={index % 2 ? 'bg-gray-50 dark:bg-gray-700' : ''}
           >
             <td className={`${cellClassnames} truncate`}>

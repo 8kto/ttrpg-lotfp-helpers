@@ -28,7 +28,7 @@ const WeaponsInventory = () => {
       </thead>
       <tbody className='bg-white dark:bg-gray-800'>
         {weapons.get().map((item, index) => (
-          <tr key={item.name} className={index % 2 ? 'bg-gray-50' : ''}>
+          <tr key={item.inventoryId} className={index % 2 ? 'bg-gray-50' : ''}>
             <td className={`${cellClassnames} truncate`}>
               <details className='ph-details-bullet'>
                 <summary className='cursor-pointer list-none truncate p-4 pl-0'>

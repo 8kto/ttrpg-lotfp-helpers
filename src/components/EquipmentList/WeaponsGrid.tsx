@@ -6,12 +6,12 @@ import DataGrid from '@/components/DataGrid/DataGrid'
 import type { DataGridColumn } from '@/components/DataGrid/types'
 import { Equipment } from '@/config/Equipment'
 import { EncumbrancePoint } from '@/domain/encumbrance'
-import type { WeaponEntry } from '@/domain/weapon'
+import type { WeaponItem } from '@/domain/weapon'
 import {autoincrement} from "@/shared/helpers/autoincrement"
 import deepclone from '@/shared/helpers/deepclone'
 import { InventoryState } from '@/state/InventoryState'
 
-const columns: ReadonlyArray<DataGridColumn<WeaponEntry>> = [
+const columns: ReadonlyArray<DataGridColumn<WeaponItem>> = [
   {
     className: 'w-1/3 truncate',
     key: 'name',
@@ -20,23 +20,23 @@ const columns: ReadonlyArray<DataGridColumn<WeaponEntry>> = [
   {
     className: 'w-1/6',
     key: 'damage',
-    render: (item: WeaponEntry) => <DamageFragment damage={item.damage} />,
+    render: (item: WeaponItem) => <DamageFragment damage={item.damage} />,
     title: 'Damage',
   },
   {
     className: 'w-1/6',
     key: 'points',
-    render: (item: WeaponEntry) => <span>{EncumbrancePoint[item.points]}</span>,
+    render: (item: WeaponItem) => <span>{EncumbrancePoint[item.points]}</span>,
     title: 'Weight',
   },
 ]
 
-const cityCostColumn: DataGridColumn<WeaponEntry> = {
+const cityCostColumn: DataGridColumn<WeaponItem> = {
   className: 'w-1/6',
   key: 'cityCost',
   title: 'City Cost',
 }
-const ruralCostColumn: DataGridColumn<WeaponEntry> = {
+const ruralCostColumn: DataGridColumn<WeaponItem> = {
   className: 'w-1/6',
   key: 'ruralCost',
   title: 'Rural Cost',
@@ -61,7 +61,7 @@ const WeaponsGrid = () => {
     return autoincrement()
   }, [])
 
-  const handleAddClick = (item: WeaponEntry) => {
+  const handleAddClick = (item: WeaponItem) => {
     const clone = deepclone(item)
     // Workaround to drop cost variant in inventory
     // FIXME use lockedPrice prop, don't remove anything from the VO
@@ -73,12 +73,12 @@ const WeaponsGrid = () => {
     weapons[weapons.length].set(clone)
   }
 
-  const filterName = (item: WeaponEntry, filterBy: string) => {
+  const filterName = (item: WeaponItem, filterBy: string) => {
     return item.name.toLocaleLowerCase().includes(filterBy.toLocaleLowerCase())
   }
 
   return (
-    <DataGrid<WeaponEntry>
+    <DataGrid<WeaponItem>
       data={dataFilteredByCost}
       columns={columnsFilteredByCost}
       onAddClick={handleAddClick}
