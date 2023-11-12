@@ -18,18 +18,18 @@ export enum WeaponType {
   Missile = 'Missile',
 }
 
-export interface WeaponEntry extends EquipmentItem {
+export interface WeaponItem extends EquipmentItem {
   damage: DamageDice | null
   type: WeaponType
 }
 
-export interface MeleeWeaponEntry extends WeaponEntry {
+export interface MeleeWeaponItem extends WeaponItem {
   isAbleToReceiveCharge?: boolean
   twoHanded?: boolean
   isSecondRank?: boolean
 }
 
-export interface MissileWeaponEntry extends WeaponEntry {
+export interface MissileWeaponItem extends WeaponItem {
   range: Range
 }
 

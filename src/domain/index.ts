@@ -6,7 +6,6 @@ export interface EquipmentItem {
   ruralCost: number | null
   points: EncumbrancePoint
   details?: string
-  inventoryId?: number // FIXME extract type
 }
 
 export enum Dice {
@@ -19,4 +18,10 @@ export enum Dice {
   d12 = 'd12',
   d20 = 'd20',
   d100 = 'd100',
+}
+
+export type InventoryItem<T extends EquipmentItem> = {
+  [P in keyof T]: T[P]
+} & {
+  inventoryId: number
 }
