@@ -6,6 +6,7 @@ export interface EquipmentItem {
   ruralCost: number | null
   points: EncumbrancePoint
   details?: string
+  inventoryId?: number // FIXME extract type
 }
 
 export enum Dice {
