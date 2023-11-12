@@ -1,10 +1,10 @@
 import { hookstate } from '@hookstate/core'
 
 import { Dice } from '@/domain'
-import type { ArmorEntry } from '@/domain/armor'
+import type { ArmorItem } from '@/domain/armor'
 import { ArmorType } from '@/domain/armor'
 import { EncumbrancePoint } from '@/domain/encumbrance'
-import type { MeleeWeaponEntry } from '@/domain/weapon'
+import type { MeleeWeaponItem } from '@/domain/weapon'
 import { WeaponType } from '@/domain/weapon'
 import { combineEquipment } from '@/state/helpers'
 import type { InventoryStateType } from '@/state/InventoryState'
@@ -66,7 +66,7 @@ describe('Inventory helpers', () => {
       const combinedEquipment = combineEquipment(mockEquipmentState)
 
       // Expected combined array
-      const expected: Array<ArmorEntry | MeleeWeaponEntry> = [
+      const expected: Array<ArmorItem | MeleeWeaponItem> = [
         {
           armorClass: 14,
           cityCost: 25,

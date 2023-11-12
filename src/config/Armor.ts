@@ -1,8 +1,8 @@
-import type { ArmorEntry } from '@/domain/armor'
+import type { ArmorItem } from '@/domain/armor'
 import { ArmorType } from '@/domain/armor'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 
-export const Armor: ReadonlyArray<ArmorEntry> = [
+export const Armor: ReadonlyArray<ArmorItem> = [
   {
     armorClass: 14,
     cityCost: 25,

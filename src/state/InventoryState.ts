@@ -1,19 +1,19 @@
 import { hookstate, useHookstate } from '@hookstate/core'
 
-import type { ArmorEntry } from '@/domain/armor'
-import type { WeaponEntry } from '@/domain/weapon'
+import type {InventoryItem} from "@/domain"
+import type { ArmorItem } from '@/domain/armor'
+import type { WeaponItem } from '@/domain/weapon'
 
 export type InventoryStateType = {
-  armor: ReadonlyArray<ArmorEntry>
-  weapons: ReadonlyArray<WeaponEntry>
+  armor: ReadonlyArray<InventoryItem<ArmorItem>>
+  weapons: ReadonlyArray<InventoryItem<WeaponItem>>
   isCostRural: boolean
-  // reset: CallableFunction
 }
 
 const initialInventoryState: Readonly<InventoryStateType> = {
-  armor: [],
+  armor: Array<InventoryItem<ArmorItem>>(),
   isCostRural: false,
-  weapons: [],
+  weapons: Array<InventoryItem<WeaponItem>>(),
 }
 
 export const InventoryState = hookstate<InventoryStateType>(
@@ -29,8 +29,8 @@ export const useInventoryState = () => {
 
   const resetEquipment = () => {
     state.merge({
-      armor: [],
-      weapons: [],
+      armor: Array<InventoryItem<ArmorItem>>(),
+      weapons: Array<InventoryItem<WeaponItem>>(),
     })
   }
 

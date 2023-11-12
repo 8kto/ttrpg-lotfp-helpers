@@ -1,9 +1,9 @@
 import { Dice } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
-import type { MeleeWeaponEntry } from '@/domain/weapon'
+import type { MeleeWeaponItem } from '@/domain/weapon'
 import { WeaponType } from '@/domain/weapon'
 
-export const MeleeWeapons: ReadonlyArray<MeleeWeaponEntry> = [
+export const MeleeWeapons: ReadonlyArray<MeleeWeaponItem> = [
   {
     cityCost: 10,
     damage: {
