@@ -11,10 +11,9 @@ const ArmorInventory = () => {
   const { armor } = equipmentState
 
   const onRemoveClick = (item: InventoryItem<ArmorItem>) => {
-    console.log(item.inventoryId)
-    // equipmentState.set(state => {
-    //
-    // })
+    armor.set((a) => {
+      return a.filter((i) => i.inventoryId !== item.inventoryId)
+    })
   }
 
   const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase`

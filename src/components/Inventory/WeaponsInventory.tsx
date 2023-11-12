@@ -1,12 +1,21 @@
+import { MinusCircleIcon as MinusIcon } from '@heroicons/react/24/solid'
 import React from 'react'
 
 import DamageFragment from '@/components/DamageFragment'
+import type { InventoryItem } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
+import type { WeaponItem } from '@/domain/weapon'
 import { useInventoryState } from '@/state/InventoryState'
 
 const WeaponsInventory = () => {
   const { state: equipmentState } = useInventoryState()
   const { weapons } = equipmentState
+
+  const onRemoveClick = (item: InventoryItem<WeaponItem>) => {
+    weapons.set((w) => {
+      return w.filter((i) => i.inventoryId !== item.inventoryId)
+    })
+  }
 
   const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase`
   const cellClassnames = `px-4 text-sm font-normal text-gray-900`
@@ -15,15 +24,16 @@ const WeaponsInventory = () => {
     <table className='w-full table-fixed'>
       <thead className='bg-gray-50 dark:bg-gray-700'>
         <tr>
-          <th scope='col' className={`${headerCellClassnames} w-2/3 truncate`}>
+          <th scope='col' className={`${headerCellClassnames} w-1/2 truncate`}>
             Name
           </th>
-          <th scope='col' className={`${headerCellClassnames} w-1/4`}>
+          <th scope='col' className={`${headerCellClassnames} w-1/6`}>
             Cost
           </th>
-          <th scope='col' className={`${headerCellClassnames} w-1/4`}>
+          <th scope='col' className={`${headerCellClassnames} w-1/6`}>
             Weight
           </th>
+          <th scope='col' className={`${headerCellClassnames} w-1/6`}></th>
         </tr>
       </thead>
       <tbody className='bg-white dark:bg-gray-800'>
@@ -60,6 +70,15 @@ const WeaponsInventory = () => {
               {item.cityCost !== undefined ? item.cityCost : item.ruralCost}
             </td>
             <td className={cellClassnames}>{EncumbrancePoint[item.points]}</td>
+            <td className={cellClassnames}>
+              <button
+                className='inline-flex items-center text-xs text-gray-500'
+                onClick={() => onRemoveClick(item)}
+                title='Remove item'
+              >
+                <MinusIcon className='mr-2 h-5 w-5' />
+              </button>
+            </td>
           </tr>
         ))}
       </tbody>
