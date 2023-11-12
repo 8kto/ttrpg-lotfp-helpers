@@ -1,7 +1,7 @@
 /**
  * Return autoincrement number, to use as unique ID
  */
-export function* autoincrement() {
+export function* autoincrement(): Generator<number> {
   let counter = 0
 
   while (true) {
