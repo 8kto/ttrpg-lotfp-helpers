@@ -1,5 +1,6 @@
 import { hookstate } from '@hookstate/core'
 
+import type { InventoryItem } from '@/domain'
 import { Dice } from '@/domain'
 import type { ArmorItem } from '@/domain/armor'
 import { ArmorType } from '@/domain/armor'
@@ -22,6 +23,7 @@ describe('Inventory helpers', () => {
           {
             armorClass: 14,
             cityCost: 25,
+            inventoryId: 1,
             name: 'Leather',
             points: EncumbrancePoint.None,
             ruralCost: 50,
@@ -30,6 +32,7 @@ describe('Inventory helpers', () => {
           {
             armorClass: 16,
             cityCost: 100,
+            inventoryId: 2,
             name: 'Chain',
             points: EncumbrancePoint.Oversized,
             ruralCost: null,
@@ -44,6 +47,7 @@ describe('Inventory helpers', () => {
               dice: Dice.d3,
               x: 1,
             },
+            inventoryId: 3,
             name: 'Cestus',
             points: EncumbrancePoint.None,
             ruralCost: null,
@@ -55,6 +59,7 @@ describe('Inventory helpers', () => {
               dice: Dice.d6,
               x: 1,
             },
+            inventoryId: 4,
             name: 'Garrote',
             points: EncumbrancePoint.None,
             ruralCost: null,
@@ -66,10 +71,11 @@ describe('Inventory helpers', () => {
       const combinedEquipment = combineEquipment(mockEquipmentState)
 
       // Expected combined array
-      const expected: Array<ArmorItem | MeleeWeaponItem> = [
+      const expected: Array<InventoryItem<ArmorItem | MeleeWeaponItem>> = [
         {
           armorClass: 14,
           cityCost: 25,
+          inventoryId: 1,
           name: 'Leather',
           points: EncumbrancePoint.None,
           ruralCost: 50,
@@ -78,6 +84,7 @@ describe('Inventory helpers', () => {
         {
           armorClass: 16,
           cityCost: 100,
+          inventoryId: 2,
           name: 'Chain',
           points: EncumbrancePoint.Oversized,
           ruralCost: null,
@@ -89,6 +96,7 @@ describe('Inventory helpers', () => {
             dice: Dice.d3,
             x: 1,
           },
+          inventoryId: 3,
           name: 'Cestus',
           points: EncumbrancePoint.None,
           ruralCost: null,
@@ -100,6 +108,7 @@ describe('Inventory helpers', () => {
             dice: Dice.d6,
             x: 1,
           },
+          inventoryId: 4,
           name: 'Garrote',
           points: EncumbrancePoint.None,
           ruralCost: null,

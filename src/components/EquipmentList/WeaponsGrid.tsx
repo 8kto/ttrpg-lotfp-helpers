@@ -5,6 +5,7 @@ import DamageFragment from '@/components/DamageFragment'
 import DataGrid from '@/components/DataGrid/DataGrid'
 import type { DataGridColumn } from '@/components/DataGrid/types'
 import { Equipment } from '@/config/Equipment'
+import type { InventoryItem } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { WeaponItem } from '@/domain/weapon'
 import { autoincrement } from '@/shared/helpers/autoincrement'
@@ -62,14 +63,15 @@ const WeaponsGrid = () => {
   }, [])
 
   const handleAddClick = (item: WeaponItem) => {
-    const clone = deepclone(item)
-    // Workaround to drop cost variant in inventory
-    // FIXME use lockedPrice prop, don't remove anything from the VO
+    const clone: InventoryItem<WeaponItem> = deepclone({
+      ...item,
+      inventoryId: autoinc.next().value,
+    })
+
+    // FIXME Workaround to drop cost variant in inventory
     if (isCostRural.get()) {
       delete clone[isCostRural ? 'cityCost' : 'ruralCost']
     }
-
-    clone.inventoryId = autoinc.next().value
     weapons[weapons.length].set(clone)
   }
 

@@ -61,13 +61,15 @@ const ArmorGrid = () => {
   }, [isCostRural])
 
   const handleAddClick = (item: ArmorItem) => {
-    const clone = deepclone(item)
-    // Workaround to drop cost variant in inventory
+    const clone: InventoryItem<ArmorItem> = deepclone({
+      ...item,
+      inventoryId: autoinc.next().value,
+    })
+
     if (isCostRural.get()) {
       delete clone[isCostRural ? 'cityCost' : 'ruralCost']
     }
 
-    ;(clone as InventoryItem<ArmorItem>).inventoryId = autoinc.next().value
     armor[armor.length].set(clone)
   }
 
