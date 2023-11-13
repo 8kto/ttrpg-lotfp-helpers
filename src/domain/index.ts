@@ -23,5 +23,6 @@ export enum Dice {
 export type InventoryItem<T extends EquipmentItem> = {
   [P in keyof T]: T[P]
 } & {
-  inventoryId: number
+  inventoryId: string
+  lockedCost: number
 }

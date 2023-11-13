@@ -1,81 +1,67 @@
-import { MinusCircleIcon as MinusIcon } from '@heroicons/react/24/solid'
 import React from 'react'
 
+import type { InventoryColumn } from '@/components/Inventory/InventoryList'
+import InventoryList from '@/components/Inventory/InventoryList'
 import type { InventoryItem } from '@/domain'
 import type { ArmorItem } from '@/domain/armor'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import { useInventoryState } from '@/state/InventoryState'
 
+type ArmorInventoryItem = InventoryItem<ArmorItem>
+
 const ArmorInventory = () => {
   const { state: equipmentState } = useInventoryState()
   const { armor } = equipmentState
 
-  const onRemoveClick = (item: InventoryItem<ArmorItem>) => {
-    armor.set((a) => {
-      return a.filter((i) => i.inventoryId !== item.inventoryId)
-    })
+  const onRemoveClick = (item: ArmorInventoryItem) => {
+    armor.set((a) => a.filter((i) => i.inventoryId !== item.inventoryId))
   }
 
-  const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase`
-  const cellClassnames = `px-4 text-sm font-normal text-gray-900`
+  const columns: ReadonlyArray<InventoryColumn<ArmorInventoryItem>> = [
+    {
+      className: 'w-1/2 truncate',
+      key: 'name',
+      render: (item: ArmorItem) => (
+        <details className='ph-details-bullet'>
+          <summary className='cursor-pointer list-none truncate p-4 pl-0'>
+            <div className='flex items-center'>
+              <span className='ph-custom-indicator mr-2 text-gray-400'>
+                &#9654;
+              </span>
+              {item.name} <>(AC {item.armorClass})</>
+            </div>
+          </summary>
+          <div className='pb-4'>
+            <>{item.details}</>
+            <ul className='ml-4 list-none pl-4'>
+              <li>AC: ({item.armorClass})</li>
+            </ul>
+          </div>
+        </details>
+      ),
+      title: 'Name',
+    },
+    {
+      className: 'w-1/6',
+      key: 'lockedCost',
+      title: 'Cost',
+    },
+    {
+      className: 'w-1/6',
+      key: 'points',
+      render: (item) => {
+        return EncumbrancePoint[item.points]
+      },
+      title: 'Weight',
+    },
+  ]
 
   return (
-    <table className='w-full table-fixed'>
-      <thead className='bg-gray-50 dark:bg-gray-700'>
-        <tr>
-          <th scope='col' className={`${headerCellClassnames} w-1/2 truncate`}>
-            Name
-          </th>
-          <th scope='col' className={`${headerCellClassnames} w-1/6`}>
-            Cost
-          </th>
-          <th scope='col' className={`${headerCellClassnames} w-1/6`}>
-            Weight
-          </th>
-          <th scope='col' className={`${headerCellClassnames} w-1/6`}></th>
-        </tr>
-      </thead>
-      <tbody className='bg-white dark:bg-gray-800'>
-        {armor.get().map((item, index) => (
-          <tr
-            key={item.inventoryId}
-            className={index % 2 ? 'bg-gray-50 dark:bg-gray-700' : ''}
-          >
-            <td className={`${cellClassnames} truncate`}>
-              <details className='ph-details-bullet'>
-                <summary className='cursor-pointer list-none truncate p-4 pl-0'>
-                  <div className='flex items-center'>
-                    <span className='ph-custom-indicator mr-2 text-gray-400'>
-                      &#9654;
-                    </span>
-                    {item.name} <>(AC {item.armorClass})</>
-                  </div>
-                </summary>
-                <div className='pb-4'>
-                  <>{item.details}</>
-                  <ul className='ml-4 list-none pl-4'>
-                    <li>AC: ({item.armorClass})</li>
-                  </ul>
-                </div>
-              </details>
-            </td>
-            <td className={cellClassnames}>
-              {item.cityCost !== undefined ? item.cityCost : item.ruralCost}
-            </td>
-            <td className={cellClassnames}>{EncumbrancePoint[item.points]}</td>
-            <td className={cellClassnames}>
-              <button
-                className='inline-flex items-center text-xs text-gray-500'
-                onClick={() => onRemoveClick(item)}
-                title='Remove item'
-              >
-                <MinusIcon className='mr-2 h-5 w-5' />
-              </button>
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+    <InventoryList<ArmorInventoryItem>
+      data={armor.get()}
+      columns={columns}
+      onRemoveClick={onRemoveClick}
+    />
   )
 }
 

@@ -4,12 +4,11 @@ import React, { useMemo } from 'react'
 import DataGrid from '@/components/DataGrid/DataGrid'
 import { trivialSort } from '@/components/DataGrid/helpers'
 import type { DataGridColumn, SortConfig } from '@/components/DataGrid/types'
+import { getInventoryItem } from '@/components/EquipmentList/helpers'
 import { Equipment } from '@/config/Equipment'
-import type { EquipmentItem, InventoryItem } from '@/domain'
+import type { EquipmentItem } from '@/domain'
 import type { ArmorItem } from '@/domain/armor'
 import { EncumbrancePoint } from '@/domain/encumbrance'
-import { autoincrement } from '@/shared/helpers/autoincrement'
-import deepclone from '@/shared/helpers/deepclone'
 import { InventoryState } from '@/state/InventoryState'
 
 const columns: ReadonlyArray<DataGridColumn<ArmorItem>> = [
@@ -44,10 +43,6 @@ const ruralCostColumn: DataGridColumn<ArmorItem> = {
 
 const ArmorGrid = () => {
   const { armor, isCostRural } = useHookstate(InventoryState)
-  const autoinc = useMemo(() => {
-    return autoincrement()
-  }, [])
-
   const columnsFilteredByCost = useMemo(() => {
     return isCostRural.get()
       ? [...columns, ruralCostColumn]
@@ -61,14 +56,10 @@ const ArmorGrid = () => {
   }, [isCostRural])
 
   const handleAddClick = (item: ArmorItem) => {
-    const clone: InventoryItem<ArmorItem> = deepclone({
-      ...item,
-      inventoryId: autoinc.next().value,
-    })
-
-    if (isCostRural.get()) {
-      delete clone[isCostRural ? 'cityCost' : 'ruralCost']
-    }
+    const clone = getInventoryItem(
+      item,
+      (isCostRural.get() ? item.ruralCost : item.cityCost)!,
+    )
 
     armor[armor.length].set(clone)
   }

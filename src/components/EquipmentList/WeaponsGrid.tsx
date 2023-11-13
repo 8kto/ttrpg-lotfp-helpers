@@ -4,12 +4,10 @@ import React, { useMemo } from 'react'
 import DamageFragment from '@/components/DamageFragment'
 import DataGrid from '@/components/DataGrid/DataGrid'
 import type { DataGridColumn } from '@/components/DataGrid/types'
+import { getInventoryItem } from '@/components/EquipmentList/helpers'
 import { Equipment } from '@/config/Equipment'
-import type { InventoryItem } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { WeaponItem } from '@/domain/weapon'
-import { autoincrement } from '@/shared/helpers/autoincrement'
-import deepclone from '@/shared/helpers/deepclone'
 import { InventoryState } from '@/state/InventoryState'
 
 const columns: ReadonlyArray<DataGridColumn<WeaponItem>> = [
@@ -58,20 +56,11 @@ const WeaponsGrid = () => {
     return isCostRural.get() ? data.filter((i) => i.ruralCost !== null) : data
   }, [isCostRural])
 
-  const autoinc = useMemo(() => {
-    return autoincrement()
-  }, [])
-
   const handleAddClick = (item: WeaponItem) => {
-    const clone: InventoryItem<WeaponItem> = deepclone({
-      ...item,
-      inventoryId: autoinc.next().value,
-    })
-
-    // FIXME Workaround to drop cost variant in inventory
-    if (isCostRural.get()) {
-      delete clone[isCostRural ? 'cityCost' : 'ruralCost']
-    }
+    const clone = getInventoryItem(
+      item,
+      (isCostRural.get() ? item.ruralCost : item.cityCost)!,
+    )
     weapons[weapons.length].set(clone)
   }
 
