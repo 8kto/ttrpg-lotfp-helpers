@@ -39,3 +39,28 @@ export const useInventoryState = () => {
 
 export const EquipmentStateKeys: ReadonlyArray<keyof InventoryStateType> =
   Object.freeze(['armor', 'weapons'])
+
+export const addArmor = (item: InventoryItem<ArmorItem>) => {
+  const armor = InventoryState.armor
+
+  armor[armor.length].set(item)
+}
+
+export const removeArmor = (item: InventoryItem<ArmorItem>) => {
+  const armor = InventoryState.armor
+  armor.set((a) => a.filter((i) => i.inventoryId !== item.inventoryId))
+}
+
+export const addWeapon = (item: InventoryItem<WeaponItem>) => {
+  const weapons = InventoryState.weapons
+
+  weapons[weapons.length].set(item)
+}
+
+export const removeWeapon = (item: InventoryItem<WeaponItem>) => {
+  const weapons = InventoryState.weapons
+
+  weapons.set((w) => {
+    return w.filter((i) => i.inventoryId !== item.inventoryId)
+  })
+}

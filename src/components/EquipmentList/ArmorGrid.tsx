@@ -1,4 +1,3 @@
-import { useHookstate } from '@hookstate/core'
 import React, { useMemo } from 'react'
 
 import DataGrid from '@/components/DataGrid/DataGrid'
@@ -9,7 +8,7 @@ import { Equipment } from '@/config/Equipment'
 import type { EquipmentItem } from '@/domain'
 import type { ArmorItem } from '@/domain/armor'
 import { EncumbrancePoint } from '@/domain/encumbrance'
-import { InventoryState } from '@/state/InventoryState'
+import { addArmor, useInventoryState } from '@/state/InventoryState'
 
 const columns: ReadonlyArray<DataGridColumn<ArmorItem>> = [
   {
@@ -42,7 +41,9 @@ const ruralCostColumn: DataGridColumn<ArmorItem> = {
 }
 
 const ArmorGrid = () => {
-  const { armor, isCostRural } = useHookstate(InventoryState)
+  const {
+    state: { isCostRural },
+  } = useInventoryState()
   const columnsFilteredByCost = useMemo(() => {
     return isCostRural.get()
       ? [...columns, ruralCostColumn]
@@ -61,7 +62,7 @@ const ArmorGrid = () => {
       (isCostRural.get() ? item.ruralCost : item.cityCost)!,
     )
 
-    armor[armor.length].set(clone)
+    addArmor(clone)
   }
 
   const filterName = (item: ArmorItem, filterBy: string) => {

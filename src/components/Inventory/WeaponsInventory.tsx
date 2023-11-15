@@ -5,17 +5,13 @@ import DamageFragment from '@/components/DamageFragment'
 import type { InventoryItem } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { WeaponItem } from '@/domain/weapon'
-import { useInventoryState } from '@/state/InventoryState'
+import { removeWeapon, useInventoryState } from '@/state/InventoryState'
 
 const WeaponsInventory = () => {
   const { state: equipmentState } = useInventoryState()
   const { weapons } = equipmentState
 
-  const onRemoveClick = (item: InventoryItem<WeaponItem>) => {
-    weapons.set((w) => {
-      return w.filter((i) => i.inventoryId !== item.inventoryId)
-    })
-  }
+  const onRemoveClick = (item: InventoryItem<WeaponItem>) => removeWeapon(item)
 
   const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase`
   const cellClassnames = `px-4 text-sm font-normal text-gray-900`
