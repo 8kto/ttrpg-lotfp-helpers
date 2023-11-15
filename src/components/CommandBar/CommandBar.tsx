@@ -1,17 +1,14 @@
-import { useHookstate } from '@hookstate/core'
 import React from 'react'
 
-import { InventoryState } from '@/state/InventoryState'
+import { toggleCost, useInventoryState } from '@/state/InventoryState'
 
 const CommandBar = () => {
-  const equipmentState = useHookstate(InventoryState)
-  const { isCostRural } = equipmentState
+  const {
+    state: { isCostRural },
+  } = useInventoryState()
 
-  const handleCostToggle: React.ChangeEventHandler<HTMLInputElement> = (
-    event,
-  ) => {
-    equipmentState.isCostRural.set(event.target.value === 'rural')
-  }
+  const handleCostToggle: React.ChangeEventHandler<HTMLInputElement> = () =>
+    toggleCost()
 
   return (
     <div className='my-2 flex'>

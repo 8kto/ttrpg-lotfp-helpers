@@ -7,10 +7,11 @@ import type { WeaponItem } from '@/domain/weapon'
 import { WeaponType } from '@/domain/weapon'
 import {
   addArmor,
-  addWeapon, initialInventoryState,
+  addWeapon,
+  initialInventoryState,
   InventoryState,
   removeArmor,
-  removeWeapon,
+  removeWeapon, toggleCost,
 } from '@/state/InventoryState'
 
 const testArmorItem: InventoryItem<ArmorItem> = {
@@ -43,51 +44,39 @@ describe('InventoryState Tests', () => {
     InventoryState.set(initialInventoryState)
   })
 
-  it('adds armor item correctly', () => {
-    addArmor(testArmorItem)
-    expect(InventoryState.armor.get()).toContainEqual(testArmorItem)
-  })
-
-  it('removes armor item correctly', () => {
-    addArmor(testArmorItem)
-    removeArmor(testArmorItem)
-    expect(InventoryState.armor.get()).not.toContainEqual(testArmorItem)
-  })
-
-  it('adds weapon item correctly', () => {
-    addWeapon(testWeaponItem)
-    expect(InventoryState.weapons.get()).toContainEqual(testWeaponItem)
-  })
-
-  it('removes weapon item correctly', () => {
-    addWeapon(testWeaponItem)
-    removeWeapon(testWeaponItem)
-    expect(InventoryState.weapons.get()).not.toContainEqual(testWeaponItem)
-  })
-
-  it('resets inventory state correctly', () => {
-    addArmor(testArmorItem)
-    addWeapon(testWeaponItem)
-    InventoryState.set({
-      armor: [],
-      isCostRural: false,
-      weapons: [],
+  describe('armor', () => {
+    it('adds armor item correctly', () => {
+      addArmor(testArmorItem)
+      expect(InventoryState.armor.get()).toContainEqual(testArmorItem)
     })
-    expect(InventoryState.armor.get()).toEqual([])
-    expect(InventoryState.weapons.get()).toEqual([])
-    expect(InventoryState.isCostRural.get()).toBe(false)
+
+    it('removes armor item correctly', () => {
+      addArmor(testArmorItem)
+      removeArmor(testArmorItem)
+      expect(InventoryState.armor.get()).not.toContainEqual(testArmorItem)
+    })
   })
 
-  it('resets equipment only correctly', () => {
-    addArmor(testArmorItem)
-    addWeapon(testWeaponItem)
-    InventoryState.isCostRural.set(true)
-    InventoryState.merge({
-      armor: [],
-      weapons: [],
+  describe('weapons', () => {
+    it('adds weapon item correctly', () => {
+      addWeapon(testWeaponItem)
+      expect(InventoryState.weapons.get()).toContainEqual(testWeaponItem)
     })
-    expect(InventoryState.armor.get()).toEqual([])
-    expect(InventoryState.weapons.get()).toEqual([])
-    expect(InventoryState.isCostRural.get()).toBe(true)
+
+    it('removes weapon item correctly', () => {
+      addWeapon(testWeaponItem)
+      removeWeapon(testWeaponItem)
+      expect(InventoryState.weapons.get()).not.toContainEqual(testWeaponItem)
+    })
   })
+
+  describe('isCostRural', () => {
+    it('should toggle cost', () => {
+      expect(InventoryState.isCostRural.get()).toEqual(false)
+      toggleCost()
+      expect(InventoryState.isCostRural.get()).toEqual(true)
+    })
+  })
+
+  // TODO test hook
 })

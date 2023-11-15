@@ -10,11 +10,11 @@ export type InventoryStateType = {
   isCostRural: boolean
 }
 
-export const initialInventoryState: Readonly<InventoryStateType> = ({
+export const initialInventoryState: Readonly<InventoryStateType> = {
   armor: Array<InventoryItem<ArmorItem>>(),
   isCostRural: false,
   weapons: Array<InventoryItem<WeaponItem>>(),
-})
+}
 
 export const InventoryState = hookstate<InventoryStateType>(
   initialInventoryState,
@@ -63,4 +63,9 @@ export const removeWeapon = (item: InventoryItem<WeaponItem>) => {
   weapons.set((w) => {
     return w.filter((i) => i.inventoryId !== item.inventoryId)
   })
+}
+
+export const toggleCost = () => {
+  const isCostRural = InventoryState.isCostRural
+  isCostRural.set(!isCostRural.get())
 }
