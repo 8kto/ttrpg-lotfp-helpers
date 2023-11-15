@@ -78,6 +78,4 @@ describe('InventoryState Tests', () => {
       expect(InventoryState.isCostRural.get()).toEqual(true)
     })
   })
-
-  // TODO test hook
 })
