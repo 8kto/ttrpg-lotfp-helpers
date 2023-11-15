@@ -1,7 +1,7 @@
 import React from 'react'
 
-import type { InventoryColumn } from '@/components/Inventory/InventoryList'
-import InventoryList from '@/components/Inventory/InventoryList'
+import type { InventoryColumn } from '@/components/Inventory/InventoryTable'
+import InventoryTable from '@/components/Inventory/InventoryTable'
 import type { InventoryItem } from '@/domain'
 import type { ArmorItem } from '@/domain/armor'
 import { EncumbrancePoint } from '@/domain/encumbrance'
@@ -57,7 +57,7 @@ const ArmorInventory = () => {
   const onRemoveClick = (item: ArmorInventoryItem) => removeArmor(item)
 
   return (
-    <InventoryList<ArmorInventoryItem>
+    <InventoryTable<ArmorInventoryItem>
       data={armor.get()}
       columns={inventoryTableColumns}
       onRemoveClick={onRemoveClick}

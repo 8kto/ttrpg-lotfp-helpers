@@ -10,18 +10,17 @@ export interface InventoryColumn<T extends InventoryItem<EquipmentItem>> {
   render?: (item: T) => React.ReactNode
 }
 
-export interface InventoryListProps<T extends InventoryItem<EquipmentItem>> {
+export interface InventoryTableProps<T extends InventoryItem<EquipmentItem>> {
   data: ReadonlyArray<T>
   columns: ReadonlyArray<InventoryColumn<T>>
   onRemoveClick: (item: T) => void
 }
 
-// todo rename to table
-function InventoryList<T extends InventoryItem<EquipmentItem>>({
+function InventoryTable<T extends InventoryItem<EquipmentItem>>({
   data,
   columns,
   onRemoveClick,
-}: InventoryListProps<T>) {
+}: InventoryTableProps<T>) {
   const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase`
   const cellClassnames = `px-4 text-sm font-normal text-gray-900`
 
@@ -68,4 +67,4 @@ function InventoryList<T extends InventoryItem<EquipmentItem>>({
   )
 }
 
-export default InventoryList
+export default InventoryTable
