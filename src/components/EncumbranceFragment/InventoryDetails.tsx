@@ -1,4 +1,3 @@
-import { useHookstate } from '@hookstate/core'
 import React from 'react'
 
 import {
@@ -7,11 +6,10 @@ import {
 } from '@/components/EncumbranceFragment/helpers'
 import MovementFragment from '@/components/MovementFragment/MovementFragment'
 import { combineEquipment } from '@/state/helpers'
-import { InventoryState } from '@/state/InventoryState'
+import { useInventoryState } from '@/state/InventoryState'
 
 const InventoryDetails = () => {
-  const equipmentState = useHookstate(InventoryState)
-
+  const { state: equipmentState } = useInventoryState()
   const { totalPoints, totalCost } = getTotal(combineEquipment(equipmentState))
   const encumbrance = getEncumbrance(totalPoints)
 

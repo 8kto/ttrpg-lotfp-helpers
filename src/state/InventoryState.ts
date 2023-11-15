@@ -20,6 +20,7 @@ export const InventoryState = hookstate<InventoryStateType>(
   initialInventoryState,
 )
 
+// TODO add tests
 export const useInventoryState = () => {
   const state = useHookstate(InventoryState)
 
