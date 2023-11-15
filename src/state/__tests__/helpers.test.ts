@@ -70,6 +70,8 @@ describe('Inventory helpers', () => {
             type: WeaponType.Melee,
           },
         ],
+        // FIXME
+        missileWeapons: [],
       })
 
       const combinedEquipment = combineEquipment(mockEquipmentState)
@@ -134,6 +136,7 @@ describe('Inventory helpers', () => {
         armor: [],
         isCostRural: false,
         meleeWeapons: [],
+        missileWeapons: [],
       })
 
       const combinedEquipment = combineEquipment(mockEmptyEquipmentState)

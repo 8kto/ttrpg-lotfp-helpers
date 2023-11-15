@@ -2,7 +2,7 @@
 
 import CommandBar from '@/components/CommandBar/CommandBar'
 import ArmorGrid from '@/components/EquipmentList/ArmorGrid'
-import WeaponsGrid from '@/components/EquipmentList/WeaponsGrid'
+import MeleeWeaponsGrid from '@/components/EquipmentList/MeleeWeaponsGrid'
 
 export default function EquipmentList() {
   return (
@@ -15,8 +15,10 @@ export default function EquipmentList() {
       <h3 className='mb-4 mt-8 text-xl font-bold text-red-900'>Armor</h3>
       <ArmorGrid />
 
-      <h3 className='mb-4 mt-8 text-xl font-bold text-red-900'>Weapons</h3>
-      <WeaponsGrid />
+      <h3 className='mb-4 mt-8 text-xl font-bold text-red-900'>
+        Melee Weapons
+      </h3>
+      <MeleeWeaponsGrid />
     </>
   )
 }

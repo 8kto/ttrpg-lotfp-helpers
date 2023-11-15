@@ -41,7 +41,7 @@ const ruralCostColumn: DataGridColumn<WeaponItem> = {
   title: 'Rural Cost',
 }
 
-const WeaponsGrid = () => {
+const MeleeWeaponsGrid = () => {
   const {
     state: { isCostRural },
   } = useInventoryState()
@@ -84,4 +84,4 @@ const WeaponsGrid = () => {
 }
 
 // TODO sort damage
-export default WeaponsGrid
+export default MeleeWeaponsGrid

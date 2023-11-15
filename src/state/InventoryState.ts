@@ -2,11 +2,16 @@ import { hookstate, useHookstate } from '@hookstate/core'
 
 import type { InventoryItem } from '@/domain'
 import type { ArmorItem } from '@/domain/armor'
-import type {MeleeWeaponItem, WeaponItem} from '@/domain/weapon'
+import type {
+  MeleeWeaponItem,
+  MissileWeaponItem,
+  WeaponItem,
+} from '@/domain/weapon'
 
 export type InventoryStateType = {
   armor: ReadonlyArray<InventoryItem<ArmorItem>>
-  meleeWeapons: ReadonlyArray<InventoryItem<WeaponItem>>
+  meleeWeapons: ReadonlyArray<InventoryItem<MeleeWeaponItem>>
+  missileWeapons: ReadonlyArray<InventoryItem<MissileWeaponItem>>
   isCostRural: boolean
 }
 
@@ -14,6 +19,7 @@ export const initialInventoryState: Readonly<InventoryStateType> = {
   armor: Array<InventoryItem<ArmorItem>>(),
   isCostRural: false,
   meleeWeapons: Array<InventoryItem<MeleeWeaponItem>>(),
+  missileWeapons: Array<InventoryItem<MissileWeaponItem>>(),
 }
 
 export const InventoryState = hookstate<InventoryStateType>(

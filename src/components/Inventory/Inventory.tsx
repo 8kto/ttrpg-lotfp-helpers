@@ -3,7 +3,7 @@ import React from 'react'
 import InventoryDetails from '@/components/EncumbranceFragment/InventoryDetails'
 import ArmorInventory from '@/components/Inventory/ArmorInventory'
 import InventoryControls from '@/components/Inventory/InventoryControls'
-import WeaponsInventory from '@/components/Inventory/WeaponsInventory'
+import MeleeWeaponsInventory from '@/components/Inventory/MeleeWeaponsInventory'
 import { useInventoryState } from '@/state/InventoryState'
 
 const Inventory = () => {
@@ -29,8 +29,8 @@ const Inventory = () => {
 
       {!!meleeWeapons.get().length && (
         <>
-          <h2 className='my-8 mb-4 text-red-900'>Weapons</h2>
-          <WeaponsInventory />
+          <h2 className='my-8 mb-4 text-red-900'>Melee Weapons</h2>
+          <MeleeWeaponsInventory />
         </>
       )}
     </>
