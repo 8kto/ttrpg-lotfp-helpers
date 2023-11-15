@@ -11,7 +11,8 @@ import {
   initialInventoryState,
   InventoryState,
   removeArmor,
-  removeWeapon, toggleCost,
+  removeWeapon,
+  toggleCost,
 } from '@/state/InventoryState'
 
 const testArmorItem: InventoryItem<ArmorItem> = {
