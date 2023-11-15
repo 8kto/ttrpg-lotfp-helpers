@@ -8,13 +8,14 @@ import { Equipment } from '@/config/Equipment'
 import type { EquipmentItem } from '@/domain'
 import type { ArmorItem } from '@/domain/armor'
 import { EncumbrancePoint } from '@/domain/encumbrance'
+import { t } from '@/locale/helpers'
 import { addArmor, useInventoryState } from '@/state/InventoryState'
 
 const columns: ReadonlyArray<DataGridColumn<ArmorItem>> = [
   {
     className: 'w-1/3',
     key: 'name',
-    title: 'Name',
+    title: ('Name'),
   },
   {
     className: 'w-1/6',
@@ -100,7 +101,7 @@ const ArmorGrid = () => {
       columns={columnsFilteredByCost}
       onAddClick={handleAddClick}
       filterFn={filterName}
-      filterPlaceholder={'Filter by name'}
+      filterPlaceholder={t('Filter by name')}
       handleSort={handleSort as typeof trivialSort}
     />
   )

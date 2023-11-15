@@ -8,6 +8,7 @@ import type {
   SortOrder,
 } from '@/components/DataGrid/types'
 import type { EquipmentItem } from '@/domain'
+import { t } from '@/locale/helpers'
 
 const DataGrid = <T extends EquipmentItem>({
   data,
@@ -32,7 +33,7 @@ const DataGrid = <T extends EquipmentItem>({
       .sort(handleSort ? handleSort(sortConfig) : trivialSort(sortConfig))
 
     setFilteredData(sortedData)
-  }, [data, filter, filterFn, sortConfig])
+  }, [data, filter, filterFn, handleSort, sortConfig])
 
   const handleSortClick = (key: keyof T) => {
     let direction: SortOrder = 'asc'
@@ -75,7 +76,7 @@ const DataGrid = <T extends EquipmentItem>({
                 } ${column.className ?? ''}`}
                 onClick={() => handleSortClick(column.key)}
               >
-                {column.title} {sortIcon(column.key as string)}
+                {t(column.title)} {sortIcon(column.key as string)}
               </th>
             ))}
             <th scope='col' className={`${headerCellClassnames} w-1/12`}></th>

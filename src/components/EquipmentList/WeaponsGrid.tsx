@@ -7,6 +7,7 @@ import { getInventoryItem } from '@/components/EquipmentList/helpers'
 import { Equipment } from '@/config/Equipment'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { WeaponItem } from '@/domain/weapon'
+import { t } from '@/locale/helpers'
 import { addWeapon, useInventoryState } from '@/state/InventoryState'
 
 const columns: ReadonlyArray<DataGridColumn<WeaponItem>> = [
@@ -75,7 +76,7 @@ const WeaponsGrid = () => {
       columns={columnsFilteredByCost}
       onAddClick={handleAddClick}
       filterFn={filterName}
-      filterPlaceholder={'Filter by name'}
+      filterPlaceholder={t('Filter by name')}
     />
   )
 }
