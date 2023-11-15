@@ -10,11 +10,11 @@ export type InventoryStateType = {
   isCostRural: boolean
 }
 
-const initialInventoryState: Readonly<InventoryStateType> = {
+export const initialInventoryState: Readonly<InventoryStateType> = ({
   armor: Array<InventoryItem<ArmorItem>>(),
   isCostRural: false,
   weapons: Array<InventoryItem<WeaponItem>>(),
-}
+})
 
 export const InventoryState = hookstate<InventoryStateType>(
   initialInventoryState,
