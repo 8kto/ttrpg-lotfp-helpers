@@ -42,7 +42,7 @@ describe('Inventory helpers', () => {
           },
         ],
         isCostRural: false,
-        weapons: [
+        meleeWeapons: [
           {
             cityCost: 10,
             damage: {
@@ -133,7 +133,7 @@ describe('Inventory helpers', () => {
       const mockEmptyEquipmentState = createStateMock({
         armor: [],
         isCostRural: false,
-        weapons: [],
+        meleeWeapons: [],
       })
 
       const combinedEquipment = combineEquipment(mockEmptyEquipmentState)

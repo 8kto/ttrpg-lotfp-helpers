@@ -1,11 +1,11 @@
 import { testArmorItem, testWeaponItem } from '@/shared/mocks/inventoryMocks'
 import {
   addArmor,
-  addWeapon,
+  addMeleeWeapon,
   initialInventoryState,
   InventoryState,
   removeArmor,
-  removeWeapon,
+  removeMeleeWeapon,
   toggleCost,
 } from '@/state/InventoryState'
 
@@ -27,16 +27,18 @@ describe('InventoryState Tests', () => {
     })
   })
 
-  describe('weapons', () => {
+  describe('meleeWeapons', () => {
     it('adds weapon item correctly', () => {
-      addWeapon(testWeaponItem)
-      expect(InventoryState.weapons.get()).toContainEqual(testWeaponItem)
+      addMeleeWeapon(testWeaponItem)
+      expect(InventoryState.meleeWeapons.get()).toContainEqual(testWeaponItem)
     })
 
     it('removes weapon item correctly', () => {
-      addWeapon(testWeaponItem)
-      removeWeapon(testWeaponItem)
-      expect(InventoryState.weapons.get()).not.toContainEqual(testWeaponItem)
+      addMeleeWeapon(testWeaponItem)
+      removeMeleeWeapon(testWeaponItem)
+      expect(InventoryState.meleeWeapons.get()).not.toContainEqual(
+        testWeaponItem,
+      )
     })
   })
 

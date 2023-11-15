@@ -8,7 +8,7 @@ import { Equipment } from '@/config/Equipment'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { WeaponItem } from '@/domain/weapon'
 import { t } from '@/locale/helpers'
-import { addWeapon, useInventoryState } from '@/state/InventoryState'
+import { addMeleeWeapon, useInventoryState } from '@/state/InventoryState'
 
 const columns: ReadonlyArray<DataGridColumn<WeaponItem>> = [
   {
@@ -65,7 +65,7 @@ const WeaponsGrid = () => {
       item,
       (isCostRural.get() ? item.ruralCost : item.cityCost)!,
     )
-    addWeapon(clone)
+    addMeleeWeapon(clone)
   }
 
   const filterName = (item: WeaponItem, filterBy: string) => {

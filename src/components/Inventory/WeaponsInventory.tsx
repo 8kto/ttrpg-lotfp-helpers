@@ -5,13 +5,13 @@ import DamageFragment from '@/components/DamageFragment'
 import type { InventoryItem } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { WeaponItem } from '@/domain/weapon'
-import { removeWeapon, useInventoryState } from '@/state/InventoryState'
+import { removeMeleeWeapon, useInventoryState } from '@/state/InventoryState'
 
 const WeaponsInventory = () => {
   const { state: equipmentState } = useInventoryState()
-  const { weapons } = equipmentState
+  const { meleeWeapons } = equipmentState
 
-  const onRemoveClick = (item: InventoryItem<WeaponItem>) => removeWeapon(item)
+  const onRemoveClick = (item: InventoryItem<WeaponItem>) => removeMeleeWeapon(item)
 
   const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase`
   const cellClassnames = `px-4 text-sm font-normal text-gray-900`
@@ -33,7 +33,7 @@ const WeaponsInventory = () => {
         </tr>
       </thead>
       <tbody className='bg-white dark:bg-gray-800'>
-        {weapons.get().map((item, index) => (
+        {meleeWeapons.get().map((item, index) => (
           <tr key={item.inventoryId} className={index % 2 ? 'bg-gray-50' : ''}>
             <td className={`${cellClassnames} truncate`}>
               <details className='ph-details-bullet'>

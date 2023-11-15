@@ -8,7 +8,7 @@ import { useInventoryState } from '@/state/InventoryState'
 
 const Inventory = () => {
   const { state: equipmentState } = useInventoryState()
-  const { armor, weapons } = equipmentState
+  const { armor, meleeWeapons } = equipmentState
 
   return (
     <>
@@ -27,7 +27,7 @@ const Inventory = () => {
         </>
       )}
 
-      {!!weapons.get().length && (
+      {!!meleeWeapons.get().length && (
         <>
           <h2 className='my-8 mb-4 text-red-900'>Weapons</h2>
           <WeaponsInventory />
