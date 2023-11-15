@@ -2,6 +2,7 @@ import type { EquipmentItem, InventoryItem } from '@/domain'
 import { autoincrement } from '@/shared/helpers/autoincrement'
 import deepclone from '@/shared/helpers/deepclone'
 
+// TODO tests
 export const getInventoryItem = (() => {
   const autoinc = autoincrement()
 

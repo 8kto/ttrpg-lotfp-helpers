@@ -20,6 +20,7 @@ Lamentations of the Flame Princess helpers.
   - [x] Movement
   - [ ] Terrain type factor
 - [ ] Custom equipment entries
+- [ ] Add coins and calculate the encumbrance
 - [ ] Inventory is saved in session and survives the page reload
 - [ ] Languages support
 - [ ] Responsive layout, mobile devices support

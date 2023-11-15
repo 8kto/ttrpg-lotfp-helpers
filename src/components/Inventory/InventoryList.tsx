@@ -16,6 +16,7 @@ export interface InventoryListProps<T extends InventoryItem<EquipmentItem>> {
   onRemoveClick: (item: T) => void
 }
 
+// todo rename to table
 function InventoryList<T extends InventoryItem<EquipmentItem>>({
   data,
   columns,
