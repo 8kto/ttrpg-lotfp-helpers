@@ -53,7 +53,9 @@ const WeaponsGrid = () => {
   }, [isCostRural])
 
   const dataFilteredByCost = useMemo(() => {
-    const data = Object.values(Equipment.MeleeWeapons)
+    const data = Object.values(Equipment.MeleeWeapons).concat(
+      Object.values(Equipment.MissileWeapons),
+    )
 
     return isCostRural.get() ? data.filter((i) => i.ruralCost !== null) : data
   }, [isCostRural])

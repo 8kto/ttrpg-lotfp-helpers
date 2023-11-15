@@ -15,7 +15,7 @@ const columns: ReadonlyArray<DataGridColumn<ArmorItem>> = [
   {
     className: 'w-1/3',
     key: 'name',
-    title: ('Name'),
+    title: 'Name',
   },
   {
     className: 'w-1/6',
