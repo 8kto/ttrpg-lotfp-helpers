@@ -14,7 +14,6 @@ type TabProps = {
 
 type TabsProps = {
   tabs: TabData[]
-  className: string
 }
 
 const Tab = ({ active, onClick, children }: TabProps) => (
@@ -28,11 +27,11 @@ const Tab = ({ active, onClick, children }: TabProps) => (
   </button>
 )
 
-const Tabs = ({ tabs, className }: TabsProps) => {
+const Tabs = ({ tabs }: TabsProps) => {
   const [activeTab, setActiveTab] = useState<string>(tabs[0].key)
 
   return (
-    <div className={className}>
+    <>
       <div className='border-b border-gray-200'>
         <nav
           className='-mb-px flex flex-wrap text-center font-medium text-gray-500 dark:text-gray-400'
@@ -53,7 +52,7 @@ const Tabs = ({ tabs, className }: TabsProps) => {
         (tab) =>
           activeTab === tab.key && <div key={tab.key}>{tab.content}</div>,
       )}
-    </div>
+    </>
   )
 }
 
