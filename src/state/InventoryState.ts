@@ -35,6 +35,7 @@ export const useInventoryState = () => {
     state.merge({
       armor: Array<InventoryItem<ArmorItem>>(),
       meleeWeapons: Array<InventoryItem<MeleeWeaponItem>>(),
+      missileWeapons: Array<InventoryItem<MissileWeaponItem>>(),
     })
   }
 

@@ -11,6 +11,7 @@ const Inventory = () => {
   const { state: equipmentState } = useInventoryState()
   const { armor, meleeWeapons, missileWeapons } = equipmentState
 
+  // TODO reset for each category
   return (
     <>
       <div className='flex w-full items-center justify-between'>
