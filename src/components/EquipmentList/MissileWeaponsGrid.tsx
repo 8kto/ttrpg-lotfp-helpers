@@ -6,11 +6,11 @@ import type { DataGridColumn } from '@/components/DataGrid/types'
 import { getInventoryItem } from '@/components/EquipmentList/helpers'
 import { Equipment } from '@/config/Equipment'
 import { EncumbrancePoint } from '@/domain/encumbrance'
-import type { MissileWeaponItem, WeaponItem } from '@/domain/weapon'
+import type { MissileWeaponItem } from '@/domain/weapon'
 import { t } from '@/locale/helpers'
-import { addMeleeWeapon, useInventoryState } from '@/state/InventoryState'
+import { addMissileWeapon, useInventoryState } from '@/state/InventoryState'
 
-const columns: ReadonlyArray<DataGridColumn<WeaponItem>> = [
+const columns: ReadonlyArray<DataGridColumn<MissileWeaponItem>> = [
   {
     className: 'w-1/3 truncate',
     key: 'name',
@@ -19,23 +19,27 @@ const columns: ReadonlyArray<DataGridColumn<WeaponItem>> = [
   {
     className: 'w-1/6',
     key: 'damage',
-    render: (item: WeaponItem) => <DamageFragment damage={item.damage} />,
+    render: (item: MissileWeaponItem) => (
+      <DamageFragment damage={item.damage} />
+    ),
     title: 'Damage',
   },
   {
     className: 'w-1/6',
     key: 'points',
-    render: (item: WeaponItem) => <span>{EncumbrancePoint[item.points]}</span>,
+    render: (item: MissileWeaponItem) => (
+      <span>{EncumbrancePoint[item.points]}</span>
+    ),
     title: 'Weight',
   },
 ]
 
-const cityCostColumn: DataGridColumn<WeaponItem> = {
+const cityCostColumn: DataGridColumn<MissileWeaponItem> = {
   className: 'w-1/6',
   key: 'cityCost',
   title: 'City Cost',
 }
-const ruralCostColumn: DataGridColumn<WeaponItem> = {
+const ruralCostColumn: DataGridColumn<MissileWeaponItem> = {
   className: 'w-1/6',
   key: 'ruralCost',
   title: 'Rural Cost',
@@ -58,15 +62,15 @@ const MissileWeaponsGrid = () => {
     return isCostRural.get() ? data.filter((i) => i.ruralCost !== null) : data
   }, [isCostRural])
 
-  const handleAddClick = (item: WeaponItem) => {
+  const handleAddClick = (item: MissileWeaponItem) => {
     const clone = getInventoryItem(
       item,
       (isCostRural.get() ? item.ruralCost : item.cityCost)!,
     )
-    addMeleeWeapon(clone)
+    addMissileWeapon(clone)
   }
 
-  const filterName = (item: WeaponItem, filterBy: string) => {
+  const filterName = (item: MissileWeaponItem, filterBy: string) => {
     return item.name.toLocaleLowerCase().includes(filterBy.toLocaleLowerCase())
   }
 

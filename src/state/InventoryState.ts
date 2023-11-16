@@ -2,11 +2,8 @@ import { hookstate, useHookstate } from '@hookstate/core'
 
 import type { InventoryItem } from '@/domain'
 import type { ArmorItem } from '@/domain/armor'
-import type {
-  MeleeWeaponItem,
-  MissileWeaponItem,
-  WeaponItem,
-} from '@/domain/weapon'
+import type { MeleeWeaponItem, MissileWeaponItem } from '@/domain/weapon'
+import deepclone from '@/shared/helpers/deepclone'
 
 export type InventoryStateType = {
   armor: ReadonlyArray<InventoryItem<ArmorItem>>
@@ -23,7 +20,7 @@ export const initialInventoryState: Readonly<InventoryStateType> = {
 }
 
 export const InventoryState = hookstate<InventoryStateType>(
-  initialInventoryState,
+  deepclone(initialInventoryState),
 )
 
 // TODO add tests
@@ -31,13 +28,13 @@ export const useInventoryState = () => {
   const state = useHookstate(InventoryState)
 
   const reset = () => {
-    state.set(initialInventoryState)
+    state.set(deepclone(initialInventoryState))
   }
 
   const resetEquipment = () => {
     state.merge({
       armor: Array<InventoryItem<ArmorItem>>(),
-      meleeWeapons: Array<InventoryItem<WeaponItem>>(),
+      meleeWeapons: Array<InventoryItem<MeleeWeaponItem>>(),
     })
   }
 
@@ -58,14 +55,28 @@ export const removeArmor = (item: InventoryItem<ArmorItem>) => {
   armor.set((a) => a.filter((i) => i.inventoryId !== item.inventoryId))
 }
 
-export const addMeleeWeapon = (item: InventoryItem<WeaponItem>) => {
+export const addMeleeWeapon = (item: InventoryItem<MeleeWeaponItem>) => {
   const weapons = InventoryState.meleeWeapons
 
   weapons[weapons.length].set(item)
 }
 
-export const removeMeleeWeapon = (item: InventoryItem<WeaponItem>) => {
+export const removeMeleeWeapon = (item: InventoryItem<MeleeWeaponItem>) => {
   const weapons = InventoryState.meleeWeapons
+
+  weapons.set((w) => {
+    return w.filter((i) => i.inventoryId !== item.inventoryId)
+  })
+}
+
+export const addMissileWeapon = (item: InventoryItem<MissileWeaponItem>) => {
+  const weapons = InventoryState.missileWeapons
+
+  weapons[weapons.length].set(item)
+}
+
+export const removeMissileWeapon = (item: InventoryItem<MissileWeaponItem>) => {
+  const weapons = InventoryState.missileWeapons
 
   weapons.set((w) => {
     return w.filter((i) => i.inventoryId !== item.inventoryId)

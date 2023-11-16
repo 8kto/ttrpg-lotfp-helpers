@@ -4,14 +4,14 @@ import React from 'react'
 import DamageFragment from '@/components/DamageFragment'
 import type { InventoryItem } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
-import type { WeaponItem } from '@/domain/weapon'
+import type { MeleeWeaponItem } from '@/domain/weapon'
 import { removeMeleeWeapon, useInventoryState } from '@/state/InventoryState'
 
 const MeleeWeaponsInventory = () => {
   const { state: equipmentState } = useInventoryState()
   const { meleeWeapons } = equipmentState
 
-  const onRemoveClick = (item: InventoryItem<WeaponItem>) =>
+  const onRemoveClick = (item: InventoryItem<MeleeWeaponItem>) =>
     removeMeleeWeapon(item)
 
   const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase`

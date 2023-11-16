@@ -76,14 +76,4 @@ export const MissileWeapons: Array<MissileWeaponItem> = [
     ruralCost: null,
     type: WeaponType.Missile,
   },
-  // TODO handle that
-  // {
-  //   cityCost: 5,
-  //   damage: { dice: Dice.d6, x: 1 },
-  //   name: 'Spear',
-  //   points: EncumbrancePoint.Regular,
-  //   range: { long: 60, medium: 20, short: 10 },
-  //   ruralCost: 3,
-  //   type: WeaponType.Missile,
-  // },
 ]

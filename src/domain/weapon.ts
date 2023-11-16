@@ -14,7 +14,7 @@ export enum WeaponType {
   Great = 'Great',
   // General type for any other melee weapon
   Melee = 'Melee',
-  // Missiles: bow, crossbow, sling etc.
+  // Missiles: bow, crossbow, sling, darts etc.
   Missile = 'Missile',
 }
 
