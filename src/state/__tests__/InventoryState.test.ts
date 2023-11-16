@@ -1,4 +1,7 @@
-import { testArmorItem, testWeaponItem } from '@/shared/mocks/inventoryMocks'
+import {
+  armorItemMock1,
+  meleeWeaponItemMock1,
+} from '@/shared/mocks/inventoryMocks'
 import {
   addArmor,
   addMeleeWeapon,
@@ -16,28 +19,30 @@ describe('InventoryState Tests', () => {
 
   describe('armor', () => {
     it('adds armor item correctly', () => {
-      addArmor(testArmorItem)
-      expect(InventoryState.armor.get()).toContainEqual(testArmorItem)
+      addArmor(armorItemMock1)
+      expect(InventoryState.armor.get()).toContainEqual(armorItemMock1)
     })
 
     it('removes armor item correctly', () => {
-      addArmor(testArmorItem)
-      removeArmor(testArmorItem)
-      expect(InventoryState.armor.get()).not.toContainEqual(testArmorItem)
+      addArmor(armorItemMock1)
+      removeArmor(armorItemMock1)
+      expect(InventoryState.armor.get()).not.toContainEqual(armorItemMock1)
     })
   })
 
   describe('meleeWeapons', () => {
     it('adds weapon item correctly', () => {
-      addMeleeWeapon(testWeaponItem)
-      expect(InventoryState.meleeWeapons.get()).toContainEqual(testWeaponItem)
+      addMeleeWeapon(meleeWeaponItemMock1)
+      expect(InventoryState.meleeWeapons.get()).toContainEqual(
+        meleeWeaponItemMock1,
+      )
     })
 
     it('removes weapon item correctly', () => {
-      addMeleeWeapon(testWeaponItem)
-      removeMeleeWeapon(testWeaponItem)
+      addMeleeWeapon(meleeWeaponItemMock1)
+      removeMeleeWeapon(meleeWeaponItemMock1)
       expect(InventoryState.meleeWeapons.get()).not.toContainEqual(
-        testWeaponItem,
+        meleeWeaponItemMock1,
       )
     })
   })

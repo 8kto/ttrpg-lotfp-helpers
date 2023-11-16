@@ -1,11 +1,14 @@
 import { getInventoryItem } from '@/components/EquipmentList/helpers'
 import type { EquipmentItem } from '@/domain'
-import { testArmorItem, testWeaponItem } from '@/shared/mocks/inventoryMocks'
+import {
+  armorItemMock1,
+  meleeWeaponItemMock1,
+} from '@/shared/mocks/inventoryMocks'
 
 describe('Equipment list helpers', () => {
   describe('getInventoryItem', () => {
     it('creates an InventoryItem with expected properties', () => {
-      const testItem: EquipmentItem = testArmorItem
+      const testItem: EquipmentItem = armorItemMock1
       const cost = 150
       const inventoryItem = getInventoryItem(testItem, cost)
 
@@ -17,8 +20,8 @@ describe('Equipment list helpers', () => {
     })
 
     it('generates unique inventoryIds for different items', () => {
-      const item1: EquipmentItem = testArmorItem
-      const item2: EquipmentItem = testWeaponItem
+      const item1: EquipmentItem = armorItemMock1
+      const item2: EquipmentItem = meleeWeaponItemMock1
       const cost = 100
 
       const inventoryItem1 = getInventoryItem(item1, cost)
@@ -28,7 +31,7 @@ describe('Equipment list helpers', () => {
     })
 
     it('maintains consistent inventoryId format', () => {
-      const testItem: EquipmentItem = testArmorItem
+      const testItem: EquipmentItem = armorItemMock1
       const cost = 100
       const inventoryItem = getInventoryItem(testItem, cost)
 
