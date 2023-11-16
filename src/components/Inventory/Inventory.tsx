@@ -4,11 +4,12 @@ import InventoryDetails from '@/components/EncumbranceFragment/InventoryDetails'
 import ArmorInventory from '@/components/Inventory/ArmorInventory'
 import InventoryControls from '@/components/Inventory/InventoryControls'
 import MeleeWeaponsInventory from '@/components/Inventory/MeleeWeaponsInventory'
+import MissileWeaponsInventory from '@/components/Inventory/MissileWeaponsInventory'
 import { useInventoryState } from '@/state/InventoryState'
 
 const Inventory = () => {
   const { state: equipmentState } = useInventoryState()
-  const { armor, meleeWeapons } = equipmentState
+  const { armor, meleeWeapons, missileWeapons } = equipmentState
 
   return (
     <>
@@ -31,6 +32,13 @@ const Inventory = () => {
         <>
           <h2 className='my-8 mb-4 text-red-900'>Melee Weapons</h2>
           <MeleeWeaponsInventory />
+        </>
+      )}
+
+      {!!missileWeapons.get().length && (
+        <>
+          <h2 className='my-8 mb-4 text-red-900'>Missile Weapons</h2>
+          <MissileWeaponsInventory />
         </>
       )}
     </>
