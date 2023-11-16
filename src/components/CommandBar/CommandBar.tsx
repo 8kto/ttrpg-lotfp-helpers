@@ -11,7 +11,7 @@ const CommandBar = () => {
     toggleCost()
 
   return (
-    <div className='my-2 flex'>
+    <div className='my-2 flex justify-end'>
       <div className='mr-4 flex items-center'>
         <h3 className='font-semibold text-gray-900'>Cost</h3>
       </div>
@@ -27,7 +27,7 @@ const CommandBar = () => {
         />
         <label
           htmlFor='inline-radio'
-          className='ml-2 text-sm font-medium text-gray-900 dark:text-gray-300'
+          className='ml-2 font-medium text-gray-900'
         >
           City
         </label>
@@ -44,7 +44,7 @@ const CommandBar = () => {
         />
         <label
           htmlFor='inline-2-radio'
-          className='ml-2 text-sm font-medium text-gray-900 dark:text-gray-300'
+          className='ml-2 font-medium text-gray-900'
         >
           Rural
         </label>

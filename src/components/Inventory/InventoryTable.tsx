@@ -22,7 +22,7 @@ function InventoryTable<T extends InventoryItem<EquipmentItem>>({
   onRemoveClick,
 }: InventoryTableProps<T>) {
   const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase`
-  const cellClassnames = `px-4 text-sm font-normal text-gray-900`
+  const cellClassnames = `px-4 font-normal text-gray-900`
 
   return (
     <table className='w-full table-fixed'>

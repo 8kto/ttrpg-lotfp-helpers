@@ -88,14 +88,14 @@ const DataGrid = <T extends EquipmentItem>({
               {columns.map((column) => (
                 <td
                   key={column.key as string}
-                  className='whitespace-nowrap p-4 text-sm font-normal text-gray-900'
+                  className='whitespace-nowrap p-4 font-normal text-gray-900'
                 >
                   {column.render
                     ? column.render(item)
                     : (item[column.key] as string)}
                 </td>
               ))}
-              <td className='whitespace-nowrap p-4 text-sm font-normal text-gray-900'>
+              <td className='whitespace-nowrap p-4 font-normal text-gray-900'>
                 <button
                   className='inline-flex items-center rounded bg-red-800 px-4 py-2 font-bold text-white hover:bg-red-500'
                   onClick={() => onAddClick(item)}
