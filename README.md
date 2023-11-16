@@ -14,6 +14,7 @@ Lamentations of the Flame Princess helpers.
   - [x] Filter by city/rural cost
   - [x] Add multiple copies of same item
 - [ ] Extended list of equipment
+- [ ] Firearms list
 - [ ] Calculation
   - [x] Cost
   - [x] Encumbrance

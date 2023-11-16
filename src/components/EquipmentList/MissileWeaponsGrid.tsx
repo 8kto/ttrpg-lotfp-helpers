@@ -6,7 +6,7 @@ import type { DataGridColumn } from '@/components/DataGrid/types'
 import { getInventoryItem } from '@/components/EquipmentList/helpers'
 import { Equipment } from '@/config/Equipment'
 import { EncumbrancePoint } from '@/domain/encumbrance'
-import type { MeleeWeaponItem, WeaponItem } from '@/domain/weapon'
+import type { MissileWeaponItem, WeaponItem } from '@/domain/weapon'
 import { t } from '@/locale/helpers'
 import { addMeleeWeapon, useInventoryState } from '@/state/InventoryState'
 
@@ -41,7 +41,7 @@ const ruralCostColumn: DataGridColumn<WeaponItem> = {
   title: 'Rural Cost',
 }
 
-const MeleeWeaponsGrid = () => {
+const MissileWeaponsGrid = () => {
   const {
     state: { isCostRural },
   } = useInventoryState()
@@ -53,7 +53,7 @@ const MeleeWeaponsGrid = () => {
   }, [isCostRural])
 
   const dataFilteredByCost = useMemo(() => {
-    const data = Object.values(Equipment.MeleeWeapons)
+    const data = Object.values(Equipment.MissileWeapons)
 
     return isCostRural.get() ? data.filter((i) => i.ruralCost !== null) : data
   }, [isCostRural])
@@ -71,7 +71,7 @@ const MeleeWeaponsGrid = () => {
   }
 
   return (
-    <DataGrid<MeleeWeaponItem>
+    <DataGrid<MissileWeaponItem>
       data={dataFilteredByCost}
       columns={columnsFilteredByCost}
       onAddClick={handleAddClick}
@@ -82,4 +82,4 @@ const MeleeWeaponsGrid = () => {
 }
 
 // TODO sort damage
-export default MeleeWeaponsGrid
+export default MissileWeaponsGrid
