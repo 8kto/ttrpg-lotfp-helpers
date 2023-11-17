@@ -37,9 +37,9 @@ const MissileWeaponsInventory = () => {
       <tbody className='bg-white dark:bg-gray-800'>
         {missileWeapons.get().map((item, index) => (
           <tr key={item.inventoryId} className={index % 2 ? 'bg-gray-50' : ''}>
-            <td className={`${cellClassnames} truncate`}>
+            <td className={`${cellClassnames}`}>
               <details className='ph-details-bullet'>
-                <summary className='cursor-pointer list-none truncate p-4 pl-0'>
+                <summary className='cursor-pointer list-none p-4 pl-0'>
                   <div className='flex items-center'>
                     <span className='ph-custom-indicator mr-2 text-gray-400'>
                       &#9654;

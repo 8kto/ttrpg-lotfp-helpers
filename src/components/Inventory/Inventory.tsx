@@ -14,6 +14,8 @@ const Inventory = () => {
   const { state: equipmentState } = useInventoryState()
   const { armor, meleeWeapons, missileWeapons, miscEquipment } = equipmentState
 
+  const categoryTitleClassname = 'my-4 text-lg text-red-900'
+
   return (
     <>
       <div className='flex w-full items-center justify-between'>
@@ -27,7 +29,7 @@ const Inventory = () => {
       {!!armor.get().length && (
         <>
           <div className='flex w-full items-center justify-between'>
-            <h2 className='my-4 text-red-900'>{t('Armor')}</h2>
+            <h2 className={categoryTitleClassname}>{t('Armor')}</h2>
             <CategoryInventoryControls category='armor' />
           </div>
           <ArmorInventory />
@@ -37,7 +39,7 @@ const Inventory = () => {
       {!!meleeWeapons.get().length && (
         <>
           <div className='flex w-full items-center justify-between'>
-            <h2 className='my-4 text-red-900'>{t('Mêlée Weapons')}</h2>
+            <h2 className={categoryTitleClassname}>{t('Mêlée Weapons')}</h2>
             <CategoryInventoryControls category='meleeWeapons' />
           </div>
           <MeleeWeaponsInventory />
@@ -47,7 +49,7 @@ const Inventory = () => {
       {!!missileWeapons.get().length && (
         <>
           <div className='flex w-full items-center justify-between'>
-            <h2 className='my-4 text-red-900'>{t('Missile Weapons')}</h2>
+            <h2 className={categoryTitleClassname}>{t('Missile Weapons')}</h2>
             <CategoryInventoryControls category='missileWeapons' />
           </div>
           <MissileWeaponsInventory />
@@ -57,7 +59,7 @@ const Inventory = () => {
       {!!miscEquipment.get().length && (
         <>
           <div className='flex w-full items-center justify-between'>
-            <h2 className='my-4 text-red-900'>
+            <h2 className={categoryTitleClassname}>
               {t('Miscellaneous Equipment')}
             </h2>
             <CategoryInventoryControls category='miscEquipment' />

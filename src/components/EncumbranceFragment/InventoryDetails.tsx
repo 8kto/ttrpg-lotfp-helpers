@@ -11,6 +11,7 @@ import { useInventoryState } from '@/state/InventoryState'
 
 const InventoryDetails = () => {
   const { state: equipmentState } = useInventoryState()
+  // TODO if float display cp
   const { totalPoints, totalCost } = getTotal(combineEquipment(equipmentState))
   const encumbrance = getEncumbrance(totalPoints)
 
