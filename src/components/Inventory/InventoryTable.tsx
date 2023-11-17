@@ -26,7 +26,7 @@ function InventoryTable<T extends InventoryItem<EquipmentItem>>({
 
   return (
     <table className='w-full table-fixed'>
-      <thead className='bg-gray-50'>
+      <thead className='bg-gray-100'>
         <tr>
           {columns.map((column) => (
             <th

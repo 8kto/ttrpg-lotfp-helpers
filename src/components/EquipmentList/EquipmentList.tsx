@@ -10,7 +10,7 @@ import { t } from '@/locale/helpers'
 export default function EquipmentList() {
   return (
     <>
-      <h1 className='mb-4 inline-block text-2xl font-extrabold tracking-tight text-red-900 sm:text-3xl'>
+      <h1 className='mb-4 inline-block text-2xl font-extrabold text-red-900 sm:text-3xl'>
         {t('Equipment')}
       </h1>
       <CommandBar />
@@ -20,7 +20,7 @@ export default function EquipmentList() {
           {
             content: <MeleeWeaponsGrid />,
             key: 'melee',
-            title: t('Melee Weapons'),
+            title: t('Mêlée Weapons'),
           },
           {
             content: <MissileWeaponsGrid />,

@@ -16,7 +16,7 @@ const Inventory = () => {
   return (
     <>
       <div className='flex w-full items-center justify-between'>
-        <h1 className='mb-4 text-2xl font-extrabold tracking-tight text-red-900 sm:text-3xl'>
+        <h1 className='mb-4 text-2xl font-extrabold text-red-900 sm:text-3xl'>
           {t('Inventory')}
         </h1>
         <InventoryControls />
@@ -36,7 +36,7 @@ const Inventory = () => {
       {!!meleeWeapons.get().length && (
         <>
           <div className='flex w-full items-center justify-between'>
-            <h2 className='my-4 text-red-900'>{t('Melee Weapons')}</h2>
+            <h2 className='my-4 text-red-900'>{t('Mêlée Weapons')}</h2>
             <CategoryInventoryControls category='meleeWeapons' />
           </div>
           <MeleeWeaponsInventory />
