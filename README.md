@@ -6,11 +6,11 @@ Lamentations of the Flame Princess helpers.
 
 ## Features list
 
-- [ ] Equipment list from the core book
+- [x] Equipment list from the core book
   - [x] Armor
   - [x] Weapon, melee and missile
   - [x] Common items
-  - [ ] Details for each item
+  - [x] Details for each item
   - [x] Filter by city/rural cost
   - [x] Add multiple copies of same item
 - [ ] Extended list of equipment
