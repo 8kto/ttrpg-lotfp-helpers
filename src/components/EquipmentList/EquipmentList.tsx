@@ -3,6 +3,7 @@
 import CommandBar from '@/components/CommandBar/CommandBar'
 import ArmorGrid from '@/components/EquipmentList/ArmorGrid'
 import MeleeWeaponsGrid from '@/components/EquipmentList/MeleeWeaponsGrid'
+import MiscEquipmentGrid from '@/components/EquipmentList/MiscEquipmentGrid'
 import MissileWeaponsGrid from '@/components/EquipmentList/MissileWeaponsGrid'
 import Tabs from '@/components/Tabs'
 import { t } from '@/locale/helpers'
@@ -26,6 +27,11 @@ export default function EquipmentList() {
             content: <MissileWeaponsGrid />,
             key: 'missile',
             title: t('Missile Weapons'),
+          },
+          {
+            content: <MiscEquipmentGrid />,
+            key: 'miscEquipment',
+            title: t('Miscellaneous Equipment'),
           },
         ]}
       />

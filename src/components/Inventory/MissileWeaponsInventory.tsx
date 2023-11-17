@@ -4,15 +4,16 @@ import React from 'react'
 import DamageFragment from '@/components/DamageFragment'
 import type { InventoryItem } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
-import type { MeleeWeaponItem } from '@/domain/weapon'
-import { removeMeleeWeapon, useInventoryState } from '@/state/InventoryState'
+import type { MissileWeaponItem } from '@/domain/weapon'
+import { t } from '@/locale/helpers'
+import { removeMissileWeapon, useInventoryState } from '@/state/InventoryState'
 
 const MissileWeaponsInventory = () => {
   const { state: equipmentState } = useInventoryState()
   const { missileWeapons } = equipmentState
 
-  const onRemoveClick = (item: InventoryItem<MeleeWeaponItem>) =>
-    removeMeleeWeapon(item)
+  const onRemoveClick = (item: InventoryItem<MissileWeaponItem>) =>
+    removeMissileWeapon(item)
 
   const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase`
   const cellClassnames = `px-4 font-normal text-gray-900`
@@ -57,7 +58,7 @@ const MissileWeaponsInventory = () => {
                   <>{item.details}</>
                   <ul className='ml-4 list-disc pl-4'>
                     <li>
-                      Damage: (<DamageFragment damage={item.damage} />)
+                      {t('Damage:')} (<DamageFragment damage={item.damage} />)
                     </li>
                   </ul>
                 </div>
@@ -71,7 +72,7 @@ const MissileWeaponsInventory = () => {
               <button
                 className='inline-flex items-center text-xs text-gray-500'
                 onClick={() => onRemoveClick(item)}
-                title='Remove item'
+                title={t('Remove item')}
               >
                 <MinusIcon className='mr-2 h-5 w-5' />
               </button>
