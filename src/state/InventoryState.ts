@@ -12,15 +12,24 @@ export type InventoryStateType = {
   isCostRural: boolean
 }
 
-export const initialInventoryState: Readonly<InventoryStateType> = {
+/**
+ * Default global state.
+ * NB Do not export, use getter instead
+ * @see getInitialInventoryState
+ */
+const initialInventoryState: Readonly<InventoryStateType> = {
   armor: Array<InventoryItem<ArmorItem>>(),
   isCostRural: false,
   meleeWeapons: Array<InventoryItem<MeleeWeaponItem>>(),
   missileWeapons: Array<InventoryItem<MissileWeaponItem>>(),
 }
 
+export const getInitialInventoryState = (): InventoryStateType => {
+  return deepclone(initialInventoryState)
+}
+
 export const InventoryState = hookstate<InventoryStateType>(
-  deepclone(initialInventoryState),
+  getInitialInventoryState(),
 )
 
 // TODO add tests
@@ -28,7 +37,7 @@ export const useInventoryState = () => {
   const state = useHookstate(InventoryState)
 
   const reset = () => {
-    state.set(deepclone(initialInventoryState))
+    state.set(getInitialInventoryState())
   }
 
   const resetEquipment = () => {

@@ -5,7 +5,7 @@ import {
 import {
   addArmor,
   addMeleeWeapon,
-  initialInventoryState,
+  getInitialInventoryState,
   InventoryState,
   removeArmor,
   removeMeleeWeapon,
@@ -14,7 +14,7 @@ import {
 
 describe('InventoryState Tests', () => {
   beforeEach(() => {
-    InventoryState.set(initialInventoryState)
+    InventoryState.set(getInitialInventoryState())
   })
 
   describe('armor', () => {
