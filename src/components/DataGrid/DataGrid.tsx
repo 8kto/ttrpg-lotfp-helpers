@@ -1,4 +1,7 @@
-import { PlusCircleIcon as PlusIcon } from '@heroicons/react/24/solid'
+import {
+  BackspaceIcon,
+  PlusCircleIcon as PlusIcon,
+} from '@heroicons/react/24/solid'
 import React, { useEffect, useState } from 'react'
 
 import { trivialSort } from '@/components/DataGrid/helpers'
@@ -44,6 +47,10 @@ const DataGrid = <T extends EquipmentItem>({
     onSortChange?.(key, direction)
   }
 
+  const handleFilterReset = () => {
+    setFilter('')
+  }
+
   const sortIcon = (key: string) => {
     if (sortConfig.key !== key) {
       return null
@@ -56,14 +63,24 @@ const DataGrid = <T extends EquipmentItem>({
 
   return (
     <>
-      <div className='my-4 items-center justify-between lg:flex'>
-        <input
-          type='text'
-          value={filter}
-          onChange={(e) => setFilter(e.target.value)}
-          placeholder={filterPlaceholder}
-          className='block w-full border-0 py-1.5 pl-7 pr-20 ring-1 ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6'
-        />
+      <div className='my-4 flex w-full items-center md:w-1/2'>
+        <div className='relative w-full'>
+          <input
+            type='text'
+            id='voice-search'
+            className='block w-full border border-gray-200 bg-gray-50 p-2.5 pl-4 text-base text-gray-900'
+            value={filter}
+            onChange={(e) => setFilter(e.target.value)}
+            placeholder={filterPlaceholder}
+          />
+          <button
+            type='button'
+            className='absolute inset-y-0 right-0 flex items-center pr-3'
+            onClick={handleFilterReset}
+          >
+            <BackspaceIcon className='h-5 w-5 text-gray-500 hover:text-gray-900' />
+          </button>
+        </div>
       </div>
       <table className='min-w-full table-fixed'>
         <thead className='bg-gray-100'>
