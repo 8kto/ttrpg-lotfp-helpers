@@ -1,8 +1,9 @@
 {
   "extends": [
     "next/core-web-vitals",
-    "plugin:@typescript-eslint/recommended",
     "plugin:import/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended",
     "prettier"
   ],
   "plugins": [
@@ -10,7 +11,8 @@
     "import",
     "simple-import-sort",
     "sort-keys-fix",
-    "sort-destructure-keys"
+    "sort-destructure-keys",
+    "unused-imports"
   ],
   "parserOptions": {
     "ecmaVersion": 2020
@@ -42,7 +44,8 @@
       {
         "prefer": "type-imports"
       }
-    ]
+    ],
+    "unused-imports/no-unused-imports": "error"
   },
   "overrides": [
     {
