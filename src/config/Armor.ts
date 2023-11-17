@@ -22,6 +22,8 @@ export const Armor: ReadonlyArray<ArmorItem> = [
   {
     armorClass: 18,
     cityCost: 1000,
+    details:
+      'Explorers traveling ... with ... metal armor clomping on stone floors are not going to surprise anything or anyone (PCB p.56).',
     name: 'Plate',
     points: EncumbrancePoint.Heavy,
     ruralCost: null,
