@@ -10,6 +10,9 @@ export const MeleeWeapons: ReadonlyArray<MeleeWeaponItem> = [
       dice: Dice.d3,
       x: 1,
     },
+    details:
+      'This includes all sorts of fist wrappings and brass knuckle weapon types. ' +
+      'Users suffer a –2 penalty to hit any opponent with an unadjusted AC of 15 or better.',
     name: 'Cestus',
     points: EncumbrancePoint.None,
     ruralCost: null,
@@ -21,6 +24,9 @@ export const MeleeWeapons: ReadonlyArray<MeleeWeaponItem> = [
       dice: Dice.d6,
       x: 1,
     },
+    details:
+      'Use of this weapon requires an attack from surprise, or a successful grapple. ' +
+      'If a hit is scored, the target is considered grappled and will take 1d6 damage per round.',
     name: 'Garrote',
     points: EncumbrancePoint.None,
     ruralCost: null,
@@ -32,6 +38,9 @@ export const MeleeWeapons: ReadonlyArray<MeleeWeaponItem> = [
       dice: Dice.d10,
       x: 1,
     },
+    details:
+      'This weapon can be used one-handed if charging on horseback. ' +
+      'Otherwise, it is effectively a polearm (pike)',
     isAbleToReceiveCharge: true,
     isSecondRank: true,
     name: 'Lance',
@@ -43,6 +52,11 @@ export const MeleeWeapons: ReadonlyArray<MeleeWeaponItem> = [
   {
     cityCost: 20,
     damage: null,
+    details:
+      'A successful hit with this weapon requires the victim to make a saving throw versus Paralysis. ' +
+      'If unsuccessful, the victim is considered helpless, as is the wielder of the mancatcher ' +
+      'while the target is being held for purposes of defending against attacks. ' +
+      'This weapon must be wielded with two hands.',
     isAbleToReceiveCharge: false,
     name: 'Mancatcher',
     points: EncumbrancePoint.Oversized,
@@ -56,6 +70,10 @@ export const MeleeWeapons: ReadonlyArray<MeleeWeaponItem> = [
       dice: Dice.d8,
       x: 1,
     },
+    details:
+      'This two-handed weapon can be used to attack from the second rank, ' +
+      'can be used to receive a charge, and receives a +1 bonus to hit opponents with ' +
+      'an unadjusted AC of 16 or better.',
     isAbleToReceiveCharge: true,
     isSecondRank: true,
     name: 'Polearm',
@@ -70,6 +88,8 @@ export const MeleeWeapons: ReadonlyArray<MeleeWeaponItem> = [
       dice: Dice.d8,
       x: 1,
     },
+    details:
+      'This one handed weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better.',
     name: 'Rapier',
     points: EncumbrancePoint.Regular,
     ruralCost: null,
@@ -81,6 +101,8 @@ export const MeleeWeapons: ReadonlyArray<MeleeWeaponItem> = [
       dice: Dice.d6,
       x: 1,
     },
+    details:
+      'This can be used to attack from the second rank, and can be used to receive a charge.',
     isAbleToReceiveCharge: true,
     isSecondRank: true,
     name: 'Spear',
@@ -98,6 +120,7 @@ export const MeleeWeapons: ReadonlyArray<MeleeWeaponItem> = [
     name: 'Staff',
     points: EncumbrancePoint.Regular,
     ruralCost: 3,
+    twoHanded: true,
     type: WeaponType.Melee,
   },
   {
@@ -106,7 +129,10 @@ export const MeleeWeapons: ReadonlyArray<MeleeWeaponItem> = [
       dice: Dice.d10,
       x: 1,
     },
-    name: 'Weapon, Great: Two-handed sword, maul, great axe',
+    details:
+      'These weapons must be wielded with two hands. ' +
+      'Two-handed swords, mauls, and great axes are included in this category.',
+    name: 'Weapon, Great',
     points: EncumbrancePoint.Oversized,
     ruralCost: null,
     twoHanded: true,
@@ -130,6 +156,8 @@ export const MeleeWeapons: ReadonlyArray<MeleeWeaponItem> = [
       dice: Dice.d6,
       x: 1,
     },
+    details:
+      'These are one-handed weapons, including short swords and hand axes',
     name: 'Weapon, Small: short sword, hand axe',
     points: EncumbrancePoint.Regular,
     ruralCost: 10,
@@ -141,6 +169,9 @@ export const MeleeWeapons: ReadonlyArray<MeleeWeaponItem> = [
       dice: Dice.d4,
       x: 1,
     },
+    details:
+      'These are small one-handed weapons including daggers and clubs, ' +
+      'and suffer a –2 penalty to hit opponents with an unadjusted AC of 15 or better.',
     name: 'Weapon, Minor: daggers, clubs',
     points: EncumbrancePoint.Regular,
     ruralCost: 5,
@@ -152,6 +183,9 @@ export const MeleeWeapons: ReadonlyArray<MeleeWeaponItem> = [
       dice: Dice.d3,
       x: 1,
     },
+    details:
+      'This weapon is ineffective against targets with unadjusted AC 14 or better, ' +
+      "but allows mêlée attacks on opponents up to 10' away.",
     name: 'Whip',
     points: EncumbrancePoint.Regular,
     ruralCost: 25,

@@ -30,6 +30,8 @@ export const Armor: ReadonlyArray<ArmorItem> = [
   {
     armorClass: '+1,+2',
     cityCost: 10,
+    details:
+      'Shields increase AC by 1 point versus mêlée attacks, and by 2 points versus missile attacks.',
     name: 'Shield',
     points: EncumbrancePoint.Oversized,
     ruralCost: 25,
