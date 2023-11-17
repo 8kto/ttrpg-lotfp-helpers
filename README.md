@@ -8,7 +8,7 @@ Lamentations of the Flame Princess helpers.
 
 - [ ] Equipment list from the core book
   - [x] Armor
-  - [ ] Weapon, melee and missile
+  - [x] Weapon, melee and missile
   - [ ] Common items
   - [ ] Details for each item
   - [x] Filter by city/rural cost
