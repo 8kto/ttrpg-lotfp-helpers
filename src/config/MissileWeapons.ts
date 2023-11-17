@@ -34,7 +34,8 @@ export const MissileWeapons: ReadonlyArray<MissileWeaponItem> = [
   {
     cityCost: 30,
     damage: { dice: Dice.d8, x: 1 },
-    details: 'Heavy crossbows can only be fired once in 3 rounds and ignore 4 AC points',
+    details:
+      'Heavy crossbows can only be fired once in 3 rounds and ignore 4 AC points',
     name: 'Crossbow, Heavy',
     points: EncumbrancePoint.Oversized,
     range: { long: 600, medium: 200, short: 50 },
@@ -44,7 +45,8 @@ export const MissileWeapons: ReadonlyArray<MissileWeaponItem> = [
   {
     cityCost: 25,
     damage: { dice: Dice.d6, x: 1 },
-    details: 'Light crossbows can only be fired every once in 2 rounds and ignore 2 AC points',
+    details:
+      'Light crossbows can only be fired every once in 2 rounds and ignore 2 AC points',
     name: 'Crossbow, Light',
     points: EncumbrancePoint.Regular,
     range: { long: 400, medium: 150, short: 50 },

@@ -109,17 +109,15 @@ const MissileWeaponsGrid = () => {
 
   return (
     <>
-      <div className="py-6">
-      <p>
-        {t(
-          'Each missile weapon can be fired once per round with the exception of the crossbows.',
-        )}
-      </p>
-      <p>
-        {t(
-          'Targets at Medium range are –2 to hit, –4 to hit at Long range.',
-        )}
-      </p>
+      <div className='py-6'>
+        <p>
+          {t(
+            'Each missile weapon can be fired once per round with the exception of the crossbows.',
+          )}
+        </p>
+        <p>
+          {t('Targets at Medium range are –2 to hit, –4 to hit at Long range.')}
+        </p>
       </div>
       <DataGrid<MissileWeaponItem>
         data={dataFilteredByCost}
