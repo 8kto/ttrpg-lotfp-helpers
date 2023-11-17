@@ -1,4 +1,4 @@
-import type { EquipmentItem } from '@/domain'
+import type {EquipmentItem, InventoryItem} from '@/domain'
 import { Encumbrance } from '@/domain/encumbrance'
 
 export const getEncumbrance = (points: number): Encumbrance => {
@@ -18,11 +18,11 @@ export const getEncumbrance = (points: number): Encumbrance => {
   return Encumbrance.Unencumbered
 }
 
-export const getTotal = (items: Array<EquipmentItem>) => {
+export const getTotal = (items: Array<InventoryItem<EquipmentItem>>) => {
   return items.reduce(
     (totals, item) => {
       return {
-        totalCost: totals.totalCost + (item.cityCost || 0),
+        totalCost: totals.totalCost + item.lockedCost,
         totalPoints: totals.totalPoints + item.points,
       }
     },
