@@ -1,12 +1,11 @@
 import type { EquipmentItem } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 
-// TODO fix weight
 export const MiscEquipment: ReadonlyArray<EquipmentItem> = [
   {
     cityCost: 1,
     name: 'Air Bladder',
-    points: EncumbrancePoint.Regular,
+    points: EncumbrancePoint.None,
     ruralCost: 1,
   },
   {
@@ -40,16 +39,16 @@ export const MiscEquipment: ReadonlyArray<EquipmentItem> = [
     ruralCost: null,
   },
   {
-    cityCost: 5,
+    cityCost: 0.5,
     name: 'Caltrop',
     points: EncumbrancePoint.Regular,
     ruralCost: null,
   },
   {
-    cityCost: 1,
+    cityCost: 0.1,
     name: 'Candle',
-    points: EncumbrancePoint.Regular,
-    ruralCost: 1,
+    points: EncumbrancePoint.None,
+    ruralCost: 0.1,
   },
   {
     cityCost: 1,
@@ -58,13 +57,14 @@ export const MiscEquipment: ReadonlyArray<EquipmentItem> = [
     ruralCost: 2,
   },
   {
-    cityCost: 1,
+    cityCost: 0.1,
     name: 'Chalk',
-    points: EncumbrancePoint.Regular,
-    ruralCost: 1,
+    points: EncumbrancePoint.None,
+    ruralCost: 0.1,
   },
   {
     cityCost: 20,
+    details: 'Provided price is minimal',
     name: 'Clothing, Extravagant',
     points: EncumbrancePoint.Regular,
     ruralCost: null,
@@ -72,13 +72,13 @@ export const MiscEquipment: ReadonlyArray<EquipmentItem> = [
   {
     cityCost: 5,
     name: 'Clothing, Normal',
-    points: EncumbrancePoint.Regular,
+    points: EncumbrancePoint.None,
     ruralCost: 2,
   },
   {
     cityCost: 1,
     name: 'Clothing, Poor',
-    points: EncumbrancePoint.Regular,
+    points: EncumbrancePoint.None,
     ruralCost: 0.5,
   },
   {
@@ -126,10 +126,12 @@ export const MiscEquipment: ReadonlyArray<EquipmentItem> = [
   {
     cityCost: 0.3,
     name: 'Garlic',
-    points: EncumbrancePoint.Regular,
+    points: EncumbrancePoint.None,
     ruralCost: 0.1,
   },
-  { cityCost: 5, name: 'Gem', points: EncumbrancePoint.Regular, ruralCost: 5 },
+  { cityCost: 5,
+    details: 'Provided price is minimal',
+    name: 'Gem', points: EncumbrancePoint.None, ruralCost: 5 },
   {
     cityCost: 5,
     name: 'Grappling Hook',
@@ -139,19 +141,19 @@ export const MiscEquipment: ReadonlyArray<EquipmentItem> = [
   {
     cityCost: 25,
     name: 'Holy Symbol, Silver',
-    points: EncumbrancePoint.Regular,
+    points: EncumbrancePoint.None,
     ruralCost: 50,
   },
   {
     cityCost: 10,
     name: 'Holy Symbol, Steel',
-    points: EncumbrancePoint.Regular,
+    points: EncumbrancePoint.None,
     ruralCost: 10,
   },
   {
     cityCost: 1,
     name: 'Holy Symbol, Wood',
-    points: EncumbrancePoint.Regular,
+    points: EncumbrancePoint.None,
     ruralCost: 0.1,
   },
   {
@@ -169,25 +171,27 @@ export const MiscEquipment: ReadonlyArray<EquipmentItem> = [
   {
     cityCost: 0.1,
     name: 'Ink',
-    points: EncumbrancePoint.Regular,
+    points: EncumbrancePoint.None,
     ruralCost: 0.5,
   },
   {
     cityCost: 1,
+    details: 'Provided price is minimal',
     name: 'Instrument',
     points: EncumbrancePoint.Regular,
     ruralCost: 5,
   },
   {
     cityCost: 10,
+    details: 'Provided price is minimal',
     name: 'Jewelry',
-    points: EncumbrancePoint.Regular,
+    points: EncumbrancePoint.None,
     ruralCost: 10,
   },
   {
     cityCost: 10,
     name: "Ladder, 10'",
-    points: EncumbrancePoint.Regular,
+    points: EncumbrancePoint.Oversized,
     ruralCost: 7,
   },
   {
@@ -223,13 +227,13 @@ export const MiscEquipment: ReadonlyArray<EquipmentItem> = [
   {
     cityCost: 10,
     name: 'Map, Kingdom',
-    points: EncumbrancePoint.Regular,
+    points: EncumbrancePoint.None,
     ruralCost: 25,
   },
   {
     cityCost: 1,
     name: 'Map, Local',
-    points: EncumbrancePoint.Regular,
+    points: EncumbrancePoint.None,
     ruralCost: 5,
   },
   {
@@ -241,25 +245,25 @@ export const MiscEquipment: ReadonlyArray<EquipmentItem> = [
   {
     cityCost: 30,
     name: 'Mirror, Silver',
-    points: EncumbrancePoint.Regular,
+    points: EncumbrancePoint.None,
     ruralCost: null,
   },
   {
     cityCost: 1,
     name: 'Mirror, Steel',
-    points: EncumbrancePoint.Regular,
+    points: EncumbrancePoint.None,
     ruralCost: 5,
   },
   {
     cityCost: 0.1,
     name: 'Nails',
-    points: EncumbrancePoint.Regular,
+    points: EncumbrancePoint.None,
     ruralCost: 0.2,
   },
   {
     cityCost: 0.2,
     name: 'Paper',
-    points: EncumbrancePoint.Regular,
+    points: EncumbrancePoint.None,
     ruralCost: 0.2,
   },
   {
@@ -271,19 +275,19 @@ export const MiscEquipment: ReadonlyArray<EquipmentItem> = [
   {
     cityCost: 1,
     name: 'Pipe',
-    points: EncumbrancePoint.Regular,
+    points: EncumbrancePoint.None,
     ruralCost: 0.5,
   },
   {
     cityCost: 1,
     name: "Pole, 10'",
-    points: EncumbrancePoint.Regular,
+    points: EncumbrancePoint.Oversized,
     ruralCost: 0.5,
   },
   {
     cityCost: 25,
     name: 'Riding Gear',
-    points: EncumbrancePoint.Regular,
+    points: EncumbrancePoint.Oversized,
     ruralCost: 10,
   },
   {
@@ -307,7 +311,7 @@ export const MiscEquipment: ReadonlyArray<EquipmentItem> = [
   {
     cityCost: 0.1,
     name: 'Soap',
-    points: EncumbrancePoint.Regular,
+    points: EncumbrancePoint.None,
     ruralCost: 0.1,
   },
   {
@@ -319,13 +323,13 @@ export const MiscEquipment: ReadonlyArray<EquipmentItem> = [
   {
     cityCost: 0.3,
     name: 'Spike, Iron',
-    points: EncumbrancePoint.Regular,
+    points: EncumbrancePoint.None,
     ruralCost: 0.5,
   },
   {
     cityCost: 0.1,
     name: 'Spike, Wooden',
-    points: EncumbrancePoint.Regular,
+    points: EncumbrancePoint.None,
     ruralCost: 0.1,
   },
   {
@@ -337,25 +341,25 @@ export const MiscEquipment: ReadonlyArray<EquipmentItem> = [
   {
     cityCost: 25,
     name: 'Tent, Grand',
-    points: EncumbrancePoint.Regular,
+    points: EncumbrancePoint.Oversized,
     ruralCost: null,
   },
   {
     cityCost: 50,
     name: 'Tent, Pavilion',
-    points: EncumbrancePoint.Regular,
+    points: EncumbrancePoint.Oversized,
     ruralCost: null,
   },
   {
     cityCost: 5,
     name: 'Tent, Personal',
-    points: EncumbrancePoint.Regular,
+    points: EncumbrancePoint.Oversized,
     ruralCost: 10,
   },
   {
     cityCost: 10,
     name: 'Tent, Regular',
-    points: EncumbrancePoint.Regular,
+    points: EncumbrancePoint.Oversized,
     ruralCost: 20,
   },
   {
@@ -378,7 +382,8 @@ export const MiscEquipment: ReadonlyArray<EquipmentItem> = [
   },
   {
     cityCost: 0.5,
-    name: 'Vial or Bottle, Empty',
+    details: 'No encumbrance if empty',
+    name: 'Vial or Bottle',
     points: EncumbrancePoint.Regular,
     ruralCost: 0.7,
   },
@@ -391,13 +396,13 @@ export const MiscEquipment: ReadonlyArray<EquipmentItem> = [
   {
     cityCost: 1,
     name: 'Whistle',
-    points: EncumbrancePoint.Regular,
+    points: EncumbrancePoint.None,
     ruralCost: 1,
   },
   {
     cityCost: 1,
     name: 'Wolvesbane',
-    points: EncumbrancePoint.Regular,
+    points: EncumbrancePoint.None,
     ruralCost: 0.1,
   },
 ]
