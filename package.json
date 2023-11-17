@@ -10,7 +10,8 @@
     "test": "jest",
     "format": "prettier --check --ignore-path .gitignore .",
     "format:fix": "yarn lint -- --fix && prettier --write --ignore-path .gitignore .",
-    "weok": "yarn tsc && yarn lint && yarn format && yarn test && echo WE OK"
+    "weok": "yarn tsc && yarn lint && yarn format && yarn test && echo WE OK",
+    "todos": "egrep --color=always -i '(TODO|FIXME)' -r src/"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
