@@ -1,4 +1,4 @@
-import type { InventoryItem } from '@/domain'
+import type { EquipmentItem, InventoryItem } from '@/domain'
 import { Dice } from '@/domain'
 import type { ArmorItem } from '@/domain/armor'
 import { ArmorType } from '@/domain/armor'
@@ -78,4 +78,22 @@ export const missileWeaponItemMock2: InventoryItem<MissileWeaponItem> = {
   range: { long: 600, medium: 200, short: 50 },
   ruralCost: null,
   type: WeaponType.Missile,
+}
+
+export const miscEquipItem1: InventoryItem<EquipmentItem> = {
+  cityCost: 1,
+  inventoryId: '7',
+  lockedCost: 1,
+  name: 'Air Bladder',
+  points: EncumbrancePoint.None,
+  ruralCost: 1,
+}
+
+export const miscEquipItem2: InventoryItem<EquipmentItem> = {
+  cityCost: 10,
+  inventoryId: '8',
+  lockedCost: 10,
+  name: 'Tent, Regular',
+  points: EncumbrancePoint.Oversized,
+  ruralCost: 20,
 }

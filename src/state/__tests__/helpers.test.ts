@@ -1,13 +1,13 @@
 import { hookstate } from '@hookstate/core'
 
-import type { InventoryItem } from '@/domain'
-import type { ArmorItem } from '@/domain/armor'
-import type { MeleeWeaponItem } from '@/domain/weapon'
+import type { EquipmentItem, InventoryItem } from '@/domain'
 import {
   armorItemMock1,
   armorItemMock2,
   meleeWeaponItemMock1,
   meleeWeaponItemMock2,
+  miscEquipItem1,
+  miscEquipItem2,
   missileWeaponItemMock1,
   missileWeaponItemMock2,
 } from '@/shared/mocks/inventoryMocks'
@@ -26,17 +26,20 @@ describe('Inventory helpers', () => {
         armor: [armorItemMock1, armorItemMock2],
         isCostRural: false,
         meleeWeapons: [meleeWeaponItemMock1, meleeWeaponItemMock2],
+        miscEquipment: [miscEquipItem1, miscEquipItem2],
         missileWeapons: [missileWeaponItemMock1, missileWeaponItemMock2],
       })
 
       const combinedEquipment = combineEquipment(mockEquipmentState)
 
       // Expected combined array
-      const expected: Array<InventoryItem<ArmorItem | MeleeWeaponItem>> = [
+      const expected: Array<InventoryItem<EquipmentItem>> = [
         armorItemMock1,
         armorItemMock2,
         meleeWeaponItemMock1,
         meleeWeaponItemMock2,
+        miscEquipItem1,
+        miscEquipItem2,
         missileWeaponItemMock1,
         missileWeaponItemMock2,
       ]
@@ -51,6 +54,7 @@ describe('Inventory helpers', () => {
         armor: [],
         isCostRural: false,
         meleeWeapons: [],
+        miscEquipment: [],
         missileWeapons: [],
       })
 

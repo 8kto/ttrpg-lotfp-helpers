@@ -55,7 +55,7 @@ export const useInventoryState = () => {
 }
 
 export const EquipmentStateKeys: ReadonlyArray<keyof InventoryStateType> =
-  Object.freeze(['armor', 'meleeWeapons', 'missileWeapons'])
+  Object.freeze(['armor', 'meleeWeapons', 'missileWeapons', 'miscEquipment'])
 
 export const addArmor = (item: InventoryItem<ArmorItem>) => {
   const armor = InventoryState.armor
