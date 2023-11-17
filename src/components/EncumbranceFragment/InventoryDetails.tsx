@@ -1,6 +1,6 @@
 import React from 'react'
 
-import CostFragment from "@/components/CostFragment/CostFragment"
+import CostFragment from '@/components/CostFragment/CostFragment'
 import {
   getEncumbrance,
   getTotal,

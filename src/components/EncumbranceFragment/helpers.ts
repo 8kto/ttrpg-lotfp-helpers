@@ -1,4 +1,4 @@
-import type {EquipmentItem, InventoryItem} from '@/domain'
+import type { EquipmentItem, InventoryItem } from '@/domain'
 import { Encumbrance } from '@/domain/encumbrance'
 
 export const getEncumbrance = (points: number): Encumbrance => {

@@ -1,4 +1,4 @@
-import {getCoins, roundTo} from '@/components/CostFragment/helpers'
+import { getCoins, roundTo } from '@/components/CostFragment/helpers'
 
 describe('CostFragment helpers', () => {
   describe('roundTo', () => {
@@ -25,7 +25,7 @@ describe('CostFragment helpers', () => {
     it('handles floating point error victims', () => {
       expect(roundTo(0.1 + 0.2, 1)).toEqual(0.3)
       expect(roundTo(2 + Number.EPSILON, 2)).toEqual(2)
-      expect(roundTo(Number.EPSILON, 2)).toEqual(0.00)
+      expect(roundTo(Number.EPSILON, 2)).toEqual(0.0)
       expect(roundTo(Number.EPSILON, 0)).toEqual(0)
       expect(roundTo(1.005, 2)).toEqual(1.01)
     })
@@ -58,8 +58,14 @@ describe('CostFragment helpers', () => {
       expect(getCoins(0.06)).toEqual({ copperPoints: 1, silverPoints: 0 }) // 0.06 rounds to 0.1
       expect(getCoins(1.999)).toEqual({ copperPoints: 0, silverPoints: 2 }) // 1.999 rounds to 2.0
       expect(getCoins(1.005)).toEqual({ copperPoints: 0, silverPoints: 1 }) // 1.005 rounds to 1.0
-      expect(getCoins(1 + Number.EPSILON)).toEqual({ copperPoints: 0, silverPoints: 1 })
-      expect(getCoins(1.5 + Number.EPSILON)).toEqual({ copperPoints: 5, silverPoints: 1 })
+      expect(getCoins(1 + Number.EPSILON)).toEqual({
+        copperPoints: 0,
+        silverPoints: 1,
+      })
+      expect(getCoins(1.5 + Number.EPSILON)).toEqual({
+        copperPoints: 5,
+        silverPoints: 1,
+      })
     })
   })
 })

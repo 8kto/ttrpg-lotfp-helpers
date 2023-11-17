@@ -2,8 +2,6 @@ import React from 'react'
 
 import { getCoins } from '@/components/CostFragment/helpers'
 
-
-
 const CostFragment = ({ cost }: { cost: number }) => {
   const { copperPoints, silverPoints } = getCoins(cost)
 
