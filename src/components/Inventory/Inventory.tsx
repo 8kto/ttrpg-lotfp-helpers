@@ -2,21 +2,22 @@ import React from 'react'
 
 import InventoryDetails from '@/components/EncumbranceFragment/InventoryDetails'
 import ArmorInventory from '@/components/Inventory/ArmorInventory'
+import CategoryInventoryControls from '@/components/Inventory/CategoryInventoryControls'
 import InventoryControls from '@/components/Inventory/InventoryControls'
 import MeleeWeaponsInventory from '@/components/Inventory/MeleeWeaponsInventory'
 import MissileWeaponsInventory from '@/components/Inventory/MissileWeaponsInventory'
+import { t } from '@/locale/helpers'
 import { useInventoryState } from '@/state/InventoryState'
 
 const Inventory = () => {
   const { state: equipmentState } = useInventoryState()
   const { armor, meleeWeapons, missileWeapons } = equipmentState
 
-  // TODO reset for each category
   return (
     <>
       <div className='flex w-full items-center justify-between'>
         <h1 className='mb-4 text-2xl font-extrabold tracking-tight text-red-900 sm:text-3xl'>
-          Inventory
+          {t('Inventory')}
         </h1>
         <InventoryControls />
       </div>
@@ -24,21 +25,30 @@ const Inventory = () => {
 
       {!!armor.get().length && (
         <>
-          <h2 className='my-4 text-red-900'>Armor</h2>
+          <div className='flex w-full items-center justify-between'>
+            <h2 className='my-4 text-red-900'>{t('Armor')}</h2>
+            <CategoryInventoryControls category='armor' />
+          </div>
           <ArmorInventory />
         </>
       )}
 
       {!!meleeWeapons.get().length && (
         <>
-          <h2 className='my-8 mb-4 text-red-900'>Melee Weapons</h2>
+          <div className='flex w-full items-center justify-between'>
+            <h2 className='my-4 text-red-900'>{t('Melee Weapons')}</h2>
+            <CategoryInventoryControls category='meleeWeapons' />
+          </div>
           <MeleeWeaponsInventory />
         </>
       )}
 
       {!!missileWeapons.get().length && (
         <>
-          <h2 className='my-8 mb-4 text-red-900'>Missile Weapons</h2>
+          <div className='flex w-full items-center justify-between'>
+            <h2 className='my-4 text-red-900'>{t('Missile Weapons')}</h2>
+            <CategoryInventoryControls category='missileWeapons' />
+          </div>
           <MissileWeaponsInventory />
         </>
       )}
