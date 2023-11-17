@@ -1,5 +1,6 @@
 import React from 'react'
 
+import CostFragment from "@/components/CostFragment/CostFragment"
 import {
   getEncumbrance,
   getTotal,
@@ -11,7 +12,6 @@ import { useInventoryState } from '@/state/InventoryState'
 
 const InventoryDetails = () => {
   const { state: equipmentState } = useInventoryState()
-  // TODO if float display cp
   const { totalPoints, totalCost } = getTotal(combineEquipment(equipmentState))
   const encumbrance = getEncumbrance(totalPoints)
 
@@ -23,7 +23,7 @@ const InventoryDetails = () => {
         <div className='px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0'>
           <dt className={titleClassname}>{t('Total')}</dt>
           <dd className='mt-1 leading-6 text-gray-700 sm:col-span-2 sm:mt-0'>
-            <strong>{totalCost}</strong> sp
+            <CostFragment cost={totalCost} />
           </dd>
         </div>
         <div className='px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0'>
