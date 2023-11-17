@@ -2,7 +2,7 @@ import {
   getEncumbrance,
   getTotal,
 } from '@/components/EncumbranceFragment/helpers'
-import type { EquipmentItem } from '@/domain'
+import type { EquipmentItem, InventoryItem } from '@/domain'
 import { Encumbrance, EncumbrancePoint } from '@/domain/encumbrance'
 
 describe('helpers', () => {
@@ -25,21 +25,27 @@ describe('helpers', () => {
 
   describe('getTotal', () => {
     it('returns total cost and points of all equipment items', () => {
-      const items: EquipmentItem[] = [
+      const items: InventoryItem<EquipmentItem>[] = [
         {
           cityCost: 100,
+          inventoryId: '1',
+          lockedCost: 100,
           name: 'Sword',
           points: EncumbrancePoint.Regular,
           ruralCost: null,
         },
         {
           cityCost: 50,
+          inventoryId: '2',
+          lockedCost: 50,
           name: 'Shield',
           points: EncumbrancePoint.Oversized,
           ruralCost: null,
         },
         {
           cityCost: 200,
+          inventoryId: '3',
+          lockedCost: 200,
           name: 'Armor',
           points: EncumbrancePoint.Heavy,
           ruralCost: null,
