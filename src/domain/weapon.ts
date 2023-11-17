@@ -16,6 +16,7 @@ export enum WeaponType {
   Melee = 'Melee',
   // Missiles: bow, crossbow, sling, darts etc.
   Missile = 'Missile',
+  Ammunition = 'Ammunition',
 }
 
 export interface WeaponItem extends EquipmentItem {
@@ -30,7 +31,7 @@ export interface MeleeWeaponItem extends WeaponItem {
 }
 
 export interface MissileWeaponItem extends WeaponItem {
-  range: Range
+  range: Range | null
 }
 
 export type DamageDice = {
