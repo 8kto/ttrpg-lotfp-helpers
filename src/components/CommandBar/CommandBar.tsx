@@ -10,42 +10,39 @@ const CommandBar = () => {
   const handleCostToggle: React.ChangeEventHandler<HTMLInputElement> = () =>
     toggleCost()
 
+  const radioClassnames = 'h-4 w-4 focus:ring-red-500'
+  const labelClassnames = 'ml-2 text-sm text-gray-900 cursor-pointer'
+
   return (
     <div className='my-2 flex justify-end'>
       <div className='mr-4 flex items-center'>
-        <h3 className='font-semibold text-gray-900'>Cost</h3>
+        <h3 className='font-semibold text-red-900'>Cost</h3>
       </div>
       <div className='mr-4 flex items-center'>
         <input
-          id='inline-radio'
+          id='city-radio'
           type='radio'
           value='city'
           name='inline-radio-group'
           checked={!isCostRural.get()}
           onChange={handleCostToggle}
-          className='h-4 w-4 border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600'
+          className={radioClassnames}
         />
-        <label
-          htmlFor='inline-radio'
-          className='ml-2 font-medium text-gray-900'
-        >
+        <label htmlFor='city-radio' className={labelClassnames}>
           City
         </label>
       </div>
       <div className='mr-4 flex items-center'>
         <input
-          id='inline-2-radio'
+          id='rural-radio'
           type='radio'
           value='rural'
           name='inline-radio-group'
-          className='h-4 w-4 border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600'
+          className={radioClassnames}
           checked={isCostRural.get()}
           onChange={handleCostToggle}
         />
-        <label
-          htmlFor='inline-2-radio'
-          className='ml-2 font-medium text-gray-900'
-        >
+        <label htmlFor='rural-radio' className={labelClassnames}>
           Rural
         </label>
       </div>
