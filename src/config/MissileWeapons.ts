@@ -3,7 +3,7 @@ import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { MissileWeaponItem } from '@/domain/weapon'
 import { WeaponType } from '@/domain/weapon'
 
-export const MissileWeapons: Array<MissileWeaponItem> = [
+export const MissileWeapons: ReadonlyArray<MissileWeaponItem> = [
   {
     cityCost: 5,
     damage: null,
