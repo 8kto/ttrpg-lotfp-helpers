@@ -5,13 +5,14 @@ import ArmorInventory from '@/components/Inventory/ArmorInventory'
 import CategoryInventoryControls from '@/components/Inventory/CategoryInventoryControls'
 import InventoryControls from '@/components/Inventory/InventoryControls'
 import MeleeWeaponsInventory from '@/components/Inventory/MeleeWeaponsInventory'
+import MiscEquipmentInventory from '@/components/Inventory/MiscEquipmentInventory'
 import MissileWeaponsInventory from '@/components/Inventory/MissileWeaponsInventory'
 import { t } from '@/locale/helpers'
 import { useInventoryState } from '@/state/InventoryState'
 
 const Inventory = () => {
   const { state: equipmentState } = useInventoryState()
-  const { armor, meleeWeapons, missileWeapons } = equipmentState
+  const { armor, meleeWeapons, missileWeapons, miscEquipment } = equipmentState
 
   return (
     <>
@@ -50,6 +51,18 @@ const Inventory = () => {
             <CategoryInventoryControls category='missileWeapons' />
           </div>
           <MissileWeaponsInventory />
+        </>
+      )}
+
+      {!!miscEquipment.get().length && (
+        <>
+          <div className='flex w-full items-center justify-between'>
+            <h2 className='my-4 text-red-900'>
+              {t('Miscellaneous Equipment')}
+            </h2>
+            <CategoryInventoryControls category='miscEquipment' />
+          </div>
+          <MiscEquipmentInventory />
         </>
       )}
     </>

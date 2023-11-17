@@ -129,9 +129,13 @@ export const MiscEquipment: ReadonlyArray<EquipmentItem> = [
     points: EncumbrancePoint.None,
     ruralCost: 0.1,
   },
-  { cityCost: 5,
+  {
+    cityCost: 5,
     details: 'Provided price is minimal',
-    name: 'Gem', points: EncumbrancePoint.None, ruralCost: 5 },
+    name: 'Gem',
+    points: EncumbrancePoint.None,
+    ruralCost: 5,
+  },
   {
     cityCost: 5,
     name: 'Grappling Hook',

@@ -1,5 +1,7 @@
 'use client'
 
+import React from 'react'
+
 import CommandBar from '@/components/CommandBar/CommandBar'
 import ArmorGrid from '@/components/EquipmentList/ArmorGrid'
 import MeleeWeaponsGrid from '@/components/EquipmentList/MeleeWeaponsGrid'
@@ -14,7 +16,10 @@ export default function EquipmentList() {
       <h1 className='mb-4 inline-block text-2xl font-extrabold text-red-900 sm:text-3xl'>
         {t('Equipment')}
       </h1>
+      <p>All costs are in silver pieces</p>
+
       <CommandBar />
+
       <Tabs
         tabs={[
           { content: <ArmorGrid />, key: 'armor', title: t('Armor') },
