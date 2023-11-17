@@ -5,7 +5,7 @@ import DataGrid from '@/components/DataGrid/DataGrid'
 import { trivialSort } from '@/components/DataGrid/helpers'
 import type { DataGridColumn, SortConfig } from '@/components/DataGrid/types'
 import { getInventoryItem } from '@/components/EquipmentList/helpers'
-import { Equipment } from '@/config/Equipment'
+import { AllEquipment } from '@/config/AllEquipment'
 import type { Dice, EquipmentItem } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { MeleeWeaponItem } from '@/domain/weapon'
@@ -57,7 +57,7 @@ const MeleeWeaponsGrid = () => {
   }, [isCostRural])
 
   const dataFilteredByCost = useMemo(() => {
-    const data = Object.values(Equipment.MeleeWeapons)
+    const data = Object.values(AllEquipment.MeleeWeapons)
 
     return isCostRural.get() ? data.filter((i) => i.ruralCost !== null) : data
   }, [isCostRural])
