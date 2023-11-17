@@ -409,4 +409,86 @@ export const MiscEquipment: ReadonlyArray<EquipmentItem> = [
     points: EncumbrancePoint.None,
     ruralCost: 0.1,
   },
+  // FOOD + DRINKS
+  {
+    cityCost: 2,
+    name: 'Rations, Iron/Day',
+    points: EncumbrancePoint.Regular,
+    ruralCost: 1,
+  },
+  {
+    cityCost: 1,
+    name: 'Rations, Standard/Day',
+    points: EncumbrancePoint.Regular,
+    ruralCost: 0.5,
+  },
+  {
+    cityCost: 1,
+    name: 'Feed, Animal/Day',
+    points: EncumbrancePoint.Regular,
+    ruralCost: 0.5,
+  },
+  {
+    cityCost: 0.5,
+    name: 'Bottle of Wine/Liquor, Poor',
+    points: EncumbrancePoint.Regular,
+    ruralCost: 0.2,
+  },
+  {
+    cityCost: 1,
+    details: 'Provided price is minimal',
+    name: 'Bottle of Wine/Liquor, Decent',
+    points: EncumbrancePoint.Regular,
+    ruralCost: 1,
+  },
+  {
+    cityCost: 10,
+    details: 'Provided price is minimal',
+    name: 'Bottle of Wine/Liquor, Rich',
+    points: EncumbrancePoint.Regular,
+    ruralCost: null,
+  },
+  // CONTAINERS
+  {
+    cityCost: 3,
+    name: 'Backpack',
+    points: EncumbrancePoint.None,
+    ruralCost: 1,
+  },
+  {
+    cityCost: 1,
+    name: 'Barrel',
+    points: EncumbrancePoint.Oversized,
+    ruralCost: 5,
+  },
+  {
+    cityCost: 10,
+    name: 'Chest',
+    points: EncumbrancePoint.Oversized,
+    ruralCost: 5,
+  },
+  {
+    cityCost: 0.5,
+    name: 'Pouch',
+    points: EncumbrancePoint.Regular,
+    ruralCost: 0.1,
+  },
+  {
+    cityCost: 5,
+    name: 'Quiver',
+    points: EncumbrancePoint.Regular,
+    ruralCost: 10,
+  },
+  {
+    cityCost: 0.5,
+    name: 'Sack',
+    points: EncumbrancePoint.None,
+    ruralCost: 0.2,
+  },
+  {
+    cityCost: 1,
+    name: 'Saddlebag',
+    points: EncumbrancePoint.None,
+    ruralCost: 0.5,
+  },
 ]
