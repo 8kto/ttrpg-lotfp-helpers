@@ -1,6 +1,7 @@
 import type { EquipmentItem } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 
+// TODO fix weight
 export const MiscEquipment: ReadonlyArray<EquipmentItem> = [
   {
     cityCost: 1,

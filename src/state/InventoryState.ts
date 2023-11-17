@@ -1,6 +1,6 @@
 import { hookstate, useHookstate } from '@hookstate/core'
 
-import type { InventoryItem } from '@/domain'
+import type { EquipmentItem, InventoryItem } from '@/domain'
 import type { ArmorItem } from '@/domain/armor'
 import type { MeleeWeaponItem, MissileWeaponItem } from '@/domain/weapon'
 import deepclone from '@/shared/helpers/deepclone'
@@ -9,6 +9,7 @@ export type InventoryStateType = {
   armor: ReadonlyArray<InventoryItem<ArmorItem>>
   meleeWeapons: ReadonlyArray<InventoryItem<MeleeWeaponItem>>
   missileWeapons: ReadonlyArray<InventoryItem<MissileWeaponItem>>
+  miscEquipment: ReadonlyArray<InventoryItem<EquipmentItem>>
   isCostRural: boolean
 }
 
@@ -21,6 +22,7 @@ const initialInventoryState: Readonly<InventoryStateType> = {
   armor: Array<InventoryItem<ArmorItem>>(),
   isCostRural: false,
   meleeWeapons: Array<InventoryItem<MeleeWeaponItem>>(),
+  miscEquipment: Array<InventoryItem<EquipmentItem>>(),
   missileWeapons: Array<InventoryItem<MissileWeaponItem>>(),
 }
 
@@ -44,6 +46,7 @@ export const useInventoryState = () => {
     state.merge({
       armor: Array<InventoryItem<ArmorItem>>(),
       meleeWeapons: Array<InventoryItem<MeleeWeaponItem>>(),
+      miscEquipment: Array<InventoryItem<EquipmentItem>>(),
       missileWeapons: Array<InventoryItem<MissileWeaponItem>>(),
     })
   }
@@ -58,6 +61,20 @@ export const addArmor = (item: InventoryItem<ArmorItem>) => {
   const armor = InventoryState.armor
 
   armor[armor.length].set(item)
+}
+
+export const addEquipmentItem = (item: InventoryItem<EquipmentItem>) => {
+  const equipment = InventoryState.miscEquipment
+
+  equipment[equipment.length].set(item)
+}
+
+export const removeEquipmentItem = (item: InventoryItem<EquipmentItem>) => {
+  const equipment = InventoryState.miscEquipment
+
+  equipment.set((i) => {
+    return i.filter((i) => i.inventoryId !== item.inventoryId)
+  })
 }
 
 export const removeArmor = (item: InventoryItem<ArmorItem>) => {
