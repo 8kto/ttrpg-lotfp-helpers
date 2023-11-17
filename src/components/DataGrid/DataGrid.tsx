@@ -113,3 +113,4 @@ const DataGrid = <T extends EquipmentItem>({
 }
 
 export default DataGrid
+// TODO print details in cells

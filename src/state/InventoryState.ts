@@ -114,3 +114,6 @@ export const toggleCost = () => {
   const isCostRural = InventoryState.isCostRural
   isCostRural.set(!isCostRural.get())
 }
+
+// TODO introduce getters
+// TODO introduce type for <keyof ... state>

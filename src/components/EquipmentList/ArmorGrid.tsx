@@ -96,14 +96,25 @@ const ArmorGrid = () => {
     }
 
   return (
-    <DataGrid<ArmorItem>
-      data={dataFilteredByCost}
-      columns={columnsFilteredByCost}
-      onAddClick={handleAddClick}
-      filterFn={filterName}
-      filterPlaceholder={t('Filter by name')}
-      handleSort={handleSort as typeof trivialSort}
-    />
+    <>
+      <div className='py-6'>
+        <p> {t('Unarmored characters have a Base AC of 12.')}</p>
+        <p>
+          {t(
+            'Unadjusted AC is that of solely the armor and shield. ' +
+              'Dexterity modifiers, magical modifiers, or any other adjustments are not counted.',
+          )}
+        </p>
+      </div>
+      <DataGrid<ArmorItem>
+        data={dataFilteredByCost}
+        columns={columnsFilteredByCost}
+        onAddClick={handleAddClick}
+        filterFn={filterName}
+        filterPlaceholder={t('Filter by name')}
+        handleSort={handleSort as typeof trivialSort}
+      />
+    </>
   )
 }
 

@@ -107,14 +107,27 @@ const MeleeWeaponsGrid = () => {
   }
 
   return (
-    <DataGrid<MeleeWeaponItem>
-      data={dataFilteredByCost}
-      columns={columnsFilteredByCost}
-      onAddClick={handleAddClick}
-      filterFn={filterName}
-      filterPlaceholder={t('Filter by name')}
-      handleSort={handleSort as typeof trivialSort}
-    />
+    <>
+      <div className='py-6'>
+        <p>
+          {t(
+            'Some weapons can attack “from the second rank.” ' +
+              'This is used when there is a definite battle line in combat. ' +
+              'Usually only those on the front line of battle can strike, ' +
+              'but those weapons usable from the second rank allow anyone ' +
+              'immediately behind the battle line to strike as well.',
+          )}
+        </p>
+      </div>
+      <DataGrid<MeleeWeaponItem>
+        data={dataFilteredByCost}
+        columns={columnsFilteredByCost}
+        onAddClick={handleAddClick}
+        filterFn={filterName}
+        filterPlaceholder={t('Filter by name')}
+        handleSort={handleSort as typeof trivialSort}
+      />
+    </>
   )
 }
 
