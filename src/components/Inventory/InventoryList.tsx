@@ -10,7 +10,7 @@ import MissileWeaponsInventory from '@/components/Inventory/MissileWeaponsInvent
 import { t } from '@/locale/helpers'
 import { useInventoryState } from '@/state/InventoryState'
 
-const Inventory = () => {
+const InventoryList = () => {
   const { state: equipmentState } = useInventoryState()
   const { armor, meleeWeapons, missileWeapons, miscEquipment } = equipmentState
 
@@ -71,4 +71,4 @@ const Inventory = () => {
   )
 }
 
-export default Inventory
+export default InventoryList
