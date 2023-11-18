@@ -21,7 +21,7 @@ function InventoryGrid<T extends InventoryItem<EquipmentItem>>({
   columns,
   onRemoveClick,
 }: InventoryTableProps<T>) {
-  const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase`
+  const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left ph-color-accent uppercase`
   const cellClassnames = `px-4 font-normal text-gray-900`
 
   return (
@@ -36,7 +36,7 @@ function InventoryGrid<T extends InventoryItem<EquipmentItem>>({
               {column.title}
             </th>
           ))}
-          <th className='p-4 text-left text-xs font-medium uppercase tracking-wider text-gray-500'></th>
+          <th className='font-base w-1/12 text-center text-xs tracking-wider text-gray-500'></th>
         </tr>
       </thead>
       <tbody className='bg-white'>
@@ -52,12 +52,14 @@ function InventoryGrid<T extends InventoryItem<EquipmentItem>>({
                   : (item[column.key] as React.ReactNode)}
               </td>
             ))}
-            <td className={`${cellClassnames} w-1/6`}>
+            <td className={`${cellClassnames} text-center`}>
               <button
-                className={'inline-flex items-center text-xs text-gray-500'}
+                className={
+                  'me-auto inline-flex items-center text-xs text-gray-400 hover:text-gray-900'
+                }
                 onClick={() => onRemoveClick(item)}
               >
-                <MinusIcon className='mr-2 h-5 w-5' />
+                <MinusIcon className='me-auto mr-2 h-5 w-5' />
               </button>
             </td>
           </tr>

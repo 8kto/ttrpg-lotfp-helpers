@@ -13,11 +13,11 @@ const inventoryTableColumns: ReadonlyArray<
   InventoryColumn<ArmorInventoryItem>
 > = [
   {
-    className: 'w-1/2 truncate',
+    className: 'w-1/2',
     key: 'name',
     render: (item: ArmorItem) => (
-      <details className='ph-details-bullet'>
-        <summary className='cursor-pointer list-none truncate p-4 pl-0'>
+      <details className='ph-details-bullet text-gray-900'>
+        <summary className='cursor-pointer list-none p-4 pl-0'>
           <div className='flex items-center'>
             <span className='ph-custom-indicator mr-2 text-gray-400'>
               &#9654;
@@ -25,11 +25,9 @@ const inventoryTableColumns: ReadonlyArray<
             {item.name} <>(AC {item.armorClass})</>
           </div>
         </summary>
-        <div className='pb-4'>
-          <>{item.details}</>
-          <ul className='ml-4 list-none pl-4'>
-            <li>AC: ({item.armorClass})</li>
-          </ul>
+        <div className='pb-4 text-gray-600'>
+          <p>AC: ({item.armorClass})</p>
+          <p>{item.details}</p>
         </div>
       </details>
     ),
