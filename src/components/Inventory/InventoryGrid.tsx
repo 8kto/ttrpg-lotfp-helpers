@@ -68,3 +68,5 @@ function InventoryGrid<T extends InventoryItem<EquipmentItem>>({
 }
 
 export default InventoryGrid
+// FIXME truncated details
+// FIXME empty details

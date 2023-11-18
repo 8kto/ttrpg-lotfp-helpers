@@ -1,12 +1,62 @@
-import { MinusCircleIcon as MinusIcon } from '@heroicons/react/24/solid'
 import React from 'react'
 
 import DamageFragment from '@/components/DamageFragment'
+import type { InventoryColumn } from '@/components/Inventory/InventoryGrid'
+import InventoryGrid from '@/components/Inventory/InventoryGrid'
 import type { InventoryItem } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { MissileWeaponItem } from '@/domain/weapon'
-import { t } from '@/locale/helpers'
 import { removeMissileWeapon, useInventoryState } from '@/state/InventoryState'
+
+type MissileWeaponInventoryItem = InventoryItem<MissileWeaponItem>
+
+const inventoryTableColumns: ReadonlyArray<
+  InventoryColumn<MissileWeaponInventoryItem>
+> = [
+  {
+    className: 'w-1/2 truncate',
+    key: 'name',
+    render: (item: MissileWeaponItem) => (
+      <details className='ph-details-bullet'>
+        <summary className='cursor-pointer list-none truncate p-4 pl-0'>
+          <div className='flex items-center'>
+            <span className='ph-custom-indicator mr-2 text-gray-400'>
+              &#9654;
+            </span>
+            {item.name}{' '}
+            {item.damage ? (
+              <>
+                (<DamageFragment damage={item.damage} />)
+              </>
+            ) : (
+              ''
+            )}
+          </div>
+        </summary>
+        <div className='pb-4'>
+          <p>
+            Damage: <DamageFragment damage={item.damage} />
+          </p>
+          <p>{item.details}</p>
+        </div>
+      </details>
+    ),
+    title: 'Name',
+  },
+  {
+    className: 'w-1/6',
+    key: 'lockedCost',
+    title: 'Cost',
+  },
+  {
+    className: 'w-1/6',
+    key: 'points',
+    render: (item) => {
+      return EncumbrancePoint[item.points]
+    },
+    title: 'Weight',
+  },
+]
 
 const MissileWeaponsInventoryGrid = () => {
   const { state: equipmentState } = useInventoryState()
@@ -15,72 +65,12 @@ const MissileWeaponsInventoryGrid = () => {
   const onRemoveClick = (item: InventoryItem<MissileWeaponItem>) =>
     removeMissileWeapon(item)
 
-  const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase`
-  const cellClassnames = `px-4 font-normal text-gray-900`
-
   return (
-    <table className='w-full table-fixed'>
-      <thead className='bg-gray-50 dark:bg-gray-700'>
-        <tr>
-          <th scope='col' className={`${headerCellClassnames} w-1/2 truncate`}>
-            Name
-          </th>
-          <th scope='col' className={`${headerCellClassnames} w-1/6`}>
-            Cost
-          </th>
-          <th scope='col' className={`${headerCellClassnames} w-1/6`}>
-            Weight
-          </th>
-          <th scope='col' className={`${headerCellClassnames} w-1/6`}></th>
-        </tr>
-      </thead>
-      <tbody className='bg-white dark:bg-gray-800'>
-        {missileWeapons.get().map((item, index) => (
-          <tr key={item.inventoryId} className={index % 2 ? 'bg-gray-50' : ''}>
-            <td className={`${cellClassnames}`}>
-              <details className='ph-details-bullet'>
-                <summary className='cursor-pointer list-none p-4 pl-0'>
-                  <div className='flex items-center'>
-                    <span className='ph-custom-indicator mr-2 text-gray-400'>
-                      &#9654;
-                    </span>
-                    {item.name}{' '}
-                    {item.damage ? (
-                      <>
-                        (<DamageFragment damage={item.damage} />)
-                      </>
-                    ) : (
-                      ''
-                    )}
-                  </div>
-                </summary>
-                <div className='pb-4'>
-                  <>{item.details}</>
-                  <ul className='ml-4 list-disc pl-4'>
-                    <li>
-                      {t('Damage:')} (<DamageFragment damage={item.damage} />)
-                    </li>
-                  </ul>
-                </div>
-              </details>
-            </td>
-            <td className={cellClassnames}>
-              {item.cityCost !== undefined ? item.cityCost : item.ruralCost}
-            </td>
-            <td className={cellClassnames}>{EncumbrancePoint[item.points]}</td>
-            <td className={cellClassnames}>
-              <button
-                className='inline-flex items-center text-xs text-gray-500'
-                onClick={() => onRemoveClick(item)}
-                title={t('Remove item')}
-              >
-                <MinusIcon className='mr-2 h-5 w-5' />
-              </button>
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+    <InventoryGrid<MissileWeaponInventoryItem>
+      data={missileWeapons.get()}
+      columns={inventoryTableColumns}
+      onRemoveClick={onRemoveClick}
+    />
   )
 }
 
