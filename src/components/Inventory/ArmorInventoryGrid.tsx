@@ -66,4 +66,3 @@ const ArmorInventoryGrid = () => {
 }
 
 export default ArmorInventoryGrid
-// FIXME convert other inventories
