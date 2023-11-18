@@ -144,7 +144,9 @@ export const MeleeWeapons: ReadonlyArray<MeleeWeaponItem> = [
       dice: Dice.d8,
       x: 1,
     },
-    name: 'Weapon, Medium: sword, battle axe, mace',
+    details:
+      'These are one-handed weapons, including swords, battle axes, maces',
+    name: 'Weapon, Medium',
     points: EncumbrancePoint.Regular,
     ruralCost: 50,
     twoHanded: false,
@@ -158,7 +160,7 @@ export const MeleeWeapons: ReadonlyArray<MeleeWeaponItem> = [
     },
     details:
       'These are one-handed weapons, including short swords and hand axes',
-    name: 'Weapon, Small: short sword, hand axe',
+    name: 'Weapon, Small',
     points: EncumbrancePoint.Regular,
     ruralCost: 10,
     type: WeaponType.Small,
@@ -172,7 +174,7 @@ export const MeleeWeapons: ReadonlyArray<MeleeWeaponItem> = [
     details:
       'These are small one-handed weapons including daggers and clubs, ' +
       'and suffer a –2 penalty to hit opponents with an unadjusted AC of 15 or better.',
-    name: 'Weapon, Minor: daggers, clubs',
+    name: 'Weapon, Minor',
     points: EncumbrancePoint.Regular,
     ruralCost: 5,
     type: WeaponType.Minor,

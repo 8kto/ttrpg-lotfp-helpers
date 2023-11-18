@@ -109,13 +109,21 @@ const MeleeWeaponsGrid = () => {
   return (
     <>
       <div className='py-6'>
-        <p>
+        <p className={'mb-2'}>
           {t(
             'Some weapons can attack “from the second rank.” ' +
               'This is used when there is a definite battle line in combat. ' +
               'Usually only those on the front line of battle can strike, ' +
               'but those weapons usable from the second rank allow anyone ' +
               'immediately behind the battle line to strike as well.',
+          )}
+        </p>
+        <p className={'mb-2'}>
+          {t('Second rank weapons: lance, polearm, spear.')}
+        </p>
+        <p className={'mb-2'}>
+          {t(
+            'Weapons that allow to receive charge (damage x2, act first): polearm, spear.',
           )}
         </p>
       </div>

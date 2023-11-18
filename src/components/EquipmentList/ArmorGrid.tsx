@@ -98,8 +98,10 @@ const ArmorGrid = () => {
   return (
     <>
       <div className='py-6'>
-        <p> {t('Unarmored characters have a Base AC of 12.')}</p>
-        <p>
+        <p className={'mb-2'}>
+          {t('Unarmored characters have a Base AC of 12.')}
+        </p>
+        <p className={'mb-2'}>
           {t(
             'Unadjusted AC is that of solely the armor and shield. ' +
               'Dexterity modifiers, magical modifiers, or any other adjustments are not counted.',

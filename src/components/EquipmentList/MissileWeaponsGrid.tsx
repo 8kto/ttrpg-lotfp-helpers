@@ -110,12 +110,12 @@ const MissileWeaponsGrid = () => {
   return (
     <>
       <div className='py-6'>
-        <p>
+        <p className={'mb-2'}>
           {t(
             'Each missile weapon can be fired once per round with the exception of the crossbows.',
           )}
         </p>
-        <p>
+        <p className={'mb-2'}>
           {t('Targets at Medium range are –2 to hit, –4 to hit at Long range.')}
         </p>
       </div>
