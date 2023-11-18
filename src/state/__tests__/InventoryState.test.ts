@@ -1,7 +1,10 @@
+import { act, renderHook } from '@testing-library/react'
+
 import {
   armorItemMock1,
   meleeWeaponItemMock1, miscEquipItem1, missileWeaponItemMock1,
 } from '@/shared/mocks/inventoryMocks'
+import type { InventoryStateType} from '@/state/InventoryState'
 import {
   addArmor, addEquipmentItem,
   addMeleeWeapon, addMissileWeapon,
@@ -9,12 +12,85 @@ import {
   InventoryState,
   removeArmor, removeEquipmentItem,
   removeMeleeWeapon, removeMissileWeapon,
-  toggleCost,
+  toggleCost, useInventoryState,
 } from '@/state/InventoryState'
 
 describe('InventoryState Tests', () => {
   beforeEach(() => {
     InventoryState.set(getInitialInventoryState())
+  })
+
+  describe('useInventoryState Hook', () => {
+    it('should provide initial state', () => {
+      const { result } = renderHook(() => useInventoryState())
+      expect(result.current.state.get()).toEqual(getInitialInventoryState())
+    })
+
+    it('should reset state', () => {
+      const { result } = renderHook(() => useInventoryState())
+
+      act(() => {
+        const armor = result.current.state.armor
+        const meleeWeapons = result.current.state.meleeWeapons
+        const missileWeapons = result.current.state.missileWeapons
+        const miscEquipment = result.current.state.miscEquipment
+        const isCostRural = result.current.state.isCostRural
+
+        armor[armor.length].set(armorItemMock1)
+        meleeWeapons[meleeWeapons.length].set(meleeWeaponItemMock1)
+        missileWeapons[missileWeapons.length].set(missileWeaponItemMock1)
+        miscEquipment[miscEquipment.length].set(miscEquipItem1)
+        isCostRural.set(!isCostRural.get())
+      })
+
+      expect(result.current.state.get()).toEqual({
+        armor: [armorItemMock1],
+        isCostRural: true,
+        meleeWeapons: [meleeWeaponItemMock1],
+        miscEquipment: [miscEquipItem1],
+        missileWeapons: [missileWeaponItemMock1],
+      } as InventoryStateType)
+
+      act(() => {
+        result.current.reset()
+      })
+
+      expect(result.current.state.get()).toEqual(getInitialInventoryState())
+    })
+
+    it('should reset equipment', () => {
+      const { result } = renderHook(() => useInventoryState())
+
+      expect(result.current.state.isCostRural.get()).toEqual(false)
+
+      act(() => {
+        const armor = result.current.state.armor
+        const meleeWeapons = result.current.state.meleeWeapons
+        const missileWeapons = result.current.state.missileWeapons
+        const miscEquipment = result.current.state.miscEquipment
+        const isCostRural = result.current.state.isCostRural
+
+        armor[armor.length].set(armorItemMock1)
+        meleeWeapons[meleeWeapons.length].set(meleeWeaponItemMock1)
+        missileWeapons[missileWeapons.length].set(missileWeaponItemMock1)
+        miscEquipment[miscEquipment.length].set(miscEquipItem1)
+        isCostRural.set(!isCostRural.get())
+      })
+
+      expect(result.current.state.isCostRural.get()).toEqual(true)
+
+      act(() => {
+        result.current.resetEquipment()
+      })
+
+      expect(result.current.state.get()).toEqual({
+        armor: [],
+        isCostRural: true,
+        meleeWeapons: [],
+        miscEquipment: [],
+        missileWeapons: [],
+      })
+    })
   })
 
   describe('armor', () => {
