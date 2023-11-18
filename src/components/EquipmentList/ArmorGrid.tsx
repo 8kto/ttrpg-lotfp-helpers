@@ -4,6 +4,7 @@ import DataGrid from '@/components/DataGrid/DataGrid'
 import { trivialSort } from '@/components/DataGrid/helpers'
 import type { DataGridColumn, SortConfig } from '@/components/DataGrid/types'
 import { getInventoryItem } from '@/components/EquipmentList/helpers'
+import ItemDetails from '@/components/Inventory/ItemDetails'
 import { AllEquipment } from '@/config/AllEquipment'
 import type { EquipmentItem } from '@/domain'
 import type { ArmorItem } from '@/domain/armor'
@@ -15,6 +16,7 @@ const columns: ReadonlyArray<DataGridColumn<ArmorItem>> = [
   {
     className: 'w-1/3',
     key: 'name',
+    render: (item: ArmorItem) => <ItemDetails<ArmorItem> item={item} compact />,
     title: 'Name',
   },
   {

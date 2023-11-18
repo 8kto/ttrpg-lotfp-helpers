@@ -1,7 +1,7 @@
 import React from 'react'
 
 import DamageFragment from '@/components/DamageFragment'
-import type { EquipmentItem, InventoryItem } from '@/domain'
+import type { EquipmentItem } from '@/domain'
 import type { ArmorItem } from '@/domain/armor'
 import type { WeaponItem } from '@/domain/weapon'
 
@@ -12,10 +12,12 @@ const isWeaponItem = (item: EquipmentItem): item is WeaponItem => {
   return 'damage' in item && !!item.damage
 }
 
-const ItemDetails = <T extends InventoryItem<EquipmentItem>>({
+const ItemDetails = <T extends EquipmentItem>({
   item,
+  compact = false,
 }: {
   item: T
+  compact?: boolean
 }) => {
   const paragraphClassname = 'mb-2'
 
@@ -27,16 +29,20 @@ const ItemDetails = <T extends InventoryItem<EquipmentItem>>({
             &#9654;
           </span>
           {item.name}
-          {isArmorItem(item) ? <> (AC {item.armorClass})</> : null}
-          {isWeaponItem(item) ? (
+          {!compact && (
             <>
-              {' '}
-              (<DamageFragment damage={item.damage} />)
+              {isArmorItem(item) ? <> (AC {item.armorClass})</> : null}
+              {isWeaponItem(item) ? (
+                <>
+                  {' '}
+                  (<DamageFragment damage={item.damage} />)
+                </>
+              ) : null}
             </>
-          ) : null}
+          )}
         </div>
       </summary>
-      <div className='py-4 text-gray-600'>
+      <div className='pt-4 text-gray-600'>
         {isArmorItem(item) ? (
           <p className={paragraphClassname}>Armor Class: {item.armorClass}</p>
         ) : null}
@@ -49,7 +55,20 @@ const ItemDetails = <T extends InventoryItem<EquipmentItem>>({
       </div>
     </details>
   ) : (
-    item.name
+    <>
+      {item.name}
+      {!compact && (
+        <>
+          {isArmorItem(item) ? <> (AC {item.armorClass})</> : null}
+          {isWeaponItem(item) ? (
+            <>
+              {' '}
+              (<DamageFragment damage={item.damage} />)
+            </>
+          ) : null}
+        </>
+      )}
+    </>
   )
 }
 

@@ -5,6 +5,7 @@ import DataGrid from '@/components/DataGrid/DataGrid'
 import { trivialSort } from '@/components/DataGrid/helpers'
 import type { DataGridColumn, SortConfig } from '@/components/DataGrid/types'
 import { getInventoryItem } from '@/components/EquipmentList/helpers'
+import ItemDetails from '@/components/Inventory/ItemDetails'
 import { AllEquipment } from '@/config/AllEquipment'
 import type { Dice, EquipmentItem } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
@@ -14,8 +15,11 @@ import { addMeleeWeapon, useInventoryState } from '@/state/InventoryState'
 
 const columns: ReadonlyArray<DataGridColumn<MeleeWeaponItem>> = [
   {
-    className: 'w-1/3 truncate',
+    className: 'w-1/3',
     key: 'name',
+    render: (item: MeleeWeaponItem) => (
+      <ItemDetails<MeleeWeaponItem> item={item} compact />
+    ),
     title: 'Name',
   },
   {

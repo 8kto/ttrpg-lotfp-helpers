@@ -105,14 +105,14 @@ const DataGrid = <T extends EquipmentItem>({
               {columns.map((column) => (
                 <td
                   key={column.key as string}
-                  className='whitespace-nowrap p-4 font-normal text-gray-900'
+                  className='p-4 font-normal text-gray-900'
                 >
                   {column.render
                     ? column.render(item)
                     : (item[column.key] as string)}
                 </td>
               ))}
-              <td className='whitespace-nowrap p-4 font-normal text-gray-900'>
+              <td className='p-4 font-normal text-gray-900'>
                 <button
                   className='ph-btn-secondary inline-flex items-center rounded px-4 py-2 text-sm'
                   onClick={() => onAddClick(item)}
@@ -130,4 +130,3 @@ const DataGrid = <T extends EquipmentItem>({
 }
 
 export default DataGrid
-// TODO print details in cells
