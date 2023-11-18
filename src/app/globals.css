@@ -34,7 +34,8 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-/** IMPORTANT: prefix all custom css classes with ph- suffix */
+/** IMPORTANT: prefix all custom css classes with ph- suffix **/
+/** Color palette: https://paletton.com/#uid=7000u0kqmjdhorVmfnkvbenGu97 **/
 
 h1,
 h2,
