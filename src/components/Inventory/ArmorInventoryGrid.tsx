@@ -2,6 +2,7 @@ import React from 'react'
 
 import type { InventoryColumn } from '@/components/Inventory/InventoryGrid'
 import InventoryGrid from '@/components/Inventory/InventoryGrid'
+import ItemDetails from '@/components/Inventory/ItemDetails'
 import type { InventoryItem } from '@/domain'
 import type { ArmorItem } from '@/domain/armor'
 import { EncumbrancePoint } from '@/domain/encumbrance'
@@ -15,21 +16,8 @@ const inventoryTableColumns: ReadonlyArray<
   {
     className: 'w-1/2',
     key: 'name',
-    render: (item: ArmorItem) => (
-      <details className='ph-details-bullet text-gray-900'>
-        <summary className='cursor-pointer list-none p-4 pl-0'>
-          <div className='flex items-center'>
-            <span className='ph-custom-indicator mr-2 text-gray-400'>
-              &#9654;
-            </span>
-            {item.name} <>(AC {item.armorClass})</>
-          </div>
-        </summary>
-        <div className='pb-4 text-gray-600'>
-          <p>AC: ({item.armorClass})</p>
-          <p>{item.details}</p>
-        </div>
-      </details>
+    render: (item: ArmorInventoryItem) => (
+      <ItemDetails<ArmorInventoryItem> item={item} />
     ),
     title: 'Name',
   },

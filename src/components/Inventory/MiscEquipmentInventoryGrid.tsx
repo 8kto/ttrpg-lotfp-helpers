@@ -2,6 +2,7 @@ import React from 'react'
 
 import type { InventoryColumn } from '@/components/Inventory/InventoryGrid'
 import InventoryGrid from '@/components/Inventory/InventoryGrid'
+import ItemDetails from '@/components/Inventory/ItemDetails'
 import type { EquipmentItem, InventoryItem } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import { removeEquipmentItem, useInventoryState } from '@/state/InventoryState'
@@ -12,22 +13,10 @@ const inventoryTableColumns: ReadonlyArray<
   InventoryColumn<EquipmentInventoryItem>
 > = [
   {
-    className: 'w-1/2 truncate',
+    className: 'w-1/2',
     key: 'name',
-    render: (item: EquipmentItem) => (
-      <details className='ph-details-bullet'>
-        <summary className='cursor-pointer list-none truncate p-4 pl-0'>
-          <div className='flex items-center'>
-            <span className='ph-custom-indicator mr-2 text-gray-400'>
-              &#9654;
-            </span>
-            {item.name} {item.details ? <>(i)</> : ''}
-          </div>
-        </summary>
-        <div className='pb-4'>
-          <p>{item.details}</p>
-        </div>
-      </details>
+    render: (item: EquipmentInventoryItem) => (
+      <ItemDetails<EquipmentInventoryItem> item={item} />
     ),
     title: 'Name',
   },

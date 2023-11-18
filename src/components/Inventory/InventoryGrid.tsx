@@ -22,7 +22,7 @@ function InventoryGrid<T extends InventoryItem<EquipmentItem>>({
   onRemoveClick,
 }: InventoryTableProps<T>) {
   const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left ph-color-accent uppercase`
-  const cellClassnames = `px-4 font-normal text-gray-900`
+  const cellClassnames = `p-4 font-normal text-gray-900 align-top`
 
   return (
     <table className='w-full table-fixed'>
@@ -45,7 +45,7 @@ function InventoryGrid<T extends InventoryItem<EquipmentItem>>({
             {columns.map((column) => (
               <td
                 key={column.key as string}
-                className={`${cellClassnames}${column.className ?? ''}`}
+                className={`${cellClassnames} ${column.className ?? ''}`}
               >
                 {column.render
                   ? column.render(item)
@@ -70,5 +70,3 @@ function InventoryGrid<T extends InventoryItem<EquipmentItem>>({
 }
 
 export default InventoryGrid
-// FIXME truncated details
-// FIXME empty details
