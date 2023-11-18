@@ -1,7 +1,7 @@
 'use client'
 
 import EquipmentList from '@/components/EquipmentList/EquipmentList'
-import Inventory from '@/components/Inventory/Inventory'
+import InventoryList from '@/components/Inventory/InventoryList'
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
               <EquipmentList />
             </div>
             <div className='rounded-lg border border-gray-200 bg-white p-4 shadow-sm sm:col-span-2 sm:p-6 md:col-span-1'>
-              <Inventory />
+              <InventoryList />
             </div>
           </div>
         </div>
