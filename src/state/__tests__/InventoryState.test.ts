@@ -1,14 +1,14 @@
 import {
   armorItemMock1,
-  meleeWeaponItemMock1,
+  meleeWeaponItemMock1, miscEquipItem1, missileWeaponItemMock1,
 } from '@/shared/mocks/inventoryMocks'
 import {
-  addArmor,
-  addMeleeWeapon,
+  addArmor, addEquipmentItem,
+  addMeleeWeapon, addMissileWeapon,
   getInitialInventoryState,
   InventoryState,
-  removeArmor,
-  removeMeleeWeapon,
+  removeArmor, removeEquipmentItem,
+  removeMeleeWeapon, removeMissileWeapon,
   toggleCost,
 } from '@/state/InventoryState'
 
@@ -52,6 +52,40 @@ describe('InventoryState Tests', () => {
       expect(InventoryState.isCostRural.get()).toEqual(false)
       toggleCost()
       expect(InventoryState.isCostRural.get()).toEqual(true)
+    })
+  })
+
+  describe('missileWeapons', () => {
+    it('adds weapon item correctly', () => {
+      addMissileWeapon(missileWeaponItemMock1)
+      expect(InventoryState.missileWeapons.get()).toContainEqual(
+        missileWeaponItemMock1,
+      )
+    })
+
+    it('removes weapon item correctly', () => {
+      addMissileWeapon(missileWeaponItemMock1)
+      removeMissileWeapon(missileWeaponItemMock1)
+      expect(InventoryState.missileWeapons.get()).not.toContainEqual(
+        missileWeaponItemMock1,
+      )
+    })
+  })
+
+  describe('miscEquipment', () => {
+    it('adds item correctly', () => {
+      addEquipmentItem(miscEquipItem1)
+      expect(InventoryState.miscEquipment.get()).toContainEqual(
+        miscEquipItem1,
+      )
+    })
+
+    it('removes item correctly', () => {
+      addEquipmentItem(miscEquipItem1)
+      removeEquipmentItem(miscEquipItem1)
+      expect(InventoryState.miscEquipment.get()).not.toContainEqual(
+        miscEquipItem1,
+      )
     })
   })
 })
