@@ -1,16 +1,25 @@
 import React, { useState } from 'react'
 
+import CostFragment from '@/components/CostFragment/CostFragment'
 import { t } from '@/locale/helpers'
+import { useInventoryState } from '@/state/InventoryState'
 
 const Wallet = () => {
   const [isManaged, setIsManaged] = useState(false)
+  const { state } = useInventoryState()
+  const { balanceCopperPieces } = state
 
   const handleSwitchClick = () => {
     setIsManaged((v) => !v)
   }
 
   return (
-    <>
+    <div className='flex items-center'>
+      <span className='mr-1'>
+        <CostFragment
+          cost={balanceCopperPieces.get() ? balanceCopperPieces.get() / 10 : 0}
+        />
+      </span>
       <label className='relative inline-flex cursor-pointer items-center'>
         <input
           type='checkbox'
@@ -28,7 +37,7 @@ const Wallet = () => {
           {t('Manage')}
         </span>
       </label>
-    </>
+    </div>
   )
 }
 

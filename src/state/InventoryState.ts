@@ -7,6 +7,7 @@ import deepclone from '@/shared/helpers/deepclone'
 
 export type InventoryStateType = {
   armor: ReadonlyArray<InventoryItem<ArmorItem>>
+  balanceCopperPieces: number
   meleeWeapons: ReadonlyArray<InventoryItem<MeleeWeaponItem>>
   missileWeapons: ReadonlyArray<InventoryItem<MissileWeaponItem>>
   miscEquipment: ReadonlyArray<InventoryItem<EquipmentItem>>
@@ -20,6 +21,7 @@ export type InventoryStateType = {
  */
 const initialInventoryState: Readonly<InventoryStateType> = {
   armor: Array<InventoryItem<ArmorItem>>(),
+  balanceCopperPieces: 0,
   isCostRural: false,
   meleeWeapons: Array<InventoryItem<MeleeWeaponItem>>(),
   miscEquipment: Array<InventoryItem<EquipmentItem>>(),
@@ -112,6 +114,15 @@ export const removeMissileWeapon = (item: InventoryItem<MissileWeaponItem>) => {
 export const toggleCost = () => {
   const isCostRural = InventoryState.isCostRural
   isCostRural.set(!isCostRural.get())
+}
+
+export const getBalance = () => {
+  return InventoryState.balanceCopperPieces.get()
+}
+
+export const addCopperPieces = (value: number) => {
+  const balance = InventoryState.balanceCopperPieces
+  balance.merge((v) => v + value)
 }
 
 // TODO introduce getters

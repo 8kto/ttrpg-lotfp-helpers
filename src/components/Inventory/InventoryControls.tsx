@@ -7,6 +7,7 @@ import React, { useState } from 'react'
 
 import Drawer from '@/components/Drawer/Drawer'
 import AddCoinsFragment from '@/components/Inventory/AddCoinsFragment'
+import AddEquipmentItemFragment from '@/components/Inventory/AddEquipmentItemFragment'
 import { t } from '@/locale/helpers'
 import { useInventoryState } from '@/state/InventoryState'
 
@@ -14,15 +15,8 @@ const InventoryControls = () => {
   const { resetEquipment } = useInventoryState()
   const handleReset = () => resetEquipment()
 
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
-
-  const handleOpenDrawer = () => {
-    setIsDrawerOpen(true)
-  }
-
-  const handleCloseDrawer = () => {
-    setIsDrawerOpen(false)
-  }
+  const [isCoinDrawerOpen, setIsCoinDrawerOpen] = useState(false)
+  const [isEquipmentDrawerOpen, setIsEquipmentDrawerOpen] = useState(false)
 
   const iconBtnClassname =
     'inline-flex cursor-pointer justify-center rounded p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-900'
@@ -32,7 +26,9 @@ const InventoryControls = () => {
       <div className='flex items-center sm:justify-end'>
         <div className='flex space-x-1 pl-2'>
           <button
-            onClick={handleReset}
+            onClick={() => {
+              setIsEquipmentDrawerOpen(true)
+            }}
             title={t('Add item')}
             className={iconBtnClassname}
           >
@@ -43,7 +39,9 @@ const InventoryControls = () => {
           <button
             className={iconBtnClassname}
             type='button'
-            onClick={handleOpenDrawer}
+            onClick={() => {
+              setIsCoinDrawerOpen(true)
+            }}
             title={t('Add coins')}
           >
             <CircleStackIcon className='h-5 w-5' />
@@ -61,11 +59,20 @@ const InventoryControls = () => {
       </div>
 
       <Drawer
-        isOpen={isDrawerOpen}
-        onClose={handleCloseDrawer}
+        isOpen={isCoinDrawerOpen}
+        onClose={() => setIsCoinDrawerOpen(false)}
         ariaLabelledBy={'drawer-label'}
       >
-        <AddCoinsFragment onClose={() => setIsDrawerOpen(false)} />
+        <AddCoinsFragment onClose={() => setIsCoinDrawerOpen(false)} />
+      </Drawer>
+      <Drawer
+        isOpen={isEquipmentDrawerOpen}
+        onClose={() => setIsEquipmentDrawerOpen(false)}
+        ariaLabelledBy={'drawer-label'}
+      >
+        <AddEquipmentItemFragment
+          onClose={() => setIsEquipmentDrawerOpen(false)}
+        />
       </Drawer>
     </>
   )
