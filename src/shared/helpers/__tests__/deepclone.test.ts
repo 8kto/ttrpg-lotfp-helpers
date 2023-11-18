@@ -1,4 +1,4 @@
-import deepclone from "@/shared/helpers/deepclone"
+import deepclone from '@/shared/helpers/deepclone'
 
 describe('deepclone', () => {
   it('creates a deep clone of an object', () => {

@@ -2,17 +2,24 @@ import { act, renderHook } from '@testing-library/react'
 
 import {
   armorItemMock1,
-  meleeWeaponItemMock1, miscEquipItem1, missileWeaponItemMock1,
+  meleeWeaponItemMock1,
+  miscEquipItem1,
+  missileWeaponItemMock1,
 } from '@/shared/mocks/inventoryMocks'
-import type { InventoryStateType} from '@/state/InventoryState'
+import type { InventoryStateType } from '@/state/InventoryState'
 import {
-  addArmor, addEquipmentItem,
-  addMeleeWeapon, addMissileWeapon,
+  addArmor,
+  addEquipmentItem,
+  addMeleeWeapon,
+  addMissileWeapon,
   getInitialInventoryState,
   InventoryState,
-  removeArmor, removeEquipmentItem,
-  removeMeleeWeapon, removeMissileWeapon,
-  toggleCost, useInventoryState,
+  removeArmor,
+  removeEquipmentItem,
+  removeMeleeWeapon,
+  removeMissileWeapon,
+  toggleCost,
+  useInventoryState,
 } from '@/state/InventoryState'
 
 describe('InventoryState Tests', () => {
@@ -151,9 +158,7 @@ describe('InventoryState Tests', () => {
   describe('miscEquipment', () => {
     it('adds item correctly', () => {
       addEquipmentItem(miscEquipItem1)
-      expect(InventoryState.miscEquipment.get()).toContainEqual(
-        miscEquipItem1,
-      )
+      expect(InventoryState.miscEquipment.get()).toContainEqual(miscEquipItem1)
     })
 
     it('removes item correctly', () => {
