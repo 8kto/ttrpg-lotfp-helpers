@@ -16,7 +16,7 @@ export interface InventoryTableProps<T extends InventoryItem<EquipmentItem>> {
   onRemoveClick: (item: T) => void
 }
 
-function InventoryTable<T extends InventoryItem<EquipmentItem>>({
+function InventoryGrid<T extends InventoryItem<EquipmentItem>>({
   data,
   columns,
   onRemoveClick,
@@ -67,4 +67,4 @@ function InventoryTable<T extends InventoryItem<EquipmentItem>>({
   )
 }
 
-export default InventoryTable
+export default InventoryGrid
