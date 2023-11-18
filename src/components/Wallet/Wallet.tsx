@@ -9,29 +9,9 @@ const Wallet = () => {
     setIsManaged((v) => !v)
   }
 
-  const handleAddClick = () => {}
-
   return (
-    <div>
-      <div>
-        <div className='flex rounded'>
-          <input
-            type='text'
-            name='coins'
-            disabled={!isManaged}
-            className='block w-full rounded-bl rounded-tl border border-gray-200 px-3 py-1.5 text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:pointer-events-none disabled:opacity-50'
-          />
-          <button
-            type='button'
-            onClick={handleAddClick}
-            disabled={!isManaged}
-            className='ph-btn-secondary inline-flex items-center justify-center gap-x-2 rounded-e border border-transparent bg-blue-600 px-3 py-1.5 text-sm disabled:pointer-events-none disabled:opacity-50'
-          >
-            {t('Add')}
-          </button>
-        </div>
-      </div>
-      <label className='relative mt-2 inline-flex cursor-pointer items-center'>
+    <>
+      <label className='relative inline-flex cursor-pointer items-center'>
         <input
           type='checkbox'
           checked={isManaged}
@@ -48,7 +28,7 @@ const Wallet = () => {
           {t('Manage')}
         </span>
       </label>
-    </div>
+    </>
   )
 }
 

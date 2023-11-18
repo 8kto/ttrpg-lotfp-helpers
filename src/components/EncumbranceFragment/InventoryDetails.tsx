@@ -23,13 +23,11 @@ const InventoryDetails = () => {
     <div className='mt-6 border-t border-gray-100 text-base'>
       <dl className='divide-y divide-gray-100'>
         <div className='px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0'>
-          <dt className={`${titleClassname} flex items-start`}>
-            <div className='flex items-center'>
-              <CircleStackIcon className='mr-2 h-5 w-5' />
-              {t('Wallet')}
-            </div>
+          <dt className={`${titleClassname} flex items-center`}>
+            <CircleStackIcon className='mr-2 h-5 w-5' />
+            {t('Wallet')}
           </dt>
-          <dd className='mt-1 leading-6 text-gray-700 sm:col-span-2 sm:mt-0'>
+          <dd className='mt-1 flex items-center leading-6 text-gray-700 sm:col-span-2 sm:mt-0'>
             <Wallet />
           </dd>
         </div>

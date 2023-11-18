@@ -25,7 +25,7 @@ const Drawer = ({
     <>
       {isOpen && (
         <div
-          className="fixed inset-0 z-30 bg-black bg-opacity-50 transition-opacity duration-600"
+          className='fixed inset-0 z-30 bg-black bg-opacity-50 transition-opacity duration-300'
           onClick={onClose}
           style={{ opacity: isOpen ? 1 : 0 }}
         ></div>

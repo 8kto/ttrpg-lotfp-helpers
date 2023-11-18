@@ -18,8 +18,8 @@ const InventoryList = () => {
 
   return (
     <>
-      <div className='flex w-full items-center justify-between'>
-        <h1 className='mb-4 text-2xl font-extrabold text-red-900 sm:text-3xl'>
+      <div className='mb-4 flex w-full items-center justify-between'>
+        <h1 className='text-2xl font-extrabold text-red-900 sm:text-3xl'>
           {t('Inventory')}
         </h1>
         <InventoryControls />
