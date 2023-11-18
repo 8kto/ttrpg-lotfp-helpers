@@ -66,3 +66,4 @@ const ArmorInventory = () => {
 }
 
 export default ArmorInventory
+// FIXME convert other inventories

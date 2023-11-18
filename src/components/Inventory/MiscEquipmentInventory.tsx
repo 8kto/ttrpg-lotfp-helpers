@@ -13,7 +13,7 @@ const MiscEquipmentInventory = () => {
   const onRemoveClick = (item: InventoryItem<EquipmentItem>) =>
     removeEquipmentItem(item)
 
-  const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase`
+  const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left ph-color-accent uppercase`
   const cellClassnames = `px-4 font-normal text-gray-900`
 
   return (

@@ -59,7 +59,7 @@ const DataGrid = <T extends EquipmentItem>({
     return sortConfig.direction === 'asc' ? '↑' : '↓'
   }
 
-  const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase cursor-pointer`
+  const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left ph-color-accent uppercase cursor-pointer`
 
   return (
     <>
@@ -114,7 +114,7 @@ const DataGrid = <T extends EquipmentItem>({
               ))}
               <td className='whitespace-nowrap p-4 font-normal text-gray-900'>
                 <button
-                  className='inline-flex items-center rounded bg-red-800 px-4 py-2 text-sm font-bold text-white hover:bg-red-500'
+                  className='inline-flex items-center rounded px-4 py-2 text-sm ph-btn-secondary'
                   onClick={() => onAddClick(item)}
                 >
                   <PlusIcon className='mr-2 h-5 w-5' />
