@@ -4,16 +4,15 @@ import React from 'react'
 import DamageFragment from '@/components/DamageFragment'
 import type { InventoryItem } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
-import type { MissileWeaponItem } from '@/domain/weapon'
-import { t } from '@/locale/helpers'
-import { removeMissileWeapon, useInventoryState } from '@/state/InventoryState'
+import type { MeleeWeaponItem } from '@/domain/weapon'
+import { removeMeleeWeapon, useInventoryState } from '@/state/InventoryState'
 
-const MissileWeaponsInventory = () => {
+const MeleeWeaponsInventoryGrid = () => {
   const { state: equipmentState } = useInventoryState()
-  const { missileWeapons } = equipmentState
+  const { meleeWeapons } = equipmentState
 
-  const onRemoveClick = (item: InventoryItem<MissileWeaponItem>) =>
-    removeMissileWeapon(item)
+  const onRemoveClick = (item: InventoryItem<MeleeWeaponItem>) =>
+    removeMeleeWeapon(item)
 
   const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left text-gray-500 uppercase`
   const cellClassnames = `px-4 font-normal text-gray-900`
@@ -35,11 +34,11 @@ const MissileWeaponsInventory = () => {
         </tr>
       </thead>
       <tbody className='bg-white dark:bg-gray-800'>
-        {missileWeapons.get().map((item, index) => (
+        {meleeWeapons.get().map((item, index) => (
           <tr key={item.inventoryId} className={index % 2 ? 'bg-gray-50' : ''}>
-            <td className={`${cellClassnames}`}>
+            <td className={`${cellClassnames} truncate`}>
               <details className='ph-details-bullet'>
-                <summary className='cursor-pointer list-none p-4 pl-0'>
+                <summary className='cursor-pointer list-none truncate p-4 pl-0'>
                   <div className='flex items-center'>
                     <span className='ph-custom-indicator mr-2 text-gray-400'>
                       &#9654;
@@ -58,7 +57,7 @@ const MissileWeaponsInventory = () => {
                   <>{item.details}</>
                   <ul className='ml-4 list-disc pl-4'>
                     <li>
-                      {t('Damage:')} (<DamageFragment damage={item.damage} />)
+                      Damage: (<DamageFragment damage={item.damage} />)
                     </li>
                   </ul>
                 </div>
@@ -72,7 +71,7 @@ const MissileWeaponsInventory = () => {
               <button
                 className='inline-flex items-center text-xs text-gray-500'
                 onClick={() => onRemoveClick(item)}
-                title={t('Remove item')}
+                title='Remove item'
               >
                 <MinusIcon className='mr-2 h-5 w-5' />
               </button>
@@ -84,4 +83,4 @@ const MissileWeaponsInventory = () => {
   )
 }
 
-export default MissileWeaponsInventory
+export default MeleeWeaponsInventoryGrid

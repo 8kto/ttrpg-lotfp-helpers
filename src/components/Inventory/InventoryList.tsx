@@ -1,12 +1,12 @@
 import React from 'react'
 
 import InventoryDetails from '@/components/EncumbranceFragment/InventoryDetails'
-import ArmorInventory from '@/components/Inventory/ArmorInventory'
+import ArmorInventoryGrid from '@/components/Inventory/ArmorInventoryGrid'
 import CategoryInventoryControls from '@/components/Inventory/CategoryInventoryControls'
 import InventoryControls from '@/components/Inventory/InventoryControls'
-import MeleeWeaponsInventory from '@/components/Inventory/MeleeWeaponsInventory'
-import MiscEquipmentInventory from '@/components/Inventory/MiscEquipmentInventory'
-import MissileWeaponsInventory from '@/components/Inventory/MissileWeaponsInventory'
+import MeleeWeaponsInventoryGrid from '@/components/Inventory/MeleeWeaponsInventoryGrid'
+import MiscEquipmentInventoryGrid from '@/components/Inventory/MiscEquipmentInventoryGrid'
+import MissileWeaponsInventoryGrid from '@/components/Inventory/MissileWeaponsInventoryGrid'
 import { t } from '@/locale/helpers'
 import { useInventoryState } from '@/state/InventoryState'
 
@@ -32,7 +32,7 @@ const InventoryList = () => {
             <h2 className={categoryTitleClassname}>{t('Armor')}</h2>
             <CategoryInventoryControls category='armor' />
           </div>
-          <ArmorInventory />
+          <ArmorInventoryGrid />
         </>
       )}
 
@@ -42,7 +42,7 @@ const InventoryList = () => {
             <h2 className={categoryTitleClassname}>{t('Mêlée Weapons')}</h2>
             <CategoryInventoryControls category='meleeWeapons' />
           </div>
-          <MeleeWeaponsInventory />
+          <MeleeWeaponsInventoryGrid />
         </>
       )}
 
@@ -52,7 +52,7 @@ const InventoryList = () => {
             <h2 className={categoryTitleClassname}>{t('Missile Weapons')}</h2>
             <CategoryInventoryControls category='missileWeapons' />
           </div>
-          <MissileWeaponsInventory />
+          <MissileWeaponsInventoryGrid />
         </>
       )}
 
@@ -64,7 +64,7 @@ const InventoryList = () => {
             </h2>
             <CategoryInventoryControls category='miscEquipment' />
           </div>
-          <MiscEquipmentInventory />
+          <MiscEquipmentInventoryGrid />
         </>
       )}
     </>

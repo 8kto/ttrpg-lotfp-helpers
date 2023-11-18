@@ -6,7 +6,7 @@ import { EncumbrancePoint } from '@/domain/encumbrance'
 import { t } from '@/locale/helpers'
 import { removeEquipmentItem, useInventoryState } from '@/state/InventoryState'
 
-const MiscEquipmentInventory = () => {
+const MiscEquipmentInventoryGrid = () => {
   const { state: equipmentState } = useInventoryState()
   const { miscEquipment } = equipmentState
 
@@ -69,4 +69,4 @@ const MiscEquipmentInventory = () => {
 }
 
 // FIXME empty details
-export default MiscEquipmentInventory
+export default MiscEquipmentInventoryGrid

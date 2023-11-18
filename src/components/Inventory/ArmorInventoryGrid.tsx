@@ -1,7 +1,7 @@
 import React from 'react'
 
-import type { InventoryColumn } from '@/components/Inventory/InventoryTable'
-import InventoryTable from '@/components/Inventory/InventoryTable'
+import type { InventoryColumn } from '@/components/Inventory/InventoryGrid'
+import InventoryGrid from '@/components/Inventory/InventoryGrid'
 import type { InventoryItem } from '@/domain'
 import type { ArmorItem } from '@/domain/armor'
 import { EncumbrancePoint } from '@/domain/encumbrance'
@@ -50,14 +50,14 @@ const inventoryTableColumns: ReadonlyArray<
   },
 ]
 
-const ArmorInventory = () => {
+const ArmorInventoryGrid = () => {
   const { state: equipmentState } = useInventoryState()
   const { armor } = equipmentState
 
   const onRemoveClick = (item: ArmorInventoryItem) => removeArmor(item)
 
   return (
-    <InventoryTable<ArmorInventoryItem>
+    <InventoryGrid<ArmorInventoryItem>
       data={armor.get()}
       columns={inventoryTableColumns}
       onRemoveClick={onRemoveClick}
@@ -65,5 +65,5 @@ const ArmorInventory = () => {
   )
 }
 
-export default ArmorInventory
+export default ArmorInventoryGrid
 // FIXME convert other inventories
