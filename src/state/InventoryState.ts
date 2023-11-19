@@ -128,3 +128,8 @@ export const addCopperPieces = (value: number) => {
   const balance = InventoryState.copperPieces
   balance.merge((v) => v + value)
 }
+
+export const setCopperPieces = (value: number) => {
+  const balance = InventoryState.copperPieces
+  balance.set(value)
+}

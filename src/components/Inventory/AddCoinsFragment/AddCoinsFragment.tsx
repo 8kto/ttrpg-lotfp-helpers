@@ -22,6 +22,7 @@ const AddCoinsFragment = ({ onClose }: { onClose: () => void }) => {
       const amount = isCopperPieces ? coins : coins * 10
       addCopperPieces(amount)
       setCoins(0)
+      setIsCopperPieces(false)
       onClose()
     }
   }

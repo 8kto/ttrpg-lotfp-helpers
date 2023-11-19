@@ -1,12 +1,20 @@
 import { XMarkIcon } from '@heroicons/react/24/solid'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { t } from '@/locale/helpers'
-import { addCopperPieces } from '@/state/InventoryState'
+import { setCopperPieces, useInventoryState } from '@/state/InventoryState'
 
 const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
-  const [isCopperPieces, setIsCopperPieces] = useState(false)
-  const [coins, setCoins] = useState<number | ''>('')
+  const isCopperPiecesDefaultValue = false
+  const {
+    state: { copperPieces },
+  } = useInventoryState()
+  const [isCopperPieces, setIsCopperPieces] = useState(
+    isCopperPiecesDefaultValue,
+  )
+  const [coins, setCoins] = useState<number | ''>(
+    isCopperPiecesDefaultValue ? copperPieces.get() : copperPieces.get() / 10,
+  )
 
   const handleCoinsChange: React.ChangeEventHandler<HTMLInputElement> = (
     event,
@@ -17,11 +25,12 @@ const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
     }
   }
 
-  const handleAddCoins = () => {
+  const handleSetCoins = () => {
     if (coins) {
       const amount = isCopperPieces ? coins : coins * 10
-      addCopperPieces(amount)
+      setCopperPieces(amount)
       setCoins(0)
+      setIsCopperPieces(false)
       onClose()
     }
   }
@@ -36,9 +45,13 @@ const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
     event,
   ) => {
     if (event.key === 'Enter') {
-      handleAddCoins()
+      handleSetCoins()
     }
   }
+
+  useEffect(() => {
+    setCoins(copperPieces.get() / 10)
+  }, [copperPieces])
 
   return (
     <>
@@ -101,7 +114,7 @@ const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
 
         <div className='bottom-0 left-0 flex w-full justify-center space-x-4 pb-4 md:absolute md:px-4'>
           <button
-            onClick={handleAddCoins}
+            onClick={handleSetCoins}
             type='button'
             className='ph-btn-primary w-full justify-center rounded px-5 py-2.5 text-center font-medium focus:outline-none focus:ring-4 focus:ring-primary-300'
           >
