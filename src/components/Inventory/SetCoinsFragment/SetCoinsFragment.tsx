@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { t } from '@/locale/helpers'
 import { addCopperPieces } from '@/state/InventoryState'
 
-const AddCoinsFragment = ({ onClose }: { onClose: () => void }) => {
+const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
   const [isCopperPieces, setIsCopperPieces] = useState(false)
   const [coins, setCoins] = useState<number | ''>('')
 
@@ -40,15 +40,13 @@ const AddCoinsFragment = ({ onClose }: { onClose: () => void }) => {
     }
   }
 
-  // TODO autofocus form fields in all forms
-
   return (
     <>
       <h5
-        id='drawer-label--add-coins'
+        id='drawer-label--set-coins'
         className='ph-color-accent mb-6 inline-flex items-center text-2xl'
       >
-        {t('Add coins')}
+        {t('Set coins')}
       </h5>
       <button
         onClick={onClose}
@@ -61,7 +59,7 @@ const AddCoinsFragment = ({ onClose }: { onClose: () => void }) => {
       </button>
       <div className='space-y-4'>
         <label
-          htmlFor='add-coins'
+          htmlFor='set-coins'
           className='mb-2 block font-medium text-gray-700'
         >
           {t('Enter coin amount. Use copper pieces instead of float numbers.')}
@@ -70,8 +68,8 @@ const AddCoinsFragment = ({ onClose }: { onClose: () => void }) => {
           <input
             autoFocus
             type='number'
-            name='add-coins'
-            id='add-coins'
+            name='set-coins'
+            id='set-coins'
             className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600'
             placeholder='0'
             value={coins === 0 ? '' : coins}
@@ -88,13 +86,13 @@ const AddCoinsFragment = ({ onClose }: { onClose: () => void }) => {
           <input
             checked={isCopperPieces}
             onChange={() => setIsCopperPieces((v) => !v)}
-            id='copper-coins--add-coins'
+            id='copper-coins--set-coins'
             type='checkbox'
             value=''
             className='h-4 w-4 rounded border-gray-300 bg-gray-100 focus:ring-2 focus:ring-blue-500'
           />
           <label
-            htmlFor='copper-coins--add-coins'
+            htmlFor='copper-coins--set-coins'
             className='ms-2 cursor-pointer text-sm font-medium text-gray-900'
           >
             {t('Copper pieces')}
@@ -107,7 +105,7 @@ const AddCoinsFragment = ({ onClose }: { onClose: () => void }) => {
             type='button'
             className='ph-btn-primary w-full justify-center rounded px-5 py-2.5 text-center font-medium focus:outline-none focus:ring-4 focus:ring-primary-300'
           >
-            {t('Add')}
+            {t('Set')}
           </button>
         </div>
       </div>
@@ -115,4 +113,4 @@ const AddCoinsFragment = ({ onClose }: { onClose: () => void }) => {
   )
 }
 
-export default AddCoinsFragment
+export default SetCoinsFragment

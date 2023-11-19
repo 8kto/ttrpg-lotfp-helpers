@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 
 import CostFragment from '@/components/CostFragment/CostFragment'
+import Drawer from '@/components/Drawer/Drawer'
+import SetCoinsFragment from '@/components/Inventory/SetCoinsFragment/SetCoinsFragment'
 import { t } from '@/locale/helpers'
 import { useInventoryState } from '@/state/InventoryState'
 
 const Wallet = () => {
   const [isManaged, setIsManaged] = useState(false)
   const [isCoinWeightActive, setIsCoinWeightActive] = useState(true)
+  const [isSetCoinsDrawerOpen, setSetCoinsDrawerOpen] = useState(false)
 
   const { state } = useInventoryState()
   const { copperPieces } = state
@@ -15,7 +18,20 @@ const Wallet = () => {
     <div className='px-4 sm:px-0'>
       {/* 1st row */}
       <div className='mb-2'>
-        <CostFragment cost={copperPieces.get() ? copperPieces.get() / 10 : 0} />
+        <CostFragment
+          cost={copperPieces.get() ?? 0}
+          onClick={() => {
+            setSetCoinsDrawerOpen(true)
+          }}
+          copperPieces
+        />
+        <Drawer
+          isOpen={isSetCoinsDrawerOpen}
+          onClose={() => setSetCoinsDrawerOpen(false)}
+          ariaLabelledBy={'drawer-label'}
+        >
+          <SetCoinsFragment onClose={() => setSetCoinsDrawerOpen(false)} />
+        </Drawer>
       </div>
       {/* 2nd row */}
       <>
