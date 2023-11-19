@@ -19,7 +19,8 @@ const AddCoinsFragment = ({ onClose }: { onClose: () => void }) => {
 
   const handleAddCoins = () => {
     if (coins) {
-      addCopperPieces(isCopperPieces ? coins : coins * 10)
+      const amount = isCopperPieces ? coins : coins * 10
+      addCopperPieces(amount)
       setCoins(0)
     }
   }
@@ -31,6 +32,7 @@ const AddCoinsFragment = ({ onClose }: { onClose: () => void }) => {
   }
 
   // TODO fix warnings about controlled/uncontrolled (undefined to number)
+  // TODO add on enter
 
   return (
     <>
