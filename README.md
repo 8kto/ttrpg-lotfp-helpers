@@ -22,7 +22,9 @@ Lamentations of the Flame Princess helpers.
   - [ ] Terrain type factor
 - [ ] Custom equipment entries
 - [x] Wallet (available money)
-- [ ] Add coins and calculate the encumbrance
+  - [ ] Manage costs when an item is added
+- [x] Add coins and calculate the encumbrance
+  - [ ] Track different kinds of coins
 - [ ] Inventory is saved in session and survives the page reload
 - [ ] Languages support
 - [ ] Responsive layout, mobile devices support

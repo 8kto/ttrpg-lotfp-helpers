@@ -3,6 +3,7 @@ import React from 'react'
 
 import CostFragment from '@/components/CostFragment/CostFragment'
 import EncumbranceFragment from '@/components/EncumbranceFragment/EncumbranceFragment'
+import { getCoinsEncumbrance } from '@/components/Inventory/AddCoinsFragment/helpers'
 import { getTotal } from '@/components/InventoryDetails/helpers'
 import MovementFragment from '@/components/MovementFragment/MovementFragment'
 import Wallet from '@/components/Wallet/Wallet'
@@ -12,9 +13,19 @@ import { useInventoryState } from '@/state/InventoryState'
 
 const InventoryDetails = () => {
   const { state: equipmentState } = useInventoryState()
+  const { isCoinWeightActive, copperPieces } = equipmentState
   const { totalEncumbrancePoints, totalCost } = getTotal(
     combineEquipment(equipmentState),
   )
+
+  // TODO support different kinds of coins
+  let finalEncumbrancePoints: number
+  if (isCoinWeightActive) {
+    const coinEncumbrance = getCoinsEncumbrance(copperPieces.get() / 10)
+    finalEncumbrancePoints = totalEncumbrancePoints + coinEncumbrance
+  } else {
+    finalEncumbrancePoints = totalEncumbrancePoints
+  }
 
   const titleClassname = 'ph-font-cursive text-red-900 text-lg'
 
@@ -39,13 +50,13 @@ const InventoryDetails = () => {
         <div className='px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0'>
           <dt className={titleClassname}>{t('Encumbrance')}</dt>
           <dd className='mt-1 leading-6 text-gray-700 sm:col-span-2 sm:mt-0'>
-            <EncumbranceFragment encumbrancePoints={totalEncumbrancePoints} />
+            <EncumbranceFragment encumbrancePoints={finalEncumbrancePoints} />
           </dd>
         </div>
         <div className='px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0'>
           <dt className={titleClassname}>{t('Movement')}</dt>
           <dd className='mt-1 leading-6 text-gray-700 sm:col-span-2 sm:mt-0'>
-            <MovementFragment encumbrancePoints={totalEncumbrancePoints} />
+            <MovementFragment encumbrancePoints={finalEncumbrancePoints} />
           </dd>
         </div>
       </dl>
