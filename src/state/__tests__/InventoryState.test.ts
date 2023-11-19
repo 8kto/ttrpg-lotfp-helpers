@@ -52,7 +52,7 @@ describe('InventoryState Tests', () => {
 
       expect(result.current.state.get()).toEqual({
         armor: [armorItemMock1],
-        balanceCopperPieces: 0,
+        copperPieces: 0,
         isCostRural: true,
         meleeWeapons: [meleeWeaponItemMock1],
         miscEquipment: [miscEquipItem1],

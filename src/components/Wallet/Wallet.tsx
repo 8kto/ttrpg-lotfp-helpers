@@ -10,15 +10,13 @@ const Wallet = () => {
     useState(true)
 
   const { state } = useInventoryState()
-  const { balanceCopperPieces } = state
+  const { copperPieces } = state
 
   return (
     <div className='px-4 sm:px-0'>
       {/* 1st row */}
       <div className='mb-2'>
-        <CostFragment
-          cost={balanceCopperPieces.get() ? balanceCopperPieces.get() / 10 : 0}
-        />
+        <CostFragment cost={copperPieces.get() ? copperPieces.get() / 10 : 0} />
       </div>
       {/* 2nd row */}
       {/* TODO make switcher smaller */}
