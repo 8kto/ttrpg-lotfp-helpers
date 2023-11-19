@@ -5,7 +5,7 @@ import CostFragment from '@/components/CostFragment/CostFragment'
 import {
   getEncumbrance,
   getTotal,
-} from '@/components/EncumbranceFragment/helpers'
+} from '@/components/InventoryDetails/helpers'
 import MovementFragment from '@/components/MovementFragment/MovementFragment'
 import Wallet from '@/components/Wallet/Wallet'
 import { t } from '@/locale/helpers'
@@ -23,7 +23,7 @@ const InventoryDetails = () => {
     <div className='mt-6 border-t border-gray-100 text-base'>
       <dl className='divide-y divide-gray-100'>
         <div className='px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0'>
-          <dt className={`${titleClassname} flex items-center`}>
+          <dt className={`${titleClassname} flex`}>
             <CircleStackIcon className='mr-2 h-5 w-5' />
             {t('Wallet')}
           </dt>
