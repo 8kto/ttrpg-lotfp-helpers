@@ -23,9 +23,9 @@ export const getTotal = (items: Array<InventoryItem<EquipmentItem>>) => {
     (totals, item) => {
       return {
         totalCost: totals.totalCost + item.lockedCost,
-        totalPoints: totals.totalPoints + item.points,
+        totalEncumbrancePoints: totals.totalEncumbrancePoints + item.points,
       }
     },
-    { totalCost: 0, totalPoints: 0 },
+    { totalCost: 0, totalEncumbrancePoints: 0 },
   )
 }

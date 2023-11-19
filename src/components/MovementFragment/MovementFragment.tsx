@@ -1,9 +1,14 @@
 import React from 'react'
 
+import { getEncumbrance } from '@/components/InventoryDetails/helpers'
 import { MovementRates } from '@/config/MovementRates'
-import type { Encumbrance } from '@/domain/encumbrance'
 
-const MovementFragment = ({ encumbrance }: { encumbrance: Encumbrance }) => {
+const MovementFragment = ({
+  encumbrancePoints,
+}: {
+  encumbrancePoints: number
+}) => {
+  const encumbrance = getEncumbrance(encumbrancePoints)
   const movement = MovementRates[encumbrance]
 
   return (

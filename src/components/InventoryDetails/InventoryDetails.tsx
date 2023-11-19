@@ -2,7 +2,8 @@ import { CircleStackIcon } from '@heroicons/react/24/solid'
 import React from 'react'
 
 import CostFragment from '@/components/CostFragment/CostFragment'
-import { getEncumbrance, getTotal } from '@/components/InventoryDetails/helpers'
+import EncumbranceFragment from '@/components/EncumbranceFragment/EncumbranceFragment'
+import { getTotal } from '@/components/InventoryDetails/helpers'
 import MovementFragment from '@/components/MovementFragment/MovementFragment'
 import Wallet from '@/components/Wallet/Wallet'
 import { t } from '@/locale/helpers'
@@ -11,8 +12,9 @@ import { useInventoryState } from '@/state/InventoryState'
 
 const InventoryDetails = () => {
   const { state: equipmentState } = useInventoryState()
-  const { totalPoints, totalCost } = getTotal(combineEquipment(equipmentState))
-  const encumbrance = getEncumbrance(totalPoints)
+  const { totalEncumbrancePoints, totalCost } = getTotal(
+    combineEquipment(equipmentState),
+  )
 
   const titleClassname = 'ph-font-cursive text-red-900 text-lg'
 
@@ -37,13 +39,13 @@ const InventoryDetails = () => {
         <div className='px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0'>
           <dt className={titleClassname}>{t('Encumbrance')}</dt>
           <dd className='mt-1 leading-6 text-gray-700 sm:col-span-2 sm:mt-0'>
-            {encumbrance} ({totalPoints.toPrecision(2)})
+            <EncumbranceFragment encumbrancePoints={totalEncumbrancePoints} />
           </dd>
         </div>
         <div className='px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0'>
           <dt className={titleClassname}>{t('Movement')}</dt>
           <dd className='mt-1 leading-6 text-gray-700 sm:col-span-2 sm:mt-0'>
-            <MovementFragment encumbrance={encumbrance} />
+            <MovementFragment encumbrancePoints={totalEncumbrancePoints} />
           </dd>
         </div>
       </dl>

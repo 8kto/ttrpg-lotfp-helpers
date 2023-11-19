@@ -51,14 +51,14 @@ describe('helpers', () => {
 
       expect(getTotal(items)).toEqual({
         totalCost: 350,
-        totalPoints: 3.2,
+        totalEncumbrancePoints: 3.2,
       })
     })
 
     it('returns zero for empty arrays', () => {
       expect(getTotal([])).toEqual({
         totalCost: 0,
-        totalPoints: 0,
+        totalEncumbrancePoints: 0,
       })
     })
   })
