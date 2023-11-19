@@ -1,12 +1,12 @@
 import React from 'react'
 
-import InventoryDetails from '@/components/EncumbranceFragment/InventoryDetails'
 import ArmorInventoryGrid from '@/components/Inventory/ArmorInventoryGrid'
 import CategoryInventoryControls from '@/components/Inventory/CategoryInventoryControls'
 import InventoryControls from '@/components/Inventory/InventoryControls'
 import MeleeWeaponsInventoryGrid from '@/components/Inventory/MeleeWeaponsInventoryGrid'
 import MiscEquipmentInventoryGrid from '@/components/Inventory/MiscEquipmentInventoryGrid'
 import MissileWeaponsInventoryGrid from '@/components/Inventory/MissileWeaponsInventoryGrid'
+import InventoryDetails from '@/components/InventoryDetails/InventoryDetails'
 import { t } from '@/locale/helpers'
 import { useInventoryState } from '@/state/InventoryState'
 

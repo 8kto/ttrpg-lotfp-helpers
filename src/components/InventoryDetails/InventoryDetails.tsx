@@ -2,10 +2,7 @@ import { CircleStackIcon } from '@heroicons/react/24/solid'
 import React from 'react'
 
 import CostFragment from '@/components/CostFragment/CostFragment'
-import {
-  getEncumbrance,
-  getTotal,
-} from '@/components/InventoryDetails/helpers'
+import { getEncumbrance, getTotal } from '@/components/InventoryDetails/helpers'
 import MovementFragment from '@/components/MovementFragment/MovementFragment'
 import Wallet from '@/components/Wallet/Wallet'
 import { t } from '@/locale/helpers'

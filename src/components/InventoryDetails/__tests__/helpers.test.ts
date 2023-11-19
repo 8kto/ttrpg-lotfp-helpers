@@ -1,7 +1,4 @@
-import {
-  getEncumbrance,
-  getTotal,
-} from '@/components/EncumbranceFragment/helpers'
+import { getEncumbrance, getTotal } from '@/components/InventoryDetails/helpers'
 import type { EquipmentItem, InventoryItem } from '@/domain'
 import { Encumbrance, EncumbrancePoint } from '@/domain/encumbrance'
 

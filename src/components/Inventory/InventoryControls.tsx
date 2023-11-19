@@ -6,7 +6,7 @@ import {
 import React, { useState } from 'react'
 
 import Drawer from '@/components/Drawer/Drawer'
-import AddCoinsFragment from '@/components/Inventory/AddCoinsFragment'
+import AddCoinsFragment from '@/components/Inventory/AddCoinsFragment/AddCoinsFragment'
 import AddEquipmentItemFragment from '@/components/Inventory/AddEquipmentItemFragment'
 import { t } from '@/locale/helpers'
 import { useInventoryState } from '@/state/InventoryState'
