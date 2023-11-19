@@ -8,10 +8,11 @@ import deepclone from '@/shared/helpers/deepclone'
 export type InventoryStateType = {
   armor: ReadonlyArray<InventoryItem<ArmorItem>>
   copperPieces: number
+  isCoinWeightActive: boolean
+  isCostRural: boolean
   meleeWeapons: ReadonlyArray<InventoryItem<MeleeWeaponItem>>
   missileWeapons: ReadonlyArray<InventoryItem<MissileWeaponItem>>
   miscEquipment: ReadonlyArray<InventoryItem<EquipmentItem>>
-  isCostRural: boolean
 }
 
 /**
@@ -22,11 +23,18 @@ export type InventoryStateType = {
 const initialInventoryState: Readonly<InventoryStateType> = {
   armor: Array<InventoryItem<ArmorItem>>(),
   copperPieces: 0,
+  isCoinWeightActive: true,
   isCostRural: false,
   meleeWeapons: Array<InventoryItem<MeleeWeaponItem>>(),
   miscEquipment: Array<InventoryItem<EquipmentItem>>(),
   missileWeapons: Array<InventoryItem<MissileWeaponItem>>(),
 }
+
+export type EquipmentCategoryKey =
+  | 'armor'
+  | 'meleeWeapons'
+  | 'missileWeapons'
+  | 'miscEquipment'
 
 export const getInitialInventoryState = (): InventoryStateType => {
   return deepclone(initialInventoryState)
@@ -55,7 +63,7 @@ export const useInventoryState = () => {
   return { reset, resetEquipment, state }
 }
 
-export const EquipmentStateKeys: ReadonlyArray<keyof InventoryStateType> =
+export const EquipmentStateKeys: ReadonlyArray<EquipmentCategoryKey> =
   Object.freeze(['armor', 'meleeWeapons', 'missileWeapons', 'miscEquipment'])
 
 export const addArmor = (item: InventoryItem<ArmorItem>) => {
@@ -120,5 +128,3 @@ export const addCopperPieces = (value: number) => {
   const balance = InventoryState.copperPieces
   balance.merge((v) => v + value)
 }
-
-// TODO introduce type for <keyof ... state>

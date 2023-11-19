@@ -25,6 +25,7 @@ describe('Inventory helpers', () => {
       const mockEquipmentState = createStateMock({
         armor: [armorItemMock1, armorItemMock2],
         copperPieces: 0,
+        isCoinWeightActive: true,
         isCostRural: false,
         meleeWeapons: [meleeWeaponItemMock1, meleeWeaponItemMock2],
         miscEquipment: [miscEquipItem1, miscEquipItem2],
@@ -54,6 +55,7 @@ describe('Inventory helpers', () => {
       const mockEmptyEquipmentState = createStateMock({
         armor: [],
         copperPieces: 0,
+        isCoinWeightActive: true,
         isCostRural: false,
         meleeWeapons: [],
         miscEquipment: [],

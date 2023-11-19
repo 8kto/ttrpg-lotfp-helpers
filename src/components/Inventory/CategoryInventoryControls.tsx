@@ -1,6 +1,6 @@
 import React from 'react'
 
-import type { InventoryStateType } from '@/state/InventoryState'
+import type { EquipmentCategoryKey } from '@/state/InventoryState'
 import {
   getInitialInventoryState,
   useInventoryState,
@@ -9,7 +9,7 @@ import {
 const CategoryInventoryControls = ({
   category,
 }: {
-  category: keyof InventoryStateType
+  category: EquipmentCategoryKey
 }) => {
   const { state: equipmentState } = useInventoryState()
   const handleReset = () => {
