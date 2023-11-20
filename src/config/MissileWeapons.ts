@@ -143,3 +143,4 @@ export const MissileWeapons: ReadonlyArray<MissileWeaponItem> = [
     type: WeaponType.Ammunition,
   },
 ]
+// TODO blowgun darts?
