@@ -1,15 +1,20 @@
 import React from 'react'
 
 import DamageFragment from '@/components/DamageFragment'
+import RangeFragment from '@/components/RangeFragment'
 import type { EquipmentItem } from '@/domain'
 import type { ArmorItem } from '@/domain/armor'
-import type { WeaponItem } from '@/domain/weapon'
+import type { MissileWeaponItem, WeaponItem } from '@/domain/weapon'
+import { t } from '@/locale/helpers'
 
 const isArmorItem = (item: EquipmentItem): item is ArmorItem => {
   return 'armorClass' in item
 }
 const isWeaponItem = (item: EquipmentItem): item is WeaponItem => {
   return 'damage' in item && !!item.damage
+}
+const isMissileItem = (item: EquipmentItem): item is MissileWeaponItem => {
+  return 'range' in item && !!item.range
 }
 
 const ItemDetails = <T extends EquipmentItem>({
@@ -28,10 +33,16 @@ const ItemDetails = <T extends EquipmentItem>({
           <span className='ph-custom-indicator mr-2 text-gray-400'>
             &#9654;
           </span>
+          {/* Title */}
           {item.name}
           {!compact && (
             <>
-              {isArmorItem(item) ? <> (AC {item.armorClass})</> : null}
+              {isArmorItem(item) ? (
+                <>
+                  {' '}
+                  ({t('AC')} {item.armorClass})
+                </>
+              ) : null}
               {isWeaponItem(item) ? (
                 <>
                   {' '}
@@ -42,13 +53,21 @@ const ItemDetails = <T extends EquipmentItem>({
           )}
         </div>
       </summary>
+      {/* Item details unfold */}
       <div className='pt-4 text-gray-600'>
         {isArmorItem(item) ? (
           <p className={paragraphClassname}>Armor Class: {item.armorClass}</p>
         ) : null}
         {isWeaponItem(item) ? (
           <p className={paragraphClassname}>
-            Damage: <DamageFragment damage={item.damage} />
+            <strong>{t('Damage')}</strong>:{' '}
+            <DamageFragment damage={item.damage} />
+          </p>
+        ) : null}
+        {isMissileItem(item) ? (
+          <p className={paragraphClassname}>
+            <strong>{t('Range')}</strong>
+            <RangeFragment range={item.range} />
           </p>
         ) : null}
         <p className={paragraphClassname}>{item.details}</p>

@@ -6,6 +6,7 @@ import { trivialSort } from '@/components/DataGrid/helpers'
 import type { DataGridColumn, SortConfig } from '@/components/DataGrid/types'
 import { getInventoryItem } from '@/components/EquipmentList/helpers'
 import ItemDetails from '@/components/Inventory/ItemDetails'
+import RangeFragment from '@/components/RangeFragment'
 import { AllEquipment } from '@/config/AllEquipment'
 import type { Dice, EquipmentItem } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
@@ -13,6 +14,7 @@ import type { MissileWeaponItem } from '@/domain/weapon'
 import { t } from '@/locale/helpers'
 import { addMissileWeapon, useInventoryState } from '@/state/InventoryState'
 
+// TODO always display details with Range
 const columns: ReadonlyArray<DataGridColumn<MissileWeaponItem>> = [
   {
     className: 'w-1/3',
@@ -29,6 +31,14 @@ const columns: ReadonlyArray<DataGridColumn<MissileWeaponItem>> = [
       <DamageFragment damage={item.damage} />
     ),
     title: 'Damage',
+  },
+  {
+    className: 'w-1/6',
+    key: 'range',
+    render: (item: MissileWeaponItem) => (
+      <RangeFragment range={item.range} compact />
+    ),
+    title: 'Range',
   },
   {
     className: 'w-1/6',
@@ -135,5 +145,4 @@ const MissileWeaponsGrid = () => {
   )
 }
 
-// TODO display range
 export default MissileWeaponsGrid
