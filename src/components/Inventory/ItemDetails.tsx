@@ -65,10 +65,10 @@ const ItemDetails = <T extends EquipmentItem>({
           </p>
         ) : null}
         {isMissileItem(item) ? (
-          <p className={paragraphClassname}>
+          <div className={paragraphClassname}>
             <strong>{t('Range')}</strong>
             <RangeFragment range={item.range} />
-          </p>
+          </div>
         ) : null}
         <p className={paragraphClassname}>{item.details}</p>
       </div>
