@@ -13,10 +13,10 @@ const AddCoinsFragment = ({ onClose }: { onClose: () => void }) => {
     coins,
   }: {
     isCopper: boolean
-    coins: number
+    coins: number | string
   }) => {
     if (coins) {
-      const amount = isCopper ? coins : coins * 10
+      const amount = isCopper ? +coins : +coins * 10
       addCopperPieces(amount)
       onClose()
     }
@@ -25,7 +25,7 @@ const AddCoinsFragment = ({ onClose }: { onClose: () => void }) => {
   return (
     <Formik
       initialValues={{
-        coins: 0,
+        coins: '',
         isCopper: false,
       }}
       validationSchema={Yup.object({
@@ -35,8 +35,9 @@ const AddCoinsFragment = ({ onClose }: { onClose: () => void }) => {
           .required(t('Required')),
         isCopper: Yup.boolean(),
       })}
-      onSubmit={(values) => {
+      onSubmit={(values, formikHelpers) => {
         handleAddCoins(values)
+        formikHelpers.resetForm()
       }}
     >
       {({ handleSubmit }) => (

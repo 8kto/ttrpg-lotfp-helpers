@@ -15,6 +15,8 @@ export const getEncumbrance = (points: number): Encumbrance => {
     return Encumbrance.Lightly
   }
 
+  // FIXME 5 first items are free of encumbrance
+
   return Encumbrance.Unencumbered
 }
 
