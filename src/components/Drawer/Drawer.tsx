@@ -6,18 +6,21 @@ const Drawer = ({
   onClose,
   children,
   ariaLabelledBy,
+  fromLeft = false,
 }: {
   isOpen: boolean
   onClose: () => void
   children: React.ReactNode
   ariaLabelledBy?: string
+  fromLeft?: boolean
 }) => {
   const drawerClasses = classnames(
-    'border fixed right-0 top-0 h-screen w-96 overflow-y-auto bg-white p-4',
+    'border fixed top-0 h-screen w-96 overflow-y-auto bg-white p-4 transition-transform',
     {
-      'transform translate-x-full transition-transform dark:bg-gray-800':
-        !isOpen,
-      'transition-transform dark:bg-gray-800 z-40': isOpen,
+      'left-0 transform -translate-x-full': !isOpen && fromLeft,
+      'left-0 z-40': isOpen && fromLeft,
+      'right-0 transform translate-x-full': !isOpen && !fromLeft,
+      'right-0 z-40': isOpen && !fromLeft,
     },
   )
 
