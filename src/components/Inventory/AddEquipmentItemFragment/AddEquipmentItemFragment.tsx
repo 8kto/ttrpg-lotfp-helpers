@@ -1,47 +1,46 @@
 /* eslint-disable sort-keys */
 import { XMarkIcon } from '@heroicons/react/24/solid'
-import { Field, Form, Formik } from 'formik'
+import { ErrorMessage, Field, Form, Formik } from 'formik'
 import React from 'react'
 import * as Yup from 'yup'
 
+import type { EquipmentItemDto } from '@/components/Inventory/AddEquipmentItemFragment/helpers'
+import {
+  EncumbrancePointsLabelsDict,
+  EquipLabelsDict,
+  getEquipmentItem,
+} from '@/components/Inventory/AddEquipmentItemFragment/helpers'
+import { EncumbrancePoint } from '@/domain/encumbrance'
 import { t } from '@/locale/helpers'
-import type { EquipmentCategoryKey } from '@/state/InventoryState'
 import { EquipmentStateKeys } from '@/state/InventoryState'
 
-const equipDict: Record<EquipmentCategoryKey, string> = {
-  miscEquipment: t('Miscellaneous'),
-  armor: t('Armor'),
-  missileWeapons: t('Missile weapons'),
-  meleeWeapons: t('Mêlée weapons'),
-}
-
 const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
-  const handleAddItem = (values: {
-    name: string
-    cost: number
-    isCopper: boolean
-    category: string /*EquipmentCategoryKey*/
-    // TODO weight
-  }) => {
-    console.log(values)
+  const handleAddItem = (values: EquipmentItemDto) => {
+    console.log(getEquipmentItem(values))
   }
 
   return (
     <Formik
-      initialValues={{
-        name: '',
-        cost: 0,
-        isCopper: false,
-        category: 'miscEquipment',
-      }}
+      initialValues={
+        {
+          points: EncumbrancePoint.Regular,
+          name: '',
+          cost: 0,
+          isCopper: false,
+          category: 'miscEquipment',
+          details: '',
+        } as EquipmentItemDto
+      }
       validationSchema={Yup.object({
+        points: Yup.number().required(),
         name: Yup.string().required(),
         cost: Yup.number(),
         isCopper: Yup.boolean(),
         category: Yup.string().oneOf(EquipmentStateKeys).required(),
+        details: Yup.string(),
       })}
       onSubmit={(values, formikHelpers) => {
-        handleAddItem(values)
+        handleAddItem(values as EquipmentItemDto)
         formikHelpers.resetForm()
       }}
     >
@@ -73,7 +72,7 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
           {/* Name row */}
           <div className='mb-6 space-y-2'>
             <label
-              htmlFor='item-name'
+              htmlFor='add-equip-item--name'
               className='mb-1 block font-medium text-gray-700'
             >
               {t('Name')}
@@ -82,16 +81,19 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
               <Field
                 type='text'
                 name='name'
-                id='name'
+                id='add-equip-item--name'
                 className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600'
               />
+              <span className='text-sm text-red-600'>
+                <ErrorMessage name='name' />
+              </span>
             </div>
           </div>
 
           {/* Cost row */}
           <div className='mb-6 space-y-4'>
             <label
-              htmlFor='cost'
+              htmlFor='add-equip-item--cost'
               className='mb-2 block font-medium text-gray-700'
             >
               {t('Cost')}{' '}
@@ -102,7 +104,7 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
               className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600'
               placeholder='0'
               name='cost'
-              id='cost'
+              id='add-equip-item--cost'
             />
 
             {/* Checkbox */}
@@ -110,11 +112,11 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
               <Field
                 type='checkbox'
                 name='isCopper'
-                id='isCopper'
+                id='add-equip-item--isCopper'
                 className='h-4 w-4 rounded border-gray-300 bg-gray-100 focus:ring-2 focus:ring-blue-500'
               />
               <label
-                htmlFor='isCopper'
+                htmlFor='add-equip-item--isCopper'
                 className='ms-2 cursor-pointer text-sm font-medium text-gray-900'
               >
                 {t('Copper pieces')}
@@ -122,26 +124,66 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
             </div>
           </div>
 
+          {/* Weight row */}
+          <div className='mb-6 space-y-4'>
+            <label
+              htmlFor='add-equip-item--category'
+              className='mb-1 block font-medium text-gray-700'
+            >
+              {t('Weight')}
+            </label>
+            <Field
+              name='points'
+              id='add-equip-item--points'
+              as='select'
+              className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500'
+            >
+              {Object.entries(EncumbrancePointsLabelsDict).map(
+                ([key, title]) => (
+                  <option key={key} value={key}>
+                    {title}
+                  </option>
+                ),
+              )}
+            </Field>
+          </div>
+
           {/* Category row */}
           <div className='mb-6 space-y-2'>
             <label
-              htmlFor='category'
+              htmlFor='add-equip-item--category'
               className='mb-1 block font-medium text-gray-700'
             >
               {t('Category')}
             </label>
             <Field
               name='category'
-              id='category'
+              id='add-equip-item--category'
               as='select'
               className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500'
             >
-              {EquipmentStateKeys.map((i) => (
-                <option key={i} value={i}>
-                  {equipDict[i]}
+              {Object.entries(EquipLabelsDict).map(([key, title]) => (
+                <option key={key} value={key}>
+                  {title}
                 </option>
               ))}
             </Field>
+          </div>
+
+          {/* Details row */}
+          <div className='mb-6 space-y-2'>
+            <label
+              htmlFor='add-equip-item--details'
+              className='mb-1 block font-medium text-gray-700'
+            >
+              {t('Details')}
+            </label>
+            <Field
+              name='details'
+              id='add-equip-item--details'
+              as='textarea'
+              className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500'
+            />
           </div>
 
           <div className='bottom-0 left-0 flex w-full justify-center space-x-4 pb-4 md:absolute md:px-4'>
@@ -159,3 +201,4 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
 }
 
 export default AddEquipmentItemFragment
+// FIXME   htmlFor='coins'   htmlFor='isCopper'
