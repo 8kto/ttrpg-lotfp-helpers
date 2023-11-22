@@ -133,3 +133,15 @@ export const setCopperPieces = (value: number) => {
   const balance = InventoryState.copperPieces
   balance.set(value)
 }
+
+export const addCustomEquipmentItem = (
+  category: EquipmentCategoryKey,
+  data: InventoryItem<EquipmentItem>,
+) => {
+  const equipmentStateCategory = InventoryState.nested(category)
+
+  type B = typeof equipmentStateCategory
+  type T = B[keyof B]
+
+  equipmentStateCategory[equipmentStateCategory.length].set(data as T)
+}

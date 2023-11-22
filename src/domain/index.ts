@@ -1,4 +1,5 @@
 import type { EncumbrancePoint } from '@/domain/encumbrance'
+import type { EquipmentCategoryKey } from '@/state/InventoryState'
 
 export interface EquipmentItem {
   name: string
@@ -25,4 +26,13 @@ export type InventoryItem<T extends EquipmentItem> = {
 } & {
   inventoryId: string
   lockedCost: number
+}
+
+export type EquipmentItemDto = {
+  name: string
+  cost?: number
+  isCopper: boolean
+  category: EquipmentCategoryKey
+  points: EncumbrancePoint
+  details: string | null
 }
