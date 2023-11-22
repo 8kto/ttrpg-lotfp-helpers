@@ -8,3 +8,4 @@ export function* autoincrement(): Generator<number> {
     yield ++counter
   }
 }
+// TODO add simple getter
