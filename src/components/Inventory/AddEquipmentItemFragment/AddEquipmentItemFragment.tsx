@@ -4,19 +4,22 @@ import { ErrorMessage, Field, Form, Formik } from 'formik'
 import React from 'react'
 import * as Yup from 'yup'
 
-import type { EquipmentItemDto } from '@/components/Inventory/AddEquipmentItemFragment/helpers'
 import {
   EncumbrancePointsLabelsDict,
   EquipLabelsDict,
   getEquipmentItem,
 } from '@/components/Inventory/AddEquipmentItemFragment/helpers'
+import type { EquipmentItemDto } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import { t } from '@/locale/helpers'
-import { EquipmentStateKeys } from '@/state/InventoryState'
+import {
+  addCustomEquipmentItem,
+  EquipmentStateKeys,
+} from '@/state/InventoryState'
 
 const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
-  const handleAddItem = (values: EquipmentItemDto) => {
-    console.log(getEquipmentItem(values))
+  const handleAddItem = (formValues: EquipmentItemDto) => {
+    addCustomEquipmentItem(formValues.category, getEquipmentItem(formValues))
   }
 
   return (

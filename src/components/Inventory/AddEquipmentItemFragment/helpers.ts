@@ -1,4 +1,4 @@
-import type { EquipmentItem, InventoryItem } from '@/domain'
+import type { EquipmentItem, EquipmentItemDto, InventoryItem } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import { t } from '@/locale/helpers'
 import { autoincrement } from '@/shared/helpers/autoincrement'
@@ -18,25 +18,25 @@ export const EncumbrancePointsLabelsDict: Record<EncumbrancePoint, string> = {
   [EncumbrancePoint.Oversized]: t('Oversized'),
 }
 
-export type EquipmentItemDto = {
-  name: string
-  cost?: number
-  isCopper: boolean
-  category: EquipmentCategoryKey
-  points: EncumbrancePoint
-  details: string | null
-}
+export const getEquipmentItem = (() => {
+  const generator = autoincrement()
 
-export const getEquipmentItem = (
-  data: EquipmentItemDto,
-): InventoryItem<EquipmentItem> => {
-  return {
-    cityCost: data.cost || 0,
-    details: data.details || null,
-    inventoryId: autoincrement().next().value,
-    lockedCost: data.cost || 0,
-    name: data.name,
-    points: data.points,
-    ruralCost: data.cost || null,
+  return (data: EquipmentItemDto): InventoryItem<EquipmentItem> => {
+    if (!data.name) {
+      throw new Error('No name provided')
+    }
+    if (!data.points) {
+      throw new Error('No points provided')
+    }
+
+    return {
+      cityCost: Number(data.cost) || 0,
+      details: data.details || null,
+      inventoryId: data.name + generator.next().value,
+      lockedCost: Number(data.cost) || 0,
+      name: data.name,
+      points: Number(data.points),
+      ruralCost: data.cost || null,
+    }
   }
-}
+})()
