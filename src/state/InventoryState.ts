@@ -7,7 +7,7 @@ import deepclone from '@/shared/helpers/deepclone'
 
 export type InventoryStateType = {
   armor: ReadonlyArray<InventoryItem<ArmorItem>>
-  copperPieces: number
+  copperPieces: number // TODO support different kinds of coins
   isCoinWeightActive: boolean
   isCostRural: boolean
   meleeWeapons: ReadonlyArray<InventoryItem<MeleeWeaponItem>>

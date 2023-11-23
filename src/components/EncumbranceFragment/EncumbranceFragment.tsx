@@ -7,6 +7,7 @@ const EncumbranceFragment = ({
 }: {
   encumbrancePoints: number
 }) => {
+  // TODO translate
   const encumbrance = getEncumbrance(encumbrancePoints)
 
   return (

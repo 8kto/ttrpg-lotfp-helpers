@@ -1,4 +1,4 @@
-import {roundTo} from "@/shared/helpers/roundTo"
+import { roundTo } from '@/shared/helpers/roundTo'
 
 describe('roundTo', () => {
   it('rounds to nearest integer', () => {

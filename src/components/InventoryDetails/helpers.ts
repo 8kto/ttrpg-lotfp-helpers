@@ -1,6 +1,7 @@
 import type { EquipmentItem, InventoryItem } from '@/domain'
 import type { ArmorItem } from '@/domain/armor'
 import { Encumbrance, EncumbrancePoint } from '@/domain/encumbrance'
+import { roundTo } from '@/shared/helpers/roundTo'
 
 export const getEncumbrance = (points: number): Encumbrance => {
   if (points >= 5) {
@@ -19,11 +20,34 @@ export const getEncumbrance = (points: number): Encumbrance => {
   return Encumbrance.Unencumbered
 }
 
-export const getTotal = (items: Array<InventoryItem<EquipmentItem>>) => {
-  // The first 5 items in the character list are not subject to encumbrance,
-  // unless they are Armor or Oversized items.
+type CountableItem = Pick<
+  InventoryItem<EquipmentItem>,
+  'points' | 'lockedCost' | 'name'
+>
+
+const COINS_PER_ENCUMBRANCE_POINT = 100
+
+const getCoinInventoryItems = (copperPieces: number) => {
+  const coins = copperPieces / 10
+  const coinsEncumbrance = Math.floor(coins / COINS_PER_ENCUMBRANCE_POINT)
+
+  return Array.from({ length: coinsEncumbrance }, () => {
+    return {
+      lockedCost: 0,
+      name: '100 coins',
+      points: EncumbrancePoint.Regular,
+    }
+  })
+}
+
+/**
+ * The first 5 items in the character list are not subject to encumbrance,
+ * unless they are Armor or Oversized items.
+ */
+const skipFirstItems = () => {
   let nonEncumberedItemsCount = 5
-  const shouldSkip = (item: InventoryItem<EquipmentItem>): boolean => {
+
+  return (item: CountableItem): boolean => {
     const res =
       nonEncumberedItemsCount > 0 &&
       item.points === EncumbrancePoint.Regular &&
@@ -35,8 +59,13 @@ export const getTotal = (items: Array<InventoryItem<EquipmentItem>>) => {
 
     return res
   }
+}
 
-  return items.reduce(
+export const getTotal = (items: Array<CountableItem>, copperPieces: number) => {
+  const shouldSkip = skipFirstItems()
+  const records = items.concat(getCoinInventoryItems(copperPieces))
+
+  const res = records.reduce(
     (totals, item) => {
       return {
         totalCost: totals.totalCost + item.lockedCost,
@@ -46,4 +75,9 @@ export const getTotal = (items: Array<InventoryItem<EquipmentItem>>) => {
     },
     { totalCost: 0, totalEncumbrancePoints: 0 },
   )
+
+  return {
+    totalCost: res.totalCost,
+    totalEncumbrancePoints: roundTo(res.totalEncumbrancePoints, 1),
+  }
 }
