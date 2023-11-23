@@ -6,7 +6,11 @@ on:
       - main # Set to your default branch
 
 jobs:
-  build-and-deploy:
+  dummy:
+    steps:
+      - echo "TO BE REMOVED"
+
+  .build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
