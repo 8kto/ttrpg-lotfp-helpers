@@ -35,7 +35,7 @@ const Wallet = () => {
       </div>
       {/* 2nd row */}
       <>
-        <label className='relative inline-flex cursor-pointer items-center hidden'>
+        <label className='relative inline-flex hidden cursor-pointer items-center'>
           <input
             type='checkbox'
             checked={isManaged}
