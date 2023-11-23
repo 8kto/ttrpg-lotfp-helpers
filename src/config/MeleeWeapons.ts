@@ -193,4 +193,129 @@ export const MeleeWeapons: ReadonlyArray<MeleeWeaponItem> = [
     ruralCost: 25,
     type: WeaponType.Melee,
   },
+  /* CUSTOM: concrete weapons for each of Great/Medium etc. categories */
+  /* Great */
+  {
+    cityCost: 50,
+    damage: {
+      dice: Dice.d10,
+      x: 1,
+    },
+    name: 'Two-handed sword',
+    points: EncumbrancePoint.Oversized,
+    ruralCost: null,
+    twoHanded: true,
+    type: WeaponType.Great,
+  },
+  {
+    cityCost: 50,
+    damage: {
+      dice: Dice.d10,
+      x: 1,
+    },
+    name: 'Maul',
+    points: EncumbrancePoint.Oversized,
+    ruralCost: null,
+    twoHanded: true,
+    type: WeaponType.Great,
+  },
+  {
+    cityCost: 50,
+    damage: {
+      dice: Dice.d10,
+      x: 1,
+    },
+    name: 'Great axe',
+    points: EncumbrancePoint.Oversized,
+    ruralCost: null,
+    twoHanded: true,
+    type: WeaponType.Great,
+  },
+  /* Medium */
+  {
+    cityCost: 20,
+    damage: {
+      dice: Dice.d8,
+      x: 1,
+    },
+    name: 'Sword',
+    points: EncumbrancePoint.Regular,
+    ruralCost: 50,
+    twoHanded: false,
+    type: WeaponType.Medium,
+  },
+  {
+    cityCost: 20,
+    damage: {
+      dice: Dice.d8,
+      x: 1,
+    },
+    name: 'Battle axe',
+    points: EncumbrancePoint.Regular,
+    ruralCost: 50,
+    twoHanded: false,
+    type: WeaponType.Medium,
+  },
+  {
+    cityCost: 20,
+    damage: {
+      dice: Dice.d8,
+      x: 1,
+    },
+    name: 'Mace',
+    points: EncumbrancePoint.Regular,
+    ruralCost: 50,
+    twoHanded: false,
+    type: WeaponType.Medium,
+  },
+  /* Small */
+  {
+    cityCost: 10,
+    damage: {
+      dice: Dice.d6,
+      x: 1,
+    },
+    name: 'Short sword',
+    points: EncumbrancePoint.Regular,
+    ruralCost: 10,
+    type: WeaponType.Small,
+  },
+  {
+    cityCost: 10,
+    damage: {
+      dice: Dice.d6,
+      x: 1,
+    },
+    name: 'Hand axe',
+    points: EncumbrancePoint.Regular,
+    ruralCost: 10,
+    type: WeaponType.Small,
+  },
+  /* Minor */
+  {
+    cityCost: 5,
+    damage: {
+      dice: Dice.d4,
+      x: 1,
+    },
+    details:
+      'This weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better.',
+    name: 'Dagger',
+    points: EncumbrancePoint.Regular,
+    ruralCost: 5,
+    type: WeaponType.Minor,
+  },
+  {
+    cityCost: 5,
+    damage: {
+      dice: Dice.d4,
+      x: 1,
+    },
+    details:
+      'This weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better.',
+    name: 'Club',
+    points: EncumbrancePoint.Regular,
+    ruralCost: 5,
+    type: WeaponType.Minor,
+  },
 ]
