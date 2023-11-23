@@ -15,7 +15,8 @@ Demo application: https://8kto.github.io/ttrpg-lotfp-helpers
   - [x] Details for each item
   - [x] Filter by city/rural cost
   - [x] Add multiple copies of same item
-- [ ] Extended list of equipment
+- [x] Extended list of equipment
+  - [x] Expanded list of weapons
 - [ ] Firearms list
 - [ ] Calculation
   - [x] Cost
