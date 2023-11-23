@@ -1,10 +1,4 @@
-import { Inter, Lora, Philosopher } from 'next/font/google'
-
-// TODO remove?
-export const regularSansSerifFont = Inter({
-  subsets: ['latin'],
-  variable: '--font-regular',
-})
+import { Lora, Philosopher } from 'next/font/google'
 
 export const regularFont = Lora({
   subsets: ['latin'],
