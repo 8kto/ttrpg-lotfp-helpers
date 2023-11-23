@@ -28,7 +28,7 @@ Demo application: https://8kto.github.io/ttrpg-lotfp-helpers
   - [ ] Manage costs when an item is added
 - [x] Add coins and calculate the encumbrance
   - [ ] Track different kinds of coins
-- [ ] Inventory is saved in session and survives the page reload
+- [x] Inventory is saved in locale storage and survives the page reload
 - [ ] Languages support
 - [ ] Responsive layout, mobile devices support
 - [ ] Equipment sets that can be applied to the inventory

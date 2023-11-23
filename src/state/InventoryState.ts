@@ -1,4 +1,5 @@
 import { hookstate, useHookstate } from '@hookstate/core'
+import { localstored } from '@hookstate/localstored'
 
 import type { EquipmentItem, InventoryItem } from '@/domain'
 import type { ArmorItem } from '@/domain/armor'
@@ -42,6 +43,9 @@ export const getInitialInventoryState = (): InventoryStateType => {
 
 export const InventoryState = hookstate<InventoryStateType>(
   getInitialInventoryState(),
+  localstored({
+    key: 'lotfp-helpers',
+  }),
 )
 
 export const useInventoryState = () => {
