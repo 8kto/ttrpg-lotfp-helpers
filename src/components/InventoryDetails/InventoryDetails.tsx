@@ -19,6 +19,7 @@ const InventoryDetails = () => {
   )
 
   // TODO support different kinds of coins
+  // FIXME edge case: no items but coins cause a wrong encumbrance (first 5 items should be free)
   let finalEncumbrancePoints: number
   if (isCoinWeightActive) {
     const coinEncumbrance = getCoinsEncumbrance(copperPieces.get() / 10)
