@@ -4,6 +4,8 @@
 
 Lamentations of the Flame Princess helpers.
 
+Demo application: https://8kto.github.io/ttrpg-lotfp-helpers
+
 ## Features list
 
 - [x] Equipment list from the core book
@@ -20,7 +22,7 @@ Lamentations of the Flame Princess helpers.
   - [x] Encumbrance
   - [x] Movement
   - [ ] Terrain type factor
-- [ ] Custom equipment entries
+- [x] Custom equipment entries
 - [x] Wallet (available money)
   - [ ] Manage costs when an item is added
 - [x] Add coins and calculate the encumbrance
