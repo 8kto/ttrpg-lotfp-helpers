@@ -1,7 +1,7 @@
 {
   "name": "ttrpg-lotfp-helpers",
   "version": "0.1.0",
-  "private": true,
+  "license": "CC BY-NC",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
+    "@hookstate/localstored": "^4.0.2",
     "classnames": "^2.3.2",
     "formik": "^2.4.5",
     "next": "14.0.1",
