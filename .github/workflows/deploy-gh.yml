@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Set to your default branch
+      - main # Set to your default branch
 
 jobs:
   build-and-deploy:
@@ -34,15 +34,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
-          branch: gh-pages  # The branch the action should deploy to.
-          folder: out       # The folder the action should deploy.
-          token: ${{ secrets.GITHUB_TOKEN }}  # GitHub automatically creates this secret to use in your workflow.
-
-      # Optional: Add a step to commit your Next.js build settings to your repository
-      - name: Commit Next.js build files
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add -f out
-          git commit -m "Deploy Next.js build"
-          git push
+          branch: gh-pages # The branch the action should deploy to.
+          folder: build # The folder the action should deploy.
+          token: ${{ secrets.GITHUB_TOKEN }} # GitHub automatically creates this secret to use in your workflow.
