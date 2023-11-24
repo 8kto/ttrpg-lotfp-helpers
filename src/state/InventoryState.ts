@@ -41,15 +41,14 @@ export const getInitialInventoryState = (): InventoryStateType => {
   return deepclone(initialInventoryState)
 }
 
-export const InventoryState =
+export const InventoryState = hookstate<InventoryStateType>(
+  getInitialInventoryState(),
   typeof window !== 'undefined'
-    ? hookstate<InventoryStateType>(
-        getInitialInventoryState(),
-        localstored({
-          key: 'lotfp-helpers',
-        }),
-      )
-    : hookstate<InventoryStateType>(getInitialInventoryState())
+    ? localstored({
+        key: 'lotfp-helpers',
+      })
+    : undefined,
+)
 
 export const useInventoryState = () => {
   const state = useHookstate(InventoryState)
