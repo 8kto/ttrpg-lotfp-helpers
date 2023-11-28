@@ -1,5 +1,7 @@
 import './globals.css'
 
+import Head from 'next/head'
+
 import { cursiveFont, regularFont } from '@/app/fonts'
 import Footer from '@/components/layout/Footer'
 import Header from '@/components/layout/Header'
@@ -13,9 +15,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  // TODO FIXME these icons are not displayed
   return (
     <html lang='en' className={regularFont.variable}>
-      <head>
+      <Head>
+        <title>{metadata.title?.toString()}</title>
+        <meta name='description' content={metadata.description ?? ''} />
         <link
           rel='apple-touch-icon'
           sizes='180x180'
@@ -34,7 +39,7 @@ export default function RootLayout({
           href='/icons/favicon-16x16.png'
         />
         <link rel='manifest' href='/icons/site.webmanifest' />
-      </head>
+      </Head>
       <body className={`${cursiveFont.variable} bg-gray-50 bg-none`}>
         <UiProvider>
           <Header />
