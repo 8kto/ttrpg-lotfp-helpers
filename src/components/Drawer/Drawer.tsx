@@ -18,9 +18,9 @@ const Drawer = ({
     'border fixed top-0 h-screen w-96 overflow-y-auto bg-white p-4 transition-transform',
     {
       'left-0 transform -translate-x-full': !isOpen && fromLeft,
-      'left-0 z-40': isOpen && fromLeft,
+      'left-0 z-50': isOpen && fromLeft,
       'right-0 transform translate-x-full': !isOpen && !fromLeft,
-      'right-0 z-40': isOpen && !fromLeft,
+      'right-0 z-50': isOpen && !fromLeft,
     },
   )
 
