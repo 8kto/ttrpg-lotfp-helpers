@@ -31,7 +31,7 @@ export default function Home() {
 
       {/* Inventory Floating Container */}
       {isInventoryVisible && (
-        <div className='fixed bottom-0 right-0 top-16 w-full border border-gray-200 bg-white p-4 shadow-lg lg:hidden'>
+        <div className='fixed bottom-0 right-0 top-16 w-full overflow-y-auto border border-gray-200 bg-white p-4 shadow-lg lg:hidden'>
           <InventoryList />
         </div>
       )}
