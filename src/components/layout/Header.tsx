@@ -42,7 +42,7 @@ const Header = () => {
           </div>
           <div className='flex items-center'>
             <button
-              className='ph-btn-primary z-50 inline-flex cursor-pointer items-center    justify-center rounded p-2 focus:outline-none'
+              className='ph-btn-primary z-50 inline-flex cursor-pointer items-center justify-center rounded p-2 focus:outline-none lg:hidden'
               onClick={() =>
                 updateUiState({
                   isInventoryVisible: !isInventoryVisible,
