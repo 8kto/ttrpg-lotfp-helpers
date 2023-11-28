@@ -2,6 +2,8 @@
 
 # Princess Helpers
 
+> The project is in WIP so please do not share the link for a while.
+
 Lamentations of the Flame Princess helpers.
 
 Demo application: https://8kto.github.io/ttrpg-lotfp-helpers
