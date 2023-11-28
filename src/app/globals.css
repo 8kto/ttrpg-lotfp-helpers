@@ -101,3 +101,7 @@ details.ph-details-bullet[open] .ph-custom-indicator {
   --tw-text-opacity: 1;
   color: rgb(127 29 29 / var(--tw-text-opacity));
 }
+
+.ph-header-wrapper {
+  background: url(/images/img-noise-361x370-2.png);
+}

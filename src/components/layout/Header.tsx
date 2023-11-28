@@ -15,12 +15,7 @@ const Header = () => {
 
   return (
     <header>
-      <nav
-        className='fixed z-30 w-full border-b border-gray-200 px-4 py-3 text-white'
-        style={{
-          background: 'url(/images/img-noise-361x370-2.png)',
-        }}
-      >
+      <nav className='ph-header-wrapper fixed z-30 w-full border-b border-gray-200 px-4 py-3 text-white'>
         <div className='mx-auto flex max-w-screen-2xl items-center justify-between'>
           <div className='flex items-center justify-start'>
             <a href='/' className='mr-14 flex'>
