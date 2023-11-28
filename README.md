@@ -23,7 +23,7 @@ Demo application: https://8kto.github.io/ttrpg-lotfp-helpers
   - [x] Encumbrance
   - [x] Movement
   - [ ] Terrain type factor
-  - [ ] Race modifier (Dwarf) 
+  - [ ] Race modifier (Dwarf)
 - [x] Custom equipment entries
 - [x] Wallet (available money)
   - [ ] Manage costs when an item is added
