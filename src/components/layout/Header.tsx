@@ -2,10 +2,9 @@
 
 import { InboxStackIcon } from '@heroicons/react/24/solid'
 import Link from 'next/link'
-import {useRouter} from "next/router"
 import React, { useContext } from 'react'
 
-import LocaleSwitcher from "@/components/layout/LocaleSwitcher"
+import LocaleSwitcher from '@/components/layout/LocaleSwitcher'
 import { t } from '@/locale/helpers'
 import UiContext from '@/shared/context/uiContext'
 
@@ -16,11 +15,6 @@ const Header = () => {
     uiState: { isInventoryVisible },
     updateUiState,
   } = useContext(UiContext)
-
-  const router = useRouter()
-  const { locale, locales, defaultLocale } = router
-
-  console.log({ locale, locales, defaultLocale })
 
   return (
     <header>
@@ -36,8 +30,6 @@ const Header = () => {
             </Link>
           </div>
 
-
-          
           <div className='flex items-center'>
             <LocaleSwitcher />
 
