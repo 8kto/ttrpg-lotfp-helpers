@@ -1,11 +1,13 @@
 'use client'
 
 import { InboxStackIcon } from '@heroicons/react/24/solid'
+import Link from 'next/link'
 import React, { useContext } from 'react'
 
-import { cursiveFont } from '@/app/fonts'
 import { t } from '@/locale/helpers'
 import UiContext from '@/shared/context/uiContext'
+
+import { cursiveFont } from './fonts'
 
 const Header = () => {
   const {
@@ -18,13 +20,13 @@ const Header = () => {
       <nav className='ph-header-wrapper fixed z-30 w-full border-b border-gray-200 px-4 py-3 text-white'>
         <div className='mx-auto flex max-w-screen-2xl items-center justify-between'>
           <div className='flex items-center justify-start'>
-            <a href='/' className='mr-14 flex'>
+            <Link href='/' className='mr-14 flex'>
               <h1
                 className={`${cursiveFont.className} self-center whitespace-nowrap text-2xl font-semibold sm:flex`}
               >
                 Princess Helpers
               </h1>
-            </a>
+            </Link>
           </div>
           <div className='flex items-center'>
             <button
