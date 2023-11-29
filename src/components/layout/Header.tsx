@@ -2,8 +2,10 @@
 
 import { InboxStackIcon } from '@heroicons/react/24/solid'
 import Link from 'next/link'
+import {useRouter} from "next/router"
 import React, { useContext } from 'react'
 
+import LocaleSwitcher from "@/components/layout/LocaleSwitcher"
 import { t } from '@/locale/helpers'
 import UiContext from '@/shared/context/uiContext'
 
@@ -15,6 +17,11 @@ const Header = () => {
     updateUiState,
   } = useContext(UiContext)
 
+  const router = useRouter()
+  const { locale, locales, defaultLocale } = router
+
+  console.log({ locale, locales, defaultLocale })
+
   return (
     <header>
       <nav className='ph-header-wrapper fixed z-30 w-full border-b border-gray-200 px-4 py-3 text-white'>
@@ -24,11 +31,16 @@ const Header = () => {
               <h1
                 className={`${cursiveFont.className} self-center whitespace-nowrap text-2xl font-semibold sm:flex`}
               >
-                Princess Helpers
+                {t('Princess Helpers')}
               </h1>
             </Link>
           </div>
+
+
+          
           <div className='flex items-center'>
+            <LocaleSwitcher />
+
             <button
               className='ph-btn-primary z-50 inline-flex cursor-pointer items-center justify-center rounded p-2 focus:outline-none lg:hidden'
               onClick={() =>
