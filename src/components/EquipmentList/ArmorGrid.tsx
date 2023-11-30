@@ -17,30 +17,40 @@ const columns: ReadonlyArray<DataGridColumn<ArmorItem>> = [
     className: 'w-1/3',
     key: 'name',
     render: (item: ArmorItem) => <ItemDetails<ArmorItem> item={item} compact />,
-    title: t`Name`,
+    get title() {
+      return t`Name`
+    },
   },
   {
     className: 'w-1/6',
     key: 'armorClass',
-    title: t`AC`,
+    get title() {
+      return t`AC`
+    },
   },
   {
     className: 'w-1/6',
     key: 'points',
     render: (item: ArmorItem) => <span>{EncumbrancePoint[item.points]}</span>,
-    title: t`Weight`,
+    get title() {
+      return t`Weight`
+    },
   },
 ]
 
 const cityCostColumn: DataGridColumn<ArmorItem> = {
   className: 'w-1/6',
   key: 'cityCost',
-  title: t`City Cost`,
+  get title() {
+    return t`City Cost`
+  },
 }
 const ruralCostColumn: DataGridColumn<ArmorItem> = {
   className: 'w-1/6',
   key: 'ruralCost',
-  title: t`Rural Cost`,
+  get title() {
+    return t`Rural Cost`
+  },
 }
 
 const ArmorGrid = () => {

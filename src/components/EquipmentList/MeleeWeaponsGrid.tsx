@@ -13,31 +13,6 @@ import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { MeleeWeaponItem } from '@/domain/weapon'
 import { addMeleeWeapon, useInventoryState } from '@/state/InventoryState'
 
-const columns: ReadonlyArray<DataGridColumn<MeleeWeaponItem>> = [
-  {
-    className: 'w-1/3',
-    key: 'name',
-    render: (item: MeleeWeaponItem) => (
-      <ItemDetails<MeleeWeaponItem> item={item} compact />
-    ),
-    title: t`Name`,
-  },
-  {
-    className: 'w-1/6',
-    key: 'damage',
-    render: (item: MeleeWeaponItem) => <DamageFragment damage={item.damage} />,
-    title: t`Damage`,
-  },
-  {
-    className: 'w-1/6',
-    key: 'points',
-    render: (item: MeleeWeaponItem) => (
-      <span>{EncumbrancePoint[item.points]}</span>
-    ),
-    title: t`Weight`,
-  },
-]
-
 const cityCostColumn: DataGridColumn<MeleeWeaponItem> = {
   className: 'w-1/6',
   key: 'cityCost',
@@ -50,6 +25,33 @@ const ruralCostColumn: DataGridColumn<MeleeWeaponItem> = {
 }
 
 const MeleeWeaponsGrid = () => {
+  const columns: ReadonlyArray<DataGridColumn<MeleeWeaponItem>> = [
+    {
+      className: 'w-1/3',
+      key: 'name',
+      render: (item: MeleeWeaponItem) => (
+        <ItemDetails<MeleeWeaponItem> item={item} compact />
+      ),
+      title: t`Name`,
+    },
+    {
+      className: 'w-1/6',
+      key: 'damage',
+      render: (item: MeleeWeaponItem) => (
+        <DamageFragment damage={item.damage} />
+      ),
+      title: t`Damage`,
+    },
+    {
+      className: 'w-1/6',
+      key: 'points',
+      render: (item: MeleeWeaponItem) => (
+        <span>{EncumbrancePoint[item.points]}</span>
+      ),
+      title: t`Weight`,
+    },
+  ]
+
   const {
     state: { isCostRural },
   } = useInventoryState()
@@ -58,7 +60,7 @@ const MeleeWeaponsGrid = () => {
     return isCostRural.get()
       ? [...columns, ruralCostColumn]
       : [...columns, cityCostColumn]
-  }, [isCostRural])
+  }, [columns, isCostRural])
 
   const dataFilteredByCost = useMemo(() => {
     const data = Object.values(AllEquipment.MeleeWeapons)
