@@ -32,7 +32,11 @@ export function LocaleSwitcher() {
   }
 
   return (
-    <select value={locale} onChange={handleChange}>
+    <select
+      value={locale}
+      onChange={handleChange}
+      className='block rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500'
+    >
       {Object.keys(languages).map((locale) => {
         return (
           <option value={locale} key={locale}>
