@@ -1,3 +1,4 @@
+import { Trans } from '@lingui/macro'
 import React from 'react'
 
 import DamageFragment from '@/components/DamageFragment'
@@ -5,7 +6,6 @@ import RangeFragment from '@/components/RangeFragment'
 import type { EquipmentItem } from '@/domain'
 import type { ArmorItem } from '@/domain/armor'
 import type { MissileWeaponItem, WeaponItem } from '@/domain/weapon'
-import { t } from '@/locale/helpers'
 
 const isArmorItem = (item: EquipmentItem): item is ArmorItem => {
   return 'armorClass' in item
@@ -40,7 +40,7 @@ const ItemDetails = <T extends EquipmentItem>({
               {isArmorItem(item) ? (
                 <>
                   {' '}
-                  ({t('AC')} {item.armorClass})
+                  (<Trans>AC</Trans> {item.armorClass})
                 </>
               ) : null}
               {isWeaponItem(item) ? (
@@ -60,13 +60,17 @@ const ItemDetails = <T extends EquipmentItem>({
         ) : null}
         {isWeaponItem(item) ? (
           <p className={paragraphClassname}>
-            <strong>{t('Damage')}</strong>:{' '}
-            <DamageFragment damage={item.damage} />
+            <strong>
+              <Trans>Damage</Trans>
+            </strong>
+            : <DamageFragment damage={item.damage} />
           </p>
         ) : null}
         {isMissileItem(item) ? (
           <div className={paragraphClassname}>
-            <strong>{t('Range')}</strong>
+            <strong>
+              <Trans>Range</Trans>
+            </strong>
             <RangeFragment range={item.range} />
           </div>
         ) : null}

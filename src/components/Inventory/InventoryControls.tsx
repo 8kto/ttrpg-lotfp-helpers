@@ -3,12 +3,12 @@ import {
   PlusCircleIcon as PlusIcon,
   TrashIcon,
 } from '@heroicons/react/24/solid'
+import { t } from '@lingui/macro'
 import React, { useState } from 'react'
 
 import Drawer from '@/components/Drawer/Drawer'
 import AddCoinsFragment from '@/components/Inventory/AddCoinsFragment/AddCoinsFragment'
 import AddEquipmentItemFragment from '@/components/Inventory/AddEquipmentItemFragment/AddEquipmentItemFragment'
-import { t } from '@/locale/helpers'
 import { useInventoryState } from '@/state/InventoryState'
 
 const InventoryControls = () => {
@@ -29,7 +29,7 @@ const InventoryControls = () => {
             onClick={() => {
               setIsEquipmentDrawerOpen(true)
             }}
-            title={t('Add item')}
+            title={t`Add item`}
             className={iconBtnClassname}
           >
             <PlusIcon className='h-5 w-5' />
@@ -42,7 +42,7 @@ const InventoryControls = () => {
             onClick={() => {
               setIsCoinDrawerOpen(true)
             }}
-            title={t('Add coins')}
+            title={t`Add coins`}
           >
             <CircleStackIcon className='h-5 w-5' />
           </button>
@@ -50,7 +50,7 @@ const InventoryControls = () => {
         <div className='flex space-x-1 pl-2'>
           <button
             onClick={handleReset}
-            title={t('Reset all equipment')}
+            title={t`Reset all equipment`}
             className={iconBtnClassname}
           >
             <TrashIcon className='h-5 w-5' />

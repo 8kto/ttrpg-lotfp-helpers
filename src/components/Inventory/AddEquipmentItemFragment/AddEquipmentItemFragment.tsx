@@ -1,5 +1,6 @@
 /* eslint-disable sort-keys */
 import { XMarkIcon } from '@heroicons/react/24/solid'
+import { Trans } from '@lingui/macro'
 import { ErrorMessage, Field, Form, Formik } from 'formik'
 import React from 'react'
 import * as Yup from 'yup'
@@ -11,7 +12,6 @@ import {
 } from '@/components/Inventory/AddEquipmentItemFragment/helpers'
 import type { EquipmentItemDto } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
-import { t } from '@/locale/helpers'
 import {
   addCustomEquipmentItem,
   EquipmentStateKeys,
@@ -60,7 +60,7 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
             id='drawer-label--add-coins'
             className='ph-color-accent mb-6 inline-flex items-center text-2xl'
           >
-            {t('Add equipment item')}{' '}
+            <Trans>Add equipment item</Trans>
           </h5>
           <button
             onClick={onClose}
@@ -78,7 +78,7 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
               htmlFor='add-equip-item--name'
               className='mb-1 block font-medium text-gray-700'
             >
-              {t('Name')}
+              <Trans>Name</Trans>
             </label>
             <div className='relative'>
               <Field
@@ -99,8 +99,10 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
               htmlFor='add-equip-item--cost'
               className='mb-2 block font-medium text-gray-700'
             >
-              {t('Cost')}{' '}
-              <em className='text-sm text-gray-400'>({t('optional')})</em>
+              <Trans>Cost</Trans>{' '}
+              <em className='text-sm text-gray-400'>
+                (<Trans>optional</Trans>)
+              </em>
             </label>
             <Field
               type='number'
@@ -122,7 +124,7 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
                 htmlFor='add-equip-item--isCopper'
                 className='ms-2 cursor-pointer text-sm font-medium text-gray-900'
               >
-                {t('Copper pieces')}
+                <Trans>Copper pieces</Trans>
               </label>
             </div>
           </div>
@@ -133,7 +135,7 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
               htmlFor='add-equip-item--category'
               className='mb-1 block font-medium text-gray-700'
             >
-              {t('Weight')}
+              <Trans>Weight</Trans>
             </label>
             <Field
               name='points'
@@ -157,7 +159,7 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
               htmlFor='add-equip-item--category'
               className='mb-1 block font-medium text-gray-700'
             >
-              {t('Category')}
+              <Trans>Category</Trans>
             </label>
             <Field
               name='category'
@@ -179,7 +181,7 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
               htmlFor='add-equip-item--details'
               className='mb-1 block font-medium text-gray-700'
             >
-              {t('Details')}
+              <Trans>Details</Trans>
             </label>
             <Field
               name='details'
@@ -194,7 +196,7 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
               type='submit'
               className='ph-btn-primary w-full justify-center rounded px-5 py-2.5 text-center font-medium focus:outline-none focus:ring-4 focus:ring-primary-300'
             >
-              {t('Add')}
+              <Trans>Add</Trans>
             </button>
           </div>
         </Form>

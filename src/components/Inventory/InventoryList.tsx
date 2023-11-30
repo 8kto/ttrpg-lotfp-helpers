@@ -1,3 +1,4 @@
+import { Trans } from '@lingui/macro'
 import React, { useEffect, useState } from 'react'
 
 import ArmorInventoryGrid from '@/components/Inventory/ArmorInventoryGrid'
@@ -8,14 +9,13 @@ import MiscEquipmentInventoryGrid from '@/components/Inventory/MiscEquipmentInve
 import MissileWeaponsInventoryGrid from '@/components/Inventory/MissileWeaponsInventoryGrid'
 import InventoryDetails from '@/components/InventoryDetails/InventoryDetails'
 import Spinner from '@/components/Spinner'
-import { t } from '@/locale/helpers'
 import { useInventoryState } from '@/state/InventoryState'
 
 const Header = ({ children }: { children?: React.ReactNode }) => {
   return (
     <div className='mb-4 flex w-full items-center justify-between'>
       <h1 className='text-2xl font-extrabold text-red-900 sm:text-3xl'>
-        {t('Inventory')}
+        <Trans>Inventory</Trans>
       </h1>
       {children}
     </div>
@@ -53,7 +53,9 @@ const InventoryList = () => {
       {!!armor.length && (
         <>
           <div className='flex w-full items-center justify-between'>
-            <h2 className={categoryTitleClassname}>{t('Armor')}</h2>
+            <h2 className={categoryTitleClassname}>
+              <Trans>Armor</Trans>
+            </h2>
             <CategoryInventoryControls category='armor' />
           </div>
           <ArmorInventoryGrid />
@@ -63,7 +65,9 @@ const InventoryList = () => {
       {!!meleeWeapons.length && (
         <>
           <div className='flex w-full items-center justify-between'>
-            <h2 className={categoryTitleClassname}>{t('Mêlée Weapons')}</h2>
+            <h2 className={categoryTitleClassname}>
+              <Trans>Mêlée Weapons</Trans>
+            </h2>
             <CategoryInventoryControls category='meleeWeapons' />
           </div>
           <MeleeWeaponsInventoryGrid />
@@ -73,7 +77,9 @@ const InventoryList = () => {
       {!!missileWeapons.length && (
         <>
           <div className='flex w-full items-center justify-between'>
-            <h2 className={categoryTitleClassname}>{t('Missile Weapons')}</h2>
+            <h2 className={categoryTitleClassname}>
+              <Trans>Missile Weapons</Trans>
+            </h2>
             <CategoryInventoryControls category='missileWeapons' />
           </div>
           <MissileWeaponsInventoryGrid />
@@ -84,7 +90,7 @@ const InventoryList = () => {
         <>
           <div className='flex w-full items-center justify-between'>
             <h2 className={categoryTitleClassname}>
-              {t('Miscellaneous Equipment')}
+              <Trans>Miscellaneous Equipment</Trans>
             </h2>
             <CategoryInventoryControls category='miscEquipment' />
           </div>

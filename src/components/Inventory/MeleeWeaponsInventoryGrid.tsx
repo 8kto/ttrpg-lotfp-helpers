@@ -1,3 +1,4 @@
+import { t } from '@lingui/macro'
 import React from 'react'
 
 import type { InventoryColumn } from '@/components/Inventory/InventoryGrid'
@@ -19,12 +20,16 @@ const inventoryTableColumns: ReadonlyArray<
     render: (item: MeleeWeaponInventoryItem) => (
       <ItemDetails<MeleeWeaponInventoryItem> item={item} />
     ),
-    title: 'Name',
+    get title() {
+      return t`Name`
+    },
   },
   {
     className: 'w-1/6',
     key: 'lockedCost',
-    title: 'Cost',
+    get title() {
+      return t`Cost`
+    },
   },
   {
     className: 'w-1/6',
@@ -32,7 +37,9 @@ const inventoryTableColumns: ReadonlyArray<
     render: (item) => {
       return EncumbrancePoint[item.points]
     },
-    title: 'Weight',
+    get title() {
+      return t`Weight`
+    },
   },
 ]
 

@@ -1,9 +1,9 @@
 import { XMarkIcon } from '@heroicons/react/24/solid'
+import { t, Trans } from '@lingui/macro'
 import { Field, Form, Formik } from 'formik'
 import React from 'react'
 import * as Yup from 'yup'
 
-import { t } from '@/locale/helpers'
 import { setCopperPieces, useInventoryState } from '@/state/InventoryState'
 
 const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
@@ -33,7 +33,7 @@ const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
         coins: Yup.number()
           .positive()
           // .max(9, t('Must be 9 characters max.')) // WTF
-          .required(t('Required')),
+          .required(t`Required`),
         isCopper: Yup.boolean(),
       })}
       onSubmit={(values, formikHelpers) => {
@@ -54,7 +54,7 @@ const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
             id='drawer-label--add-coins'
             className='ph-color-accent mb-6 inline-flex items-center text-2xl'
           >
-            {t('Set coins')}
+            <Trans>Set coins</Trans>
           </h5>
           <button
             onClick={onClose}
@@ -70,9 +70,9 @@ const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
               htmlFor='coins'
               className='mb-2 block font-medium text-gray-700'
             >
-              {t(
-                'Enter coin amount. Use copper pieces instead of float numbers.',
-              )}
+              <Trans>
+                Enter coin amount. Use copper pieces instead of float numbers.
+              </Trans>
             </label>
             <Field
               type='number'
@@ -94,7 +94,7 @@ const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
                 htmlFor='isCopper'
                 className='ms-2 cursor-pointer text-sm font-medium text-gray-900'
               >
-                {t('Copper pieces')}
+                <Trans>Copper pieces</Trans>
               </label>
             </div>
             <div className='bottom-0 left-0 flex w-full justify-center space-x-4 pb-4 md:absolute md:px-4'>
@@ -102,7 +102,7 @@ const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
                 type='submit'
                 className='ph-btn-primary w-full justify-center rounded px-5 py-2.5 text-center font-medium focus:outline-none focus:ring-4 focus:ring-primary-300'
               >
-                {t('Set')}
+                <Trans>Set</Trans>
               </button>
             </div>
           </div>

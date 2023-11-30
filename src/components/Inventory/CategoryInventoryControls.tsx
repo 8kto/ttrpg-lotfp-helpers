@@ -1,3 +1,4 @@
+import { t } from '@lingui/macro'
 import React from 'react'
 
 import type { EquipmentCategoryKey } from '@/state/InventoryState'
@@ -22,7 +23,7 @@ const CategoryInventoryControls = ({
         <a
           href='#'
           onClick={handleReset}
-          title={'Reset'}
+          title={t`Reset`}
           className='inline-flex cursor-pointer justify-center rounded p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-900'
         >
           <svg
