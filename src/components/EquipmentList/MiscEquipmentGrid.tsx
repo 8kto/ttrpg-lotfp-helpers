@@ -17,7 +17,9 @@ const columns: ReadonlyArray<DataGridColumn<EquipmentItem>> = [
     render: (item: EquipmentItem) => (
       <ItemDetails<EquipmentItem> item={item} compact />
     ),
-    title: t`Name`,
+    get title() {
+      return t`Name`
+    },
   },
   {
     className: 'w-1/6',
@@ -25,19 +27,25 @@ const columns: ReadonlyArray<DataGridColumn<EquipmentItem>> = [
     render: (item: EquipmentItem) => (
       <span>{EncumbrancePoint[item.points]}</span>
     ),
-    title: t`Weight`,
+    get title() {
+      return t`Weight`
+    },
   },
 ]
 
 const cityCostColumn: DataGridColumn<EquipmentItem> = {
   className: 'w-1/6',
   key: 'cityCost',
-  title: t`City Cost`,
+  get title() {
+    return t`City Cost`
+  },
 }
 const ruralCostColumn: DataGridColumn<EquipmentItem> = {
   className: 'w-1/6',
   key: 'ruralCost',
-  title: t`Rural Cost`,
+  get title() {
+    return t`Rural Cost`
+  },
 }
 
 const MiscEquipmentGrid = () => {

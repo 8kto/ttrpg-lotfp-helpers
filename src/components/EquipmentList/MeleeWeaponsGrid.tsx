@@ -16,42 +16,50 @@ import { addMeleeWeapon, useInventoryState } from '@/state/InventoryState'
 const cityCostColumn: DataGridColumn<MeleeWeaponItem> = {
   className: 'w-1/6',
   key: 'cityCost',
-  title: t`City Cost`,
+  get title() {
+    return t`City Cost`
+  },
 }
 const ruralCostColumn: DataGridColumn<MeleeWeaponItem> = {
   className: 'w-1/6',
   key: 'ruralCost',
-  title: t`Rural Cost`,
+  get title() {
+    return t`Rural Cost`
+  },
 }
 
-const MeleeWeaponsGrid = () => {
-  const columns: ReadonlyArray<DataGridColumn<MeleeWeaponItem>> = [
-    {
-      className: 'w-1/3',
-      key: 'name',
-      render: (item: MeleeWeaponItem) => (
-        <ItemDetails<MeleeWeaponItem> item={item} compact />
-      ),
-      title: t`Name`,
+const columns: ReadonlyArray<DataGridColumn<MeleeWeaponItem>> = [
+  {
+    className: 'w-1/3',
+    key: 'name',
+    render: (item: MeleeWeaponItem) => (
+      <ItemDetails<MeleeWeaponItem> item={item} compact />
+    ),
+    get title() {
+      return t`Name`
     },
-    {
-      className: 'w-1/6',
-      key: 'damage',
-      render: (item: MeleeWeaponItem) => (
-        <DamageFragment damage={item.damage} />
-      ),
-      title: t`Damage`,
+  },
+  {
+    className: 'w-1/6',
+    key: 'damage',
+    render: (item: MeleeWeaponItem) => <DamageFragment damage={item.damage} />,
+    get title() {
+      return t`Damage`
     },
-    {
-      className: 'w-1/6',
-      key: 'points',
-      render: (item: MeleeWeaponItem) => (
-        <span>{EncumbrancePoint[item.points]}</span>
-      ),
-      title: t`Weight`,
+  },
+  {
+    className: 'w-1/6',
+    key: 'points',
+    render: (item: MeleeWeaponItem) => (
+      <span>{EncumbrancePoint[item.points]}</span>
+    ),
+    get title() {
+      return t`Weight`
     },
-  ]
+  },
+]
 
+const MeleeWeaponsGrid = () => {
   const {
     state: { isCostRural },
   } = useInventoryState()
@@ -60,7 +68,7 @@ const MeleeWeaponsGrid = () => {
     return isCostRural.get()
       ? [...columns, ruralCostColumn]
       : [...columns, cityCostColumn]
-  }, [columns, isCostRural])
+  }, [isCostRural])
 
   const dataFilteredByCost = useMemo(() => {
     const data = Object.values(AllEquipment.MeleeWeapons)

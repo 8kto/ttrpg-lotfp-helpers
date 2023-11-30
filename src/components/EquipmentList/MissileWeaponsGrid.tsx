@@ -22,7 +22,9 @@ const columns: ReadonlyArray<DataGridColumn<MissileWeaponItem>> = [
     render: (item: MissileWeaponItem) => (
       <ItemDetails<MissileWeaponItem> item={item} compact />
     ),
-    title: t`Name`,
+    get title() {
+      return t`Name`
+    },
   },
   {
     className: 'w-1/6',
@@ -30,7 +32,9 @@ const columns: ReadonlyArray<DataGridColumn<MissileWeaponItem>> = [
     render: (item: MissileWeaponItem) => (
       <DamageFragment damage={item.damage} />
     ),
-    title: t`Damage`,
+    get title() {
+      return t`Damage`
+    },
   },
   {
     className: 'w-1/6',
@@ -38,7 +42,9 @@ const columns: ReadonlyArray<DataGridColumn<MissileWeaponItem>> = [
     render: (item: MissileWeaponItem) => (
       <RangeFragment range={item.range} compact />
     ),
-    title: t`Range`,
+    get title() {
+      return t`Range`
+    },
   },
   {
     className: 'w-1/6',
@@ -46,19 +52,25 @@ const columns: ReadonlyArray<DataGridColumn<MissileWeaponItem>> = [
     render: (item: MissileWeaponItem) => (
       <span>{EncumbrancePoint[item.points]}</span>
     ),
-    title: t`Weight`,
+    get title() {
+      return t`Weight`
+    },
   },
 ]
 
 const cityCostColumn: DataGridColumn<MissileWeaponItem> = {
   className: 'w-1/6',
   key: 'cityCost',
-  title: t`City Cost`,
+  get title() {
+    return t`City Cost`
+  },
 }
 const ruralCostColumn: DataGridColumn<MissileWeaponItem> = {
   className: 'w-1/6',
   key: 'ruralCost',
-  title: t`Rural Cost`,
+  get title() {
+    return t`Rural Cost`
+  },
 }
 
 const MissileWeaponsGrid = () => {
