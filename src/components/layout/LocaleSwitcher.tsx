@@ -1,35 +1,47 @@
-import Link from 'next/link'
+import type { MessageDescriptor } from '@lingui/core'
+import { msg } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
 import { useRouter } from 'next/router'
+import { useState } from 'react'
 
-export default function LocaleSwitcher() {
+import type { LOCALES } from '@/translations/languages'
+
+const languages: { [key: string]: MessageDescriptor } = {
+  en: msg`English`,
+  ru: msg`Russian`,
+  cz: msg`Czech`,
+}
+
+export function LocaleSwitcher() {
   const router = useRouter()
-  const { locales, locale: activeLocale } = router
+  const { i18n } = useLingui()
 
-  const otherLocales = (locales || []).filter(
-    (locale) => locale !== activeLocale && locale !== 'default',
+  const [locale, setLocale] = useState<LOCALES>(
+    router.locale!.split('-')[0] as LOCALES,
   )
+
+  if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') {
+    languages['pseudo'] = msg`Pseudo`
+  }
+
+  function handleChange(event: React.ChangeEvent<HTMLSelectElement>) {
+    const locale = event.target.value as LOCALES
+
+    setLocale(locale)
+    router.push(router.pathname, router.pathname, { locale })
+  }
 
   return (
-    <ul className='flex'>
-      {otherLocales.map((locale) => {
-        const { pathname, query, asPath } = router
-
+    <select value={locale} onChange={handleChange}>
+      {Object.keys(languages).map((locale) => {
         return (
-          <li
-            key={locale}
-            className='mr-2 cursor-pointer font-semibold uppercase text-white'
-          >
-            <Link
-              href={{ pathname, query }}
-              as={asPath}
-              locale={locale}
-              legacyBehavior
-            >
-              {locale}
-            </Link>
-          </li>
+          <option value={locale} key={locale}>
+            {i18n._(languages[locale as unknown as LOCALES])}
+          </option>
         )
       })}
-    </ul>
+    </select>
   )
 }
+
+export default LocaleSwitcher

@@ -1,3 +1,4 @@
+import { t, Trans } from '@lingui/macro'
 import React, { useMemo } from 'react'
 
 import DamageFragment from '@/components/DamageFragment'
@@ -11,7 +12,6 @@ import { AllEquipment } from '@/config/AllEquipment'
 import type { Dice, EquipmentItem } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { MissileWeaponItem } from '@/domain/weapon'
-import { t } from '@/locale/helpers'
 import { addMissileWeapon, useInventoryState } from '@/state/InventoryState'
 
 // TODO always display details with Range
@@ -22,7 +22,7 @@ const columns: ReadonlyArray<DataGridColumn<MissileWeaponItem>> = [
     render: (item: MissileWeaponItem) => (
       <ItemDetails<MissileWeaponItem> item={item} compact />
     ),
-    title: 'Name',
+    title: t`Name`,
   },
   {
     className: 'w-1/6',
@@ -30,7 +30,7 @@ const columns: ReadonlyArray<DataGridColumn<MissileWeaponItem>> = [
     render: (item: MissileWeaponItem) => (
       <DamageFragment damage={item.damage} />
     ),
-    title: 'Damage',
+    title: t`Damage`,
   },
   {
     className: 'w-1/6',
@@ -38,7 +38,7 @@ const columns: ReadonlyArray<DataGridColumn<MissileWeaponItem>> = [
     render: (item: MissileWeaponItem) => (
       <RangeFragment range={item.range} compact />
     ),
-    title: 'Range',
+    title: t`Range`,
   },
   {
     className: 'w-1/6',
@@ -46,19 +46,19 @@ const columns: ReadonlyArray<DataGridColumn<MissileWeaponItem>> = [
     render: (item: MissileWeaponItem) => (
       <span>{EncumbrancePoint[item.points]}</span>
     ),
-    title: 'Weight',
+    title: t`Weight`,
   },
 ]
 
 const cityCostColumn: DataGridColumn<MissileWeaponItem> = {
   className: 'w-1/6',
   key: 'cityCost',
-  title: 'City Cost',
+  title: t`City Cost`,
 }
 const ruralCostColumn: DataGridColumn<MissileWeaponItem> = {
   className: 'w-1/6',
   key: 'ruralCost',
-  title: 'Rural Cost',
+  title: t`Rural Cost`,
 }
 
 const MissileWeaponsGrid = () => {
@@ -125,12 +125,15 @@ const MissileWeaponsGrid = () => {
     <>
       <div className='py-6'>
         <p className={'mb-2'}>
-          {t(
-            'Each missile weapon can be fired once per round with the exception of the crossbows.',
-          )}
+          <Trans>
+            Each missile weapon can be fired once per round with the exception
+            of the crossbows.
+          </Trans>
         </p>
         <p className={'mb-2'}>
-          {t('Targets at Medium range are –2 to hit, –4 to hit at Long range.')}
+          <Trans>
+            Targets at Medium range are –2 to hit, –4 to hit at Long range.
+          </Trans>
         </p>
       </div>
       <DataGrid<MissileWeaponItem>
@@ -138,7 +141,7 @@ const MissileWeaponsGrid = () => {
         columns={columnsFilteredByCost}
         onAddClick={handleAddClick}
         filterFn={filterName}
-        filterPlaceholder={t('Filter by name')}
+        filterPlaceholder={t`Filter by name`}
         handleSort={handleSort as typeof trivialSort}
       />
     </>

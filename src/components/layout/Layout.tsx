@@ -10,9 +10,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  // TODO FIXME these icons are not displayed
   return (
-    // <html lang='en' className={regularFont.variable}>
     <>
       <UiProvider>
         <Header />
@@ -20,6 +18,5 @@ export default function RootLayout({
         <Footer />
       </UiProvider>
     </>
-    // </html>
   )
 }

@@ -1,3 +1,4 @@
+import { t } from '@lingui/macro'
 import React, { useMemo } from 'react'
 
 import DataGrid from '@/components/DataGrid/DataGrid'
@@ -7,7 +8,6 @@ import ItemDetails from '@/components/Inventory/ItemDetails'
 import { AllEquipment } from '@/config/AllEquipment'
 import type { EquipmentItem } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
-import { t } from '@/locale/helpers'
 import { addEquipmentItem, useInventoryState } from '@/state/InventoryState'
 
 const columns: ReadonlyArray<DataGridColumn<EquipmentItem>> = [
@@ -17,7 +17,7 @@ const columns: ReadonlyArray<DataGridColumn<EquipmentItem>> = [
     render: (item: EquipmentItem) => (
       <ItemDetails<EquipmentItem> item={item} compact />
     ),
-    title: 'Name',
+    title: t`Name`,
   },
   {
     className: 'w-1/6',
@@ -25,19 +25,19 @@ const columns: ReadonlyArray<DataGridColumn<EquipmentItem>> = [
     render: (item: EquipmentItem) => (
       <span>{EncumbrancePoint[item.points]}</span>
     ),
-    title: 'Weight',
+    title: t`Weight`,
   },
 ]
 
 const cityCostColumn: DataGridColumn<EquipmentItem> = {
   className: 'w-1/6',
   key: 'cityCost',
-  title: 'City Cost',
+  title: t`City Cost`,
 }
 const ruralCostColumn: DataGridColumn<EquipmentItem> = {
   className: 'w-1/6',
   key: 'ruralCost',
-  title: 'Rural Cost',
+  title: t`Rural Cost`,
 }
 
 const MiscEquipmentGrid = () => {
@@ -75,7 +75,7 @@ const MiscEquipmentGrid = () => {
       columns={columnsFilteredByCost}
       onAddClick={handleAddClick}
       filterFn={filterName}
-      filterPlaceholder={t('Filter by name')}
+      filterPlaceholder={t`Filter by name`}
     />
   )
 }

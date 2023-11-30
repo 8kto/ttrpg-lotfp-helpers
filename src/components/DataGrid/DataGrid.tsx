@@ -2,6 +2,7 @@ import {
   BackspaceIcon,
   PlusCircleIcon as PlusIcon,
 } from '@heroicons/react/24/solid'
+import { Trans } from '@lingui/macro'
 import React, { useEffect, useState } from 'react'
 
 import { trivialSort } from '@/components/DataGrid/helpers'
@@ -11,7 +12,6 @@ import type {
   SortOrder,
 } from '@/components/DataGrid/types'
 import type { EquipmentItem } from '@/domain'
-import { t } from '@/locale/helpers'
 
 const DataGrid = <T extends EquipmentItem>({
   data,
@@ -67,7 +67,6 @@ const DataGrid = <T extends EquipmentItem>({
         <div className='relative w-full'>
           <input
             type='text'
-            id='voice-search'
             className='block w-full border border-gray-200 bg-gray-50 p-2.5 pl-4 text-base text-gray-900'
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
@@ -93,7 +92,7 @@ const DataGrid = <T extends EquipmentItem>({
                 } ${column.className ?? ''}`}
                 onClick={() => handleSortClick(column.key)}
               >
-                {t(column.title)} {sortIcon(column.key as string)}
+                {column.title} {sortIcon(column.key as string)}
               </th>
             ))}
             <th scope='col' className={`${headerCellClassnames} w-1/12`}></th>
@@ -118,7 +117,7 @@ const DataGrid = <T extends EquipmentItem>({
                   onClick={() => onAddClick(item)}
                 >
                   <PlusIcon className='mr-2 h-5 w-5' />
-                  Add
+                  <Trans>Add</Trans>
                 </button>
               </td>
             </tr>

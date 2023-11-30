@@ -1,3 +1,4 @@
+import { t, Trans } from '@lingui/macro'
 import React, { useMemo } from 'react'
 
 import DataGrid from '@/components/DataGrid/DataGrid'
@@ -9,7 +10,6 @@ import { AllEquipment } from '@/config/AllEquipment'
 import type { EquipmentItem } from '@/domain'
 import type { ArmorItem } from '@/domain/armor'
 import { EncumbrancePoint } from '@/domain/encumbrance'
-import { t } from '@/locale/helpers'
 import { addArmor, useInventoryState } from '@/state/InventoryState'
 
 const columns: ReadonlyArray<DataGridColumn<ArmorItem>> = [
@@ -17,30 +17,30 @@ const columns: ReadonlyArray<DataGridColumn<ArmorItem>> = [
     className: 'w-1/3',
     key: 'name',
     render: (item: ArmorItem) => <ItemDetails<ArmorItem> item={item} compact />,
-    title: 'Name',
+    title: t`Name`,
   },
   {
     className: 'w-1/6',
     key: 'armorClass',
-    title: 'AC',
+    title: t`AC`,
   },
   {
     className: 'w-1/6',
     key: 'points',
     render: (item: ArmorItem) => <span>{EncumbrancePoint[item.points]}</span>,
-    title: 'Weight',
+    title: t`Weight`,
   },
 ]
 
 const cityCostColumn: DataGridColumn<ArmorItem> = {
   className: 'w-1/6',
   key: 'cityCost',
-  title: 'City Cost',
+  title: t`City Cost`,
 }
 const ruralCostColumn: DataGridColumn<ArmorItem> = {
   className: 'w-1/6',
   key: 'ruralCost',
-  title: 'Rural Cost',
+  title: t`Rural Cost`,
 }
 
 const ArmorGrid = () => {
@@ -101,13 +101,14 @@ const ArmorGrid = () => {
     <>
       <div className='py-6'>
         <p className={'mb-2'}>
-          {t('Unarmored characters have a Base AC of 12.')}
+          <Trans>Unarmored characters have a Base AC of 12.</Trans>
         </p>
         <p className={'mb-2'}>
-          {t(
-            'Unadjusted AC is that of solely the armor and shield. ' +
-              'Dexterity modifiers, magical modifiers, or any other adjustments are not counted.',
-          )}
+          <Trans>
+            Unadjusted AC is that of solely the armor and shield. Dexterity
+            modifiers, magical modifiers, or any other adjustments are not
+            counted.
+          </Trans>
         </p>
       </div>
       <DataGrid<ArmorItem>
@@ -115,7 +116,7 @@ const ArmorGrid = () => {
         columns={columnsFilteredByCost}
         onAddClick={handleAddClick}
         filterFn={filterName}
-        filterPlaceholder={t('Filter by name')}
+        filterPlaceholder={t`Filter by name`}
         handleSort={handleSort as typeof trivialSort}
       />
     </>

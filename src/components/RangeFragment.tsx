@@ -1,7 +1,7 @@
+import { Trans } from '@lingui/macro'
 import React from 'react'
 
 import type { Range } from '@/domain/weapon'
-import { t } from '@/locale/helpers'
 
 const RangeFragment = ({
   range,
@@ -11,7 +11,7 @@ const RangeFragment = ({
   compact?: boolean
 }) => {
   if (!range) {
-    return t('-')
+    return '-'
   }
 
   if (compact) {
@@ -24,13 +24,13 @@ const RangeFragment = ({
     return (
       <ul>
         <li>
-          {t('Short')}: {range.short} {t('ft')}
+          <Trans>Short</Trans>: {range.short} <Trans>ft</Trans>
         </li>
         <li>
-          {t('Medium')}: {range.medium} {t('ft')}
+          <Trans>Medium</Trans>: {range.medium} <Trans>ft</Trans>
         </li>
         <li>
-          {t('Long')}: {range.long} {t('ft')}
+          <Trans>Long</Trans>: {range.long} <Trans>ft</Trans>
         </li>
       </ul>
     )

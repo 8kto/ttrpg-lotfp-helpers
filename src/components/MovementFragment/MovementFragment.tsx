@@ -1,3 +1,4 @@
+import { Trans } from '@lingui/macro'
 import React from 'react'
 
 import { getEncumbrance } from '@/components/InventoryDetails/helpers'
@@ -14,10 +15,19 @@ const MovementFragment = ({
   return (
     <>
       <ul className='list-disc pl-4'>
-        <li>Exploration: {movement['Exploration']} feet</li>
-        <li>Combat: {movement['Combat']} feet</li>
-        <li>Running: {movement['Running']} feet</li>
-        <li>Per day: {movement['MilesPerDay']} miles</li>
+        <li>
+          <Trans>Exploration</Trans>: {movement['Exploration']}{' '}
+          <Trans>ft</Trans>
+        </li>
+        <li>
+          <Trans>Combat</Trans>: {movement['Combat']} <Trans>ft</Trans>
+        </li>
+        <li>
+          <Trans>Running</Trans>: {movement['Running']} <Trans>ft</Trans>
+        </li>
+        <li>
+          <Trans>Per day</Trans>: {movement['MilesPerDay']} <Trans>miles</Trans>
+        </li>
       </ul>
     </>
   )

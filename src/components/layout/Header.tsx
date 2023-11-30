@@ -1,11 +1,11 @@
 'use client'
 
 import { InboxStackIcon } from '@heroicons/react/24/solid'
+import { Trans } from '@lingui/macro'
 import Link from 'next/link'
 import React, { useContext } from 'react'
 
 import LocaleSwitcher from '@/components/layout/LocaleSwitcher'
-import { t } from '@/locale/helpers'
 import UiContext from '@/shared/context/uiContext'
 
 import { cursiveFont } from './fonts'
@@ -25,14 +25,13 @@ const Header = () => {
               <h1
                 className={`${cursiveFont.className} self-center whitespace-nowrap text-2xl font-semibold sm:flex`}
               >
-                {t('Princess Helpers')}
+                <Trans>Princess Helpers</Trans>
               </h1>
             </Link>
           </div>
 
           <div className='flex items-center'>
             <LocaleSwitcher />
-
             <button
               className='ph-btn-primary z-50 inline-flex cursor-pointer items-center justify-center rounded p-2 focus:outline-none lg:hidden'
               onClick={() =>
@@ -41,7 +40,8 @@ const Header = () => {
                 })
               }
             >
-              <InboxStackIcon className='mr-2 h-5 w-5' /> {t('Inventory')}
+              <InboxStackIcon className='mr-2 h-5 w-5' />{' '}
+              <Trans>Inventory</Trans>
             </button>
           </div>
         </div>

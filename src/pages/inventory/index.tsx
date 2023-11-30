@@ -1,22 +1,36 @@
 'use client'
 
+import { t } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
+import type { GetStaticProps } from 'next'
 import Head from 'next/head'
 import React, { useContext } from 'react'
 
 import EquipmentList from '@/components/EquipmentList/EquipmentList'
 import InventoryList from '@/components/Inventory/InventoryList'
-import { t } from '@/locale/helpers'
 import UiContext from '@/shared/context/uiContext'
+import { loadCatalog } from '@/translations/utils'
+
+export const getStaticProps: GetStaticProps = async (ctx) => {
+  const translation = await loadCatalog(ctx.locale!)
+
+  return {
+    props: {
+      translation,
+    },
+  }
+}
 
 export default function Inventory() {
   const {
     uiState: { isInventoryVisible },
   } = useContext(UiContext)
+  useLingui()
 
   return (
     <>
       <Head>
-        <title>{t('Inventory')}</title>
+        <title>{t`Inventory`}</title>
       </Head>
       <div className='relative flex min-h-screen flex-col bg-gray-50 pt-16'>
         <main className='mx-auto w-full max-w-screen-2xl flex-grow px-4 sm:px-6 lg:px-8'>

@@ -1,3 +1,4 @@
+import { t, Trans } from '@lingui/macro'
 import React, { useMemo } from 'react'
 
 import DamageFragment from '@/components/DamageFragment'
@@ -10,7 +11,6 @@ import { AllEquipment } from '@/config/AllEquipment'
 import type { Dice, EquipmentItem } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { MeleeWeaponItem } from '@/domain/weapon'
-import { t } from '@/locale/helpers'
 import { addMeleeWeapon, useInventoryState } from '@/state/InventoryState'
 
 const columns: ReadonlyArray<DataGridColumn<MeleeWeaponItem>> = [
@@ -20,13 +20,13 @@ const columns: ReadonlyArray<DataGridColumn<MeleeWeaponItem>> = [
     render: (item: MeleeWeaponItem) => (
       <ItemDetails<MeleeWeaponItem> item={item} compact />
     ),
-    title: 'Name',
+    title: t`Name`,
   },
   {
     className: 'w-1/6',
     key: 'damage',
     render: (item: MeleeWeaponItem) => <DamageFragment damage={item.damage} />,
-    title: 'Damage',
+    title: t`Damage`,
   },
   {
     className: 'w-1/6',
@@ -34,19 +34,19 @@ const columns: ReadonlyArray<DataGridColumn<MeleeWeaponItem>> = [
     render: (item: MeleeWeaponItem) => (
       <span>{EncumbrancePoint[item.points]}</span>
     ),
-    title: 'Weight',
+    title: t`Weight`,
   },
 ]
 
 const cityCostColumn: DataGridColumn<MeleeWeaponItem> = {
   className: 'w-1/6',
   key: 'cityCost',
-  title: 'City Cost',
+  title: t`City Cost`,
 }
 const ruralCostColumn: DataGridColumn<MeleeWeaponItem> = {
   className: 'w-1/6',
   key: 'ruralCost',
-  title: 'Rural Cost',
+  title: t`Rural Cost`,
 }
 
 const MeleeWeaponsGrid = () => {
@@ -114,21 +114,22 @@ const MeleeWeaponsGrid = () => {
     <>
       <div className='py-6'>
         <p className={'mb-2'}>
-          {t(
-            'Some weapons can attack “from the second rank.” ' +
-              'This is used when there is a definite battle line in combat. ' +
-              'Usually only those on the front line of battle can strike, ' +
-              'but those weapons usable from the second rank allow anyone ' +
-              'immediately behind the battle line to strike as well.',
-          )}
+          <Trans>
+            Some weapons can attack “from the second rank.” This is used when
+            there is a definite battle line in combat. Usually only those on the
+            front line of battle can strike, but those weapons usable from the
+            second rank allow anyone immediately behind the battle line to
+            strike as well.
+          </Trans>
         </p>
         <p className={'mb-2'}>
-          {t('Second rank weapons: lance, polearm, spear.')}
+          <Trans>Second rank weapons: lance, polearm, spear.</Trans>
         </p>
         <p className={'mb-2'}>
-          {t(
-            'Weapons that allow to receive charge (damage x2, act first): polearm, spear.',
-          )}
+          <Trans>
+            Weapons that allow to receive charge (damage x2, act first):
+            polearm, spear.
+          </Trans>
         </p>
       </div>
       <DataGrid<MeleeWeaponItem>
@@ -136,7 +137,7 @@ const MeleeWeaponsGrid = () => {
         columns={columnsFilteredByCost}
         onAddClick={handleAddClick}
         filterFn={filterName}
-        filterPlaceholder={t('Filter by name')}
+        filterPlaceholder={t`Filter by name`}
         handleSort={handleSort as typeof trivialSort}
       />
     </>

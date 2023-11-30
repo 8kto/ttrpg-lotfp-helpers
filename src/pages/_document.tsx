@@ -3,8 +3,9 @@ import { Head, Html, Main, NextScript } from 'next/document'
 import { cursiveFont } from '@/components/layout/fonts'
 
 export default function Document() {
+  // TODO FIXME these icons are not displayed
   return (
-    <Html lang='en'>
+    <Html>
       <Head>
         <link
           rel='apple-touch-icon'

@@ -17,7 +17,7 @@ const languages: Languages[] = [
     rtl: false,
   },
   {
-    locale: "ru-ru",
+    locale: 'ru-ru',
     msg: msg`Russian`,
     rtl: false,
   },

@@ -1,3 +1,4 @@
+import { Trans } from '@lingui/macro'
 import React from 'react'
 
 import { toggleCost, useInventoryState } from '@/state/InventoryState'
@@ -29,7 +30,7 @@ const CommandBar = () => {
           className={radioClassnames}
         />
         <label htmlFor='city-radio' className={labelClassnames}>
-          City
+          <Trans>City</Trans>
         </label>
       </div>
       <div className='mr-4 flex items-center'>
@@ -43,7 +44,7 @@ const CommandBar = () => {
           onChange={handleCostToggle}
         />
         <label htmlFor='rural-radio' className={labelClassnames}>
-          Rural
+          <Trans>Rural</Trans>
         </label>
       </div>
     </div>
