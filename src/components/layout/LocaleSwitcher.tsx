@@ -12,7 +12,7 @@ const languages: { [key: string]: MessageDescriptor } = {
   cz: msg`Czech`,
 }
 
-export function LocaleSwitcher() {
+const LocaleSwitcher = () => {
   const router = useRouter()
   const { i18n } = useLingui()
 
