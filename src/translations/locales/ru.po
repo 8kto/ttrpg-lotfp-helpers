@@ -14,142 +14,142 @@ msgstr ""
 "Plural-Forms: \n"
 
 msgid "AC"
-msgstr ""
+msgstr "AC"
 
 msgid "Add"
-msgstr ""
+msgstr "Добавить"
 
 msgid "All costs are in silver pieces"
-msgstr ""
+msgstr "Все цены указаны в серебряных монетах"
 
 msgid "Armor"
-msgstr ""
+msgstr "Броня"
 
 msgid "City"
-msgstr ""
+msgstr "Город"
 
 msgid "City Cost"
-msgstr ""
+msgstr "Стоимость в городе"
 
 msgid "Combat"
-msgstr ""
+msgstr "Бой"
 
 msgid "Czech"
-msgstr ""
+msgstr "Чешский"
 
 msgid "Damage"
-msgstr ""
+msgstr "Урон"
 
 msgid "Each missile weapon can be fired once per round with the exception of the crossbows."
-msgstr ""
+msgstr "Каждое метательное оружие можно использовать один раз за раунд, кроме арбалетов."
 
 msgid "Enable automatic subtraction of money when equipment items are added"
-msgstr ""
+msgstr "Автоматически вычитать деньги при добавлении предметов снаряжения"
 
 msgid "Enable the weight of coins for encumbrance calculations."
-msgstr ""
+msgstr "Учитывать вес монет при расчетах перегрузки."
 
 msgid "Encumbrance"
-msgstr ""
+msgstr "Перегрузка"
 
 msgid "English"
-msgstr ""
+msgstr "Английский"
 
 msgid "Equipment"
 msgstr "Снаряжение"
 
 msgid "Exploration"
-msgstr ""
+msgstr "Исследование"
 
 msgid "Filter by name"
-msgstr ""
+msgstr "Фильтр по имени"
 
 msgid "ft"
-msgstr ""
+msgstr "фт"
 
 msgid "Include the weight"
-msgstr ""
+msgstr "Учитывать вес"
 
 msgid "Inventory"
 msgstr "Инвентарь"
 
 msgid "Inventory cost"
-msgstr ""
+msgstr "Стоимость инвентаря"
 
 msgid "Long"
-msgstr ""
+msgstr "Длинный"
 
 msgid "Manage"
-msgstr ""
+msgstr "Управление"
 
 msgid "Medium"
-msgstr ""
+msgstr "Средний"
 
 msgid "Mêlée Weapons"
-msgstr ""
+msgstr "Оружие ближнего боя"
 
 msgid "miles"
-msgstr ""
+msgstr "мили"
 
 msgid "Miscellaneous Equipment"
-msgstr ""
+msgstr "Разное снаряжение"
 
 msgid "Missile Weapons"
-msgstr ""
+msgstr "Метательное оружие"
 
 msgid "Movement"
-msgstr ""
+msgstr "Перемещение"
 
 msgid "Name"
-msgstr ""
+msgstr "Имя"
 
 msgid "Per day"
-msgstr ""
+msgstr "В день"
 
 msgid "Princess Helpers"
-msgstr ""
+msgstr "Princess Helpers"
 
 msgid "Pseudo"
-msgstr ""
+msgstr "Псевдо"
 
 msgid "Range"
-msgstr ""
+msgstr "Дальность"
 
 msgid "Running"
-msgstr ""
+msgstr "Бег"
 
 msgid "Rural"
-msgstr ""
+msgstr "Сельский"
 
 msgid "Rural Cost"
-msgstr ""
+msgstr "Стоимость в сельской местности"
 
 msgid "Russian"
-msgstr ""
+msgstr "Русский"
 
 msgid "Second rank weapons: lance, polearm, spear."
-msgstr ""
+msgstr "Оружие второго ряда: копье, дротик, шест."
 
 msgid "Short"
-msgstr ""
+msgstr "Короткий"
 
 msgid "Some weapons can attack “from the second rank.” This is used when there is a definite battle line in combat. Usually only those on the front line of battle can strike, but those weapons usable from the second rank allow anyone immediately behind the battle line to strike as well."
-msgstr ""
+msgstr "Некоторое оружие может атаковать 'из второго ряда'. Это используется, когда в бою есть четкая боевая линия. Обычно ударить могут только те, кто на передней линии, но оружие, которое можно использовать из второго ряда, позволяет атаковать и тем, кто находится сразу за боевой линией."
 
 msgid "Targets at Medium range are –2 to hit, –4 to hit at Long range."
-msgstr ""
+msgstr "Цели на средней дистанции имеют –2 к попаданию, –4 к попаданию на длинной дистанции."
 
 msgid "Unadjusted AC is that of solely the armor and shield. Dexterity modifiers, magical modifiers, or any other adjustments are not counted."
-msgstr ""
+msgstr "Неисправленный AC - это только броня и щит. Модификаторы ловкости, магические модификаторы или любые другие корректировки не учитываются."
 
 msgid "Unarmored characters have a Base AC of 12."
-msgstr ""
+msgstr "Персонажи без доспехов имеют базовый AC 12."
 
 msgid "Wallet"
-msgstr ""
+msgstr "Кошелек"
 
 msgid "Weapons that allow to receive charge (damage x2, act first): polearm, spear."
-msgstr ""
+msgstr "Оружие, позволяющее принимать на себя заряд (урон х2, действовать первым): дротик, копье."
 
 msgid "Weight"
-msgstr ""
+msgstr "Вес"
