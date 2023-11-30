@@ -35,7 +35,7 @@ const LocaleSwitcher = () => {
     <select
       value={locale}
       onChange={handleChange}
-      className='block rounded border border-red-900 bg-red-900 p-2.5 text-sm text-white focus:border-primary-500 focus:ring-primary-500'
+      className='ph-btn-primary md:lg-0 mr-1 block rounded border border-red-900 p-2.5 text-sm text-white  focus:border-primary-500 focus:ring-primary-500'
     >
       {Object.keys(languages).map((locale) => {
         return (
