@@ -7,9 +7,9 @@ import { useState } from 'react'
 import type { LOCALES } from '@/translations/languages'
 
 const languages: { [key: string]: MessageDescriptor } = {
-  en: msg`English`,
-  ru: msg`Russian`,
-  cz: msg`Czech`,
+  en: msg`EN`,
+  ru: msg`RU`,
+  cz: msg`CZ`,
 }
 
 const LocaleSwitcher = () => {
@@ -20,9 +20,9 @@ const LocaleSwitcher = () => {
     router.locale!.split('-')[0] as LOCALES,
   )
 
-  if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') {
-    languages['pseudo'] = msg`Pseudo`
-  }
+  // if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') {
+  //   languages['pseudo'] = msg`Pseudo`
+  // }
 
   function handleChange(event: React.ChangeEvent<HTMLSelectElement>) {
     const locale = event.target.value as LOCALES
@@ -35,7 +35,7 @@ const LocaleSwitcher = () => {
     <select
       value={locale}
       onChange={handleChange}
-      className='block rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500'
+      className='block rounded border border-red-900 bg-red-900 p-2.5 text-sm text-white focus:border-primary-500 focus:ring-primary-500'
     >
       {Object.keys(languages).map((locale) => {
         return (
