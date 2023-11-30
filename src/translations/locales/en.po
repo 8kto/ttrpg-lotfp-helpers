@@ -19,11 +19,23 @@ msgstr "AC"
 msgid "Add"
 msgstr "Add"
 
+msgid "Add coins"
+msgstr "Add coins"
+
+msgid "Add equipment item"
+msgstr "Add equipment item"
+
+msgid "Add item"
+msgstr "Add item"
+
 msgid "All costs are in silver pieces"
 msgstr "All costs are in silver pieces"
 
 msgid "Armor"
 msgstr "Armor"
+
+msgid "Category"
+msgstr "Category"
 
 msgid "City"
 msgstr "City"
@@ -34,14 +46,29 @@ msgstr "City Cost"
 msgid "Combat"
 msgstr "Combat"
 
+msgid "Copper pieces"
+msgstr "Copper pieces"
+
+msgid "Cost"
+msgstr "Cost"
+
+msgid "CZ"
+msgstr "CZ"
+
 msgid "Czech"
 msgstr "Czech"
 
 msgid "Damage"
 msgstr "Damage"
 
+msgid "Details"
+msgstr "Details"
+
 msgid "Each missile weapon can be fired once per round with the exception of the crossbows."
 msgstr "Each missile weapon can be fired once per round with the exception of the crossbows."
+
+msgid "EN"
+msgstr "EN"
 
 msgid "Enable automatic subtraction of money when equipment items are added"
 msgstr "Enable automatic subtraction of money when equipment items are added"
@@ -54,6 +81,9 @@ msgstr "Encumbrance"
 
 msgid "English"
 msgstr "English"
+
+msgid "Enter coin amount. Use copper pieces instead of float numbers."
+msgstr "Enter coin amount. Use copper pieces instead of float numbers."
 
 msgid "Equipment"
 msgstr "Equipment"
@@ -103,6 +133,9 @@ msgstr "Movement"
 msgid "Name"
 msgstr "Name"
 
+msgid "optional"
+msgstr "optional"
+
 msgid "Per day"
 msgstr "Per day"
 
@@ -114,6 +147,18 @@ msgstr "Pseudo"
 
 msgid "Range"
 msgstr "Range"
+
+msgid "Required"
+msgstr "Required"
+
+msgid "Reset"
+msgstr "Reset"
+
+msgid "Reset all equipment"
+msgstr "Reset all equipment"
+
+msgid "RU"
+msgstr "RU"
 
 msgid "Running"
 msgstr "Running"
@@ -129,6 +174,12 @@ msgstr "Russian"
 
 msgid "Second rank weapons: lance, polearm, spear."
 msgstr "Second rank weapons: lance, polearm, spear."
+
+msgid "Set"
+msgstr "Set"
+
+msgid "Set coins"
+msgstr "Set coins"
 
 msgid "Short"
 msgstr "Short"

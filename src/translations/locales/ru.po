@@ -19,11 +19,23 @@ msgstr "AC"
 msgid "Add"
 msgstr "Добавить"
 
+msgid "Add coins"
+msgstr ""
+
+msgid "Add equipment item"
+msgstr ""
+
+msgid "Add item"
+msgstr ""
+
 msgid "All costs are in silver pieces"
 msgstr "Все цены указаны в серебряных монетах"
 
 msgid "Armor"
 msgstr "Броня"
+
+msgid "Category"
+msgstr ""
 
 msgid "City"
 msgstr "Город"
@@ -34,14 +46,29 @@ msgstr "В городе"
 msgid "Combat"
 msgstr "Бой"
 
+msgid "Copper pieces"
+msgstr ""
+
+msgid "Cost"
+msgstr ""
+
+msgid "CZ"
+msgstr ""
+
 msgid "Czech"
 msgstr "Czech"
 
 msgid "Damage"
 msgstr "Урон"
 
+msgid "Details"
+msgstr ""
+
 msgid "Each missile weapon can be fired once per round with the exception of the crossbows."
 msgstr "Каждое метательное оружие можно использовать один раз за раунд, кроме арбалетов."
+
+msgid "EN"
+msgstr ""
 
 msgid "Enable automatic subtraction of money when equipment items are added"
 msgstr "Автоматически вычитать деньги при добавлении предметов снаряжения"
@@ -54,6 +81,9 @@ msgstr "Нагрузка"
 
 msgid "English"
 msgstr "English"
+
+msgid "Enter coin amount. Use copper pieces instead of float numbers."
+msgstr ""
 
 msgid "Equipment"
 msgstr "Снаряжение"
@@ -103,6 +133,9 @@ msgstr "Передвижение"
 msgid "Name"
 msgstr "Название"
 
+msgid "optional"
+msgstr ""
+
 msgid "Per day"
 msgstr "В день"
 
@@ -114,6 +147,18 @@ msgstr "Псевдо"
 
 msgid "Range"
 msgstr "Дальность"
+
+msgid "Required"
+msgstr ""
+
+msgid "Reset"
+msgstr ""
+
+msgid "Reset all equipment"
+msgstr ""
+
+msgid "RU"
+msgstr ""
 
 msgid "Running"
 msgstr "Бег"
@@ -129,6 +174,12 @@ msgstr "Русский"
 
 msgid "Second rank weapons: lance, polearm, spear."
 msgstr "Оружие второго ряда: копье, дротик, шест."
+
+msgid "Set"
+msgstr ""
+
+msgid "Set coins"
+msgstr ""
 
 msgid "Short"
 msgstr "Ближняя"
