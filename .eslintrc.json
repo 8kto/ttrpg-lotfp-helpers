@@ -32,11 +32,7 @@
       "error",
       { "blankLine": "always", "prev": "*", "next": "return" }
     ],
-    "sort-keys": [
-      "error",
-      "asc",
-      { "natural": true, "allowLineSeparatedGroups": true }
-    ],
+    "sort-keys": "off",
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
     "@typescript-eslint/consistent-type-imports": [

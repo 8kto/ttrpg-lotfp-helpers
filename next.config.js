@@ -1,12 +1,18 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const linguiConfig = require('./lingui.config')
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  distDir: 'build',
-  i18n: {
-    defaultLocale: 'default',
-    localeDetection: false,
-    locales: ['default', 'en', 'ru', 'cz'],
+  reactStrictMode: true,
+  experimental: {
+    swcPlugins: [['@lingui/swc-plugin', {}]],
+    forceSwcTransforms: true,
   },
-  trailingSlash: true,
+  i18n: {
+    locales: linguiConfig.locales,
+    defaultLocale: linguiConfig.sourceLocale,
+  },
+  distDir: 'build',
 }
 
 module.exports = nextConfig
