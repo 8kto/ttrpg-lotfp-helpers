@@ -20,13 +20,13 @@ msgid "Add"
 msgstr "Добавить"
 
 msgid "Add coins"
-msgstr ""
+msgstr "Добавить монет"
 
 msgid "Add equipment item"
-msgstr ""
+msgstr "Добавить предмет"
 
 msgid "Add item"
-msgstr ""
+msgstr "Добавить предмет"
 
 msgid "All costs are in silver pieces"
 msgstr "Все цены указаны в серебряных монетах"
@@ -35,7 +35,7 @@ msgid "Armor"
 msgstr "Броня"
 
 msgid "Category"
-msgstr ""
+msgstr "Категория"
 
 msgid "City"
 msgstr "Город"
@@ -47,13 +47,13 @@ msgid "Combat"
 msgstr "Бой"
 
 msgid "Copper pieces"
-msgstr ""
+msgstr "Медные монеты"
 
 msgid "Cost"
-msgstr ""
+msgstr "Цена"
 
 msgid "CZ"
-msgstr ""
+msgstr "CZ"
 
 msgid "Czech"
 msgstr "Czech"
@@ -62,19 +62,19 @@ msgid "Damage"
 msgstr "Урон"
 
 msgid "Details"
-msgstr ""
+msgstr "Детали"
 
 msgid "Each missile weapon can be fired once per round with the exception of the crossbows."
 msgstr "Каждое метательное оружие можно использовать один раз за раунд, кроме арбалетов."
 
 msgid "EN"
-msgstr ""
+msgstr "EN"
 
 msgid "Enable automatic subtraction of money when equipment items are added"
-msgstr "Автоматически вычитать деньги при добавлении предметов снаряжения"
+msgstr "Автоматически вычитать деньги при добавлении предметов"
 
 msgid "Enable the weight of coins for encumbrance calculations."
-msgstr "Учитывать вес монет при расчетах перегрузки."
+msgstr "Учитывать вес монет для нагрузки."
 
 msgid "Encumbrance"
 msgstr "Нагрузка"
@@ -83,7 +83,7 @@ msgid "English"
 msgstr "English"
 
 msgid "Enter coin amount. Use copper pieces instead of float numbers."
-msgstr ""
+msgstr "Введите количество монет. Используйте медные монеты вместо дробных чисел."
 
 msgid "Equipment"
 msgstr "Снаряжение"
@@ -134,7 +134,7 @@ msgid "Name"
 msgstr "Название"
 
 msgid "optional"
-msgstr ""
+msgstr "необязательно"
 
 msgid "Per day"
 msgstr "В день"
@@ -149,16 +149,16 @@ msgid "Range"
 msgstr "Дальность"
 
 msgid "Required"
-msgstr ""
+msgstr "Обязательное"
 
 msgid "Reset"
-msgstr ""
+msgstr "Сбросить"
 
 msgid "Reset all equipment"
-msgstr ""
+msgstr "Сбросить всё снаряжение"
 
 msgid "RU"
-msgstr ""
+msgstr "RU"
 
 msgid "Running"
 msgstr "Бег"
@@ -176,10 +176,10 @@ msgid "Second rank weapons: lance, polearm, spear."
 msgstr "Оружие второго ряда: копье, дротик, шест."
 
 msgid "Set"
-msgstr ""
+msgstr "Установить"
 
 msgid "Set coins"
-msgstr ""
+msgstr "Монеты"
 
 msgid "Short"
 msgstr "Ближняя"
