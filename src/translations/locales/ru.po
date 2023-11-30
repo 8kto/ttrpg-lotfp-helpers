@@ -29,13 +29,13 @@ msgid "City"
 msgstr "Город"
 
 msgid "City Cost"
-msgstr "Стоимость в городе"
+msgstr "В городе"
 
 msgid "Combat"
 msgstr "Бой"
 
 msgid "Czech"
-msgstr "Чешский"
+msgstr "Czech"
 
 msgid "Damage"
 msgstr "Урон"
@@ -50,10 +50,10 @@ msgid "Enable the weight of coins for encumbrance calculations."
 msgstr "Учитывать вес монет при расчетах перегрузки."
 
 msgid "Encumbrance"
-msgstr "Перегрузка"
+msgstr "Нагрузка"
 
 msgid "English"
-msgstr "Английский"
+msgstr "English"
 
 msgid "Equipment"
 msgstr "Снаряжение"
@@ -77,31 +77,31 @@ msgid "Inventory cost"
 msgstr "Стоимость инвентаря"
 
 msgid "Long"
-msgstr "Длинный"
+msgstr "Дальняя"
 
 msgid "Manage"
 msgstr "Управление"
 
 msgid "Medium"
-msgstr "Средний"
+msgstr "Средняя"
 
 msgid "Mêlée Weapons"
-msgstr "Оружие ближнего боя"
+msgstr "Ближний бой"
 
 msgid "miles"
 msgstr "мили"
 
 msgid "Miscellaneous Equipment"
-msgstr "Разное снаряжение"
+msgstr "Разное"
 
 msgid "Missile Weapons"
-msgstr "Метательное оружие"
+msgstr "Метательное"
 
 msgid "Movement"
-msgstr "Перемещение"
+msgstr "Передвижение"
 
 msgid "Name"
-msgstr "Имя"
+msgstr "Название"
 
 msgid "Per day"
 msgstr "В день"
@@ -119,10 +119,10 @@ msgid "Running"
 msgstr "Бег"
 
 msgid "Rural"
-msgstr "Сельский"
+msgstr "Деревня"
 
 msgid "Rural Cost"
-msgstr "Стоимость в сельской местности"
+msgstr "В деревне"
 
 msgid "Russian"
 msgstr "Русский"
@@ -131,7 +131,7 @@ msgid "Second rank weapons: lance, polearm, spear."
 msgstr "Оружие второго ряда: копье, дротик, шест."
 
 msgid "Short"
-msgstr "Короткий"
+msgstr "Ближняя"
 
 msgid "Some weapons can attack “from the second rank.” This is used when there is a definite battle line in combat. Usually only those on the front line of battle can strike, but those weapons usable from the second rank allow anyone immediately behind the battle line to strike as well."
 msgstr "Некоторое оружие может атаковать 'из второго ряда'. Это используется, когда в бою есть четкая боевая линия. Обычно ударить могут только те, кто на передней линии, но оружие, которое можно использовать из второго ряда, позволяет атаковать и тем, кто находится сразу за боевой линией."
