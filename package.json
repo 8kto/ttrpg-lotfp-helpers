@@ -11,11 +11,14 @@
     "format": "prettier --check --ignore-path .gitignore .",
     "format:fix": "yarn lint -- --fix && prettier --write --ignore-path .gitignore .",
     "weok": "yarn tsc && yarn lint && yarn format && yarn test && echo WE OK",
-    "todos": "egrep --color=always -i '(TODO|FIXME)' -r src/"
+    "todos": "egrep --color=always -i '(TODO|FIXME)' -r src/",
+    "translations:extract": "lingui extract --clean"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
     "@hookstate/localstored": "^4.0.2",
+    "@lingui/core": "^4.5.0",
+    "@lingui/react": "^4.5.0",
     "classnames": "^2.3.2",
     "formik": "^2.4.5",
     "next": "14.0.1",
@@ -26,6 +29,10 @@
   },
   "devDependencies": {
     "@hookstate/core": "^4.0.1",
+    "@lingui/cli": "^4.5.0",
+    "@lingui/loader": "^4.5.0",
+    "@lingui/macro": "^4.5.0",
+    "@lingui/swc-plugin": "^4.0.4",
     "@testing-library/jest-dom": "^6.1.4",
     "@testing-library/react": "^14.1.0",
     "@types/jest": "^29.5.8",
