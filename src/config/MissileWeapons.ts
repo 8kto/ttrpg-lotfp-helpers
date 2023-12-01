@@ -1,13 +1,18 @@
+import { msg } from '@lingui/macro'
+
+import type { EquipmentItemTranslated } from '@/config/types'
 import { Dice } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { MissileWeaponItem } from '@/domain/weapon'
 import { WeaponType } from '@/domain/weapon'
 
-export const MissileWeapons: ReadonlyArray<MissileWeaponItem> = [
+export const MissileWeapons: ReadonlyArray<
+  EquipmentItemTranslated<MissileWeaponItem>
+> = [
   {
     cityCost: 5,
     damage: null,
-    name: 'Blowgun',
+    name: msg`Blowgun`,
     points: EncumbrancePoint.Regular,
     range: { long: 80, medium: 50, short: 20 },
     ruralCost: null,
@@ -16,7 +21,7 @@ export const MissileWeapons: ReadonlyArray<MissileWeaponItem> = [
   {
     cityCost: 45,
     damage: { dice: Dice.d6, x: 1 },
-    name: 'Bow, Long',
+    name: msg`Bow, Long`,
     points: EncumbrancePoint.Oversized,
     range: { long: 900, medium: 600, short: 50 },
     ruralCost: null,
@@ -25,7 +30,7 @@ export const MissileWeapons: ReadonlyArray<MissileWeaponItem> = [
   {
     cityCost: 25,
     damage: { dice: Dice.d6, x: 1 },
-    name: 'Bow, Short',
+    name: msg`Bow, Short`,
     points: EncumbrancePoint.Regular,
     range: { long: 450, medium: 300, short: 50 },
     ruralCost: 25,
@@ -34,9 +39,8 @@ export const MissileWeapons: ReadonlyArray<MissileWeaponItem> = [
   {
     cityCost: 30,
     damage: { dice: Dice.d8, x: 1 },
-    details:
-      'Heavy crossbows can only be fired once in 3 rounds and ignore 4 AC points',
-    name: 'Crossbow, Heavy',
+    details: msg`Heavy crossbows can only be fired once in 3 rounds and ignore 4 AC points`,
+    name: msg`Crossbow, Heavy`,
     points: EncumbrancePoint.Oversized,
     range: { long: 600, medium: 200, short: 50 },
     ruralCost: null,
@@ -45,9 +49,8 @@ export const MissileWeapons: ReadonlyArray<MissileWeaponItem> = [
   {
     cityCost: 25,
     damage: { dice: Dice.d6, x: 1 },
-    details:
-      'Light crossbows can only be fired every once in 2 rounds and ignore 2 AC points',
-    name: 'Crossbow, Light',
+    details: msg`Light crossbows can only be fired every once in 2 rounds and ignore 2 AC points`,
+    name: msg`Crossbow, Light`,
     points: EncumbrancePoint.Regular,
     range: { long: 400, medium: 150, short: 50 },
     ruralCost: null,
@@ -56,8 +59,8 @@ export const MissileWeapons: ReadonlyArray<MissileWeaponItem> = [
   {
     cityCost: 0,
     damage: { dice: Dice.d2, x: 1 },
-    details: 'A rock for throwing, not an ammunition',
-    name: 'Rock',
+    details: msg`A rock for throwing, not an ammunition`,
+    name: msg`Rock`,
     points: EncumbrancePoint.None,
     range: { long: 30, medium: 20, short: 10 },
     ruralCost: 0,
@@ -66,9 +69,8 @@ export const MissileWeapons: ReadonlyArray<MissileWeaponItem> = [
   {
     cityCost: 1,
     damage: { dice: Dice.d4, x: 1 },
-    details:
-      'Slings fired with stones instead of bullets have half the listed range.',
-    name: 'Sling',
+    details: msg`Slings fired with stones instead of bullets have half the listed range.`,
+    name: msg`Sling`,
     points: EncumbrancePoint.None,
     range: { long: 450, medium: 300, short: 50 },
     ruralCost: 0.5,
@@ -77,7 +79,7 @@ export const MissileWeapons: ReadonlyArray<MissileWeaponItem> = [
   {
     cityCost: 1,
     damage: { dice: Dice.d4, x: 1 },
-    name: 'Dart',
+    name: msg`Dart`,
     points: EncumbrancePoint.Regular,
     range: { long: 30, medium: 20, short: 10 },
     ruralCost: null,
@@ -87,9 +89,8 @@ export const MissileWeapons: ReadonlyArray<MissileWeaponItem> = [
   {
     cityCost: 0.2,
     damage: null,
-    details:
-      'Slings fired with stones instead of bullets have half the listed range.',
-    name: 'Sling bullets (10)',
+    details: msg`Slings fired with stones instead of bullets have half the listed range.`,
+    name: msg`Sling bullets (10)`,
     points: EncumbrancePoint.Regular,
     range: { long: 450, medium: 300, short: 50 },
     ruralCost: 0.2,
@@ -98,9 +99,8 @@ export const MissileWeapons: ReadonlyArray<MissileWeaponItem> = [
   {
     cityCost: 0,
     damage: null,
-    details:
-      'Slings fired with stones instead of bullets have the listed range (half of the regular).',
-    name: 'Sling bullets, rocks (10)',
+    details: msg`Slings fired with stones instead of bullets have the listed range (half of the regular).`,
+    name: msg`Sling bullets, rocks (10)`,
     points: EncumbrancePoint.Regular,
     range: { long: 225, medium: 150, short: 25 },
     ruralCost: 0,
@@ -109,7 +109,7 @@ export const MissileWeapons: ReadonlyArray<MissileWeaponItem> = [
   {
     cityCost: 0.5,
     damage: null,
-    name: 'Arrow (1)',
+    name: msg`Arrow (1)`,
     points: EncumbrancePoint.None,
     range: null,
     ruralCost: 0.5,
@@ -118,7 +118,7 @@ export const MissileWeapons: ReadonlyArray<MissileWeaponItem> = [
   {
     cityCost: 10,
     damage: null,
-    name: 'Arrows, quiver (20)',
+    name: msg`Arrows, quiver (20)`,
     points: EncumbrancePoint.Regular,
     range: null,
     ruralCost: 10,
@@ -127,7 +127,7 @@ export const MissileWeapons: ReadonlyArray<MissileWeaponItem> = [
   {
     cityCost: 0.5,
     damage: null,
-    name: 'Crossbow bolt (1)',
+    name: msg`Crossbow bolt (1)`,
     points: EncumbrancePoint.None,
     range: null,
     ruralCost: 0.5,
@@ -136,7 +136,7 @@ export const MissileWeapons: ReadonlyArray<MissileWeaponItem> = [
   {
     cityCost: 10,
     damage: null,
-    name: 'Crossbow bolts, quiver (20)',
+    name: msg`Crossbow bolts, quiver (20)`,
     points: EncumbrancePoint.Regular,
     range: null,
     ruralCost: 10,

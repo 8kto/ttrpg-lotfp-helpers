@@ -11,13 +11,6 @@ import { MeleeWeapons } from './MeleeWeapons'
 import { MiscEquipment } from './MiscEquipment'
 import { MissileWeapons } from './MissileWeapons'
 
-type Equipment = {
-  MissileWeapons: ReadonlyArray<MissileWeaponItem>
-  Armor: ReadonlyArray<EquipmentItemTranslated<ArmorItem>>
-  MeleeWeapons: ReadonlyArray<EquipmentItemTranslated<MeleeWeaponItem>>
-  MiscEquipment: ReadonlyArray<EquipmentItem>
-}
-
 export default class EquipmentTranslated {
   private i18n: I18n
 
@@ -42,13 +35,14 @@ export default class EquipmentTranslated {
   }
 
   get MeleeWeapons(): ReadonlyArray<MeleeWeaponItem> {
-    return this.translate(deepclone(MeleeWeapons))
+    return this.translate<MeleeWeaponItem>(deepclone(MeleeWeapons))
   }
-}
 
-export const AllEquipment: Readonly<Equipment> = {
-  Armor,
-  MeleeWeapons,
-  MiscEquipment,
-  MissileWeapons,
+  get MissileWeapons(): ReadonlyArray<MissileWeaponItem> {
+    return this.translate<MissileWeaponItem>(deepclone(MissileWeapons))
+  }
+
+  get MiscEquipment(): ReadonlyArray<EquipmentItem> {
+    return this.translate<EquipmentItem>(deepclone(MiscEquipment))
+  }
 }
