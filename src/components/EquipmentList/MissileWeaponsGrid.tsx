@@ -1,4 +1,5 @@
 import { t, Trans } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
 import React, { useMemo } from 'react'
 
 import DamageFragment from '@/components/DamageFragment'
@@ -8,7 +9,7 @@ import type { DataGridColumn, SortConfig } from '@/components/DataGrid/types'
 import { getInventoryItem } from '@/components/EquipmentList/helpers'
 import ItemDetails from '@/components/Inventory/ItemDetails'
 import RangeFragment from '@/components/RangeFragment'
-import { AllEquipment } from '@/config/EquipmentTranslated'
+import EquipmentTranslated from '@/config/EquipmentTranslated'
 import type { Dice, EquipmentItem } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { MissileWeaponItem } from '@/domain/weapon'
@@ -74,6 +75,7 @@ const ruralCostColumn: DataGridColumn<MissileWeaponItem> = {
 }
 
 const MissileWeaponsGrid = () => {
+  const { i18n } = useLingui()
   const {
     state: { isCostRural },
   } = useInventoryState()
@@ -85,10 +87,10 @@ const MissileWeaponsGrid = () => {
   }, [isCostRural])
 
   const dataFilteredByCost = useMemo(() => {
-    const data = Object.values(AllEquipment.MissileWeapons)
+    const data = Object.values(new EquipmentTranslated(i18n).MissileWeapons)
 
     return isCostRural.get() ? data.filter((i) => i.ruralCost !== null) : data
-  }, [isCostRural])
+  }, [i18n, isCostRural])
 
   const handleAddClick = (item: MissileWeaponItem) => {
     const clone = getInventoryItem(

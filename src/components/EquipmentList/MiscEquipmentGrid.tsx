@@ -1,11 +1,12 @@
 import { t } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
 import React, { useMemo } from 'react'
 
 import DataGrid from '@/components/DataGrid/DataGrid'
 import type { DataGridColumn } from '@/components/DataGrid/types'
 import { getInventoryItem } from '@/components/EquipmentList/helpers'
 import ItemDetails from '@/components/Inventory/ItemDetails'
-import { AllEquipment } from '@/config/EquipmentTranslated'
+import EquipmentTranslated from '@/config/EquipmentTranslated'
 import type { EquipmentItem } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import { addEquipmentItem, useInventoryState } from '@/state/InventoryState'
@@ -49,6 +50,7 @@ const ruralCostColumn: DataGridColumn<EquipmentItem> = {
 }
 
 const MiscEquipmentGrid = () => {
+  const { i18n } = useLingui()
   const {
     state: { isCostRural },
   } = useInventoryState()
@@ -59,10 +61,10 @@ const MiscEquipmentGrid = () => {
   }, [isCostRural])
 
   const dataFilteredByCost = useMemo(() => {
-    const data = Object.values(AllEquipment.MiscEquipment)
+    const data = Object.values(new EquipmentTranslated(i18n).MiscEquipment)
 
     return isCostRural.get() ? data.filter((i) => i.ruralCost !== null) : data
-  }, [isCostRural])
+  }, [i18n, isCostRural])
 
   const handleAddClick = (item: EquipmentItem) => {
     const clone = getInventoryItem(
