@@ -19,6 +19,9 @@ msgstr ""
 msgid "+1 AC versus mêlée attacks, +2 AC versus missile attacks."
 msgstr ""
 
+msgid "A rock for throwing, not an ammunition"
+msgstr ""
+
 msgid "AC"
 msgstr ""
 
@@ -34,13 +37,67 @@ msgstr ""
 msgid "Add item"
 msgstr ""
 
+msgid "Air Bladder"
+msgstr ""
+
 msgid "All costs are in silver pieces"
 msgstr ""
 
 msgid "Armor"
 msgstr ""
 
+msgid "Arrow (1)"
+msgstr ""
+
+msgid "Arrows, quiver (20)"
+msgstr ""
+
+msgid "Backpack"
+msgstr ""
+
+msgid "Barrel"
+msgstr ""
+
 msgid "Battle axe"
+msgstr ""
+
+msgid "Bedroll"
+msgstr ""
+
+msgid "Block and Tackle"
+msgstr ""
+
+msgid "Blowgun"
+msgstr ""
+
+msgid "Book, Blank"
+msgstr ""
+
+msgid "Book, Reading"
+msgstr ""
+
+msgid "Book, Spell (Blank)"
+msgstr ""
+
+msgid "Bottle of Wine/Liquor, Decent"
+msgstr ""
+
+msgid "Bottle of Wine/Liquor, Poor"
+msgstr ""
+
+msgid "Bottle of Wine/Liquor, Rich"
+msgstr ""
+
+msgid "Bow, Long"
+msgstr ""
+
+msgid "Bow, Short"
+msgstr ""
+
+msgid "Caltrop"
+msgstr ""
+
+msgid "Candle"
 msgstr ""
 
 msgid "Category"
@@ -55,10 +112,31 @@ msgstr ""
 msgid "Chain Barding"
 msgstr ""
 
+msgid "Chain, per foot"
+msgstr ""
+
+msgid "Chalk"
+msgstr ""
+
+msgid "Chest"
+msgstr ""
+
 msgid "City"
 msgstr ""
 
 msgid "City Cost"
+msgstr ""
+
+msgid "Clothing, Extravagant"
+msgstr ""
+
+msgid "Clothing, Normal"
+msgstr ""
+
+msgid "Clothing, Poor"
+msgstr ""
+
+msgid "Clothing, Winter Travel"
 msgstr ""
 
 msgid "Club"
@@ -67,10 +145,31 @@ msgstr ""
 msgid "Combat"
 msgstr ""
 
+msgid "Cooking Pots"
+msgstr ""
+
 msgid "Copper pieces"
 msgstr ""
 
 msgid "Cost"
+msgstr ""
+
+msgid "Crampons"
+msgstr ""
+
+msgid "Crossbow bolt (1)"
+msgstr ""
+
+msgid "Crossbow bolts, quiver (20)"
+msgstr ""
+
+msgid "Crossbow, Heavy"
+msgstr ""
+
+msgid "Crossbow, Light"
+msgstr ""
+
+msgid "Crowbar"
 msgstr ""
 
 msgid "CZ"
@@ -85,7 +184,13 @@ msgstr ""
 msgid "Damage"
 msgstr ""
 
+msgid "Dart"
+msgstr ""
+
 msgid "Details"
+msgstr ""
+
+msgid "Drill"
 msgstr ""
 
 msgid "Each missile weapon can be fired once per round with the exception of the crossbows."
@@ -118,13 +223,31 @@ msgstr ""
 msgid "Explorers traveling ... with ... metal armor clomping on stone floors are not going to surprise anything or anyone (PCB p.56)."
 msgstr ""
 
+msgid "Feed, Animal/Day"
+msgstr ""
+
 msgid "Filter by name"
+msgstr ""
+
+msgid "Fishing Gear"
+msgstr ""
+
+msgid "Flask of Lamp Oil"
 msgstr ""
 
 msgid "ft"
 msgstr ""
 
+msgid "Garlic"
+msgstr ""
+
 msgid "Garrote"
+msgstr ""
+
+msgid "Gem"
+msgstr ""
+
+msgid "Grappling Hook"
 msgstr ""
 
 msgid "Great axe"
@@ -133,7 +256,31 @@ msgstr ""
 msgid "Hand axe"
 msgstr ""
 
+msgid "Heavy crossbows can only be fired once in 3 rounds and ignore 4 AC points"
+msgstr ""
+
+msgid "Holy Symbol, Silver"
+msgstr ""
+
+msgid "Holy Symbol, Steel"
+msgstr ""
+
+msgid "Holy Symbol, Wood"
+msgstr ""
+
+msgid "Holy Water"
+msgstr ""
+
+msgid "Hourglass"
+msgstr ""
+
 msgid "Include the weight"
+msgstr ""
+
+msgid "Ink"
+msgstr ""
+
+msgid "Instrument"
 msgstr ""
 
 msgid "Inventory"
@@ -142,7 +289,19 @@ msgstr ""
 msgid "Inventory cost"
 msgstr ""
 
+msgid "Jewelry"
+msgstr ""
+
+msgid "Ladder, 10'"
+msgstr ""
+
 msgid "Lance"
+msgstr ""
+
+msgid "Lantern"
+msgstr ""
+
+msgid "Lard"
 msgstr ""
 
 msgid "Leather"
@@ -151,16 +310,34 @@ msgstr ""
 msgid "Leather Barding"
 msgstr ""
 
+msgid "Light crossbows can only be fired every once in 2 rounds and ignore 2 AC points"
+msgstr ""
+
+msgid "Lock"
+msgstr ""
+
 msgid "Long"
 msgstr ""
 
 msgid "Mace"
 msgstr ""
 
+msgid "Mallet"
+msgstr ""
+
+msgid "Manacles"
+msgstr ""
+
 msgid "Manage"
 msgstr ""
 
 msgid "Mancatcher"
+msgstr ""
+
+msgid "Map, Kingdom"
+msgstr ""
+
+msgid "Map, Local"
 msgstr ""
 
 msgid "Maul"
@@ -175,6 +352,15 @@ msgstr ""
 msgid "miles"
 msgstr ""
 
+msgid "Mirror, Glass"
+msgstr ""
+
+msgid "Mirror, Silver"
+msgstr ""
+
+msgid "Mirror, Steel"
+msgstr ""
+
 msgid "Miscellaneous Equipment"
 msgstr ""
 
@@ -184,13 +370,28 @@ msgstr ""
 msgid "Movement"
 msgstr ""
 
+msgid "Nails"
+msgstr ""
+
 msgid "Name"
+msgstr ""
+
+msgid "No encumbrance if empty"
 msgstr ""
 
 msgid "optional"
 msgstr ""
 
+msgid "Paper"
+msgstr ""
+
 msgid "Per day"
+msgstr ""
+
+msgid "Pick, Miner’s"
+msgstr ""
+
+msgid "Pipe"
 msgstr ""
 
 msgid "Plate"
@@ -199,19 +400,37 @@ msgstr ""
 msgid "Plate Barding"
 msgstr ""
 
+msgid "Pole, 10'"
+msgstr ""
+
 msgid "Polearm"
+msgstr ""
+
+msgid "Pouch"
 msgstr ""
 
 msgid "Princess Helpers"
 msgstr ""
 
+msgid "Provided price is minimal"
+msgstr ""
+
 msgid "Pseudo"
+msgstr ""
+
+msgid "Quiver"
 msgstr ""
 
 msgid "Range"
 msgstr ""
 
 msgid "Rapier"
+msgstr ""
+
+msgid "Rations, Iron/Day"
+msgstr ""
+
+msgid "Rations, Standard/Day"
 msgstr ""
 
 msgid "Required"
@@ -221,6 +440,15 @@ msgid "Reset"
 msgstr ""
 
 msgid "Reset all equipment"
+msgstr ""
+
+msgid "Riding Gear"
+msgstr ""
+
+msgid "Rock"
+msgstr ""
+
+msgid "Rope, 50'"
 msgstr ""
 
 msgid "RU"
@@ -236,6 +464,15 @@ msgid "Rural Cost"
 msgstr ""
 
 msgid "Russian"
+msgstr ""
+
+msgid "Sack"
+msgstr ""
+
+msgid "Saddlebag"
+msgstr ""
+
+msgid "Scroll Case"
 msgstr ""
 
 msgid "Second rank weapons: lance, polearm, spear."
@@ -256,10 +493,43 @@ msgstr ""
 msgid "Short sword"
 msgstr ""
 
+msgid "Shovel"
+msgstr ""
+
+msgid "Sling"
+msgstr ""
+
+msgid "Sling bullets (10)"
+msgstr ""
+
+msgid "Sling bullets, rocks (10)"
+msgstr ""
+
+msgid "Slings fired with stones instead of bullets have half the listed range."
+msgstr ""
+
+msgid "Slings fired with stones instead of bullets have the listed range (half of the regular)."
+msgstr ""
+
+msgid "Soap"
+msgstr ""
+
 msgid "Some weapons can attack “from the second rank.” This is used when there is a definite battle line in combat. Usually only those on the front line of battle can strike, but those weapons usable from the second rank allow anyone immediately behind the battle line to strike as well."
 msgstr ""
 
 msgid "Spear"
+msgstr ""
+
+msgid "Specialist’s Tools"
+msgstr ""
+
+msgid "Spike, Iron"
+msgstr ""
+
+msgid "Spike, Wooden"
+msgstr ""
+
+msgid "Spyglass"
 msgstr ""
 
 msgid "Staff"
@@ -269,6 +539,18 @@ msgid "Sword"
 msgstr ""
 
 msgid "Targets at Medium range are –2 to hit, –4 to hit at Long range."
+msgstr ""
+
+msgid "Tent, Grand"
+msgstr ""
+
+msgid "Tent, Pavilion"
+msgstr ""
+
+msgid "Tent, Personal"
+msgstr ""
+
+msgid "Tent, Regular"
 msgstr ""
 
 msgid "These are one-handed weapons, including short swords and hand axes"
@@ -283,6 +565,15 @@ msgstr ""
 msgid "This weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 msgstr ""
 
+msgid "Tinderbox"
+msgstr ""
+
+msgid "Tobacco"
+msgstr ""
+
+msgid "Torch"
+msgstr ""
+
 msgid "Two-handed sword"
 msgstr ""
 
@@ -295,7 +586,13 @@ msgstr ""
 msgid "Use of this weapon requires an attack from surprise, or a successful grapple. If a hit is scored, the target is considered grappled and will take 1d6 damage per round."
 msgstr ""
 
+msgid "Vial or Bottle"
+msgstr ""
+
 msgid "Wallet"
+msgstr ""
+
+msgid "Waterskin"
 msgstr ""
 
 msgid "Weapon, Great"
@@ -317,4 +614,10 @@ msgid "Weight"
 msgstr ""
 
 msgid "Whip"
+msgstr ""
+
+msgid "Whistle"
+msgstr ""
+
+msgid "Wolvesbane"
 msgstr ""

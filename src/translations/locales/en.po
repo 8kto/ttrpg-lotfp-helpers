@@ -19,6 +19,9 @@ msgstr "{0}"
 msgid "+1 AC versus mêlée attacks, +2 AC versus missile attacks."
 msgstr "+1 AC versus mêlée attacks, +2 AC versus missile attacks."
 
+msgid "A rock for throwing, not an ammunition"
+msgstr "A rock for throwing, not an ammunition"
+
 msgid "AC"
 msgstr "AC"
 
@@ -34,14 +37,68 @@ msgstr "Add equipment item"
 msgid "Add item"
 msgstr "Add item"
 
+msgid "Air Bladder"
+msgstr "Air Bladder"
+
 msgid "All costs are in silver pieces"
 msgstr "All costs are in silver pieces"
 
 msgid "Armor"
 msgstr "Armor"
 
+msgid "Arrow (1)"
+msgstr "Arrow (1)"
+
+msgid "Arrows, quiver (20)"
+msgstr "Arrows, quiver (20)"
+
+msgid "Backpack"
+msgstr "Backpack"
+
+msgid "Barrel"
+msgstr "Barrel"
+
 msgid "Battle axe"
 msgstr "Battle axe"
+
+msgid "Bedroll"
+msgstr "Bedroll"
+
+msgid "Block and Tackle"
+msgstr "Block and Tackle"
+
+msgid "Blowgun"
+msgstr "Blowgun"
+
+msgid "Book, Blank"
+msgstr "Book, Blank"
+
+msgid "Book, Reading"
+msgstr "Book, Reading"
+
+msgid "Book, Spell (Blank)"
+msgstr "Book, Spell (Blank)"
+
+msgid "Bottle of Wine/Liquor, Decent"
+msgstr "Bottle of Wine/Liquor, Decent"
+
+msgid "Bottle of Wine/Liquor, Poor"
+msgstr "Bottle of Wine/Liquor, Poor"
+
+msgid "Bottle of Wine/Liquor, Rich"
+msgstr "Bottle of Wine/Liquor, Rich"
+
+msgid "Bow, Long"
+msgstr "Bow, Long"
+
+msgid "Bow, Short"
+msgstr "Bow, Short"
+
+msgid "Caltrop"
+msgstr "Caltrop"
+
+msgid "Candle"
+msgstr "Candle"
 
 msgid "Category"
 msgstr "Category"
@@ -55,11 +112,32 @@ msgstr "Chain"
 msgid "Chain Barding"
 msgstr "Chain Barding"
 
+msgid "Chain, per foot"
+msgstr "Chain, per foot"
+
+msgid "Chalk"
+msgstr "Chalk"
+
+msgid "Chest"
+msgstr "Chest"
+
 msgid "City"
 msgstr "City"
 
 msgid "City Cost"
 msgstr "City Cost"
+
+msgid "Clothing, Extravagant"
+msgstr "Clothing, Extravagant"
+
+msgid "Clothing, Normal"
+msgstr "Clothing, Normal"
+
+msgid "Clothing, Poor"
+msgstr "Clothing, Poor"
+
+msgid "Clothing, Winter Travel"
+msgstr "Clothing, Winter Travel"
 
 msgid "Club"
 msgstr "Club"
@@ -67,11 +145,32 @@ msgstr "Club"
 msgid "Combat"
 msgstr "Combat"
 
+msgid "Cooking Pots"
+msgstr "Cooking Pots"
+
 msgid "Copper pieces"
 msgstr "Copper pieces"
 
 msgid "Cost"
 msgstr "Cost"
+
+msgid "Crampons"
+msgstr "Crampons"
+
+msgid "Crossbow bolt (1)"
+msgstr "Crossbow bolt (1)"
+
+msgid "Crossbow bolts, quiver (20)"
+msgstr "Crossbow bolts, quiver (20)"
+
+msgid "Crossbow, Heavy"
+msgstr "Crossbow, Heavy"
+
+msgid "Crossbow, Light"
+msgstr "Crossbow, Light"
+
+msgid "Crowbar"
+msgstr "Crowbar"
 
 msgid "CZ"
 msgstr "CZ"
@@ -85,8 +184,14 @@ msgstr "Dagger"
 msgid "Damage"
 msgstr "Damage"
 
+msgid "Dart"
+msgstr "Dart"
+
 msgid "Details"
 msgstr "Details"
+
+msgid "Drill"
+msgstr "Drill"
 
 msgid "Each missile weapon can be fired once per round with the exception of the crossbows."
 msgstr "Each missile weapon can be fired once per round with the exception of the crossbows."
@@ -118,14 +223,32 @@ msgstr "Exploration"
 msgid "Explorers traveling ... with ... metal armor clomping on stone floors are not going to surprise anything or anyone (PCB p.56)."
 msgstr "Explorers traveling ... with ... metal armor clomping on stone floors are not going to surprise anything or anyone (PCB p.56)."
 
+msgid "Feed, Animal/Day"
+msgstr "Feed, Animal/Day"
+
 msgid "Filter by name"
 msgstr "Filter by name"
+
+msgid "Fishing Gear"
+msgstr "Fishing Gear"
+
+msgid "Flask of Lamp Oil"
+msgstr "Flask of Lamp Oil"
 
 msgid "ft"
 msgstr "ft"
 
+msgid "Garlic"
+msgstr "Garlic"
+
 msgid "Garrote"
 msgstr "Garrote"
+
+msgid "Gem"
+msgstr "Gem"
+
+msgid "Grappling Hook"
+msgstr "Grappling Hook"
 
 msgid "Great axe"
 msgstr "Great axe"
@@ -133,8 +256,32 @@ msgstr "Great axe"
 msgid "Hand axe"
 msgstr "Hand axe"
 
+msgid "Heavy crossbows can only be fired once in 3 rounds and ignore 4 AC points"
+msgstr "Heavy crossbows can only be fired once in 3 rounds and ignore 4 AC points"
+
+msgid "Holy Symbol, Silver"
+msgstr "Holy Symbol, Silver"
+
+msgid "Holy Symbol, Steel"
+msgstr "Holy Symbol, Steel"
+
+msgid "Holy Symbol, Wood"
+msgstr "Holy Symbol, Wood"
+
+msgid "Holy Water"
+msgstr "Holy Water"
+
+msgid "Hourglass"
+msgstr "Hourglass"
+
 msgid "Include the weight"
 msgstr "Include the weight"
+
+msgid "Ink"
+msgstr "Ink"
+
+msgid "Instrument"
+msgstr "Instrument"
 
 msgid "Inventory"
 msgstr "Inventory"
@@ -142,8 +289,20 @@ msgstr "Inventory"
 msgid "Inventory cost"
 msgstr "Inventory cost"
 
+msgid "Jewelry"
+msgstr "Jewelry"
+
+msgid "Ladder, 10'"
+msgstr "Ladder, 10'"
+
 msgid "Lance"
 msgstr "Lance"
+
+msgid "Lantern"
+msgstr "Lantern"
+
+msgid "Lard"
+msgstr "Lard"
 
 msgid "Leather"
 msgstr "Leather"
@@ -151,17 +310,35 @@ msgstr "Leather"
 msgid "Leather Barding"
 msgstr "Leather Barding"
 
+msgid "Light crossbows can only be fired every once in 2 rounds and ignore 2 AC points"
+msgstr "Light crossbows can only be fired every once in 2 rounds and ignore 2 AC points"
+
+msgid "Lock"
+msgstr "Lock"
+
 msgid "Long"
 msgstr "Long"
 
 msgid "Mace"
 msgstr "Mace"
 
+msgid "Mallet"
+msgstr "Mallet"
+
+msgid "Manacles"
+msgstr "Manacles"
+
 msgid "Manage"
 msgstr "Manage"
 
 msgid "Mancatcher"
 msgstr "Mancatcher"
+
+msgid "Map, Kingdom"
+msgstr "Map, Kingdom"
+
+msgid "Map, Local"
+msgstr "Map, Local"
 
 msgid "Maul"
 msgstr "Maul"
@@ -175,6 +352,15 @@ msgstr "Mêlée Weapons"
 msgid "miles"
 msgstr "miles"
 
+msgid "Mirror, Glass"
+msgstr "Mirror, Glass"
+
+msgid "Mirror, Silver"
+msgstr "Mirror, Silver"
+
+msgid "Mirror, Steel"
+msgstr "Mirror, Steel"
+
 msgid "Miscellaneous Equipment"
 msgstr "Miscellaneous Equipment"
 
@@ -184,14 +370,29 @@ msgstr "Missile Weapons"
 msgid "Movement"
 msgstr "Movement"
 
+msgid "Nails"
+msgstr "Nails"
+
 msgid "Name"
 msgstr "Name"
+
+msgid "No encumbrance if empty"
+msgstr "No encumbrance if empty"
 
 msgid "optional"
 msgstr "optional"
 
+msgid "Paper"
+msgstr "Paper"
+
 msgid "Per day"
 msgstr "Per day"
+
+msgid "Pick, Miner’s"
+msgstr "Pick, Miner’s"
+
+msgid "Pipe"
+msgstr "Pipe"
 
 msgid "Plate"
 msgstr "Plate"
@@ -199,20 +400,38 @@ msgstr "Plate"
 msgid "Plate Barding"
 msgstr "Plate Barding"
 
+msgid "Pole, 10'"
+msgstr "Pole, 10'"
+
 msgid "Polearm"
 msgstr "Polearm"
+
+msgid "Pouch"
+msgstr "Pouch"
 
 msgid "Princess Helpers"
 msgstr "Princess Helpers"
 
+msgid "Provided price is minimal"
+msgstr "Provided price is minimal"
+
 msgid "Pseudo"
 msgstr "Pseudo"
+
+msgid "Quiver"
+msgstr "Quiver"
 
 msgid "Range"
 msgstr "Range"
 
 msgid "Rapier"
 msgstr "Rapier"
+
+msgid "Rations, Iron/Day"
+msgstr "Rations, Iron/Day"
+
+msgid "Rations, Standard/Day"
+msgstr "Rations, Standard/Day"
 
 msgid "Required"
 msgstr "Required"
@@ -222,6 +441,15 @@ msgstr "Reset"
 
 msgid "Reset all equipment"
 msgstr "Reset all equipment"
+
+msgid "Riding Gear"
+msgstr "Riding Gear"
+
+msgid "Rock"
+msgstr "Rock"
+
+msgid "Rope, 50'"
+msgstr "Rope, 50'"
 
 msgid "RU"
 msgstr "RU"
@@ -237,6 +465,15 @@ msgstr "Rural Cost"
 
 msgid "Russian"
 msgstr "Russian"
+
+msgid "Sack"
+msgstr "Sack"
+
+msgid "Saddlebag"
+msgstr "Saddlebag"
+
+msgid "Scroll Case"
+msgstr "Scroll Case"
 
 msgid "Second rank weapons: lance, polearm, spear."
 msgstr "Second rank weapons: lance, polearm, spear."
@@ -256,11 +493,44 @@ msgstr "Short"
 msgid "Short sword"
 msgstr "Short sword"
 
+msgid "Shovel"
+msgstr "Shovel"
+
+msgid "Sling"
+msgstr "Sling"
+
+msgid "Sling bullets (10)"
+msgstr "Sling bullets (10)"
+
+msgid "Sling bullets, rocks (10)"
+msgstr "Sling bullets, rocks (10)"
+
+msgid "Slings fired with stones instead of bullets have half the listed range."
+msgstr "Slings fired with stones instead of bullets have half the listed range."
+
+msgid "Slings fired with stones instead of bullets have the listed range (half of the regular)."
+msgstr "Slings fired with stones instead of bullets have the listed range (half of the regular)."
+
+msgid "Soap"
+msgstr "Soap"
+
 msgid "Some weapons can attack “from the second rank.” This is used when there is a definite battle line in combat. Usually only those on the front line of battle can strike, but those weapons usable from the second rank allow anyone immediately behind the battle line to strike as well."
 msgstr "Some weapons can attack “from the second rank.” This is used when there is a definite battle line in combat. Usually only those on the front line of battle can strike, but those weapons usable from the second rank allow anyone immediately behind the battle line to strike as well."
 
 msgid "Spear"
 msgstr "Spear"
+
+msgid "Specialist’s Tools"
+msgstr "Specialist’s Tools"
+
+msgid "Spike, Iron"
+msgstr "Spike, Iron"
+
+msgid "Spike, Wooden"
+msgstr "Spike, Wooden"
+
+msgid "Spyglass"
+msgstr "Spyglass"
 
 msgid "Staff"
 msgstr "Staff"
@@ -270,6 +540,18 @@ msgstr "Sword"
 
 msgid "Targets at Medium range are –2 to hit, –4 to hit at Long range."
 msgstr "Targets at Medium range are –2 to hit, –4 to hit at Long range."
+
+msgid "Tent, Grand"
+msgstr "Tent, Grand"
+
+msgid "Tent, Pavilion"
+msgstr "Tent, Pavilion"
+
+msgid "Tent, Personal"
+msgstr "Tent, Personal"
+
+msgid "Tent, Regular"
+msgstr "Tent, Regular"
 
 msgid "These are one-handed weapons, including short swords and hand axes"
 msgstr "These are one-handed weapons, including short swords and hand axes"
@@ -283,6 +565,15 @@ msgstr "This weapon can be used one-handed if charging on horseback. Otherwise, 
 msgid "This weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 msgstr "This weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 
+msgid "Tinderbox"
+msgstr "Tinderbox"
+
+msgid "Tobacco"
+msgstr "Tobacco"
+
+msgid "Torch"
+msgstr "Torch"
+
 msgid "Two-handed sword"
 msgstr "Two-handed sword"
 
@@ -295,8 +586,14 @@ msgstr "Unarmored characters have a Base AC of 12."
 msgid "Use of this weapon requires an attack from surprise, or a successful grapple. If a hit is scored, the target is considered grappled and will take 1d6 damage per round."
 msgstr "Use of this weapon requires an attack from surprise, or a successful grapple. If a hit is scored, the target is considered grappled and will take 1d6 damage per round."
 
+msgid "Vial or Bottle"
+msgstr "Vial or Bottle"
+
 msgid "Wallet"
 msgstr "Wallet"
+
+msgid "Waterskin"
+msgstr "Waterskin"
 
 msgid "Weapon, Great"
 msgstr "Weapon, Great"
@@ -318,3 +615,9 @@ msgstr "Weight"
 
 msgid "Whip"
 msgstr "Whip"
+
+msgid "Whistle"
+msgstr "Whistle"
+
+msgid "Wolvesbane"
+msgstr "Wolvesbane"
