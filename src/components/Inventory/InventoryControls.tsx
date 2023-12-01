@@ -19,7 +19,8 @@ const InventoryControls = () => {
   const [isEquipmentDrawerOpen, setIsEquipmentDrawerOpen] = useState(false)
 
   const iconBtnClassname =
-    'inline-flex cursor-pointer justify-center rounded p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-900'
+    'inline-flex cursor-pointer mr-1 md:mr-0 justify-center rounded p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-900'
+  const iconClassname = 'h-7 w-7 md:h-5 md:w-5'
 
   return (
     <>
@@ -32,7 +33,7 @@ const InventoryControls = () => {
             title={t`Add item`}
             className={iconBtnClassname}
           >
-            <PlusIcon className='h-5 w-5' />
+            <PlusIcon className={iconClassname} />
           </button>
         </div>
         <div className='flex space-x-1 pl-2'>
@@ -44,7 +45,7 @@ const InventoryControls = () => {
             }}
             title={t`Add coins`}
           >
-            <CircleStackIcon className='h-5 w-5' />
+            <CircleStackIcon className={iconClassname} />
           </button>
         </div>
         <div className='flex space-x-1 pl-2'>
@@ -53,7 +54,7 @@ const InventoryControls = () => {
             title={t`Reset all equipment`}
             className={iconBtnClassname}
           >
-            <TrashIcon className='h-5 w-5' />
+            <TrashIcon className={iconClassname} />
           </button>
         </div>
       </div>
