@@ -1,4 +1,5 @@
 import { t, Trans } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
 import React, { useMemo } from 'react'
 
 import DataGrid from '@/components/DataGrid/DataGrid'
@@ -6,7 +7,7 @@ import { trivialSort } from '@/components/DataGrid/helpers'
 import type { DataGridColumn, SortConfig } from '@/components/DataGrid/types'
 import { getInventoryItem } from '@/components/EquipmentList/helpers'
 import ItemDetails from '@/components/Inventory/ItemDetails'
-import { AllEquipment } from '@/config/AllEquipment'
+import EquipmentTranslated from '@/config/EquipmentTranslated'
 import type { EquipmentItem } from '@/domain'
 import type { ArmorItem } from '@/domain/armor'
 import { EncumbrancePoint } from '@/domain/encumbrance'
@@ -54,6 +55,7 @@ const ruralCostColumn: DataGridColumn<ArmorItem> = {
 }
 
 const ArmorGrid = () => {
+  const { i18n } = useLingui()
   const {
     state: { isCostRural },
   } = useInventoryState()
@@ -64,10 +66,10 @@ const ArmorGrid = () => {
   }, [isCostRural])
 
   const dataFilteredByCost = useMemo(() => {
-    const data = Object.values(AllEquipment.Armor)
+    const data = Object.values(new EquipmentTranslated(i18n).Armor)
 
     return isCostRural.get() ? data.filter((i) => i.ruralCost !== null) : data
-  }, [isCostRural])
+  }, [i18n, isCostRural])
 
   const handleAddClick = (item: ArmorItem) => {
     const clone = getInventoryItem(
