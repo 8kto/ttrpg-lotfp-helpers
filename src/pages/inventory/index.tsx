@@ -21,7 +21,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   }
 }
 
-export default function Inventory() {
+export default function InventoryPage() {
   const {
     uiState: { isInventoryVisible },
   } = useContext(UiContext)
