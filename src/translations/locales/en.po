@@ -13,6 +13,9 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+msgid "{0}"
+msgstr "{0}"
+
 msgid "+1 AC versus mêlée attacks, +2 AC versus missile attacks."
 msgstr "+1 AC versus mêlée attacks, +2 AC versus missile attacks."
 
@@ -37,8 +40,14 @@ msgstr "All costs are in silver pieces"
 msgid "Armor"
 msgstr "Armor"
 
+msgid "Battle axe"
+msgstr "Battle axe"
+
 msgid "Category"
 msgstr "Category"
+
+msgid "Cestus"
+msgstr "Cestus"
 
 msgid "Chain"
 msgstr "Chain"
@@ -51,6 +60,9 @@ msgstr "City"
 
 msgid "City Cost"
 msgstr "City Cost"
+
+msgid "Club"
+msgstr "Club"
 
 msgid "Combat"
 msgstr "Combat"
@@ -66,6 +78,9 @@ msgstr "CZ"
 
 msgid "Czech"
 msgstr "Czech"
+
+msgid "Dagger"
+msgstr "Dagger"
 
 msgid "Damage"
 msgstr "Damage"
@@ -109,6 +124,15 @@ msgstr "Filter by name"
 msgid "ft"
 msgstr "ft"
 
+msgid "Garrote"
+msgstr "Garrote"
+
+msgid "Great axe"
+msgstr "Great axe"
+
+msgid "Hand axe"
+msgstr "Hand axe"
+
 msgid "Include the weight"
 msgstr "Include the weight"
 
@@ -117,6 +141,9 @@ msgstr "Inventory"
 
 msgid "Inventory cost"
 msgstr "Inventory cost"
+
+msgid "Lance"
+msgstr "Lance"
 
 msgid "Leather"
 msgstr "Leather"
@@ -127,8 +154,17 @@ msgstr "Leather Barding"
 msgid "Long"
 msgstr "Long"
 
+msgid "Mace"
+msgstr "Mace"
+
 msgid "Manage"
 msgstr "Manage"
+
+msgid "Mancatcher"
+msgstr "Mancatcher"
+
+msgid "Maul"
+msgstr "Maul"
 
 msgid "Medium"
 msgstr "Medium"
@@ -163,6 +199,9 @@ msgstr "Plate"
 msgid "Plate Barding"
 msgstr "Plate Barding"
 
+msgid "Polearm"
+msgstr "Polearm"
+
 msgid "Princess Helpers"
 msgstr "Princess Helpers"
 
@@ -171,6 +210,9 @@ msgstr "Pseudo"
 
 msgid "Range"
 msgstr "Range"
+
+msgid "Rapier"
+msgstr "Rapier"
 
 msgid "Required"
 msgstr "Required"
@@ -211,11 +253,38 @@ msgstr "Shield"
 msgid "Short"
 msgstr "Short"
 
+msgid "Short sword"
+msgstr "Short sword"
+
 msgid "Some weapons can attack “from the second rank.” This is used when there is a definite battle line in combat. Usually only those on the front line of battle can strike, but those weapons usable from the second rank allow anyone immediately behind the battle line to strike as well."
 msgstr "Some weapons can attack “from the second rank.” This is used when there is a definite battle line in combat. Usually only those on the front line of battle can strike, but those weapons usable from the second rank allow anyone immediately behind the battle line to strike as well."
 
+msgid "Spear"
+msgstr "Spear"
+
+msgid "Staff"
+msgstr "Staff"
+
+msgid "Sword"
+msgstr "Sword"
+
 msgid "Targets at Medium range are –2 to hit, –4 to hit at Long range."
 msgstr "Targets at Medium range are –2 to hit, –4 to hit at Long range."
+
+msgid "These are one-handed weapons, including short swords and hand axes"
+msgstr "These are one-handed weapons, including short swords and hand axes"
+
+msgid "This includes all sorts of fist wrappings and brass knuckle weapon types. Users suffer a –2 penalty to hit any opponent with an unadjusted AC of 15 or better."
+msgstr "This includes all sorts of fist wrappings and brass knuckle weapon types. Users suffer a –2 penalty to hit any opponent with an unadjusted AC of 15 or better."
+
+msgid "This weapon can be used one-handed if charging on horseback. Otherwise, it is effectively a polearm (pike)"
+msgstr "This weapon can be used one-handed if charging on horseback. Otherwise, it is effectively a polearm (pike)"
+
+msgid "This weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
+msgstr "This weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
+
+msgid "Two-handed sword"
+msgstr "Two-handed sword"
 
 msgid "Unadjusted AC is that of solely the armor and shield. Dexterity modifiers, magical modifiers, or any other adjustments are not counted."
 msgstr "Unadjusted AC is that of solely the armor and shield. Dexterity modifiers, magical modifiers, or any other adjustments are not counted."
@@ -223,11 +292,29 @@ msgstr "Unadjusted AC is that of solely the armor and shield. Dexterity modifier
 msgid "Unarmored characters have a Base AC of 12."
 msgstr "Unarmored characters have a Base AC of 12."
 
+msgid "Use of this weapon requires an attack from surprise, or a successful grapple. If a hit is scored, the target is considered grappled and will take 1d6 damage per round."
+msgstr "Use of this weapon requires an attack from surprise, or a successful grapple. If a hit is scored, the target is considered grappled and will take 1d6 damage per round."
+
 msgid "Wallet"
 msgstr "Wallet"
+
+msgid "Weapon, Great"
+msgstr "Weapon, Great"
+
+msgid "Weapon, Medium"
+msgstr "Weapon, Medium"
+
+msgid "Weapon, Minor"
+msgstr "Weapon, Minor"
+
+msgid "Weapon, Small"
+msgstr "Weapon, Small"
 
 msgid "Weapons that allow to receive charge (damage x2, act first): polearm, spear."
 msgstr "Weapons that allow to receive charge (damage x2, act first): polearm, spear."
 
 msgid "Weight"
 msgstr "Weight"
+
+msgid "Whip"
+msgstr "Whip"

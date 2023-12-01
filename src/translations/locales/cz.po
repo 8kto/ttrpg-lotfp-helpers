@@ -13,6 +13,9 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+msgid "{0}"
+msgstr ""
+
 msgid "+1 AC versus mêlée attacks, +2 AC versus missile attacks."
 msgstr ""
 
@@ -37,7 +40,13 @@ msgstr ""
 msgid "Armor"
 msgstr ""
 
+msgid "Battle axe"
+msgstr ""
+
 msgid "Category"
+msgstr ""
+
+msgid "Cestus"
 msgstr ""
 
 msgid "Chain"
@@ -50,6 +59,9 @@ msgid "City"
 msgstr ""
 
 msgid "City Cost"
+msgstr ""
+
+msgid "Club"
 msgstr ""
 
 msgid "Combat"
@@ -65,6 +77,9 @@ msgid "CZ"
 msgstr ""
 
 msgid "Czech"
+msgstr ""
+
+msgid "Dagger"
 msgstr ""
 
 msgid "Damage"
@@ -109,6 +124,15 @@ msgstr ""
 msgid "ft"
 msgstr ""
 
+msgid "Garrote"
+msgstr ""
+
+msgid "Great axe"
+msgstr ""
+
+msgid "Hand axe"
+msgstr ""
+
 msgid "Include the weight"
 msgstr ""
 
@@ -116,6 +140,9 @@ msgid "Inventory"
 msgstr ""
 
 msgid "Inventory cost"
+msgstr ""
+
+msgid "Lance"
 msgstr ""
 
 msgid "Leather"
@@ -127,7 +154,16 @@ msgstr ""
 msgid "Long"
 msgstr ""
 
+msgid "Mace"
+msgstr ""
+
 msgid "Manage"
+msgstr ""
+
+msgid "Mancatcher"
+msgstr ""
+
+msgid "Maul"
 msgstr ""
 
 msgid "Medium"
@@ -163,6 +199,9 @@ msgstr ""
 msgid "Plate Barding"
 msgstr ""
 
+msgid "Polearm"
+msgstr ""
+
 msgid "Princess Helpers"
 msgstr ""
 
@@ -170,6 +209,9 @@ msgid "Pseudo"
 msgstr ""
 
 msgid "Range"
+msgstr ""
+
+msgid "Rapier"
 msgstr ""
 
 msgid "Required"
@@ -211,10 +253,37 @@ msgstr ""
 msgid "Short"
 msgstr ""
 
+msgid "Short sword"
+msgstr ""
+
 msgid "Some weapons can attack “from the second rank.” This is used when there is a definite battle line in combat. Usually only those on the front line of battle can strike, but those weapons usable from the second rank allow anyone immediately behind the battle line to strike as well."
 msgstr ""
 
+msgid "Spear"
+msgstr ""
+
+msgid "Staff"
+msgstr ""
+
+msgid "Sword"
+msgstr ""
+
 msgid "Targets at Medium range are –2 to hit, –4 to hit at Long range."
+msgstr ""
+
+msgid "These are one-handed weapons, including short swords and hand axes"
+msgstr ""
+
+msgid "This includes all sorts of fist wrappings and brass knuckle weapon types. Users suffer a –2 penalty to hit any opponent with an unadjusted AC of 15 or better."
+msgstr ""
+
+msgid "This weapon can be used one-handed if charging on horseback. Otherwise, it is effectively a polearm (pike)"
+msgstr ""
+
+msgid "This weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
+msgstr ""
+
+msgid "Two-handed sword"
 msgstr ""
 
 msgid "Unadjusted AC is that of solely the armor and shield. Dexterity modifiers, magical modifiers, or any other adjustments are not counted."
@@ -223,11 +292,29 @@ msgstr ""
 msgid "Unarmored characters have a Base AC of 12."
 msgstr ""
 
+msgid "Use of this weapon requires an attack from surprise, or a successful grapple. If a hit is scored, the target is considered grappled and will take 1d6 damage per round."
+msgstr ""
+
 msgid "Wallet"
+msgstr ""
+
+msgid "Weapon, Great"
+msgstr ""
+
+msgid "Weapon, Medium"
+msgstr ""
+
+msgid "Weapon, Minor"
+msgstr ""
+
+msgid "Weapon, Small"
 msgstr ""
 
 msgid "Weapons that allow to receive charge (damage x2, act first): polearm, spear."
 msgstr ""
 
 msgid "Weight"
+msgstr ""
+
+msgid "Whip"
 msgstr ""
