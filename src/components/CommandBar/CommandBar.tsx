@@ -17,7 +17,7 @@ const CommandBar = () => {
   return (
     <div className='my-2 flex justify-end'>
       <div className='mr-4 flex items-center'>
-        <h3 className='font-semibold text-red-900'>Cost</h3>
+        <h3 className='font-semibold text-red-900'><Trans>Cost</Trans></h3>
       </div>
       <div className='mr-4 flex items-center'>
         <input
