@@ -13,6 +13,9 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+msgid "+1 AC versus mêlée attacks, +2 AC versus missile attacks."
+msgstr "+1 AC против рукопашных, +2 AC против дальнобойных атак."
+
 msgid "AC"
 msgstr "AC"
 
@@ -36,6 +39,12 @@ msgstr "Броня"
 
 msgid "Category"
 msgstr "Категория"
+
+msgid "Chain"
+msgstr "Кольчуга"
+
+msgid "Chain Barding"
+msgstr "Кольчужный бард"
 
 msgid "City"
 msgstr "Город"
@@ -91,6 +100,9 @@ msgstr "Снаряжение"
 msgid "Exploration"
 msgstr "Исследование"
 
+msgid "Explorers traveling ... with ... metal armor clomping on stone floors are not going to surprise anything or anyone (PCB p.56)."
+msgstr ""
+
 msgid "Filter by name"
 msgstr "Фильтр по имени"
 
@@ -105,6 +117,12 @@ msgstr "Инвентарь"
 
 msgid "Inventory cost"
 msgstr "Стоимость инвентаря"
+
+msgid "Leather"
+msgstr "Кожаная броня"
+
+msgid "Leather Barding"
+msgstr "Кожаный бард"
 
 msgid "Long"
 msgstr "Дальняя"
@@ -138,6 +156,12 @@ msgstr "необязательно"
 
 msgid "Per day"
 msgstr "В день"
+
+msgid "Plate"
+msgstr "Латы"
+
+msgid "Plate Barding"
+msgstr "Латный бард"
 
 msgid "Princess Helpers"
 msgstr "Princess Helpers"
@@ -180,6 +204,9 @@ msgstr "Установить"
 
 msgid "Set coins"
 msgstr "Монеты"
+
+msgid "Shield"
+msgstr "Щит"
 
 msgid "Short"
 msgstr "Ближняя"

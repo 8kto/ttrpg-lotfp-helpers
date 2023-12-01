@@ -13,6 +13,9 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+msgid "+1 AC versus mêlée attacks, +2 AC versus missile attacks."
+msgstr "+1 AC versus mêlée attacks, +2 AC versus missile attacks."
+
 msgid "AC"
 msgstr "AC"
 
@@ -36,6 +39,12 @@ msgstr "Armor"
 
 msgid "Category"
 msgstr "Category"
+
+msgid "Chain"
+msgstr "Chain"
+
+msgid "Chain Barding"
+msgstr "Chain Barding"
 
 msgid "City"
 msgstr "City"
@@ -91,6 +100,9 @@ msgstr "Equipment"
 msgid "Exploration"
 msgstr "Exploration"
 
+msgid "Explorers traveling ... with ... metal armor clomping on stone floors are not going to surprise anything or anyone (PCB p.56)."
+msgstr "Explorers traveling ... with ... metal armor clomping on stone floors are not going to surprise anything or anyone (PCB p.56)."
+
 msgid "Filter by name"
 msgstr "Filter by name"
 
@@ -105,6 +117,12 @@ msgstr "Inventory"
 
 msgid "Inventory cost"
 msgstr "Inventory cost"
+
+msgid "Leather"
+msgstr "Leather"
+
+msgid "Leather Barding"
+msgstr "Leather Barding"
 
 msgid "Long"
 msgstr "Long"
@@ -138,6 +156,12 @@ msgstr "optional"
 
 msgid "Per day"
 msgstr "Per day"
+
+msgid "Plate"
+msgstr "Plate"
+
+msgid "Plate Barding"
+msgstr "Plate Barding"
 
 msgid "Princess Helpers"
 msgstr "Princess Helpers"
@@ -180,6 +204,9 @@ msgstr "Set"
 
 msgid "Set coins"
 msgstr "Set coins"
+
+msgid "Shield"
+msgstr "Shield"
 
 msgid "Short"
 msgstr "Short"
