@@ -11,7 +11,7 @@ if (process.env.NODE_ENV !== 'production') {
 module.exports = {
   locales: locales,
   sourceLocale: 'en',
-  "orderBy": "messageId",
+  orderBy: 'messageId',
   pseudoLocale: 'pseudo',
   catalogs: [
     {
