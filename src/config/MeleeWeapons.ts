@@ -15,7 +15,7 @@ export const MeleeWeapons: ReadonlyArray<
       dice: Dice.d3,
       x: 1,
     },
-    details: msg`This includes all sorts of fist wrappings and brass knuckle weapon types. Users suffer a –2 penalty to hit any opponent with an unadjusted AC of 15 or better.`,
+    details: msg`config.melee.cestus.details`,
     name: msg`Cestus`,
     points: EncumbrancePoint.None,
     ruralCost: null,

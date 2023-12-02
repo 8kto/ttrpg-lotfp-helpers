@@ -13,9 +13,6 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-msgid "This includes all sorts of fist wrappings and brass knuckle weapon types. Users suffer a –2 penalty to hit any opponent with an unadjusted AC of 15 or better."
-msgstr ""
-
 msgid "Clothing, Poor"
 msgstr ""
 
@@ -545,6 +542,9 @@ msgid "Movement"
 msgstr ""
 
 msgid "Mallet"
+msgstr ""
+
+msgid "config.melee.cestus.details"
 msgstr ""
 
 msgid "Long"

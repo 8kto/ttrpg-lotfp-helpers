@@ -13,9 +13,6 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-msgid "This includes all sorts of fist wrappings and brass knuckle weapon types. Users suffer a –2 penalty to hit any opponent with an unadjusted AC of 15 or better."
-msgstr "Это включает в себя все виды обертываний для кулака и типы оружия с кастетами. Пользователи получают штраф –2 к попаданию по любому противнику с нескорректированным AC 15 и выше."
-
 msgid "Clothing, Poor"
 msgstr "Одежда, простая"
 
@@ -449,7 +446,7 @@ msgid "Bow, Long"
 msgstr "Длинный лук"
 
 msgid "Cestus"
-msgstr "Цестус"
+msgstr "Цест"
 
 msgid "Crossbow, Light"
 msgstr "Легкий арбалет"
@@ -546,6 +543,9 @@ msgstr "Передвижение"
 
 msgid "Mallet"
 msgstr "Киянка"
+
+msgid "config.melee.cestus.details"
+msgstr "Включает в себя все виды повязок для кулака и кастеты. Штраф –2 к попаданию по любому противнику с немодифицированным AC 15 и выше."
 
 msgid "Long"
 msgstr "Дальняя"
