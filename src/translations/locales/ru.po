@@ -637,7 +637,8 @@ msgstr "Двуручный меч"
 msgid "Unadjusted AC is that of solely the armor and shield. Dexterity modifiers, magical modifiers, or any other adjustments are not counted."
 msgstr "Неисправленный AC - это только броня и щит. Модификаторы ловкости, магические модификаторы или любые другие корректировки не учитываются."
 
-msgid "Unarmored characters have a Base AC of 12."
+#. js-lingui-explicit-id
+msgid "armor.baseAc"
 msgstr "Персонажи без доспехов имеют базовый AC 12."
 
 msgid "Use of this weapon requires an attack from surprise, or a successful grapple. If a hit is scored, the target is considered grappled and will take 1d6 damage per round."

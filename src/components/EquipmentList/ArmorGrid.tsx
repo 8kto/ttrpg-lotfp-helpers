@@ -115,7 +115,9 @@ const ArmorGrid = () => {
     <>
       <div className='py-6'>
         <p className={'mb-2'}>
-          <Trans>Unarmored characters have a Base AC of 12.</Trans>
+          <Trans id='armor.baseAc'>
+            Unarmored characters have a Base AC of 12.
+          </Trans>
         </p>
         <p className={'mb-2'}>
           <Trans>
