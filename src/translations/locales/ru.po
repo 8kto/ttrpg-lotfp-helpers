@@ -65,7 +65,7 @@ msgid "Shovel"
 msgstr "Лопата"
 
 msgid "Air Bladder"
-msgstr "Воздушный мешок"
+msgstr "Воздушный пузырь"
 
 msgid "Holy Symbol, Wood"
 msgstr "Священный символ, деревянный"
@@ -92,10 +92,10 @@ msgid "Mace"
 msgstr "Булава"
 
 msgid "Riding Gear"
-msgstr "Верховое снаряжение"
+msgstr "Снаряжение, верховая езда"
 
 msgid "Book, Spell (Blank)"
-msgstr "Книга заклинаний (Бланк)"
+msgstr "Книга заклинаний (пустая)"
 
 msgid "Scroll Case"
 msgstr "Футляр для свитков"
@@ -168,16 +168,16 @@ msgid "Per day"
 msgstr "В день"
 
 msgid "Tent, Personal"
-msgstr "Персональная палатка"
+msgstr "Палатка, одиночная"
 
 msgid "Filter by name"
 msgstr "Фильтр по имени"
 
 msgid "Wolvesbane"
-msgstr "Волчий бан"
+msgstr "Аконит (Wolvesbane)"
 
 msgid "Fishing Gear"
-msgstr "Рыболовные принадлежности"
+msgstr "Рыболовные снасти"
 
 msgid "Bedroll"
 msgstr "Спальный мешок"
@@ -203,7 +203,7 @@ msgid "Holy Symbol, Silver"
 msgstr "Священный символ, серебряный"
 
 msgid "Polearm"
-msgstr "Дротик"
+msgstr "Древковое оружие"
 
 msgid "Enable the weight of coins for encumbrance calculations."
 msgstr "Учитывать вес монет для нагрузки."
@@ -221,7 +221,7 @@ msgid "Set coins"
 msgstr "Монеты"
 
 msgid "Book, Reading"
-msgstr "Книга для чтения"
+msgstr "Книга, для чтения"
 
 msgid "Add coins"
 msgstr "Добавить монет"
@@ -243,13 +243,13 @@ msgid "Lightly"
 msgstr "Легко нагружен"
 
 msgid "Heavy crossbows can only be fired once in 3 rounds and ignore 4 AC points"
-msgstr "Из тяжелых арбалетов можно стрелять только один раз за 3 раунда и игнорировать 4 очка AC."
+msgstr "Из тяжелых арбалетов можно стрелять только один раз за 3 раунда и игнорировать 4 AC."
 
 msgid "config.misc.caltrop.details"
 msgstr "Ежи (caltrop) — это металлические шипы, которые выглядят как распорки, у которых один острый конец всегда направлен вверх."
 
 msgid "Use of this weapon requires an attack from surprise, or a successful grapple. If a hit is scored, the target is considered grappled and will take 1d6 damage per round."
-msgstr "Использование этого оружия требует атаки с неожиданности или успешного захвата. Если удар успешен, цель считается захваченной и получает 1d6 урона за раунд."
+msgstr "Использование этого оружия требует неожиданной атаки или успешного захвата. Если удар успешен, цель считается захваченной и получает 1d6 урона за раунд."
 
 msgid "Chest"
 msgstr "Сундук"
@@ -258,7 +258,7 @@ msgid "Pseudo"
 msgstr "Псевдо"
 
 msgid "Bottle of Wine/Liquor, Poor"
-msgstr "Бутылка вина/ликера, простое"
+msgstr "Бутылка вина/ликёра, простая"
 
 msgid "Vial or Bottle"
 msgstr "Флакон или Бутылка"
@@ -371,7 +371,7 @@ msgid "Include the weight"
 msgstr "Учитывать вес"
 
 msgid "Lantern"
-msgstr "Лампа"
+msgstr "Фонарь"
 
 msgid "Details"
 msgstr "Детали"
@@ -384,7 +384,7 @@ msgid "Leather Barding"
 msgstr "Кожаный бард"
 
 msgid "Pick, Miner’s"
-msgstr "Шахтерская кирка"
+msgstr "Шахтёрская кирка"
 
 msgid "Gem"
 msgstr "Драгоценный камень"
@@ -399,7 +399,7 @@ msgid "Rations, Standard/Day"
 msgstr "Пайки, стандартные/День"
 
 msgid "Chain, per foot"
-msgstr "Цепь за фут"
+msgstr "Цепь, за фут"
 
 msgid "Loading..."
 msgstr "Загрузка..."
@@ -411,7 +411,7 @@ msgid "Inventory"
 msgstr "Инвентарь"
 
 msgid "Book, Blank"
-msgstr "Книга, Бланк"
+msgstr "Книга, пустая"
 
 msgid "Quiver"
 msgstr "Колчан"
@@ -458,7 +458,7 @@ msgid "Crossbow, Light"
 msgstr "Легкий арбалет"
 
 msgid "Mancatcher"
-msgstr "Ловец людей"
+msgstr "Мэнкетчер"
 
 msgid "Map, Kingdom"
 msgstr "Карта королевства"
@@ -485,7 +485,7 @@ msgid "Tinderbox"
 msgstr "Трутница"
 
 msgid "Reset all equipment"
-msgstr "Сбросить все снаряжение"
+msgstr "Сбросить всё снаряжение"
 
 msgid "Paper"
 msgstr "Бумага"
@@ -569,7 +569,7 @@ msgid "Ink"
 msgstr "Чернила"
 
 msgid "Cooking Pots"
-msgstr "Кухонные горшки"
+msgstr "Кастрюли"
 
 msgid "Jewelry"
 msgstr "Украшения"
@@ -587,7 +587,7 @@ msgid "Hourglass"
 msgstr "Песочные часы"
 
 msgid "This weapon can be used one-handed if charging on horseback. Otherwise, it is effectively a polearm (pike)"
-msgstr "Это оружие можно использовать одной рукой при атаке верхом. В противном случае, это эффективно как древковое оружие (пика)"
+msgstr "Это оружие можно использовать как одноручное при атаке верхом. В противном случае, равноценна древковому оружию (пике)"
 
 msgid "Wallet"
 msgstr "Кошелек"
@@ -602,7 +602,7 @@ msgid "All costs are in silver pieces"
 msgstr "Все цены указаны в серебряных монетах"
 
 msgid "Bottle of Wine/Liquor, Rich"
-msgstr "Бутылка вина/ликера, дорогое"
+msgstr "Бутылка вина/ликера, дорогая"
 
 msgid "Pouch"
 msgstr "Мешочек"
@@ -667,7 +667,7 @@ msgid "Crossbow bolts, quiver (20)"
 msgstr "Арбалетные болты, колчан (20)"
 
 msgid "Bottle of Wine/Liquor, Decent"
-msgstr "Бутылка вина/ликера, приличное"
+msgstr "Бутылка вина/ликера, приличная"
 
 msgid "Chain"
 msgstr "Кольчуга"
@@ -679,7 +679,7 @@ msgid "Enable automatic subtraction of money when equipment items are added"
 msgstr "Автоматически вычитать деньги при добавлении предметов"
 
 msgid "Tent, Pavilion"
-msgstr "Павильонная палатка"
+msgstr "Палатка, павильон"
 
 msgid "Dart"
 msgstr "Дротик"
