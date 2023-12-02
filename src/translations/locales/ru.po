@@ -13,13 +13,258 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+msgid "This includes all sorts of fist wrappings and brass knuckle weapon types. Users suffer a –2 penalty to hit any opponent with an unadjusted AC of 15 or better."
+msgstr "Это включает в себя все виды обертываний для кулака и типы оружия с кастетами. Пользователи получают штраф –2 к попаданию по любому противнику с нескорректированным AC 15 и выше."
+
+msgid "Clothing, Poor"
+msgstr "Одежда, простая"
+
+msgid "Weapon, Medium"
+msgstr "Среднее оружие"
+
+msgid "Great axe"
+msgstr "Большой топор"
+
+msgid "Leather"
+msgstr "Кожаная броня"
+
+msgid "Holy Water"
+msgstr "Святая вода"
+
+msgid "Rations, Iron/Day"
+msgstr "Пайки, железные/День"
+
+msgid "Nails"
+msgstr "Гвозди"
+
+msgid "Pipe"
+msgstr "Трубка"
+
+msgid "Flask of Lamp Oil"
+msgstr "Фляга с ламповым маслом"
+
+msgid "Slings fired with stones instead of bullets have the listed range (half of the regular)."
+msgstr "Пращи, стреляющие камнями вместо пуль, имеют указанную дальность (половина обычной)."
+
+msgid "Saddlebag"
+msgstr "Сумка для седла"
+
+msgid "Holy Symbol, Steel"
+msgstr "Священный символ, стальной"
+
+msgid "Damage"
+msgstr "Урон"
+
+msgid "Tent, Regular"
+msgstr "Обычная палатка"
+
+msgid "Map, Local"
+msgstr "Локальная карта"
+
+msgid "City"
+msgstr "Город"
+
+msgid "Shovel"
+msgstr "Лопата"
+
+msgid "Air Bladder"
+msgstr "Воздушный мешок"
+
+msgid "Holy Symbol, Wood"
+msgstr "Священный символ, деревянный"
+
+msgid "Bow, Short"
+msgstr "Короткий лук"
+
+msgid "Name"
+msgstr "Название"
+
+msgid "Range"
+msgstr "Дальность"
+
+msgid "Manacles"
+msgstr "Кандалы"
+
+msgid "Mirror, Glass"
+msgstr "Зеркало, стеклянное"
+
+msgid "Hand axe"
+msgstr "Ручной топор"
+
+msgid "Mace"
+msgstr "Булава"
+
+msgid "Riding Gear"
+msgstr "Верховое снаряжение"
+
+msgid "Book, Spell (Blank)"
+msgstr "Книга заклинаний (Бланк)"
+
+msgid "Scroll Case"
+msgstr "Футляр для свитков"
+
+msgid "Equipment"
+msgstr "Снаряжение"
+
+msgid "Chalk"
+msgstr "Мел"
+
+msgid "Weapon, Great"
+msgstr "Большое оружие"
+
+msgid "These are one-handed weapons, including short swords and hand axes"
+msgstr "Это одноручное оружие, включая короткие мечи и секиры"
+
+msgid "Barrel"
+msgstr "Бочка"
+
+msgid "optional"
+msgstr "необязательно"
+
+msgid "City Cost"
+msgstr "В городе"
+
+msgid "Rural"
+msgstr "Деревня"
+
 #. js-lingui-explicit-id
 msgid "Armor"
 msgstr "Броня"
 
+msgid "A rock for throwing, not an ammunition"
+msgstr "Камень для метания, не боеприпас"
+
+msgid "Clothing, Extravagant"
+msgstr "Одежда, роскошная"
+
+msgid "Sling bullets (10)"
+msgstr "Снаряды для пращи (10)"
+
+msgid "Drill"
+msgstr "Дрель"
+
+msgid "This weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
+msgstr "Это оружие имеет штраф –2 к попаданию по противникам с нескорректированным AC 15 и выше."
+
+msgid "Weapon, Minor"
+msgstr "Мелкое оружие"
+
+msgid "Slings fired with stones instead of bullets have half the listed range."
+msgstr "Пращи, стреляющие камнями вместо пуль, имеют половину указанной дальности."
+
+msgid "Crowbar"
+msgstr "Лом"
+
+msgid "RU"
+msgstr "RU"
+
+msgid "Arrow (1)"
+msgstr "Стрела (1)"
+
+msgid "Candle"
+msgstr "Свеча"
+
+msgid "Waterskin"
+msgstr "Бурдюк"
+
+msgid "Per day"
+msgstr "В день"
+
+msgid "Tent, Personal"
+msgstr "Персональная палатка"
+
+msgid "Filter by name"
+msgstr "Фильтр по имени"
+
+msgid "Wolvesbane"
+msgstr "Волчий бан"
+
+msgid "Fishing Gear"
+msgstr "Рыболовные принадлежности"
+
+msgid "Bedroll"
+msgstr "Спальный мешок"
+
+msgid "Enter coin amount. Use copper pieces instead of float numbers."
+msgstr "Введите количество монет. Используйте медные монеты вместо дробных чисел."
+
+msgid "Whistle"
+msgstr "Свисток"
+
+msgid "Lock"
+msgstr "Замок"
+
 #. js-lingui-explicit-id
-msgid "Mêlée weapons"
-msgstr "Рукопашное оружие"
+msgid "Heavily"
+msgstr "Тяжело нагружен"
+
+#. js-lingui-explicit-id
+msgid "Heavy"
+msgstr "Тяжёлый"
+
+msgid "Holy Symbol, Silver"
+msgstr "Священный символ, серебряный"
+
+msgid "Polearm"
+msgstr "Дротик"
+
+msgid "Enable the weight of coins for encumbrance calculations."
+msgstr "Учитывать вес монет для нагрузки."
+
+msgid "Cost"
+msgstr "Цена"
+
+msgid "{0}"
+msgstr "{0}"
+
+msgid "EN"
+msgstr "EN"
+
+msgid "Set coins"
+msgstr "Монеты"
+
+msgid "Book, Reading"
+msgstr "Книга для чтения"
+
+msgid "Add coins"
+msgstr "Добавить монет"
+
+msgid "Ladder, 10'"
+msgstr "Лестница, 10 футов"
+
+msgid "Category"
+msgstr "Категория"
+
+msgid "Specialist’s Tools"
+msgstr "Инструменты специалиста"
+
+msgid "Princess Helpers"
+msgstr "Princess Helpers"
+
+#. js-lingui-explicit-id
+msgid "Lightly"
+msgstr "Легко нагружен"
+
+msgid "Heavy crossbows can only be fired once in 3 rounds and ignore 4 AC points"
+msgstr "Из тяжелых арбалетов можно стрелять только один раз за 3 раунда и игнорировать 4 очка AC."
+
+msgid "Use of this weapon requires an attack from surprise, or a successful grapple. If a hit is scored, the target is considered grappled and will take 1d6 damage per round."
+msgstr "Использование этого оружия требует атаки с неожиданности или успешного захвата. Если удар успешен, цель считается захваченной и получает 1d6 урона за раунд."
+
+msgid "Chest"
+msgstr "Сундук"
+
+msgid "Pseudo"
+msgstr "Псевдо"
+
+msgid "Bottle of Wine/Liquor, Poor"
+msgstr "Бутылка вина/ликера, простое"
+
+msgid "Vial or Bottle"
+msgstr "Флакон или Бутылка"
+
+msgid "Club"
+msgstr "Дубина"
 
 #. js-lingui-explicit-id
 msgid "Miscellaneous"
@@ -30,362 +275,184 @@ msgid "Missile weapons"
 msgstr "Метательное оружие"
 
 #. js-lingui-explicit-id
+msgid "Mêlée weapons"
+msgstr "Рукопашное оружие"
+
+msgid "Dagger"
+msgstr "Кинжал"
+
+msgid "Two-handed sword"
+msgstr "Двуручный меч"
+
+msgid "Add item"
+msgstr "Добавить предмет"
+
+msgid "Set"
+msgstr "Установить"
+
+#. js-lingui-explicit-id
 msgid "None"
 msgstr "Нет"
 
-#. js-lingui-explicit-id
-msgid "Regular"
-msgstr "Обычный"
+msgid "Chain Barding"
+msgstr "Кольчужный бард"
 
-#. js-lingui-explicit-id
-msgid "Heavy"
-msgstr "Тяжёлый"
+msgid "Reset"
+msgstr "Сброс"
 
-#. js-lingui-explicit-id
-msgid "Oversized"
-msgstr "Габаритный"
-
-#. js-lingui-explicit-id
-msgid "Unencumbered"
-msgstr "Ненагружен"
-
-#. js-lingui-explicit-id
-msgid "Lightly"
-msgstr "Легко нагружен"
-
-#. js-lingui-explicit-id
-msgid "Heavily"
-msgstr "Тяжело нагружен"
-
-#. js-lingui-explicit-id
-msgid "Severely"
-msgstr "Серьёзно нагружен"
+msgid "Arrows, quiver (20)"
+msgstr "Стрелы, колчан (20)"
 
 #. js-lingui-explicit-id
 msgid "OverEncumbered"
 msgstr "Перегружен"
 
-msgid "{0}"
-msgstr "{0}"
-
-msgid "+1 AC versus mêlée attacks, +2 AC versus missile attacks."
-msgstr "+1 AC против рукопашных, +2 AC против дальнобойных атак."
-
-msgid "A rock for throwing, not an ammunition"
-msgstr "Камень для метания, не боеприпас"
-
-msgid "AC"
-msgstr "AC"
-
-msgid "Add"
-msgstr "Добавить"
-
-msgid "Add coins"
-msgstr "Добавить монет"
-
-msgid "Add equipment item"
-msgstr "Добавить предмет"
-
-msgid "Add item"
-msgstr "Добавить предмет"
-
-msgid "Air Bladder"
-msgstr "Воздушный мешок"
-
-msgid "All costs are in silver pieces"
-msgstr "Все цены указаны в серебряных монетах"
-
-msgid "Armor"
-msgstr "Броня"
-
-msgid "Arrow (1)"
-msgstr "Стрела (1)"
-
-msgid "Arrows, quiver (20)"
-msgstr "Стрелы, колчан (20)"
-
-msgid "Backpack"
-msgstr "Рюкзак"
-
-msgid "Barrel"
-msgstr "Бочка"
-
-msgid "Battle axe"
-msgstr "Боевой топор"
-
-msgid "Bedroll"
-msgstr "Спальный мешок"
-
-msgid "Block and Tackle"
-msgstr "Блок и полиспаст"
-
-msgid "Blowgun"
-msgstr "Духовая трубка"
-
-msgid "Book, Blank"
-msgstr "Книга, Бланк"
-
-msgid "Book, Reading"
-msgstr "Книга для чтения"
-
-msgid "Book, Spell (Blank)"
-msgstr "Книга заклинаний (Бланк)"
-
-msgid "Bottle of Wine/Liquor, Decent"
-msgstr "Бутылка вина/ликера, приличное"
-
-msgid "Bottle of Wine/Liquor, Poor"
-msgstr "Бутылка вина/ликера, простое"
-
-msgid "Bottle of Wine/Liquor, Rich"
-msgstr "Бутылка вина/ликера, дорогое"
-
-msgid "Bow, Long"
-msgstr "Длинный лук"
-
-msgid "Bow, Short"
-msgstr "Короткий лук"
-
-msgid "Caltrop"
-msgstr "Еж"
-
-msgid "Candle"
-msgstr "Свеча"
-
-msgid "Category"
-msgstr "Категория"
-
-msgid "Cestus"
-msgstr "Цестус"
-
-msgid "Chain"
-msgstr "Кольчуга"
-
-msgid "Chain Barding"
-msgstr "Кольчужный бард"
-
-msgid "Chain, per foot"
-msgstr "Цепь за фут"
-
-msgid "Chalk"
-msgstr "Мел"
-
-msgid "Chest"
-msgstr "Сундук"
-
-msgid "City"
-msgstr "Город"
-
-msgid "City Cost"
-msgstr "В городе"
-
-msgid "Clothing, Extravagant"
-msgstr "Одежда, роскошная"
-
-msgid "Clothing, Normal"
-msgstr "Одежда, обычная"
-
-msgid "Clothing, Poor"
-msgstr "Одежда, простая"
-
-msgid "Clothing, Winter Travel"
-msgstr "Одежда для зимних путешествий"
-
-msgid "Club"
-msgstr "Дубина"
-
-msgid "Combat"
-msgstr "Бой"
-
-msgid "Cooking Pots"
-msgstr "Кухонные горшки"
-
-msgid "Copper pieces"
-msgstr "Медные монеты"
-
-msgid "Cost"
-msgstr "Цена"
-
-msgid "Crampons"
-msgstr "Кошки (альпинистские)"
-
-msgid "Crossbow bolt (1)"
-msgstr "Арбалетный болт (1)"
-
-msgid "Crossbow bolts, quiver (20)"
-msgstr "Арбалетные болты, колчан (20)"
-
-msgid "Crossbow, Heavy"
-msgstr "Тяжелый арбалет"
-
-msgid "Crossbow, Light"
-msgstr "Легкий арбалет"
-
-msgid "Crowbar"
-msgstr "Лом"
-
-msgid "CZ"
-msgstr "CZ"
-
-msgid "Czech"
-msgstr "Czech"
-
-msgid "Dagger"
-msgstr "Кинжал"
-
-msgid "Damage"
-msgstr "Урон"
-
-msgid "Dart"
-msgstr "Дротик"
-
-msgid "Details"
-msgstr "Детали"
-
-msgid "Drill"
-msgstr "Дрель"
-
 #. js-lingui-explicit-id
-msgid "weapons.missile.firing"
-msgstr "Каждое метательное оружие можно использовать один раз за раунд, кроме арбалетов."
-
-msgid "EN"
-msgstr "EN"
-
-msgid "Enable automatic subtraction of money when equipment items are added"
-msgstr "Автоматически вычитать деньги при добавлении предметов"
-
-msgid "Enable the weight of coins for encumbrance calculations."
-msgstr "Учитывать вес монет для нагрузки."
-
-msgid "Encumbrance"
-msgstr "Нагрузка"
-
-msgid "English"
-msgstr "English"
-
-msgid "Enter coin amount. Use copper pieces instead of float numbers."
-msgstr "Введите количество монет. Используйте медные монеты вместо дробных чисел."
-
-msgid "Equipment"
-msgstr "Снаряжение"
-
-msgid "Exploration"
-msgstr "Исследование"
-
-msgid "Explorers traveling ... with ... metal armor clomping on stone floors are not going to surprise anything or anyone (PCB p.56)."
-msgstr "Путешественники, двигающиеся в металлических доспехах по каменным полам, не смогут удивить никого (PCB стр. 56)."
-
-msgid "Feed, Animal/Day"
-msgstr "Корм для животных/День"
-
-msgid "Filter by name"
-msgstr "Фильтр по имени"
-
-msgid "Fishing Gear"
-msgstr "Рыболовные принадлежности"
-
-msgid "Flask of Lamp Oil"
-msgstr "Фляга с ламповым маслом"
-
-msgid "ft"
-msgstr "фт"
+msgid "Oversized"
+msgstr "Габаритный"
 
 msgid "Garlic"
 msgstr "Чеснок"
 
-msgid "Garrote"
-msgstr "Гаррота"
+msgid "Sword"
+msgstr "Меч"
 
-msgid "Gem"
-msgstr "Драгоценный камень"
+msgid "Clothing, Normal"
+msgstr "Одежда, обычная"
 
-msgid "Grappling Hook"
-msgstr "Крюк-кошка"
+msgid "Rapier"
+msgstr "Рапира"
 
-msgid "Great axe"
-msgstr "Большой топор"
+msgid "Sling"
+msgstr "Праща"
 
-msgid "Hand axe"
-msgstr "Ручной топор"
+msgid "Backpack"
+msgstr "Рюкзак"
 
-msgid "Heavy crossbows can only be fired once in 3 rounds and ignore 4 AC points"
-msgstr "Из тяжелых арбалетов можно стрелять только один раз за 3 раунда и игнорировать 4 очка AC."
+msgid "Short"
+msgstr "Ближняя"
 
-msgid "Holy Symbol, Silver"
-msgstr "Священный символ, серебряный"
+#. js-lingui-explicit-id
+msgid "Regular"
+msgstr "Обычный"
 
-msgid "Holy Symbol, Steel"
-msgstr "Священный символ, стальной"
+msgid "Running"
+msgstr "Бег"
 
-msgid "Holy Symbol, Wood"
-msgstr "Священный символ, деревянный"
+msgid "Mirror, Silver"
+msgstr "Зеркало, серебряное"
 
-msgid "Holy Water"
-msgstr "Святая вода"
+msgid "Sling bullets, rocks (10)"
+msgstr "Снаряды для пращи, камни (10)"
 
-msgid "Hourglass"
-msgstr "Песочные часы"
+msgid "Blowgun"
+msgstr "Духовая трубка"
 
-msgid "Include the weight"
-msgstr "Учитывать вес"
+msgid "Block and Tackle"
+msgstr "Блок и полиспаст"
 
-msgid "Ink"
-msgstr "Чернила"
-
-msgid "Instrument"
-msgstr "Инструмент"
-
-msgid "Inventory"
-msgstr "Инвентарь"
-
-msgid "Inventory cost"
-msgstr "Стоимость инвентаря"
-
-msgid "Jewelry"
-msgstr "Украшения"
-
-msgid "Ladder, 10'"
-msgstr "Лестница, 10 футов"
-
-msgid "Lance"
-msgstr "Длинное копьё"
-
-msgid "Lantern"
-msgstr "Лампа"
+#. js-lingui-explicit-id
+msgid "Severely"
+msgstr "Серьёзно нагружен"
 
 msgid "Lard"
 msgstr "Сало"
 
-msgid "Leather"
-msgstr "Кожаная броня"
+msgid "Required"
+msgstr "Требуется"
+
+msgid "Sack"
+msgstr "Мешок"
+
+msgid "Feed, Animal/Day"
+msgstr "Корм для животных/День"
+
+msgid "Include the weight"
+msgstr "Учитывать вес"
+
+msgid "Lantern"
+msgstr "Лампа"
+
+msgid "Details"
+msgstr "Детали"
+
+#. js-lingui-explicit-id
+msgid "Unencumbered"
+msgstr "Ненагружен"
 
 msgid "Leather Barding"
 msgstr "Кожаный бард"
 
-msgid "Light crossbows can only be fired every once in 2 rounds and ignore 2 AC points"
-msgstr "Легкие арбалеты могут стрелять только раз в 2 раунда и игнорируют 2 пункта AC"
+msgid "Pick, Miner’s"
+msgstr "Шахтерская кирка"
+
+msgid "Gem"
+msgstr "Драгоценный камень"
+
+msgid "Weight"
+msgstr "Вес"
+
+msgid "Tobacco"
+msgstr "Табак"
+
+msgid "Rations, Standard/Day"
+msgstr "Пайки, стандартные/День"
+
+msgid "Chain, per foot"
+msgstr "Цепь за фут"
 
 msgid "Loading..."
 msgstr "Загрузка..."
 
-msgid "Lock"
-msgstr "Замок"
+msgid "Provided price is minimal"
+msgstr "Указанная цена минимальная"
 
-msgid "Long"
-msgstr "Дальняя"
+msgid "Inventory"
+msgstr "Инвентарь"
 
-msgid "Mace"
-msgstr "Булава"
+msgid "Book, Blank"
+msgstr "Книга, Бланк"
 
-msgid "Mallet"
-msgstr "Киянка"
+msgid "Quiver"
+msgstr "Колчан"
 
-msgid "Manacles"
-msgstr "Кандалы"
+msgid "Medium"
+msgstr "Средняя"
 
-msgid "Manage"
-msgstr "Управление"
+msgid "CZ"
+msgstr "CZ"
+
+#. js-lingui-explicit-id
+msgid "armor.baseAc"
+msgstr "Персонажи без доспехов имеют базовый AC 12."
+
+#. js-lingui-explicit-id
+msgid "armor.unadjustedAc"
+msgstr "Немодифицированный Класс Доспеха (Unadjusted AC) — это только броня и щит. Модификаторы ловкости, магические модификаторы или любые другие корректировки не учитываются."
+
+msgid "Encumbrance"
+msgstr "Нагрузка"
+
+msgid "Add equipment item"
+msgstr "Добавить предмет"
+
+msgid "Tent, Grand"
+msgstr "Большая палатка"
+
+msgid "Combat"
+msgstr "Бой"
+
+msgid "Grappling Hook"
+msgstr "Крюк-кошка"
+
+msgid "Bow, Long"
+msgstr "Длинный лук"
+
+msgid "Cestus"
+msgstr "Цестус"
+
+msgid "Crossbow, Light"
+msgstr "Легкий арбалет"
 
 msgid "Mancatcher"
 msgstr "Ловец людей"
@@ -393,293 +460,226 @@ msgstr "Ловец людей"
 msgid "Map, Kingdom"
 msgstr "Карта королевства"
 
-msgid "Map, Local"
-msgstr "Локальная карта"
-
-msgid "Maul"
-msgstr "Молот"
-
-msgid "Medium"
-msgstr "Средняя"
-
-msgid "Mêlée Weapons"
-msgstr "Ближний бой"
-
-msgid "miles"
-msgstr "мили"
-
-msgid "Mirror, Glass"
-msgstr "Зеркало, стеклянное"
-
-msgid "Mirror, Silver"
-msgstr "Зеркало, серебряное"
-
-msgid "Mirror, Steel"
-msgstr "Зеркало, стальное"
-
-msgid "Miscellaneous Equipment"
-msgstr "Разное"
-
-msgid "Missile Weapons"
-msgstr "Метательное"
-
-msgid "Movement"
-msgstr "Передвижение"
-
-msgid "Nails"
-msgstr "Гвозди"
-
-msgid "Name"
-msgstr "Название"
-
-msgid "No encumbrance if empty"
-msgstr "Нет нагрузки, если пустая"
-
-msgid "optional"
-msgstr "необязательно"
-
-msgid "Paper"
-msgstr "Бумага"
-
-msgid "Per day"
-msgstr "В день"
-
-msgid "Pick, Miner’s"
-msgstr "Шахтерская кирка"
-
-msgid "Pipe"
-msgstr "Трубка"
-
-msgid "Plate"
-msgstr "Латы"
-
-msgid "Plate Barding"
-msgstr "Латный бард"
-
-msgid "Pole, 10'"
-msgstr "Шест, 10 футов"
-
-msgid "Polearm"
-msgstr "Дротик"
-
-msgid "Pouch"
-msgstr "Мешочек"
-
-msgid "Princess Helpers"
-msgstr "Princess Helpers"
-
-msgid "Provided price is minimal"
-msgstr "Указанная цена минимальная"
-
-msgid "Pseudo"
-msgstr "Псевдо"
-
-msgid "Quiver"
-msgstr "Колчан"
-
-msgid "Range"
-msgstr "Дальность"
-
-msgid "Rapier"
-msgstr "Рапира"
-
-msgid "Rations, Iron/Day"
-msgstr "Пайки, железные/День"
-
-msgid "Rations, Standard/Day"
-msgstr "Пайки, стандартные/День"
-
-msgid "Required"
-msgstr "Требуется"
-
-msgid "Reset"
-msgstr "Сброс"
-
-msgid "Reset all equipment"
-msgstr "Сбросить все снаряжение"
-
-msgid "Riding Gear"
-msgstr "Верховое снаряжение"
-
-msgid "Rock"
-msgstr "Камень"
-
-msgid "Rope, 50'"
-msgstr "Веревка, 50 футов"
-
-msgid "RU"
-msgstr "RU"
-
-msgid "Running"
-msgstr "Бег"
-
-msgid "Rural"
-msgstr "Деревня"
-
-msgid "Rural Cost"
-msgstr "В деревне"
-
-msgid "Russian"
-msgstr "Русский"
-
-msgid "Sack"
-msgstr "Мешок"
-
-msgid "Saddlebag"
-msgstr "Сумка для седла"
-
-msgid "Scroll Case"
-msgstr "Футляр для свитков"
-
-#. js-lingui-explicit-id
-msgid "weapons.melee.secondRankTypes"
-msgstr "Оружие второго ряда: длинное копьё, древковое, копьё."
-
-msgid "Set"
-msgstr "Установить"
-
-msgid "Set coins"
-msgstr "Монеты"
-
-msgid "Shield"
-msgstr "Щит"
-
-msgid "Short"
-msgstr "Ближняя"
+msgid "Crossbow, Heavy"
+msgstr "Тяжелый арбалет"
 
 msgid "Short sword"
 msgstr "Короткий меч"
 
-msgid "Shovel"
-msgstr "Лопата"
+msgid "ft"
+msgstr "фт"
 
-msgid "Sling"
-msgstr "Праща"
+msgid "Rope, 50'"
+msgstr "Веревка, 50 футов"
 
-msgid "Sling bullets (10)"
-msgstr "Снаряды для пращи (10)"
+msgid "Rock"
+msgstr "Камень"
 
-msgid "Sling bullets, rocks (10)"
-msgstr "Снаряды для пращи, камни (10)"
-
-msgid "Slings fired with stones instead of bullets have half the listed range."
-msgstr "Пращи, стреляющие камнями вместо пуль, имеют половину указанной дальности."
-
-msgid "Slings fired with stones instead of bullets have the listed range (half of the regular)."
-msgstr "Пращи, стреляющие камнями вместо пуль, имеют указанную дальность (половина обычной)."
-
-msgid "Soap"
-msgstr "Мыло"
-
-#. js-lingui-explicit-id
-msgid "weapons.melee.secondRank"
-msgstr "Некоторое оружие может атаковать \"из второго ряда\". Это используется, когда в бою есть четкая боевая линия. Обычно ударить могут только те, кто на передней линии, но оружие, которое можно использовать из второго ряда, позволяет атаковать и тем, кто находится сразу за боевой линией."
-
-msgid "Spear"
-msgstr "Копьё"
-
-msgid "Specialist’s Tools"
-msgstr "Инструменты специалиста"
-
-msgid "Spike, Iron"
-msgstr "Шип, железный"
-
-msgid "Spike, Wooden"
-msgstr "Шип, деревянный"
-
-msgid "Spyglass"
-msgstr "Подзорная труба"
-
-msgid "Staff"
-msgstr "Посох"
-
-msgid "Sword"
-msgstr "Меч"
-
-#. js-lingui-explicit-id
-msgid "weapons.missile.range"
-msgstr "Цели на средней дистанции имеют –2 к попаданию, –4 к попаданию на длинной дистанции."
-
-msgid "Tent, Grand"
-msgstr "Большая палатка"
-
-msgid "Tent, Pavilion"
-msgstr "Павильонная палатка"
-
-msgid "Tent, Personal"
-msgstr "Персональная палатка"
-
-msgid "Tent, Regular"
-msgstr "Обычная палатка"
-
-msgid "These are one-handed weapons, including short swords and hand axes"
-msgstr "Это одноручное оружие, включая короткие мечи и секиры"
-
-msgid "This includes all sorts of fist wrappings and brass knuckle weapon types. Users suffer a –2 penalty to hit any opponent with an unadjusted AC of 15 or better."
-msgstr "Это включает в себя все виды обертываний для кулака и типы оружия с кастетами. Пользователи получают штраф –2 к попаданию по любому противнику с нескорректированным AC 15 и выше."
-
-msgid "This weapon can be used one-handed if charging on horseback. Otherwise, it is effectively a polearm (pike)"
-msgstr "Это оружие можно использовать одной рукой при атаке верхом. В противном случае, это эффективно как древковое оружие (пика)"
-
-msgid "This weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
-msgstr "Это оружие имеет штраф –2 к попаданию по противникам с нескорректированным AC 15 и выше."
+msgid "Whip"
+msgstr "Кнут"
 
 msgid "Tinderbox"
 msgstr "Трутница"
 
-msgid "Tobacco"
-msgstr "Табак"
+msgid "Reset all equipment"
+msgstr "Сбросить все снаряжение"
+
+msgid "Paper"
+msgstr "Бумага"
+
+msgid "Spike, Iron"
+msgstr "Шип, железный"
+
+msgid "Shield"
+msgstr "Щит"
+
+msgid "Copper pieces"
+msgstr "Медные монеты"
+
+msgid "Light crossbows can only be fired every once in 2 rounds and ignore 2 AC points"
+msgstr "Легкие арбалеты могут стрелять только раз в 2 раунда и игнорируют 2 пункта AC"
+
+msgid "Plate"
+msgstr "Латы"
+
+msgid "Battle axe"
+msgstr "Боевой топор"
+
+msgid "Inventory cost"
+msgstr "Стоимость инвентаря"
+
+msgid "Crossbow bolt (1)"
+msgstr "Арбалетный болт (1)"
+
+msgid "miles"
+msgstr "мили"
+
+msgid "Crampons"
+msgstr "Кошки (альпинистские)"
+
+msgid "Missile Weapons"
+msgstr "Метательное"
+
+msgid "English"
+msgstr "English"
+
+msgid "Soap"
+msgstr "Мыло"
+
+msgid "Add"
+msgstr "Добавить"
+
+msgid "Explorers traveling ... with ... metal armor clomping on stone floors are not going to surprise anything or anyone (PCB p.56)."
+msgstr "Путешественники, двигающиеся в металлических доспехах по каменным полам, не смогут удивить никого (PCB стр. 56)."
+
+msgid "Caltrop"
+msgstr "Еж"
+
+msgid "Russian"
+msgstr "Русский"
+
+msgid "Garrote"
+msgstr "Гаррота"
+
+msgid "Movement"
+msgstr "Передвижение"
+
+msgid "Mallet"
+msgstr "Киянка"
+
+msgid "Long"
+msgstr "Дальняя"
+
+msgid "Exploration"
+msgstr "Исследование"
+
+msgid "Miscellaneous Equipment"
+msgstr "Разное"
 
 msgid "Torch"
 msgstr "Факел"
 
-msgid "Two-handed sword"
-msgstr "Двуручный меч"
+msgid "Ink"
+msgstr "Чернила"
 
-#. js-lingui-explicit-id
-msgid "armor.unadjustedAc"
-msgstr "Немодифицированный Класс Доспеха (Unadjusted AC) — это только броня и щит. Модификаторы ловкости, магические модификаторы или любые другие корректировки не учитываются."
+msgid "Cooking Pots"
+msgstr "Кухонные горшки"
 
-#. js-lingui-explicit-id
-msgid "armor.baseAc"
-msgstr "Персонажи без доспехов имеют базовый AC 12."
+msgid "Jewelry"
+msgstr "Украшения"
 
-msgid "Use of this weapon requires an attack from surprise, or a successful grapple. If a hit is scored, the target is considered grappled and will take 1d6 damage per round."
-msgstr "Использование этого оружия требует атаки с неожиданности или успешного захвата. Если удар успешен, цель считается захваченной и получает 1d6 урона за раунд."
+msgid "Pole, 10'"
+msgstr "Шест, 10 футов"
 
-msgid "Vial or Bottle"
-msgstr "Флакон или Бутылка"
+msgid "Lance"
+msgstr "Длинное копьё"
+
+msgid "No encumbrance if empty"
+msgstr "Нет нагрузки, если пустая"
+
+msgid "Hourglass"
+msgstr "Песочные часы"
+
+msgid "This weapon can be used one-handed if charging on horseback. Otherwise, it is effectively a polearm (pike)"
+msgstr "Это оружие можно использовать одной рукой при атаке верхом. В противном случае, это эффективно как древковое оружие (пика)"
 
 msgid "Wallet"
 msgstr "Кошелек"
 
-msgid "Waterskin"
-msgstr "Бурдюк"
-
-msgid "Weapon, Great"
-msgstr "Большое оружие"
-
-msgid "Weapon, Medium"
-msgstr "Среднее оружие"
-
-msgid "Weapon, Minor"
-msgstr "Мелкое оружие"
+msgid "Mirror, Steel"
+msgstr "Зеркало, стальное"
 
 msgid "Weapon, Small"
 msgstr "Малое оружие"
+
+msgid "All costs are in silver pieces"
+msgstr "Все цены указаны в серебряных монетах"
+
+msgid "Bottle of Wine/Liquor, Rich"
+msgstr "Бутылка вина/ликера, дорогое"
+
+msgid "Pouch"
+msgstr "Мешочек"
+
+msgid "Staff"
+msgstr "Посох"
+
+msgid "Maul"
+msgstr "Молот"
+
+msgid "Spike, Wooden"
+msgstr "Шип, деревянный"
+
+msgid "Clothing, Winter Travel"
+msgstr "Одежда для зимних путешествий"
+
+msgid "Czech"
+msgstr "Czech"
+
+msgid "AC"
+msgstr "AC"
+
+msgid "+1 AC versus mêlée attacks, +2 AC versus missile attacks."
+msgstr "+1 AC против рукопашных, +2 AC против дальнобойных атак."
+
+msgid "Manage"
+msgstr "Управление"
 
 #. js-lingui-explicit-id
 msgid "weapons.melee.charge"
 msgstr "Оружие, позволяющее принимать на себя рывок (charge) (урон х2, атакует первым): древковое оружие, копьё."
 
-msgid "Weight"
-msgstr "Вес"
+#. js-lingui-explicit-id
+msgid "weapons.melee.secondRank"
+msgstr "Некоторое оружие может атаковать \"из второго ряда\". Это используется, когда в бою есть четкая боевая линия. Обычно ударить могут только те, кто на передней линии, но оружие, которое можно использовать из второго ряда, позволяет атаковать и тем, кто находится сразу за боевой линией."
 
-msgid "Whip"
-msgstr "Кнут"
+#. js-lingui-explicit-id
+msgid "weapons.melee.secondRankTypes"
+msgstr "Оружие второго ряда: длинное копьё, древковое, копьё."
 
-msgid "Whistle"
-msgstr "Свисток"
+#. js-lingui-explicit-id
+msgid "weapons.missile.firing"
+msgstr "Каждое метательное оружие можно использовать один раз за раунд, кроме арбалетов."
 
-msgid "Wolvesbane"
-msgstr "Волчий бан"
+#. js-lingui-explicit-id
+msgid "weapons.missile.range"
+msgstr "Цели на средней дистанции имеют –2 к попаданию, –4 к попаданию на длинной дистанции."
+
+msgid "Rural Cost"
+msgstr "В деревне"
+
+msgid "Armor"
+msgstr "Броня"
+
+msgid "Spear"
+msgstr "Копьё"
+
+msgid "Spyglass"
+msgstr "Подзорная труба"
+
+msgid "Crossbow bolts, quiver (20)"
+msgstr "Арбалетные болты, колчан (20)"
+
+msgid "Bottle of Wine/Liquor, Decent"
+msgstr "Бутылка вина/ликера, приличное"
+
+msgid "Chain"
+msgstr "Кольчуга"
+
+msgid "Mêlée Weapons"
+msgstr "Ближний бой"
+
+msgid "Enable automatic subtraction of money when equipment items are added"
+msgstr "Автоматически вычитать деньги при добавлении предметов"
+
+msgid "Tent, Pavilion"
+msgstr "Павильонная палатка"
+
+msgid "Dart"
+msgstr "Дротик"
+
+msgid "Instrument"
+msgstr "Инструмент"
+
+msgid "Plate Barding"
+msgstr "Латный бард"

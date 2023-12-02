@@ -13,12 +13,257 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+msgid "This includes all sorts of fist wrappings and brass knuckle weapon types. Users suffer a –2 penalty to hit any opponent with an unadjusted AC of 15 or better."
+msgstr ""
+
+msgid "Clothing, Poor"
+msgstr ""
+
+msgid "Weapon, Medium"
+msgstr ""
+
+msgid "Great axe"
+msgstr ""
+
+msgid "Leather"
+msgstr ""
+
+msgid "Holy Water"
+msgstr ""
+
+msgid "Rations, Iron/Day"
+msgstr ""
+
+msgid "Nails"
+msgstr ""
+
+msgid "Pipe"
+msgstr ""
+
+msgid "Flask of Lamp Oil"
+msgstr ""
+
+msgid "Slings fired with stones instead of bullets have the listed range (half of the regular)."
+msgstr ""
+
+msgid "Saddlebag"
+msgstr ""
+
+msgid "Holy Symbol, Steel"
+msgstr ""
+
+msgid "Damage"
+msgstr ""
+
+msgid "Tent, Regular"
+msgstr ""
+
+msgid "Map, Local"
+msgstr ""
+
+msgid "City"
+msgstr ""
+
+msgid "Shovel"
+msgstr ""
+
+msgid "Air Bladder"
+msgstr ""
+
+msgid "Holy Symbol, Wood"
+msgstr ""
+
+msgid "Bow, Short"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Range"
+msgstr ""
+
+msgid "Manacles"
+msgstr ""
+
+msgid "Mirror, Glass"
+msgstr ""
+
+msgid "Hand axe"
+msgstr ""
+
+msgid "Mace"
+msgstr ""
+
+msgid "Riding Gear"
+msgstr ""
+
+msgid "Book, Spell (Blank)"
+msgstr ""
+
+msgid "Scroll Case"
+msgstr ""
+
+msgid "Equipment"
+msgstr "Zařízení"
+
+msgid "Chalk"
+msgstr ""
+
+msgid "Weapon, Great"
+msgstr ""
+
+msgid "These are one-handed weapons, including short swords and hand axes"
+msgstr ""
+
+msgid "Barrel"
+msgstr ""
+
+msgid "optional"
+msgstr ""
+
+msgid "City Cost"
+msgstr ""
+
+msgid "Rural"
+msgstr ""
+
 #. js-lingui-explicit-id
 msgid "Armor"
 msgstr ""
 
+msgid "A rock for throwing, not an ammunition"
+msgstr ""
+
+msgid "Clothing, Extravagant"
+msgstr ""
+
+msgid "Sling bullets (10)"
+msgstr ""
+
+msgid "Drill"
+msgstr ""
+
+msgid "This weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
+msgstr ""
+
+msgid "Weapon, Minor"
+msgstr ""
+
+msgid "Slings fired with stones instead of bullets have half the listed range."
+msgstr ""
+
+msgid "Crowbar"
+msgstr ""
+
+msgid "RU"
+msgstr ""
+
+msgid "Arrow (1)"
+msgstr ""
+
+msgid "Candle"
+msgstr ""
+
+msgid "Waterskin"
+msgstr ""
+
+msgid "Per day"
+msgstr ""
+
+msgid "Tent, Personal"
+msgstr ""
+
+msgid "Filter by name"
+msgstr ""
+
+msgid "Wolvesbane"
+msgstr ""
+
+msgid "Fishing Gear"
+msgstr ""
+
+msgid "Bedroll"
+msgstr ""
+
+msgid "Enter coin amount. Use copper pieces instead of float numbers."
+msgstr ""
+
+msgid "Whistle"
+msgstr ""
+
+msgid "Lock"
+msgstr ""
+
 #. js-lingui-explicit-id
-msgid "Mêlée weapons"
+msgid "Heavily"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Heavy"
+msgstr ""
+
+msgid "Holy Symbol, Silver"
+msgstr ""
+
+msgid "Polearm"
+msgstr ""
+
+msgid "Enable the weight of coins for encumbrance calculations."
+msgstr ""
+
+msgid "Cost"
+msgstr ""
+
+msgid "{0}"
+msgstr ""
+
+msgid "EN"
+msgstr ""
+
+msgid "Set coins"
+msgstr ""
+
+msgid "Book, Reading"
+msgstr ""
+
+msgid "Add coins"
+msgstr ""
+
+msgid "Ladder, 10'"
+msgstr ""
+
+msgid "Category"
+msgstr ""
+
+msgid "Specialist’s Tools"
+msgstr ""
+
+msgid "Princess Helpers"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Lightly"
+msgstr ""
+
+msgid "Heavy crossbows can only be fired once in 3 rounds and ignore 4 AC points"
+msgstr ""
+
+msgid "Use of this weapon requires an attack from surprise, or a successful grapple. If a hit is scored, the target is considered grappled and will take 1d6 damage per round."
+msgstr ""
+
+msgid "Chest"
+msgstr ""
+
+msgid "Pseudo"
+msgstr ""
+
+msgid "Bottle of Wine/Liquor, Poor"
+msgstr ""
+
+msgid "Vial or Bottle"
+msgstr ""
+
+msgid "Club"
 msgstr ""
 
 #. js-lingui-explicit-id
@@ -30,361 +275,183 @@ msgid "Missile weapons"
 msgstr ""
 
 #. js-lingui-explicit-id
+msgid "Mêlée weapons"
+msgstr ""
+
+msgid "Dagger"
+msgstr ""
+
+msgid "Two-handed sword"
+msgstr ""
+
+msgid "Add item"
+msgstr ""
+
+msgid "Set"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "None"
 msgstr ""
 
-#. js-lingui-explicit-id
-msgid "Regular"
+msgid "Chain Barding"
 msgstr ""
 
-#. js-lingui-explicit-id
-msgid "Heavy"
+msgid "Reset"
 msgstr ""
 
-#. js-lingui-explicit-id
-msgid "Oversized"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Unencumbered"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Lightly"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Heavily"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Severely"
+msgid "Arrows, quiver (20)"
 msgstr ""
 
 #. js-lingui-explicit-id
 msgid "OverEncumbered"
 msgstr ""
 
-msgid "{0}"
-msgstr ""
-
-msgid "+1 AC versus mêlée attacks, +2 AC versus missile attacks."
-msgstr ""
-
-msgid "A rock for throwing, not an ammunition"
-msgstr ""
-
-msgid "AC"
-msgstr ""
-
-msgid "Add"
-msgstr ""
-
-msgid "Add coins"
-msgstr ""
-
-msgid "Add equipment item"
-msgstr ""
-
-msgid "Add item"
-msgstr ""
-
-msgid "Air Bladder"
-msgstr ""
-
-msgid "All costs are in silver pieces"
-msgstr ""
-
-msgid "Armor"
-msgstr ""
-
-msgid "Arrow (1)"
-msgstr ""
-
-msgid "Arrows, quiver (20)"
-msgstr ""
-
-msgid "Backpack"
-msgstr ""
-
-msgid "Barrel"
-msgstr ""
-
-msgid "Battle axe"
-msgstr ""
-
-msgid "Bedroll"
-msgstr ""
-
-msgid "Block and Tackle"
-msgstr ""
-
-msgid "Blowgun"
-msgstr ""
-
-msgid "Book, Blank"
-msgstr ""
-
-msgid "Book, Reading"
-msgstr ""
-
-msgid "Book, Spell (Blank)"
-msgstr ""
-
-msgid "Bottle of Wine/Liquor, Decent"
-msgstr ""
-
-msgid "Bottle of Wine/Liquor, Poor"
-msgstr ""
-
-msgid "Bottle of Wine/Liquor, Rich"
-msgstr ""
-
-msgid "Bow, Long"
-msgstr ""
-
-msgid "Bow, Short"
-msgstr ""
-
-msgid "Caltrop"
-msgstr ""
-
-msgid "Candle"
-msgstr ""
-
-msgid "Category"
-msgstr ""
-
-msgid "Cestus"
-msgstr ""
-
-msgid "Chain"
-msgstr ""
-
-msgid "Chain Barding"
-msgstr ""
-
-msgid "Chain, per foot"
-msgstr ""
-
-msgid "Chalk"
-msgstr ""
-
-msgid "Chest"
-msgstr ""
-
-msgid "City"
-msgstr ""
-
-msgid "City Cost"
-msgstr ""
-
-msgid "Clothing, Extravagant"
-msgstr ""
-
-msgid "Clothing, Normal"
-msgstr ""
-
-msgid "Clothing, Poor"
-msgstr ""
-
-msgid "Clothing, Winter Travel"
-msgstr ""
-
-msgid "Club"
-msgstr ""
-
-msgid "Combat"
-msgstr ""
-
-msgid "Cooking Pots"
-msgstr ""
-
-msgid "Copper pieces"
-msgstr ""
-
-msgid "Cost"
-msgstr ""
-
-msgid "Crampons"
-msgstr ""
-
-msgid "Crossbow bolt (1)"
-msgstr ""
-
-msgid "Crossbow bolts, quiver (20)"
-msgstr ""
-
-msgid "Crossbow, Heavy"
-msgstr ""
-
-msgid "Crossbow, Light"
-msgstr ""
-
-msgid "Crowbar"
-msgstr ""
-
-msgid "CZ"
-msgstr ""
-
-msgid "Czech"
-msgstr ""
-
-msgid "Dagger"
-msgstr ""
-
-msgid "Damage"
-msgstr ""
-
-msgid "Dart"
-msgstr ""
-
-msgid "Details"
-msgstr ""
-
-msgid "Drill"
-msgstr ""
-
 #. js-lingui-explicit-id
-msgid "weapons.missile.firing"
-msgstr ""
-
-msgid "EN"
-msgstr ""
-
-msgid "Enable automatic subtraction of money when equipment items are added"
-msgstr ""
-
-msgid "Enable the weight of coins for encumbrance calculations."
-msgstr ""
-
-msgid "Encumbrance"
-msgstr ""
-
-msgid "English"
-msgstr ""
-
-msgid "Enter coin amount. Use copper pieces instead of float numbers."
-msgstr ""
-
-msgid "Equipment"
-msgstr "Zařízení"
-
-msgid "Exploration"
-msgstr ""
-
-msgid "Explorers traveling ... with ... metal armor clomping on stone floors are not going to surprise anything or anyone (PCB p.56)."
-msgstr ""
-
-msgid "Feed, Animal/Day"
-msgstr ""
-
-msgid "Filter by name"
-msgstr ""
-
-msgid "Fishing Gear"
-msgstr ""
-
-msgid "Flask of Lamp Oil"
-msgstr ""
-
-msgid "ft"
+msgid "Oversized"
 msgstr ""
 
 msgid "Garlic"
 msgstr ""
 
-msgid "Garrote"
+msgid "Sword"
 msgstr ""
 
-msgid "Gem"
+msgid "Clothing, Normal"
 msgstr ""
 
-msgid "Grappling Hook"
+msgid "Rapier"
 msgstr ""
 
-msgid "Great axe"
+msgid "Sling"
 msgstr ""
 
-msgid "Hand axe"
+msgid "Backpack"
 msgstr ""
 
-msgid "Heavy crossbows can only be fired once in 3 rounds and ignore 4 AC points"
+msgid "Short"
 msgstr ""
 
-msgid "Holy Symbol, Silver"
+#. js-lingui-explicit-id
+msgid "Regular"
 msgstr ""
 
-msgid "Holy Symbol, Steel"
+msgid "Running"
 msgstr ""
 
-msgid "Holy Symbol, Wood"
+msgid "Mirror, Silver"
 msgstr ""
 
-msgid "Holy Water"
+msgid "Sling bullets, rocks (10)"
 msgstr ""
 
-msgid "Hourglass"
+msgid "Blowgun"
 msgstr ""
 
-msgid "Include the weight"
+msgid "Block and Tackle"
 msgstr ""
 
-msgid "Ink"
-msgstr ""
-
-msgid "Instrument"
-msgstr ""
-
-msgid "Inventory"
-msgstr ""
-
-msgid "Inventory cost"
-msgstr ""
-
-msgid "Jewelry"
-msgstr ""
-
-msgid "Ladder, 10'"
-msgstr ""
-
-msgid "Lance"
-msgstr ""
-
-msgid "Lantern"
+#. js-lingui-explicit-id
+msgid "Severely"
 msgstr ""
 
 msgid "Lard"
 msgstr ""
 
-msgid "Leather"
+msgid "Required"
+msgstr ""
+
+msgid "Sack"
+msgstr ""
+
+msgid "Feed, Animal/Day"
+msgstr ""
+
+msgid "Include the weight"
+msgstr ""
+
+msgid "Lantern"
+msgstr ""
+
+msgid "Details"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Unencumbered"
 msgstr ""
 
 msgid "Leather Barding"
 msgstr ""
 
-msgid "Light crossbows can only be fired every once in 2 rounds and ignore 2 AC points"
+msgid "Pick, Miner’s"
+msgstr ""
+
+msgid "Gem"
+msgstr ""
+
+msgid "Weight"
+msgstr ""
+
+msgid "Tobacco"
+msgstr ""
+
+msgid "Rations, Standard/Day"
+msgstr ""
+
+msgid "Chain, per foot"
 msgstr ""
 
 msgid "Loading..."
 msgstr ""
 
-msgid "Lock"
+msgid "Provided price is minimal"
 msgstr ""
 
-msgid "Long"
+msgid "Inventory"
 msgstr ""
 
-msgid "Mace"
+msgid "Book, Blank"
 msgstr ""
 
-msgid "Mallet"
+msgid "Quiver"
 msgstr ""
 
-msgid "Manacles"
+msgid "Medium"
 msgstr ""
 
-msgid "Manage"
+msgid "CZ"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "armor.baseAc"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "armor.unadjustedAc"
+msgstr ""
+
+msgid "Encumbrance"
+msgstr ""
+
+msgid "Add equipment item"
+msgstr ""
+
+msgid "Tent, Grand"
+msgstr ""
+
+msgid "Combat"
+msgstr ""
+
+msgid "Grappling Hook"
+msgstr ""
+
+msgid "Bow, Long"
+msgstr ""
+
+msgid "Cestus"
+msgstr ""
+
+msgid "Crossbow, Light"
 msgstr ""
 
 msgid "Mancatcher"
@@ -393,293 +460,226 @@ msgstr ""
 msgid "Map, Kingdom"
 msgstr ""
 
-msgid "Map, Local"
-msgstr ""
-
-msgid "Maul"
-msgstr ""
-
-msgid "Medium"
-msgstr ""
-
-msgid "Mêlée Weapons"
-msgstr ""
-
-msgid "miles"
-msgstr ""
-
-msgid "Mirror, Glass"
-msgstr ""
-
-msgid "Mirror, Silver"
-msgstr ""
-
-msgid "Mirror, Steel"
-msgstr ""
-
-msgid "Miscellaneous Equipment"
-msgstr ""
-
-msgid "Missile Weapons"
-msgstr ""
-
-msgid "Movement"
-msgstr ""
-
-msgid "Nails"
-msgstr ""
-
-msgid "Name"
-msgstr ""
-
-msgid "No encumbrance if empty"
-msgstr ""
-
-msgid "optional"
-msgstr ""
-
-msgid "Paper"
-msgstr ""
-
-msgid "Per day"
-msgstr ""
-
-msgid "Pick, Miner’s"
-msgstr ""
-
-msgid "Pipe"
-msgstr ""
-
-msgid "Plate"
-msgstr ""
-
-msgid "Plate Barding"
-msgstr ""
-
-msgid "Pole, 10'"
-msgstr ""
-
-msgid "Polearm"
-msgstr ""
-
-msgid "Pouch"
-msgstr ""
-
-msgid "Princess Helpers"
-msgstr ""
-
-msgid "Provided price is minimal"
-msgstr ""
-
-msgid "Pseudo"
-msgstr ""
-
-msgid "Quiver"
-msgstr ""
-
-msgid "Range"
-msgstr ""
-
-msgid "Rapier"
-msgstr ""
-
-msgid "Rations, Iron/Day"
-msgstr ""
-
-msgid "Rations, Standard/Day"
-msgstr ""
-
-msgid "Required"
-msgstr ""
-
-msgid "Reset"
-msgstr ""
-
-msgid "Reset all equipment"
-msgstr ""
-
-msgid "Riding Gear"
-msgstr ""
-
-msgid "Rock"
-msgstr ""
-
-msgid "Rope, 50'"
-msgstr ""
-
-msgid "RU"
-msgstr ""
-
-msgid "Running"
-msgstr ""
-
-msgid "Rural"
-msgstr ""
-
-msgid "Rural Cost"
-msgstr ""
-
-msgid "Russian"
-msgstr ""
-
-msgid "Sack"
-msgstr ""
-
-msgid "Saddlebag"
-msgstr ""
-
-msgid "Scroll Case"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "weapons.melee.secondRankTypes"
-msgstr ""
-
-msgid "Set"
-msgstr ""
-
-msgid "Set coins"
-msgstr ""
-
-msgid "Shield"
-msgstr ""
-
-msgid "Short"
+msgid "Crossbow, Heavy"
 msgstr ""
 
 msgid "Short sword"
 msgstr ""
 
-msgid "Shovel"
+msgid "ft"
 msgstr ""
 
-msgid "Sling"
+msgid "Rope, 50'"
 msgstr ""
 
-msgid "Sling bullets (10)"
+msgid "Rock"
 msgstr ""
 
-msgid "Sling bullets, rocks (10)"
-msgstr ""
-
-msgid "Slings fired with stones instead of bullets have half the listed range."
-msgstr ""
-
-msgid "Slings fired with stones instead of bullets have the listed range (half of the regular)."
-msgstr ""
-
-msgid "Soap"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "weapons.melee.secondRank"
-msgstr "Some weapons can attack “from the second rank.” This is used when there is a definite battle line in combat. Usually only those on the front line of battle can strike, but those weapons usable from the second rank allow anyone immediately behind the battle line to strike as well."
-
-msgid "Spear"
-msgstr ""
-
-msgid "Specialist’s Tools"
-msgstr ""
-
-msgid "Spike, Iron"
-msgstr ""
-
-msgid "Spike, Wooden"
-msgstr ""
-
-msgid "Spyglass"
-msgstr ""
-
-msgid "Staff"
-msgstr ""
-
-msgid "Sword"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "weapons.missile.range"
-msgstr ""
-
-msgid "Tent, Grand"
-msgstr ""
-
-msgid "Tent, Pavilion"
-msgstr ""
-
-msgid "Tent, Personal"
-msgstr ""
-
-msgid "Tent, Regular"
-msgstr ""
-
-msgid "These are one-handed weapons, including short swords and hand axes"
-msgstr ""
-
-msgid "This includes all sorts of fist wrappings and brass knuckle weapon types. Users suffer a –2 penalty to hit any opponent with an unadjusted AC of 15 or better."
-msgstr ""
-
-msgid "This weapon can be used one-handed if charging on horseback. Otherwise, it is effectively a polearm (pike)"
-msgstr ""
-
-msgid "This weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
+msgid "Whip"
 msgstr ""
 
 msgid "Tinderbox"
 msgstr ""
 
-msgid "Tobacco"
+msgid "Reset all equipment"
+msgstr ""
+
+msgid "Paper"
+msgstr ""
+
+msgid "Spike, Iron"
+msgstr ""
+
+msgid "Shield"
+msgstr ""
+
+msgid "Copper pieces"
+msgstr ""
+
+msgid "Light crossbows can only be fired every once in 2 rounds and ignore 2 AC points"
+msgstr ""
+
+msgid "Plate"
+msgstr ""
+
+msgid "Battle axe"
+msgstr ""
+
+msgid "Inventory cost"
+msgstr ""
+
+msgid "Crossbow bolt (1)"
+msgstr ""
+
+msgid "miles"
+msgstr ""
+
+msgid "Crampons"
+msgstr ""
+
+msgid "Missile Weapons"
+msgstr ""
+
+msgid "English"
+msgstr ""
+
+msgid "Soap"
+msgstr ""
+
+msgid "Add"
+msgstr ""
+
+msgid "Explorers traveling ... with ... metal armor clomping on stone floors are not going to surprise anything or anyone (PCB p.56)."
+msgstr ""
+
+msgid "Caltrop"
+msgstr ""
+
+msgid "Russian"
+msgstr ""
+
+msgid "Garrote"
+msgstr ""
+
+msgid "Movement"
+msgstr ""
+
+msgid "Mallet"
+msgstr ""
+
+msgid "Long"
+msgstr ""
+
+msgid "Exploration"
+msgstr ""
+
+msgid "Miscellaneous Equipment"
 msgstr ""
 
 msgid "Torch"
 msgstr ""
 
-msgid "Two-handed sword"
+msgid "Ink"
 msgstr ""
 
-#. js-lingui-explicit-id
-msgid "armor.unadjustedAc"
+msgid "Cooking Pots"
 msgstr ""
 
-#. js-lingui-explicit-id
-msgid "armor.baseAc"
+msgid "Jewelry"
 msgstr ""
 
-msgid "Use of this weapon requires an attack from surprise, or a successful grapple. If a hit is scored, the target is considered grappled and will take 1d6 damage per round."
+msgid "Pole, 10'"
 msgstr ""
 
-msgid "Vial or Bottle"
+msgid "Lance"
+msgstr ""
+
+msgid "No encumbrance if empty"
+msgstr ""
+
+msgid "Hourglass"
+msgstr ""
+
+msgid "This weapon can be used one-handed if charging on horseback. Otherwise, it is effectively a polearm (pike)"
 msgstr ""
 
 msgid "Wallet"
 msgstr ""
 
-msgid "Waterskin"
-msgstr ""
-
-msgid "Weapon, Great"
-msgstr ""
-
-msgid "Weapon, Medium"
-msgstr ""
-
-msgid "Weapon, Minor"
+msgid "Mirror, Steel"
 msgstr ""
 
 msgid "Weapon, Small"
+msgstr ""
+
+msgid "All costs are in silver pieces"
+msgstr ""
+
+msgid "Bottle of Wine/Liquor, Rich"
+msgstr ""
+
+msgid "Pouch"
+msgstr ""
+
+msgid "Staff"
+msgstr ""
+
+msgid "Maul"
+msgstr ""
+
+msgid "Spike, Wooden"
+msgstr ""
+
+msgid "Clothing, Winter Travel"
+msgstr ""
+
+msgid "Czech"
+msgstr ""
+
+msgid "AC"
+msgstr ""
+
+msgid "+1 AC versus mêlée attacks, +2 AC versus missile attacks."
+msgstr ""
+
+msgid "Manage"
 msgstr ""
 
 #. js-lingui-explicit-id
 msgid "weapons.melee.charge"
 msgstr ""
 
-msgid "Weight"
+#. js-lingui-explicit-id
+msgid "weapons.melee.secondRank"
+msgstr "Some weapons can attack “from the second rank.” This is used when there is a definite battle line in combat. Usually only those on the front line of battle can strike, but those weapons usable from the second rank allow anyone immediately behind the battle line to strike as well."
+
+#. js-lingui-explicit-id
+msgid "weapons.melee.secondRankTypes"
 msgstr ""
 
-msgid "Whip"
+#. js-lingui-explicit-id
+msgid "weapons.missile.firing"
 msgstr ""
 
-msgid "Whistle"
+#. js-lingui-explicit-id
+msgid "weapons.missile.range"
 msgstr ""
 
-msgid "Wolvesbane"
+msgid "Rural Cost"
+msgstr ""
+
+msgid "Armor"
+msgstr ""
+
+msgid "Spear"
+msgstr ""
+
+msgid "Spyglass"
+msgstr ""
+
+msgid "Crossbow bolts, quiver (20)"
+msgstr ""
+
+msgid "Bottle of Wine/Liquor, Decent"
+msgstr ""
+
+msgid "Chain"
+msgstr ""
+
+msgid "Mêlée Weapons"
+msgstr ""
+
+msgid "Enable automatic subtraction of money when equipment items are added"
+msgstr ""
+
+msgid "Tent, Pavilion"
+msgstr ""
+
+msgid "Dart"
+msgstr ""
+
+msgid "Instrument"
+msgstr ""
+
+msgid "Plate Barding"
 msgstr ""
