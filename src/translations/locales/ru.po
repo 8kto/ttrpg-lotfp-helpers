@@ -530,7 +530,8 @@ msgstr "Сумка для седла"
 msgid "Scroll Case"
 msgstr "Футляр для свитков"
 
-msgid "Second rank weapons: lance, polearm, spear."
+#. js-lingui-explicit-id
+msgid "weapons.melee.secondRankTypes"
 msgstr "Оружие второго ряда: копье, дротик, шест."
 
 msgid "Set"

@@ -135,7 +135,9 @@ const MeleeWeaponsGrid = () => {
           </Trans>
         </p>
         <p className={'mb-2'}>
-          <Trans>Second rank weapons: lance, polearm, spear.</Trans>
+          <Trans id='weapons.melee.secondRankTypes'>
+            Second rank weapons: lance, polearm, spear.
+          </Trans>
         </p>
         <p className={'mb-2'}>
           <Trans id='weapons.melee.charge'>

@@ -530,7 +530,8 @@ msgstr ""
 msgid "Scroll Case"
 msgstr ""
 
-msgid "Second rank weapons: lance, polearm, spear."
+#. js-lingui-explicit-id
+msgid "weapons.melee.secondRankTypes"
 msgstr ""
 
 msgid "Set"
