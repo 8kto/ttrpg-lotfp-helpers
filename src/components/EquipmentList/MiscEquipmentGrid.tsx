@@ -4,11 +4,13 @@ import React, { useMemo } from 'react'
 
 import DataGrid from '@/components/DataGrid/DataGrid'
 import type { DataGridColumn } from '@/components/DataGrid/types'
-import { getInventoryItem } from '@/components/EquipmentList/helpers'
+import {
+  getInventoryItem,
+  renderWeightGridCol,
+} from '@/components/EquipmentList/helpers'
 import ItemDetails from '@/components/Inventory/ItemDetails'
 import EquipmentTranslated from '@/config/EquipmentTranslated'
 import type { EquipmentItem } from '@/domain'
-import { EncumbrancePoint } from '@/domain/encumbrance'
 import { addEquipmentItem, useInventoryState } from '@/state/InventoryState'
 
 const columns: ReadonlyArray<DataGridColumn<EquipmentItem>> = [
@@ -25,9 +27,7 @@ const columns: ReadonlyArray<DataGridColumn<EquipmentItem>> = [
   {
     className: 'w-1/6',
     key: 'points',
-    render: (item: EquipmentItem) => (
-      <span>{EncumbrancePoint[item.points]}</span>
-    ),
+    render: renderWeightGridCol,
     get title() {
       return t`Weight`
     },

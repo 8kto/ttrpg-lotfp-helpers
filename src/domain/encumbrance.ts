@@ -1,8 +1,8 @@
 export enum EncumbrancePoint {
-  None = 0,
-  Regular = 0.2,
-  Oversized = 1,
-  Heavy = 2,
+  /*i18n*/ None = 0,
+  /*i18n*/ Regular = 0.2,
+  /*i18n*/ Oversized = 1,
+  /*i18n*/ Heavy = 2,
 }
 
 export enum Encumbrance {

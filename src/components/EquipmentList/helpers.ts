@@ -1,4 +1,6 @@
+import type { DataGridColumn } from '@/components/DataGrid/types'
 import type { EquipmentItem, InventoryItem } from '@/domain'
+import { EncumbrancePoint } from '@/domain/encumbrance'
 import { autoincrement } from '@/shared/helpers/autoincrement'
 import deepclone from '@/shared/helpers/deepclone'
 
@@ -13,3 +15,11 @@ export const getInventoryItem = (() => {
     })
   }
 })()
+
+export const renderWeightGridCol: DataGridColumn<EquipmentItem>['render'] = (
+  item,
+  i18n,
+) =>
+  item.points === EncumbrancePoint.None
+    ? '-'
+    : i18n._(EncumbrancePoint[item.points])

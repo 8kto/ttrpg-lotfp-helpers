@@ -6,11 +6,13 @@ import DamageFragment from '@/components/DamageFragment'
 import DataGrid from '@/components/DataGrid/DataGrid'
 import { trivialSort } from '@/components/DataGrid/helpers'
 import type { DataGridColumn, SortConfig } from '@/components/DataGrid/types'
-import { getInventoryItem } from '@/components/EquipmentList/helpers'
+import {
+  getInventoryItem,
+  renderWeightGridCol,
+} from '@/components/EquipmentList/helpers'
 import ItemDetails from '@/components/Inventory/ItemDetails'
 import EquipmentTranslated from '@/config/EquipmentTranslated'
 import type { Dice, EquipmentItem } from '@/domain'
-import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { MeleeWeaponItem } from '@/domain/weapon'
 import { addMeleeWeapon, useInventoryState } from '@/state/InventoryState'
 
@@ -51,9 +53,7 @@ const columns: ReadonlyArray<DataGridColumn<MeleeWeaponItem>> = [
   {
     className: 'w-1/6',
     key: 'points',
-    render: (item: MeleeWeaponItem) => (
-      <span>{EncumbrancePoint[item.points]}</span>
-    ),
+    render: renderWeightGridCol,
     get title() {
       return t`Weight`
     },

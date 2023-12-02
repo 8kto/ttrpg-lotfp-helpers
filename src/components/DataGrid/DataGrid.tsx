@@ -3,6 +3,7 @@ import {
   PlusCircleIcon as PlusIcon,
 } from '@heroicons/react/24/solid'
 import { Trans } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
 import React, { useEffect, useState } from 'react'
 
 import { trivialSort } from '@/components/DataGrid/helpers'
@@ -23,6 +24,7 @@ const DataGrid = <T extends EquipmentItem>({
   handleSort,
   filterPlaceholder = 'Filter',
 }: DataGridProps<T>) => {
+  const { i18n } = useLingui()
   const [sortConfig, setSortConfig] = useState<SortConfig<T>>({
     direction: initialSortState?.direction || 'asc',
     key: (initialSortState?.key || '') as keyof T,
@@ -107,7 +109,7 @@ const DataGrid = <T extends EquipmentItem>({
                   className='p-4 font-normal text-gray-900'
                 >
                   {column.render
-                    ? column.render(item)
+                    ? column.render(item, i18n)
                     : (item[column.key] as string)}
                 </td>
               ))}
