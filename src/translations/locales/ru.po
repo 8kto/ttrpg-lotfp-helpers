@@ -13,6 +13,8 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+# FIXME fix machine translations
+
 #. js-lingui-explicit-id
 msgid "Armor"
 msgstr "Броня"

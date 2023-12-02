@@ -32,7 +32,7 @@ Demo application: https://8kto.github.io/ttrpg-lotfp-helpers
 - [x] Add coins and calculate the encumbrance
   - [ ] Track different kinds of coins
 - [x] Inventory is saved in locale storage and survives the page reload
-- [ ] Languages support
+- [x] Languages support
 - [ ] Responsive layout, mobile devices support
 - [ ] Equipment sets that can be applied to the inventory
 - [ ] Multiple Equipment sets
