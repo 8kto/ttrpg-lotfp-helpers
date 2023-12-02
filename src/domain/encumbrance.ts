@@ -6,11 +6,11 @@ export enum EncumbrancePoint {
 }
 
 export enum Encumbrance {
-  Unencumbered = 'Unencumbered',
-  Lightly = 'Lightly',
-  Heavily = 'Heavily',
-  Severely = 'Severely',
-  OverEncumbered = 'OverEncumbered',
+  Unencumbered = /*i18n*/ 'Unencumbered',
+  Lightly = /*i18n*/ 'Lightly',
+  Heavily = /*i18n*/ 'Heavily',
+  Severely = /*i18n*/ 'Severely',
+  OverEncumbered = /*i18n*/ 'OverEncumbered',
 }
 
 // NB Oversized is as tall as Character

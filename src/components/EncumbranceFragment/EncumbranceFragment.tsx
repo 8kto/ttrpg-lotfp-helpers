@@ -1,3 +1,4 @@
+import { useLingui } from '@lingui/react'
 import React from 'react'
 
 import { getEncumbrance } from '@/components/InventoryDetails/helpers'
@@ -7,12 +8,12 @@ const EncumbranceFragment = ({
 }: {
   encumbrancePoints: number
 }) => {
-  // TODO translate
+  const { i18n } = useLingui()
   const encumbrance = getEncumbrance(encumbrancePoints)
 
   return (
     <>
-      {encumbrance} ({encumbrancePoints.toPrecision(2)})
+      {i18n._(encumbrance)} ({encumbrancePoints.toPrecision(2)})
     </>
   )
 }
