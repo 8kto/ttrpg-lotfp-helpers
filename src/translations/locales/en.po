@@ -569,7 +569,8 @@ msgstr "Slings fired with stones instead of bullets have the listed range (half 
 msgid "Soap"
 msgstr "Soap"
 
-msgid "Some weapons can attack “from the second rank.” This is used when there is a definite battle line in combat. Usually only those on the front line of battle can strike, but those weapons usable from the second rank allow anyone immediately behind the battle line to strike as well."
+#. js-lingui-explicit-id
+msgid "weapons.melee.secondRank"
 msgstr "Some weapons can attack “from the second rank.” This is used when there is a definite battle line in combat. Usually only those on the front line of battle can strike, but those weapons usable from the second rank allow anyone immediately behind the battle line to strike as well."
 
 msgid "Spear"
