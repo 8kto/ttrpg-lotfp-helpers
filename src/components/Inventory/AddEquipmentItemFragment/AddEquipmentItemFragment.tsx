@@ -1,6 +1,7 @@
 /* eslint-disable sort-keys */
 import { XMarkIcon } from '@heroicons/react/24/solid'
 import { Trans } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
 import { ErrorMessage, Field, Form, Formik } from 'formik'
 import React from 'react'
 import * as Yup from 'yup'
@@ -18,6 +19,7 @@ import {
 } from '@/state/InventoryState'
 
 const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
+  const { i18n } = useLingui()
   const handleAddItem = (formValues: EquipmentItemDto) => {
     addCustomEquipmentItem(formValues.category, getEquipmentItem(formValues))
   }
@@ -146,7 +148,7 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
               {Object.entries(EncumbrancePointsLabelsDict).map(
                 ([key, title]) => (
                   <option key={key} value={key}>
-                    {title}
+                    {i18n._(title)}
                   </option>
                 ),
               )}
@@ -169,7 +171,7 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
             >
               {Object.entries(EquipLabelsDict).map(([key, title]) => (
                 <option key={key} value={key}>
-                  {title}
+                  {i18n._(title)}
                 </option>
               ))}
             </Field>

@@ -1,6 +1,5 @@
+import { Trans } from '@lingui/macro'
 import React from 'react'
-
-import { t } from '@/locale/helpers'
 
 const Spinner = () => {
   return (
@@ -21,7 +20,9 @@ const Spinner = () => {
           fill='currentFill'
         />
       </svg>
-      <span className='sr-only'>{t('Loading...')}</span>
+      <span className='sr-only'>
+        <Trans>Loading...</Trans>
+      </span>
     </div>
   )
 }

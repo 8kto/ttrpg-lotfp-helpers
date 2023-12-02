@@ -1,21 +1,20 @@
 import type { EquipmentItem, EquipmentItemDto, InventoryItem } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
-import { t } from '@/locale/helpers'
 import { autoincrement } from '@/shared/helpers/autoincrement'
 import type { EquipmentCategoryKey } from '@/state/InventoryState'
 
 export const EquipLabelsDict: Record<EquipmentCategoryKey, string> = {
-  armor: t('Armor'),
-  meleeWeapons: t('Mêlée weapons'),
-  miscEquipment: t('Miscellaneous'),
-  missileWeapons: t('Missile weapons'),
+  armor: /*i18n*/ 'Armor',
+  meleeWeapons: /*i18n*/ 'Mêlée weapons',
+  miscEquipment: /*i18n*/ 'Miscellaneous',
+  missileWeapons: /*i18n*/ 'Missile weapons',
 }
 
 export const EncumbrancePointsLabelsDict: Record<EncumbrancePoint, string> = {
-  [EncumbrancePoint.None]: t('None'),
-  [EncumbrancePoint.Regular]: t('Regular'),
-  [EncumbrancePoint.Heavy]: t('Heavy'),
-  [EncumbrancePoint.Oversized]: t('Oversized'),
+  [EncumbrancePoint.None]: /*i18n*/ 'None',
+  [EncumbrancePoint.Regular]: /*i18n*/ 'Regular',
+  [EncumbrancePoint.Heavy]: /*i18n*/ 'Heavy',
+  [EncumbrancePoint.Oversized]: /*i18n*/ 'Oversized',
 }
 
 export const getEquipmentItem = (() => {
