@@ -13,6 +13,26 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#. js-lingui-explicit-id
+msgid "Unencumbered"
+msgstr "Ненагружен"
+
+#. js-lingui-explicit-id
+msgid "Lightly"
+msgstr "Легко нагружен"
+
+#. js-lingui-explicit-id
+msgid "Heavily"
+msgstr "Тяжело нагружен"
+
+#. js-lingui-explicit-id
+msgid "Severely"
+msgstr "Серьёзно нагружен"
+
+#. js-lingui-explicit-id
+msgid "OverEncumbered"
+msgstr "Перегружен"
+
 msgid "{0}"
 msgstr "{0}"
 
@@ -107,7 +127,7 @@ msgid "Cestus"
 msgstr "Цестус"
 
 msgid "Chain"
-msgstr "Цепь"
+msgstr "Кольчуга"
 
 msgid "Chain Barding"
 msgstr "Кольчужный бард"

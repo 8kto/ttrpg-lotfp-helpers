@@ -13,6 +13,26 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#. js-lingui-explicit-id
+msgid "Unencumbered"
+msgstr "Unencumbered"
+
+#. js-lingui-explicit-id
+msgid "Lightly"
+msgstr "Lightly"
+
+#. js-lingui-explicit-id
+msgid "Heavily"
+msgstr "Heavily"
+
+#. js-lingui-explicit-id
+msgid "Severely"
+msgstr "Severely"
+
+#. js-lingui-explicit-id
+msgid "OverEncumbered"
+msgstr "OverEncumbered"
+
 msgid "{0}"
 msgstr "{0}"
 
