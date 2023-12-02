@@ -40,9 +40,6 @@ msgstr "Трубка"
 msgid "Flask of Lamp Oil"
 msgstr "Фляга с ламповым маслом"
 
-msgid "Slings fired with stones instead of bullets have the listed range (half of the regular)."
-msgstr "Пращи, стреляющие камнями вместо пуль, имеют указанную дальность (половина обычной)."
-
 msgid "Saddlebag"
 msgstr "Сумка для седла"
 
@@ -487,6 +484,9 @@ msgstr "Бумага"
 msgid "Spike, Iron"
 msgstr "Шип, железный"
 
+msgid "config.melee.slingRocks.details"
+msgstr "Пращи, стреляющие камнями вместо пуль, имеют указанную дальность (половина обычной)."
+
 msgid "Shield"
 msgstr "Щит"
 
@@ -526,8 +526,8 @@ msgstr "Мыло"
 msgid "Add"
 msgstr "Добавить"
 
-msgid "Explorers traveling ... with ... metal armor clomping on stone floors are not going to surprise anything or anyone (PCB p.56)."
-msgstr "Путешественники, двигающиеся в металлических доспехах по каменным полам, не смогут удивить никого (PCB стр. 56)."
+msgid "config.armor.plate.details"
+msgstr "Путешественники, передвигающиеся в лязгающих латах по каменным полам, не могут никого застать врасплох (PCB стр. 56)."
 
 msgid "Caltrop"
 msgstr "Еж"

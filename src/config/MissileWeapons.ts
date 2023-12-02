@@ -99,7 +99,7 @@ export const MissileWeapons: ReadonlyArray<
   {
     cityCost: 0,
     damage: null,
-    details: msg`Slings fired with stones instead of bullets have the listed range (half of the regular).`,
+    details: msg`config.melee.slingRocks.details`,
     name: msg`Sling bullets, rocks (10)`,
     points: EncumbrancePoint.Regular,
     range: { long: 225, medium: 150, short: 25 },

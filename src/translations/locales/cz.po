@@ -40,9 +40,6 @@ msgstr ""
 msgid "Flask of Lamp Oil"
 msgstr ""
 
-msgid "Slings fired with stones instead of bullets have the listed range (half of the regular)."
-msgstr ""
-
 msgid "Saddlebag"
 msgstr ""
 
@@ -485,6 +482,9 @@ msgid "Paper"
 msgstr ""
 
 msgid "Spike, Iron"
+msgstr ""
+
+msgid "config.melee.slingRocks.details"
 msgstr ""
 
 msgid "Shield"

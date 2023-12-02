@@ -40,9 +40,6 @@ msgstr "Pipe"
 msgid "Flask of Lamp Oil"
 msgstr "Flask of Lamp Oil"
 
-msgid "Slings fired with stones instead of bullets have the listed range (half of the regular)."
-msgstr "Slings fired with stones instead of bullets have the listed range (half of the regular)."
-
 msgid "Saddlebag"
 msgstr "Saddlebag"
 
@@ -487,6 +484,9 @@ msgstr "Paper"
 msgid "Spike, Iron"
 msgstr "Spike, Iron"
 
+msgid "config.melee.slingRocks.details"
+msgstr "Slings fired with stones instead of bullets have the listed range (half of the regular)."
+
 msgid "Shield"
 msgstr "Shield"
 
@@ -526,8 +526,8 @@ msgstr "Soap"
 msgid "Add"
 msgstr "Add"
 
-msgid "Explorers traveling ... with ... metal armor clomping on stone floors are not going to surprise anything or anyone (PCB p.56)."
-msgstr "Explorers traveling ... with ... metal armor clomping on stone floors are not going to surprise anything or anyone (PCB p.56)."
+msgid "config.armor.plate.details"
+msgstr "Explorers traveling with metal armor clomping on stone floors are not able to surprise anything or anyone (PCB p.56)."
 
 msgid "Caltrop"
 msgstr "Caltrop"

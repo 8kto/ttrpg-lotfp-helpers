@@ -25,7 +25,7 @@ export const Armor: ReadonlyArray<EquipmentItemTranslated<ArmorItem>> = [
   {
     armorClass: 18,
     cityCost: 1000,
-    details: msg`Explorers traveling ... with ... metal armor clomping on stone floors are not going to surprise anything or anyone (PCB p.56).`,
+    details: msg`config.armor.plate.details`,
     name: msg`Plate`,
     points: EncumbrancePoint.Heavy,
     ruralCost: null,
