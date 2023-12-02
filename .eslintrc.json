@@ -12,7 +12,8 @@
     "simple-import-sort",
     "sort-keys-fix",
     "sort-destructure-keys",
-    "unused-imports"
+    "unused-imports",
+    "lingui"
   ],
   "parserOptions": {
     "ecmaVersion": 2020
