@@ -14,6 +14,38 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. js-lingui-explicit-id
+msgid "Armor"
+msgstr "Armor"
+
+#. js-lingui-explicit-id
+msgid "Mêlée weapons"
+msgstr "Mêlée weapons"
+
+#. js-lingui-explicit-id
+msgid "Miscellaneous"
+msgstr "Miscellaneous"
+
+#. js-lingui-explicit-id
+msgid "Missile weapons"
+msgstr "Missile weapons"
+
+#. js-lingui-explicit-id
+msgid "None"
+msgstr "None"
+
+#. js-lingui-explicit-id
+msgid "Regular"
+msgstr "Regular"
+
+#. js-lingui-explicit-id
+msgid "Heavy"
+msgstr "Heavy"
+
+#. js-lingui-explicit-id
+msgid "Oversized"
+msgstr "Oversized"
+
+#. js-lingui-explicit-id
 msgid "Unencumbered"
 msgstr "Unencumbered"
 
@@ -332,6 +364,9 @@ msgstr "Leather Barding"
 
 msgid "Light crossbows can only be fired every once in 2 rounds and ignore 2 AC points"
 msgstr "Light crossbows can only be fired every once in 2 rounds and ignore 2 AC points"
+
+msgid "Loading..."
+msgstr "Loading..."
 
 msgid "Lock"
 msgstr "Lock"
