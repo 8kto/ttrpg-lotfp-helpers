@@ -663,7 +663,8 @@ msgstr ""
 msgid "Weapon, Small"
 msgstr ""
 
-msgid "Weapons that allow to receive charge (damage x2, act first): polearm, spear."
+#. js-lingui-explicit-id
+msgid "weapons.melee.charge"
 msgstr ""
 
 msgid "Weight"

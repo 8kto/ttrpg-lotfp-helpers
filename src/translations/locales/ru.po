@@ -663,8 +663,9 @@ msgstr "Мелкое оружие"
 msgid "Weapon, Small"
 msgstr "Малое оружие"
 
-msgid "Weapons that allow to receive charge (damage x2, act first): polearm, spear."
-msgstr "Оружие, позволяющее принимать на себя заряд (урон х2, действовать первым): дротик, копьё."
+#. js-lingui-explicit-id
+msgid "weapons.melee.charge"
+msgstr "Оружие, позволяющее принимать на себя рывок (charge) (урон х2, атакует первым): древковое оружие, копьё."
 
 msgid "Weight"
 msgstr "Вес"

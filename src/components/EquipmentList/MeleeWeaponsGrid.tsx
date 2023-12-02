@@ -126,16 +126,21 @@ const MeleeWeaponsGrid = () => {
     <>
       <div className='py-6'>
         <p className={'mb-2'}>
-          <Trans id="weapons.melee.secondRank">
-            Some weapons can attack “from the second rank.”...
+          <Trans id='weapons.melee.secondRank'>
+            Some weapons can attack “from the second rank.” This is used when
+            there is a definite battle line in combat. Usually only those on the
+            front line of battle can strike, but those weapons usable from the
+            second rank allow anyone immediately behind the battle line to
+            strike as well.
           </Trans>
         </p>
         <p className={'mb-2'}>
           <Trans>Second rank weapons: lance, polearm, spear.</Trans>
         </p>
         <p className={'mb-2'}>
-          <Trans>
-            Weapons that allow to receive charge (damage x2, act first): polearm, spear.
+          <Trans id='weapons.melee.charge'>
+            Weapons that allow to receive charge (damage x2, act first):
+            polearm, spear.
           </Trans>
         </p>
       </div>
