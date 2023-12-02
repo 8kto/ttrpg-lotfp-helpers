@@ -348,7 +348,7 @@ msgid "Ladder, 10'"
 msgstr "Лестница, 10 футов"
 
 msgid "Lance"
-msgstr "Копье"
+msgstr "Длинное копьё"
 
 msgid "Lantern"
 msgstr "Лампа"
@@ -573,7 +573,7 @@ msgid "Some weapons can attack “from the second rank.” This is used when the
 msgstr "Некоторое оружие может атаковать 'из второго ряда'. Это используется, когда в бою есть четкая боевая линия. Обычно ударить могут только те, кто на передней линии, но оружие, которое можно использовать из второго ряда, позволяет атаковать и тем, кто находится сразу за боевой линией."
 
 msgid "Spear"
-msgstr "Копье"
+msgstr "Копьё"
 
 msgid "Specialist’s Tools"
 msgstr "Инструменты специалиста"
@@ -663,7 +663,7 @@ msgid "Weapon, Small"
 msgstr "Малое оружие"
 
 msgid "Weapons that allow to receive charge (damage x2, act first): polearm, spear."
-msgstr "Оружие, позволяющее принимать на себя заряд (урон х2, действовать первым): дротик, копье."
+msgstr "Оружие, позволяющее принимать на себя заряд (урон х2, действовать первым): дротик, копьё."
 
 msgid "Weight"
 msgstr "Вес"
