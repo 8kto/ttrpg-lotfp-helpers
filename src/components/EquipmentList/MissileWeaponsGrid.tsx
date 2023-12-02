@@ -139,13 +139,13 @@ const MissileWeaponsGrid = () => {
     <>
       <div className='py-6'>
         <p className={'mb-2'}>
-          <Trans>
+          <Trans id='weapons.missile.firing'>
             Each missile weapon can be fired once per round with the exception
             of the crossbows.
           </Trans>
         </p>
         <p className={'mb-2'}>
-          <Trans>
+          <Trans id='weapons.missile.range'>
             Targets at Medium range are –2 to hit, –4 to hit at Long range.
           </Trans>
         </p>

@@ -72,7 +72,7 @@ msgid "+1 AC versus mêlée attacks, +2 AC versus missile attacks."
 msgstr "+1 AC против рукопашных, +2 AC против дальнобойных атак."
 
 msgid "A rock for throwing, not an ammunition"
-msgstr "Камень для бросания, не боеприпас"
+msgstr "Камень для метания, не боеприпас"
 
 msgid "AC"
 msgstr "AC"
@@ -245,7 +245,8 @@ msgstr "Детали"
 msgid "Drill"
 msgstr "Дрель"
 
-msgid "Each missile weapon can be fired once per round with the exception of the crossbows."
+#. js-lingui-explicit-id
+msgid "weapons.missile.firing"
 msgstr "Каждое метательное оружие можно использовать один раз за раунд, кроме арбалетов."
 
 msgid "EN"
@@ -532,7 +533,7 @@ msgstr "Футляр для свитков"
 
 #. js-lingui-explicit-id
 msgid "weapons.melee.secondRankTypes"
-msgstr "Оружие второго ряда: копье, дротик, шест."
+msgstr "Оружие второго ряда: длинное копьё, древковое, копьё."
 
 msgid "Set"
 msgstr "Установить"
@@ -595,7 +596,8 @@ msgstr "Посох"
 msgid "Sword"
 msgstr "Меч"
 
-msgid "Targets at Medium range are –2 to hit, –4 to hit at Long range."
+#. js-lingui-explicit-id
+msgid "weapons.missile.range"
 msgstr "Цели на средней дистанции имеют –2 к попаданию, –4 к попаданию на длинной дистанции."
 
 msgid "Tent, Grand"

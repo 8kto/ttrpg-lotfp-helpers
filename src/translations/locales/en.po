@@ -245,7 +245,8 @@ msgstr "Details"
 msgid "Drill"
 msgstr "Drill"
 
-msgid "Each missile weapon can be fired once per round with the exception of the crossbows."
+#. js-lingui-explicit-id
+msgid "weapons.missile.firing"
 msgstr "Each missile weapon can be fired once per round with the exception of the crossbows."
 
 msgid "EN"
@@ -595,7 +596,8 @@ msgstr "Staff"
 msgid "Sword"
 msgstr "Sword"
 
-msgid "Targets at Medium range are –2 to hit, –4 to hit at Long range."
+#. js-lingui-explicit-id
+msgid "weapons.missile.range"
 msgstr "Targets at Medium range are –2 to hit, –4 to hit at Long range."
 
 msgid "Tent, Grand"
