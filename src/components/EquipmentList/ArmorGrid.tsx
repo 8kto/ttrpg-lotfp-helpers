@@ -120,7 +120,7 @@ const ArmorGrid = () => {
           </Trans>
         </p>
         <p className={'mb-2'}>
-          <Trans>
+          <Trans id='armor.unadjustedAc'>
             Unadjusted AC is that of solely the armor and shield. Dexterity
             modifiers, magical modifiers, or any other adjustments are not
             counted.

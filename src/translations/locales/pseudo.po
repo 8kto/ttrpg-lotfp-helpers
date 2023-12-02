@@ -634,7 +634,8 @@ msgstr ""
 msgid "Two-handed sword"
 msgstr ""
 
-msgid "Unadjusted AC is that of solely the armor and shield. Dexterity modifiers, magical modifiers, or any other adjustments are not counted."
+#. js-lingui-explicit-id
+msgid "armor.unadjustedAc"
 msgstr ""
 
 #. js-lingui-explicit-id

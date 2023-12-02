@@ -634,8 +634,9 @@ msgstr "Факел"
 msgid "Two-handed sword"
 msgstr "Двуручный меч"
 
-msgid "Unadjusted AC is that of solely the armor and shield. Dexterity modifiers, magical modifiers, or any other adjustments are not counted."
-msgstr "Неисправленный AC - это только броня и щит. Модификаторы ловкости, магические модификаторы или любые другие корректировки не учитываются."
+#. js-lingui-explicit-id
+msgid "armor.unadjustedAc"
+msgstr "Немодифицированный Класс Доспеха (Unadjusted AC) — это только броня и щит. Модификаторы ловкости, магические модификаторы или любые другие корректировки не учитываются."
 
 #. js-lingui-explicit-id
 msgid "armor.baseAc"
