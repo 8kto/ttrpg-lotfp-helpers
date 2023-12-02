@@ -242,6 +242,9 @@ msgstr "Легко нагружен"
 msgid "Heavy crossbows can only be fired once in 3 rounds and ignore 4 AC points"
 msgstr "Из тяжелых арбалетов можно стрелять только один раз за 3 раунда и игнорировать 4 очка AC."
 
+msgid "config.misc.caltrop.details"
+msgstr "Ежи (caltrop) — это металлические шипы, которые выглядят как распорки, у которых один острый конец всегда направлен вверх."
+
 msgid "Use of this weapon requires an attack from surprise, or a successful grapple. If a hit is scored, the target is considered grappled and will take 1d6 damage per round."
 msgstr "Использование этого оружия требует атаки с неожиданности или успешного захвата. Если удар успешен, цель считается захваченной и получает 1d6 урона за раунд."
 
@@ -442,6 +445,9 @@ msgstr "Крюк-кошка"
 msgid "Bow, Long"
 msgstr "Длинный лук"
 
+msgid "config.armor.plate.details"
+msgstr "Путешественники, передвигающиеся в лязгающих латах по каменным полам, не могут никого застать врасплох (PCB стр. 56)."
+
 msgid "Cestus"
 msgstr "Цест"
 
@@ -526,11 +532,8 @@ msgstr "Мыло"
 msgid "Add"
 msgstr "Добавить"
 
-msgid "config.armor.plate.details"
-msgstr "Путешественники, передвигающиеся в лязгающих латах по каменным полам, не могут никого застать врасплох (PCB стр. 56)."
-
 msgid "Caltrop"
-msgstr "Еж"
+msgstr "Ёж"
 
 msgid "Russian"
 msgstr "Русский"

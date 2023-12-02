@@ -242,6 +242,9 @@ msgstr "Lightly"
 msgid "Heavy crossbows can only be fired once in 3 rounds and ignore 4 AC points"
 msgstr "Heavy crossbows can only be fired once in 3 rounds and ignore 4 AC points"
 
+msgid "config.misc.caltrop.details"
+msgstr "Caltrops are metal spikes that look like large jacks, shaped so that there is always one sharp point facing up."
+
 msgid "Use of this weapon requires an attack from surprise, or a successful grapple. If a hit is scored, the target is considered grappled and will take 1d6 damage per round."
 msgstr "Use of this weapon requires an attack from surprise, or a successful grapple. If a hit is scored, the target is considered grappled and will take 1d6 damage per round."
 
@@ -442,6 +445,9 @@ msgstr "Grappling Hook"
 msgid "Bow, Long"
 msgstr "Bow, Long"
 
+msgid "config.armor.plate.details"
+msgstr "Explorers traveling with metal armor clomping on stone floors are not able to surprise anything or anyone (PCB p.56)."
+
 msgid "Cestus"
 msgstr "Cestus"
 
@@ -525,9 +531,6 @@ msgstr "Soap"
 
 msgid "Add"
 msgstr "Add"
-
-msgid "config.armor.plate.details"
-msgstr "Explorers traveling with metal armor clomping on stone floors are not able to surprise anything or anyone (PCB p.56)."
 
 msgid "Caltrop"
 msgstr "Caltrop"

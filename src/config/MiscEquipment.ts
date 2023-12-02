@@ -45,6 +45,7 @@ export const MiscEquipment: ReadonlyArray<
   },
   {
     cityCost: 0.5,
+    details: msg`config.misc.caltrop.details`,
     name: msg`Caltrop`,
     points: EncumbrancePoint.Regular,
     ruralCost: null,
