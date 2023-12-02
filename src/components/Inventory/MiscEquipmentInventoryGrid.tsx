@@ -1,11 +1,11 @@
 import { t } from '@lingui/macro'
 import React from 'react'
 
-import type { InventoryColumn } from '@/components/Inventory/InventoryGrid'
+import { renderWeightInventoryCol } from '@/components/Inventory/helpers'
 import InventoryGrid from '@/components/Inventory/InventoryGrid'
 import ItemDetails from '@/components/Inventory/ItemDetails'
+import type { InventoryColumn } from '@/components/Inventory/types'
 import type { EquipmentItem, InventoryItem } from '@/domain'
-import { EncumbrancePoint } from '@/domain/encumbrance'
 import { removeEquipmentItem, useInventoryState } from '@/state/InventoryState'
 
 type EquipmentInventoryItem = InventoryItem<EquipmentItem>
@@ -33,9 +33,7 @@ const inventoryTableColumns: ReadonlyArray<
   {
     className: 'w-1/6',
     key: 'points',
-    render: (item) => {
-      return EncumbrancePoint[item.points]
-    },
+    render: renderWeightInventoryCol,
     get title() {
       return t`Weight`
     },

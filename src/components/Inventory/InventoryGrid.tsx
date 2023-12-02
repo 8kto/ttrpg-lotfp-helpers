@@ -1,14 +1,9 @@
 import { MinusCircleIcon as MinusIcon } from '@heroicons/react/24/solid'
+import { useLingui } from '@lingui/react'
 import React from 'react'
 
+import type { InventoryColumn } from '@/components/Inventory/types'
 import type { EquipmentItem, InventoryItem } from '@/domain'
-
-export interface InventoryColumn<T extends InventoryItem<EquipmentItem>> {
-  key: keyof T
-  title: string
-  className?: string
-  render?: (item: T) => React.ReactNode
-}
 
 export interface InventoryTableProps<T extends InventoryItem<EquipmentItem>> {
   data: ReadonlyArray<T>
@@ -21,6 +16,7 @@ function InventoryGrid<T extends InventoryItem<EquipmentItem>>({
   columns,
   onRemoveClick,
 }: InventoryTableProps<T>) {
+  const { i18n } = useLingui()
   const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left ph-color-accent uppercase`
   const cellClassnames = `p-4 font-normal text-gray-900 align-top`
 
@@ -48,7 +44,7 @@ function InventoryGrid<T extends InventoryItem<EquipmentItem>>({
                 className={`${cellClassnames} ${column.className ?? ''}`}
               >
                 {column.render
-                  ? column.render(item)
+                  ? column.render(item, i18n)
                   : (item[column.key] as React.ReactNode)}
               </td>
             ))}
