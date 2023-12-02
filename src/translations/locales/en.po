@@ -13,6 +13,9 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+msgid "config.misc.airBladder.details"
+msgstr "A leather pouch with a tube fitting into the user’s mouth; it will hold an extra breath of air, allowing a swimmer to extend his or her range.<br/>Along with helping breathe underwater, the air bladder may also be used to help a character float."
+
 msgid "Clothing, Poor"
 msgstr "Clothing, Poor"
 

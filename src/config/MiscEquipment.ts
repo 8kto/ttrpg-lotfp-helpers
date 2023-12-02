@@ -9,6 +9,7 @@ export const MiscEquipment: ReadonlyArray<
 > = [
   {
     cityCost: 1,
+    details: msg`config.misc.airBladder.details`,
     name: msg`Air Bladder`,
     points: EncumbrancePoint.None,
     ruralCost: 1,

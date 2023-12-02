@@ -13,6 +13,9 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+msgid "config.misc.airBladder.details"
+msgstr "Кожаный мешочек с трубкой для рта; дополнительный глоток воздуха для подводного плавания.<br />Может использоваться и как вспомогательное плавательное средство."
+
 msgid "Clothing, Poor"
 msgstr "Одежда, простая"
 
@@ -38,10 +41,10 @@ msgid "Pipe"
 msgstr "Трубка"
 
 msgid "Flask of Lamp Oil"
-msgstr "Фляга с ламповым маслом"
+msgstr "Фляга с маслом для ламп"
 
 msgid "Saddlebag"
-msgstr "Сумка для седла"
+msgstr "Седельная сумка"
 
 msgid "Holy Symbol, Steel"
 msgstr "Священный символ, стальной"
@@ -50,10 +53,10 @@ msgid "Damage"
 msgstr "Урон"
 
 msgid "Tent, Regular"
-msgstr "Обычная палатка"
+msgstr "Палатка, обычная"
 
 msgid "Map, Local"
-msgstr "Локальная карта"
+msgstr "Карта, локальная"
 
 msgid "City"
 msgstr "Город"
