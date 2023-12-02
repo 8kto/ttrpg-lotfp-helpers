@@ -74,7 +74,10 @@ const ItemDetails = <T extends EquipmentItem>({
             <RangeFragment range={item.range} />
           </div>
         ) : null}
-        <p className={paragraphClassname} dangerouslySetInnerHTML={{__html: item.details}} />
+        <p
+          className={paragraphClassname}
+          dangerouslySetInnerHTML={{ __html: item.details }}
+        />
       </div>
     </details>
   ) : (
