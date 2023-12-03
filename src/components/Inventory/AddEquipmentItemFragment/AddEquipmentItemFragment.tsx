@@ -208,4 +208,3 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
 }
 
 export default AddEquipmentItemFragment
-// FIXME   htmlFor='coins'   htmlFor='isCopper'

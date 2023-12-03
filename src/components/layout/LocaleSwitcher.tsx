@@ -49,5 +49,3 @@ const LocaleSwitcher = () => {
 }
 
 export default LocaleSwitcher
-
-// FIXME Memoization bug? after switching doesn't update grids

@@ -67,7 +67,7 @@ const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
           </button>
           <div className='space-y-4'>
             <label
-              htmlFor='coins'
+              htmlFor='coins--set-coins'
               className='mb-2 block font-medium text-gray-700'
             >
               <Trans>
@@ -79,7 +79,7 @@ const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
               className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600'
               placeholder='0'
               name='coins'
-              id='coins'
+              id='coins--set-coins'
             />
 
             {/* Checkbox */}
@@ -87,11 +87,11 @@ const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
               <Field
                 type='checkbox'
                 name='isCopper'
-                id='isCopper'
+                id='isCopper--set-coins'
                 className='h-4 w-4 rounded border-gray-300 bg-gray-100 focus:ring-2 focus:ring-blue-500'
               />
               <label
-                htmlFor='isCopper'
+                htmlFor='isCopper--set-coins'
                 className='ms-2 cursor-pointer text-sm font-medium text-gray-900'
               >
                 <Trans>Copper pieces</Trans>
