@@ -34,7 +34,10 @@ Demo application: https://8kto.github.io/ttrpg-lotfp-helpers
 - [x] Inventory is saved in locale storage and survives the page reload
 - [x] Languages support
 - [ ] Responsive layout, mobile devices support
-- [ ] Equipment sets that can be applied to the inventory
+- [ ] Equipment sets
+  - [ ] By class
+  - [ ] Common
+  - [ ] Random
 - [ ] Multiple Equipment sets
 
 ## Getting Started
