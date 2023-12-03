@@ -65,5 +65,3 @@ export const Armor: ReadonlyArray<EquipmentItemTranslated<ArmorItem>> = [
     type: ArmorType.Barding,
   },
 ]
-
-// TODO convert too long strings into IDs
