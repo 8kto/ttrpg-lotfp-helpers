@@ -75,7 +75,7 @@ const ruralCostColumn: DataGridColumn<MissileWeaponItem> = {
 }
 
 const MissileWeaponsGrid = () => {
-  const { i18n } = useLingui()
+  const { _: trans } = useLingui()
   const {
     state: { isCostRural },
   } = useInventoryState()
@@ -87,10 +87,10 @@ const MissileWeaponsGrid = () => {
   }, [isCostRural])
 
   const dataFilteredByCost = useMemo(() => {
-    const data = Object.values(new EquipmentTranslated(i18n).MissileWeapons)
+    const data = Object.values(new EquipmentTranslated(trans).MissileWeapons)
 
     return isCostRural.get() ? data.filter((i) => i.ruralCost !== null) : data
-  }, [i18n, isCostRural])
+  }, [trans, isCostRural])
 
   const handleAddClick = (item: MissileWeaponItem) => {
     const clone = getInventoryItem(

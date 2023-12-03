@@ -61,7 +61,7 @@ const columns: ReadonlyArray<DataGridColumn<MeleeWeaponItem>> = [
 ]
 
 const MeleeWeaponsGrid = () => {
-  const { i18n } = useLingui()
+  const { _: trans } = useLingui()
   const {
     state: { isCostRural },
   } = useInventoryState()
@@ -73,10 +73,10 @@ const MeleeWeaponsGrid = () => {
   }, [isCostRural])
 
   const dataFilteredByCost = useMemo(() => {
-    const data = Object.values(new EquipmentTranslated(i18n).MeleeWeapons)
+    const data = Object.values(new EquipmentTranslated(trans).MeleeWeapons)
 
     return isCostRural.get() ? data.filter((i) => i.ruralCost !== null) : data
-  }, [i18n, isCostRural])
+  }, [trans, isCostRural])
 
   const handleAddClick = (item: MeleeWeaponItem) => {
     const clone = getInventoryItem(

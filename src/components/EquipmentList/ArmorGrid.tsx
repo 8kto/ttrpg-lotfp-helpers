@@ -57,7 +57,7 @@ const ruralCostColumn: DataGridColumn<ArmorItem> = {
 }
 
 const ArmorGrid = () => {
-  const { i18n } = useLingui()
+  const { _: trans } = useLingui()
   const {
     state: { isCostRural },
   } = useInventoryState()
@@ -68,10 +68,10 @@ const ArmorGrid = () => {
   }, [isCostRural])
 
   const dataFilteredByCost = useMemo(() => {
-    const data = Object.values(new EquipmentTranslated(i18n).Armor)
+    const data = Object.values(new EquipmentTranslated(trans).Armor)
 
     return isCostRural.get() ? data.filter((i) => i.ruralCost !== null) : data
-  }, [i18n, isCostRural])
+  }, [isCostRural, trans])
 
   const handleAddClick = (item: ArmorItem) => {
     const clone = getInventoryItem(

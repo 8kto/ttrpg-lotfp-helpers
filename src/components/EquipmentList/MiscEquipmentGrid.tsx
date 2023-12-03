@@ -50,7 +50,7 @@ const ruralCostColumn: DataGridColumn<EquipmentItem> = {
 }
 
 const MiscEquipmentGrid = () => {
-  const { i18n } = useLingui()
+  const { _: trans } = useLingui()
   const {
     state: { isCostRural },
   } = useInventoryState()
@@ -61,10 +61,10 @@ const MiscEquipmentGrid = () => {
   }, [isCostRural])
 
   const dataFilteredByCost = useMemo(() => {
-    const data = Object.values(new EquipmentTranslated(i18n).MiscEquipment)
+    const data = Object.values(new EquipmentTranslated(trans).MiscEquipment)
 
     return isCostRural.get() ? data.filter((i) => i.ruralCost !== null) : data
-  }, [i18n, isCostRural])
+  }, [trans, isCostRural])
 
   const handleAddClick = (item: EquipmentItem) => {
     const clone = getInventoryItem(

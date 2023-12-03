@@ -12,10 +12,10 @@ import { MiscEquipment } from './MiscEquipment'
 import { MissileWeapons } from './MissileWeapons'
 
 export default class EquipmentTranslated {
-  private i18n: I18n
+  private readonly trans: I18n['_']
 
-  constructor(i18n: I18n) {
-    this.i18n = i18n
+  constructor(trans: I18n['_']) {
+    this.trans = trans
   }
 
   translate<T>(
@@ -24,8 +24,8 @@ export default class EquipmentTranslated {
     return items.map((item) => {
       return {
         ...item,
-        details: item.details ? this.i18n._(item.details) : undefined,
-        name: this.i18n._(item.name),
+        details: item.details ? this.trans(item.details) : undefined,
+        name: this.trans(item.name),
       } as T
     })
   }

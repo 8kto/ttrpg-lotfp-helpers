@@ -8,6 +8,7 @@ import { useInventoryState } from '@/state/InventoryState'
 
 const Wallet = () => {
   const [isManaged, setIsManaged] = useState(false)
+  // TODO in state, validate weights
   const [isCoinWeightActive, setIsCoinWeightActive] = useState(true)
   const [isSetCoinsDrawerOpen, setSetCoinsDrawerOpen] = useState(false)
 
