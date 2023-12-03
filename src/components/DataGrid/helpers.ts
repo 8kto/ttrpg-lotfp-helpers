@@ -15,3 +15,5 @@ export const trivialSort =
 
     return 0
   }
+
+export type DataGridSortFunction = typeof trivialSort

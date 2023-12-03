@@ -4,16 +4,16 @@ import React, { useMemo } from 'react'
 
 import DamageFragment from '@/components/DamageFragment'
 import DataGrid from '@/components/DataGrid/DataGrid'
-import { trivialSort } from '@/components/DataGrid/helpers'
-import type { DataGridColumn, SortConfig } from '@/components/DataGrid/types'
+import type { DataGridSortFunction } from '@/components/DataGrid/helpers'
+import type { DataGridColumn } from '@/components/DataGrid/types'
 import {
   getInventoryItem,
+  handleSortByDamage,
   renderWeightGridCol,
 } from '@/components/EquipmentList/helpers'
 import ItemDetails from '@/components/Inventory/ItemDetails'
 import RangeFragment from '@/components/RangeFragment'
 import EquipmentTranslated from '@/config/EquipmentTranslated'
-import type { Dice, EquipmentItem } from '@/domain'
 import type { MissileWeaponItem } from '@/domain/weapon'
 import { addMissileWeapon, useInventoryState } from '@/state/InventoryState'
 
@@ -104,37 +104,6 @@ const MissileWeaponsGrid = () => {
     return item.name.toLocaleLowerCase().includes(filterBy.toLocaleLowerCase())
   }
 
-  const handleSort = (sortConfig: SortConfig<EquipmentItem>) => {
-    const isSpecialCase =
-      (sortConfig as SortConfig<MissileWeaponItem>).key === 'damage'
-    const parseDiceValue = (dice?: Dice) => {
-      return dice ? parseInt(dice.substring(1), 10) : 0
-    }
-
-    return (a: MissileWeaponItem, b: MissileWeaponItem) => {
-      const diceValueA = parseDiceValue(a.damage?.dice)
-      const diceValueB = parseDiceValue(b.damage?.dice)
-
-      if (!isSpecialCase) {
-        return trivialSort(sortConfig)(a, b)
-      }
-
-      if (diceValueA !== diceValueB) {
-        return sortConfig.direction === 'asc'
-          ? diceValueA - diceValueB
-          : diceValueB - diceValueA
-      }
-
-      // Compare 'x' values if dice values are equal or one of them is missing
-      const xComparison = (a.damage?.x ?? 0) - (b.damage?.x ?? 0)
-      if (xComparison !== 0) {
-        return sortConfig.direction === 'asc' ? xComparison : -xComparison
-      }
-
-      return 0
-    }
-  }
-
   return (
     <>
       <div className='py-6'>
@@ -156,7 +125,7 @@ const MissileWeaponsGrid = () => {
         onAddClick={handleAddClick}
         filterFn={filterName}
         filterPlaceholder={t`Filter by name`}
-        handleSort={handleSort as typeof trivialSort}
+        handleSort={handleSortByDamage as DataGridSortFunction}
       />
     </>
   )
