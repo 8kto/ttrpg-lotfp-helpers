@@ -54,6 +54,12 @@
           { "caseSensitive": false }
         ]
       }
+    },
+    {
+      "files": ["src/**/*.test.ts"],
+      "rules": {
+        "@typescript-eslint/ban-ts-comment": "off"
+      }
     }
   ]
 }
