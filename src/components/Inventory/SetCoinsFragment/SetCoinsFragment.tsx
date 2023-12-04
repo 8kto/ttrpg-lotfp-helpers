@@ -8,6 +8,7 @@ import { setCopperPieces, useInventoryState } from '@/state/InventoryState'
 
 const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
   const { state } = useInventoryState()
+  const copperPieces = state.copperPieces
 
   const handleAddCoins = ({
     isCopper,
@@ -23,10 +24,12 @@ const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
     }
   }
 
+  // FIXME doesnt update field value after adding coins
+
   return (
     <Formik
       initialValues={{
-        coins: state.nested('copperPieces').get() / 10,
+        coins: copperPieces.get() / 10,
         isCopper: false,
       }}
       validationSchema={Yup.object({
@@ -39,6 +42,7 @@ const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
       onSubmit={(values, formikHelpers) => {
         handleAddCoins(values)
         formikHelpers.resetForm()
+        void formikHelpers.setFieldValue('coins', copperPieces.get() / 10)
       }}
     >
       {({ handleSubmit }) => (

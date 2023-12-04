@@ -1,4 +1,3 @@
-/* eslint-disable sort-keys */
 import { XMarkIcon } from '@heroicons/react/24/solid'
 import { Trans } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
@@ -19,12 +18,13 @@ import {
 } from '@/state/InventoryState'
 
 const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
-  const { i18n } = useLingui()
+  const { _: trans } = useLingui()
   const handleAddItem = (formValues: EquipmentItemDto) => {
     addCustomEquipmentItem(
       formValues.category,
       getCustomEquipmentItem(formValues),
     )
+    onClose()
   }
 
   return (
@@ -52,15 +52,8 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
         formikHelpers.resetForm()
       }}
     >
-      {({ handleSubmit }) => (
-        <Form
-          onKeyDown={(e) => {
-            if (e.key === 'Enter') {
-              e.preventDefault()
-              handleSubmit()
-            }
-          }}
-        >
+      {() => (
+        <Form>
           <h5
             id='drawer-label--add-coins'
             className='ph-color-accent mb-6 inline-flex items-center text-2xl'
@@ -151,7 +144,7 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
               {Object.entries(EncumbrancePointsLabelsDict).map(
                 ([key, title]) => (
                   <option key={key} value={key}>
-                    {i18n._(title)}
+                    {trans(title)}
                   </option>
                 ),
               )}
@@ -174,7 +167,7 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
             >
               {Object.entries(EquipLabelsDict).map(([key, title]) => (
                 <option key={key} value={key}>
-                  {i18n._(title)}
+                  {trans(title)}
                 </option>
               ))}
             </Field>
