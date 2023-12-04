@@ -51,12 +51,7 @@ export const MeleeWeapons: ReadonlyArray<
   {
     cityCost: 20,
     damage: null,
-    details: msg`${
-      `A successful hit with this weapon requires the victim to make a saving throw versus Paralysis. ` +
-      `If unsuccessful, the victim is considered helpless, as is the wielder of the mancatcher ` +
-      `while the target is being held for purposes of defending against attacks. ` +
-      `This weapon must be wielded with two hands.`
-    }`,
+    details: msg`config.melee.mancatcher.details`,
     isAbleToReceiveCharge: false,
     name: msg`Mancatcher`,
     points: EncumbrancePoint.Oversized,
@@ -70,11 +65,7 @@ export const MeleeWeapons: ReadonlyArray<
       dice: Dice.d8,
       x: 1,
     },
-    details: msg`${
-      `This two-handed weapon can be used to attack from the second rank, ` +
-      `can be used to receive a charge, and receives a +1 bonus to hit opponents with ` +
-      `an unadjusted AC of 16 or better.`
-    }`,
+    details: msg`config.melee.polearm.details`,
     isAbleToReceiveCharge: true,
     isSecondRank: true,
     name: msg`Polearm`,
@@ -89,7 +80,7 @@ export const MeleeWeapons: ReadonlyArray<
       dice: Dice.d8,
       x: 1,
     },
-    details: msg`${`This one handed weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better.`}`,
+    details: msg`This one handed weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better.`,
     name: msg`Rapier`,
     points: EncumbrancePoint.Regular,
     ruralCost: null,
@@ -101,7 +92,7 @@ export const MeleeWeapons: ReadonlyArray<
       dice: Dice.d6,
       x: 1,
     },
-    details: msg`${`This can be used to attack from the second rank, and can be used to receive a charge.`}`,
+    details: msg`This can be used to attack from the second rank, and can be used to receive a charge.`,
     isAbleToReceiveCharge: true,
     isSecondRank: true,
     name: msg`Spear`,
@@ -128,10 +119,7 @@ export const MeleeWeapons: ReadonlyArray<
       dice: Dice.d10,
       x: 1,
     },
-    details: msg`${
-      `These weapons must be wielded with two hands. ` +
-      `Two-handed swords, mauls, and great axes are included in this category.`
-    }`,
+    details: msg`These weapons must be wielded with two hands. Two-handed swords, mauls, and great axes are included in this category.`,
     name: msg`Weapon, Great`,
     points: EncumbrancePoint.Oversized,
     ruralCost: null,
@@ -144,7 +132,7 @@ export const MeleeWeapons: ReadonlyArray<
       dice: Dice.d8,
       x: 1,
     },
-    details: msg`${`These are one-handed weapons, including swords, battle axes, maces`}`,
+    details: msg`These are one-handed weapons, including swords, battle axes, maces`,
     name: msg`Weapon, Medium`,
     points: EncumbrancePoint.Regular,
     ruralCost: 50,
@@ -169,10 +157,7 @@ export const MeleeWeapons: ReadonlyArray<
       dice: Dice.d4,
       x: 1,
     },
-    details: msg`${
-      `These are small one-handed weapons including daggers and clubs, ` +
-      `and suffer a –2 penalty to hit opponents with an unadjusted AC of 15 or better.`
-    }`,
+    details: msg`These are small one-handed weapons including daggers and clubs, and suffer a –2 penalty to hit opponents with an unadjusted AC of 15 or better.`,
     name: msg`Weapon, Minor`,
     points: EncumbrancePoint.Regular,
     ruralCost: 5,
@@ -184,10 +169,7 @@ export const MeleeWeapons: ReadonlyArray<
       dice: Dice.d3,
       x: 1,
     },
-    details: msg`${
-      `This weapon is ineffective against targets with unadjusted AC 14 or better, ` +
-      'but allows mêlée attacks on opponents up to 10` away.'
-    }`,
+    details: msg`This weapon is ineffective against targets with unadjusted AC 14 or better, but allows mêlée attacks on opponents up to 10 ft away.`,
     name: msg`Whip`,
     points: EncumbrancePoint.Regular,
     ruralCost: 25,
