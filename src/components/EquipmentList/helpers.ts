@@ -2,7 +2,7 @@ import { trivialSort } from '@/components/DataGrid/helpers'
 import type { DataGridColumn, SortConfig } from '@/components/DataGrid/types'
 import type { Dice, EquipmentItem, InventoryItem } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
-import type { MeleeWeaponItem } from '@/domain/weapon'
+import type { MeleeWeaponItem, WeaponItem } from '@/domain/weapon'
 import { autoincrement } from '@/shared/helpers/autoincrement'
 import deepclone from '@/shared/helpers/deepclone'
 
@@ -30,7 +30,7 @@ const parseDiceValue = (dice?: Dice) => {
   return dice ? parseInt(dice.substring(1), 10) : 0
 }
 
-export const handleSortByDamage = (sortConfig: SortConfig<EquipmentItem>) => {
+export const handleSortByDamage = (sortConfig: SortConfig<WeaponItem>) => {
   const isSpecialCase =
     (sortConfig as SortConfig<MeleeWeaponItem>).key === 'damage'
 
