@@ -3,20 +3,19 @@ import type { DataGridColumn, SortConfig } from '@/components/DataGrid/types'
 import type { Dice, EquipmentItem, InventoryItem } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { MeleeWeaponItem, WeaponItem } from '@/domain/weapon'
-import { autoincrement } from '@/shared/helpers/autoincrement'
+import { getAutoIncrementedId } from '@/shared/helpers/autoincrement'
 import deepclone from '@/shared/helpers/deepclone'
 
-export const getInventoryItem = (() => {
-  const autoinc = autoincrement()
-
-  return <T extends EquipmentItem>(item: T, cost: number): InventoryItem<T> => {
-    return deepclone<InventoryItem<T>>({
-      ...item,
-      inventoryId: item.name + autoinc.next().value,
-      lockedCost: cost,
-    })
-  }
-})()
+export const getInventoryItem = <T extends EquipmentItem>(
+  item: T,
+  cost: number,
+): InventoryItem<T> => {
+  return deepclone<InventoryItem<T>>({
+    ...item,
+    inventoryId: item.name + getAutoIncrementedId(),
+    lockedCost: cost,
+  })
+}
 
 export const renderWeightGridCol: DataGridColumn<EquipmentItem>['render'] = (
   item,

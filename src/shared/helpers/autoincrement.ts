@@ -8,4 +8,11 @@ export function* autoincrement(): Generator<number> {
     yield ++counter
   }
 }
-// TODO add simple getter
+
+export const getAutoIncrementedId = (() => {
+  const generator = autoincrement()
+
+  return () => {
+    return generator.next().value
+  }
+})()

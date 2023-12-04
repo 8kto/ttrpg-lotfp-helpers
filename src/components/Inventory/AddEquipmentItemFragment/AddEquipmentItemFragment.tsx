@@ -9,7 +9,7 @@ import * as Yup from 'yup'
 import {
   EncumbrancePointsLabelsDict,
   EquipLabelsDict,
-  getEquipmentItem,
+  getCustomEquipmentItem,
 } from '@/components/Inventory/AddEquipmentItemFragment/helpers'
 import type { EquipmentItemDto } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
@@ -21,7 +21,10 @@ import {
 const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
   const { i18n } = useLingui()
   const handleAddItem = (formValues: EquipmentItemDto) => {
-    addCustomEquipmentItem(formValues.category, getEquipmentItem(formValues))
+    addCustomEquipmentItem(
+      formValues.category,
+      getCustomEquipmentItem(formValues),
+    )
   }
 
   return (
