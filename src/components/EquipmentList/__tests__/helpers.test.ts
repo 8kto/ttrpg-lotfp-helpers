@@ -1,11 +1,15 @@
+import type { I18n } from '@lingui/core'
+
 import { trivialSort } from '@/components/DataGrid/helpers'
 import type { SortConfig } from '@/components/DataGrid/types'
 import {
   getInventoryItem,
   handleSortByDamage,
+  renderWeightGridCol,
 } from '@/components/EquipmentList/helpers'
 import type { EquipmentItem } from '@/domain'
 import { Dice } from '@/domain'
+import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { MeleeWeaponItem } from '@/domain/weapon'
 import {
   armorItemMock1,
@@ -217,6 +221,25 @@ describe('Equipment list helpers', () => {
         { damage: { dice: Dice.d10, x: 3 } } as MeleeWeaponItem,
         { damage: { dice: Dice.d20, x: 1 } } as MeleeWeaponItem,
       ])
+    })
+  })
+
+  describe('renderWeightGridCol', () => {
+    const mockI18n = {
+      _: jest.fn((key) => `translated_${key}`),
+    } as unknown as I18n
+
+    it('should return "-" when points are None', () => {
+      const item = { points: EncumbrancePoint.None } as EquipmentItem
+      const result = renderWeightGridCol!(item, mockI18n)
+      expect(result).toBe('-')
+    })
+
+    it('should return translated value for non-None points', () => {
+      const item = { points: EncumbrancePoint.Regular } as EquipmentItem
+      const result = renderWeightGridCol!(item, mockI18n)
+      expect(result).toBe(`translated_${EncumbrancePoint[item.points]}`)
+      expect(mockI18n._).toHaveBeenCalledWith(EncumbrancePoint[item.points])
     })
   })
 })
