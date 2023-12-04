@@ -6,7 +6,7 @@
 
 Lamentations of the Flame Princess helpers.
 
-Demo application: https://8kto.github.io/ttrpg-lotfp-helpers
+Demo application: https://lotfp.vercel.app
 
 ## Features list
 
