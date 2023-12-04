@@ -17,7 +17,7 @@ msgid "config.misc.airBladder.details"
 msgstr "Кожаный мешочек с трубкой для рта; дополнительный глоток воздуха для подводного плавания.<br />Может использоваться и как вспомогательное плавательное средство."
 
 msgid "config.melee.mancatcher.details"
-msgstr "A successful hit with this weapon requires the victim to make a saving throw versus Paralysis. If unsuccessful, the victim is considered helpless, as is the wielder of the mancatcher while the target is being held for purposes of defending against attacks. This weapon must be wielded with two hands."
+msgstr "При успешном попадании этим оружием жертва должна сделать спасбросок от Паралича. В случае неудачи жертва считается беспомощной, как и владелец мэнкэтчера, пока цель удерживается для защиты от атак. Это оружие необходимо держать двумя руками."
 
 msgid "Clothing, Poor"
 msgstr "Одежда, простая"
