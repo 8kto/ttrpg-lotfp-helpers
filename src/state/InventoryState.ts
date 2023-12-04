@@ -149,5 +149,9 @@ export const addCustomEquipmentItem = (
   type B = typeof equipmentStateCategory
   type T = B[keyof B]
 
-  equipmentStateCategory[equipmentStateCategory.length].set(data as T)
+  try {
+    equipmentStateCategory[equipmentStateCategory.length].set(data as T)
+  } catch (err) {
+    console.error(`Unknown InventoryState category [${category}]`, err)
+  }
 }
