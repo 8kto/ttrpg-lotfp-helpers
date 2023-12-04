@@ -16,11 +16,17 @@ msgstr ""
 msgid "config.misc.airBladder.details"
 msgstr "Кожаный мешочек с трубкой для рта; дополнительный глоток воздуха для подводного плавания.<br />Может использоваться и как вспомогательное плавательное средство."
 
+msgid "config.melee.mancatcher.details"
+msgstr "A successful hit with this weapon requires the victim to make a saving throw versus Paralysis. If unsuccessful, the victim is considered helpless, as is the wielder of the mancatcher while the target is being held for purposes of defending against attacks. This weapon must be wielded with two hands."
+
 msgid "Clothing, Poor"
 msgstr "Одежда, простая"
 
 msgid "Weapon, Medium"
 msgstr "Среднее оружие"
+
+msgid "This can be used to attack from the second rank, and can be used to receive a charge."
+msgstr "Можно использовать для атаки из второго ряда, а также для встречи рывка (charge)."
 
 msgid "Great axe"
 msgstr "Большой топор"
@@ -39,6 +45,12 @@ msgstr "Гвозди"
 
 msgid "Pipe"
 msgstr "Трубка"
+
+msgid "This one handed weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
+msgstr "Штраф -2 AB на атаку противников с AC 15 или выше."
+
+msgid "This weapon is ineffective against targets with unadjusted AC 14 or better, but allows mêlée attacks on opponents up to 10 ft away."
+msgstr "Это оружие неэффективно против целей с немодифицированным AC 14 и выше, но позволяет атаковать на расстоянии до 10 футов."
 
 msgid "Flask of Lamp Oil"
 msgstr "Фляга с маслом для ламп"
@@ -141,7 +153,10 @@ msgid "Drill"
 msgstr "Дрель"
 
 msgid "This weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
-msgstr "Это оружие имеет штраф –2 к попаданию по противникам с нескорректированным AC 15 и выше."
+msgstr "Это оружие имеет штраф –2 AB для противников с немодифицированным AC 15 и выше."
+
+msgid "These are small one-handed weapons including daggers and clubs, and suffer a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
+msgstr "Это небольшое одноручное оружие, включая кинжалы и булавы, даёт штраф -2 AB для противников с AC 15 или выше."
 
 msgid "Weapon, Minor"
 msgstr "Мелкое оружие"
@@ -188,6 +203,9 @@ msgstr "Введите количество монет. Используйте �
 msgid "Whistle"
 msgstr "Свисток"
 
+msgid "These are one-handed weapons, including swords, battle axes, maces"
+msgstr "Одноручное оружие, включая мечи, боевые топоры, булавы."
+
 msgid "Lock"
 msgstr "Замок"
 
@@ -210,9 +228,6 @@ msgstr "Учитывать вес монет для нагрузки."
 
 msgid "Cost"
 msgstr "Цена"
-
-msgid "{0}"
-msgstr "{0}"
 
 msgid "EN"
 msgstr "EN"
@@ -249,7 +264,7 @@ msgid "config.misc.caltrop.details"
 msgstr "Ежи (caltrop) — это металлические шипы, которые выглядят как распорки, у которых один острый конец всегда направлен вверх."
 
 msgid "Use of this weapon requires an attack from surprise, or a successful grapple. If a hit is scored, the target is considered grappled and will take 1d6 damage per round."
-msgstr "Использование этого оружия требует неожиданной атаки или успешного захвата. Если удар успешен, цель считается захваченной и получает 1d6 урона за раунд."
+msgstr "Требует неожиданной атаки или успешного захвата. Если атака успешная, цель считается захваченной и получает 1d6 урона за раунд."
 
 msgid "Chest"
 msgstr "Сундук"
@@ -400,6 +415,9 @@ msgstr "Пайки, стандартные/День"
 
 msgid "Chain, per foot"
 msgstr "Цепь, за фут"
+
+msgid "These weapons must be wielded with two hands. Two-handed swords, mauls, and great axes are included in this category."
+msgstr "Это оружие держат двумя руками. В эту категорию входят двуручные мечи, булавы и большие топоры."
 
 msgid "Loading..."
 msgstr "Загрузка..."
@@ -683,6 +701,9 @@ msgstr "Палатка, павильон"
 
 msgid "Dart"
 msgstr "Дротик"
+
+msgid "config.melee.polearm.details"
+msgstr "Это двуручное оружие может быть использовано для атаки из второго ряда, может быть использовано для встречи рывка (charge) и получает бонус +1 AB к противников с немодифицированным AC 16 и выше."
 
 msgid "Instrument"
 msgstr "Инструмент"
