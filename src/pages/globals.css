@@ -56,7 +56,7 @@ details.ph-details-bullet > summary::-webkit-details-marker {
 }
 
 .ph-custom-indicator {
-  transition: transform 0.3s ease;
+  transition: transform 0.1s ease;
   font-size: 0.65rem;
   line-height: 0.5rem;
 }

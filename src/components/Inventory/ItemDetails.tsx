@@ -17,6 +17,84 @@ const isMissileItem = (item: EquipmentItem): item is MissileWeaponItem => {
   return 'range' in item && !!item.range
 }
 
+const ItemDetailsLine = <T extends EquipmentItem>({ item }: { item: T }) => {
+  const detailsClassname = 'ml-1 text-gray-500'
+
+  return (
+    <>
+      {isArmorItem(item) ? (
+        <span className={detailsClassname}>
+          (<Trans>AC</Trans> {item.armorClass})
+        </span>
+      ) : null}
+      {isWeaponItem(item) ? (
+        <span className={detailsClassname}>
+          (<DamageFragment damage={item.damage} />)
+        </span>
+      ) : null}
+    </>
+  )
+}
+
+const Summary = <T extends EquipmentItem>({
+  item,
+  compact = false,
+}: {
+  item: T
+  compact?: boolean
+}) => {
+  return (
+    <summary className='cursor-pointer list-none'>
+      <div className='flex items-center'>
+        <span className='ph-custom-indicator mr-1 text-gray-300'>&#9654;</span>
+        {item.name}
+        {!compact && <ItemDetailsLine item={item} />}
+      </div>
+    </summary>
+  )
+}
+
+const Details = <T extends EquipmentItem>({ item }: { item: T }) => {
+  const paragraphClassname = 'mb-2'
+
+  return (
+    <div className='pt-4 text-gray-600'>
+      {isArmorItem(item) ? (
+        <p className={paragraphClassname}>
+          <Trans>Armor Class</Trans>: {item.armorClass}
+        </p>
+      ) : null}
+      {/* All weapons */}
+      {isWeaponItem(item) ? (
+        <p className={paragraphClassname}>
+          <strong>
+            <Trans>Damage</Trans>
+          </strong>
+          : <DamageFragment damage={item.damage} />
+        </p>
+      ) : null}
+
+      {/* Missile weapons */}
+      {isMissileItem(item) ? (
+        <div className={paragraphClassname}>
+          <strong>
+            <Trans>Range</Trans>
+          </strong>
+          <RangeFragment range={item.range} />
+        </div>
+      ) : null}
+
+      {/* All items */}
+      {!!item.details ? (
+        <p
+          className={paragraphClassname}
+          dangerouslySetInnerHTML={{ __html: item.details }}
+        />
+      ) : null}
+    </div>
+  )
+}
+
 const ItemDetails = <T extends EquipmentItem>({
   item,
   compact = false,
@@ -24,76 +102,19 @@ const ItemDetails = <T extends EquipmentItem>({
   item: T
   compact?: boolean
 }) => {
-  const paragraphClassname = 'mb-2'
+  if (item.details) {
+    return (
+      <details className='ph-details-bullet text-gray-900'>
+        <Summary item={item} compact={compact} />
+        <Details item={item} />
+      </details>
+    )
+  }
 
-  return item.details ? (
-    <details className='ph-details-bullet text-gray-900'>
-      <summary className='cursor-pointer list-none'>
-        <div className='flex items-center'>
-          <span className='ph-custom-indicator mr-2 text-gray-400'>
-            &#9654;
-          </span>
-          {/* Title */}
-          {item.name}
-          {!compact && (
-            <>
-              {isArmorItem(item) ? (
-                <>
-                  {' '}
-                  (<Trans>AC</Trans> {item.armorClass})
-                </>
-              ) : null}
-              {isWeaponItem(item) ? (
-                <>
-                  {' '}
-                  (<DamageFragment damage={item.damage} />)
-                </>
-              ) : null}
-            </>
-          )}
-        </div>
-      </summary>
-      {/* Item details unfold */}
-      <div className='pt-4 text-gray-600'>
-        {isArmorItem(item) ? (
-          <p className={paragraphClassname}>Armor Class: {item.armorClass}</p>
-        ) : null}
-        {isWeaponItem(item) ? (
-          <p className={paragraphClassname}>
-            <strong>
-              <Trans>Damage</Trans>
-            </strong>
-            : <DamageFragment damage={item.damage} />
-          </p>
-        ) : null}
-        {isMissileItem(item) ? (
-          <div className={paragraphClassname}>
-            <strong>
-              <Trans>Range</Trans>
-            </strong>
-            <RangeFragment range={item.range} />
-          </div>
-        ) : null}
-        <p
-          className={paragraphClassname}
-          dangerouslySetInnerHTML={{ __html: item.details }}
-        />
-      </div>
-    </details>
-  ) : (
+  return (
     <>
       {item.name}
-      {!compact && (
-        <>
-          {isArmorItem(item) ? <> (AC {item.armorClass})</> : null}
-          {isWeaponItem(item) ? (
-            <>
-              {' '}
-              (<DamageFragment damage={item.damage} />)
-            </>
-          ) : null}
-        </>
-      )}
+      {!compact && <ItemDetailsLine item={item} />}
     </>
   )
 }

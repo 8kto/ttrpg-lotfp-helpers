@@ -35,9 +35,9 @@ const columns: ReadonlyArray<DataGridColumn<MeleeWeaponItem>> = [
   {
     className: 'w-1/3',
     key: 'name',
-    render: (item: MeleeWeaponItem) => (
-      <ItemDetails<MeleeWeaponItem> item={item} compact />
-    ),
+    render: (item: MeleeWeaponItem) => {
+      return <ItemDetails<MeleeWeaponItem> item={item} compact />
+    },
     get title() {
       return t`Name`
     },
