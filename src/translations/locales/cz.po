@@ -130,6 +130,9 @@ msgstr ""
 msgid "optional"
 msgstr ""
 
+msgid "Darts for blowgun, quiver (20)"
+msgstr ""
+
 msgid "City Cost"
 msgstr ""
 
@@ -198,6 +201,9 @@ msgid "Bedroll"
 msgstr ""
 
 msgid "Enter coin amount. Use copper pieces instead of float numbers."
+msgstr ""
+
+msgid "config.missile.blowgun.details"
 msgstr ""
 
 msgid "Whistle"
@@ -310,6 +316,9 @@ msgid "None"
 msgstr ""
 
 msgid "Chain Barding"
+msgstr ""
+
+msgid "Armor Class"
 msgstr ""
 
 msgid "Reset"
@@ -602,6 +611,9 @@ msgid "No encumbrance if empty"
 msgstr ""
 
 msgid "Hourglass"
+msgstr ""
+
+msgid "Dart for blowgun (1)"
 msgstr ""
 
 msgid "This weapon can be used one-handed if charging on horseback. Otherwise, it is effectively a polearm (pike)"

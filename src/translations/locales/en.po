@@ -130,6 +130,9 @@ msgstr "Barrel"
 msgid "optional"
 msgstr "optional"
 
+msgid "Darts for blowgun, quiver (20)"
+msgstr "Darts for blowgun, quiver (20)"
+
 msgid "City Cost"
 msgstr "City Cost"
 
@@ -199,6 +202,9 @@ msgstr "Bedroll"
 
 msgid "Enter coin amount. Use copper pieces instead of float numbers."
 msgstr "Enter coin amount. Use copper pieces instead of float numbers."
+
+msgid "config.missile.blowgun.details"
+msgstr "Blowguns are long, hollow tubes of metal or wood, which use the wielders' own lung power to fire small darts (or potentially other projectiles). These weapons are typically around 4 feet in length, but lengths of up to 7 feet are not unheard of"
 
 msgid "Whistle"
 msgstr "Whistle"
@@ -311,6 +317,9 @@ msgstr "None"
 
 msgid "Chain Barding"
 msgstr "Chain Barding"
+
+msgid "Armor Class"
+msgstr "Armor Class"
 
 msgid "Reset"
 msgstr "Reset"
@@ -603,6 +612,9 @@ msgstr "No encumbrance if empty"
 
 msgid "Hourglass"
 msgstr "Hourglass"
+
+msgid "Dart for blowgun (1)"
+msgstr "Dart for blowgun (1)"
 
 msgid "This weapon can be used one-handed if charging on horseback. Otherwise, it is effectively a polearm (pike)"
 msgstr "This weapon can be used one-handed if charging on horseback. Otherwise, it is effectively a polearm (pike)"

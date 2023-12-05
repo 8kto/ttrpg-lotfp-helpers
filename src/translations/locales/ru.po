@@ -130,6 +130,9 @@ msgstr "Бочка"
 msgid "optional"
 msgstr "необязательно"
 
+msgid "Darts for blowgun, quiver (20)"
+msgstr "Дротики для духовой трубки, колчан (20)"
+
 msgid "City Cost"
 msgstr "В городе"
 
@@ -199,6 +202,9 @@ msgstr "Спальный мешок"
 
 msgid "Enter coin amount. Use copper pieces instead of float numbers."
 msgstr "Введите количество монет. Используйте медные монеты вместо дробных чисел."
+
+msgid "config.missile.blowgun.details"
+msgstr "Длинные полые трубки из металла или дерева, используют силу лёгких владельца для стрельбы небольшими дротиками (или, возможно, другими снарядами). Обычно имеет длину около 4 футов, но нередко бывают и до 7 футов."
 
 msgid "Whistle"
 msgstr "Свисток"
@@ -311,6 +317,9 @@ msgstr "Нет"
 
 msgid "Chain Barding"
 msgstr "Кольчужный бард"
+
+msgid "Armor Class"
+msgstr "Класс Брони"
 
 msgid "Reset"
 msgstr "Сброс"
@@ -603,6 +612,9 @@ msgstr "Нет нагрузки, если пустая"
 
 msgid "Hourglass"
 msgstr "Песочные часы"
+
+msgid "Dart for blowgun (1)"
+msgstr "Дротик для духовой трубки (1)"
 
 msgid "This weapon can be used one-handed if charging on horseback. Otherwise, it is effectively a polearm (pike)"
 msgstr "Это оружие можно использовать как одноручное при атаке верхом. В противном случае, равноценна древковому оружию (пике)"
