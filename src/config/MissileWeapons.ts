@@ -12,6 +12,7 @@ export const MissileWeapons: ReadonlyArray<
   {
     cityCost: 5,
     damage: null,
+    details: msg`config.missile.blowgun.details`,
     name: msg`Blowgun`,
     points: EncumbrancePoint.Regular,
     range: { long: 80, medium: 50, short: 20 },
@@ -142,5 +143,23 @@ export const MissileWeapons: ReadonlyArray<
     ruralCost: 10,
     type: WeaponType.Ammunition,
   },
+  // Dart as an ammunition is taken from BFRPG Equipment Emporium 1e;
+  {
+    cityCost: 0.2,
+    damage: { dice: Dice.d3, x: 1 },
+    name: msg`Dart for blowgun (1)`,
+    points: EncumbrancePoint.None,
+    range: null,
+    ruralCost: 0.2,
+    type: WeaponType.Ammunition,
+  },
+  {
+    cityCost: 4,
+    damage: { dice: Dice.d3, x: 1 },
+    name: msg`Darts for blowgun, quiver (20)`,
+    points: EncumbrancePoint.Regular,
+    range: null,
+    ruralCost: 4,
+    type: WeaponType.Ammunition,
+  },
 ]
-// TODO blowgun darts?
