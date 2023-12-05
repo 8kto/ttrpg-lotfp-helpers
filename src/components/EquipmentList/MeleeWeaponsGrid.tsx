@@ -20,14 +20,14 @@ const cityCostColumn: DataGridColumn<MeleeWeaponItem> = {
   className: 'w-1/6',
   key: 'cityCost',
   get title() {
-    return t`City Cost`
+    return t`Cost, sp`
   },
 }
 const ruralCostColumn: DataGridColumn<MeleeWeaponItem> = {
   className: 'w-1/6',
   key: 'ruralCost',
   get title() {
-    return t`Rural Cost`
+    return t`Cost, sp`
   },
 }
 

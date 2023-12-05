@@ -21,9 +21,15 @@ const columns: ReadonlyArray<DataGridColumn<MissileWeaponItem>> = [
   {
     className: 'w-1/3',
     key: 'name',
-    render: (item: MissileWeaponItem) => (
-      <ItemDetails<MissileWeaponItem> item={item} compact showDetailsBlock />
-    ),
+    render: (item: MissileWeaponItem) => {
+      return (
+        <ItemDetails<MissileWeaponItem>
+          item={item}
+          compact
+          showDetailsBlock={!!item.range}
+        />
+      )
+    },
     get title() {
       return t`Name`
     },
@@ -62,14 +68,14 @@ const cityCostColumn: DataGridColumn<MissileWeaponItem> = {
   className: 'w-1/6',
   key: 'cityCost',
   get title() {
-    return t`City Cost`
+    return t`Cost, sp`
   },
 }
 const ruralCostColumn: DataGridColumn<MissileWeaponItem> = {
   className: 'w-1/6',
   key: 'ruralCost',
   get title() {
-    return t`Rural Cost`
+    return t`Cost, sp`
   },
 }
 
