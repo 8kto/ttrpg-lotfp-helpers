@@ -98,11 +98,15 @@ const Details = <T extends EquipmentItem>({ item }: { item: T }) => {
 const ItemDetails = <T extends EquipmentItem>({
   item,
   compact = false,
+  showDetailsBlock = false,
 }: {
   item: T
   compact?: boolean
+  showDetailsBlock?: boolean
 }) => {
-  if (item.details) {
+  const shouldShowDetails = showDetailsBlock || !!item.details
+
+  if (shouldShowDetails) {
     return (
       <details className='ph-details-bullet text-gray-900'>
         <Summary item={item} compact={compact} />

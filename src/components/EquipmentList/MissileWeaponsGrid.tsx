@@ -17,13 +17,12 @@ import EquipmentTranslated from '@/config/EquipmentTranslated'
 import type { MissileWeaponItem } from '@/domain/weapon'
 import { addMissileWeapon, useInventoryState } from '@/state/InventoryState'
 
-// TODO always display details with Range
 const columns: ReadonlyArray<DataGridColumn<MissileWeaponItem>> = [
   {
     className: 'w-1/3',
     key: 'name',
     render: (item: MissileWeaponItem) => (
-      <ItemDetails<MissileWeaponItem> item={item} compact />
+      <ItemDetails<MissileWeaponItem> item={item} compact showDetailsBlock />
     ),
     get title() {
       return t`Name`
