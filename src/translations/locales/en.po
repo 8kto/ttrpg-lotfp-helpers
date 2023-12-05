@@ -133,9 +133,6 @@ msgstr "optional"
 msgid "Darts for blowgun, quiver (20)"
 msgstr "Darts for blowgun, quiver (20)"
 
-msgid "City Cost"
-msgstr "City Cost"
-
 msgid "Rural"
 msgstr "Rural"
 
@@ -466,6 +463,9 @@ msgstr "Add equipment item"
 msgid "Tent, Grand"
 msgstr "Tent, Grand"
 
+msgid "Cost, sp"
+msgstr "Cost, sp"
+
 msgid "Combat"
 msgstr "Combat"
 
@@ -680,9 +680,6 @@ msgstr "Each missile weapon can be fired once per round with the exception of th
 #. js-lingui-explicit-id
 msgid "weapons.missile.range"
 msgstr "Targets at Medium range are –2 to hit, –4 to hit at Long range."
-
-msgid "Rural Cost"
-msgstr "Rural Cost"
 
 msgid "Armor"
 msgstr "Armor"

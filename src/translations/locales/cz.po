@@ -133,9 +133,6 @@ msgstr ""
 msgid "Darts for blowgun, quiver (20)"
 msgstr ""
 
-msgid "City Cost"
-msgstr ""
-
 msgid "Rural"
 msgstr ""
 
@@ -466,6 +463,9 @@ msgstr ""
 msgid "Tent, Grand"
 msgstr ""
 
+msgid "Cost, sp"
+msgstr ""
+
 msgid "Combat"
 msgstr ""
 
@@ -679,9 +679,6 @@ msgstr ""
 
 #. js-lingui-explicit-id
 msgid "weapons.missile.range"
-msgstr ""
-
-msgid "Rural Cost"
 msgstr ""
 
 msgid "Armor"

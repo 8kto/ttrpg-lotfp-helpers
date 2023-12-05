@@ -133,9 +133,6 @@ msgstr "необязательно"
 msgid "Darts for blowgun, quiver (20)"
 msgstr "Дротики для духовой трубки, колчан (20)"
 
-msgid "City Cost"
-msgstr "В городе"
-
 msgid "Rural"
 msgstr "Деревня"
 
@@ -466,6 +463,9 @@ msgstr "Добавить предмет"
 msgid "Tent, Grand"
 msgstr "Большая палатка"
 
+msgid "Cost, sp"
+msgstr "Цена, sp"
+
 msgid "Combat"
 msgstr "Бой"
 
@@ -680,9 +680,6 @@ msgstr "Каждое метательное оружие можно исполь
 #. js-lingui-explicit-id
 msgid "weapons.missile.range"
 msgstr "Цели на средней дистанции имеют –2 к попаданию, –4 к попаданию на длинной дистанции."
-
-msgid "Rural Cost"
-msgstr "В деревне"
 
 msgid "Armor"
 msgstr "Броня"
