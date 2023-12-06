@@ -1,21 +1,14 @@
 'use client'
 
-import { InboxStackIcon } from '@heroicons/react/24/solid'
 import { Trans } from '@lingui/macro'
 import Link from 'next/link'
-import React, { useContext } from 'react'
+import React from 'react'
 
 import LocaleSwitcher from '@/components/layout/LocaleSwitcher'
-import UiContext from '@/shared/context/uiContext'
 
 import { cursiveFont } from './fonts'
 
 const Header = () => {
-  const {
-    uiState: { activeTabId },
-    updateUiState,
-  } = useContext(UiContext)
-
   return (
     <header>
       <nav className='ph-header-wrapper fixed z-30 w-full border-b border-gray-200 px-4 py-3 text-white'>
@@ -32,17 +25,6 @@ const Header = () => {
 
           <div className='flex items-center'>
             <LocaleSwitcher />
-            <button
-              className='ph-btn-primary z-50 inline-flex cursor-pointer items-center justify-center rounded p-2 focus:outline-none lg:hidden'
-              onClick={() =>
-                updateUiState({
-                  activeTabId: !activeTabId,
-                })
-              }
-            >
-              <InboxStackIcon className='mr-2 h-5 w-5' />{' '}
-              <Trans>Inventory</Trans>
-            </button>
           </div>
         </div>
       </nav>
