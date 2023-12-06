@@ -2,14 +2,14 @@ import { createContext } from 'react'
 
 export type UiContextType = {
   uiState: {
-    isInventoryVisible: boolean
+    activeTabId: number
   }
   updateUiState: (newState: UiContextType['uiState']) => void
 }
 
 export const defaultUiState: UiContextType = {
   uiState: {
-    isInventoryVisible: false,
+    activeTabId: 0,
   },
   updateUiState: () => defaultUiState,
 }
