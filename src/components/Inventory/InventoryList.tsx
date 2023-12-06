@@ -14,7 +14,7 @@ import { useInventoryState } from '@/state/InventoryState'
 const Header = ({ children }: { children?: React.ReactNode }) => {
   return (
     <div className='mb-4 flex w-full items-center justify-between'>
-      <h1 className='hidden lg:inline-block text-2xl font-extrabold text-red-900 sm:text-3xl'>
+      <h1 className='hidden text-2xl font-extrabold text-red-900 sm:text-3xl lg:inline-block'>
         <Trans>Inventory</Trans>
       </h1>
       {children}

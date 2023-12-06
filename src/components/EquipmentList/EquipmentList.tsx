@@ -13,7 +13,7 @@ import Tabs from '@/components/Tabs'
 export default function EquipmentList() {
   return (
     <>
-      <h1 className='hidden lg:inline-block mb-4 text-2xl font-extrabold text-red-900 sm:text-3xl'>
+      <h1 className='mb-4 hidden text-2xl font-extrabold text-red-900 sm:text-3xl lg:inline-block'>
         <Trans>Equipment</Trans>
       </h1>
       <CommandBar />
