@@ -119,7 +119,7 @@ const DataGrid = <T extends EquipmentItem>({
                   onClick={() => onAddClick(item)}
                 >
                   <PlusIcon className='h-5 w-5 md:mr-2' />
-                  <span className='hidden md:inline'>
+                  <span className='hidden xl:inline'>
                     <Trans>Add</Trans>
                   </span>
                 </button>

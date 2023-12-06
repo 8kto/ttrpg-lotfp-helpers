@@ -13,15 +13,10 @@ import Tabs from '@/components/Tabs'
 export default function EquipmentList() {
   return (
     <>
-      <h1 className='mb-4 inline-block text-2xl font-extrabold text-red-900 sm:text-3xl'>
+      <h1 className='hidden lg:inline-block mb-4 text-2xl font-extrabold text-red-900 sm:text-3xl'>
         <Trans>Equipment</Trans>
       </h1>
-      <p>
-        <Trans>All costs are in silver pieces</Trans>
-      </p>
-
       <CommandBar />
-
       <Tabs
         tabs={[
           { content: <ArmorGrid />, key: 'armor', title: t`Armor` },

@@ -12,7 +12,7 @@ import { cursiveFont } from './fonts'
 
 const Header = () => {
   const {
-    uiState: { isInventoryVisible },
+    uiState: { activeTabId },
     updateUiState,
   } = useContext(UiContext)
 
@@ -36,7 +36,7 @@ const Header = () => {
               className='ph-btn-primary z-50 inline-flex cursor-pointer items-center justify-center rounded p-2 focus:outline-none lg:hidden'
               onClick={() =>
                 updateUiState({
-                  isInventoryVisible: !isInventoryVisible,
+                  activeTabId: !activeTabId,
                 })
               }
             >
