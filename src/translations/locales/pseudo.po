@@ -16,6 +16,9 @@ msgstr ""
 msgid "config.misc.airBladder.details"
 msgstr ""
 
+msgid "Use copper pieces instead of float numbers."
+msgstr ""
+
 msgid "config.melee.mancatcher.details"
 msgstr ""
 
@@ -29,6 +32,9 @@ msgid "This can be used to attack from the second rank, and can be used to recei
 msgstr ""
 
 msgid "Great axe"
+msgstr ""
+
+msgid "Base items set"
 msgstr ""
 
 msgid "Leather"
@@ -188,6 +194,9 @@ msgstr ""
 msgid "Filter by name"
 msgstr ""
 
+msgid "Seasoned adventurer"
+msgstr ""
+
 msgid "Wolvesbane"
 msgstr ""
 
@@ -195,9 +204,6 @@ msgid "Fishing Gear"
 msgstr ""
 
 msgid "Bedroll"
-msgstr ""
-
-msgid "Enter coin amount. Use copper pieces instead of float numbers."
 msgstr ""
 
 msgid "config.missile.blowgun.details"
@@ -284,6 +290,9 @@ msgstr ""
 msgid "Club"
 msgstr ""
 
+msgid "Adventuring Basics"
+msgstr ""
+
 #. js-lingui-explicit-id
 msgid "Miscellaneous"
 msgstr ""
@@ -345,6 +354,9 @@ msgid "Rapier"
 msgstr ""
 
 msgid "Sling"
+msgstr ""
+
+msgid "Ready for anything"
 msgstr ""
 
 msgid "Backpack"
@@ -626,9 +638,6 @@ msgid "Mirror, Steel"
 msgstr ""
 
 msgid "Weapon, Small"
-msgstr ""
-
-msgid "All costs are in silver pieces"
 msgstr ""
 
 msgid "Bottle of Wine/Liquor, Rich"
