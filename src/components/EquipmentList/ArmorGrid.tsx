@@ -62,9 +62,11 @@ const ArmorGrid = () => {
     state: { isCostRural },
   } = useInventoryState()
   const columnsFilteredByCost = useMemo(() => {
-    return isCostRural.get()
-      ? [...columns, ruralCostColumn]
-      : [...columns, cityCostColumn]
+    const costCol = isCostRural.get() ? ruralCostColumn : cityCostColumn
+    const lastIndex = columns.length - 1
+
+    // put the Cost before the last column
+    return [...columns.slice(0, lastIndex), costCol, columns[lastIndex]]
   }, [isCostRural])
 
   const dataFilteredByCost = useMemo(() => {
