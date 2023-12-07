@@ -7,14 +7,43 @@ import DataGrid from '@/components/DataGrid/DataGrid'
 import type { DataGridSortFunction } from '@/components/DataGrid/helpers'
 import type { DataGridColumn } from '@/components/DataGrid/types'
 import {
+  renderNameGridCol,
+  renderWeightGridCol,
+} from '@/components/EquipmentList/gridHelpers'
+import {
   getInventoryItem,
   handleSortByDamage,
-  renderWeightGridCol,
 } from '@/components/EquipmentList/helpers'
-import ItemDetails from '@/components/Inventory/ItemDetails'
 import EquipmentTranslated from '@/config/EquipmentTranslated'
 import type { MeleeWeaponItem } from '@/domain/weapon'
 import { addMeleeWeapon, useInventoryState } from '@/state/InventoryState'
+
+const columns: ReadonlyArray<DataGridColumn<MeleeWeaponItem>> = [
+  {
+    className: 'w-1/2 sm:w-1/3',
+    key: 'name',
+    render: renderNameGridCol,
+    get title() {
+      return t`Name`
+    },
+  },
+  {
+    className: 'w-1/6',
+    key: 'damage',
+    render: (item: MeleeWeaponItem) => <DamageFragment damage={item.damage} />,
+    get title() {
+      return t`Damage`
+    },
+  },
+  {
+    className: 'hidden sm:table-cell sm:w-1/6',
+    key: 'points',
+    render: renderWeightGridCol,
+    get title() {
+      return t`Weight`
+    },
+  },
+]
 
 const cityCostColumn: DataGridColumn<MeleeWeaponItem> = {
   className: 'w-1/6',
@@ -30,35 +59,6 @@ const ruralCostColumn: DataGridColumn<MeleeWeaponItem> = {
     return t`Cost, sp`
   },
 }
-
-const columns: ReadonlyArray<DataGridColumn<MeleeWeaponItem>> = [
-  {
-    className: 'w-1/3',
-    key: 'name',
-    render: (item: MeleeWeaponItem) => {
-      return <ItemDetails<MeleeWeaponItem> item={item} compact />
-    },
-    get title() {
-      return t`Name`
-    },
-  },
-  {
-    className: 'w-1/6',
-    key: 'damage',
-    render: (item: MeleeWeaponItem) => <DamageFragment damage={item.damage} />,
-    get title() {
-      return t`Damage`
-    },
-  },
-  {
-    className: 'w-1/6',
-    key: 'points',
-    render: renderWeightGridCol,
-    get title() {
-      return t`Weight`
-    },
-  },
-]
 
 const MeleeWeaponsGrid = () => {
   const { _: trans } = useLingui()

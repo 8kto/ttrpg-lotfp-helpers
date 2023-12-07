@@ -2,10 +2,10 @@ import type { I18n } from '@lingui/core'
 
 import { trivialSort } from '@/components/DataGrid/helpers'
 import type { SortConfig } from '@/components/DataGrid/types'
+import { renderWeightGridCol } from '@/components/EquipmentList/gridHelpers'
 import {
   getInventoryItem,
   handleSortByDamage,
-  renderWeightGridCol,
 } from '@/components/EquipmentList/helpers'
 import type { EquipmentItem } from '@/domain'
 import { Dice } from '@/domain'

@@ -4,6 +4,7 @@ import {
 } from '@heroicons/react/24/solid'
 import { Trans } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import classnames from 'classnames'
 import React, { useEffect, useState } from 'react'
 
 import { trivialSort } from '@/components/DataGrid/helpers'
@@ -90,9 +91,11 @@ const DataGrid = <T extends EquipmentItem>({
               {columns.map((column) => (
                 <th
                   key={column.key as string}
-                  className={`${headerCellClassnames} ${
-                    sortConfig.key === column.key ? 'font-bold' : ''
-                  } ${column.className ?? ''}`}
+                  className={classnames(
+                    headerCellClassnames,
+                    column.className,
+                    { 'font-bold': sortConfig.key === column.key },
+                  )}
                   onClick={() => handleSortClick(column.key)}
                 >
                   {column.title} {sortIcon(column.key as string)}
@@ -107,7 +110,10 @@ const DataGrid = <T extends EquipmentItem>({
                 {columns.map((column) => (
                   <td
                     key={column.key as string}
-                    className='p-4 font-normal text-gray-900'
+                    className={classnames(
+                      'p-4 font-normal text-gray-900',
+                      column.className,
+                    )}
                   >
                     {column.render
                       ? column.render(item, i18n)

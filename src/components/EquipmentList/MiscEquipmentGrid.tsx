@@ -5,10 +5,10 @@ import React, { useMemo } from 'react'
 import DataGrid from '@/components/DataGrid/DataGrid'
 import type { DataGridColumn } from '@/components/DataGrid/types'
 import {
-  getInventoryItem,
+  renderNameGridCol,
   renderWeightGridCol,
-} from '@/components/EquipmentList/helpers'
-import ItemDetails from '@/components/Inventory/ItemDetails'
+} from '@/components/EquipmentList/gridHelpers'
+import { getInventoryItem } from '@/components/EquipmentList/helpers'
 import EquipmentTranslated from '@/config/EquipmentTranslated'
 import type { EquipmentItem } from '@/domain'
 import { addEquipmentItem, useInventoryState } from '@/state/InventoryState'
@@ -17,9 +17,7 @@ const columns: ReadonlyArray<DataGridColumn<EquipmentItem>> = [
   {
     className: 'w-1/3',
     key: 'name',
-    render: (item: EquipmentItem) => (
-      <ItemDetails<EquipmentItem> item={item} compact />
-    ),
+    render: renderNameGridCol,
     get title() {
       return t`Name`
     },

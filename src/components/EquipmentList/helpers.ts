@@ -1,7 +1,6 @@
 import { trivialSort } from '@/components/DataGrid/helpers'
-import type { DataGridColumn, SortConfig } from '@/components/DataGrid/types'
+import type { SortConfig } from '@/components/DataGrid/types'
 import type { Dice, EquipmentItem, InventoryItem } from '@/domain'
-import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { MeleeWeaponItem, WeaponItem } from '@/domain/weapon'
 import { getAutoIncrementedId } from '@/shared/helpers/autoincrement'
 import deepclone from '@/shared/helpers/deepclone'
@@ -16,14 +15,6 @@ export const getInventoryItem = <T extends EquipmentItem>(
     lockedCost: cost,
   })
 }
-
-export const renderWeightGridCol: DataGridColumn<EquipmentItem>['render'] = (
-  item,
-  i18n,
-) =>
-  item.points === EncumbrancePoint.None
-    ? '-'
-    : i18n._(EncumbrancePoint[item.points])
 
 const parseDiceValue = (dice?: Dice) => {
   return dice ? parseInt(dice.substring(1), 10) : 0

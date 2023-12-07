@@ -6,14 +6,15 @@ import DamageFragment from '@/components/DamageFragment'
 import DataGrid from '@/components/DataGrid/DataGrid'
 import type { DataGridSortFunction } from '@/components/DataGrid/helpers'
 import type { DataGridColumn } from '@/components/DataGrid/types'
+import { renderWeightGridCol } from '@/components/EquipmentList/gridHelpers'
 import {
   getInventoryItem,
   handleSortByDamage,
-  renderWeightGridCol,
 } from '@/components/EquipmentList/helpers'
 import ItemDetails from '@/components/Inventory/ItemDetails'
 import RangeFragment from '@/components/RangeFragment'
 import EquipmentTranslated from '@/config/EquipmentTranslated'
+import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { MissileWeaponItem } from '@/domain/weapon'
 import { addMissileWeapon, useInventoryState } from '@/state/InventoryState'
 
@@ -21,13 +22,28 @@ const columns: ReadonlyArray<DataGridColumn<MissileWeaponItem>> = [
   {
     className: 'w-1/3',
     key: 'name',
-    render: (item: MissileWeaponItem) => {
+    render: (item: MissileWeaponItem, i18n) => {
+      const weightLabel =
+        item.points === EncumbrancePoint.None
+          ? null
+          : i18n._(EncumbrancePoint[item.points])
+
       return (
-        <ItemDetails<MissileWeaponItem>
-          item={item}
-          compact
-          showDetailsBlock={!!item.range}
-        />
+        <>
+          <ItemDetails<MissileWeaponItem>
+            item={item}
+            compact
+            showDetailsBlock={!!item.range}
+          />
+          {!!weightLabel && (
+            <p
+              title={i18n._('Weight')}
+              className='block sm:hidden text-sm text-gray-500'
+            >
+              {weightLabel}
+            </p>
+          )}
+        </>
       )
     },
     get title() {
@@ -55,7 +71,7 @@ const columns: ReadonlyArray<DataGridColumn<MissileWeaponItem>> = [
     },
   },
   {
-    className: 'w-1/6',
+    className: 'hidden sm:table-cell sm:w-1/6',
     key: 'points',
     render: renderWeightGridCol,
     get title() {
