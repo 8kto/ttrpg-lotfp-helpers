@@ -83,51 +83,53 @@ const DataGrid = <T extends EquipmentItem>({
           </button>
         </div>
       </div>
-      <table className='min-w-full table-fixed'>
-        <thead className='bg-gray-100'>
-          <tr>
-            {columns.map((column) => (
-              <th
-                key={column.key as string}
-                className={`${headerCellClassnames} ${
-                  sortConfig.key === column.key ? 'font-bold' : ''
-                } ${column.className ?? ''}`}
-                onClick={() => handleSortClick(column.key)}
-              >
-                {column.title} {sortIcon(column.key as string)}
-              </th>
-            ))}
-            <th scope='col' className={`${headerCellClassnames} w-1/12`}></th>
-          </tr>
-        </thead>
-        <tbody className='bg-white'>
-          {filteredData.map((item, index) => (
-            <tr key={item.name} className={index % 2 ? 'bg-gray-50' : ''}>
+      <div className='overflow-x-auto'>
+        <table className='min-w-full table-fixed'>
+          <thead className='bg-gray-100'>
+            <tr>
               {columns.map((column) => (
-                <td
+                <th
                   key={column.key as string}
-                  className='p-4 font-normal text-gray-900'
+                  className={`${headerCellClassnames} ${
+                    sortConfig.key === column.key ? 'font-bold' : ''
+                  } ${column.className ?? ''}`}
+                  onClick={() => handleSortClick(column.key)}
                 >
-                  {column.render
-                    ? column.render(item, i18n)
-                    : (item[column.key] as string)}
-                </td>
+                  {column.title} {sortIcon(column.key as string)}
+                </th>
               ))}
-              <td className='p-4 font-normal text-gray-900'>
-                <button
-                  className='ph-btn-secondary inline-flex items-center rounded px-4 py-2 text-sm'
-                  onClick={() => onAddClick(item)}
-                >
-                  <PlusIcon className='h-5 w-5 md:mr-2' />
-                  <span className='hidden xl:inline'>
-                    <Trans>Add</Trans>
-                  </span>
-                </button>
-              </td>
+              <th scope='col' className={`${headerCellClassnames} w-1/12`}></th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody className='bg-white'>
+            {filteredData.map((item, index) => (
+              <tr key={item.name} className={index % 2 ? 'bg-gray-50' : ''}>
+                {columns.map((column) => (
+                  <td
+                    key={column.key as string}
+                    className='p-4 font-normal text-gray-900'
+                  >
+                    {column.render
+                      ? column.render(item, i18n)
+                      : (item[column.key] as string)}
+                  </td>
+                ))}
+                <td className='p-4 font-normal text-gray-900'>
+                  <button
+                    className='ph-btn-secondary inline-flex items-center rounded px-4 py-2 text-sm'
+                    onClick={() => onAddClick(item)}
+                  >
+                    <PlusIcon className='h-5 w-5 md:mr-2' />
+                    <span className='hidden xl:inline'>
+                      <Trans>Add</Trans>
+                    </span>
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </>
   )
 }
