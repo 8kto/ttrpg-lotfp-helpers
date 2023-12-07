@@ -16,7 +16,7 @@ const Wallet = () => {
   const { copperPieces } = state
 
   return (
-    <div className='px-4 sm:px-0'>
+    <div className='px-0'>
       {/* 1st row */}
       <div className='mb-2'>
         <CostFragment

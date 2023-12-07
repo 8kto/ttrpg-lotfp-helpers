@@ -74,9 +74,7 @@ const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
               htmlFor='coins--set-coins'
               className='mb-2 block font-medium text-gray-700'
             >
-              <Trans>
-                Enter coin amount. Use copper pieces instead of float numbers.
-              </Trans>
+              <Trans>Use copper pieces instead of float numbers.</Trans>
             </label>
             <Field
               type='number'
