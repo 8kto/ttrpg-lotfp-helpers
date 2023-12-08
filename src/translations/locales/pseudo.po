@@ -121,6 +121,9 @@ msgstr ""
 msgid "Book, Spell (Blank)"
 msgstr ""
 
+msgid "Required field"
+msgstr ""
+
 msgid "Scroll Case"
 msgstr ""
 
@@ -404,9 +407,6 @@ msgid "Severely"
 msgstr ""
 
 msgid "Lard"
-msgstr ""
-
-msgid "Required"
 msgstr ""
 
 msgid "Sack"

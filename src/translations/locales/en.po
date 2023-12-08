@@ -121,6 +121,9 @@ msgstr "Riding Gear"
 msgid "Book, Spell (Blank)"
 msgstr "Book, Spell (Blank)"
 
+msgid "Required field"
+msgstr "Required field"
+
 msgid "Scroll Case"
 msgstr "Scroll Case"
 
@@ -405,9 +408,6 @@ msgstr "Severely"
 
 msgid "Lard"
 msgstr "Lard"
-
-msgid "Required"
-msgstr "Required"
 
 msgid "Sack"
 msgstr "Sack"

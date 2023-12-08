@@ -121,6 +121,9 @@ msgstr "Снаряжение, верховая езда"
 msgid "Book, Spell (Blank)"
 msgstr "Книга заклинаний (пустая)"
 
+msgid "Required field"
+msgstr "Обязательное поле"
+
 msgid "Scroll Case"
 msgstr "Футляр для свитков"
 
@@ -177,7 +180,7 @@ msgid "Slings fired with stones instead of bullets have half the listed range."
 msgstr "Пращи, стреляющие камнями вместо пуль, имеют половину указанной дальности."
 
 msgid "Crowbar"
-msgstr "Лом"
+msgstr "Ломик"
 
 msgid "RU"
 msgstr "RU"
@@ -405,9 +408,6 @@ msgstr "Серьёзно нагружен"
 
 msgid "Lard"
 msgstr "Сало"
-
-msgid "Required"
-msgstr "Требуется"
 
 msgid "Sack"
 msgstr "Мешок"
