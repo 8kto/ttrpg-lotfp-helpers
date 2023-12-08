@@ -23,17 +23,17 @@ export default function EquipmentList() {
           {
             content: <MeleeWeaponsGrid />,
             key: 'melee',
-            title: t`Mêlée Weapons`,
+            title: t`Mêlée`,
           },
           {
             content: <MissileWeaponsGrid />,
             key: 'missile',
-            title: t`Missile Weapons`,
+            title: t`Missiles`,
           },
           {
             content: <MiscEquipmentGrid />,
             key: 'miscEquipment',
-            title: t`Miscellaneous Equipment`,
+            title: t`Miscellaneous`,
           },
         ]}
       />
