@@ -122,7 +122,7 @@ const DataGrid = <T extends EquipmentItem>({
                 ))}
                 <td className='p-4 font-normal text-gray-900'>
                   <button
-                    className='ph-btn-secondary inline-flex items-center rounded px-4 py-2 text-sm'
+                    className='ph-btn-secondary--off bg-transparent text-gray-400 hover:text-gray-900 inline-flex items-center rounded px-4 py-2 text-sm'
                     onClick={() => onAddClick(item)}
                   >
                     <PlusIcon className='h-5 w-5 md:mr-2' />
