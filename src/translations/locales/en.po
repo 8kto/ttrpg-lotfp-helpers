@@ -94,6 +94,9 @@ msgstr "Holy Symbol, Wood"
 msgid "Bow, Short"
 msgstr "Bow, Short"
 
+msgid "Mêlée"
+msgstr "Mêlée"
+
 msgid "Name"
 msgstr "Name"
 
@@ -287,6 +290,9 @@ msgstr "Chest"
 msgid "Pseudo"
 msgstr "Pseudo"
 
+msgid "Missiles"
+msgstr "Missiles"
+
 msgid "Bottle of Wine/Liquor, Poor"
 msgstr "Bottle of Wine/Liquor, Poor"
 
@@ -361,6 +367,9 @@ msgstr "Rapier"
 
 msgid "Sling"
 msgstr "Sling"
+
+msgid "Miscellaneous"
+msgstr "Miscellaneous"
 
 msgid "Ready for anything"
 msgstr "Ready for anything"

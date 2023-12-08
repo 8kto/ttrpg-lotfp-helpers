@@ -94,6 +94,9 @@ msgstr "Священный символ, деревянный"
 msgid "Bow, Short"
 msgstr "Короткий лук"
 
+msgid "Mêlée"
+msgstr "Ближний бой"
+
 msgid "Name"
 msgstr "Название"
 
@@ -287,6 +290,9 @@ msgstr "Сундук"
 msgid "Pseudo"
 msgstr "Псевдо"
 
+msgid "Missiles"
+msgstr "Метательное"
+
 msgid "Bottle of Wine/Liquor, Poor"
 msgstr "Бутылка вина/ликёра, простая"
 
@@ -361,6 +367,9 @@ msgstr "Рапира"
 
 msgid "Sling"
 msgstr "Праща"
+
+msgid "Miscellaneous"
+msgstr "Разное"
 
 msgid "Ready for anything"
 msgstr ""
@@ -573,7 +582,7 @@ msgid "Crampons"
 msgstr "Кошки (альпинистские)"
 
 msgid "Missile Weapons"
-msgstr "Метательное"
+msgstr "Метательное оружие"
 
 msgid "English"
 msgstr "English"
@@ -609,7 +618,7 @@ msgid "Exploration"
 msgstr "Исследование"
 
 msgid "Miscellaneous Equipment"
-msgstr "Разное"
+msgstr "Разное снаряжение"
 
 msgid "Torch"
 msgstr "Факел"

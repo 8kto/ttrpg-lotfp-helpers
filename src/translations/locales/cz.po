@@ -94,6 +94,9 @@ msgstr ""
 msgid "Bow, Short"
 msgstr ""
 
+msgid "Mêlée"
+msgstr ""
+
 msgid "Name"
 msgstr ""
 
@@ -287,6 +290,9 @@ msgstr ""
 msgid "Pseudo"
 msgstr ""
 
+msgid "Missiles"
+msgstr ""
+
 msgid "Bottle of Wine/Liquor, Poor"
 msgstr ""
 
@@ -360,6 +366,9 @@ msgid "Rapier"
 msgstr ""
 
 msgid "Sling"
+msgstr ""
+
+msgid "Miscellaneous"
 msgstr ""
 
 msgid "Ready for anything"
