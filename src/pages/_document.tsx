@@ -1,6 +1,6 @@
 import { Head, Html, Main, NextScript } from 'next/document'
 
-import { cursiveFont } from '@/components/layout/fonts'
+import { cursiveFont, regularFont } from '@/components/layout/fonts'
 
 export default function Document() {
   // TODO FIXME these icons are not displayed
@@ -26,7 +26,9 @@ export default function Document() {
         />
         <link rel='manifest' href='/icons/site.webmanifest' />
       </Head>
-      <body className={`${cursiveFont.variable} bg-gray-50 bg-none`}>
+      <body
+        className={`${cursiveFont.variable} ${regularFont.className} bg-gray-50 bg-none`}
+      >
         <Main />
         <NextScript />
       </body>
