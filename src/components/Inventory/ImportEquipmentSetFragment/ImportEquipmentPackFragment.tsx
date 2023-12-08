@@ -5,26 +5,35 @@ import { Field, Form, Formik } from 'formik'
 import React, { useState } from 'react'
 import * as Yup from 'yup'
 
+import CostFragment from '@/components/CostFragment/CostFragment'
+import EncumbranceFragment from '@/components/EncumbranceFragment/EncumbranceFragment'
 import type { ImportEquipmentPackProps } from '@/components/Inventory/ImportEquipmentSetFragment/helpers'
-import { EquipmentPackLabelsDict } from '@/components/Inventory/ImportEquipmentSetFragment/helpers'
+import {
+  EquipmentPackLabelsDict,
+  getEquipmentPackDetails,
+} from '@/components/Inventory/ImportEquipmentSetFragment/helpers'
 import type { EquipmentPackName } from '@/config/EquipmentPacks'
 import { EquipmentPackNames, EquipmentPacks } from '@/config/EquipmentPacks'
 import type { EquipmentPack } from '@/domain'
 
 const EquipmentPackEntriesList = ({ pack }: { pack: EquipmentPack }) => {
   const { i18n } = useLingui()
+  const { cost, points } = getEquipmentPackDetails(pack)
+
   const detailsRowClassname =
     'px-0 py-1 grid grid-cols-3 sm:gap-2 align-baseline'
-  const paragraphClassname = 'mb-2 text-red-900 font-semibold'
+  const paragraphClassname = 'mb-2 text-red-900'
 
   return (
     <>
       <div className='mb-4'>
-        <p className={paragraphClassname}>
-          <Trans>Weight</Trans>:
+        {/* TODO decide whether it is really needed */}
+        <p className={paragraphClassname} hidden>
+          <Trans>Weight</Trans>:{' '}
+          <EncumbranceFragment encumbrancePoints={points} />
         </p>
         <p className={paragraphClassname}>
-          <Trans>Cost</Trans>:
+          <Trans>Cost</Trans>: <CostFragment cost={cost} />
         </p>
       </div>
       <dl className='divide-y divide-gray-100'>
@@ -51,10 +60,6 @@ const ImportEquipmentPackFragment = ({ onClose }: { onClose: () => void }) => {
     EquipmentPacks.Base,
   )
 
-  function handleChange(event: React.ChangeEvent<HTMLSelectElement>) {
-    setSelectedPack(EquipmentPacks[event.target.value as EquipmentPackName])
-  }
-
   const handleImport = (formValues: ImportEquipmentPackProps) => {
     console.log(formValues.pack)
     onClose()
@@ -78,7 +83,7 @@ const ImportEquipmentPackFragment = ({ onClose }: { onClose: () => void }) => {
           formikHelpers.resetForm()
         }}
       >
-        {() => (
+        {(formikHelpers) => (
           <Form>
             <h5
               id='drawer-label--add-coins'
@@ -109,7 +114,11 @@ const ImportEquipmentPackFragment = ({ onClose }: { onClose: () => void }) => {
                 id='add-equip-item--pack'
                 as='select'
                 className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500'
-                onChange={handleChange}
+                onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
+                  const packName = event.target.value as EquipmentPackName
+                  void formikHelpers.setFieldValue('pack', packName)
+                  setSelectedPack(EquipmentPacks[packName])
+                }}
               >
                 {Object.entries(EquipmentPackLabelsDict).map(([key, title]) => (
                   <option key={key} value={key}>
