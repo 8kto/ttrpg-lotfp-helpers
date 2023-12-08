@@ -95,6 +95,10 @@ details.ph-details-bullet[open] .ph-custom-indicator {
   color: var(--ph-color-control-regular);
 }
 
+.ph-color-secondary-bg {
+  color: var(--ph-secondary-control-bg);
+}
+
 .ph-color-accent {
   /*color: var(--ph-color-accent)*/
   /* bg-red-900 */

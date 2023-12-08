@@ -24,7 +24,7 @@ const CategoryInventoryControls = ({
           href='#'
           onClick={handleReset}
           title={t`Reset`}
-          className='inline-flex cursor-pointer justify-center rounded p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-900'
+          className='inline-flex cursor-pointer justify-center rounded p-1 mr-2 text-red-400 hover:bg-gray-100 hover:text-gray-900'
         >
           <svg
             className='h-6 w-6'
