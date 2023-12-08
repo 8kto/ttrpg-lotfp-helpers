@@ -13,15 +13,17 @@ const Footer = () => {
           Igor Okto (undefined)
         </a>
       </p>
-      <p className='flex items-center text-gray-500'>
-        Active viewport:
-        <span className='mr-1'>XS</span>
-        <span className='mr-1 hidden sm:block'>SM</span>
-        <span className='mr-1 hidden md:block'>MD</span>
-        <span className='mr-1 hidden lg:block'>LG</span>
-        <span className='mr-1 hidden xl:block'>XL</span>
-        <span className='mr-1 hidden 2xl:block'>2XL</span>
-      </p>
+      {process.env.NODE_ENV === 'development' && (
+        <p className='flex items-center justify-center text-gray-500 text-center'>
+          Active viewport:
+          <span className='mr-1'>XS</span>
+          <span className='mr-1 hidden sm:block'>SM</span>
+          <span className='mr-1 hidden md:block'>MD</span>
+          <span className='mr-1 hidden lg:block'>LG</span>
+          <span className='mr-1 hidden xl:block'>XL</span>
+          <span className='mr-1 hidden 2xl:block'>2XL</span>
+        </p>
+      )}
     </footer>
   )
 }
