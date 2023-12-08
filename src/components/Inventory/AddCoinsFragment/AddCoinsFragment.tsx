@@ -32,7 +32,7 @@ const AddCoinsFragment = ({ onClose }: { onClose: () => void }) => {
         coins: Yup.number()
           .positive()
           // .max(9, t('Must be 9 characters max.')) // WTF
-          .required(t`Required`),
+          .required(t`Required field`),
         isCopper: Yup.boolean(),
       })}
       onSubmit={(values, formikHelpers) => {

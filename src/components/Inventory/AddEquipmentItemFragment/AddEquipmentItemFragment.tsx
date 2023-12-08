@@ -1,5 +1,5 @@
 import { XMarkIcon } from '@heroicons/react/24/solid'
-import { Trans } from '@lingui/macro'
+import { t, Trans } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import { ErrorMessage, Field, Form, Formik } from 'formik'
 import React from 'react'
@@ -40,11 +40,13 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
         } as EquipmentItemDto
       }
       validationSchema={Yup.object({
-        points: Yup.number().required(),
-        name: Yup.string().required(),
+        points: Yup.number().required(t`Required field`),
+        name: Yup.string().required(t`Required field`),
         cost: Yup.number(),
         isCopper: Yup.boolean(),
-        category: Yup.string().oneOf(EquipmentStateKeys).required(),
+        category: Yup.string()
+          .oneOf(EquipmentStateKeys)
+          .required(t`Required field`),
         details: Yup.string(),
       })}
       onSubmit={(values, formikHelpers) => {
