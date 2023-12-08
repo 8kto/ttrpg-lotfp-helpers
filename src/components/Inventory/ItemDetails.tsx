@@ -46,7 +46,7 @@ const Summary = <T extends EquipmentItem>({
   return (
     <summary className='cursor-pointer list-none'>
       <div className='flex items-center'>
-        <span className='border-b border-dashed border-gray-500'>
+        <span className='ph-dashed-text'>
           {item.name}
           {!compact && <ItemDetailsLine item={item} />}
         </span>

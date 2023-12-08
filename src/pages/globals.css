@@ -108,3 +108,10 @@ details.ph-details-bullet[open] .ph-custom-indicator {
   background-position-y: -90%;
   background-position-x: right;
 }
+
+.ph-dashed-text {
+  text-decoration: underline dashed;
+  text-decoration-color: #999;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}

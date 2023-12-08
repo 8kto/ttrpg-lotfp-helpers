@@ -18,11 +18,13 @@ const InventoryDetails = () => {
   )
 
   const titleClassname = 'ph-font-cursive text-red-900 text-xl'
+  const detailsRowClassname =
+    'px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0  align-baseline'
 
   return (
     <div className='mt-6 border-t border-gray-100 text-base'>
       <dl className='divide-y divide-gray-100'>
-        <div className='px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0'>
+        <div className={detailsRowClassname}>
           <dt className={`${titleClassname}`}>
             <Trans>Wallet</Trans>
           </dt>
@@ -30,7 +32,7 @@ const InventoryDetails = () => {
             <Wallet />
           </dd>
         </div>
-        <div className='px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0'>
+        <div className={detailsRowClassname}>
           <dt className={titleClassname}>
             <Trans>Inventory cost</Trans>
           </dt>
@@ -38,7 +40,7 @@ const InventoryDetails = () => {
             <CostFragment cost={totalCost} />
           </dd>
         </div>
-        <div className='px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0'>
+        <div className={detailsRowClassname}>
           <dt className={titleClassname}>
             <Trans>Encumbrance</Trans>
           </dt>
@@ -46,7 +48,7 @@ const InventoryDetails = () => {
             <EncumbranceFragment encumbrancePoints={totalEncumbrancePoints} />
           </dd>
         </div>
-        <div className='px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0'>
+        <div className={detailsRowClassname}>
           <dt className={titleClassname}>
             <Trans>Movement</Trans>
           </dt>
