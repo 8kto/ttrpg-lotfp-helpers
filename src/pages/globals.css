@@ -103,5 +103,8 @@ details.ph-details-bullet[open] .ph-custom-indicator {
 }
 
 .ph-header-wrapper {
-  background: url(/images/img-noise-361x370-2.png);
+  background-image: linear-gradient(to left, transparent, black),
+    url('/images/tentacles-bg-3.png');
+  background-position-y: -90%;
+  background-position-x: right;
 }

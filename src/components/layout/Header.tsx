@@ -11,12 +11,12 @@ import { cursiveFont } from './fonts'
 const Header = () => {
   return (
     <header>
-      <nav className='ph-header-wrapper fixed z-30 w-full border-b border-gray-200 px-4 py-3 text-white'>
+      <nav className='ph-header-wrapper fixed z-30 w-full border-2 border-b border-gray-800 px-4 py-4 text-white'>
         <div className='mx-auto flex max-w-screen-2xl items-center justify-between'>
           <div className='flex items-center justify-start'>
             <Link href='/' className='mr-14 flex'>
               <h1
-                className={`${cursiveFont.className} self-center whitespace-nowrap text-2xl font-semibold sm:flex`}
+                className={`${cursiveFont.className} self-center whitespace-nowrap text-2xl lg:text-3xl font-semibold sm:flex`}
               >
                 <Trans>Princess Helpers</Trans>
               </h1>
