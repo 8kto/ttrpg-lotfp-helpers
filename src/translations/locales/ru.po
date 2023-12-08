@@ -38,7 +38,7 @@ msgid "Great axe"
 msgstr "Большой топор"
 
 msgid "Base items set"
-msgstr ""
+msgstr "Базовый набор"
 
 msgid "Leather"
 msgstr "Кожаная броня"
@@ -170,6 +170,9 @@ msgstr "Дрель"
 msgid "This weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 msgstr "Это оружие имеет штраф –2 AB для противников с немодифицированным AC 15 и выше."
 
+msgid "Packs"
+msgstr "Наборы"
+
 msgid "These are small one-handed weapons including daggers and clubs, and suffer a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 msgstr "Это небольшое одноручное оружие, включая кинжалы и булавы, даёт штраф -2 AB для противников с AC 15 или выше."
 
@@ -197,6 +200,9 @@ msgstr "Бурдюк"
 msgid "Per day"
 msgstr "В день"
 
+msgid "Reset all equipment?"
+msgstr "Сбросить всё снаряжение?"
+
 msgid "Tent, Personal"
 msgstr "Палатка, одиночная"
 
@@ -204,7 +210,7 @@ msgid "Filter by name"
 msgstr "Фильтр по имени"
 
 msgid "Seasoned adventurer"
-msgstr ""
+msgstr "Опытный приключенец"
 
 msgid "Wolvesbane"
 msgstr "Аконит (Wolvesbane)"
@@ -249,6 +255,9 @@ msgstr "Учитывать вес монет для нагрузки."
 
 msgid "Cost"
 msgstr "Цена"
+
+msgid "Equipment pack"
+msgstr "Набор снаряжения"
 
 msgid "EN"
 msgstr "EN"
@@ -306,7 +315,7 @@ msgid "Club"
 msgstr "Дубина"
 
 msgid "Adventuring Basics"
-msgstr ""
+msgstr "Базовый приключенец"
 
 #. js-lingui-explicit-id
 msgid "Miscellaneous"
@@ -375,7 +384,7 @@ msgid "Miscellaneous"
 msgstr "Разное"
 
 msgid "Ready for anything"
-msgstr ""
+msgstr "Готов ко всему"
 
 msgid "Backpack"
 msgstr "Рюкзак"
@@ -467,6 +476,9 @@ msgstr "Инвентарь"
 
 msgid "Book, Blank"
 msgstr "Книга, пустая"
+
+msgid "Import Equipment set"
+msgstr "Импорт набора снаряжения"
 
 msgid "Quiver"
 msgstr "Колчан"
@@ -577,6 +589,9 @@ msgstr "Арбалетный болт (1)"
 
 msgid "miles"
 msgstr "мили"
+
+msgid "Import"
+msgstr "Импорт"
 
 msgid "Crampons"
 msgstr "Кошки (альпинистские)"

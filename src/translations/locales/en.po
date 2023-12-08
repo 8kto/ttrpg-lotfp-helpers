@@ -170,6 +170,9 @@ msgstr "Drill"
 msgid "This weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 msgstr "This weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 
+msgid "Packs"
+msgstr "Packs"
+
 msgid "These are small one-handed weapons including daggers and clubs, and suffer a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 msgstr "These are small one-handed weapons including daggers and clubs, and suffer a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 
@@ -196,6 +199,9 @@ msgstr "Waterskin"
 
 msgid "Per day"
 msgstr "Per day"
+
+msgid "Reset all equipment?"
+msgstr "Reset all equipment?"
 
 msgid "Tent, Personal"
 msgstr "Tent, Personal"
@@ -249,6 +255,9 @@ msgstr "Enable the weight of coins for encumbrance calculations."
 
 msgid "Cost"
 msgstr "Cost"
+
+msgid "Equipment pack"
+msgstr "Equipment pack"
 
 msgid "EN"
 msgstr "EN"
@@ -468,6 +477,9 @@ msgstr "Inventory"
 msgid "Book, Blank"
 msgstr "Book, Blank"
 
+msgid "Import Equipment set"
+msgstr "Import Equipment set"
+
 msgid "Quiver"
 msgstr "Quiver"
 
@@ -577,6 +589,9 @@ msgstr "Crossbow bolt (1)"
 
 msgid "miles"
 msgstr "miles"
+
+msgid "Import"
+msgstr "Import"
 
 msgid "Crampons"
 msgstr "Crampons"
