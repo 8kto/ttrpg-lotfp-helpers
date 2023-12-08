@@ -13,6 +13,9 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+msgid "Coins"
+msgstr ""
+
 msgid "config.misc.airBladder.details"
 msgstr ""
 
@@ -216,6 +219,9 @@ msgid "These are one-handed weapons, including swords, battle axes, maces"
 msgstr ""
 
 msgid "Lock"
+msgstr ""
+
+msgid "Item"
 msgstr ""
 
 #. js-lingui-explicit-id
@@ -422,6 +428,10 @@ msgstr ""
 msgid "Gem"
 msgstr ""
 
+msgid "Weight"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Weight"
 msgstr ""
 

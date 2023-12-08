@@ -13,6 +13,9 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+msgid "Coins"
+msgstr "Монеты"
+
 msgid "config.misc.airBladder.details"
 msgstr "Кожаный мешочек с трубкой для рта; дополнительный глоток воздуха для подводного плавания.<br />Может использоваться и как вспомогательное плавательное средство."
 
@@ -218,6 +221,9 @@ msgstr "Одноручное оружие, включая мечи, боевые
 msgid "Lock"
 msgstr "Замок"
 
+msgid "Item"
+msgstr "Предмет"
+
 #. js-lingui-explicit-id
 msgid "Heavily"
 msgstr "Тяжело нагружен"
@@ -422,6 +428,10 @@ msgstr "Шахтёрская кирка"
 msgid "Gem"
 msgstr "Драгоценный камень"
 
+msgid "Weight"
+msgstr "Вес"
+
+#. js-lingui-explicit-id
 msgid "Weight"
 msgstr "Вес"
 
