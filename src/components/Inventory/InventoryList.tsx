@@ -41,7 +41,7 @@ const InventoryList = () => {
     )
   }
 
-  const categoryTitleClassname = 'my-4 text-lg text-red-900'
+  const categoryTitleClassname = 'my-4 text-xl text-red-900'
 
   return (
     <>
@@ -51,7 +51,7 @@ const InventoryList = () => {
       <InventoryDetails />
 
       {!!armor.length && (
-        <>
+        <div className='mb-6'>
           <div className='flex w-full items-center justify-between'>
             <h2 className={categoryTitleClassname}>
               <Trans>Armor</Trans>
@@ -59,11 +59,11 @@ const InventoryList = () => {
             <CategoryInventoryControls category='armor' />
           </div>
           <ArmorInventoryGrid />
-        </>
+        </div>
       )}
 
       {!!meleeWeapons.length && (
-        <>
+        <div className='mb-6'>
           <div className='flex w-full items-center justify-between'>
             <h2 className={categoryTitleClassname}>
               <Trans>Mêlée Weapons</Trans>
@@ -71,11 +71,11 @@ const InventoryList = () => {
             <CategoryInventoryControls category='meleeWeapons' />
           </div>
           <MeleeWeaponsInventoryGrid />
-        </>
+        </div>
       )}
 
       {!!missileWeapons.length && (
-        <>
+        <div className='mb-6'>
           <div className='flex w-full items-center justify-between'>
             <h2 className={categoryTitleClassname}>
               <Trans>Missile Weapons</Trans>
@@ -83,11 +83,11 @@ const InventoryList = () => {
             <CategoryInventoryControls category='missileWeapons' />
           </div>
           <MissileWeaponsInventoryGrid />
-        </>
+        </div>
       )}
 
       {!!miscEquipment.length && (
-        <>
+        <div className='mb-6'>
           <div className='flex w-full items-center justify-between'>
             <h2 className={categoryTitleClassname}>
               <Trans>Miscellaneous Equipment</Trans>
@@ -95,7 +95,7 @@ const InventoryList = () => {
             <CategoryInventoryControls category='miscEquipment' />
           </div>
           <MiscEquipmentInventoryGrid />
-        </>
+        </div>
       )}
     </>
   )
