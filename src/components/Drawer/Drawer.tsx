@@ -15,7 +15,7 @@ const Drawer = ({
   fromLeft?: boolean
 }) => {
   const drawerClasses = classnames(
-    'border fixed top-0 h-screen w-96 overflow-y-auto bg-white p-4 transition-transform',
+    'w-full lg:w-96 border fixed top-0 h-screen overflow-y-auto bg-white p-4 transition-transform',
     {
       'left-0 transform -translate-x-full': !isOpen && fromLeft,
       'left-0 z-50': isOpen && fromLeft,
