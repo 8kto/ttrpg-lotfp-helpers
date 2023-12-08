@@ -129,7 +129,7 @@ const MissileWeaponsGrid = () => {
 
   return (
     <>
-      <div className='py-6'>
+      <div className='py-6 text-gray-800'>
         <p className={'mb-2'}>
           <Trans id='weapons.missile.firing'>
             Each missile weapon can be fired once per round with the exception

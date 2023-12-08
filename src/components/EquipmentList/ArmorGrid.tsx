@@ -115,7 +115,7 @@ const ArmorGrid = () => {
 
   return (
     <>
-      <div className='py-6'>
+      <div className='py-6 text-gray-800'>
         <p className={'mb-2'}>
           <Trans id='armor.baseAc'>
             Unarmored characters have a Base AC of 12.

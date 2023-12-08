@@ -94,7 +94,7 @@ const MeleeWeaponsGrid = () => {
 
   return (
     <>
-      <div className='py-6'>
+      <div className='py-6 text-gray-800'>
         <p className={'mb-2'}>
           <Trans id='weapons.melee.secondRank'>
             Some weapons can attack “from the second rank.” This is used when
