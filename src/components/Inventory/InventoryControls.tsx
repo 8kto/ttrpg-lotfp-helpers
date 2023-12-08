@@ -3,7 +3,7 @@ import {
   PlusCircleIcon as PlusIcon,
   TrashIcon,
 } from '@heroicons/react/24/solid'
-import { t } from '@lingui/macro'
+import { t, Trans } from '@lingui/macro'
 import React, { useState } from 'react'
 
 import Drawer from '@/components/Drawer/Drawer'
@@ -19,12 +19,12 @@ const InventoryControls = () => {
   const [isEquipmentDrawerOpen, setIsEquipmentDrawerOpen] = useState(false)
 
   const iconBtnClassname =
-    'inline-flex cursor-pointer mr-1 md:mr-0 justify-center rounded p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-900'
-  const iconClassname = 'h-7 w-7 md:h-5 md:w-5'
+    'inline-flex flex-col cursor-pointer justify-center items-center rounded p-2 lg:p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-900'
+  const iconClassname = 'h-7 w-7 mb-1 lg:h-5 lg:w-5 md:mb-0.5'
 
   return (
     <>
-      <div className='flex items-center sm:justify-end'>
+      <div className='flex items-center md:justify-end'>
         <div className='flex space-x-1 pl-2'>
           <button
             onClick={() => {
@@ -34,6 +34,9 @@ const InventoryControls = () => {
             className={iconBtnClassname}
           >
             <PlusIcon className={iconClassname} />
+            <span className='lg:hidden'>
+              <Trans>Item</Trans>
+            </span>
           </button>
         </div>
         <div className='flex space-x-1 pl-2'>
@@ -46,6 +49,9 @@ const InventoryControls = () => {
             title={t`Add coins`}
           >
             <CircleStackIcon className={iconClassname} />
+            <span className='lg:hidden'>
+              <Trans>Coins</Trans>
+            </span>
           </button>
         </div>
         <div className='flex space-x-1 pl-2'>
@@ -55,6 +61,9 @@ const InventoryControls = () => {
             className={iconBtnClassname}
           >
             <TrashIcon className={iconClassname} />
+            <span className='lg:hidden'>
+              <Trans>Reset</Trans>
+            </span>
           </button>
         </div>
       </div>
