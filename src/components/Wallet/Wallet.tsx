@@ -18,7 +18,7 @@ const Wallet = () => {
   return (
     <div className='px-0'>
       {/* 1st row */}
-      <div className='mb-2'>
+      <div className='my-4 sm:mb-2 sm:mt-0'>
         <CostFragment
           cost={copperPieces.get() ?? 0}
           onClick={() => {

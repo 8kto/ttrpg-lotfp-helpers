@@ -1,3 +1,5 @@
+import { Trans } from '@lingui/macro'
+
 import type { DataGridColumn } from '@/components/DataGrid/types'
 import ItemDetails from '@/components/Inventory/ItemDetails'
 import type { EquipmentItem } from '@/domain'
@@ -24,6 +26,9 @@ export const renderNameGridCol: RenderFunction = (item, i18n) => {
           title={i18n._('Weight')}
           className='block sm:hidden text-sm text-gray-500'
         >
+          <span className='text-gray-400'>
+            <Trans>Weight</Trans>:{' '}
+          </span>
           {weightLabel}
         </p>
       )}
