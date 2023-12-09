@@ -5,7 +5,6 @@ import type { EquipmentPack } from '@/domain'
 const Base: EquipmentPack = {
   items: [
     [msg`Bedroll`, 1],
-    [msg`Clothing, Normal`, 1],
     [msg`Rations, Standard/Day`, 3],
     [msg`Backpack`, 1],
     [msg`Pouch`, 1],
