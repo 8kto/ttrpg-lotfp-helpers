@@ -2,23 +2,35 @@ import { XMarkIcon } from '@heroicons/react/24/solid'
 import { t, Trans } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import { Field, Form, Formik } from 'formik'
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import * as Yup from 'yup'
 
 import CostFragment from '@/components/CostFragment/CostFragment'
 import EncumbranceFragment from '@/components/EncumbranceFragment/EncumbranceFragment'
-import type { ImportEquipmentPackProps } from '@/components/Inventory/ImportEquipmentSetFragment/helpers'
+import type {
+  FlatEquipmentConfig,
+  ImportEquipmentPackProps,
+} from '@/components/Inventory/ImportEquipmentSetFragment/helpers'
 import {
+  convertToFlatConfig,
   EquipmentPackLabelsDict,
   getEquipmentPackDetails,
+  getEquipmentPackItems,
 } from '@/components/Inventory/ImportEquipmentSetFragment/helpers'
+import * as EquipmentConfig from '@/config'
 import type { EquipmentPackName } from '@/config/EquipmentPacks'
 import { EquipmentPackNames, EquipmentPacks } from '@/config/EquipmentPacks'
 import type { EquipmentPack } from '@/domain'
 
-const EquipmentPackEntriesList = ({ pack }: { pack: EquipmentPack }) => {
+const EquipmentPackEntriesList = ({
+  pack,
+  flatEquipmentConfig,
+}: {
+  pack: EquipmentPack
+  flatEquipmentConfig: FlatEquipmentConfig
+}) => {
   const { i18n } = useLingui()
-  const { cost, points } = getEquipmentPackDetails(pack)
+  const { cost, points } = getEquipmentPackDetails(pack, flatEquipmentConfig)
 
   const detailsRowClassname =
     'px-0 py-1 grid grid-cols-3 sm:gap-2 align-baseline'
@@ -59,9 +71,19 @@ const ImportEquipmentPackFragment = ({ onClose }: { onClose: () => void }) => {
   const [selectedPack, setSelectedPack] = useState<EquipmentPack>(
     EquipmentPacks.Base,
   )
+  const flatEquipmentConfig = useMemo(
+    () => convertToFlatConfig(EquipmentConfig),
+    [],
+  )
 
   const handleImport = (formValues: ImportEquipmentPackProps) => {
-    console.log(formValues.pack)
+    console.log(
+      getEquipmentPackItems(
+        EquipmentPacks[formValues.pack],
+        flatEquipmentConfig,
+      ),
+    )
+
     onClose()
   }
 
@@ -71,7 +93,7 @@ const ImportEquipmentPackFragment = ({ onClose }: { onClose: () => void }) => {
         initialValues={
           {
             pack: 'Base',
-          } as { pack: EquipmentPackName }
+          } as ImportEquipmentPackProps
         }
         validationSchema={Yup.object({
           pack: Yup.string()
@@ -129,7 +151,10 @@ const ImportEquipmentPackFragment = ({ onClose }: { onClose: () => void }) => {
             </div>
 
             <div className='overf mb-10'>
-              <EquipmentPackEntriesList pack={selectedPack} />
+              <EquipmentPackEntriesList
+                pack={selectedPack}
+                flatEquipmentConfig={flatEquipmentConfig}
+              />
             </div>
 
             <div className='flex w-full justify-center space-x-4 pb-4'>
