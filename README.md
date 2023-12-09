@@ -33,7 +33,7 @@ Demo application: https://lotfp.vercel.app
   - [ ] Track different kinds of coins
 - [x] Inventory is saved in locale storage and survives the page reload
 - [x] Languages support
-- [ ] Responsive layout, mobile devices support
+- [x] Responsive layout, mobile devices support
 - [ ] Equipment sets
   - [ ] By class
   - [ ] Common
