@@ -25,7 +25,7 @@ export default class EquipmentTranslated {
       return {
         ...item,
         details: item.details ? this.trans(item.details) : undefined,
-        name: this.trans(item.name),
+        name: typeof item.name === 'object' ? this.trans(item.name) : item.name,
       } as T
     })
   }

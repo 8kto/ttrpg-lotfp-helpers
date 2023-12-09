@@ -41,7 +41,6 @@ const AdventurerReadyForAnything: EquipmentPack = {
 const AdventurerSeasoned: EquipmentPack = {
   items: [
     [msg`Book, Blank`, 1],
-    [msg`Caltrop`, 10],
     [msg`Candle`, 1],
     [msg`Chalk`, 1],
     [msg`Crowbar`, 1],
