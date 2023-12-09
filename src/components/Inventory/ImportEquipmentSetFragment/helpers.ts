@@ -1,11 +1,9 @@
 import type { MessageDescriptor } from '@lingui/core'
-import { t } from '@lingui/macro'
 
 import type { EquipmentPackName } from '@/config/EquipmentPacks'
 import { EquipmentPacks } from '@/config/EquipmentPacks'
 import type { EquipmentItemTranslated } from '@/config/types'
 import type { EquipmentItem, EquipmentPack } from '@/domain'
-import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { EquipmentCategoryKey } from '@/state/InventoryState'
 
 export type ImportEquipmentPackProps = {
@@ -21,12 +19,11 @@ export const EquipmentPackLabelsDict: Record<
   }),
 ) as Record<EquipmentPackName, MessageDescriptor>
 
-interface CategorizedEquipmentItem extends EquipmentItem {
+interface CategorizedEquipmentItem
+  extends EquipmentItemTranslated<EquipmentItem> {
   categoryKey: EquipmentCategoryKey
 }
-export type FlatEquipmentConfig = Array<
-  EquipmentItemTranslated<CategorizedEquipmentItem>
->
+export type FlatEquipmentConfig = Array<CategorizedEquipmentItem>
 
 export const convertToFlatConfig = (
   categories: Record<
@@ -47,12 +44,12 @@ export const convertToFlatConfig = (
 const findEquipmentItem = (
   name: MessageDescriptor,
   flatEquipmentConfig: FlatEquipmentConfig,
-): EquipmentItemTranslated<EquipmentItem> | null => {
+): CategorizedEquipmentItem | null => {
   const item = flatEquipmentConfig.find((i) =>
     typeof i.name === 'object'
       ? i.name.id === name.id
       : i.name === name.message,
-  )
+  ) as CategorizedEquipmentItem | null
   if (!item) {
     console.error(`Not found: ${name}`)
 
@@ -88,38 +85,43 @@ export const getEquipmentPackDetails = (
 export const getEquipmentPackItems = (
   pack: EquipmentPack,
   flatEquipmentConfig: FlatEquipmentConfig,
-): ReadonlyArray<EquipmentItemTranslated<EquipmentItem>> => {
-  return pack.items.reduce(
-    (acc, [name, qty]) => {
-      const item = findEquipmentItem(name, flatEquipmentConfig)
-      if (!item || qty <= 0) {
-        return acc
-      }
+): ReadonlyArray<CategorizedEquipmentItem> => {
+  return pack.items.reduce((acc, [name, qty]) => {
+    const item = findEquipmentItem(name, flatEquipmentConfig)
+    if (!item || qty <= 0) {
+      return acc
+    }
 
-      const copy = { ...item }
-      if (qty > 1) {
-        // None weight
-        if (copy.points === EncumbrancePoint.None) {
-          if (typeof copy.name === 'object') {
-            copy.name = t`${copy.name.message} (${qty})`
-          } else {
-            copy.name = t`${copy.name} (${qty})`
-          }
+    const isNameTranslated = (
+      name: MessageDescriptor | string,
+    ): name is MessageDescriptor => typeof name === 'object'
 
-          return acc.concat(copy)
-        }
+    const copy: CategorizedEquipmentItem = {
+      ...item,
+      name:
+        (isNameTranslated(item.name) ? item.name.message : item.name) ||
+        'Invalid name',
+    }
+    if (qty > 1) {
+      // None weight
+      // if (copy.points === EncumbrancePoint.None) {
+      //   if (typeof copy.name === 'object') {
+      //     copy.name = t`${copy.name.message} (${qty})`
+      //   } else {
+      //     copy.name = t`${copy.name} (${qty})`
+      //   }
+      //
+      //   return acc.concat(copy)
+      // }
+      // Has weight, add x QTY items
+      // return acc.concat(
+      //   Array.from({ length: qty }, () => {
+      //     return { ...copy }
+      //   }),
+      // )
+    }
 
-        // Has weight, add x QTY items
-        return acc.concat(
-          Array.from({ length: qty }, () => {
-            return { ...copy }
-          }),
-        )
-      }
-
-      // Add single item
-      return acc.concat(copy)
-    },
-    [] as ReadonlyArray<EquipmentItemTranslated<EquipmentItem>>,
-  )
+    // Add single item
+    return acc.concat(copy)
+  }, [] as ReadonlyArray<CategorizedEquipmentItem>)
 }

@@ -7,6 +7,7 @@ import * as Yup from 'yup'
 
 import CostFragment from '@/components/CostFragment/CostFragment'
 import EncumbranceFragment from '@/components/EncumbranceFragment/EncumbranceFragment'
+import { getInventoryItem } from '@/components/EquipmentList/helpers'
 import type {
   FlatEquipmentConfig,
   ImportEquipmentPackProps,
@@ -21,6 +22,7 @@ import * as EquipmentConfig from '@/config'
 import type { EquipmentPackName } from '@/config/EquipmentPacks'
 import { EquipmentPackNames, EquipmentPacks } from '@/config/EquipmentPacks'
 import type { EquipmentPack } from '@/domain'
+import { useInventoryState } from '@/state/InventoryState'
 
 const EquipmentPackEntriesList = ({
   pack,
@@ -71,21 +73,43 @@ const ImportEquipmentPackFragment = ({ onClose }: { onClose: () => void }) => {
   const [selectedPack, setSelectedPack] = useState<EquipmentPack>(
     EquipmentPacks.Base,
   )
+  const { state } = useInventoryState()
   const flatEquipmentConfig = useMemo(
     () => convertToFlatConfig(EquipmentConfig),
     [],
   )
 
   const handleImport = (formValues: ImportEquipmentPackProps) => {
-    console.log(
-      getEquipmentPackItems(
-        EquipmentPacks[formValues.pack],
-        flatEquipmentConfig,
-      ),
+    const items = getEquipmentPackItems(
+      EquipmentPacks[formValues.pack],
+      flatEquipmentConfig,
     )
+
+    console.log('RENDER', state.miscEquipment.get())
+
+    items.forEach((item) => {
+      const categoryKey = item.categoryKey
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { categoryKey: _, ...copy } = item
+      // const equipmentStateCategory = state.nested(categoryKey)
+      const equipmentStateCategory = state.miscEquipment
+
+      type B = typeof equipmentStateCategory
+      type T = B[keyof B]
+
+      try {
+        equipmentStateCategory[equipmentStateCategory.length].set(
+          getInventoryItem(item as T, item.cityCost) as T,
+        )
+      } catch (err) {
+        console.error(`Unknown InventoryState category [${categoryKey}]`, err)
+      }
+    })
 
     onClose()
   }
+
+  console.log('RENDER', state.miscEquipment.get())
 
   return (
     <>
