@@ -1,8 +1,8 @@
 import type { I18n } from '@lingui/core'
 
 import type { EquipmentItemTranslated } from '@/config/types'
-import type { EquipmentItem } from '@/domain'
 import type { ArmorItem } from '@/domain/armor'
+import type { EquipmentItem } from '@/domain/equipment'
 import type { MeleeWeaponItem, MissileWeaponItem } from '@/domain/weapon'
 import deepclone from '@/shared/helpers/deepclone'
 import type { EquipmentCategoryKey } from '@/state/InventoryState'
@@ -12,6 +12,9 @@ import { MeleeWeapons } from './MeleeWeapons'
 import { MiscEquipment } from './MiscEquipment'
 import { MissileWeapons } from './MissileWeapons'
 
+/**
+ * TODO rework msg`name`s, use t`` like for Equipment pack
+ */
 export default class EquipmentTranslated {
   private readonly trans: I18n['_']
 

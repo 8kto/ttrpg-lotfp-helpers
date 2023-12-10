@@ -1,6 +1,7 @@
 import { getEncumbrance, getTotal } from '@/components/InventoryDetails/helpers'
-import type { EquipmentItem, InventoryItem } from '@/domain'
 import { Encumbrance, EncumbrancePoint } from '@/domain/encumbrance'
+import type { EquipmentItem } from '@/domain/equipment'
+import type { InventoryItem } from '@/domain/inventory'
 
 describe('InventoryDetails helpers', () => {
   describe('getEncumbrance', () => {

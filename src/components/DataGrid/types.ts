@@ -1,7 +1,7 @@
 import type { I18n } from '@lingui/core'
 import type React from 'react'
 
-import type { EquipmentItem } from '@/domain'
+import type { EquipmentItem } from '@/domain/equipment'
 
 export interface DataGridColumn<T extends EquipmentItem> {
   key: keyof T

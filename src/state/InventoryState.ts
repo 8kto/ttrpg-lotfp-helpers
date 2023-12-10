@@ -1,8 +1,9 @@
 import { hookstate, useHookstate } from '@hookstate/core'
 import { localstored } from '@hookstate/localstored'
 
-import type { EquipmentItem, InventoryItem } from '@/domain'
 import type { ArmorItem } from '@/domain/armor'
+import type { EquipmentItem } from '@/domain/equipment'
+import type { InventoryItem } from '@/domain/inventory'
 import type { MeleeWeaponItem, MissileWeaponItem } from '@/domain/weapon'
 import deepclone from '@/shared/helpers/deepclone'
 

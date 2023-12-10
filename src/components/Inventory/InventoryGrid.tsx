@@ -3,7 +3,8 @@ import { useLingui } from '@lingui/react'
 import React from 'react'
 
 import type { InventoryColumn } from '@/components/Inventory/types'
-import type { EquipmentItem, InventoryItem } from '@/domain'
+import type { EquipmentItem } from '@/domain/equipment'
+import type { InventoryItem } from '@/domain/inventory'
 
 export interface InventoryTableProps<T extends InventoryItem<EquipmentItem>> {
   data: ReadonlyArray<T>

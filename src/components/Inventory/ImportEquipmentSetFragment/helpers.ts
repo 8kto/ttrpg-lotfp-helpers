@@ -3,7 +3,7 @@ import type { I18n, MessageDescriptor } from '@lingui/core'
 import type { EquipmentPackName } from '@/config/EquipmentPacks'
 import { EquipmentPacks } from '@/config/EquipmentPacks'
 import EquipmentTranslated from '@/config/EquipmentTranslated'
-import type { EquipmentItem, EquipmentPack } from '@/domain'
+import type { EquipmentItem, EquipmentPack } from '@/domain/equipment'
 
 export type ImportEquipmentPackProps = {
   pack: EquipmentPackName

@@ -1,7 +1,8 @@
 import type { I18n } from '@lingui/core'
 import type React from 'react'
 
-import type { EquipmentItem, InventoryItem } from '@/domain'
+import type { EquipmentItem } from '@/domain/equipment'
+import type { InventoryItem } from '@/domain/inventory'
 
 export interface InventoryColumn<T extends InventoryItem<EquipmentItem>> {
   key: keyof T

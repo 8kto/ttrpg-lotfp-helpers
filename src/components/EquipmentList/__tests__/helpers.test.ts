@@ -7,9 +7,9 @@ import {
   getInventoryItem,
   handleSortByDamage,
 } from '@/components/EquipmentList/helpers'
-import type { EquipmentItem } from '@/domain'
 import { Dice } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
+import type { EquipmentItem } from '@/domain/equipment'
 import type { MeleeWeaponItem } from '@/domain/weapon'
 import {
   armorItemMock1,

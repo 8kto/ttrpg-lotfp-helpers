@@ -3,8 +3,8 @@ import React from 'react'
 
 import DamageFragment from '@/components/DamageFragment'
 import RangeFragment from '@/components/RangeFragment'
-import type { EquipmentItem } from '@/domain'
 import type { ArmorItem } from '@/domain/armor'
+import type { EquipmentItem } from '@/domain/equipment'
 import type { MissileWeaponItem, WeaponItem } from '@/domain/weapon'
 
 const isArmorItem = (item: EquipmentItem): item is ArmorItem => {

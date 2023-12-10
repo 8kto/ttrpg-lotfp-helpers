@@ -1,6 +1,6 @@
 import { msg, t } from '@lingui/macro'
 
-import type { EquipmentPack } from '@/domain'
+import type { EquipmentPack } from '@/domain/equipment'
 
 const Base = (): EquipmentPack => {
   return {

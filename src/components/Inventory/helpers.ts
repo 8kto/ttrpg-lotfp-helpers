@@ -1,6 +1,7 @@
 import type { InventoryColumn } from '@/components/Inventory/types'
-import type { EquipmentItem, InventoryItem } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
+import type { EquipmentItem } from '@/domain/equipment'
+import type { InventoryItem } from '@/domain/inventory'
 
 export const renderWeightInventoryCol: InventoryColumn<
   InventoryItem<EquipmentItem>

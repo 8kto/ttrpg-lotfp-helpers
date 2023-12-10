@@ -17,7 +17,7 @@ import {
 import type { EquipmentPackName } from '@/config/EquipmentPacks'
 import { EquipmentPackNames, EquipmentPacks } from '@/config/EquipmentPacks'
 import type { EquipmentItemTranslated } from '@/config/types'
-import type { EquipmentItem, EquipmentPack } from '@/domain'
+import type { EquipmentItem, EquipmentPack } from '@/domain/equipment'
 import { useInventoryState } from '@/state/InventoryState'
 
 const EquipmentPackEntriesList = ({ pack }: { pack: EquipmentPack }) => {

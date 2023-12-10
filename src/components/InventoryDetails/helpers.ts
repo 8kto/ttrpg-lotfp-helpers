@@ -1,6 +1,7 @@
-import type { EquipmentItem, InventoryItem } from '@/domain'
 import type { ArmorItem } from '@/domain/armor'
 import { Encumbrance, EncumbrancePoint } from '@/domain/encumbrance'
+import type { EquipmentItem } from '@/domain/equipment'
+import type { InventoryItem } from '@/domain/inventory'
 import { roundTo } from '@/shared/helpers/roundTo'
 
 export const getEncumbrance = (points: number): Encumbrance => {

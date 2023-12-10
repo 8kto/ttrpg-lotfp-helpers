@@ -5,7 +5,8 @@ import { renderNameGridCol } from '@/components/EquipmentList/gridHelpers'
 import { renderWeightInventoryCol } from '@/components/Inventory/helpers'
 import InventoryGrid from '@/components/Inventory/InventoryGrid'
 import type { InventoryColumn } from '@/components/Inventory/types'
-import type { EquipmentItem, InventoryItem } from '@/domain'
+import type { EquipmentItem } from '@/domain/equipment'
+import type { InventoryItem } from '@/domain/inventory'
 import { removeEquipmentItem, useInventoryState } from '@/state/InventoryState'
 
 type EquipmentInventoryItem = InventoryItem<EquipmentItem>

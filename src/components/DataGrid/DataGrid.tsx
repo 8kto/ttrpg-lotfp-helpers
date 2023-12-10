@@ -13,7 +13,7 @@ import type {
   SortConfig,
   SortOrder,
 } from '@/components/DataGrid/types'
-import type { EquipmentItem } from '@/domain'
+import type { EquipmentItem } from '@/domain/equipment'
 
 const DataGrid = <T extends EquipmentItem>({
   data,

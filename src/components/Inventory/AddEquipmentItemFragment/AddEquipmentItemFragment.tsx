@@ -10,8 +10,8 @@ import {
   EquipLabelsDict,
   getCustomEquipmentItem,
 } from '@/components/Inventory/AddEquipmentItemFragment/helpers'
-import type { EquipmentItemDto } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
+import type { EquipmentItemDto } from '@/domain/equipment'
 import {
   addCustomEquipmentItem,
   EquipmentStateKeys,

@@ -1,8 +1,8 @@
 import { msg } from '@lingui/macro'
 
 import type { EquipmentItemTranslated } from '@/config/types'
-import type { EquipmentItem } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
+import type { EquipmentItem } from '@/domain/equipment'
 
 export const MiscEquipment: ReadonlyArray<
   EquipmentItemTranslated<EquipmentItem>

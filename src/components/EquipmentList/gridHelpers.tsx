@@ -2,8 +2,8 @@ import { Trans } from '@lingui/macro'
 
 import type { DataGridColumn } from '@/components/DataGrid/types'
 import ItemDetails from '@/components/Inventory/ItemDetails'
-import type { EquipmentItem } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
+import type { EquipmentItem } from '@/domain/equipment'
 
 type RenderFunction = DataGridColumn<EquipmentItem>['render']
 

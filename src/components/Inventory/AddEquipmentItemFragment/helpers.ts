@@ -1,5 +1,6 @@
-import type { EquipmentItem, EquipmentItemDto, InventoryItem } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
+import type { EquipmentItem, EquipmentItemDto } from '@/domain/equipment'
+import type { InventoryItem } from '@/domain/inventory'
 import { getAutoIncrementedId } from '@/shared/helpers/autoincrement'
 import type { EquipmentCategoryKey } from '@/state/InventoryState'
 

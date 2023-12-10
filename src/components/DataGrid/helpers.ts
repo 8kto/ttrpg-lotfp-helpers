@@ -1,5 +1,5 @@
 import type { SortConfig } from '@/components/DataGrid/types'
-import type { EquipmentItem } from '@/domain'
+import type { EquipmentItem } from '@/domain/equipment'
 
 export const trivialSort =
   <T extends EquipmentItem>(sortConfig: SortConfig<T>) =>

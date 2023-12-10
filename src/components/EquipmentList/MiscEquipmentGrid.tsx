@@ -10,7 +10,7 @@ import {
 } from '@/components/EquipmentList/gridHelpers'
 import { getInventoryItem } from '@/components/EquipmentList/helpers'
 import EquipmentTranslated from '@/config/EquipmentTranslated'
-import type { EquipmentItem } from '@/domain'
+import type { EquipmentItem } from '@/domain/equipment'
 import { addEquipmentItem, useInventoryState } from '@/state/InventoryState'
 
 const columns: ReadonlyArray<DataGridColumn<EquipmentItem>> = [
