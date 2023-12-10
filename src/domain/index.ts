@@ -39,7 +39,7 @@ export type EquipmentItemDto = {
   details: string | null
 }
 
-type EquipmentPackItem = [/*name*/ MessageDescriptor, /*qty*/ number]
+type EquipmentPackItem = [/*name*/ string, /*qty*/ number]
 export type EquipmentPack = {
   name: MessageDescriptor
   items: Array<EquipmentPackItem>
