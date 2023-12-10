@@ -1,4 +1,4 @@
-import type { EquipmentItem } from '@/domain/index'
+import type { EquipmentItem } from '@/domain/equipment'
 
 export enum ArmorType {
   Armor = 'Armor',
