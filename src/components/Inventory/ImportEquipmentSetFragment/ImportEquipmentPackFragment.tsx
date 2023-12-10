@@ -2,37 +2,26 @@ import { XMarkIcon } from '@heroicons/react/24/solid'
 import { t, Trans } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import { Field, Form, Formik } from 'formik'
-import React, { useMemo, useState } from 'react'
+import React, { useState } from 'react'
 import * as Yup from 'yup'
 
 import CostFragment from '@/components/CostFragment/CostFragment'
 import EncumbranceFragment from '@/components/EncumbranceFragment/EncumbranceFragment'
 import { getInventoryItem } from '@/components/EquipmentList/helpers'
-import type {
-  FlatEquipmentConfig,
-  ImportEquipmentPackProps,
-} from '@/components/Inventory/ImportEquipmentSetFragment/helpers'
+import type { ImportEquipmentPackProps } from '@/components/Inventory/ImportEquipmentSetFragment/helpers'
 import {
-  convertToFlatConfig,
   EquipmentPackLabelsDict,
   getEquipmentPackDetails,
   getEquipmentPackItems,
 } from '@/components/Inventory/ImportEquipmentSetFragment/helpers'
-import * as EquipmentConfig from '@/config'
 import type { EquipmentPackName } from '@/config/EquipmentPacks'
 import { EquipmentPackNames, EquipmentPacks } from '@/config/EquipmentPacks'
 import type { EquipmentPack } from '@/domain'
 import { useInventoryState } from '@/state/InventoryState'
 
-const EquipmentPackEntriesList = ({
-  pack,
-  flatEquipmentConfig,
-}: {
-  pack: EquipmentPack
-  flatEquipmentConfig: FlatEquipmentConfig
-}) => {
-  const { i18n } = useLingui()
-  const { cost, points } = getEquipmentPackDetails(pack, flatEquipmentConfig)
+const EquipmentPackEntriesList = ({ pack }: { pack: EquipmentPack }) => {
+  const { _: trans } = useLingui()
+  const { cost, points } = getEquipmentPackDetails(pack, trans)
 
   const detailsRowClassname =
     'px-0 py-1 grid grid-cols-3 sm:gap-2 align-baseline'
@@ -53,9 +42,9 @@ const EquipmentPackEntriesList = ({
       <dl className='divide-y divide-gray-100'>
         {pack.items.map(([name, qty]) => {
           return (
-            <div key={name.id} className={detailsRowClassname}>
+            <div key={name} className={detailsRowClassname}>
               <dt className={`ph-font-cursive col-span-2 text-lg`}>
-                {i18n._(name)}
+                <Trans>{name}</Trans>
               </dt>
               <dd className='col-span-1 mt-1 flex items-center leading-6 text-gray-700 sm:mt-0'>
                 {qty}
@@ -74,18 +63,9 @@ const ImportEquipmentPackFragment = ({ onClose }: { onClose: () => void }) => {
     EquipmentPacks.Base,
   )
   const { state } = useInventoryState()
-  const flatEquipmentConfig = useMemo(
-    () => convertToFlatConfig(EquipmentConfig),
-    [],
-  )
 
   const handleImport = (formValues: ImportEquipmentPackProps) => {
-    const items = getEquipmentPackItems(
-      EquipmentPacks[formValues.pack],
-      flatEquipmentConfig,
-    )
-
-    console.log('RENDER', state.miscEquipment.get())
+    const items = getEquipmentPackItems(EquipmentPacks[formValues.pack], trans)
 
     items.forEach((item) => {
       const categoryKey = item.categoryKey
@@ -108,8 +88,6 @@ const ImportEquipmentPackFragment = ({ onClose }: { onClose: () => void }) => {
 
     onClose()
   }
-
-  console.log('RENDER', state.miscEquipment.get())
 
   return (
     <>
@@ -175,10 +153,7 @@ const ImportEquipmentPackFragment = ({ onClose }: { onClose: () => void }) => {
             </div>
 
             <div className='overf mb-10'>
-              <EquipmentPackEntriesList
-                pack={selectedPack}
-                flatEquipmentConfig={flatEquipmentConfig}
-              />
+              <EquipmentPackEntriesList pack={selectedPack} />
             </div>
 
             <div className='flex w-full justify-center space-x-4 pb-4'>

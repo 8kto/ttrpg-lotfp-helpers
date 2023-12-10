@@ -1,10 +1,9 @@
-import type { MessageDescriptor } from '@lingui/core'
+import type { I18n, MessageDescriptor } from '@lingui/core'
 
 import type { EquipmentPackName } from '@/config/EquipmentPacks'
 import { EquipmentPacks } from '@/config/EquipmentPacks'
-import type { EquipmentItemTranslated } from '@/config/types'
+import EquipmentTranslated from '@/config/EquipmentTranslated'
 import type { EquipmentItem, EquipmentPack } from '@/domain'
-import type { EquipmentCategoryKey } from '@/state/InventoryState'
 
 export type ImportEquipmentPackProps = {
   pack: EquipmentPackName
@@ -19,53 +18,45 @@ export const EquipmentPackLabelsDict: Record<
   }),
 ) as Record<EquipmentPackName, MessageDescriptor>
 
-interface CategorizedEquipmentItem
-  extends EquipmentItemTranslated<EquipmentItem> {
-  categoryKey: EquipmentCategoryKey
-}
-export type FlatEquipmentConfig = Array<CategorizedEquipmentItem>
-
-export const convertToFlatConfig = (
-  categories: Record<
-    string,
-    ReadonlyArray<EquipmentItemTranslated<EquipmentItem>>
-  >,
-): FlatEquipmentConfig => {
-  return Object.entries(categories).flatMap(([categoryKey, category]) => {
-    return category.map((item) => {
-      return {
-        ...item,
-        categoryKey: categoryKey as EquipmentCategoryKey,
-      }
-    })
-  })
+const getGetterNames = <
+  T,
+  Res = Array<keyof Omit<T, 'constructor' | 'translate'>>,
+>(
+  obj: T,
+): Res => {
+  return Object.entries(
+    Object.getOwnPropertyDescriptors(Object.getPrototypeOf(obj)),
+  )
+    .filter(([, descriptor]) => typeof descriptor.get === 'function')
+    .map(([key]) => key) as Res
 }
 
-const findEquipmentItem = (
-  name: MessageDescriptor,
-  flatEquipmentConfig: FlatEquipmentConfig,
-): CategorizedEquipmentItem | null => {
-  const item = flatEquipmentConfig.find((i) =>
-    typeof i.name === 'object'
-      ? i.name.id === name.id
-      : i.name === name.message,
-  ) as CategorizedEquipmentItem | null
-  if (!item) {
-    console.error(`Not found: ${name}`)
+const findEquipmentItem = <T extends EquipmentItem>(
+  name: string,
+  trans: I18n['_'],
+): T | null => {
+  const equipmentConfigTranslated = new EquipmentTranslated(trans)
+  const categoryKeys = getGetterNames(equipmentConfigTranslated)
 
-    return null
+  // Iterate over getters to find the item
+  for (const categoryKey of categoryKeys) {
+    const items = equipmentConfigTranslated[categoryKey]
+    const foundItem = items.find((item) => item.name === name)
+    if (foundItem) {
+      return foundItem as T
+    }
   }
 
-  return item
+  return null
 }
 
 export const getEquipmentPackDetails = (
   pack: EquipmentPack,
-  flatEquipmentConfig: FlatEquipmentConfig,
+  trans: I18n['_'],
 ): { cost: number; points: number } => {
   return pack.items.reduce(
-    (acc, [name, qty]) => {
-      const item = findEquipmentItem(name, flatEquipmentConfig)
+    (acc, [itemName, qty]) => {
+      const item = findEquipmentItem(itemName, trans)
       if (!item) {
         return acc
       }
@@ -79,30 +70,23 @@ export const getEquipmentPackDetails = (
   )
 }
 
-// TODO implement custom items creation:
-//    if weight is None but qty > 1, batch items as one custom inventory item
-//    e.g. Nails (20), Chalk (10)
 export const getEquipmentPackItems = (
   pack: EquipmentPack,
-  flatEquipmentConfig: FlatEquipmentConfig,
-): ReadonlyArray<CategorizedEquipmentItem> => {
+  trans: I18n['_'],
+): ReadonlyArray<EquipmentItem> => {
   return pack.items.reduce((acc, [name, qty]) => {
-    const item = findEquipmentItem(name, flatEquipmentConfig)
+    const item = findEquipmentItem(name, trans)
+    console.log(item)
     if (!item || qty <= 0) {
       return acc
     }
 
-    const isNameTranslated = (
-      name: MessageDescriptor | string,
-    ): name is MessageDescriptor => typeof name === 'object'
-
-    const copy: CategorizedEquipmentItem = {
-      ...item,
-      name:
-        (isNameTranslated(item.name) ? item.name.message : item.name) ||
-        'Invalid name',
-    }
+    const copy: EquipmentItem = { ...item }
     if (qty > 1) {
+      // TODO implement custom items creation:
+      //    if weight is None but qty > 1, batch items as one custom inventory item
+      //    e.g. Nails (20), Chalk (10)
+
       // None weight
       // if (copy.points === EncumbrancePoint.None) {
       //   if (typeof copy.name === 'object') {
@@ -113,15 +97,16 @@ export const getEquipmentPackItems = (
       //
       //   return acc.concat(copy)
       // }
+
       // Has weight, add x QTY items
-      // return acc.concat(
-      //   Array.from({ length: qty }, () => {
-      //     return { ...copy }
-      //   }),
-      // )
+      return acc.concat(
+        Array.from({ length: qty }, () => {
+          return { ...copy }
+        }),
+      )
     }
 
     // Add single item
     return acc.concat(copy)
-  }, [] as ReadonlyArray<CategorizedEquipmentItem>)
+  }, [] as ReadonlyArray<EquipmentItem>)
 }
