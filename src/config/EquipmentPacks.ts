@@ -1,74 +1,90 @@
-import { msg } from '@lingui/macro'
+import { msg, t } from '@lingui/macro'
 
 import type { EquipmentPack } from '@/domain'
 
-const Base: EquipmentPack = {
-  items: [
-    [msg`Bedroll`, 1],
-    [msg`Rations, Standard/Day`, 3],
-    [msg`Backpack`, 1],
-    [msg`Pouch`, 1],
-    [msg`Sack`, 1],
-    [msg`Tinderbox`, 1],
-  ],
-  name: msg`Base items set`,
+const Base = (): EquipmentPack => {
+  return {
+    items: [
+      [t`Bedroll`, 1],
+      [t`Rations, Standard/Day`, 3],
+      [t`Backpack`, 1],
+      [t`Pouch`, 1],
+      [t`Sack`, 1],
+      [t`Tinderbox`, 1],
+    ],
+    name: msg`Base items set`,
+  }
 }
 
-const AdventuringBasics: EquipmentPack = {
-  items: [
-    [msg`Chalk`, 1],
-    [msg`Grappling Hook`, 1],
-    [msg`Rope, 50'`, 1],
-    [msg`Lantern`, 1],
-    [msg`Flask of Lamp Oil`, 3],
-    [msg`Tent, Personal`, 1],
-  ],
-  name: msg`Adventuring Basics`,
+const AdventuringBasics = (): EquipmentPack => {
+  return {
+    items: [
+      [t`Chalk`, 1],
+      [t`Grappling Hook`, 1],
+      [t`Rope, 50'`, 1],
+      [t`Lantern`, 1],
+      [t`Flask of Lamp Oil`, 3],
+      [t`Tent, Personal`, 1],
+    ],
+    name: msg`Adventuring Basics`,
+  }
 }
-const AdventurerReadyForAnything: EquipmentPack = {
-  items: [
-    [msg`Vial or Bottle`, 1],
-    [msg`Spike, Iron`, 10],
-    [msg`Pole, 10'`, 1],
-    [msg`Paper`, 10],
-    [msg`Ink`, 10],
-    [msg`Scroll Case`, 1],
-    [msg`Mirror, Steel`, 1],
-  ],
-  name: msg`Ready for anything`,
+const AdventurerReadyForAnything = (): EquipmentPack => {
+  return {
+    items: [
+      [t`Vial or Bottle`, 1],
+      [t`Spike, Iron`, 10],
+      [t`Pole, 10'`, 1],
+      [t`Paper`, 10],
+      [t`Ink`, 10],
+      [t`Scroll Case`, 1],
+      [t`Mirror, Steel`, 1],
+    ],
+    name: msg`Ready for anything`,
+  }
 }
 
-const AdventurerSeasoned: EquipmentPack = {
-  items: [
-    [msg`Book, Blank`, 1],
-    [msg`Candle`, 1],
-    [msg`Chalk`, 1],
-    [msg`Crowbar`, 1],
-    [msg`Flask of Lamp Oil`, 3],
-    [msg`Ink`, 1],
-    [msg`Instrument`, 1],
-    [msg`Lantern`, 1],
-    [msg`Lock`, 1],
-    [msg`Mallet`, 1],
-    [msg`Mirror, Steel`, 1],
-    [msg`Nails`, 20],
-    [msg`Pole, 10'`, 1],
-    [msg`Rope, 50'`, 1],
-    [msg`Soap`, 1],
-    [msg`Spike, Wooden`, 1],
-    [msg`Tinderbox`, 1],
-    [msg`Torch`, 3],
-    [msg`Whistle`, 1],
-  ],
-  name: msg`Seasoned adventurer`,
+const AdventurerSeasoned = (): EquipmentPack => {
+  return {
+    items: [
+      [t`Book, Blank`, 1],
+      [t`Candle`, 1],
+      [t`Chalk`, 1],
+      [t`Crowbar`, 1],
+      [t`Flask of Lamp Oil`, 3],
+      [t`Ink`, 1],
+      [t`Instrument`, 1],
+      [t`Lantern`, 1],
+      [t`Lock`, 1],
+      [t`Mallet`, 1],
+      [t`Mirror, Steel`, 1],
+      [t`Nails`, 20],
+      [t`Pole, 10'`, 1],
+      [t`Rope, 50'`, 1],
+      [t`Soap`, 1],
+      [t`Spike, Wooden`, 1],
+      [t`Tinderbox`, 1],
+      [t`Torch`, 3],
+      [t`Whistle`, 1],
+    ],
+    name: msg`Seasoned adventurer`,
+  }
 }
 
 /* eslint-disable sort-keys-fix/sort-keys-fix */
 export const EquipmentPacks = {
-  Base,
-  AdventuringBasics,
-  AdventurerReadyForAnything,
-  AdventurerSeasoned,
+  get Base() {
+    return Base()
+  },
+  get AdventuringBasics() {
+    return AdventuringBasics()
+  },
+  get AdventurerReadyForAnything() {
+    return AdventurerReadyForAnything()
+  },
+  get AdventurerSeasoned() {
+    return AdventurerSeasoned()
+  },
 }
 /* eslint-enable sort-keys-fix/sort-keys-fix */
 
