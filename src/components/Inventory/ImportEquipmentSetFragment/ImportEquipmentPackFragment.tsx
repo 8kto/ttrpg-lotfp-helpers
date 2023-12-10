@@ -16,7 +16,8 @@ import {
 } from '@/components/Inventory/ImportEquipmentSetFragment/helpers'
 import type { EquipmentPackName } from '@/config/EquipmentPacks'
 import { EquipmentPackNames, EquipmentPacks } from '@/config/EquipmentPacks'
-import type { EquipmentPack } from '@/domain'
+import type { EquipmentItemTranslated } from '@/config/types'
+import type { EquipmentItem, EquipmentPack } from '@/domain'
 import { useInventoryState } from '@/state/InventoryState'
 
 const EquipmentPackEntriesList = ({ pack }: { pack: EquipmentPack }) => {
@@ -65,7 +66,11 @@ const ImportEquipmentPackFragment = ({ onClose }: { onClose: () => void }) => {
   const { state } = useInventoryState()
 
   const handleImport = (formValues: ImportEquipmentPackProps) => {
-    const items = getEquipmentPackItems(EquipmentPacks[formValues.pack], trans)
+    // FIXME type should be forced but inferred
+    const items = getEquipmentPackItems(
+      EquipmentPacks[formValues.pack],
+      trans,
+    ) as unknown as Array<EquipmentItemTranslated<EquipmentItem>>
 
     items.forEach((item) => {
       const categoryKey = item.categoryKey
