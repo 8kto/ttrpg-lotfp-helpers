@@ -19,12 +19,12 @@ const CategoryInventoryControls = ({
 
   return (
     <div className='flex items-center sm:justify-end'>
-      <div className='flex space-x-1 pl-2'>
+      <div className='flex space-x-1'>
         <a
           href='#'
           onClick={handleReset}
           title={t`Reset`}
-          className='inline-flex cursor-pointer justify-center rounded p-1 mr-2 text-red-400 hover:bg-gray-100 hover:text-gray-900'
+          className='inline-flex cursor-pointer justify-center rounded p-1 mr-4 md:mr-6 text-red-400 hover:bg-gray-100 hover:text-gray-900'
         >
           <svg
             className='h-6 w-6'

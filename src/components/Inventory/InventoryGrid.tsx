@@ -33,7 +33,7 @@ function InventoryGrid<T extends InventoryItem<EquipmentItem>>({
               {column.title}
             </th>
           ))}
-          <th className='font-base w-1/12 text-center text-xs tracking-wider text-gray-500'></th>
+          <th className='font-base w-1/6 text-center text-xs text-gray-500'></th>
         </tr>
       </thead>
       <tbody className='bg-white'>
@@ -56,7 +56,7 @@ function InventoryGrid<T extends InventoryItem<EquipmentItem>>({
                 }
                 onClick={() => onRemoveClick(item)}
               >
-                <MinusIcon className='me-auto mr-2 h-5 w-5' />
+                <MinusIcon className='me-auto h-5 w-5' />
               </button>
             </td>
           </tr>

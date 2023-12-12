@@ -27,15 +27,16 @@ const InventoryControls = () => {
     useState(false)
 
   const iconBtnClassname =
-    'inline-flex flex-col cursor-pointer justify-center items-center rounded p-2 lg:p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-900'
+    'w-full h-full text-xs inline-flex flex-col cursor-pointer justify-center items-center rounded p-2 lg:p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-900'
   const iconClassname = 'h-7 w-7 mb-1 lg:h-5 lg:w-5 md:mb-0.5'
+  const buttonContainerClassname = 'flex flex-1 md:pl-2'
 
   return (
     <>
       {/* Buttons */}
-      <div className='flex items-center justify-end'>
+      <div className='flex w-full md:w-auto items-center justify-between'>
         {/* Custom item */}
-        <div className='flex space-x-1 pl-2'>
+        <div className={buttonContainerClassname}>
           <button
             onClick={() => {
               setEquipmentDrawerOpen(true)
@@ -50,7 +51,7 @@ const InventoryControls = () => {
           </button>
         </div>
         {/* Coins */}
-        <div className='flex space-x-1 pl-2'>
+        <div className={buttonContainerClassname}>
           <button
             className={iconBtnClassname}
             type='button'
@@ -66,7 +67,7 @@ const InventoryControls = () => {
           </button>
         </div>
         {/* Equip set */}
-        <div className='flex space-x-1 pl-2'>
+        <div className={buttonContainerClassname}>
           <button
             onClick={() => {
               setEquipmentPackDrawerOpen(true)
@@ -81,11 +82,11 @@ const InventoryControls = () => {
           </button>
         </div>
         {/* Reset */}
-        <div className='flex space-x-1 pl-2'>
+        <div className={buttonContainerClassname}>
           <button
             onClick={handleReset}
             title={t`Reset all equipment`}
-            className='inline-flex cursor-pointer flex-col items-center justify-center rounded p-2 text-red-400 hover:bg-gray-100 hover:text-gray-900 lg:p-1'
+            className={iconBtnClassname}
           >
             <TrashIcon className={iconClassname} />
             <span className='lg:hidden'>

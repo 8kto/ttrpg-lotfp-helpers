@@ -17,12 +17,12 @@ const InventoryDetails = () => {
     isCoinWeightActive ? copperPieces.get() : 0,
   )
 
-  const titleClassname = 'ph-font-cursive text-red-900 text-xl'
+  const titleClassname = 'ph-font-cursive text-red-900 text-lg'
   const detailsRowClassname =
     'px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0  align-baseline'
 
   return (
-    <div className='mt-6 border-t border-gray-100 text-base'>
+    <div className='mt-4 border-t border-gray-100 text-base'>
       <dl className='divide-y divide-gray-100'>
         <div className={detailsRowClassname}>
           <dt className={`${titleClassname}`}>
