@@ -45,7 +45,8 @@ const EquipmentPackEntriesList = ({ pack }: { pack: EquipmentPack }) => {
           return (
             <div key={name} className={detailsRowClassname}>
               <dt className={`ph-font-cursive col-span-2 text-lg`}>
-                <Trans>{name}</Trans>
+                {/*FIXME corrupted when deployed */}
+                {trans(name)}
               </dt>
               <dd className='col-span-1 mt-1 flex items-center leading-6 text-gray-700 sm:mt-0'>
                 {qty}
