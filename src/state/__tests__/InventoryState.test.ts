@@ -201,6 +201,7 @@ describe('InventoryState Tests', () => {
       lockedCost: 5,
       name: 'Jigsaw',
       points: EncumbrancePoint.Regular,
+      qty: 1,
       ruralCost: 10,
     }
 

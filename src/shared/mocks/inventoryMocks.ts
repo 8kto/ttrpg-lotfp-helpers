@@ -14,6 +14,7 @@ export const armorItemMock1: InventoryItem<ArmorItem> = {
   lockedCost: 50,
   name: 'Leather',
   points: EncumbrancePoint.None,
+  qty: 1,
   ruralCost: 50,
   type: ArmorType.Armor,
 }
@@ -25,6 +26,7 @@ export const armorItemMock2: InventoryItem<ArmorItem> = {
   lockedCost: 50,
   name: 'Chain',
   points: EncumbrancePoint.Oversized,
+  qty: 1,
   ruralCost: null,
   type: ArmorType.Armor,
 }
@@ -39,6 +41,7 @@ export const meleeWeaponItemMock1: InventoryItem<MeleeWeaponItem> = {
   lockedCost: 10,
   name: 'Cestus',
   points: EncumbrancePoint.None,
+  qty: 1,
   ruralCost: null,
   type: WeaponType.Melee,
 }
@@ -53,6 +56,7 @@ export const meleeWeaponItemMock2: InventoryItem<MeleeWeaponItem> = {
   lockedCost: 5,
   name: 'Garrote',
   points: EncumbrancePoint.None,
+  qty: 1,
   ruralCost: null,
   type: WeaponType.Melee,
 }
@@ -64,6 +68,7 @@ export const missileWeaponItemMock1: InventoryItem<MissileWeaponItem> = {
   lockedCost: 5,
   name: 'Blowgun',
   points: EncumbrancePoint.Regular,
+  qty: 1,
   range: { long: 80, medium: 50, short: 20 },
   ruralCost: null,
   type: WeaponType.Missile,
@@ -76,6 +81,7 @@ export const missileWeaponItemMock2: InventoryItem<MissileWeaponItem> = {
   lockedCost: 30,
   name: 'Crossbow, Heavy',
   points: EncumbrancePoint.Oversized,
+  qty: 1,
   range: { long: 600, medium: 200, short: 50 },
   ruralCost: null,
   type: WeaponType.Missile,
@@ -87,6 +93,7 @@ export const miscEquipItem1: InventoryItem<EquipmentItem> = {
   lockedCost: 1,
   name: 'Air Bladder',
   points: EncumbrancePoint.None,
+  qty: 1,
   ruralCost: 1,
 }
 
@@ -96,5 +103,6 @@ export const miscEquipItem2: InventoryItem<EquipmentItem> = {
   lockedCost: 10,
   name: 'Tent, Regular',
   points: EncumbrancePoint.Oversized,
+  qty: 1,
   ruralCost: 20,
 }

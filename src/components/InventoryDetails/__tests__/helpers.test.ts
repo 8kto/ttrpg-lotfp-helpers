@@ -29,6 +29,7 @@ describe('InventoryDetails helpers', () => {
         lockedCost,
         name: 'Item',
         points,
+        qty: 1,
         ruralCost: null,
       }
     }
