@@ -75,8 +75,18 @@ export const EquipmentStateKeys: ReadonlyArray<EquipmentCategoryKey> =
 
 export const addArmor = (item: InventoryItem<ArmorItem>) => {
   const armor = InventoryState.armor
+  const existingItemIndex = armor.findIndex((i) => i.get().name === item.name)
 
-  armor[armor.length].set(item)
+  if (existingItemIndex !== -1) {
+    armor[existingItemIndex].set((item) => {
+      return {
+        ...item,
+        qty: item.qty + 1,
+      }
+    })
+  } else {
+    armor[armor.length].set(item)
+  }
 }
 
 export const addEquipmentItem = (item: InventoryItem<EquipmentItem>) => {
