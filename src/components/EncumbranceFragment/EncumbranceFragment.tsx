@@ -11,6 +11,7 @@ const EncumbranceFragment = ({
   const { i18n } = useLingui()
   const encumbrance = getEncumbrance(encumbrancePoints)
 
+  // TODO plurals for feet
   return (
     <>
       {i18n._(encumbrance)} ({encumbrancePoints.toPrecision(2)})
