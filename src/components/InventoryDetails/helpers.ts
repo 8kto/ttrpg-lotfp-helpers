@@ -23,7 +23,7 @@ export const getEncumbrance = (points: number): Encumbrance => {
 
 type CountableItem = Pick<
   InventoryItem<EquipmentItem>,
-  'points' | 'lockedCost' | 'name'
+  'points' | 'lockedCost' | 'name' | 'qty'
 >
 
 const COINS_PER_ENCUMBRANCE_POINT = 100
@@ -37,6 +37,7 @@ const getCoinInventoryItems = (copperPieces: number) => {
       lockedCost: 0,
       name: '100 coins',
       points: EncumbrancePoint.Regular,
+      qty: 1,
     }
   })
 }
@@ -55,7 +56,7 @@ const skipFirstItems = () => {
       !(item as InventoryItem<ArmorItem>).armorClass
 
     if (res) {
-      nonEncumberedItemsCount--
+      nonEncumberedItemsCount -= item.qty
     }
 
     return res
@@ -63,15 +64,18 @@ const skipFirstItems = () => {
 }
 
 export const getTotal = (items: Array<CountableItem>, copperPieces: number) => {
+  // FIXME pass over the remained num e.g. -2
   const shouldSkip = skipFirstItems()
   const records = items.concat(getCoinInventoryItems(copperPieces))
 
   const res = records.reduce(
     (totals, item) => {
+      const { lockedCost, points, qty } = item
+
       return {
-        totalCost: totals.totalCost + item.lockedCost,
+        totalCost: (totals.totalCost + lockedCost) * qty,
         totalEncumbrancePoints:
-          totals.totalEncumbrancePoints + (shouldSkip(item) ? 0 : item.points),
+          totals.totalEncumbrancePoints + (shouldSkip(item) ? 0 : points * qty),
       }
     },
     { totalCost: 0, totalEncumbrancePoints: 0 },
