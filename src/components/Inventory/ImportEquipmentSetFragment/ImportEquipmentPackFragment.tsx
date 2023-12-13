@@ -10,7 +10,6 @@ import EncumbranceFragment from '@/components/EncumbranceFragment/EncumbranceFra
 import { getInventoryItem } from '@/components/EquipmentList/helpers'
 import type { ImportEquipmentPackProps } from '@/components/Inventory/ImportEquipmentSetFragment/helpers'
 import {
-  EquipmentPackLabelsDict,
   getEquipmentPackDetails,
   getEquipmentPackItems,
 } from '@/components/Inventory/ImportEquipmentSetFragment/helpers'
@@ -45,7 +44,6 @@ const EquipmentPackEntriesList = ({ pack }: { pack: EquipmentPack }) => {
           return (
             <div key={name} className={detailsRowClassname}>
               <dt className={`ph-font-cursive col-span-2 text-lg`}>
-                {/*FIXME corrupted when deployed */}
                 {trans(name)}
               </dt>
               <dd className='col-span-1 mt-1 flex items-center leading-6 text-gray-700 sm:mt-0'>
@@ -150,11 +148,13 @@ const ImportEquipmentPackFragment = ({ onClose }: { onClose: () => void }) => {
                   setSelectedPack(EquipmentPacks[packName])
                 }}
               >
-                {Object.entries(EquipmentPackLabelsDict).map(([key, title]) => (
-                  <option key={key} value={key}>
-                    {trans(title)}
-                  </option>
-                ))}
+                {Object.entries(EquipmentPacks).map(([key, pack]) => {
+                  return (
+                    <option key={key} value={key}>
+                      {trans(pack.name)}
+                    </option>
+                  )
+                })}
               </Field>
             </div>
 

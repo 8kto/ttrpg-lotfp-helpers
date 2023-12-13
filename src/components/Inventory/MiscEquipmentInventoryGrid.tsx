@@ -43,7 +43,7 @@ const MiscEquipmentInventoryGrid = () => {
   const { state: equipmentState } = useInventoryState()
   const { miscEquipment } = equipmentState
 
-  console.log(miscEquipment.get().map((o) => [o.name, 1]))
+  // console.log(miscEquipment.get().map((o) => [o.name, 1]))
 
   const onRemoveClick = (item: InventoryItem<EquipmentItem>) =>
     removeEquipmentItem(item)

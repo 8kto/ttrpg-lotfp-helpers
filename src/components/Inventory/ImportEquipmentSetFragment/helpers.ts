@@ -1,22 +1,12 @@
-import type { I18n, MessageDescriptor } from '@lingui/core'
+import type { I18n } from '@lingui/core'
 
 import type { EquipmentPackName } from '@/config/EquipmentPacks'
-import { EquipmentPacks } from '@/config/EquipmentPacks'
 import EquipmentTranslated from '@/config/EquipmentTranslated'
 import type { EquipmentItem, EquipmentPack } from '@/domain/equipment'
 
 export type ImportEquipmentPackProps = {
   pack: EquipmentPackName
 }
-
-export const EquipmentPackLabelsDict: Record<
-  EquipmentPackName,
-  MessageDescriptor
-> = Object.fromEntries(
-  Object.entries(EquipmentPacks).map(([key, dict]) => {
-    return [key, dict.name]
-  }),
-) as Record<EquipmentPackName, MessageDescriptor>
 
 const getGetterNames = <
   T,
@@ -76,7 +66,6 @@ export const getEquipmentPackItems = (
 ): ReadonlyArray<EquipmentItem> => {
   return pack.items.reduce((acc, [name, qty]) => {
     const item = findEquipmentItem(name, trans)
-    console.log(item)
     if (!item || qty <= 0) {
       return acc
     }
