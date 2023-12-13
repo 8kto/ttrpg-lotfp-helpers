@@ -60,6 +60,33 @@
       "rules": {
         "@typescript-eslint/ban-ts-comment": "off"
       }
+    },
+    {
+      "files": ["src/domain/**/*.ts"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "paths": ["@lingui/core", "@lingui/macro"]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["src/config/**/*.ts"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "paths": [
+              {
+                "name": "@lingui/macro",
+                "importNames": ["msg"]
+              }
+            ]
+          }
+        ]
+      }
     }
   ]
 }
