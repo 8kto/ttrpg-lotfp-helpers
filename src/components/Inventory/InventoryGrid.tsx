@@ -66,4 +66,5 @@ function InventoryGrid<T extends InventoryItem<EquipmentItem>>({
   )
 }
 
+// TODO to be replaced with the DataGrid
 export default InventoryGrid
