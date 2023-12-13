@@ -42,7 +42,8 @@
         "prefer": "type-imports"
       }
     ],
-    "unused-imports/no-unused-imports": "error"
+    "unused-imports/no-unused-imports": "error",
+    "no-console": ["error", { "allow": ["error"] }]
   },
   "overrides": [
     {
