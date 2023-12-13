@@ -1,4 +1,4 @@
-import { msg, t } from '@lingui/macro'
+import { t } from '@lingui/macro'
 
 import type { EquipmentPack } from '@/domain/equipment'
 
@@ -12,7 +12,7 @@ const Base = (): EquipmentPack => {
       [t`Sack`, 1],
       [t`Tinderbox`, 1],
     ],
-    name: msg`Base items set`,
+    name: t`Base items set`,
   }
 }
 
@@ -26,7 +26,7 @@ const AdventuringBasics = (): EquipmentPack => {
       [t`Flask of Lamp Oil`, 3],
       [t`Tent, Personal`, 1],
     ],
-    name: msg`Adventuring Basics`,
+    name: t`Adventuring Basics`,
   }
 }
 const AdventurerReadyForAnything = (): EquipmentPack => {
@@ -40,7 +40,7 @@ const AdventurerReadyForAnything = (): EquipmentPack => {
       [t`Scroll Case`, 1],
       [t`Mirror, Steel`, 1],
     ],
-    name: msg`Ready for anything`,
+    name: t`Ready for anything`,
   }
 }
 
@@ -67,7 +67,7 @@ const AdventurerSeasoned = (): EquipmentPack => {
       [t`Torch`, 3],
       [t`Whistle`, 1],
     ],
-    name: msg`Seasoned adventurer`,
+    name: t`Seasoned adventurer`,
   }
 }
 

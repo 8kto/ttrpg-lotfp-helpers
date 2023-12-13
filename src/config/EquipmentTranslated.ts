@@ -1,5 +1,6 @@
 import type { I18n } from '@lingui/core'
 
+import { Armor, MeleeWeapons, MiscEquipment, MissileWeapons } from '@/config'
 import type { EquipmentItemTranslated } from '@/config/types'
 import type { ArmorItem } from '@/domain/armor'
 import type { EquipmentItem } from '@/domain/equipment'
@@ -7,14 +8,6 @@ import type { MeleeWeaponItem, MissileWeaponItem } from '@/domain/weapon'
 import deepclone from '@/shared/helpers/deepclone'
 import type { EquipmentCategoryKey } from '@/state/InventoryState'
 
-import { Armor } from './Armor'
-import { MeleeWeapons } from './MeleeWeapons'
-import { MiscEquipment } from './MiscEquipment'
-import { MissileWeapons } from './MissileWeapons'
-
-/**
- * TODO rework msg`name`s, use t`` like for Equipment pack
- */
 export default class EquipmentTranslated {
   private readonly trans: I18n['_']
 
@@ -37,26 +30,26 @@ export default class EquipmentTranslated {
   }
 
   get Armor(): ReadonlyArray<ArmorItem> {
-    return this.translate<ArmorItem>(deepclone(Armor), 'armor')
+    return this.translate<ArmorItem>(deepclone(Armor()), 'armor')
   }
 
   get MeleeWeapons(): ReadonlyArray<MeleeWeaponItem> {
     return this.translate<MeleeWeaponItem>(
-      deepclone(MeleeWeapons),
+      deepclone(MeleeWeapons()),
       'meleeWeapons',
     )
   }
 
   get MissileWeapons(): ReadonlyArray<MissileWeaponItem> {
     return this.translate<MissileWeaponItem>(
-      deepclone(MissileWeapons),
+      deepclone(MissileWeapons()),
       'missileWeapons',
     )
   }
 
   get MiscEquipment(): ReadonlyArray<EquipmentItem> {
     return this.translate<EquipmentItem>(
-      deepclone(MiscEquipment),
+      deepclone(MiscEquipment()),
       'miscEquipment',
     )
   }

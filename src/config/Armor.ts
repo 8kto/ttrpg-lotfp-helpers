@@ -1,15 +1,15 @@
-import { msg } from '@lingui/macro'
+import { t } from '@lingui/macro'
 
 import type { EquipmentItemTranslated } from '@/config/types'
 import type { ArmorItem } from '@/domain/armor'
 import { ArmorType } from '@/domain/armor'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 
-export const Armor: ReadonlyArray<EquipmentItemTranslated<ArmorItem>> = [
+export const Armor = (): ReadonlyArray<EquipmentItemTranslated<ArmorItem>> => [
   {
     armorClass: 14,
     cityCost: 25,
-    name: msg`Leather`,
+    name: t`Leather`,
     points: EncumbrancePoint.None,
     ruralCost: 50,
     type: ArmorType.Armor,
@@ -17,7 +17,7 @@ export const Armor: ReadonlyArray<EquipmentItemTranslated<ArmorItem>> = [
   {
     armorClass: 16,
     cityCost: 100,
-    name: msg`Chain`,
+    name: t`Chain`,
     points: EncumbrancePoint.Oversized,
     ruralCost: null,
     type: ArmorType.Armor,
@@ -25,8 +25,8 @@ export const Armor: ReadonlyArray<EquipmentItemTranslated<ArmorItem>> = [
   {
     armorClass: 18,
     cityCost: 1000,
-    details: msg`config.armor.plate.details`,
-    name: msg`Plate`,
+    details: t`config.armor.plate.details`,
+    name: t`Plate`,
     points: EncumbrancePoint.Heavy,
     ruralCost: null,
     type: ArmorType.Armor,
@@ -34,8 +34,8 @@ export const Armor: ReadonlyArray<EquipmentItemTranslated<ArmorItem>> = [
   {
     armorClass: '+1,+2',
     cityCost: 10,
-    details: msg`+1 AC versus mêlée attacks, +2 AC versus missile attacks.`,
-    name: msg`Shield`,
+    details: t`+1 AC versus mêlée attacks, +2 AC versus missile attacks.`,
+    name: t`Shield`,
     points: EncumbrancePoint.Oversized,
     ruralCost: 25,
     type: ArmorType.Shield,
@@ -43,7 +43,7 @@ export const Armor: ReadonlyArray<EquipmentItemTranslated<ArmorItem>> = [
   {
     armorClass: 14,
     cityCost: 250,
-    name: msg`Leather Barding`,
+    name: t`Leather Barding`,
     points: EncumbrancePoint.None,
     ruralCost: null,
     type: ArmorType.Barding,
@@ -51,7 +51,7 @@ export const Armor: ReadonlyArray<EquipmentItemTranslated<ArmorItem>> = [
   {
     armorClass: 16,
     cityCost: 500,
-    name: msg`Chain Barding`,
+    name: t`Chain Barding`,
     points: EncumbrancePoint.Oversized,
     ruralCost: null,
     type: ArmorType.Barding,
@@ -59,7 +59,7 @@ export const Armor: ReadonlyArray<EquipmentItemTranslated<ArmorItem>> = [
   {
     armorClass: 18,
     cityCost: 1000,
-    name: msg`Plate Barding`,
+    name: t`Plate Barding`,
     points: EncumbrancePoint.Heavy,
     ruralCost: null,
     type: ArmorType.Barding,
