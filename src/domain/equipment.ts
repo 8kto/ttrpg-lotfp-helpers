@@ -1,5 +1,3 @@
-import type { MessageDescriptor } from '@lingui/core'
-
 import type { EncumbrancePoint } from '@/domain/encumbrance'
 import type { EquipmentCategoryKey } from '@/state/InventoryState'
 
@@ -23,6 +21,6 @@ export type EquipmentItemDto = {
 type EquipmentPackItem = [/*name*/ string, /*qty*/ number]
 
 export type EquipmentPack = {
-  name: MessageDescriptor
+  name: string
   items: Array<EquipmentPackItem>
 }
