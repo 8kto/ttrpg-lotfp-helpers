@@ -13,8 +13,7 @@ export const getInventoryItem = <T extends EquipmentItem>(
 ): InventoryItem<T> => {
   return deepclone<InventoryItem<T>>({
     ...item,
-    // FIXME can be trans msg
-    inventoryId: item.name + getAutoIncrementedId(),
+    inventoryId: item.name.toString() + getAutoIncrementedId(),
     lockedCost: cost,
   })
 }
