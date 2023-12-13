@@ -15,6 +15,7 @@ export const getInventoryItem = <T extends EquipmentItem>(
     ...item,
     inventoryId: item.name.toString() + getAutoIncrementedId(),
     lockedCost: cost,
+    qty: 1,
   })
 }
 
