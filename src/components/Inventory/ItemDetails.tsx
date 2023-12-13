@@ -5,6 +5,7 @@ import DamageFragment from '@/components/DamageFragment'
 import RangeFragment from '@/components/RangeFragment'
 import type { ArmorItem } from '@/domain/armor'
 import type { EquipmentItem } from '@/domain/equipment'
+import type { InventoryItem } from '@/domain/inventory'
 import type { MissileWeaponItem, WeaponItem } from '@/domain/weapon'
 
 const isArmorItem = (item: EquipmentItem): item is ArmorItem => {
@@ -15,6 +16,16 @@ const isWeaponItem = (item: EquipmentItem): item is WeaponItem => {
 }
 const isMissileItem = (item: EquipmentItem): item is MissileWeaponItem => {
   return 'range' in item && !!item.range
+}
+
+const isInventoryItem = <T extends EquipmentItem>(
+  item: T,
+): item is InventoryItem<T> => {
+  return 'qty' in item
+}
+
+const QtyFragment = ({ item }: { item: InventoryItem<EquipmentItem> }) => {
+  return <span className='text-red-300 text-sm'> (x{item.qty})</span>
 }
 
 const ItemDetailsLine = <T extends EquipmentItem>({ item }: { item: T }) => {
@@ -43,11 +54,14 @@ const Summary = <T extends EquipmentItem>({
   item: T
   compact?: boolean
 }) => {
+  const hasQty = isInventoryItem(item) && item.qty > 1
+
   return (
     <summary className='cursor-pointer list-none'>
       <div className='flex items-center'>
         <span className='ph-dashed-text'>
           {item.name}
+          {hasQty && <QtyFragment item={item} />}
           {!compact && <ItemDetailsLine item={item} />}
         </span>
       </div>
@@ -116,9 +130,12 @@ const ItemDetails = <T extends EquipmentItem>({
     )
   }
 
+  const hasQty = isInventoryItem(item) && item.qty > 1
+
   return (
     <>
       {item.name}
+      {hasQty && <QtyFragment item={item} />}
       {!compact && <ItemDetailsLine item={item} />}
     </>
   )

@@ -35,6 +35,7 @@ export const getCustomEquipmentItem = (
     lockedCost: Number(data.cost) || 0,
     name: data.name,
     points: Number(data.points),
+    qty: 1,
     ruralCost: data.cost || null,
   }
 }
