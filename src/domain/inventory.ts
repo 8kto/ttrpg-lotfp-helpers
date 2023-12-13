@@ -5,4 +5,5 @@ export type InventoryItem<T extends EquipmentItem> = {
 } & {
   inventoryId: string
   lockedCost: number
+  qty: number
 }
