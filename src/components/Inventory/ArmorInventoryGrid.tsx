@@ -24,9 +24,9 @@ const inventoryTableColumns: ReadonlyArray<
   },
   {
     className: 'w-1/6',
-    key: 'lockedCost',
+    key: 'armorClass',
     get title() {
-      return t`Cost`
+      return t`AC`
     },
   },
   {

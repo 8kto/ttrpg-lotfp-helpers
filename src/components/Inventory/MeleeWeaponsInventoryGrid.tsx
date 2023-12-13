@@ -1,6 +1,7 @@
 import { t } from '@lingui/macro'
 import React from 'react'
 
+import DamageFragment from '@/components/DamageFragment'
 import { renderNameGridCol } from '@/components/EquipmentList/gridHelpers'
 import { renderWeightInventoryCol } from '@/components/Inventory/helpers'
 import InventoryGrid from '@/components/Inventory/InventoryGrid'
@@ -24,9 +25,10 @@ const inventoryTableColumns: ReadonlyArray<
   },
   {
     className: 'w-1/6',
-    key: 'lockedCost',
+    key: 'damage',
+    render: (item: MeleeWeaponItem) => <DamageFragment damage={item.damage} />,
     get title() {
-      return t`Cost`
+      return t`Damage`
     },
   },
   {

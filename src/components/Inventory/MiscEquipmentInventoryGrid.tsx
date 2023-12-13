@@ -2,7 +2,6 @@ import { t } from '@lingui/macro'
 import React from 'react'
 
 import { renderNameGridCol } from '@/components/EquipmentList/gridHelpers'
-import { renderWeightInventoryCol } from '@/components/Inventory/helpers'
 import InventoryGrid from '@/components/Inventory/InventoryGrid'
 import type { InventoryColumn } from '@/components/Inventory/types'
 import type { EquipmentItem } from '@/domain/equipment'
@@ -20,21 +19,6 @@ const inventoryTableColumns: ReadonlyArray<
     render: renderNameGridCol,
     get title() {
       return t`Name`
-    },
-  },
-  {
-    className: 'w-1/6',
-    key: 'lockedCost',
-    get title() {
-      return t`Cost`
-    },
-  },
-  {
-    className: 'hidden sm:table-cell sm:w-1/6 text-sm',
-    key: 'points',
-    render: renderWeightInventoryCol,
-    get title() {
-      return t`Weight`
     },
   },
 ]
