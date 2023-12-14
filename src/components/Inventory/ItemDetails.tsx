@@ -25,7 +25,11 @@ const isInventoryItem = <T extends EquipmentItem>(
 }
 
 const QtyFragment = ({ item }: { item: InventoryItem<EquipmentItem> }) => {
-  return <span className='text-red-300 text-sm'> (x{item.qty})</span>
+  return (
+    <span className='ms-2 inline-flex h-5 w-5 items-center justify-center rounded-full border border-gray-300  bg-gray-100 text-gray-500  text-xs font-semibold'>
+      {item.qty}
+    </span>
+  )
 }
 
 const ItemDetailsLine = <T extends EquipmentItem>({ item }: { item: T }) => {

@@ -14,7 +14,7 @@ const inventoryTableColumns: ReadonlyArray<
   InventoryColumn<EquipmentInventoryItem>
 > = [
   {
-    className: 'w-1/2 sm:w-1/3',
+    className: 'w-2/3 sm:w-1/3',
     key: 'name',
     render: renderNameGridCol,
     get title() {
