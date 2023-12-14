@@ -25,10 +25,10 @@ const LocaleSwitcher = () => {
   // }
 
   function handleChange(event: React.ChangeEvent<HTMLSelectElement>) {
-    const locale = event.target.value as LOCALES
+    const newLocale = event.target.value as LOCALES
 
-    setLocale(locale)
-    router.push(router.pathname, router.pathname, { locale })
+    setLocale(newLocale)
+    router.push(router.pathname, router.pathname, { locale: newLocale })
   }
 
   return (
@@ -37,10 +37,10 @@ const LocaleSwitcher = () => {
       onChange={handleChange}
       className='ph-btn-primary md:lg-0 mr-1 block rounded border border-red-900 p-2.5 text-sm text-white  focus:border-primary-500 focus:ring-primary-500'
     >
-      {Object.keys(languages).map((locale) => {
+      {Object.keys(languages).map((currLocale) => {
         return (
-          <option value={locale} key={locale}>
-            {i18n._(languages[locale as unknown as LOCALES])}
+          <option value={currLocale} key={currLocale}>
+            {i18n._(languages[currLocale as unknown as LOCALES])}
           </option>
         )
       })}

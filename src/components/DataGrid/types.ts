@@ -22,9 +22,9 @@ export interface DataGridProps<T extends EquipmentItem> {
   initialSortState?: SortConfig<T>
   onAddClick: (item: T) => void
   onSortChange?: (key: keyof T, direction: SortOrder) => void
-  handleSort?: <T extends EquipmentItem>(
-    sortConfig: SortConfig<T>,
-  ) => (a: T, b: T) => 1 | -1 | 0
+  handleSort?: <Type extends EquipmentItem>(
+    sortConfig: SortConfig<Type>,
+  ) => (a: Type, b: Type) => 1 | -1 | 0
   filterFn: (item: T, filter: string) => boolean
   filterPlaceholder?: string
 }
