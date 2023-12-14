@@ -6,6 +6,7 @@ import type { EquipmentItem } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
 import type { MeleeWeaponItem, MissileWeaponItem } from '@/domain/weapon'
 import deepclone from '@/shared/helpers/deepclone'
+import { addItem, removeItem } from '@/state/helpers'
 
 export type InventoryStateType = {
   armor: ReadonlyArray<InventoryItem<ArmorItem>>
@@ -37,6 +38,9 @@ export type EquipmentCategoryKey =
   | 'meleeWeapons'
   | 'missileWeapons'
   | 'miscEquipment'
+
+export const EquipmentStateKeys: ReadonlyArray<EquipmentCategoryKey> =
+  Object.freeze(['armor', 'meleeWeapons', 'missileWeapons', 'miscEquipment'])
 
 export const getInitialInventoryState = (): InventoryStateType => {
   return deepclone(initialInventoryState)
@@ -70,71 +74,22 @@ export const useInventoryState = () => {
   return { reset, resetEquipment, state }
 }
 
-export const EquipmentStateKeys: ReadonlyArray<EquipmentCategoryKey> =
-  Object.freeze(['armor', 'meleeWeapons', 'missileWeapons', 'miscEquipment'])
-
-export const addArmor = (item: InventoryItem<ArmorItem>) => {
-  const armor = InventoryState.armor
-  const existingItemIndex = armor.findIndex((i) => i.get().name === item.name)
-
-  if (existingItemIndex !== -1) {
-    armor[existingItemIndex].set((item) => {
-      return {
-        ...item,
-        qty: item.qty + 1,
-      }
-    })
-  } else {
-    armor[armor.length].set(item)
-  }
-}
-
-export const addEquipmentItem = (item: InventoryItem<EquipmentItem>) => {
-  const equipment = InventoryState.miscEquipment
-
-  equipment[equipment.length].set(item)
-}
-
-export const removeEquipmentItem = (item: InventoryItem<EquipmentItem>) => {
-  const equipment = InventoryState.miscEquipment
-
-  equipment.set((i) => {
-    return i.filter((i) => i.inventoryId !== item.inventoryId)
-  })
-}
-
-export const removeArmor = (item: InventoryItem<ArmorItem>) => {
-  const armor = InventoryState.armor
-  armor.set((a) => a.filter((i) => i.inventoryId !== item.inventoryId))
-}
-
-export const addMeleeWeapon = (item: InventoryItem<MeleeWeaponItem>) => {
-  const weapons = InventoryState.meleeWeapons
-
-  weapons[weapons.length].set(item)
-}
-
-export const removeMeleeWeapon = (item: InventoryItem<MeleeWeaponItem>) => {
-  const weapons = InventoryState.meleeWeapons
-
-  weapons.set((w) => {
-    return w.filter((i) => i.inventoryId !== item.inventoryId)
-  })
-}
-
-export const addMissileWeapon = (item: InventoryItem<MissileWeaponItem>) => {
-  const weapons = InventoryState.missileWeapons
-
-  weapons[weapons.length].set(item)
-}
-
-export const removeMissileWeapon = (item: InventoryItem<MissileWeaponItem>) => {
-  const weapons = InventoryState.missileWeapons
-
-  weapons.set((w) => {
-    return w.filter((i) => i.inventoryId !== item.inventoryId)
-  })
-}
+export const addArmor = (item: InventoryItem<ArmorItem>) =>
+  addItem(InventoryState.armor, item)
+export const removeArmor = (item: InventoryItem<ArmorItem>) =>
+  removeItem(InventoryState.armor, item)
+export const addMeleeWeapon = (item: InventoryItem<MeleeWeaponItem>) =>
+  addItem(InventoryState.meleeWeapons, item)
+export const removeMeleeWeapon = (item: InventoryItem<MeleeWeaponItem>) =>
+  removeItem(InventoryState.meleeWeapons, item)
+export const addMissileWeapon = (item: InventoryItem<MissileWeaponItem>) =>
+  addItem(InventoryState.missileWeapons, item)
+export const removeMissileWeapon = (item: InventoryItem<MissileWeaponItem>) =>
+  removeItem(InventoryState.missileWeapons, item)
+export const addEquipmentItem = (item: InventoryItem<EquipmentItem>) =>
+  addItem(InventoryState.miscEquipment, item)
+export const removeEquipmentItem = (item: InventoryItem<EquipmentItem>) =>
+  removeItem(InventoryState.miscEquipment, item)
 
 export const toggleCost = () => {
   const isCostRural = InventoryState.isCostRural
