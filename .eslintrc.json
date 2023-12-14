@@ -43,7 +43,10 @@
       }
     ],
     "unused-imports/no-unused-imports": "error",
-    "no-console": ["error", { "allow": ["error"] }]
+    "no-console": ["error", { "allow": ["error"] }],
+    "no-debugger": "error",
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": "error"
   },
   "overrides": [
     {
