@@ -37,6 +37,9 @@ msgstr "This can be used to attack from the second rank, and can be used to rece
 msgid "Great axe"
 msgstr "Great axe"
 
+msgid "Fighter 3"
+msgstr "Fighter 3"
+
 msgid "Base items set"
 msgstr "Base items set"
 
@@ -69,6 +72,9 @@ msgstr "Saddlebag"
 
 msgid "Holy Symbol, Steel"
 msgstr "Holy Symbol, Steel"
+
+msgid "Fighter 1"
+msgstr "Fighter 1"
 
 msgid "Damage"
 msgstr "Damage"
@@ -729,6 +735,9 @@ msgstr "Armor"
 
 msgid "Spear"
 msgstr "Spear"
+
+msgid "Fighter 2"
+msgstr "Fighter 2"
 
 msgid "Spyglass"
 msgstr "Spyglass"

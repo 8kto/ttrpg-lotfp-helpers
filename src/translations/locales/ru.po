@@ -37,6 +37,9 @@ msgstr "Можно использовать для атаки из второг�
 msgid "Great axe"
 msgstr "Большой топор"
 
+msgid "Fighter 3"
+msgstr "Воин 3"
+
 msgid "Base items set"
 msgstr "Базовый набор"
 
@@ -69,6 +72,9 @@ msgstr "Седельная сумка"
 
 msgid "Holy Symbol, Steel"
 msgstr "Священный символ, стальной"
+
+msgid "Fighter 1"
+msgstr "Воин 1"
 
 msgid "Damage"
 msgstr "Урон"
@@ -729,6 +735,9 @@ msgstr "Броня"
 
 msgid "Spear"
 msgstr "Копьё"
+
+msgid "Fighter 2"
+msgstr "Воин 2"
 
 msgid "Spyglass"
 msgstr "Подзорная труба"

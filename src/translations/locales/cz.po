@@ -37,6 +37,9 @@ msgstr ""
 msgid "Great axe"
 msgstr ""
 
+msgid "Fighter 3"
+msgstr ""
+
 msgid "Base items set"
 msgstr ""
 
@@ -68,6 +71,9 @@ msgid "Saddlebag"
 msgstr ""
 
 msgid "Holy Symbol, Steel"
+msgstr ""
+
+msgid "Fighter 1"
 msgstr ""
 
 msgid "Damage"
@@ -728,6 +734,9 @@ msgid "Armor"
 msgstr ""
 
 msgid "Spear"
+msgstr ""
+
+msgid "Fighter 2"
 msgstr ""
 
 msgid "Spyglass"
