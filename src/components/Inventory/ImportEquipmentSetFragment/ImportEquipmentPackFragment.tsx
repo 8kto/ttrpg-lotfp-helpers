@@ -7,7 +7,6 @@ import * as Yup from 'yup'
 
 import CostFragment from '@/components/CostFragment/CostFragment'
 import EncumbranceFragment from '@/components/EncumbranceFragment/EncumbranceFragment'
-import { getInventoryItem } from '@/components/EquipmentList/helpers'
 import type { ImportEquipmentPackProps } from '@/components/Inventory/ImportEquipmentSetFragment/helpers'
 import {
   getEquipmentPackDetails,
@@ -15,8 +14,8 @@ import {
 } from '@/components/Inventory/ImportEquipmentSetFragment/helpers'
 import type { EquipmentPackName } from '@/config/EquipmentPacks'
 import { EquipmentPackNames, EquipmentPacks } from '@/config/EquipmentPacks'
-import type { EquipmentItemTranslated } from '@/config/types'
-import type { EquipmentItem, EquipmentPack } from '@/domain/equipment'
+import type { EquipmentPack } from '@/domain/equipment'
+import type { EquipmentCategoryKey } from '@/state/InventoryState'
 import { useInventoryState } from '@/state/InventoryState'
 
 const EquipmentPackEntriesList = ({ pack }: { pack: EquipmentPack }) => {
@@ -65,26 +64,19 @@ const ImportEquipmentPackFragment = ({ onClose }: { onClose: () => void }) => {
   const { state } = useInventoryState()
 
   const handleImport = (formValues: ImportEquipmentPackProps) => {
-    // FIXME type should be forced but inferred
-    const items = getEquipmentPackItems(
-      EquipmentPacks[formValues.pack],
-      trans,
-    ) as unknown as Array<EquipmentItemTranslated<EquipmentItem>>
+    const items = getEquipmentPackItems(EquipmentPacks[formValues.pack], trans)
 
     items.forEach((item) => {
-      const categoryKey = item.categoryKey
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const { categoryKey: _, ...copy } = item
-      // const equipmentStateCategory = state.nested(categoryKey)
-      const equipmentStateCategory = state.miscEquipment
+      const { categoryKey } = item
+      const equipmentStateCategory = state.nested(
+        categoryKey as EquipmentCategoryKey,
+      )
 
       type B = typeof equipmentStateCategory
       type T = B[keyof B]
 
       try {
-        equipmentStateCategory[equipmentStateCategory.length].set(
-          getInventoryItem(item as T, item.cityCost) as T,
-        )
+        equipmentStateCategory[equipmentStateCategory.length].set(item as T)
       } catch (err) {
         console.error(`Unknown InventoryState category [${categoryKey}]`, err)
       }

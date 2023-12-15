@@ -1,8 +1,11 @@
 import type { I18n } from '@lingui/core'
 
+import { getInventoryItem } from '@/components/EquipmentList/helpers'
 import type { EquipmentPackName } from '@/config/EquipmentPacks'
 import EquipmentTranslated from '@/config/EquipmentTranslated'
+import type { EquipmentItemTranslated } from '@/config/types'
 import type { EquipmentItem, EquipmentPack } from '@/domain/equipment'
+import type { InventoryItem } from '@/domain/inventory'
 
 export type ImportEquipmentPackProps = {
   pack: EquipmentPackName
@@ -21,7 +24,7 @@ const getGetterNames = <
     .map(([key]) => key) as Res
 }
 
-const findEquipmentItem = <T extends EquipmentItem>(
+const findEquipmentItem = <T extends EquipmentItemTranslated<EquipmentItem>>(
   name: string,
   trans: I18n['_'],
 ): T | null => {
@@ -63,39 +66,23 @@ export const getEquipmentPackDetails = (
 export const getEquipmentPackItems = (
   pack: EquipmentPack,
   trans: I18n['_'],
-): ReadonlyArray<EquipmentItem> => {
-  return pack.items.reduce((acc, [name, qty]) => {
-    const item = findEquipmentItem(name, trans)
-    if (!item || qty <= 0) {
-      return acc
-    }
+): ReadonlyArray<InventoryItem<EquipmentItemTranslated<EquipmentItem>>> => {
+  return pack.items.reduce(
+    (acc, [name, qty]) => {
+      const item = findEquipmentItem(name, trans)
+      if (!item || qty <= 0) {
+        console.error(
+          `getEquipmentPackItems: could not find item by name: ${name}`,
+        )
 
-    const copy: EquipmentItem = { ...item }
-    if (qty > 1) {
-      // TODO implement custom items creation:
-      //    if weight is None but qty > 1, batch items as one custom inventory item
-      //    e.g. Nails (20), Chalk (10)
+        return acc
+      }
 
-      // None weight
-      // if (copy.points === EncumbrancePoint.None) {
-      //   if (typeof copy.name === 'object') {
-      //     copy.name = t`${copy.name.message} (${qty})`
-      //   } else {
-      //     copy.name = t`${copy.name} (${qty})`
-      //   }
-      //
-      //   return acc.concat(copy)
-      // }
+      const copy = getInventoryItem(item, item.cityCost)
+      copy.qty = qty
 
-      // Has weight, add x QTY items
-      return acc.concat(
-        Array.from({ length: qty }, () => {
-          return { ...copy }
-        }),
-      )
-    }
-
-    // Add single item
-    return acc.concat(copy)
-  }, [] as ReadonlyArray<EquipmentItem>)
+      return acc.concat(copy)
+    },
+    [] as ReadonlyArray<InventoryItem<EquipmentItemTranslated<EquipmentItem>>>,
+  )
 }
