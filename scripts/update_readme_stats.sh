@@ -17,5 +17,5 @@ fi
 echo "$percentage% - done $completed_tasks of $total_tasks tasks"
 
 # Update the file by replacing content between <!--PROGRESS--> and <!--/PROGRESS-->
-sed -i "s/<!--PROGRESS-->.*<!--\/PROGRESS-->/<!--PROGRESS--> $percentage% - done $completed_tasks of $total_tasks tasks <!--\/PROGRESS-->/" "$FILE"
+sed -i "s/<!--PROGRESS-->.*<!--\/PROGRESS-->/<!--PROGRESS--> $percentage% \/ $completed_tasks of $total_tasks tasks <!--\/PROGRESS-->/" "$FILE"
 
