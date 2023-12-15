@@ -1,7 +1,7 @@
 {
   "name": "ttrpg-lotfp-helpers",
   "version": "0.1.0",
-  "license": "CC BY-NC",
+  "license": "CC-BY-NC-4.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
