@@ -71,6 +71,39 @@ const AdventurerSeasoned = (): EquipmentPack => {
   }
 }
 
+const Fighter1 = (): EquipmentPack => {
+  return {
+    items: [
+      [t`Chain`, 1],
+      [t`Shield`, 1],
+      [t`Two-handed sword`, 1],
+    ],
+    name: t`Fighter 1`,
+  }
+}
+
+const Fighter2 = (): EquipmentPack => {
+  return {
+    items: [
+      [t`Chain`, 1],
+      [t`Polearm`, 1],
+    ],
+    name: t`Fighter 2`,
+  }
+}
+
+const Fighter3 = (): EquipmentPack => {
+  return {
+    items: [
+      [t`Leather`, 1],
+      [t`Two-handed sword`, 1],
+      [t`Bow, Short`, 1],
+      [t`Arrows, quiver (20)`, 1],
+    ],
+    name: t`Fighter 3`,
+  }
+}
+
 /* eslint-disable sort-keys-fix/sort-keys-fix */
 export const EquipmentPacks = {
   get Base() {
@@ -85,6 +118,15 @@ export const EquipmentPacks = {
   get AdventurerSeasoned() {
     return AdventurerSeasoned()
   },
+  get Fighter1() {
+    return Fighter1()
+  },
+  get Fighter2() {
+    return Fighter2()
+  },
+  get Fighter3() {
+    return Fighter3()
+  },
 }
 /* eslint-enable sort-keys-fix/sort-keys-fix */
 
@@ -96,4 +138,7 @@ export const EquipmentPackNames: ReadonlyArray<EquipmentPackName> =
     'AdventurerSeasoned',
     'Base',
     'AdventurerReadyForAnything',
+    'Fighter1',
+    'Fighter2',
+    'Fighter3',
   ])
