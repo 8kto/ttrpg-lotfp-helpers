@@ -2,11 +2,17 @@
 
 # Princess Helpers
 
-> The project is in WIP so please do not share the link for a while.
+<!-- For PROGRESS update, run yarn update-readme-stats -->
+
+> The project is in active development.
+>
+> Done: <!--PROGRESS--> 63% / 19 of 30 tasks <!--/PROGRESS-->
 
 Lamentations of the Flame Princess helpers.
 
-Demo application: https://lotfp.vercel.app
+## Demo
+
+https://lotfp.vercel.app
 
 ## Features list
 
@@ -36,9 +42,10 @@ Demo application: https://lotfp.vercel.app
 - [x] Responsive layout, mobile devices support
 - [ ] Equipment sets
   - [ ] By class
-  - [ ] Common
+  - [x] Common
   - [ ] Random
-- [ ] Multiple Equipment sets
+- [ ] Multiple Inventories
+- [ ] Inventory for baggage animal
 
 ## Getting Started
 
