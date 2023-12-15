@@ -12,7 +12,8 @@
     "format:fix": "yarn lint -- --fix && prettier --write .",
     "weok": "yarn tsc && yarn lint && yarn format && yarn test && echo WE OK",
     "todos": "egrep --color=always -i '(TODO|FIXME)' -r src/",
-    "translations:extract": "lingui extract --clean"
+    "translations:extract": "lingui extract --clean",
+    "update-readme-stats": "./scripts/update_readme_stats.sh README.md "
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
