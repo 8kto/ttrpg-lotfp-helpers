@@ -73,7 +73,7 @@ export const getTotal = (items: Array<CountableItem>, copperPieces: number) => {
       const { lockedCost, points, qty } = item
 
       return {
-        totalCost: (totals.totalCost + lockedCost) * qty,
+        totalCost: totals.totalCost + lockedCost * qty,
         totalEncumbrancePoints:
           totals.totalEncumbrancePoints + (shouldSkip(item) ? 0 : points * qty),
       }

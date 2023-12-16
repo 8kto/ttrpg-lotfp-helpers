@@ -25,6 +25,15 @@ const findEquipmentItem = <T extends EquipmentItemTranslated<EquipmentItem>>(
   return null
 }
 
+const getMinimalCost = (item: EquipmentItem) => {
+  const costs = [item.cityCost, item.ruralCost].map(Number).filter(Boolean)
+  if (!costs.length) {
+    return 0
+  }
+
+  return Math.min(...costs)
+}
+
 export const getEquipmentPackCost = (
   pack: EquipmentPack,
   trans: I18n['_'],
@@ -36,12 +45,7 @@ export const getEquipmentPackCost = (
       return acc
     }
 
-    const costs = [item.cityCost, item.ruralCost].map(Number).filter(Boolean)
-    if (!costs.length) {
-      return acc
-    }
-
-    const minimalCost = Math.min(...costs)
+    const minimalCost = getMinimalCost(item)
 
     return acc + minimalCost * qty
   }, 0)
@@ -62,7 +66,8 @@ export const getEquipmentPackItems = (
         return acc
       }
 
-      const copy = getInventoryItem(item, item.cityCost)
+      const minimalCost = getMinimalCost(item)
+      const copy = getInventoryItem(item, minimalCost)
       copy.qty = qty
 
       return acc.concat(copy)
