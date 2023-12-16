@@ -8,10 +8,10 @@ import {
   renderNameGridCol,
   renderWeightGridCol,
 } from '@/components/EquipmentList/gridHelpers'
-import { getInventoryItem } from '@/components/EquipmentList/helpers'
 import EquipmentTranslated from '@/config/EquipmentTranslated'
 import type { EquipmentItem } from '@/domain/equipment'
 import { addEquipmentItem, useInventoryState } from '@/state/InventoryState'
+import { getInventoryItem } from '@/shared/helpers/getInventoryItem'
 
 const columns: ReadonlyArray<DataGridColumn<EquipmentItem>> = [
   {

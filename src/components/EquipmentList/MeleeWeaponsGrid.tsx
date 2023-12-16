@@ -11,12 +11,12 @@ import {
   renderWeightGridCol,
 } from '@/components/EquipmentList/gridHelpers'
 import {
-  getInventoryItem,
   handleSortByDamage,
 } from '@/components/EquipmentList/helpers'
 import EquipmentTranslated from '@/config/EquipmentTranslated'
 import type { MeleeWeaponItem } from '@/domain/weapon'
 import { addMeleeWeapon, useInventoryState } from '@/state/InventoryState'
+import { getInventoryItem } from '@/shared/helpers/getInventoryItem'
 
 const columns: ReadonlyArray<DataGridColumn<MeleeWeaponItem>> = [
   {
