@@ -1,6 +1,7 @@
 import { hookstate, useHookstate } from '@hookstate/core'
 import { localstored } from '@hookstate/localstored'
 
+import type { EquipmentItemTranslated } from '@/config/types'
 import type { ArmorItem } from '@/domain/armor'
 import type { EquipmentItem } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
@@ -120,4 +121,58 @@ export const addCustomEquipmentItem = (
   } catch (err) {
     console.error(`Unknown InventoryState category [${category}]`, err)
   }
+}
+
+type EquipmentStateAction<T extends EquipmentItem> = {
+  add: (item: InventoryItem<T>) => void
+  remove: (item: InventoryItem<T>) => void
+}
+
+type InferEquipmentItem<T> = T extends ReadonlyArray<InventoryItem<infer U>>
+  ? U
+  : never
+
+type EquipmentStateActionsType = {
+  [K in keyof InventoryStateType as K extends EquipmentCategoryKey
+    ? K
+    : never]: EquipmentStateAction<InferEquipmentItem<InventoryStateType[K]>>
+}
+
+export const EquipmentStateActions: EquipmentStateActionsType = {
+  armor: {
+    add: addArmor,
+    remove: removeArmor,
+  },
+  meleeWeapons: {
+    add: addMeleeWeapon,
+    remove: removeMeleeWeapon,
+  },
+  miscEquipment: {
+    add: addEquipmentItem,
+    remove: removeEquipmentItem,
+  },
+  missileWeapons: {
+    add: addMissileWeapon,
+    remove: removeMissileWeapon,
+  },
+}
+
+export const importEquipmentItems = (
+  items: ReadonlyArray<InventoryItem<EquipmentItemTranslated<EquipmentItem>>>,
+) => {
+  items.forEach((item) => {
+    const { categoryKey } = item
+    const equipmentStateCategory = InventoryState.nested(
+      categoryKey as EquipmentCategoryKey,
+    )
+
+    type StateCategory = typeof equipmentStateCategory
+    type StateCategoryItem = StateCategory[keyof StateCategory]
+
+    try {
+      EquipmentStateActions[categoryKey!].add(item as StateCategoryItem)
+    } catch (err) {
+      console.error(`Unknown InventoryState category [${categoryKey}]`, err)
+    }
+  })
 }

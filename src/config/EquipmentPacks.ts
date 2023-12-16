@@ -142,3 +142,5 @@ export const EquipmentPackNames: ReadonlyArray<EquipmentPackName> =
     'Fighter2',
     'Fighter3',
   ])
+
+// TODO extend packs
