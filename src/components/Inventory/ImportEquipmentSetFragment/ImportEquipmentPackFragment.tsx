@@ -5,83 +5,28 @@ import { Field, Form, Formik } from 'formik'
 import React, { useState } from 'react'
 import * as Yup from 'yup'
 
-import CostFragment from '@/components/CostFragment/CostFragment'
-import EncumbranceFragment from '@/components/EncumbranceFragment/EncumbranceFragment'
-import type { ImportEquipmentPackProps } from '@/components/Inventory/ImportEquipmentSetFragment/helpers'
-import {
-  getEquipmentPackDetails,
-  getEquipmentPackItems,
-} from '@/components/Inventory/ImportEquipmentSetFragment/helpers'
+import { EquipmentPackEntriesList } from '@/components/Inventory/ImportEquipmentSetFragment/EquipmentPackEntriesList'
 import type { EquipmentPackName } from '@/config/EquipmentPacks'
 import { EquipmentPackNames, EquipmentPacks } from '@/config/EquipmentPacks'
 import type { EquipmentPack } from '@/domain/equipment'
-import type { EquipmentCategoryKey } from '@/state/InventoryState'
-import { useInventoryState } from '@/state/InventoryState'
+import { getEquipmentPackItems } from '@/shared/helpers/equipmentPack'
+import { importEquipmentItems } from '@/state/InventoryState'
 
-const EquipmentPackEntriesList = ({ pack }: { pack: EquipmentPack }) => {
-  const { _: trans } = useLingui()
-  const { cost, points } = getEquipmentPackDetails(pack, trans)
-
-  const detailsRowClassname =
-    'px-0 py-1 grid grid-cols-3 sm:gap-2 align-baseline'
-  const paragraphClassname = 'mb-2 text-red-900'
-
-  return (
-    <>
-      <div className='mb-4'>
-        {/* TODO decide whether it is really needed */}
-        <p className={paragraphClassname} hidden>
-          <Trans>Weight</Trans>:{' '}
-          <EncumbranceFragment encumbrancePoints={points} />
-        </p>
-        <p className={paragraphClassname}>
-          <Trans>Cost</Trans>: <CostFragment cost={cost} />
-        </p>
-      </div>
-      <dl className='divide-y divide-gray-100'>
-        {pack.items.map(([name, qty]) => {
-          return (
-            <div key={name} className={detailsRowClassname}>
-              <dt className={`ph-font-cursive col-span-2 text-lg`}>
-                {trans(name)}
-              </dt>
-              <dd className='col-span-1 mt-1 flex items-center leading-6 text-gray-700 sm:mt-0'>
-                {qty}
-              </dd>
-            </div>
-          )
-        })}
-      </dl>
-    </>
-  )
+type ImportEquipmentPackProps = {
+  pack: EquipmentPackName
 }
+
+// FIXME wrong costs
 
 const ImportEquipmentPackFragment = ({ onClose }: { onClose: () => void }) => {
   const { _: trans } = useLingui()
   const [selectedPack, setSelectedPack] = useState<EquipmentPack>(
     EquipmentPacks.Base,
   )
-  const { state } = useInventoryState()
 
   const handleImport = (formValues: ImportEquipmentPackProps) => {
     const items = getEquipmentPackItems(EquipmentPacks[formValues.pack], trans)
-
-    items.forEach((item) => {
-      const { categoryKey } = item
-      const equipmentStateCategory = state.nested(
-        categoryKey as EquipmentCategoryKey,
-      )
-
-      type B = typeof equipmentStateCategory
-      type T = B[keyof B]
-
-      try {
-        equipmentStateCategory[equipmentStateCategory.length].set(item as T)
-      } catch (err) {
-        console.error(`Unknown InventoryState category [${categoryKey}]`, err)
-      }
-    })
-
+    importEquipmentItems(items)
     onClose()
   }
 
@@ -158,6 +103,8 @@ const ImportEquipmentPackFragment = ({ onClose }: { onClose: () => void }) => {
               <button
                 type='submit'
                 className='ph-btn-primary w-full justify-center rounded px-5 py-2.5 text-center font-medium focus:outline-none focus:ring-4 focus:ring-primary-300'
+                tabIndex={0}
+                autoFocus
               >
                 <Trans>Import</Trans>
               </button>
