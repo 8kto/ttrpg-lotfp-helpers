@@ -1,11 +1,11 @@
 import type { I18n } from '@lingui/core'
 
-import { getInventoryItem } from '@/components/EquipmentList/helpers'
 import EquipmentTranslated from '@/config/EquipmentTranslated'
 import type { EquipmentItemTranslated } from '@/config/types'
 import type { EquipmentItem, EquipmentPack } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
 import { getGetterNames } from '@/shared/helpers/getGetterNames'
+import { getInventoryItem } from '@/shared/helpers/getInventoryItem'
 
 const findEquipmentItem = <T extends EquipmentItemTranslated<EquipmentItem>>(
   name: string,
@@ -14,7 +14,6 @@ const findEquipmentItem = <T extends EquipmentItemTranslated<EquipmentItem>>(
   const equipmentConfigTranslated = new EquipmentTranslated(trans)
   const categoryKeys = getGetterNames(equipmentConfigTranslated)
 
-  // Iterate over getters to find the item
   for (const categoryKey of categoryKeys) {
     const items = equipmentConfigTranslated[categoryKey]
     const foundItem = items.find((item) => item.name === name)

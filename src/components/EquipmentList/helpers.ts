@@ -1,23 +1,7 @@
 import { trivialSort } from '@/components/DataGrid/helpers'
 import type { SortConfig } from '@/components/DataGrid/types'
 import type { Dice } from '@/domain'
-import type { EquipmentItem } from '@/domain/equipment'
-import type { InventoryItem } from '@/domain/inventory'
 import type { MeleeWeaponItem, WeaponItem } from '@/domain/weapon'
-import { getAutoIncrementedId } from '@/shared/helpers/autoincrement'
-import deepclone from '@/shared/helpers/deepclone'
-
-export const getInventoryItem = <T extends EquipmentItem>(
-  item: T,
-  cost: number,
-): InventoryItem<T> => {
-  return deepclone<InventoryItem<T>>({
-    ...item,
-    inventoryId: item.name.toString() + getAutoIncrementedId(),
-    lockedCost: cost,
-    qty: 1,
-  })
-}
 
 const parseDiceValue = (dice?: Dice) => {
   return dice ? parseInt(dice.substring(1), 10) : 0
