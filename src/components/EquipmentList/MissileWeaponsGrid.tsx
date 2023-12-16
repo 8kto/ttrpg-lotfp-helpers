@@ -7,16 +7,14 @@ import DataGrid from '@/components/DataGrid/DataGrid'
 import type { DataGridSortFunction } from '@/components/DataGrid/helpers'
 import type { DataGridColumn } from '@/components/DataGrid/types'
 import { renderWeightGridCol } from '@/components/EquipmentList/gridHelpers'
-import {
-  handleSortByDamage,
-} from '@/components/EquipmentList/helpers'
+import { handleSortByDamage } from '@/components/EquipmentList/helpers'
 import ItemDetails from '@/components/Inventory/ItemDetails/ItemDetails'
 import RangeFragment from '@/components/RangeFragment'
 import EquipmentTranslated from '@/config/EquipmentTranslated'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { MissileWeaponItem } from '@/domain/weapon'
-import { addMissileWeapon, useInventoryState } from '@/state/InventoryState'
 import { getInventoryItem } from '@/shared/helpers/getInventoryItem'
+import { addMissileWeapon, useInventoryState } from '@/state/InventoryState'
 
 const columns: ReadonlyArray<DataGridColumn<MissileWeaponItem>> = [
   {

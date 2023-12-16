@@ -3,15 +3,11 @@ import type { I18n } from '@lingui/core'
 import { trivialSort } from '@/components/DataGrid/helpers'
 import type { SortConfig } from '@/components/DataGrid/types'
 import { renderWeightGridCol } from '@/components/EquipmentList/gridHelpers'
-import {
-  handleSortByDamage,
-} from '@/components/EquipmentList/helpers'
+import { handleSortByDamage } from '@/components/EquipmentList/helpers'
 import { Dice } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { EquipmentItem } from '@/domain/equipment'
 import type { MeleeWeaponItem } from '@/domain/weapon'
-
-
 
 jest.mock('@/components/DataGrid/helpers', () => ({
   trivialSort: jest.fn(() => {
