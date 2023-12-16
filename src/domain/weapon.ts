@@ -26,6 +26,7 @@ export interface WeaponItem extends EquipmentItem {
   type: WeaponType
 }
 
+// TODO align names, drop is prefix
 export interface MeleeWeaponItem extends WeaponItem {
   isAbleToReceiveCharge?: boolean
   twoHanded?: boolean
