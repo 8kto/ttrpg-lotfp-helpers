@@ -162,6 +162,10 @@ export const importEquipmentItems = (
 ) => {
   items.forEach((item) => {
     const { categoryKey } = item
+    if (!categoryKey) {
+      throw new Error('Cannot find category')
+    }
+
     const equipmentStateCategory = InventoryState.nested(
       categoryKey as EquipmentCategoryKey,
     )
@@ -170,9 +174,9 @@ export const importEquipmentItems = (
     type StateCategoryItem = StateCategory[keyof StateCategory]
 
     try {
-      EquipmentStateActions[categoryKey!].add(item as StateCategoryItem)
+      EquipmentStateActions[categoryKey].add(item as StateCategoryItem)
     } catch (err) {
-      console.error(`Unknown InventoryState category [${categoryKey}]`, err)
+      throw new Error(`Unknown InventoryState category [${categoryKey}]`)
     }
   })
 }

@@ -1,13 +1,19 @@
 import { act, renderHook } from '@testing-library/react'
 
+import type { EquipmentItemTranslated } from '@/config/types'
 import { EncumbrancePoint } from '@/domain/encumbrance'
+import type { EquipmentItem } from '@/domain/equipment'
+import type { InventoryItem } from '@/domain/inventory'
 import {
   armorItemMock1,
   meleeWeaponItemMock1,
   miscEquipItem1,
   missileWeaponItemMock1,
 } from '@/shared/mocks/inventoryMocks'
-import type { InventoryStateType } from '@/state/InventoryState'
+import type {
+  EquipmentCategoryKey,
+  InventoryStateType,
+} from '@/state/InventoryState'
 import {
   addArmor,
   addCopperPieces,
@@ -16,6 +22,7 @@ import {
   addMeleeWeapon,
   addMissileWeapon,
   getInitialInventoryState,
+  importEquipmentItems,
   InventoryState,
   removeArmor,
   removeEquipmentItem,
@@ -227,6 +234,85 @@ describe('InventoryState Tests', () => {
         'Unknown InventoryState category [inexisted]',
         expect.any(Error),
       )
+    })
+  })
+
+  describe('importEquipmentItems', () => {
+    const prepareMock = (
+      mock: InventoryItem<EquipmentItem>,
+      categoryKey: EquipmentCategoryKey,
+    ) => {
+      return {
+        ...mock,
+        categoryKey,
+      } as InventoryItem<EquipmentItemTranslated<EquipmentItem>>
+    }
+
+    const setQty = (
+      mock: InventoryItem<EquipmentItem>,
+      qty: number,
+    ): InventoryItem<EquipmentItem> => {
+      return {
+        ...mock,
+        qty,
+      }
+    }
+
+    it('should import items', () => {
+      const items = [
+        prepareMock(armorItemMock1, 'armor'),
+        prepareMock(meleeWeaponItemMock1, 'meleeWeapons'),
+        prepareMock(miscEquipItem1, 'miscEquipment'),
+        prepareMock(missileWeaponItemMock1, 'missileWeapons'),
+      ]
+      importEquipmentItems(items)
+
+      expect(InventoryState.get()).toMatchObject({
+        armor: [items[0]],
+        meleeWeapons: [items[1]],
+        miscEquipment: [items[2]],
+        missileWeapons: [items[3]],
+      })
+    })
+
+    it('should import items and increase qty1', () => {
+      const items = [
+        prepareMock(armorItemMock1, 'armor'),
+        prepareMock(meleeWeaponItemMock1, 'meleeWeapons'),
+        prepareMock(miscEquipItem1, 'miscEquipment'),
+        prepareMock(missileWeaponItemMock1, 'missileWeapons'),
+      ]
+      importEquipmentItems(items)
+      importEquipmentItems(items)
+
+      expect(InventoryState.get()).toMatchObject({
+        armor: [setQty(items[0], 2)],
+        meleeWeapons: [setQty(items[1], 2)],
+        miscEquipment: [setQty(items[2], 2)],
+        missileWeapons: [setQty(items[3], 2)],
+      })
+    })
+
+    it('throws error when no categoryKey', () => {
+      const items = [armorItemMock1]
+
+      expect(() =>
+        importEquipmentItems(
+          // @ts-ignore
+          items,
+        ),
+      ).toThrow('Cannot find category')
+    })
+
+    it('throws error when categoryKey is invalid', () => {
+      const items = [{ ...armorItemMock1, categoryKey: 'unknownCategory' }]
+
+      expect(() =>
+        importEquipmentItems(
+          // @ts-ignore
+          items,
+        ),
+      ).toThrow('Unknown InventoryState category [unknownCategory]')
     })
   })
 })
