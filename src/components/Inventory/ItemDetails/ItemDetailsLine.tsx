@@ -14,13 +14,17 @@ const ItemDetailsLine = <T extends EquipmentItem>({ item }: { item: T }) => {
   return (
     <>
       {isArmorItem(item) ? (
-        <span className={detailsClassname}>
-          (<Trans>AC</Trans> {item.armorClass})
+        <span className={detailsClassname} data-testid='item-details-line'>
+          <span data-testid='item-details-line--ac'>
+            (<Trans>AC</Trans> {item.armorClass})
+          </span>
         </span>
       ) : null}
       {isWeaponItem(item) ? (
-        <span className={detailsClassname}>
-          (<DamageFragment damage={item.damage} />)
+        <span className={detailsClassname} data-testid='item-details-line'>
+          <span data-testid='item-details-line--damage'>
+            (<DamageFragment damage={item.damage} />)
+          </span>
         </span>
       ) : null}
     </>

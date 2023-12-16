@@ -41,13 +41,13 @@ export const Details = <T extends EquipmentItem>({ item }: { item: T }) => {
   return (
     <div className='pt-4 text-gray-600'>
       {isArmorItem(item) ? (
-        <p className={paragraphClassname}>
+        <p className={paragraphClassname} data-testid='details--ac'>
           <Trans>Armor Class</Trans>: {item.armorClass}
         </p>
       ) : null}
       {/* All weapons */}
       {isWeaponItem(item) ? (
-        <p className={paragraphClassname}>
+        <p className={paragraphClassname} data-testid='details--damage'>
           <strong>
             <Trans>Damage</Trans>
           </strong>
@@ -57,7 +57,7 @@ export const Details = <T extends EquipmentItem>({ item }: { item: T }) => {
 
       {/* Missile weapons */}
       {isMissileItem(item) ? (
-        <div className={paragraphClassname}>
+        <div className={paragraphClassname} data-testid='details--range'>
           <strong>
             <Trans>Range</Trans>
           </strong>
@@ -68,6 +68,7 @@ export const Details = <T extends EquipmentItem>({ item }: { item: T }) => {
       {/* All items */}
       {!!item.details ? (
         <p
+          data-testid='details--details'
           className={paragraphClassname}
           dangerouslySetInnerHTML={{ __html: item.details }}
         />
