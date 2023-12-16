@@ -39,7 +39,7 @@ const incrementQty = updateItemQuantity.bind(null, 1)
 const decrementQty = updateItemQuantity.bind(null, -1)
 
 export const addItem = <T extends EquipmentItem>(
-  items: State<readonly InventoryItem<T>[]>,
+  items: State<ReadonlyArray<InventoryItem<T>>>,
   item: InventoryItem<T>,
 ) => {
   const existingItemIndex = findItemIndex(items, item)
