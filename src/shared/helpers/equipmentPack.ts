@@ -1,28 +1,11 @@
 import type { I18n } from '@lingui/core'
 
 import { getInventoryItem } from '@/components/EquipmentList/helpers'
-import type { EquipmentPackName } from '@/config/EquipmentPacks'
 import EquipmentTranslated from '@/config/EquipmentTranslated'
 import type { EquipmentItemTranslated } from '@/config/types'
 import type { EquipmentItem, EquipmentPack } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
-
-export type ImportEquipmentPackProps = {
-  pack: EquipmentPackName
-}
-
-const getGetterNames = <
-  T,
-  Res = Array<keyof Omit<T, 'constructor' | 'translate'>>,
->(
-  obj: T,
-): Res => {
-  return Object.entries(
-    Object.getOwnPropertyDescriptors(Object.getPrototypeOf(obj)),
-  )
-    .filter(([, descriptor]) => typeof descriptor.get === 'function')
-    .map(([key]) => key) as Res
-}
+import { getGetterNames } from '@/shared/helpers/getGetterNames'
 
 const findEquipmentItem = <T extends EquipmentItemTranslated<EquipmentItem>>(
   name: string,
@@ -43,24 +26,18 @@ const findEquipmentItem = <T extends EquipmentItemTranslated<EquipmentItem>>(
   return null
 }
 
-export const getEquipmentPackDetails = (
+export const getEquipmentPackCost = (
   pack: EquipmentPack,
   trans: I18n['_'],
-): { cost: number; points: number } => {
-  return pack.items.reduce(
-    (acc, [itemName, qty]) => {
-      const item = findEquipmentItem(itemName, trans)
-      if (!item) {
-        return acc
-      }
+): number => {
+  return pack.items.reduce((acc, [itemName, qty]) => {
+    const item = findEquipmentItem(itemName, trans)
+    if (!item) {
+      return acc
+    }
 
-      return {
-        cost: acc.cost + item.cityCost * qty,
-        points: acc.points + item.points * qty,
-      }
-    },
-    { cost: 0, points: 0 },
-  )
+    return acc + item.cityCost * qty
+  }, 0)
 }
 
 export const getEquipmentPackItems = (
