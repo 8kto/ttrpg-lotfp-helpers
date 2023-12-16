@@ -16,8 +16,6 @@ type ImportEquipmentPackProps = {
   pack: EquipmentPackName
 }
 
-// FIXME wrong costs
-
 const ImportEquipmentPackFragment = ({ onClose }: { onClose: () => void }) => {
   const { _: trans } = useLingui()
   const [selectedPack, setSelectedPack] = useState<EquipmentPack>(
