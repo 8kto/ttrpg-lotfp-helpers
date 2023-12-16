@@ -131,6 +131,18 @@ describe('<ItemDetails />', () => {
     expect(screen.getByTestId('item-qty')).toBeVisible()
   })
 
+  it('does not render quantity', () => {
+    render(
+      <ItemDetails
+        // @ts-ignore
+        item={{ ...mockItem, qty: undefined }}
+        compact={true}
+      />,
+      { wrapper: TestingProvider },
+    )
+    expect(screen.queryByTestId('item-qty')).toBeNull()
+  })
+
   it('does not render item details line in compact mode', () => {
     render(
       <ItemDetails
