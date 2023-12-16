@@ -60,7 +60,7 @@
       }
     },
     {
-      "files": ["src/**/*.test.ts"],
+      "files": ["src/**/*.test.ts", "src/**/*.test.tsx"],
       "rules": {
         "@typescript-eslint/ban-ts-comment": "off"
       }
