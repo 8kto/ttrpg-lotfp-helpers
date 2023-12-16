@@ -1,7 +1,7 @@
 import { Trans } from '@lingui/macro'
 
 import type { DataGridColumn } from '@/components/DataGrid/types'
-import ItemDetails from '@/components/Inventory/ItemDetails'
+import ItemDetails from '@/components/Inventory/ItemDetails/ItemDetails'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { EquipmentItem } from '@/domain/equipment'
 

@@ -11,7 +11,7 @@ import {
   getInventoryItem,
   handleSortByDamage,
 } from '@/components/EquipmentList/helpers'
-import ItemDetails from '@/components/Inventory/ItemDetails'
+import ItemDetails from '@/components/Inventory/ItemDetails/ItemDetails'
 import RangeFragment from '@/components/RangeFragment'
 import EquipmentTranslated from '@/config/EquipmentTranslated'
 import { EncumbrancePoint } from '@/domain/encumbrance'
