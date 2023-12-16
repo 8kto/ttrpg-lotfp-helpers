@@ -31,11 +31,19 @@ export const getEquipmentPackCost = (
 ): number => {
   return pack.items.reduce((acc, [itemName, qty]) => {
     const item = findEquipmentItem(itemName, trans)
+
     if (!item) {
       return acc
     }
 
-    return acc + item.cityCost * qty
+    const costs = [item.cityCost, item.ruralCost].map(Number).filter(Boolean)
+    if (!costs.length) {
+      return acc
+    }
+
+    const minimalCost = Math.min(...costs)
+
+    return acc + minimalCost * qty
   }, 0)
 }
 
