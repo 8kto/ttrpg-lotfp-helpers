@@ -299,3 +299,5 @@ export const MeleeWeapons = (): ReadonlyArray<
     type: WeaponType.Minor,
   },
 ]
+
+// TODO extend polearms

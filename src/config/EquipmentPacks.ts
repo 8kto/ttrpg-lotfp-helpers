@@ -2,7 +2,7 @@ import { t } from '@lingui/macro'
 
 import type { EquipmentPack } from '@/domain/equipment'
 
-const Base = (): EquipmentPack => {
+const Basic = (): EquipmentPack => {
   return {
     items: [
       [t`Bedroll`, 1],
@@ -12,39 +12,11 @@ const Base = (): EquipmentPack => {
       [t`Sack`, 1],
       [t`Tinderbox`, 1],
     ],
-    name: t`Base items set`,
+    name: t`Basic`,
   }
 }
 
-const AdventuringBasics = (): EquipmentPack => {
-  return {
-    items: [
-      [t`Chalk`, 1],
-      [t`Grappling Hook`, 1],
-      [t`Rope, 50'`, 1],
-      [t`Lantern`, 1],
-      [t`Flask of Lamp Oil`, 3],
-      [t`Tent, Personal`, 1],
-    ],
-    name: t`Adventuring Basics`,
-  }
-}
-const AdventurerReadyForAnything = (): EquipmentPack => {
-  return {
-    items: [
-      [t`Vial or Bottle`, 1],
-      [t`Spike, Iron`, 10],
-      [t`Pole, 10'`, 1],
-      [t`Paper`, 10],
-      [t`Ink`, 10],
-      [t`Scroll Case`, 1],
-      [t`Mirror, Steel`, 1],
-    ],
-    name: t`Ready for anything`,
-  }
-}
-
-const AdventurerSeasoned = (): EquipmentPack => {
+const Adventurer = (): EquipmentPack => {
   return {
     items: [
       [t`Book, Blank`, 1],
@@ -67,7 +39,7 @@ const AdventurerSeasoned = (): EquipmentPack => {
       [t`Torch`, 3],
       [t`Whistle`, 1],
     ],
-    name: t`Seasoned adventurer`,
+    name: t`Adventurer`,
   }
 }
 
@@ -106,17 +78,11 @@ const Fighter3 = (): EquipmentPack => {
 
 /* eslint-disable sort-keys-fix/sort-keys-fix */
 export const EquipmentPacks = {
-  get Base() {
-    return Base()
+  get Basic() {
+    return Basic()
   },
-  get AdventuringBasics() {
-    return AdventuringBasics()
-  },
-  get AdventurerReadyForAnything() {
-    return AdventurerReadyForAnything()
-  },
-  get AdventurerSeasoned() {
-    return AdventurerSeasoned()
+  get Adventurer() {
+    return Adventurer()
   },
   get Fighter1() {
     return Fighter1()
