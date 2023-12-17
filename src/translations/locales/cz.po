@@ -40,7 +40,7 @@ msgstr ""
 msgid "Fighter 3"
 msgstr ""
 
-msgid "Base items set"
+msgid "Basic"
 msgstr ""
 
 msgid "Leather"
@@ -215,7 +215,7 @@ msgstr ""
 msgid "Filter by name"
 msgstr ""
 
-msgid "Seasoned adventurer"
+msgid "Adventurer"
 msgstr ""
 
 msgid "Wolvesbane"

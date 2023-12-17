@@ -40,7 +40,7 @@ msgstr "Большой топор"
 msgid "Fighter 3"
 msgstr "Воин 3"
 
-msgid "Base items set"
+msgid "Basic"
 msgstr "Базовый набор"
 
 msgid "Leather"
@@ -215,8 +215,8 @@ msgstr "Палатка, одиночная"
 msgid "Filter by name"
 msgstr "Фильтр по имени"
 
-msgid "Seasoned adventurer"
-msgstr "Опытный приключенец"
+msgid "Adventurer"
+msgstr "Авантюрист"
 
 msgid "Wolvesbane"
 msgstr "Аконит (Wolvesbane)"
