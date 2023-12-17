@@ -40,14 +40,14 @@ msgstr "Большой топор"
 msgid "Fighter 3"
 msgstr "Воин 3"
 
-msgid "Basic"
-msgstr "Базовый набор"
-
 msgid "Leather"
 msgstr "Кожаная броня"
 
 msgid "Holy Water"
 msgstr "Святая вода"
+
+msgid "Basic"
+msgstr "Базовый набор"
 
 msgid "Rations, Iron/Day"
 msgstr "Пайки, железные/День"
@@ -215,9 +215,6 @@ msgstr "Палатка, одиночная"
 msgid "Filter by name"
 msgstr "Фильтр по имени"
 
-msgid "Adventurer"
-msgstr "Авантюрист"
-
 msgid "Wolvesbane"
 msgstr "Аконит (Wolvesbane)"
 
@@ -289,6 +286,9 @@ msgstr "Инструменты специалиста"
 msgid "Princess Helpers"
 msgstr "Princess Helpers"
 
+msgid "Cleric 2"
+msgstr "Жрец 2"
+
 #. js-lingui-explicit-id
 msgid "Lightly"
 msgstr "Легко нагружен"
@@ -319,9 +319,6 @@ msgstr "Флакон или Бутылка"
 
 msgid "Club"
 msgstr "Дубина"
-
-msgid "Adventuring Basics"
-msgstr "Базовый приключенец"
 
 #. js-lingui-explicit-id
 msgid "Miscellaneous"
@@ -386,11 +383,11 @@ msgstr "Рапира"
 msgid "Sling"
 msgstr "Праща"
 
+msgid "Magic user"
+msgstr "Маг"
+
 msgid "Miscellaneous"
 msgstr "Разное"
-
-msgid "Ready for anything"
-msgstr "Готов ко всему"
 
 msgid "Backpack"
 msgstr "Рюкзак"
@@ -521,6 +518,9 @@ msgstr "Бой"
 msgid "Grappling Hook"
 msgstr "Крюк-кошка"
 
+msgid "Specialist"
+msgstr "Специалист"
+
 msgid "Bow, Long"
 msgstr "Длинный лук"
 
@@ -589,6 +589,12 @@ msgstr "Боевой топор"
 
 msgid "Inventory cost"
 msgstr "Стоимость инвентаря"
+
+msgid "Cleric 1"
+msgstr "Жрец 1"
+
+msgid "Adventurer"
+msgstr "Авантюрист"
 
 msgid "Crossbow bolt (1)"
 msgstr "Арбалетный болт (1)"

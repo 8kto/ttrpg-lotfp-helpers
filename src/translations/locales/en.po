@@ -40,14 +40,14 @@ msgstr "Great axe"
 msgid "Fighter 3"
 msgstr "Fighter 3"
 
-msgid "Basic"
-msgstr "Basic"
-
 msgid "Leather"
 msgstr "Leather"
 
 msgid "Holy Water"
 msgstr "Holy Water"
+
+msgid "Basic"
+msgstr "Basic"
 
 msgid "Rations, Iron/Day"
 msgstr "Rations, Iron/Day"
@@ -215,9 +215,6 @@ msgstr "Tent, Personal"
 msgid "Filter by name"
 msgstr "Filter by name"
 
-msgid "Adventurer"
-msgstr "Adventurer"
-
 msgid "Wolvesbane"
 msgstr "Wolvesbane"
 
@@ -289,6 +286,9 @@ msgstr "Specialist’s Tools"
 msgid "Princess Helpers"
 msgstr "Princess Helpers"
 
+msgid "Cleric 2"
+msgstr "Cleric 2"
+
 #. js-lingui-explicit-id
 msgid "Lightly"
 msgstr "Lightly"
@@ -319,9 +319,6 @@ msgstr "Vial or Bottle"
 
 msgid "Club"
 msgstr "Club"
-
-msgid "Adventuring Basics"
-msgstr "Adventuring Basics"
 
 #. js-lingui-explicit-id
 msgid "Miscellaneous"
@@ -386,11 +383,11 @@ msgstr "Rapier"
 msgid "Sling"
 msgstr "Sling"
 
+msgid "Magic user"
+msgstr "Magic user"
+
 msgid "Miscellaneous"
 msgstr "Miscellaneous"
-
-msgid "Ready for anything"
-msgstr "Ready for anything"
 
 msgid "Backpack"
 msgstr "Backpack"
@@ -521,6 +518,9 @@ msgstr "Combat"
 msgid "Grappling Hook"
 msgstr "Grappling Hook"
 
+msgid "Specialist"
+msgstr "Specialist"
+
 msgid "Bow, Long"
 msgstr "Bow, Long"
 
@@ -589,6 +589,12 @@ msgstr "Battle axe"
 
 msgid "Inventory cost"
 msgstr "Inventory cost"
+
+msgid "Cleric 1"
+msgstr "Cleric 1"
+
+msgid "Adventurer"
+msgstr "Adventurer"
 
 msgid "Crossbow bolt (1)"
 msgstr "Crossbow bolt (1)"
