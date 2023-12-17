@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import { Bitter as Regular, Philosopher as Cursive } from 'next/font/google'
 
 export const regularFont = Regular({
