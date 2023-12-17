@@ -26,7 +26,7 @@ describe('equipmentPack', () => {
           ['Sack', 1],
           ['Tinderbox', 1],
         ],
-        name: 'Base items set',
+        name: 'Basic',
       }
 
       const items = getEquipmentPackItems(pack, i18n._)
@@ -122,7 +122,7 @@ describe('equipmentPack', () => {
         ['Sack', 1], // 0.2sp
         ['Tinderbox', 1], // 1sp
       ],
-      name: 'Base items set',
+      name: 'Basic',
     }
 
     it('calculates the correct total cost (always minimal)', () => {

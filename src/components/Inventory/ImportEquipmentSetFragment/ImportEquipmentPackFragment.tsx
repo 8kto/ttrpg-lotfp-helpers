@@ -20,7 +20,7 @@ type ImportEquipmentPackProps = {
 const ImportEquipmentPackFragment = ({ onClose }: { onClose: () => void }) => {
   const { _: trans } = useLingui()
   const [selectedPack, setSelectedPack] = useState<EquipmentPack>(
-    EquipmentPacks.Base,
+    EquipmentPacks.Basic,
   )
   const packNames = useMemo(() => getGetterNames(EquipmentPacks), [])
 
@@ -35,7 +35,7 @@ const ImportEquipmentPackFragment = ({ onClose }: { onClose: () => void }) => {
       <Formik
         initialValues={
           {
-            pack: 'Base',
+            pack: 'Basic',
           } as ImportEquipmentPackProps
         }
         validationSchema={Yup.object({
