@@ -365,7 +365,7 @@ msgstr "Arrows, quiver (20)"
 
 #. js-lingui-explicit-id
 msgid "OverEncumbered"
-msgstr "OverEncumbered"
+msgstr "Overencumbered"
 
 #. js-lingui-explicit-id
 msgid "Oversized"
