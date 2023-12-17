@@ -6,7 +6,7 @@
 
 > The project is in active development.
 >
-> Done: <!--PROGRESS--> 63% / 19 of 30 tasks <!--/PROGRESS-->
+> Done: <!--PROGRESS--> 66% / 20 of 30 tasks <!--/PROGRESS-->
 
 Lamentations of the Flame Princess helpers.
 
@@ -41,7 +41,7 @@ https://lotfp.vercel.app
 - [x] Languages support
 - [x] Responsive layout, mobile devices support
 - [ ] Equipment sets
-  - [ ] By class
+  - [x] By class
   - [x] Common
   - [ ] Random
 - [ ] Multiple Inventories
