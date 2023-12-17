@@ -11,3 +11,4 @@ export const cursiveFont = Cursive({
   variable: '--font-cursive',
   weight: '400',
 })
+// FIXME fonts dont seem to be used when deployed
