@@ -13,6 +13,7 @@ const config = {
   testEnvironment: 'jest-environment-jsdom',
   moduleNameMapper: {
     '^@/components/(.*)$': '<rootDir>/src/components/$1',
+    '^@/shared/(.*)$': '<rootDir>/src/shared/$1',
   },
 }
 
