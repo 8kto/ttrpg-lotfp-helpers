@@ -12,9 +12,13 @@ const EncumbranceFragment = ({
   const encumbrance = getEncumbrance(encumbrancePoints)
 
   // TODO plurals for feet
+  // TODO modal with FAQ about encumbrance
   return (
     <>
-      {i18n._(encumbrance)} ({encumbrancePoints.toPrecision(2)})
+      {i18n._(encumbrance)}{' '}
+      <span className='text-gray-400'>
+        ({encumbrancePoints.toPrecision(2)})
+      </span>
     </>
   )
 }
