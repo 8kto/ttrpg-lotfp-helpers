@@ -8,6 +8,11 @@ import type { MeleeWeaponItem, MissileWeaponItem } from '@/domain/weapon'
 import deepclone from '@/shared/helpers/deepclone'
 import type { EquipmentCategoryKey } from '@/state/InventoryState'
 
+/**
+ * Class responsible for translating equipment items.
+ * Utilizes getters for each equipment category (Armor, MeleeWeapons, etc.)
+ * to enable real-time translation when the locale changes.
+ */
 export default class EquipmentTranslated {
   private readonly trans: I18n['_']
 
