@@ -2,14 +2,15 @@ import { XMarkIcon } from '@heroicons/react/24/solid'
 import { t, Trans } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import { Field, Form, Formik } from 'formik'
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import * as Yup from 'yup'
 
 import { EquipmentPackEntriesList } from '@/components/Inventory/ImportEquipmentSetFragment/EquipmentPackEntriesList'
 import type { EquipmentPackName } from '@/config/EquipmentPacks'
-import { EquipmentPackNames, EquipmentPacks } from '@/config/EquipmentPacks'
+import { EquipmentPacks } from '@/config/EquipmentPacks'
 import type { EquipmentPack } from '@/domain/equipment'
 import { getEquipmentPackItems } from '@/shared/helpers/equipmentPack'
+import { getGetterNames } from '@/shared/helpers/getGetterNames'
 import { importEquipmentItems } from '@/state/InventoryState'
 
 type ImportEquipmentPackProps = {
@@ -21,6 +22,7 @@ const ImportEquipmentPackFragment = ({ onClose }: { onClose: () => void }) => {
   const [selectedPack, setSelectedPack] = useState<EquipmentPack>(
     EquipmentPacks.Base,
   )
+  const packNames = useMemo(() => getGetterNames(EquipmentPacks), [])
 
   const handleImport = (formValues: ImportEquipmentPackProps) => {
     const items = getEquipmentPackItems(EquipmentPacks[formValues.pack], trans)
@@ -38,7 +40,7 @@ const ImportEquipmentPackFragment = ({ onClose }: { onClose: () => void }) => {
         }
         validationSchema={Yup.object({
           pack: Yup.string()
-            .oneOf(EquipmentPackNames)
+            .oneOf(packNames)
             .required(t`Required field`),
         })}
         onSubmit={(values, formikHelpers) => {

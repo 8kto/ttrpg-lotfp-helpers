@@ -132,15 +132,4 @@ export const EquipmentPacks = {
 
 export type EquipmentPackName = keyof typeof EquipmentPacks
 
-export const EquipmentPackNames: ReadonlyArray<EquipmentPackName> =
-  Object.freeze([
-    'AdventuringBasics',
-    'AdventurerSeasoned',
-    'Base',
-    'AdventurerReadyForAnything',
-    'Fighter1',
-    'Fighter2',
-    'Fighter3',
-  ])
-
 // TODO extend packs
