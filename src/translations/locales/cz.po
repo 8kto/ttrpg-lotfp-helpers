@@ -656,6 +656,9 @@ msgstr ""
 msgid "Cooking Pots"
 msgstr ""
 
+msgid "Select random"
+msgstr ""
+
 msgid "Jewelry"
 msgstr ""
 

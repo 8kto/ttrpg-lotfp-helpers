@@ -656,6 +656,9 @@ msgstr "Чернила"
 msgid "Cooking Pots"
 msgstr "Кастрюли"
 
+msgid "Select random"
+msgstr "Выбрать случайный"
+
 msgid "Jewelry"
 msgstr "Украшения"
 
