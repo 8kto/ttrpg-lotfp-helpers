@@ -1,5 +1,8 @@
 import classnames from 'classnames'
-import React from 'react'
+import React, { useCallback } from 'react'
+
+import Action from '@/shared/actions/actions'
+import { dispatchAction } from '@/shared/actions/helpers'
 
 const Drawer = ({
   isOpen,
@@ -9,7 +12,7 @@ const Drawer = ({
   fromLeft = false,
 }: {
   isOpen: boolean
-  onClose: () => void
+  onClose: (event: React.MouseEvent) => void
   children: React.ReactNode
   ariaLabelledBy?: string
   fromLeft?: boolean
@@ -24,19 +27,27 @@ const Drawer = ({
     },
   )
 
+  const handleClose = useCallback(
+    (event: React.MouseEvent) => {
+      onClose(event)
+      dispatchAction(Action.DrawerClose)
+    },
+    [onClose],
+  )
+
   return (
     <>
       {isOpen && (
         <div
           className='fixed inset-0 z-30 bg-black bg-opacity-50 transition-opacity duration-300'
-          onClick={onClose}
+          onClick={handleClose}
           style={{ opacity: isOpen ? 1 : 0 }}
         ></div>
       )}
       <div className={drawerClasses} aria-labelledby={ariaLabelledBy}>
         <button
           type='button'
-          onClick={onClose}
+          onClick={handleClose}
           className='absolute end-2.5 top-2.5 inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900'
         >
           <span className='sr-only'>Close menu</span>
