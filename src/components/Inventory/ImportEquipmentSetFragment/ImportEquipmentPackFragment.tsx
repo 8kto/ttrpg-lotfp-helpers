@@ -1,6 +1,7 @@
 import { XMarkIcon } from '@heroicons/react/24/solid'
 import { t, Trans } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import type { FormikProps } from 'formik'
 import { Field, Form, Formik } from 'formik'
 import React, { useMemo, useState } from 'react'
 import * as Yup from 'yup'
@@ -11,6 +12,7 @@ import { EquipmentPacks } from '@/config/EquipmentPacks'
 import type { EquipmentPack } from '@/domain/equipment'
 import { getEquipmentPackItems } from '@/shared/helpers/equipmentPack'
 import { getGetterNames } from '@/shared/helpers/getGetterNames'
+import { getRandom } from '@/shared/helpers/getRandom'
 import { importEquipmentItems } from '@/state/InventoryState'
 
 type ImportEquipmentPackProps = {
@@ -28,6 +30,15 @@ const ImportEquipmentPackFragment = ({ onClose }: { onClose: () => void }) => {
     const items = getEquipmentPackItems(EquipmentPacks[formValues.pack], trans)
     importEquipmentItems(items)
     onClose()
+  }
+
+  const handleRandomImport = (
+    formikHelpers: FormikProps<ImportEquipmentPackProps>,
+  ) => {
+    const keys = Object.keys(EquipmentPacks)
+    const randomIndex = getRandom(0, keys.length - 1)
+    void formikHelpers.setFieldValue('pack', keys[randomIndex])
+    void formikHelpers.submitForm()
   }
 
   return (
@@ -107,6 +118,15 @@ const ImportEquipmentPackFragment = ({ onClose }: { onClose: () => void }) => {
                 autoFocus
               >
                 <Trans>Import</Trans>
+              </button>
+            </div>
+            <div className='flex w-full justify-center space-x-4 pb-4'>
+              <button
+                type='button'
+                className='ph-btn-secondary w-full justify-center rounded px-5 py-2.5 text-center font-medium focus:outline-none focus:ring-4 focus:ring-primary-300'
+                onClick={handleRandomImport.bind(null, formikHelpers)}
+              >
+                <Trans>Select random</Trans>
               </button>
             </div>
           </Form>
