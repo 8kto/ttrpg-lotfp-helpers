@@ -6,7 +6,7 @@
 
 > The project is in active development.
 >
-> Done: <!--PROGRESS--> 66% / 20 of 30 tasks <!--/PROGRESS-->
+> Done: <!--PROGRESS--> 73% / 22 of 30 tasks <!--/PROGRESS-->
 
 Lamentations of the Flame Princess helpers.
 
@@ -40,10 +40,10 @@ https://lotfp.vercel.app
 - [x] Inventory is saved in locale storage and survives the page reload
 - [x] Languages support
 - [x] Responsive layout, mobile devices support
-- [ ] Equipment sets
+- [x] Equipment sets
   - [x] By class
   - [x] Common
-  - [ ] Random
+  - [x] Random
 - [ ] Multiple Inventories
 - [ ] Inventory for baggage animal
 
