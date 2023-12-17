@@ -19,11 +19,8 @@ import {
 
 const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
   const { _: trans } = useLingui()
-  const handleAddItem = (formValues: EquipmentItemDto) => {
-    addCustomEquipmentItem(
-      formValues.category,
-      getCustomEquipmentItem(formValues),
-    )
+  const handleAddItem = (data: EquipmentItemDto) => {
+    addCustomEquipmentItem(data.category, getCustomEquipmentItem(data))
     onClose()
   }
 

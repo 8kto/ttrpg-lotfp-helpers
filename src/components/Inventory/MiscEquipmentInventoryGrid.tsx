@@ -14,7 +14,7 @@ const inventoryTableColumns: ReadonlyArray<
   InventoryColumn<EquipmentInventoryItem>
 > = [
   {
-    className: 'w-2/3 sm:w-1/3',
+    className: 'w-2/3',
     key: 'name',
     render: renderNameGridCol,
     get title() {
@@ -26,8 +26,6 @@ const inventoryTableColumns: ReadonlyArray<
 const MiscEquipmentInventoryGrid = () => {
   const { state: equipmentState } = useInventoryState()
   const { miscEquipment } = equipmentState
-
-  // console.log(miscEquipment.get().map((o) => [o.name, 1]))
 
   const onRemoveClick = (item: InventoryItem<EquipmentItem>) =>
     removeEquipmentItem(item)
@@ -42,3 +40,5 @@ const MiscEquipmentInventoryGrid = () => {
 }
 
 export default MiscEquipmentInventoryGrid
+
+// TODO hide weight for all inventory grids or put under the item title
