@@ -1,4 +1,5 @@
 /* istanbul ignore file */
+// NB! Stop ignoring if the file contains logic
 import { Bitter as Regular, Philosopher as Cursive } from 'next/font/google'
 
 export const regularFont = Regular({

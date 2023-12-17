@@ -1,4 +1,5 @@
 /* istanbul ignore file */
+// NB! Stop ignoring if the file contains logic
 import type { Metadata } from 'next'
 
 // TODO translate

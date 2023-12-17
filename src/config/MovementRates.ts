@@ -1,3 +1,5 @@
+/* istanbul ignore file */
+// NB! Stop ignoring if the file contains logic
 import type { MovementDict } from '@/domain/encumbrance'
 import { Encumbrance, Movement } from '@/domain/encumbrance'
 
