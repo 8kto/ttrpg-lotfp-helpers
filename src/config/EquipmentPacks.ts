@@ -76,7 +76,64 @@ const Fighter3 = (): EquipmentPack => {
   }
 }
 
+const MagicUser = (): EquipmentPack => {
+  return {
+    items: [
+      [t`Leather`, 1],
+      [t`Book, Spell (Blank)`, 1],
+      [t`Ink`, 1],
+      [t`Dagger`, 2],
+      [t`Staff`, 1],
+    ],
+    name: t`Magic user`,
+  }
+}
+
+const Cleric1 = (): EquipmentPack => {
+  return {
+    items: [
+      [t`Leather`, 1],
+      [t`Shield`, 1],
+      [t`Holy Symbol, Steel`, 1],
+      [t`Mace`, 1],
+      [t`Holy Water`, 1],
+    ],
+    name: t`Cleric 1`,
+  }
+}
+
+const Specialist = (): EquipmentPack => {
+  return {
+    items: [
+      [t`Leather`, 1],
+      [t`Specialist’s Tools`, 1],
+      [t`Short sword`, 1],
+      [t`Dagger`, 2],
+      [t`Rope, 50'`, 1],
+    ],
+    name: t`Specialist`,
+  }
+}
+
+const Cleric2 = (): EquipmentPack => {
+  return {
+    items: [
+      [t`Leather`, 1],
+      [t`Holy Symbol, Steel`, 1],
+      [t`Maul`, 1],
+      [t`Holy Water`, 1],
+      [t`Sling`, 1],
+      [t`Sling bullets (10)`, 1],
+    ],
+    name: t`Cleric 2`,
+  }
+}
+
 /* eslint-disable sort-keys-fix/sort-keys-fix */
+/**
+ * Provides dynamically translated equipment packs for different character classes.
+ * Utilizes getters for each pack to enable real-time translation when the locale changes.
+ */
 export const EquipmentPacks = {
   get Basic() {
     return Basic()
@@ -93,9 +150,19 @@ export const EquipmentPacks = {
   get Fighter3() {
     return Fighter3()
   },
+  get MagicUser() {
+    return MagicUser()
+  },
+  get Cleric1() {
+    return Cleric1()
+  },
+  get Cleric2() {
+    return Cleric2()
+  },
+  get Specialist() {
+    return Specialist()
+  },
 }
 /* eslint-enable sort-keys-fix/sort-keys-fix */
 
 export type EquipmentPackName = keyof typeof EquipmentPacks
-
-// TODO extend packs
