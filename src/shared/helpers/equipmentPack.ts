@@ -1,13 +1,10 @@
 import Equipment from '@/config/Equipment'
-import type { EquipmentItemTranslated } from '@/config/types'
 import type { EquipmentItem, EquipmentPack } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
 import { getGetterNames } from '@/shared/helpers/getGetterNames'
 import { getInventoryItem } from '@/shared/helpers/getInventoryItem'
 
-const findEquipmentItem = <T extends EquipmentItemTranslated<EquipmentItem>>(
-  name: string,
-): T | null => {
+const findEquipmentItem = <T extends EquipmentItem>(name: string): T | null => {
   const equipmentConfigTranslated = Equipment
   const categoryKeys = getGetterNames(equipmentConfigTranslated)
 
@@ -47,7 +44,7 @@ export const getEquipmentPackCost = (pack: EquipmentPack): number => {
 
 export const getEquipmentPackItems = (
   pack: EquipmentPack,
-): ReadonlyArray<InventoryItem<EquipmentItemTranslated<EquipmentItem>>> => {
+): ReadonlyArray<InventoryItem<EquipmentItem>> => {
   return pack.items.reduce(
     (acc, [name, qty]) => {
       const item = findEquipmentItem(name)
@@ -65,6 +62,6 @@ export const getEquipmentPackItems = (
 
       return acc.concat(copy)
     },
-    [] as ReadonlyArray<InventoryItem<EquipmentItemTranslated<EquipmentItem>>>,
+    [] as ReadonlyArray<InventoryItem<EquipmentItem>>,
   )
 }

@@ -1,6 +1,5 @@
 import { act, renderHook } from '@testing-library/react'
 
-import type { EquipmentItemTranslated } from '@/config/types'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { EquipmentItem } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
@@ -246,7 +245,7 @@ describe('InventoryState Tests', () => {
       return {
         ...mock,
         categoryKey,
-      } as InventoryItem<EquipmentItemTranslated<EquipmentItem>>
+      } as InventoryItem<EquipmentItem>
     }
 
     const setQty = (

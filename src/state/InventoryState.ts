@@ -1,7 +1,6 @@
 import { hookstate, useHookstate } from '@hookstate/core'
 import { localstored } from '@hookstate/localstored'
 
-import type { EquipmentItemTranslated } from '@/config/types'
 import type { ArmorItem } from '@/domain/armor'
 import type { EquipmentItem } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
@@ -158,7 +157,7 @@ export const EquipmentStateActions: EquipmentStateActionsType = {
 }
 
 export const importEquipmentItems = (
-  items: ReadonlyArray<InventoryItem<EquipmentItemTranslated<EquipmentItem>>>,
+  items: ReadonlyArray<InventoryItem<EquipmentItem>>,
 ) => {
   items.forEach((item) => {
     const { categoryKey } = item

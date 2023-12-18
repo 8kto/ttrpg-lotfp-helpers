@@ -1,12 +1,9 @@
 import { t } from '@lingui/macro'
 
-import type { EquipmentItemTranslated } from '@/config/types'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { EquipmentItem } from '@/domain/equipment'
 
-export const MiscEquipment = (): ReadonlyArray<
-  EquipmentItemTranslated<EquipmentItem>
-> => [
+export const MiscEquipment = (): ReadonlyArray<EquipmentItem> => [
   {
     categoryKey: 'miscEquipment',
     cityCost: 1,

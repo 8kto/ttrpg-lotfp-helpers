@@ -1,14 +1,11 @@
 import { t } from '@lingui/macro'
 
-import type { EquipmentItemTranslated } from '@/config/types'
 import { Dice } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { MissileWeaponItem } from '@/domain/weapon'
 import { WeaponType } from '@/domain/weapon'
 
-export const MissileWeapons = (): ReadonlyArray<
-  EquipmentItemTranslated<MissileWeaponItem>
-> => [
+export const MissileWeapons = (): ReadonlyArray<MissileWeaponItem> => [
   {
     categoryKey: 'missileWeapons',
     cityCost: 5,
