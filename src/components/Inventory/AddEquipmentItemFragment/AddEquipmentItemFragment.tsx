@@ -17,6 +17,15 @@ import {
   EquipmentStateKeys,
 } from '@/state/InventoryState'
 
+const formInitialValues: EquipmentItemDto = {
+  points: EncumbrancePoint.Regular,
+  name: '',
+  cost: 0,
+  isCopper: false,
+  category: 'miscEquipment',
+  details: '',
+}
+
 const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
   const { _: trans } = useLingui()
   const handleAddItem = (data: EquipmentItemDto) => {
@@ -26,16 +35,7 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
 
   return (
     <Formik
-      initialValues={
-        {
-          points: EncumbrancePoint.Regular,
-          name: '',
-          cost: 0,
-          isCopper: false,
-          category: 'miscEquipment',
-          details: '',
-        } as EquipmentItemDto
-      }
+      initialValues={formInitialValues}
       validationSchema={Yup.object({
         points: Yup.number().required(t`Required field`),
         name: Yup.string().required(t`Required field`),

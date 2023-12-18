@@ -35,6 +35,7 @@ const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
 
   return (
     <Formik
+      enableReinitialize
       initialValues={{
         coins: copperPieces.get() / 10,
         isCopper: false,
@@ -50,11 +51,7 @@ const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
         handleClose()
       }}
     >
-      {({ getFieldProps, handleSubmit, resetForm, setFieldValue }) => {
-        // FIXME
-        // eslint-disable-next-line no-console
-        console.log(getFieldProps('coins'))
-
+      {({ handleSubmit, resetForm, setFieldValue }) => {
         return (
           <Form
             onKeyDown={(e) => {

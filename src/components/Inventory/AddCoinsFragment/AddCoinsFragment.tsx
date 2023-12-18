@@ -7,6 +7,11 @@ import * as Yup from 'yup'
 
 import { addCopperPieces } from '@/state/InventoryState'
 
+const formInitialValues = {
+  coins: '',
+  isCopper: false,
+}
+
 const AddCoinsFragment = ({ onClose }: { onClose: () => void }) => {
   const handleAddCoins = ({
     isCopper,
@@ -24,14 +29,10 @@ const AddCoinsFragment = ({ onClose }: { onClose: () => void }) => {
 
   return (
     <Formik
-      initialValues={{
-        coins: '',
-        isCopper: false,
-      }}
+      initialValues={formInitialValues}
       validationSchema={Yup.object({
         coins: Yup.number()
           .positive()
-          // .max(9, t('Must be 9 characters max.')) // WTF
           .required(t`Required field`),
         isCopper: Yup.boolean(),
       })}
