@@ -58,8 +58,8 @@ describe('Equipment', () => {
       if (item.isAbleToReceiveCharge) {
         expect(typeof item.isAbleToReceiveCharge).toEqual('boolean')
       }
-      if (item.twoHanded) {
-        expect(typeof item.twoHanded).toEqual('boolean')
+      if (item.isTwoHanded) {
+        expect(typeof item.isTwoHanded).toEqual('boolean')
       }
       if (item.isSecondRank) {
         expect(typeof item.isSecondRank).toEqual('boolean')

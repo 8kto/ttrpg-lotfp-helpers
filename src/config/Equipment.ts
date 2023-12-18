@@ -2,7 +2,6 @@ import { Armor, MeleeWeapons, MiscEquipment, MissileWeapons } from '@/config'
 import type { ArmorItem } from '@/domain/armor'
 import type { EquipmentItem } from '@/domain/equipment'
 import type { MeleeWeaponItem, MissileWeaponItem } from '@/domain/weapon'
-// TODO use for other case
 import deepclone from '@/shared/helpers/deepclone'
 
 /**

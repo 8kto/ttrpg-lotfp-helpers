@@ -23,5 +23,5 @@ type EquipmentPackItem = [/*name*/ string, /*qty*/ number]
 
 export type EquipmentPack = {
   name: string
-  items: Array<EquipmentPackItem>
+  items: ReadonlyArray<EquipmentPackItem>
 }

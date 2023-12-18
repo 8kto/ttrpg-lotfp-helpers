@@ -26,17 +26,16 @@ export interface WeaponItem extends EquipmentItem {
   type: WeaponType
 }
 
-// TODO align names, drop is prefix
 export interface MeleeWeaponItem extends WeaponItem {
   isAbleToReceiveCharge?: boolean
-  twoHanded?: boolean
+  isTwoHanded?: boolean
   isSecondRank?: boolean
   categoryKey: 'meleeWeapons'
 }
 
 export interface MissileWeaponItem extends WeaponItem {
   range: Range | null
-  categoryKey: 'missileWeapons' // FIXME singular
+  categoryKey: 'missileWeapons'
 }
 
 export type DamageDice = {
