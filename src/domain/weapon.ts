@@ -31,10 +31,12 @@ export interface MeleeWeaponItem extends WeaponItem {
   isAbleToReceiveCharge?: boolean
   twoHanded?: boolean
   isSecondRank?: boolean
+  categoryKey: 'meleeWeapons'
 }
 
 export interface MissileWeaponItem extends WeaponItem {
   range: Range | null
+  categoryKey: 'missileWeapons' // FIXME singular
 }
 
 export type DamageDice = {

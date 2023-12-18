@@ -1,13 +1,13 @@
 import { t } from '@lingui/macro'
 
-import type { EquipmentItemTranslated } from '@/config/types'
 import type { ArmorItem } from '@/domain/armor'
 import { ArmorType } from '@/domain/armor'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 
-export const Armor = (): ReadonlyArray<EquipmentItemTranslated<ArmorItem>> => [
+export const Armor = (): ReadonlyArray<ArmorItem> => [
   {
     armorClass: 14,
+    categoryKey: 'armor',
     cityCost: 25,
     name: t`Leather`,
     points: EncumbrancePoint.None,
@@ -16,6 +16,7 @@ export const Armor = (): ReadonlyArray<EquipmentItemTranslated<ArmorItem>> => [
   },
   {
     armorClass: 16,
+    categoryKey: 'armor',
     cityCost: 100,
     name: t`Chain`,
     points: EncumbrancePoint.Oversized,
@@ -24,6 +25,7 @@ export const Armor = (): ReadonlyArray<EquipmentItemTranslated<ArmorItem>> => [
   },
   {
     armorClass: 18,
+    categoryKey: 'armor',
     cityCost: 1000,
     details: t`config.armor.plate.details`,
     name: t`Plate`,
@@ -33,6 +35,7 @@ export const Armor = (): ReadonlyArray<EquipmentItemTranslated<ArmorItem>> => [
   },
   {
     armorClass: '+1,+2',
+    categoryKey: 'armor',
     cityCost: 10,
     details: t`+1 AC versus mêlée attacks, +2 AC versus missile attacks.`,
     name: t`Shield`,
@@ -42,6 +45,7 @@ export const Armor = (): ReadonlyArray<EquipmentItemTranslated<ArmorItem>> => [
   },
   {
     armorClass: 14,
+    categoryKey: 'armor',
     cityCost: 250,
     name: t`Leather Barding`,
     points: EncumbrancePoint.None,
@@ -50,6 +54,7 @@ export const Armor = (): ReadonlyArray<EquipmentItemTranslated<ArmorItem>> => [
   },
   {
     armorClass: 16,
+    categoryKey: 'armor',
     cityCost: 500,
     name: t`Chain Barding`,
     points: EncumbrancePoint.Oversized,
@@ -58,6 +63,7 @@ export const Armor = (): ReadonlyArray<EquipmentItemTranslated<ArmorItem>> => [
   },
   {
     armorClass: 18,
+    categoryKey: 'armor',
     cityCost: 1000,
     name: t`Plate Barding`,
     points: EncumbrancePoint.Heavy,

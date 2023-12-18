@@ -9,4 +9,5 @@ export enum ArmorType {
 export interface ArmorItem extends EquipmentItem {
   type: ArmorType
   armorClass: number | string
+  categoryKey: 'armor'
 }

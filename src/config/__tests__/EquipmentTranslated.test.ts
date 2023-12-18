@@ -1,24 +1,13 @@
-import type { I18n } from '@lingui/core'
-
-import EquipmentTranslated from '@/config/EquipmentTranslated'
+import Equipment from '@/config/Equipment'
 import { Dice } from '@/domain'
 import { ArmorType } from '@/domain/armor'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import { WeaponType } from '@/domain/weapon'
 
-describe('EquipmentTranslated', () => {
-  const mockTrans = jest.fn((key) => key)
-  const i18n = { _: mockTrans } as unknown as I18n
-  let equipmentTranslated: EquipmentTranslated
-
-  beforeEach(() => {
-    equipmentTranslated = new EquipmentTranslated(i18n._)
-  })
-
+describe('Equipment', () => {
   it('translates armor items correctly', () => {
-    const armor = equipmentTranslated.Armor
+    const armor = Equipment.Armor
     expect(armor.length).toBeGreaterThan(0)
-    expect(mockTrans).toHaveBeenCalled()
 
     armor.forEach((item) => {
       expect(item).toMatchObject({
@@ -47,9 +36,8 @@ describe('EquipmentTranslated', () => {
   })
 
   it('translates melee weapons items correctly', () => {
-    const meleeWeapons = equipmentTranslated.MeleeWeapons
+    const meleeWeapons = Equipment.MeleeWeapons
     expect(meleeWeapons.length).toBeGreaterThan(0)
-    expect(mockTrans).toHaveBeenCalled()
 
     meleeWeapons.forEach((item) => {
       expect(item).toMatchObject({
@@ -92,9 +80,8 @@ describe('EquipmentTranslated', () => {
   })
 
   it('translates missile weapons items correctly', () => {
-    const missileWeapons = equipmentTranslated.MissileWeapons
+    const missileWeapons = Equipment.MissileWeapons
     expect(missileWeapons.length).toBeGreaterThan(0)
-    expect(mockTrans).toHaveBeenCalled()
 
     missileWeapons.forEach((item) => {
       expect(item).toMatchObject({
@@ -134,9 +121,8 @@ describe('EquipmentTranslated', () => {
   })
 
   it('translates miscellaneous equipment items correctly', () => {
-    const miscEquipment = equipmentTranslated.MiscEquipment
+    const miscEquipment = Equipment.MiscEquipment
     expect(miscEquipment.length).toBeGreaterThan(0)
-    expect(mockTrans).toHaveBeenCalled()
 
     miscEquipment.forEach((item) => {
       expect(item).toMatchObject({

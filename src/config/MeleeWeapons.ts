@@ -10,6 +10,7 @@ export const MeleeWeapons = (): ReadonlyArray<
   EquipmentItemTranslated<MeleeWeaponItem>
 > => [
   {
+    categoryKey: 'meleeWeapons',
     cityCost: 10,
     damage: {
       dice: Dice.d3,
@@ -22,6 +23,7 @@ export const MeleeWeapons = (): ReadonlyArray<
     type: WeaponType.Melee,
   },
   {
+    categoryKey: 'meleeWeapons',
     cityCost: 5,
     damage: {
       dice: Dice.d6,
@@ -34,6 +36,7 @@ export const MeleeWeapons = (): ReadonlyArray<
     type: WeaponType.Melee,
   },
   {
+    categoryKey: 'meleeWeapons',
     cityCost: 30,
     damage: {
       dice: Dice.d10,
@@ -49,6 +52,7 @@ export const MeleeWeapons = (): ReadonlyArray<
     type: WeaponType.Melee,
   },
   {
+    categoryKey: 'meleeWeapons',
     cityCost: 20,
     damage: null,
     details: t`config.melee.mancatcher.details`,
@@ -60,6 +64,7 @@ export const MeleeWeapons = (): ReadonlyArray<
     type: WeaponType.Melee,
   },
   {
+    categoryKey: 'meleeWeapons',
     cityCost: 30,
     damage: {
       dice: Dice.d8,
@@ -75,6 +80,7 @@ export const MeleeWeapons = (): ReadonlyArray<
     type: WeaponType.Melee,
   },
   {
+    categoryKey: 'meleeWeapons',
     cityCost: 15,
     damage: {
       dice: Dice.d8,
@@ -87,6 +93,7 @@ export const MeleeWeapons = (): ReadonlyArray<
     type: WeaponType.Melee,
   },
   {
+    categoryKey: 'meleeWeapons',
     cityCost: 5,
     damage: {
       dice: Dice.d6,
@@ -102,6 +109,7 @@ export const MeleeWeapons = (): ReadonlyArray<
     type: WeaponType.Melee,
   },
   {
+    categoryKey: 'meleeWeapons',
     cityCost: 5,
     damage: {
       dice: Dice.d4,
@@ -114,6 +122,7 @@ export const MeleeWeapons = (): ReadonlyArray<
     type: WeaponType.Melee,
   },
   {
+    categoryKey: 'meleeWeapons',
     cityCost: 50,
     damage: {
       dice: Dice.d10,
@@ -127,6 +136,7 @@ export const MeleeWeapons = (): ReadonlyArray<
     type: WeaponType.Great,
   },
   {
+    categoryKey: 'meleeWeapons',
     cityCost: 20,
     damage: {
       dice: Dice.d8,
@@ -140,6 +150,7 @@ export const MeleeWeapons = (): ReadonlyArray<
     type: WeaponType.Medium,
   },
   {
+    categoryKey: 'meleeWeapons',
     cityCost: 10,
     damage: {
       dice: Dice.d6,
@@ -152,6 +163,7 @@ export const MeleeWeapons = (): ReadonlyArray<
     type: WeaponType.Small,
   },
   {
+    categoryKey: 'meleeWeapons',
     cityCost: 5,
     damage: {
       dice: Dice.d4,
@@ -164,6 +176,7 @@ export const MeleeWeapons = (): ReadonlyArray<
     type: WeaponType.Minor,
   },
   {
+    categoryKey: 'meleeWeapons',
     cityCost: 10,
     damage: {
       dice: Dice.d3,
@@ -178,6 +191,7 @@ export const MeleeWeapons = (): ReadonlyArray<
   /* CUSTOM: concrete weapons for each of Great/Medium etc. categories */
   /* Great */
   {
+    categoryKey: 'meleeWeapons',
     cityCost: 50,
     damage: {
       dice: Dice.d10,
@@ -190,6 +204,7 @@ export const MeleeWeapons = (): ReadonlyArray<
     type: WeaponType.Great,
   },
   {
+    categoryKey: 'meleeWeapons',
     cityCost: 50,
     damage: {
       dice: Dice.d10,
@@ -202,6 +217,7 @@ export const MeleeWeapons = (): ReadonlyArray<
     type: WeaponType.Great,
   },
   {
+    categoryKey: 'meleeWeapons',
     cityCost: 50,
     damage: {
       dice: Dice.d10,
@@ -215,6 +231,7 @@ export const MeleeWeapons = (): ReadonlyArray<
   },
   /* Medium */
   {
+    categoryKey: 'meleeWeapons',
     cityCost: 20,
     damage: {
       dice: Dice.d8,
@@ -227,6 +244,7 @@ export const MeleeWeapons = (): ReadonlyArray<
     type: WeaponType.Medium,
   },
   {
+    categoryKey: 'meleeWeapons',
     cityCost: 20,
     damage: {
       dice: Dice.d8,
@@ -239,6 +257,7 @@ export const MeleeWeapons = (): ReadonlyArray<
     type: WeaponType.Medium,
   },
   {
+    categoryKey: 'meleeWeapons',
     cityCost: 20,
     damage: {
       dice: Dice.d8,
@@ -252,6 +271,7 @@ export const MeleeWeapons = (): ReadonlyArray<
   },
   /* Small */
   {
+    categoryKey: 'meleeWeapons',
     cityCost: 10,
     damage: {
       dice: Dice.d6,
@@ -263,6 +283,7 @@ export const MeleeWeapons = (): ReadonlyArray<
     type: WeaponType.Small,
   },
   {
+    categoryKey: 'meleeWeapons',
     cityCost: 10,
     damage: {
       dice: Dice.d6,
@@ -275,6 +296,7 @@ export const MeleeWeapons = (): ReadonlyArray<
   },
   /* Minor */
   {
+    categoryKey: 'meleeWeapons',
     cityCost: 5,
     damage: {
       dice: Dice.d4,
@@ -287,6 +309,7 @@ export const MeleeWeapons = (): ReadonlyArray<
     type: WeaponType.Minor,
   },
   {
+    categoryKey: 'meleeWeapons',
     cityCost: 5,
     damage: {
       dice: Dice.d4,

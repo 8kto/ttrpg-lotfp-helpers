@@ -10,6 +10,7 @@ export const MissileWeapons = (): ReadonlyArray<
   EquipmentItemTranslated<MissileWeaponItem>
 > => [
   {
+    categoryKey: 'missileWeapons',
     cityCost: 5,
     damage: null,
     details: t`config.missile.blowgun.details`,
@@ -20,6 +21,7 @@ export const MissileWeapons = (): ReadonlyArray<
     type: WeaponType.Missile,
   },
   {
+    categoryKey: 'missileWeapons',
     cityCost: 45,
     damage: { dice: Dice.d6, x: 1 },
     name: t`Bow, Long`,
@@ -29,6 +31,7 @@ export const MissileWeapons = (): ReadonlyArray<
     type: WeaponType.Missile,
   },
   {
+    categoryKey: 'missileWeapons',
     cityCost: 25,
     damage: { dice: Dice.d6, x: 1 },
     name: t`Bow, Short`,
@@ -38,6 +41,7 @@ export const MissileWeapons = (): ReadonlyArray<
     type: WeaponType.Missile,
   },
   {
+    categoryKey: 'missileWeapons',
     cityCost: 30,
     damage: { dice: Dice.d8, x: 1 },
     details: t`Heavy crossbows can only be fired once in 3 rounds and ignore 4 AC points`,
@@ -48,6 +52,7 @@ export const MissileWeapons = (): ReadonlyArray<
     type: WeaponType.Missile,
   },
   {
+    categoryKey: 'missileWeapons',
     cityCost: 25,
     damage: { dice: Dice.d6, x: 1 },
     details: t`Light crossbows can only be fired every once in 2 rounds and ignore 2 AC points`,
@@ -58,6 +63,7 @@ export const MissileWeapons = (): ReadonlyArray<
     type: WeaponType.Missile,
   },
   {
+    categoryKey: 'missileWeapons',
     cityCost: 0,
     damage: { dice: Dice.d2, x: 1 },
     details: t`A rock for throwing, not an ammunition`,
@@ -68,6 +74,7 @@ export const MissileWeapons = (): ReadonlyArray<
     type: WeaponType.Missile,
   },
   {
+    categoryKey: 'missileWeapons',
     cityCost: 1,
     damage: { dice: Dice.d4, x: 1 },
     details: t`Slings fired with stones instead of bullets have half the listed range.`,
@@ -78,6 +85,7 @@ export const MissileWeapons = (): ReadonlyArray<
     type: WeaponType.Missile,
   },
   {
+    categoryKey: 'missileWeapons',
     cityCost: 1,
     damage: { dice: Dice.d4, x: 1 },
     name: t`Dart`,
@@ -88,6 +96,7 @@ export const MissileWeapons = (): ReadonlyArray<
   },
   // AMMO
   {
+    categoryKey: 'missileWeapons',
     cityCost: 0.2,
     damage: null,
     details: t`Slings fired with stones instead of bullets have half the listed range.`,
@@ -98,6 +107,7 @@ export const MissileWeapons = (): ReadonlyArray<
     type: WeaponType.Ammunition,
   },
   {
+    categoryKey: 'missileWeapons',
     cityCost: 0,
     damage: null,
     details: t`config.melee.slingRocks.details`,
@@ -108,6 +118,7 @@ export const MissileWeapons = (): ReadonlyArray<
     type: WeaponType.Ammunition,
   },
   {
+    categoryKey: 'missileWeapons',
     cityCost: 0.5,
     damage: null,
     name: t`Arrow (1)`,
@@ -117,6 +128,7 @@ export const MissileWeapons = (): ReadonlyArray<
     type: WeaponType.Ammunition,
   },
   {
+    categoryKey: 'missileWeapons',
     cityCost: 10,
     damage: null,
     name: t`Arrows, quiver (20)`,
@@ -126,6 +138,7 @@ export const MissileWeapons = (): ReadonlyArray<
     type: WeaponType.Ammunition,
   },
   {
+    categoryKey: 'missileWeapons',
     cityCost: 0.5,
     damage: null,
     name: t`Crossbow bolt (1)`,
@@ -135,6 +148,7 @@ export const MissileWeapons = (): ReadonlyArray<
     type: WeaponType.Ammunition,
   },
   {
+    categoryKey: 'missileWeapons',
     cityCost: 10,
     damage: null,
     name: t`Crossbow bolts, quiver (20)`,
@@ -145,6 +159,7 @@ export const MissileWeapons = (): ReadonlyArray<
   },
   // Dart as an ammunition is taken from BFRPG Equipment Emporium 1e;
   {
+    categoryKey: 'missileWeapons',
     cityCost: 0.2,
     damage: { dice: Dice.d3, x: 1 },
     name: t`Dart for blowgun (1)`,
@@ -154,6 +169,7 @@ export const MissileWeapons = (): ReadonlyArray<
     type: WeaponType.Ammunition,
   },
   {
+    categoryKey: 'missileWeapons',
     cityCost: 4,
     damage: { dice: Dice.d3, x: 1 },
     name: t`Darts for blowgun, quiver (20)`,
