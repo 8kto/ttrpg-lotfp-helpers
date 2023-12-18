@@ -7,7 +7,7 @@ import { handleSortByDamage } from '@/components/EquipmentList/helpers'
 import { Dice } from '@/domain'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { EquipmentItem } from '@/domain/equipment'
-import type { MeleeWeaponItem } from '@/domain/weapon'
+import type { MeleeWeaponItem, WeaponItem } from '@/domain/weapon'
 
 jest.mock('@/components/DataGrid/helpers', () => ({
   trivialSort: jest.fn(() => {
@@ -24,7 +24,7 @@ describe('Equipment list helpers', () => {
 
   describe('handleSortByDamage', () => {
     it('should sort items in ascending order based on dice value', () => {
-      const sortConfig: SortConfig<MeleeWeaponItem> = {
+      const sortConfig: SortConfig<WeaponItem> = {
         direction: 'asc',
         key: 'damage',
       }
@@ -47,7 +47,7 @@ describe('Equipment list helpers', () => {
     })
 
     it('should sort items in descending order based on dice value', () => {
-      const sortConfig: SortConfig<MeleeWeaponItem> = {
+      const sortConfig: SortConfig<WeaponItem> = {
         direction: 'desc',
         key: 'damage',
       }
@@ -73,7 +73,7 @@ describe('Equipment list helpers', () => {
       const sortConfig = {
         direction: 'asc',
         key: 'name',
-      } as unknown as SortConfig<MeleeWeaponItem>
+      } as unknown as SortConfig<WeaponItem>
 
       const sortFunction = handleSortByDamage(sortConfig)
       sortFunction(
@@ -84,7 +84,7 @@ describe('Equipment list helpers', () => {
     })
 
     it('should sort by x values when dice values are equal', () => {
-      const sortConfig: SortConfig<MeleeWeaponItem> = {
+      const sortConfig: SortConfig<WeaponItem> = {
         direction: 'asc',
         key: 'damage',
       }
@@ -107,7 +107,7 @@ describe('Equipment list helpers', () => {
     })
 
     it('should sort by x values when dice values are equal [desc]', () => {
-      const sortConfig: SortConfig<MeleeWeaponItem> = {
+      const sortConfig: SortConfig<WeaponItem> = {
         direction: 'desc',
         key: 'damage',
       }
@@ -130,7 +130,7 @@ describe('Equipment list helpers', () => {
     })
 
     it('should handle cases where one or both items are missing damage', () => {
-      const sortConfig: SortConfig<MeleeWeaponItem> = {
+      const sortConfig: SortConfig<WeaponItem> = {
         direction: 'asc',
         key: 'damage',
       }
@@ -149,7 +149,7 @@ describe('Equipment list helpers', () => {
     })
 
     it('should handle cases where one or both items have the same damage.dice and damage.x', () => {
-      const sortConfig: SortConfig<MeleeWeaponItem> = {
+      const sortConfig: SortConfig<WeaponItem> = {
         direction: 'asc',
         key: 'damage',
       }
@@ -163,7 +163,7 @@ describe('Equipment list helpers', () => {
     })
 
     it('should handle cases with missing x value', () => {
-      const sortConfig: SortConfig<MeleeWeaponItem> = {
+      const sortConfig: SortConfig<WeaponItem> = {
         direction: 'asc',
         key: 'damage',
       }

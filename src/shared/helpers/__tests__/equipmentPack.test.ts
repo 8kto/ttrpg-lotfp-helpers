@@ -1,7 +1,5 @@
 import '@testing-library/jest-dom'
 
-import type { I18n } from '@lingui/core'
-
 import type { EquipmentPack } from '@/domain/equipment'
 import {
   getEquipmentPackCost,
@@ -9,8 +7,6 @@ import {
 } from '@/shared/helpers/equipmentPack'
 
 describe('equipmentPack', () => {
-  const mockTrans = jest.fn((key) => key)
-  const i18n = { _: mockTrans } as unknown as I18n
   const loggerErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {
     /*do not write in console*/
   })
@@ -29,7 +25,7 @@ describe('equipmentPack', () => {
         name: 'Basic',
       }
 
-      const items = getEquipmentPackItems(pack, i18n._)
+      const items = getEquipmentPackItems(pack)
       expect(items).toHaveLength(pack.items.length)
       expect(items).toEqual(
         expect.arrayContaining([
@@ -63,7 +59,7 @@ describe('equipmentPack', () => {
 
     it('returns an empty array for an empty equipment pack', () => {
       const emptyPack = { items: [], name: 'Empty Pack' }
-      const items = getEquipmentPackItems(emptyPack, i18n._)
+      const items = getEquipmentPackItems(emptyPack)
       expect(items).toHaveLength(0)
     })
 
@@ -72,7 +68,7 @@ describe('equipmentPack', () => {
         items: [['Nonexistent Item', 1]],
         name: 'Faulty Pack',
       }
-      const items = getEquipmentPackItems(packWithMissingItems, i18n._)
+      const items = getEquipmentPackItems(packWithMissingItems)
       expect(items).toHaveLength(0)
       expect(loggerErrorSpy).toHaveBeenCalledWith(
         expect.stringContaining(
@@ -86,7 +82,7 @@ describe('equipmentPack', () => {
         items: [['Bedroll', 0]],
         name: 'Zero Quantity Pack',
       }
-      const items = getEquipmentPackItems(packWithZeroQty, i18n._)
+      const items = getEquipmentPackItems(packWithZeroQty)
       expect(items).toHaveLength(0)
     })
 
@@ -98,7 +94,7 @@ describe('equipmentPack', () => {
         ],
         name: 'Mixed Pack',
       }
-      const items = getEquipmentPackItems(mixedPack, i18n._)
+      const items = getEquipmentPackItems(mixedPack)
       expect(items).toHaveLength(1) // Only 'Bedroll' is valid
       expect(items).toEqual(
         expect.arrayContaining([
@@ -126,13 +122,13 @@ describe('equipmentPack', () => {
     }
 
     it('calculates the correct total cost (always minimal)', () => {
-      const totalCost = getEquipmentPackCost(pack, mockTrans)
+      const totalCost = getEquipmentPackCost(pack)
       expect(totalCost).toBe(1 + 1.5 + 1 + 0.1 + 0.2 + 1)
     })
 
     it('returns 0 for an empty equipment pack', () => {
       const emptyPack = { items: [], name: 'Empty Pack' }
-      const totalCost = getEquipmentPackCost(emptyPack, mockTrans)
+      const totalCost = getEquipmentPackCost(emptyPack)
       expect(totalCost).toBe(0)
     })
 
@@ -141,7 +137,7 @@ describe('equipmentPack', () => {
         items: [['Treasures', 5]],
         name: 'Treasures Pack',
       }
-      const totalCost = getEquipmentPackCost(packMock, mockTrans)
+      const totalCost = getEquipmentPackCost(packMock)
       expect(totalCost).toBe(0)
     })
 
@@ -150,7 +146,7 @@ describe('equipmentPack', () => {
         items: [['Rock', 15]],
         name: 'Treasures Pack',
       }
-      const totalCost = getEquipmentPackCost(packMock, mockTrans)
+      const totalCost = getEquipmentPackCost(packMock)
       expect(totalCost).toBe(0)
     })
 
@@ -161,7 +157,7 @@ describe('equipmentPack', () => {
         items: pack.items.map(([item, qty]) => [item, qty * 2]), // Doubling quantities
       }
 
-      const totalCost = getEquipmentPackCost(modifiedPack, mockTrans)
+      const totalCost = getEquipmentPackCost(modifiedPack)
       expect(totalCost).toBe((1 + 1.5 + 1 + 0.1 + 0.2 + 1) * 2)
     })
   })

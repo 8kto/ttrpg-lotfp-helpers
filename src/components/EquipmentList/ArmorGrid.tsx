@@ -1,5 +1,4 @@
 import { t, Trans } from '@lingui/macro'
-import { useLingui } from '@lingui/react'
 import React, { useMemo } from 'react'
 
 import DataGrid from '@/components/DataGrid/DataGrid'
@@ -9,7 +8,7 @@ import {
   renderNameGridCol,
   renderWeightGridCol,
 } from '@/components/EquipmentList/gridHelpers'
-import EquipmentTranslated from '@/config/EquipmentTranslated'
+import Equipment from '@/config/Equipment'
 import type { ArmorItem } from '@/domain/armor'
 import type { EquipmentItem } from '@/domain/equipment'
 import { getInventoryItem } from '@/shared/helpers/getInventoryItem'
@@ -57,7 +56,6 @@ const ruralCostColumn: DataGridColumn<ArmorItem> = {
 }
 
 const ArmorGrid = () => {
-  const { _: trans } = useLingui()
   const {
     state: { isCostRural },
   } = useInventoryState()
@@ -70,10 +68,10 @@ const ArmorGrid = () => {
   }, [isCostRural])
 
   const dataFilteredByCost = useMemo(() => {
-    const data = Object.values(new EquipmentTranslated(trans).Armor)
+    const data = Object.values(Equipment.Armor)
 
     return isCostRural.get() ? data.filter((i) => i.ruralCost !== null) : data
-  }, [isCostRural, trans])
+  }, [isCostRural])
 
   const handleAddClick = (item: ArmorItem) => {
     const clone = getInventoryItem(

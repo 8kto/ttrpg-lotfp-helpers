@@ -1,4 +1,4 @@
-import EquipmentTranslated from '@/config/EquipmentTranslated'
+import Equipment from '@/config/Equipment'
 import { getGetterNames } from '@/shared/helpers/getGetterNames'
 
 describe('getGetterNames', () => {
@@ -39,16 +39,12 @@ describe('getGetterNames', () => {
 
   describe('integration', () => {
     it('should return expected list of translated Equipment categories', () => {
-      const transMock = jest.fn()
-      const equipmentConfigTranslated = new EquipmentTranslated(transMock)
-
-      expect(getGetterNames(equipmentConfigTranslated)).toEqual([
+      expect(getGetterNames(Equipment)).toEqual([
         'Armor',
         'MeleeWeapons',
-        'MissileWeapons',
         'MiscEquipment',
+        'MissileWeapons',
       ])
-      expect(transMock).toBeCalledTimes(0) // FIXME WAT?
     })
   })
 })

@@ -1,5 +1,4 @@
 import { t } from '@lingui/macro'
-import { useLingui } from '@lingui/react'
 import React, { useMemo } from 'react'
 
 import DataGrid from '@/components/DataGrid/DataGrid'
@@ -8,7 +7,7 @@ import {
   renderNameGridCol,
   renderWeightGridCol,
 } from '@/components/EquipmentList/gridHelpers'
-import EquipmentTranslated from '@/config/EquipmentTranslated'
+import Equipment from '@/config/Equipment'
 import type { EquipmentItem } from '@/domain/equipment'
 import { getInventoryItem } from '@/shared/helpers/getInventoryItem'
 import { addEquipmentItem, useInventoryState } from '@/state/InventoryState'
@@ -48,7 +47,6 @@ const ruralCostColumn: DataGridColumn<EquipmentItem> = {
 }
 
 const MiscEquipmentGrid = () => {
-  const { _: trans } = useLingui()
   const {
     state: { isCostRural },
   } = useInventoryState()
@@ -61,10 +59,10 @@ const MiscEquipmentGrid = () => {
   }, [isCostRural])
 
   const dataFilteredByCost = useMemo(() => {
-    const data = Object.values(new EquipmentTranslated(trans).MiscEquipment)
+    const data = Object.values(Equipment.MiscEquipment)
 
     return isCostRural.get() ? data.filter((i) => i.ruralCost !== null) : data
-  }, [trans, isCostRural])
+  }, [isCostRural])
 
   const handleAddClick = (item: EquipmentItem) => {
     const clone = getInventoryItem(

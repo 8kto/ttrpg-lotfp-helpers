@@ -45,7 +45,7 @@ const ImportEquipmentPackFragment = ({ onClose }: { onClose: () => void }) => {
     formValues: ImportEquipmentPackProps,
     formikHelpers: FormikHelpers<ImportEquipmentPackProps>,
   ) => {
-    const items = getEquipmentPackItems(EquipmentPacks[formValues.pack], trans)
+    const items = getEquipmentPackItems(EquipmentPacks[formValues.pack])
     importEquipmentItems(items)
 
     void formikHelpers.resetForm()
@@ -92,7 +92,14 @@ const ImportEquipmentPackFragment = ({ onClose }: { onClose: () => void }) => {
       >
         {(formikHelpers) => {
           return (
-            <Form>
+            <Form
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  e.preventDefault()
+                  handleImport(formikHelpers.values, formikHelpers)
+                }
+              }}
+            >
               <ResetFormOnDrawerClose onDrawerClose={handleClose} />
               <h5
                 id='drawer-label--add-coins'

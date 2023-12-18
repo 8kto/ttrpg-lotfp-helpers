@@ -24,6 +24,7 @@ describe('InventoryDetails helpers', () => {
   describe('getTotal', () => {
     const getItemMock = (lockedCost: number, points: EncumbrancePoint) => {
       return {
+        categoryKey: 'miscEquipment',
         cityCost: 100,
         inventoryId: '1',
         lockedCost,
@@ -31,7 +32,7 @@ describe('InventoryDetails helpers', () => {
         points,
         qty: 1,
         ruralCost: null,
-      }
+      } as InventoryItem<EquipmentItem>
     }
 
     it('returns total cost and points of all equipment items', () => {

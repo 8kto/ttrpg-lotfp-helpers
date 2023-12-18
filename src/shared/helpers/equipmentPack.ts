@@ -1,6 +1,4 @@
-import type { I18n } from '@lingui/core'
-
-import EquipmentTranslated from '@/config/EquipmentTranslated'
+import Equipment from '@/config/Equipment'
 import type { EquipmentItemTranslated } from '@/config/types'
 import type { EquipmentItem, EquipmentPack } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
@@ -9,9 +7,8 @@ import { getInventoryItem } from '@/shared/helpers/getInventoryItem'
 
 const findEquipmentItem = <T extends EquipmentItemTranslated<EquipmentItem>>(
   name: string,
-  trans: I18n['_'],
 ): T | null => {
-  const equipmentConfigTranslated = new EquipmentTranslated(trans)
+  const equipmentConfigTranslated = Equipment
   const categoryKeys = getGetterNames(equipmentConfigTranslated)
 
   for (const categoryKey of categoryKeys) {
@@ -34,12 +31,9 @@ const getMinimalCost = (item: EquipmentItem) => {
   return Math.min(...costs)
 }
 
-export const getEquipmentPackCost = (
-  pack: EquipmentPack,
-  trans: I18n['_'],
-): number => {
+export const getEquipmentPackCost = (pack: EquipmentPack): number => {
   return pack.items.reduce((acc, [itemName, qty]) => {
-    const item = findEquipmentItem(itemName, trans)
+    const item = findEquipmentItem(itemName)
 
     if (!item) {
       return acc
@@ -53,11 +47,10 @@ export const getEquipmentPackCost = (
 
 export const getEquipmentPackItems = (
   pack: EquipmentPack,
-  trans: I18n['_'],
 ): ReadonlyArray<InventoryItem<EquipmentItemTranslated<EquipmentItem>>> => {
   return pack.items.reduce(
     (acc, [name, qty]) => {
-      const item = findEquipmentItem(name, trans)
+      const item = findEquipmentItem(name)
       if (!item || qty <= 0) {
         console.error(
           `getEquipmentPackItems: could not find item by name: ${name}`,

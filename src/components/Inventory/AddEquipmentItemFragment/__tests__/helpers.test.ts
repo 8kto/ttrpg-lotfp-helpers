@@ -25,6 +25,7 @@ describe('AddEquipmentItemFragment helpers', () => {
       const result = getCustomEquipmentItem(data)
 
       expect(result).toEqual({
+        categoryKey: 'miscEquipment',
         cityCost: 100,
         details: 'A sharp sword',
         inventoryId: 'Sword001',
@@ -68,6 +69,8 @@ describe('AddEquipmentItemFragment helpers', () => {
 
       const result = getCustomEquipmentItem(data)
       expect(result).toEqual({
+        categoryKey: 'miscEquipment',
+
         cityCost: 0,
         details: null,
         inventoryId: 'Sword001',

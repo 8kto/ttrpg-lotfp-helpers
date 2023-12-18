@@ -202,9 +202,10 @@ describe('InventoryState Tests', () => {
   })
 
   describe('addCustomEquipmentItem', () => {
-    const customItem = {
+    const customItem: InventoryItem<EquipmentItem> = {
+      categoryKey: 'meleeWeapons',
       cityCost: 5,
-      inventoryId: '15',
+      inventoryId: 'a15',
       lockedCost: 5,
       name: 'Jigsaw',
       points: EncumbrancePoint.Regular,
@@ -294,7 +295,7 @@ describe('InventoryState Tests', () => {
     })
 
     it('throws error when no categoryKey', () => {
-      const items = [armorItemMock1]
+      const items = [{ ...armorItemMock1, categoryKey: undefined }]
 
       expect(() =>
         importEquipmentItems(

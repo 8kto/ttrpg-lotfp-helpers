@@ -1,5 +1,4 @@
 import { t, Trans } from '@lingui/macro'
-import { useLingui } from '@lingui/react'
 import React, { useMemo } from 'react'
 
 import DamageFragment from '@/components/DamageFragment'
@@ -11,7 +10,7 @@ import {
   renderWeightGridCol,
 } from '@/components/EquipmentList/gridHelpers'
 import { handleSortByDamage } from '@/components/EquipmentList/helpers'
-import EquipmentTranslated from '@/config/EquipmentTranslated'
+import Equipment from '@/config/Equipment'
 import type { MeleeWeaponItem } from '@/domain/weapon'
 import { getInventoryItem } from '@/shared/helpers/getInventoryItem'
 import { addMeleeWeapon, useInventoryState } from '@/state/InventoryState'
@@ -59,7 +58,6 @@ const ruralCostColumn: DataGridColumn<MeleeWeaponItem> = {
 }
 
 const MeleeWeaponsGrid = () => {
-  const { _: trans } = useLingui()
   const {
     state: { isCostRural },
   } = useInventoryState()
@@ -73,10 +71,10 @@ const MeleeWeaponsGrid = () => {
   }, [isCostRural])
 
   const dataFilteredByCost = useMemo(() => {
-    const data = Object.values(new EquipmentTranslated(trans).MeleeWeapons)
+    const data = Object.values(Equipment.MeleeWeapons)
 
     return isCostRural.get() ? data.filter((i) => i.ruralCost !== null) : data
-  }, [trans, isCostRural])
+  }, [isCostRural])
 
   const handleAddClick = (item: MeleeWeaponItem) => {
     const clone = getInventoryItem(

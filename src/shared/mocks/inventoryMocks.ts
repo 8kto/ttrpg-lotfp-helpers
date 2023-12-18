@@ -9,6 +9,7 @@ import { WeaponType } from '@/domain/weapon'
 
 export const armorItemMock1: InventoryItem<ArmorItem> = {
   armorClass: 14,
+  categoryKey: 'armor',
   cityCost: 25,
   inventoryId: '1',
   lockedCost: 50,
@@ -21,6 +22,7 @@ export const armorItemMock1: InventoryItem<ArmorItem> = {
 
 export const armorItemMock2: InventoryItem<ArmorItem> = {
   armorClass: 16,
+  categoryKey: 'armor',
   cityCost: 100,
   inventoryId: '2',
   lockedCost: 50,
@@ -32,6 +34,7 @@ export const armorItemMock2: InventoryItem<ArmorItem> = {
 }
 
 export const meleeWeaponItemMock1: InventoryItem<MeleeWeaponItem> = {
+  categoryKey: 'meleeWeapons',
   cityCost: 10,
   damage: {
     dice: Dice.d3,
@@ -47,6 +50,7 @@ export const meleeWeaponItemMock1: InventoryItem<MeleeWeaponItem> = {
 }
 
 export const meleeWeaponItemMock2: InventoryItem<MeleeWeaponItem> = {
+  categoryKey: 'meleeWeapons',
   cityCost: 5,
   damage: {
     dice: Dice.d6,
@@ -62,6 +66,7 @@ export const meleeWeaponItemMock2: InventoryItem<MeleeWeaponItem> = {
 }
 
 export const missileWeaponItemMock1: InventoryItem<MissileWeaponItem> = {
+  categoryKey: 'missileWeapons',
   cityCost: 5,
   damage: null,
   inventoryId: '5',
@@ -75,6 +80,7 @@ export const missileWeaponItemMock1: InventoryItem<MissileWeaponItem> = {
 }
 
 export const missileWeaponItemMock2: InventoryItem<MissileWeaponItem> = {
+  categoryKey: 'missileWeapons',
   cityCost: 30,
   damage: { dice: Dice.d8, x: 1 },
   inventoryId: '6',
@@ -88,6 +94,7 @@ export const missileWeaponItemMock2: InventoryItem<MissileWeaponItem> = {
 }
 
 export const miscEquipItem1: InventoryItem<EquipmentItem> = {
+  categoryKey: 'miscEquipment',
   cityCost: 1,
   inventoryId: '7',
   lockedCost: 1,
@@ -98,6 +105,7 @@ export const miscEquipItem1: InventoryItem<EquipmentItem> = {
 }
 
 export const miscEquipItem2: InventoryItem<EquipmentItem> = {
+  categoryKey: 'miscEquipment',
   cityCost: 10,
   inventoryId: '8',
   lockedCost: 10,

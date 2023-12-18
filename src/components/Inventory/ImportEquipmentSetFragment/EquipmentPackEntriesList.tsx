@@ -8,7 +8,7 @@ import { getEquipmentPackCost } from '@/shared/helpers/equipmentPack'
 
 export const EquipmentPackEntriesList = ({ pack }: { pack: EquipmentPack }) => {
   const { _: trans } = useLingui()
-  const cost = getEquipmentPackCost(pack, trans)
+  const cost = getEquipmentPackCost(pack)
 
   return (
     <>

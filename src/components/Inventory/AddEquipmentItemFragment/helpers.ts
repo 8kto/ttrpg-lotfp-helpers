@@ -29,6 +29,7 @@ export const getCustomEquipmentItem = (
   }
 
   return {
+    categoryKey: 'miscEquipment', // FIXME find out whether can be passed
     cityCost: Number(data.cost) || 0,
     details: data.details || null,
     inventoryId: data.name + getAutoIncrementedId(),
