@@ -4,7 +4,6 @@ import { Coin } from '@/domain'
 import { Encumbrance, EncumbrancePoint } from '@/domain/encumbrance'
 import type { EquipmentItem } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
-import { normalizeCoins } from '@/shared/helpers/costs'
 
 export type CountableItem = Pick<
   InventoryItem<EquipmentItem>,
@@ -46,13 +45,15 @@ const getCoinsLockedCost = (type: Coin) => {
 /**
  * Convert coins number into an array of CountableItem, weight is rounded down
  */
-export const getCoinItems = (coins: number, type: Coin): Array<CountableItem> => {
-  const baseCoins = normalizeCoins(coins, type)
+export const getCoinItems = (
+  coins: number,
+  type: Coin,
+): Array<CountableItem> => {
   const coinsEncumbrance = Math.floor(coins / COINS_PER_ENCUMBRANCE_POINT)
 
   return Array.from({ length: coinsEncumbrance }, () => {
     return {
-      lockedCost: baseCoins,
+      lockedCost: 0,
       name: getCoinsLockedCost(type),
       points: EncumbrancePoint.Regular,
       qty: 1,

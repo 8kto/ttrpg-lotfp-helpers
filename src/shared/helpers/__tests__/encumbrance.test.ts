@@ -21,10 +21,10 @@ describe('encumbrance helpers', () => {
   })
 
   describe('getCoinItems', () => {
-    const mockCountableItemCp = (length: number, lockedCost: number) => {
+    const mockCountableItemCp = (length: number) => {
       return Array.from({ length }, () => {
         return {
-          lockedCost: lockedCost / 10,
+          lockedCost: 0,
           name: '100 coins (cp)',
           points: EncumbrancePoint.Regular,
           qty: 1,
@@ -39,8 +39,13 @@ describe('encumbrance helpers', () => {
       [1000, 10],
       [0, 0],
       [50, 0],
-    ])('should return expected array of items for %d CP', (input, expectedLength) => {
-      expect(getCoinItems(input, Coin.Copper)).toEqual(mockCountableItemCp(expectedLength, input))
-    })
+    ])(
+      'should return expected array of items for %d CP',
+      (input, expectedLength) => {
+        expect(getCoinItems(input, Coin.Copper)).toEqual(
+          mockCountableItemCp(expectedLength),
+        )
+      },
+    )
   })
 })

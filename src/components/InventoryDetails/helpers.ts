@@ -27,26 +27,29 @@ const skipFirstItems = () => {
   }
 }
 
-export const getTotal = (items: Array<CountableItem>, copperPieces: number) => {
+export const getTotal = (
+  items: ReadonlyArray<CountableItem>,
+  coinsCp: number,
+) => {
   // FIXME pass over the remained num e.g. -2
   const shouldSkip = skipFirstItems()
-  const records = items.concat(getCoinItems(copperPieces, Coin.Copper))
+  const records = items.concat(getCoinItems(coinsCp, Coin.Copper))
 
   const res = records.reduce(
     (totals, item) => {
       const { lockedCost, points, qty } = item
 
       return {
-        totalCost: totals.totalCost + lockedCost * qty,
+        totalCostSp: totals.totalCostSp + lockedCost * qty,
         totalEncumbrancePoints:
           totals.totalEncumbrancePoints + (shouldSkip(item) ? 0 : points * qty),
       }
     },
-    { totalCost: 0, totalEncumbrancePoints: 0 },
+    { totalCostSp: 0, totalEncumbrancePoints: 0 },
   )
 
   return {
-    totalCost: res.totalCost,
+    totalCostSp: res.totalCostSp,
     totalEncumbrancePoints: roundTo(res.totalEncumbrancePoints, 1),
   }
 }
