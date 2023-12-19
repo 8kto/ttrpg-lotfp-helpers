@@ -9,3 +9,9 @@ export enum Dice {
   d20 = 'd20',
   d100 = 'd100',
 }
+
+export enum Coin {
+  Silver = 'Silver',
+  Copper = 'Copper',
+  Gold = 'Gold',
+}
