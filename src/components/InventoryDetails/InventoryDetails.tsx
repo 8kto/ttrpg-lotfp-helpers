@@ -12,7 +12,7 @@ import { useInventoryState } from '@/state/InventoryState'
 const InventoryDetails = () => {
   const { state: equipmentState } = useInventoryState()
   const { isCoinWeightActive, copperPieces } = equipmentState
-  const { totalEncumbrancePoints, totalCost } = getTotal(
+  const { totalEncumbrancePoints, totalCostSp } = getTotal(
     combineEquipment(equipmentState),
     isCoinWeightActive ? copperPieces.get() : 0,
   )
@@ -37,7 +37,7 @@ const InventoryDetails = () => {
             <Trans>Inventory cost</Trans>
           </dt>
           <dd className='mt-1 leading-6 text-gray-700 sm:col-span-2 sm:mt-0'>
-            <CostFragment cost={totalCost} />
+            <CostFragment cost={totalCostSp} />
           </dd>
         </div>
         <div className={detailsRowClassname}>
