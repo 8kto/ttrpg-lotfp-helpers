@@ -1,4 +1,4 @@
-export enum Coin {
+export enum CurrencyType {
   Silver = 'Silver',
   Copper = 'Copper',
   Gold = 'Gold',
@@ -10,13 +10,13 @@ export enum Unit {
   Gold = 'gp',
 }
 
-export type Wallet = {
+export type CurrencyWallet = {
   copper: number
   silver: number
   gold: number
 }
 
-export type MoneyUnit = {
+export type CurrencyBundle = {
   value: number
-  coin: Coin
+  coin: CurrencyType
 }

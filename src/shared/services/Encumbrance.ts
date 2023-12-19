@@ -1,4 +1,4 @@
-import { Coin } from '@/domain/cost'
+import { CurrencyType } from '@/domain/currency'
 import type { EncumbranceThreshold } from '@/domain/encumbrance'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { CountableItem } from '@/shared/helpers/encumbrance'
@@ -48,7 +48,7 @@ class Encumbrance {
    * Calculates the total cost and encumbrance points for a set of items.
    */
   getTotal(items: ReadonlyArray<CountableItem>, coinsCp: number) {
-    const records = items.concat(getCoinItems(coinsCp, Coin.Copper))
+    const records = items.concat(getCoinItems(coinsCp, CurrencyType.Copper))
     let totalCostSp = 0
     let totalEncumbrancePoints = 0
 
