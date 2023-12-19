@@ -152,4 +152,26 @@ describe('Encumbrance', () => {
       })
     })
   })
+
+  describe('thresholds', () => {
+    it('should skip 5 items for Regular threshold', () => {
+      const service = new Encumbrance({
+        threshold: EncumbranceThreshold.Regular,
+      })
+      const items = Array.from({ length: 5 }, () =>
+        getItemMock(100, EncumbrancePoint.Regular),
+      )
+      const result = service.getTotal(items, 0)
+      expect(result.totalEncumbrancePoints).toBe(0)
+    })
+
+    it('should skip 10 items for Dwarf threshold', () => {
+      const service = new Encumbrance({ threshold: EncumbranceThreshold.Dwarf })
+      const items = Array.from({ length: 10 }, () =>
+        getItemMock(100, EncumbrancePoint.Regular),
+      )
+      const result = service.getTotal(items, 0)
+      expect(result.totalEncumbrancePoints).toBe(0)
+    })
+  })
 })
