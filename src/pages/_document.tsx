@@ -3,7 +3,6 @@ import { Head, Html, Main, NextScript } from 'next/document'
 import { cursiveFont, regularFont } from '@/components/layout/fonts'
 
 export default function Document() {
-  // TODO FIXME these icons are not displayed
   return (
     <Html>
       <Head>
