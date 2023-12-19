@@ -18,7 +18,7 @@ const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
     isCopper: boolean
     coins: number
   }) => {
-    if (coins) {
+    if (typeof coins === 'number' && !isNaN(coins)) {
       const amount = isCopper ? +coins : +coins * 10
       setCopperPieces(amount)
       handleClose()
@@ -33,7 +33,6 @@ const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
     onClose()
   }
 
-  // FIXME cannot set 0
   return (
     <Formik
       enableReinitialize
@@ -42,9 +41,7 @@ const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
         isCopper: false,
       }}
       validationSchema={Yup.object({
-        coins: Yup.number()
-          .positive()
-          .required(t`Required field`),
+        coins: Yup.number().required(t`Required field`),
         isCopper: Yup.boolean(),
       })}
       onSubmit={(values) => {
