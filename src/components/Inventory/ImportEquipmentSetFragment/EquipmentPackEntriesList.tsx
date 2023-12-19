@@ -37,5 +37,3 @@ export const EquipmentPackEntriesList = ({ pack }: { pack: EquipmentPack }) => {
     </>
   )
 }
-// TODO display costs for item
-// TODO display Remove button

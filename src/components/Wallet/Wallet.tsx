@@ -5,16 +5,18 @@ import React, { useState } from 'react'
 import CostFragment from '@/components/CostFragment/CostFragment'
 import Drawer from '@/components/Drawer/Drawer'
 import SetCoinsFragment from '@/components/Inventory/SetCoinsFragment/SetCoinsFragment'
-import { setCopperPieces, useInventoryState } from '@/state/InventoryState'
+import {
+  setCopperPieces,
+  toggleCoinsWeightActive,
+  useInventoryState,
+} from '@/state/InventoryState'
 
 const Wallet = () => {
   const [isManaged, setIsManaged] = useState(false)
-  // TODO in state, validate weights
-  const [isCoinWeightActive, setIsCoinWeightActive] = useState(true)
   const [isSetCoinsDrawerOpen, setSetCoinsDrawerOpen] = useState(false)
 
   const { state } = useInventoryState()
-  const { copperPieces } = state
+  const { copperPieces, isCoinWeightActive } = state
 
   return (
     <div className='px-0'>
@@ -62,12 +64,9 @@ const Wallet = () => {
         <label className='relative inline-flex cursor-pointer items-center'>
           <input
             type='checkbox'
-            checked={isCoinWeightActive}
+            checked={isCoinWeightActive.get()}
             className='peer sr-only'
-            onChange={() => {
-              setIsCoinWeightActive((v) => !v)
-            }}
-            disabled
+            onChange={() => toggleCoinsWeightActive()}
           />
           <div className="peer h-6	w-11 scale-90 rounded-full bg-gray-200 after:absolute after:start-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-red-900 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-red-300"></div>
           <span
