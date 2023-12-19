@@ -1,4 +1,4 @@
-import { Coin } from '@/domain'
+import { Coin } from '@/domain/cost'
 import type { EncumbranceThreshold } from '@/domain/encumbrance'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { CountableItem } from '@/shared/helpers/encumbrance'
