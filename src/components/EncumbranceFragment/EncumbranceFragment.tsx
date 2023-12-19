@@ -1,7 +1,7 @@
 import { useLingui } from '@lingui/react'
 import React from 'react'
 
-import { getEncumbrance } from '@/components/InventoryDetails/helpers'
+import { getEncumbrance } from '@/shared/helpers/encumbrance'
 
 const EncumbranceFragment = ({
   encumbrancePoints,
