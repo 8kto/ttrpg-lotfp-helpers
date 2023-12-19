@@ -1,10 +1,11 @@
+import { XCircleIcon as RemoveCoinsIcon } from '@heroicons/react/24/solid'
 import { t, Trans } from '@lingui/macro'
 import React, { useState } from 'react'
 
 import CostFragment from '@/components/CostFragment/CostFragment'
 import Drawer from '@/components/Drawer/Drawer'
 import SetCoinsFragment from '@/components/Inventory/SetCoinsFragment/SetCoinsFragment'
-import { useInventoryState } from '@/state/InventoryState'
+import { setCopperPieces, useInventoryState } from '@/state/InventoryState'
 
 const Wallet = () => {
   const [isManaged, setIsManaged] = useState(false)
@@ -18,14 +19,19 @@ const Wallet = () => {
   return (
     <div className='px-0'>
       {/* 1st row */}
-      <div className='my-4 sm:mb-2 sm:mt-0'>
+      <div className='my-4 flex items-center space-x-2 sm:mb-2 sm:mt-0'>
         <CostFragment
           cost={copperPieces.get() ?? 0}
-          onClick={() => {
-            setSetCoinsDrawerOpen(true)
-          }}
+          onClick={() => setSetCoinsDrawerOpen(true)}
           copperPieces
         />
+        <button
+          onClick={() => setCopperPieces(0)}
+          title={t`Reset coins`}
+          className='cursor-pointer flex-col items-center justify-center rounded p-2 text-xs text-gray-400 hover:bg-gray-100 hover:text-gray-900 lg:p-1'
+        >
+          <RemoveCoinsIcon className='me-auto h-5 w-5' />
+        </button>
         <Drawer
           isOpen={isSetCoinsDrawerOpen}
           onClose={() => setSetCoinsDrawerOpen(false)}
