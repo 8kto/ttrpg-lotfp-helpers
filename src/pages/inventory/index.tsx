@@ -35,7 +35,7 @@ const Tabs = ({
   const { uiState } = useContext(UiContext)
   const [activeTabId, setActiveTabId] = useState(uiState.activeTabId)
   const tabTitleBaseClassname =
-    'flex-1 py-4 text-xl font-extrabold sm:text-2xl ph-font-cursive'
+    'flex-1 py-4 text-xl font-extrabold sm:text-2xl ph-font-cursive hover:border-red-500 hover:text-red-800 border-b-2'
   const tabTitleActiveClassname = 'border-b-2 border-red-900 text-red-900 '
 
   useEffect(() => {
