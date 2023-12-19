@@ -127,6 +127,9 @@ msgstr "Снаряжение, верховая езда"
 msgid "Book, Spell (Blank)"
 msgstr "Книга заклинаний (пустая)"
 
+msgid "100 coins (sp)"
+msgstr "100 серебряных монет (sp)"
+
 msgid "Required field"
 msgstr "Обязательное поле"
 
@@ -213,7 +216,7 @@ msgid "Tent, Personal"
 msgstr "Палатка, одиночная"
 
 msgid "Filter by name"
-msgstr "Фильтр по имени"
+msgstr "Фильтр по названию"
 
 msgid "Wolvesbane"
 msgstr "Аконит (Wolvesbane)"
@@ -267,6 +270,9 @@ msgstr "EN"
 
 msgid "Set coins"
 msgstr "Монеты"
+
+msgid "Reset coins"
+msgstr "Сбросить монеты"
 
 msgid "Book, Reading"
 msgstr "Книга, для чтения"
@@ -659,6 +665,9 @@ msgstr "Кастрюли"
 msgid "Select random"
 msgstr "Выбрать случайный"
 
+msgid "100 coins (cp)"
+msgstr "100 медных монет (cp)"
+
 msgid "Jewelry"
 msgstr "Украшения"
 
@@ -744,6 +753,9 @@ msgstr "Броня"
 
 msgid "Spear"
 msgstr "Копьё"
+
+msgid "100 coins (gp)"
+msgstr "100 золотых монет (gp)"
 
 msgid "Fighter 2"
 msgstr "Воин 2"
