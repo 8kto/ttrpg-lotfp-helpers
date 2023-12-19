@@ -15,7 +15,7 @@ const CostFragment = ({
   const { copperPoints, silverPoints } = getCoins(costSilver)
 
   return (
-    <span className='text-lg' onClick={onClick}>
+    <span className='text-lg cursor-pointer' onClick={onClick}>
       <strong>{silverPoints}</strong> sp
       {Boolean(copperPoints) ? (
         <>
