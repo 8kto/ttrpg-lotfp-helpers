@@ -3,9 +3,9 @@ import React from 'react'
 
 import CostFragment from '@/components/CostFragment/CostFragment'
 import EncumbranceFragment from '@/components/EncumbranceFragment/EncumbranceFragment'
-import { getTotal } from '@/components/InventoryDetails/helpers'
 import MovementFragment from '@/components/MovementFragment/MovementFragment'
 import Wallet from '@/components/Wallet/Wallet'
+import { getTotal } from '@/shared/helpers/encumbrance'
 import { combineEquipment } from '@/state/helpers'
 import { useInventoryState } from '@/state/InventoryState'
 
