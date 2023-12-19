@@ -27,3 +27,8 @@ export type MovementDict = {
   [Movement.Running]: number
   [Movement.MilesPerDay]: number
 }
+
+export enum EncumbranceThreshold {
+  Regular = 5,
+  Dwarf = 10,
+}
