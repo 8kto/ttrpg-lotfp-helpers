@@ -28,6 +28,7 @@ import {
   removeMeleeWeapon,
   removeMissileWeapon,
   setCopperPieces,
+  toggleCoinsWeightActive,
   toggleCost,
   useInventoryState,
 } from '@/state/InventoryState'
@@ -149,6 +150,14 @@ describe('InventoryState Tests', () => {
       expect(InventoryState.isCostRural.get()).toEqual(false)
       toggleCost()
       expect(InventoryState.isCostRural.get()).toEqual(true)
+    })
+  })
+
+  describe('isCoinWeightActive', () => {
+    it('should toggle active coins weight', () => {
+      expect(InventoryState.isCoinWeightActive.get()).toEqual(true)
+      toggleCoinsWeightActive()
+      expect(InventoryState.isCoinWeightActive.get()).toEqual(false)
     })
   })
 

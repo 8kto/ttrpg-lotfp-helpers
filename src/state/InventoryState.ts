@@ -96,6 +96,11 @@ export const toggleCost = () => {
   isCostRural.set(!isCostRural.get())
 }
 
+export const toggleCoinsWeightActive = () => {
+  const isCoinWeightActive = InventoryState.isCoinWeightActive
+  isCoinWeightActive.set(!isCoinWeightActive.get())
+}
+
 export const addCopperPieces = (value: number) => {
   const balance = InventoryState.copperPieces
   balance.merge((v) => v + value)
