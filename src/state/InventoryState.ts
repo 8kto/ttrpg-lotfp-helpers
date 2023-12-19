@@ -106,11 +106,8 @@ export const setCopperPieces = (value: number) => {
   balance.set(value)
 }
 
-export const addCustomEquipmentItem = (
-  category: EquipmentCategoryKey,
-  data: InventoryItem<EquipmentItem>,
-) => {
-  const equipmentStateCategory = InventoryState.nested(category)
+export const addCustomEquipmentItem = (data: InventoryItem<EquipmentItem>) => {
+  const equipmentStateCategory = InventoryState.nested(data.categoryKey)
 
   type B = typeof equipmentStateCategory
   type T = B[keyof B]
@@ -118,7 +115,7 @@ export const addCustomEquipmentItem = (
   try {
     equipmentStateCategory[equipmentStateCategory.length].set(data as T)
   } catch (err) {
-    console.error(`Unknown InventoryState category [${category}]`, err)
+    console.error(`Unknown InventoryState category [${data.categoryKey}]`, err)
   }
 }
 

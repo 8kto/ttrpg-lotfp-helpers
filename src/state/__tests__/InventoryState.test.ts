@@ -213,8 +213,8 @@ describe('InventoryState Tests', () => {
     }
 
     it('adds item', () => {
-      addCustomEquipmentItem('miscEquipment', customItem)
-      expect(InventoryState.miscEquipment.get()).toContainEqual(customItem)
+      addCustomEquipmentItem(customItem)
+      expect(InventoryState.meleeWeapons.get()).toContainEqual(customItem)
     })
 
     it('throws error for unknown category', () => {
@@ -224,10 +224,10 @@ describe('InventoryState Tests', () => {
           /*do not write in console*/
         })
 
+      const invalidItem = { ...customItem, categoryKey: 'inexisted' }
       addCustomEquipmentItem(
-        // @ts-ignore unknown state prop
-        'inexisted',
-        customItem,
+        // @ts-ignores
+        invalidItem,
       )
 
       expect(loggerError).toHaveBeenCalledWith(
