@@ -33,6 +33,7 @@ const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
     onClose()
   }
 
+  // FIXME cannot set 0
   return (
     <Formik
       enableReinitialize
