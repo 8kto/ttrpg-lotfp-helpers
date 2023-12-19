@@ -1,6 +1,6 @@
 import { t } from '@lingui/macro'
 
-import { Coin } from '@/domain'
+import { Coin } from '@/domain/cost'
 import { Encumbrance, EncumbrancePoint } from '@/domain/encumbrance'
 import type { EquipmentItem } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'

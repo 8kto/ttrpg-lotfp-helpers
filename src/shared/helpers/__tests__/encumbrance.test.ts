@@ -1,4 +1,4 @@
-import { Coin } from '@/domain'
+import { Coin } from '@/domain/cost'
 import { Encumbrance, EncumbrancePoint } from '@/domain/encumbrance'
 import { getCoinItems, getEncumbrance } from '@/shared/helpers/encumbrance'
 
