@@ -29,7 +29,7 @@ const formInitialValues: EquipmentItemDto = {
 const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
   const { _: trans } = useLingui()
   const handleAddItem = (data: EquipmentItemDto) => {
-    addCustomEquipmentItem(data.category, getCustomEquipmentItem(data))
+    addCustomEquipmentItem(getCustomEquipmentItem(data))
     onClose()
   }
 
