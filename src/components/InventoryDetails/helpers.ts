@@ -1,32 +1,14 @@
 import type { ArmorItem } from '@/domain/armor'
-import { Encumbrance, EncumbrancePoint } from '@/domain/encumbrance'
+import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { EquipmentItem } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
+import { COINS_PER_ENCUMBRANCE_POINT } from '@/shared/helpers/encumbrance'
 import { roundTo } from '@/shared/helpers/roundTo'
-
-export const getEncumbrance = (points: number): Encumbrance => {
-  if (points >= 5) {
-    return Encumbrance.OverEncumbered
-  }
-  if (points >= 4) {
-    return Encumbrance.Severely
-  }
-  if (points >= 3) {
-    return Encumbrance.Heavily
-  }
-  if (points >= 2) {
-    return Encumbrance.Lightly
-  }
-
-  return Encumbrance.Unencumbered
-}
 
 type CountableItem = Pick<
   InventoryItem<EquipmentItem>,
   'points' | 'lockedCost' | 'name' | 'qty'
 >
-
-const COINS_PER_ENCUMBRANCE_POINT = 100
 
 const getCoinInventoryItems = (copperPieces: number) => {
   const coins = copperPieces / 10
