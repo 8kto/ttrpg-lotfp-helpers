@@ -1,6 +1,6 @@
 import { t } from '@lingui/macro'
 
-import { CurrencyType } from '@/domain/currency'
+import { CurrencyType, type CurrencyWallet } from '@/domain/currency'
 import { Encumbrance, EncumbrancePoint } from '@/domain/encumbrance'
 import type { EquipmentItem } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
@@ -45,18 +45,19 @@ const getCoinsLockedCost = (type: CurrencyType) => {
 /**
  * Convert coins number into an array of CountableItem, weight is rounded down
  */
-export const getCoinItems = (
-  coins: number,
-  type: CurrencyType,
-): Array<CountableItem> => {
-  const coinsEncumbrance = Math.floor(coins / COINS_PER_ENCUMBRANCE_POINT)
+export const getCoinItems = (wallet: CurrencyWallet): Array<CountableItem> => {
+  return Object.entries(wallet)
+    .filter(([, value]) => !!value)
+    .flatMap(([currency, value]) => {
+      const coinsEncumbrance = Math.floor(value / COINS_PER_ENCUMBRANCE_POINT)
 
-  return Array.from({ length: coinsEncumbrance }, () => {
-    return {
-      lockedCostCp: 0,
-      name: getCoinsLockedCost(type),
-      points: EncumbrancePoint.Regular,
-      qty: 1,
-    }
-  })
+      return Array.from({ length: coinsEncumbrance }, () => {
+        return {
+          lockedCostCp: 0,
+          name: getCoinsLockedCost(currency as CurrencyType),
+          points: EncumbrancePoint.Regular,
+          qty: 1,
+        }
+      })
+    })
 }

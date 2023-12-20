@@ -49,7 +49,7 @@ export const renderCostGridCol: RenderFunction = (item, _, state) => {
   }
 
   return CurrencyConverter.getDisplayCost({
-    coin: CurrencyType.Copper,
+    currency: CurrencyType.Copper,
     value: valueCp,
   }).value
 }

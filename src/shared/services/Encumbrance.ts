@@ -1,4 +1,4 @@
-import { CurrencyType } from '@/domain/currency'
+import type { CurrencyWallet } from '@/domain/currency'
 import type { EncumbranceThreshold } from '@/domain/encumbrance'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { CountableItem } from '@/shared/helpers/encumbrance'
@@ -49,10 +49,17 @@ class Encumbrance {
    */
   getTotal(
     items: ReadonlyArray<CountableItem>,
-    coinsCp: number /* FIXME use DS */,
-  ) {
-    const records = items.concat(getCoinItems(coinsCp, CurrencyType.Copper))
-    let totalCostCp = 0
+    wallet: CurrencyWallet | null,
+  ): {
+    totalCosts: CurrencyWallet
+    totalEncumbrancePoints: number
+  } {
+    const records = wallet ? items.concat(getCoinItems(wallet)) : []
+    const totalCosts: CurrencyWallet = {
+      Copper: 0,
+      Gold: 0,
+      Silver: 0,
+    }
     let totalEncumbrancePoints = 0
 
     records.forEach((item) => {
@@ -72,12 +79,12 @@ class Encumbrance {
           break
       }
 
-      totalCostCp += lockedCostCp * qty
+      totalCosts.Copper += lockedCostCp * qty
       totalEncumbrancePoints += increment
     })
 
     return {
-      totalCostCp: totalCostCp,
+      totalCosts: totalCosts,
       totalEncumbrancePoints: roundTo(totalEncumbrancePoints, 1),
     }
   }
