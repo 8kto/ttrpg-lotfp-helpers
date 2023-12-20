@@ -16,6 +16,7 @@ export type CurrencyWallet = {
   gold: number
 }
 
+// rename CurrencyRecord
 export type CurrencyBundle = {
   value: number
   coin: CurrencyType
