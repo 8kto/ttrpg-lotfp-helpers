@@ -4,7 +4,7 @@ import type { ArmorItem } from '@/domain/armor'
 import { ArmorType } from '@/domain/armor'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 
-export const Armor = (): ReadonlyArray<ArmorItem> => [
+export const ArmorItems = (): ReadonlyArray<ArmorItem> => [
   {
     armorClass: 14,
     categoryKey: 'armor',

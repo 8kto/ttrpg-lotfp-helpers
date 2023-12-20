@@ -1,4 +1,4 @@
-export { Armor } from './Armor'
-export { MeleeWeapons } from './MeleeWeapons'
-export { MiscEquipment } from './MiscEquipment'
-export { MissileWeapons } from './MissileWeapons'
+export { ArmorItems } from './ArmorItems'
+export { MeleeWeaponItems } from './MeleeWeaponItems'
+export { MiscEquipmentItems } from './MiscEquipmentItems'
+export { MissileWeaponItems } from './MissileWeaponItems'

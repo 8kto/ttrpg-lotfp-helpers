@@ -3,7 +3,7 @@ import { t } from '@lingui/macro'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { EquipmentItem } from '@/domain/equipment'
 
-export const MiscEquipment = (): ReadonlyArray<EquipmentItem> => [
+export const MiscEquipmentItems = (): ReadonlyArray<EquipmentItem> => [
   {
     categoryKey: 'miscEquipment',
     cityCost: 1,

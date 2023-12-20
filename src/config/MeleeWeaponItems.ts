@@ -5,7 +5,7 @@ import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { MeleeWeaponItem } from '@/domain/weapon'
 import { WeaponType } from '@/domain/weapon'
 
-export const MeleeWeapons = (): ReadonlyArray<MeleeWeaponItem> => [
+export const MeleeWeaponItems = (): ReadonlyArray<MeleeWeaponItem> => [
   {
     categoryKey: 'meleeWeapons',
     cityCost: 10,
