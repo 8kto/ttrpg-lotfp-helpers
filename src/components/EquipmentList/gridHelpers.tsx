@@ -6,7 +6,6 @@ import { CurrencyType } from '@/domain/currency'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { EquipmentItem } from '@/domain/equipment'
 import CurrencyConverter from '@/shared/services/CurrencyConverter'
-import { useInventoryState } from '@/state/InventoryState'
 
 type RenderFunction = DataGridColumn<EquipmentItem>['render']
 
@@ -39,12 +38,8 @@ export const renderNameGridCol: RenderFunction = (item, i18n) => {
   )
 }
 
-export const renderCostGridCol: RenderFunction = (item) => {
-  const {
-    state: { isCostRural },
-    // It is called within a component:
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-  } = useInventoryState()
+export const renderCostGridCol: RenderFunction = (item, _, state) => {
+  const { isCostRural } = state
 
   let valueCp: number
   if (isCostRural.get()) {
@@ -53,10 +48,8 @@ export const renderCostGridCol: RenderFunction = (item) => {
     valueCp = item.cityCostCp
   }
 
-  const converted = CurrencyConverter.getDisplayCost({
+  return CurrencyConverter.getDisplayCost({
     coin: CurrencyType.Copper,
     value: valueCp,
-  })
-
-  return converted.value
+  }).value
 }
