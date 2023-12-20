@@ -5,7 +5,7 @@ import React from 'react'
 import * as Yup from 'yup'
 
 import { ResetFormOnDrawerClose } from '@/components/Inventory/ResetFormOnDrawerClose'
-import { setCopperPieces, useInventoryState } from '@/state/InventoryState'
+import { setCurrencies, useInventoryState } from '@/state/InventoryState'
 
 const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
   const { state } = useInventoryState()
@@ -20,7 +20,7 @@ const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
   }) => {
     if (typeof coins === 'number' && !isNaN(coins)) {
       const amount = isCopper ? +coins : +coins * 10
-      setCopperPieces(amount)
+      setCurrencies(amount)
       handleClose()
     }
   }

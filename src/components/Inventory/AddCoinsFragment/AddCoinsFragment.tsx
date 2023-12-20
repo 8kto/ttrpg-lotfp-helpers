@@ -5,7 +5,7 @@ import { Field, Form, Formik } from 'formik'
 import React from 'react'
 import * as Yup from 'yup'
 
-import { addCopperPieces } from '@/state/InventoryState'
+import { addCurrency } from '@/state/InventoryState'
 
 const formInitialValues = {
   coins: '',
@@ -22,7 +22,7 @@ const AddCoinsFragment = ({ onClose }: { onClose: () => void }) => {
   }) => {
     if (coins) {
       const amount = isCopper ? +coins : +coins * 10
-      addCopperPieces(amount)
+      addCurrency(amount)
       onClose()
     }
   }

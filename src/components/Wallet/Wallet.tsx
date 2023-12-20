@@ -6,7 +6,7 @@ import CostFragment from '@/components/CostFragment/CostFragment'
 import Drawer from '@/components/Drawer/Drawer'
 import SetCoinsFragment from '@/components/Inventory/SetCoinsFragment/SetCoinsFragment'
 import {
-  setCopperPieces,
+  resetCurrencies,
   toggleCoinsWeightActive,
   useInventoryState,
 } from '@/state/InventoryState'
@@ -16,19 +16,18 @@ const Wallet = () => {
   const [isSetCoinsDrawerOpen, setSetCoinsDrawerOpen] = useState(false)
 
   const { state } = useInventoryState()
-  const { copperPieces, isCoinWeightActive } = state
+  const { wallet, isCoinWeightActive } = state
 
   return (
     <div className='px-0'>
       {/* 1st row */}
       <div className='my-4 flex items-center space-x-2 sm:mb-2 sm:mt-0'>
         <CostFragment
-          cost={copperPieces.get() ? copperPieces.get() : 0}
+          wallet={wallet.get()}
           onClick={() => setSetCoinsDrawerOpen(true)}
-          copperPieces
         />
         <button
-          onClick={() => setCopperPieces(0)}
+          onClick={resetCurrencies}
           title={t`Reset coins`}
           className='cursor-pointer flex-col items-center justify-center rounded p-2 text-xs text-gray-400 hover:bg-gray-100 hover:text-gray-900 lg:p-1'
         >

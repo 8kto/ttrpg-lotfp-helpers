@@ -14,7 +14,7 @@ export const EquipmentPackEntriesList = ({ pack }: { pack: EquipmentPack }) => {
     <>
       <div className='mb-4'>
         <p className={'mb-2 text-red-900'}>
-          <Trans>Cost</Trans>: <CostFragment cost={cost} />
+          <Trans>Cost</Trans>: <CostFragment wallet={cost} />
         </p>
       </div>
       <dl className='divide-y divide-gray-100'>
