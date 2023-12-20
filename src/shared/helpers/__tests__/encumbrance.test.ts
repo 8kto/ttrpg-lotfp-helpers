@@ -1,4 +1,4 @@
-import { Coin } from '@/domain'
+import { CurrencyType } from '@/domain/currency'
 import { Encumbrance, EncumbrancePoint } from '@/domain/encumbrance'
 import { getCoinItems, getEncumbrance } from '@/shared/helpers/encumbrance'
 
@@ -24,7 +24,7 @@ describe('encumbrance helpers', () => {
     const mockCountableItemCp = (length: number) => {
       return Array.from({ length }, () => {
         return {
-          lockedCost: 0,
+          lockedCostCp: 0,
           name: '100 coins (cp)',
           points: EncumbrancePoint.Regular,
           qty: 1,
@@ -42,7 +42,7 @@ describe('encumbrance helpers', () => {
     ])(
       'should return expected array of items for %d CP',
       (input, expectedLength) => {
-        expect(getCoinItems(input, Coin.Copper)).toEqual(
+        expect(getCoinItems(input, CurrencyType.Copper)).toEqual(
           mockCountableItemCp(expectedLength),
         )
       },

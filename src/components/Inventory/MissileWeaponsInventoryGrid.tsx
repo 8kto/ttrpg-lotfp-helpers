@@ -26,8 +26,8 @@ const inventoryTableColumns: ReadonlyArray<
   {
     className: 'w-1/6',
     key: 'damage',
-    render: (item: MissileWeaponItem) => (
-      <DamageFragment damage={item.damage} />
+    render: (item) => (
+      <DamageFragment damage={(item as MissileWeaponItem).damage} />
     ),
     get title() {
       return t`Damage`

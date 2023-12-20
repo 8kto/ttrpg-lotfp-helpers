@@ -1,6 +1,8 @@
 import React from 'react'
 
 import { getCoins } from '@/components/CostFragment/helpers'
+import { CurrencyType } from '@/domain/currency'
+import CurrencyConverter from '@/shared/services/CurrencyConverter'
 
 const CostFragment = ({
   cost,
@@ -11,11 +13,17 @@ const CostFragment = ({
   onClick?: () => void
   copperPieces?: boolean
 }) => {
-  const costSilver = copperPieces ? cost / 10 : cost
-  const { copperPoints, silverPoints } = getCoins(costSilver)
+  const costSilver = CurrencyConverter.convertFromTo(
+    {
+      value: cost,
+      coin: copperPieces ? CurrencyType.Copper : CurrencyType.Silver,
+    },
+    CurrencyType.Silver,
+  )
+  const { copperPoints, silverPoints } = getCoins(costSilver.value)
 
   return (
-    <span className='text-lg' onClick={onClick}>
+    <span className='cursor-pointer text-lg' onClick={onClick}>
       <strong>{silverPoints}</strong> sp
       {Boolean(copperPoints) ? (
         <>

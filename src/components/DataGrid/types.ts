@@ -1,13 +1,19 @@
+import type { State } from '@hookstate/core'
 import type { I18n } from '@lingui/core'
 import type React from 'react'
 
 import type { EquipmentItem } from '@/domain/equipment'
+import type { InventoryStateType } from '@/state/InventoryState'
 
 export interface DataGridColumn<T extends EquipmentItem> {
   key: keyof T
   title: string
   className?: string
-  render?: (item: T, i18n: I18n) => React.ReactNode
+  render?: (
+    item: T,
+    i18n: I18n,
+    state: State<InventoryStateType, unknown>,
+  ) => React.ReactNode
 }
 
 export type SortOrder = 'asc' | 'desc'

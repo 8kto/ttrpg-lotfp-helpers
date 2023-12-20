@@ -1,13 +1,13 @@
 import { t } from '@lingui/macro'
 
-import { Coin } from '@/domain'
+import { CurrencyType } from '@/domain/currency'
 import { Encumbrance, EncumbrancePoint } from '@/domain/encumbrance'
 import type { EquipmentItem } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
 
 export type CountableItem = Pick<
   InventoryItem<EquipmentItem>,
-  'points' | 'lockedCost' | 'name' | 'qty'
+  'points' | 'lockedCostCp' | 'name' | 'qty'
 >
 
 export const COINS_PER_ENCUMBRANCE_POINT = 100
@@ -29,13 +29,13 @@ export const getEncumbrance = (points: number): Encumbrance => {
   return Encumbrance.Unencumbered
 }
 
-const getCoinsLockedCost = (type: Coin) => {
+const getCoinsLockedCost = (type: CurrencyType) => {
   switch (type) {
-    case Coin.Copper:
+    case CurrencyType.Copper:
       return t`100 coins (cp)`
-    case Coin.Silver:
+    case CurrencyType.Silver:
       return t`100 coins (sp)`
-    case Coin.Gold:
+    case CurrencyType.Gold:
       return t`100 coins (gp)`
     default:
       throw new Error('Unknown coins type')
@@ -47,13 +47,13 @@ const getCoinsLockedCost = (type: Coin) => {
  */
 export const getCoinItems = (
   coins: number,
-  type: Coin,
+  type: CurrencyType,
 ): Array<CountableItem> => {
   const coinsEncumbrance = Math.floor(coins / COINS_PER_ENCUMBRANCE_POINT)
 
   return Array.from({ length: coinsEncumbrance }, () => {
     return {
-      lockedCost: 0,
+      lockedCostCp: 0,
       name: getCoinsLockedCost(type),
       points: EncumbrancePoint.Regular,
       qty: 1,

@@ -12,12 +12,12 @@ describe('Equipment', () => {
     armor.forEach((item) => {
       expect(item).toMatchObject({
         categoryKey: 'armor',
-        cityCost: expect.any(Number),
+        cityCostCp: expect.any(Number),
         name: expect.any(String),
         points: expect
           // @ts-ignore
           .toBeEnumValue(EncumbrancePoint),
-        ruralCost: expect
+        ruralCostCp: expect
           // @ts-ignore
           .toBeNullOrTypeOf('number'),
         type: expect
@@ -42,12 +42,12 @@ describe('Equipment', () => {
     meleeWeapons.forEach((item) => {
       expect(item).toMatchObject({
         categoryKey: 'meleeWeapons',
-        cityCost: expect.any(Number),
+        cityCostCp: expect.any(Number),
         name: expect.any(String),
         points: expect
           // @ts-ignore
           .toBeEnumValue(EncumbrancePoint),
-        ruralCost: expect
+        ruralCostCp: expect
           // @ts-ignore
           .toBeNullOrTypeOf('number'),
         type: expect
@@ -86,12 +86,12 @@ describe('Equipment', () => {
     missileWeapons.forEach((item) => {
       expect(item).toMatchObject({
         categoryKey: 'missileWeapons',
-        cityCost: expect.any(Number),
+        cityCostCp: expect.any(Number),
         name: expect.any(String),
         points: expect
           // @ts-ignore
           .toBeEnumValue(EncumbrancePoint),
-        ruralCost: expect
+        ruralCostCp: expect
           // @ts-ignore
           .toBeNullOrTypeOf('number'),
         type: expect
@@ -127,12 +127,12 @@ describe('Equipment', () => {
     miscEquipment.forEach((item) => {
       expect(item).toMatchObject({
         categoryKey: 'miscEquipment',
-        cityCost: expect.any(Number),
+        cityCostCp: expect.any(Number),
         name: expect.any(String),
         points: expect
           // @ts-ignore
           .toBeEnumValue(EncumbrancePoint),
-        ruralCost: expect
+        ruralCostCp: expect
           // @ts-ignore
           .toBeNullOrTypeOf('number'),
       })

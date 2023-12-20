@@ -10,7 +10,11 @@ import { addItem, removeItem } from '@/state/helpers'
 
 export type InventoryStateType = {
   armor: ReadonlyArray<InventoryItem<ArmorItem>>
-  copperPieces: number // TODO support different kinds of coins
+  /**
+   * TODO support different kinds of coins
+   * @deprecated
+   */
+  copperPieces: number
   isCoinWeightActive: boolean
   isCostRural: boolean
   meleeWeapons: ReadonlyArray<InventoryItem<MeleeWeaponItem>>
@@ -94,6 +98,11 @@ export const removeEquipmentItem = (item: InventoryItem<EquipmentItem>) =>
 export const toggleCost = () => {
   const isCostRural = InventoryState.isCostRural
   isCostRural.set(!isCostRural.get())
+}
+
+export const toggleCoinsWeightActive = () => {
+  const isCoinWeightActive = InventoryState.isCoinWeightActive
+  isCoinWeightActive.set(!isCoinWeightActive.get())
 }
 
 export const addCopperPieces = (value: number) => {

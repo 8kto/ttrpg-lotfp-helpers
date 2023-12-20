@@ -5,6 +5,7 @@ import DataGrid from '@/components/DataGrid/DataGrid'
 import { trivialSort } from '@/components/DataGrid/helpers'
 import type { DataGridColumn, SortConfig } from '@/components/DataGrid/types'
 import {
+  renderCostGridCol,
   renderNameGridCol,
   renderWeightGridCol,
 } from '@/components/EquipmentList/gridHelpers'
@@ -42,14 +43,16 @@ const columns: ReadonlyArray<DataGridColumn<ArmorItem>> = [
 
 const cityCostColumn: DataGridColumn<ArmorItem> = {
   className: 'w-1/6',
-  key: 'cityCost',
+  key: 'cityCostCp',
+  render: renderCostGridCol,
   get title() {
     return t`Cost, sp`
   },
 }
 const ruralCostColumn: DataGridColumn<ArmorItem> = {
   className: 'w-1/6',
-  key: 'ruralCost',
+  key: 'ruralCostCp',
+  render: renderCostGridCol,
   get title() {
     return t`Cost, sp`
   },
@@ -70,13 +73,13 @@ const ArmorGrid = () => {
   const dataFilteredByCost = useMemo(() => {
     const data = Object.values(Equipment.Armor)
 
-    return isCostRural.get() ? data.filter((i) => i.ruralCost !== null) : data
+    return isCostRural.get() ? data.filter((i) => i.ruralCostCp !== null) : data
   }, [isCostRural])
 
   const handleAddClick = (item: ArmorItem) => {
     const clone = getInventoryItem(
       item,
-      (isCostRural.get() ? item.ruralCost : item.cityCost)!,
+      (isCostRural.get() ? item.ruralCostCp : item.cityCostCp)!,
     )
 
     addArmor(clone)

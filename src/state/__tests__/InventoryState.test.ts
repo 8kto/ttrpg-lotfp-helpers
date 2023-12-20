@@ -28,6 +28,7 @@ import {
   removeMeleeWeapon,
   removeMissileWeapon,
   setCopperPieces,
+  toggleCoinsWeightActive,
   toggleCost,
   useInventoryState,
 } from '@/state/InventoryState'
@@ -152,6 +153,14 @@ describe('InventoryState Tests', () => {
     })
   })
 
+  describe('isCoinWeightActive', () => {
+    it('should toggle active coins weight', () => {
+      expect(InventoryState.isCoinWeightActive.get()).toEqual(true)
+      toggleCoinsWeightActive()
+      expect(InventoryState.isCoinWeightActive.get()).toEqual(false)
+    })
+  })
+
   describe('missileWeapons', () => {
     it('adds weapon item correctly', () => {
       addMissileWeapon(missileWeaponItemMock1)
@@ -203,13 +212,13 @@ describe('InventoryState Tests', () => {
   describe('addCustomEquipmentItem', () => {
     const customItem: InventoryItem<EquipmentItem> = {
       categoryKey: 'meleeWeapons',
-      cityCost: 5,
+      cityCostCp: 5,
       inventoryId: 'a15',
-      lockedCost: 5,
+      lockedCostCp: 5,
       name: 'Jigsaw',
       points: EncumbrancePoint.Regular,
       qty: 1,
-      ruralCost: 10,
+      ruralCostCp: 10,
     }
 
     it('adds item', () => {

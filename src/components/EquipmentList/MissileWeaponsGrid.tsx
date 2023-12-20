@@ -5,7 +5,10 @@ import DamageFragment from '@/components/DamageFragment'
 import DataGrid from '@/components/DataGrid/DataGrid'
 import type { DataGridSortFunction } from '@/components/DataGrid/helpers'
 import type { DataGridColumn } from '@/components/DataGrid/types'
-import { renderWeightGridCol } from '@/components/EquipmentList/gridHelpers'
+import {
+  renderCostGridCol,
+  renderWeightGridCol,
+} from '@/components/EquipmentList/gridHelpers'
 import { handleSortByDamage } from '@/components/EquipmentList/helpers'
 import ItemDetails from '@/components/Inventory/ItemDetails/ItemDetails'
 import RangeFragment from '@/components/RangeFragment'
@@ -79,14 +82,16 @@ const columns: ReadonlyArray<DataGridColumn<MissileWeaponItem>> = [
 
 const cityCostColumn: DataGridColumn<MissileWeaponItem> = {
   className: 'w-1/6',
-  key: 'cityCost',
+  key: 'cityCostCp',
+  render: renderCostGridCol,
   get title() {
     return t`Cost, sp`
   },
 }
 const ruralCostColumn: DataGridColumn<MissileWeaponItem> = {
   className: 'w-1/6',
-  key: 'ruralCost',
+  key: 'ruralCostCp',
+  render: renderCostGridCol,
   get title() {
     return t`Cost, sp`
   },
@@ -108,13 +113,13 @@ const MissileWeaponsGrid = () => {
   const dataFilteredByCost = useMemo(() => {
     const data = Object.values(Equipment.MissileWeapons)
 
-    return isCostRural.get() ? data.filter((i) => i.ruralCost !== null) : data
+    return isCostRural.get() ? data.filter((i) => i.ruralCostCp !== null) : data
   }, [isCostRural])
 
   const handleAddClick = (item: MissileWeaponItem) => {
     const clone = getInventoryItem(
       item,
-      (isCostRural.get() ? item.ruralCost : item.cityCost)!,
+      (isCostRural.get() ? item.ruralCostCp : item.cityCostCp)!,
     )
     addMissileWeapon(clone)
   }

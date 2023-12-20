@@ -1,21 +1,29 @@
 import { Trans } from '@lingui/macro'
-import React from 'react'
+import React, { useMemo } from 'react'
 
 import CostFragment from '@/components/CostFragment/CostFragment'
 import EncumbranceFragment from '@/components/EncumbranceFragment/EncumbranceFragment'
-import { getTotal } from '@/components/InventoryDetails/helpers'
 import MovementFragment from '@/components/MovementFragment/MovementFragment'
 import Wallet from '@/components/Wallet/Wallet'
+import { EncumbranceThreshold } from '@/domain/encumbrance'
+import Encumbrance from '@/shared/services/Encumbrance'
 import { combineEquipment } from '@/state/helpers'
 import { useInventoryState } from '@/state/InventoryState'
 
 const InventoryDetails = () => {
   const { state: equipmentState } = useInventoryState()
   const { isCoinWeightActive, copperPieces } = equipmentState
-  const { totalEncumbrancePoints, totalCostSp } = getTotal(
-    combineEquipment(equipmentState),
-    isCoinWeightActive ? copperPieces.get() : 0,
-  )
+
+  const { totalEncumbrancePoints, totalCostCp } = useMemo(() => {
+    const encumbranceService = new Encumbrance({
+      threshold: EncumbranceThreshold.Regular,
+    })
+
+    return encumbranceService.getTotal(
+      combineEquipment(equipmentState),
+      isCoinWeightActive ? copperPieces.get() : 0,
+    )
+  }, [copperPieces, equipmentState, isCoinWeightActive])
 
   const titleClassname = 'ph-font-cursive text-red-900 text-lg'
   const detailsRowClassname =
@@ -37,7 +45,7 @@ const InventoryDetails = () => {
             <Trans>Inventory cost</Trans>
           </dt>
           <dd className='mt-1 leading-6 text-gray-700 sm:col-span-2 sm:mt-0'>
-            <CostFragment cost={totalCostSp} />
+            <CostFragment cost={totalCostCp} copperPieces />
           </dd>
         </div>
         <div className={detailsRowClassname}>
