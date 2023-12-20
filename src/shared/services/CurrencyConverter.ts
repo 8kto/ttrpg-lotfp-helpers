@@ -47,7 +47,7 @@ export default class CurrencyConverter {
   /**
    * Convert any cost onto the default one for displaying in UI
    */
-  static getDisplayCost(moneyUnit: CurrencyBundle) {
-    return this.convertFromTo(moneyUnit, CurrencyType.Silver)
+  static getDisplayCost(bundle: CurrencyBundle) {
+    return this.convertFromTo(bundle, CurrencyType.Silver)
   }
 }
