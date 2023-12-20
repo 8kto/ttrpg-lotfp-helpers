@@ -2,8 +2,10 @@ import { Trans } from '@lingui/macro'
 
 import type { DataGridColumn } from '@/components/DataGrid/types'
 import ItemDetails from '@/components/Inventory/ItemDetails/ItemDetails'
+import { CurrencyType } from '@/domain/currency'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { EquipmentItem } from '@/domain/equipment'
+import CurrencyConverter from '@/shared/services/CurrencyConverter'
 import { useInventoryState } from '@/state/InventoryState'
 
 type RenderFunction = DataGridColumn<EquipmentItem>['render']
@@ -25,7 +27,7 @@ export const renderNameGridCol: RenderFunction = (item, i18n) => {
       {!!weightLabel && (
         <p
           title={i18n._('Weight')}
-          className='block sm:hidden text-sm text-gray-500'
+          className='block text-sm text-gray-500 sm:hidden'
         >
           <span className='text-gray-400'>
             <Trans>Weight</Trans>:{' '}
@@ -44,9 +46,17 @@ export const renderCostGridCol: RenderFunction = (item) => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
   } = useInventoryState()
 
+  let valueCp: number
   if (isCostRural.get()) {
-    return item.ruralCostCp === null ? 0 : item.ruralCostCp / 10
+    valueCp = item.ruralCostCp === null ? 0 : item.ruralCostCp
+  } else {
+    valueCp = item.cityCostCp
   }
 
-  return item.cityCostCp / 10
+  const converted = CurrencyConverter.getDisplayCost({
+    coin: CurrencyType.Copper,
+    value: valueCp,
+  })
+
+  return converted.value
 }
