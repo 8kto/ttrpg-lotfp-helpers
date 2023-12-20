@@ -79,14 +79,14 @@ const columns: ReadonlyArray<DataGridColumn<MissileWeaponItem>> = [
 
 const cityCostColumn: DataGridColumn<MissileWeaponItem> = {
   className: 'w-1/6',
-  key: 'cityCost',
+  key: 'cityCostCp',
   get title() {
     return t`Cost, sp`
   },
 }
 const ruralCostColumn: DataGridColumn<MissileWeaponItem> = {
   className: 'w-1/6',
-  key: 'ruralCost',
+  key: 'ruralCostCp',
   get title() {
     return t`Cost, sp`
   },
@@ -108,13 +108,13 @@ const MissileWeaponsGrid = () => {
   const dataFilteredByCost = useMemo(() => {
     const data = Object.values(Equipment.MissileWeapons)
 
-    return isCostRural.get() ? data.filter((i) => i.ruralCost !== null) : data
+    return isCostRural.get() ? data.filter((i) => i.ruralCostCp !== null) : data
   }, [isCostRural])
 
   const handleAddClick = (item: MissileWeaponItem) => {
     const clone = getInventoryItem(
       item,
-      (isCostRural.get() ? item.ruralCost : item.cityCost)!,
+      (isCostRural.get() ? item.ruralCostCp : item.cityCostCp)!,
     )
     addMissileWeapon(clone)
   }

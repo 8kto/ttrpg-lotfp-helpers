@@ -5,34 +5,34 @@ import type { EquipmentItem } from '@/domain/equipment'
 describe('DataGrid helpers', () => {
   describe('trivialSort', () => {
     const mockEquipmentItems = [
-      { cityCost: 10, name: 'Item A' },
-      { cityCost: 20, name: 'Item B' },
-      { cityCost: 15, name: 'Item C' },
+      { cityCostCp: 10, name: 'Item A' },
+      { cityCostCp: 20, name: 'Item B' },
+      { cityCostCp: 15, name: 'Item C' },
     ] as Array<EquipmentItem>
 
     it('sorts ascending correctly by a given key', () => {
       const sortConfig: SortConfig<EquipmentItem> = {
         direction: 'asc',
-        key: 'cityCost',
+        key: 'cityCostCp',
       }
       const sortedItems = [...mockEquipmentItems].sort(trivialSort(sortConfig))
       expect(sortedItems).toEqual([
-        { cityCost: 10, name: 'Item A' },
-        { cityCost: 15, name: 'Item C' },
-        { cityCost: 20, name: 'Item B' },
+        { cityCostCp: 10, name: 'Item A' },
+        { cityCostCp: 15, name: 'Item C' },
+        { cityCostCp: 20, name: 'Item B' },
       ])
     })
 
     it('sorts descending correctly by a given key', () => {
       const sortConfig: SortConfig<EquipmentItem> = {
         direction: 'desc',
-        key: 'cityCost',
+        key: 'cityCostCp',
       }
       const sortedItems = [...mockEquipmentItems].sort(trivialSort(sortConfig))
       expect(sortedItems).toEqual([
-        { cityCost: 20, name: 'Item B' },
-        { cityCost: 15, name: 'Item C' },
-        { cityCost: 10, name: 'Item A' },
+        { cityCostCp: 20, name: 'Item B' },
+        { cityCostCp: 15, name: 'Item C' },
+        { cityCostCp: 10, name: 'Item A' },
       ])
     })
 
@@ -53,9 +53,9 @@ describe('DataGrid helpers', () => {
       }
       const sortedItems = [...mockEquipmentItems].sort(trivialSort(sortConfig))
       expect(sortedItems).toEqual([
-        { cityCost: 10, name: 'Item A' },
-        { cityCost: 20, name: 'Item B' },
-        { cityCost: 15, name: 'Item C' },
+        { cityCostCp: 10, name: 'Item A' },
+        { cityCostCp: 20, name: 'Item B' },
+        { cityCostCp: 15, name: 'Item C' },
       ])
     })
   })

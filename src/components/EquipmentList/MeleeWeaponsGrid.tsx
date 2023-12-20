@@ -44,14 +44,14 @@ const columns: ReadonlyArray<DataGridColumn<MeleeWeaponItem>> = [
 
 const cityCostColumn: DataGridColumn<MeleeWeaponItem> = {
   className: 'w-1/6',
-  key: 'cityCost',
+  key: 'cityCostCp',
   get title() {
     return t`Cost, sp`
   },
 }
 const ruralCostColumn: DataGridColumn<MeleeWeaponItem> = {
   className: 'w-1/6',
-  key: 'ruralCost',
+  key: 'ruralCostCp',
   get title() {
     return t`Cost, sp`
   },
@@ -73,13 +73,13 @@ const MeleeWeaponsGrid = () => {
   const dataFilteredByCost = useMemo(() => {
     const data = Object.values(Equipment.MeleeWeapons)
 
-    return isCostRural.get() ? data.filter((i) => i.ruralCost !== null) : data
+    return isCostRural.get() ? data.filter((i) => i.ruralCostCp !== null) : data
   }, [isCostRural])
 
   const handleAddClick = (item: MeleeWeaponItem) => {
     const clone = getInventoryItem(
       item,
-      (isCostRural.get() ? item.ruralCost : item.cityCost)!,
+      (isCostRural.get() ? item.ruralCostCp : item.cityCostCp)!,
     )
     addMeleeWeapon(clone)
   }

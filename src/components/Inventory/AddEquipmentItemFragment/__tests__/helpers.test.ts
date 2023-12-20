@@ -26,14 +26,14 @@ describe('AddEquipmentItemFragment helpers', () => {
 
       expect(result).toEqual({
         categoryKey: 'meleeWeapons',
-        cityCost: 100,
+        cityCostCp: 100,
         details: 'A sharp sword',
         inventoryId: 'Sword001',
         lockedCost: 100,
         name: 'Sword',
         points: EncumbrancePoint.Regular,
         qty: 1,
-        ruralCost: 100,
+        ruralCostCp: 100,
       })
     })
 
@@ -70,14 +70,14 @@ describe('AddEquipmentItemFragment helpers', () => {
       const result = getCustomEquipmentItem(data)
       expect(result).toEqual({
         categoryKey: 'meleeWeapons',
-        cityCost: 0,
+        cityCostCp: 0,
         details: null,
         inventoryId: 'Sword001',
         lockedCost: 0,
         name: 'Sword',
         points: EncumbrancePoint.Regular,
         qty: 1,
-        ruralCost: null,
+        ruralCostCp: null,
       })
     })
   })
