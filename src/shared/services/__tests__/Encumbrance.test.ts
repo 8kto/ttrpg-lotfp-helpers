@@ -1,9 +1,15 @@
+import type { CurrencyWallet } from '@/domain/currency'
 import { EncumbrancePoint, EncumbranceThreshold } from '@/domain/encumbrance'
 import type { EquipmentItem } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
 import Encumbrance from '@/shared/services/Encumbrance'
 
 describe('Encumbrance', () => {
+  const emptyWallet: CurrencyWallet = Object.freeze({
+    Copper: 0,
+    Gold: 0,
+    Silver: 0,
+  })
   let autoincId = 1
 
   const getItemMock = (
@@ -46,21 +52,31 @@ describe('Encumbrance', () => {
         threshold: EncumbranceThreshold.Regular,
       })
 
-      expect(service.getTotal(items, 0)).toEqual({
-        totalCostCp: 1800,
+      expect(service.getTotal(items, emptyWallet)).toEqual({
+        totalCosts: {
+          Copper: 1800,
+          Gold: 0,
+          Silver: 0,
+        },
         totalEncumbrancePoints: 6.4,
       })
     })
 
     it('returns totals when coins provided', () => {
-      const coinsCp = 3500 // 35 slots
+      const copperCoins = 3500 // 35 slots
       const copperCoinsEncumbrance = 7 // each 100 coins are Regular encumbrance; 35 enc. slots / 5 === 7 enc. points
       const service = new Encumbrance({
         threshold: EncumbranceThreshold.Regular,
       })
 
-      expect(service.getTotal(items, coinsCp)).toEqual({
-        totalCostCp: 1800,
+      expect(
+        service.getTotal(items, { ...emptyWallet, Copper: copperCoins }),
+      ).toEqual({
+        totalCosts: {
+          Copper: 1800,
+          Gold: 0,
+          Silver: 0,
+        },
         totalEncumbrancePoints: 6.4 + copperCoinsEncumbrance,
       })
     })
@@ -74,8 +90,10 @@ describe('Encumbrance', () => {
       const service = new Encumbrance({
         threshold: EncumbranceThreshold.Regular,
       })
-      expect(service.getTotal(itemsEmpty, copperCoins)).toEqual({
-        totalCostCp: 0,
+      expect(
+        service.getTotal(itemsEmpty, { ...emptyWallet, Copper: copperCoins }),
+      ).toEqual({
+        totalCosts: emptyWallet,
         totalEncumbrancePoints: copperCoinsEncumbrance,
       })
     })
@@ -85,8 +103,8 @@ describe('Encumbrance', () => {
         threshold: EncumbranceThreshold.Regular,
       })
 
-      expect(service.getTotal([], 0)).toEqual({
-        totalCostCp: 0,
+      expect(service.getTotal([], emptyWallet)).toEqual({
+        totalCosts: emptyWallet,
         totalEncumbrancePoints: 0,
       })
     })
@@ -104,8 +122,12 @@ describe('Encumbrance', () => {
         threshold: EncumbranceThreshold.Regular,
       })
 
-      expect(service.getTotal(itemsWithQty, 0)).toEqual({
-        totalCostCp: 1100,
+      expect(service.getTotal(itemsWithQty, emptyWallet)).toEqual({
+        totalCosts: {
+          Copper: 1100,
+          Gold: 0,
+          Silver: 0,
+        },
         totalEncumbrancePoints: 2,
       })
     })
@@ -121,8 +143,12 @@ describe('Encumbrance', () => {
         threshold: EncumbranceThreshold.Regular,
       })
 
-      expect(service.getTotal(itemsWithQty, 0)).toEqual({
-        totalCostCp: 1500,
+      expect(service.getTotal(itemsWithQty, emptyWallet)).toEqual({
+        totalCosts: {
+          Copper: 1500,
+          Gold: 0,
+          Silver: 0,
+        },
         totalEncumbrancePoints: 6.2,
       })
     })
@@ -146,8 +172,12 @@ describe('Encumbrance', () => {
         threshold: EncumbranceThreshold.Regular,
       })
 
-      expect(service.getTotal(itemsWithQty, 0)).toEqual({
-        totalCostCp: 4750,
+      expect(service.getTotal(itemsWithQty, emptyWallet)).toEqual({
+        totalCosts: {
+          Copper: 4750,
+          Gold: 0,
+          Silver: 0,
+        },
         totalEncumbrancePoints: 11.2,
       })
     })
@@ -161,7 +191,7 @@ describe('Encumbrance', () => {
       const items = Array.from({ length: 5 }, () =>
         getItemMock(100, EncumbrancePoint.Regular),
       )
-      const result = service.getTotal(items, 0)
+      const result = service.getTotal(items, emptyWallet)
       expect(result.totalEncumbrancePoints).toBe(0)
     })
 
@@ -170,7 +200,7 @@ describe('Encumbrance', () => {
       const items = Array.from({ length: 10 }, () =>
         getItemMock(100, EncumbrancePoint.Regular),
       )
-      const result = service.getTotal(items, 0)
+      const result = service.getTotal(items, emptyWallet)
       expect(result.totalEncumbrancePoints).toBe(0)
     })
   })

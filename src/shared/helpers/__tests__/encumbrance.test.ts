@@ -1,4 +1,3 @@
-import { CurrencyType } from '@/domain/currency'
 import { Encumbrance, EncumbrancePoint } from '@/domain/encumbrance'
 import { getCoinItems, getEncumbrance } from '@/shared/helpers/encumbrance'
 
@@ -32,6 +31,8 @@ describe('encumbrance helpers', () => {
       })
     }
 
+    // TODO extend tests
+
     it.each([
       [100, 1],
       [200, 2],
@@ -42,9 +43,13 @@ describe('encumbrance helpers', () => {
     ])(
       'should return expected array of items for %d CP',
       (input, expectedLength) => {
-        expect(getCoinItems(input, CurrencyType.Copper)).toEqual(
-          mockCountableItemCp(expectedLength),
-        )
+        expect(
+          getCoinItems({
+            Copper: input,
+            Gold: 0,
+            Silver: 0,
+          }),
+        ).toEqual(mockCountableItemCp(expectedLength))
       },
     )
   })
