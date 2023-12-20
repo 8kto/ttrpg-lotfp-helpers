@@ -36,7 +36,11 @@ describe('Inventory helpers', () => {
         meleeWeapons: [meleeWeaponItemMock1, meleeWeaponItemMock2],
         miscEquipment: [miscEquipItem1, miscEquipItem2],
         missileWeapons: [missileWeaponItemMock1, missileWeaponItemMock2],
-        wallet: 0,
+        wallet: {
+          Copper: 0,
+          Gold: 0,
+          Silver: 0,
+        },
       })
 
       const combinedEquipment = combineEquipment(mockEquipmentState)
@@ -66,7 +70,11 @@ describe('Inventory helpers', () => {
         meleeWeapons: [],
         miscEquipment: [],
         missileWeapons: [],
-        wallet: 0,
+        wallet: {
+          Copper: 0,
+          Gold: 0,
+          Silver: 0,
+        },
       })
 
       const combinedEquipment = combineEquipment(mockEmptyEquipmentState)

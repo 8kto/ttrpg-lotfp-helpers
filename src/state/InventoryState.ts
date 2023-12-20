@@ -2,7 +2,7 @@ import { hookstate, useHookstate } from '@hookstate/core'
 import { localstored } from '@hookstate/localstored'
 
 import type { ArmorItem } from '@/domain/armor'
-import type { CurrencyBundle, CurrencyWallet } from '@/domain/currency'
+import type { CurrencyRecord, CurrencyWallet } from '@/domain/currency'
 import type { EquipmentItem } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
 import type { MeleeWeaponItem, MissileWeaponItem } from '@/domain/weapon'
@@ -33,9 +33,9 @@ const initialInventoryState: Readonly<InventoryStateType> = {
   miscEquipment: Array<InventoryItem<EquipmentItem>>(),
   missileWeapons: Array<InventoryItem<MissileWeaponItem>>(),
   wallet: {
-    copper: 0,
-    gold: 0,
-    silver: 0,
+    Copper: 0,
+    Gold: 0,
+    Silver: 0,
   },
 }
 
@@ -107,22 +107,22 @@ export const toggleCoinsWeightActive = () => {
   isCoinWeightActive.set(!isCoinWeightActive.get())
 }
 
-export const addCurrency = (bundle: CurrencyBundle) => {
+export const addCurrency = (record: CurrencyRecord) => {
   const wallet = InventoryState.wallet
-  wallet.merge((v) => CurrencyConverter.add(bundle, v))
+  wallet.merge((v) => CurrencyConverter.add(record, v))
 }
 
-export const setCurrencies = (bundle: CurrencyBundle) => {
+export const setCurrencies = (record: CurrencyRecord) => {
   const balance = InventoryState.wallet
-  balance.set(CurrencyConverter.createWalletFrom(bundle))
+  balance.set(CurrencyConverter.createWalletFrom(record))
 }
 
 export const resetCurrencies = () => {
   const balance = InventoryState.wallet
   balance.set({
-    copper: 0,
-    gold: 0,
-    silver: 0,
+    Copper: 0,
+    Gold: 0,
+    Silver: 0,
   })
 }
 

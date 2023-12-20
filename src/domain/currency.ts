@@ -11,13 +11,12 @@ export enum Unit {
 }
 
 export type CurrencyWallet = {
-  copper: number
-  silver: number
-  gold: number
+  Copper: number
+  Silver: number
+  Gold: number
 }
 
-// rename CurrencyRecord
-export type CurrencyBundle = {
+export type CurrencyRecord = {
   value: number
-  coin: CurrencyType
+  currency: CurrencyType
 }

@@ -70,9 +70,9 @@ describe('InventoryState Tests', () => {
         miscEquipment: [miscEquipItem1],
         missileWeapons: [missileWeaponItemMock1],
         wallet: {
-          copper: 0,
-          gold: 0,
-          silver: 0,
+          Copper: 0,
+          Gold: 0,
+          Silver: 0,
         },
       } as InventoryStateType)
 
@@ -116,9 +116,9 @@ describe('InventoryState Tests', () => {
         miscEquipment: [],
         missileWeapons: [],
         wallet: {
-          copper: 0,
-          gold: 0,
-          silver: 0,
+          Copper: 0,
+          Gold: 0,
+          Silver: 0,
         },
       } as InventoryStateType)
     })
@@ -204,69 +204,69 @@ describe('InventoryState Tests', () => {
 
   describe('wallet', () => {
     it('adds coins', () => {
-      addCurrency({ coin: CurrencyType.Copper, value: 50 })
+      addCurrency({ currency: CurrencyType.Copper, value: 50 })
       expect(InventoryState.wallet.get()).toEqual({
-        copper: 50,
-        gold: 0,
-        silver: 0,
+        Copper: 50,
+        Gold: 0,
+        Silver: 0,
       })
-      addCurrency({ coin: CurrencyType.Copper, value: 150 })
+      addCurrency({ currency: CurrencyType.Copper, value: 150 })
       expect(InventoryState.wallet.get()).toEqual({
-        copper: 200,
-        gold: 0,
-        silver: 0,
+        Copper: 200,
+        Gold: 0,
+        Silver: 0,
       })
     })
 
     it('adds coins to different currencies', () => {
-      addCurrency({ coin: CurrencyType.Copper, value: 50 })
+      addCurrency({ currency: CurrencyType.Copper, value: 50 })
       expect(InventoryState.wallet.get()).toEqual({
-        copper: 50,
-        gold: 0,
-        silver: 0,
+        Copper: 50,
+        Gold: 0,
+        Silver: 0,
       })
-      addCurrency({ coin: CurrencyType.Silver, value: 150 })
+      addCurrency({ currency: CurrencyType.Silver, value: 150 })
       expect(InventoryState.wallet.get()).toEqual({
-        copper: 50,
-        gold: 0,
-        silver: 150,
+        Copper: 50,
+        Gold: 0,
+        Silver: 150,
       })
-      addCurrency({ coin: CurrencyType.Gold, value: 1 })
+      addCurrency({ currency: CurrencyType.Gold, value: 1 })
       expect(InventoryState.wallet.get()).toEqual({
-        copper: 50,
-        gold: 1,
-        silver: 150,
+        Copper: 50,
+        Gold: 1,
+        Silver: 150,
       })
     })
 
     it('set coins correctly', () => {
-      setCurrencies({ coin: CurrencyType.Copper, value: 1000 })
+      setCurrencies({ currency: CurrencyType.Copper, value: 1000 })
       expect(InventoryState.wallet.get()).toEqual({
-        copper: 1000,
-        gold: 0,
-        silver: 0,
+        Copper: 1000,
+        Gold: 0,
+        Silver: 0,
       })
-      setCurrencies({ coin: CurrencyType.Copper, value: 42 })
+      setCurrencies({ currency: CurrencyType.Copper, value: 42 })
       expect(InventoryState.wallet.get()).toEqual({
-        copper: 42,
-        gold: 0,
-        silver: 0,
+        Copper: 42,
+        Gold: 0,
+        Silver: 0,
       })
     })
 
     it('set coins to different currencies', () => {
-      setCurrencies({ coin: CurrencyType.Copper, value: 1000 })
+      setCurrencies({ currency: CurrencyType.Copper, value: 1000 })
 
       expect(InventoryState.wallet.get()).toEqual({
-        copper: 1000,
-        gold: 0,
-        silver: 0,
+        Copper: 1000,
+        Gold: 0,
+        Silver: 0,
       })
-      setCurrencies({ coin: CurrencyType.Silver, value: 42 })
+      setCurrencies({ currency: CurrencyType.Silver, value: 42 })
       expect(InventoryState.wallet.get()).toEqual({
-        copper: 0,
-        gold: 0,
-        silver: 42,
+        Copper: 0,
+        Gold: 0,
+        Silver: 42,
       })
     })
   })
