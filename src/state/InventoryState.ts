@@ -112,7 +112,7 @@ export const addCurrency = (bundle: CurrencyBundle) => {
   wallet.merge((v) => CurrencyConverter.add(bundle, v))
 }
 
-export const setCopperPieces = (bundle: CurrencyBundle) => {
+export const setCurrency = (bundle: CurrencyBundle) => {
   const balance = InventoryState.wallet
   balance.set(CurrencyConverter.createWalletFrom(bundle))
 }

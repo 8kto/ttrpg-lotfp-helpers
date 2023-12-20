@@ -1,5 +1,6 @@
 import { act, renderHook } from '@testing-library/react'
 
+import { CurrencyType } from '@/domain/currency'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { EquipmentItem } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
@@ -15,7 +16,7 @@ import type {
 } from '@/state/InventoryState'
 import {
   addArmor,
-  addCopperPieces,
+  addCurrency,
   addCustomEquipmentItem,
   addEquipmentItem,
   addMeleeWeapon,
@@ -27,7 +28,7 @@ import {
   removeEquipmentItem,
   removeMeleeWeapon,
   removeMissileWeapon,
-  setCopperPieces,
+  setCurrency,
   toggleCoinsWeightActive,
   toggleCost,
   useInventoryState,
@@ -63,12 +64,16 @@ describe('InventoryState Tests', () => {
 
       expect(result.current.state.get()).toEqual({
         armor: [armorItemMock1],
-        copperPieces: 0,
         isCoinWeightActive: true,
         isCostRural: true,
         meleeWeapons: [meleeWeaponItemMock1],
         miscEquipment: [miscEquipItem1],
         missileWeapons: [missileWeaponItemMock1],
+        wallet: {
+          copper: 0,
+          gold: 0,
+          silver: 0,
+        },
       } as InventoryStateType)
 
       act(() => {
@@ -105,13 +110,17 @@ describe('InventoryState Tests', () => {
 
       expect(result.current.state.get()).toEqual({
         armor: [],
-        copperPieces: 0,
         isCoinWeightActive: true,
         isCostRural: true,
         meleeWeapons: [],
         miscEquipment: [],
         missileWeapons: [],
-      })
+        wallet: {
+          copper: 0,
+          gold: 0,
+          silver: 0,
+        },
+      } as InventoryStateType)
     })
   })
 
@@ -193,19 +202,72 @@ describe('InventoryState Tests', () => {
     })
   })
 
-  describe('copperPieces', () => {
-    it('adds coins correctly', () => {
-      addCopperPieces(50)
-      expect(InventoryState.copperPieces.get()).toEqual(50)
-      addCopperPieces(150)
-      expect(InventoryState.copperPieces.get()).toEqual(200)
+  describe('wallet', () => {
+    it('adds coins', () => {
+      addCurrency({ coin: CurrencyType.Copper, value: 50 })
+      expect(InventoryState.wallet.get()).toEqual({
+        copper: 50,
+        gold: 0,
+        silver: 0,
+      })
+      addCurrency({ coin: CurrencyType.Copper, value: 150 })
+      expect(InventoryState.wallet.get()).toEqual({
+        copper: 200,
+        gold: 0,
+        silver: 0,
+      })
+    })
+
+    it('adds coins to different currencies', () => {
+      addCurrency({ coin: CurrencyType.Copper, value: 50 })
+      expect(InventoryState.wallet.get()).toEqual({
+        copper: 50,
+        gold: 0,
+        silver: 0,
+      })
+      addCurrency({ coin: CurrencyType.Silver, value: 150 })
+      expect(InventoryState.wallet.get()).toEqual({
+        copper: 50,
+        gold: 0,
+        silver: 150,
+      })
+      addCurrency({ coin: CurrencyType.Gold, value: 1 })
+      expect(InventoryState.wallet.get()).toEqual({
+        copper: 50,
+        gold: 1,
+        silver: 150,
+      })
     })
 
     it('set coins correctly', () => {
-      setCopperPieces(1000)
-      expect(InventoryState.copperPieces.get()).toEqual(1000)
-      setCopperPieces(400)
-      expect(InventoryState.copperPieces.get()).toEqual(400)
+      setCurrency({ coin: CurrencyType.Copper, value: 1000 })
+      expect(InventoryState.wallet.get()).toEqual({
+        copper: 1000,
+        gold: 0,
+        silver: 0,
+      })
+      setCurrency({ coin: CurrencyType.Copper, value: 42 })
+      expect(InventoryState.wallet.get()).toEqual({
+        copper: 42,
+        gold: 0,
+        silver: 0,
+      })
+    })
+
+    it('set coins to different currencies', () => {
+      setCurrency({ coin: CurrencyType.Copper, value: 1000 })
+
+      expect(InventoryState.wallet.get()).toEqual({
+        copper: 1000,
+        gold: 0,
+        silver: 0,
+      })
+      setCurrency({ coin: CurrencyType.Silver, value: 42 })
+      expect(InventoryState.wallet.get()).toEqual({
+        copper: 0,
+        gold: 0,
+        silver: 42,
+      })
     })
   })
 
