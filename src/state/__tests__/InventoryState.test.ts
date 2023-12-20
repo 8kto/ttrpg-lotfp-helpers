@@ -28,7 +28,7 @@ import {
   removeEquipmentItem,
   removeMeleeWeapon,
   removeMissileWeapon,
-  setCurrency,
+  setCurrencies,
   toggleCoinsWeightActive,
   toggleCost,
   useInventoryState,
@@ -240,13 +240,13 @@ describe('InventoryState Tests', () => {
     })
 
     it('set coins correctly', () => {
-      setCurrency({ coin: CurrencyType.Copper, value: 1000 })
+      setCurrencies({ coin: CurrencyType.Copper, value: 1000 })
       expect(InventoryState.wallet.get()).toEqual({
         copper: 1000,
         gold: 0,
         silver: 0,
       })
-      setCurrency({ coin: CurrencyType.Copper, value: 42 })
+      setCurrencies({ coin: CurrencyType.Copper, value: 42 })
       expect(InventoryState.wallet.get()).toEqual({
         copper: 42,
         gold: 0,
@@ -255,14 +255,14 @@ describe('InventoryState Tests', () => {
     })
 
     it('set coins to different currencies', () => {
-      setCurrency({ coin: CurrencyType.Copper, value: 1000 })
+      setCurrencies({ coin: CurrencyType.Copper, value: 1000 })
 
       expect(InventoryState.wallet.get()).toEqual({
         copper: 1000,
         gold: 0,
         silver: 0,
       })
-      setCurrency({ coin: CurrencyType.Silver, value: 42 })
+      setCurrencies({ coin: CurrencyType.Silver, value: 42 })
       expect(InventoryState.wallet.get()).toEqual({
         copper: 0,
         gold: 0,
