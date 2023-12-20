@@ -1,5 +1,5 @@
 import type { CurrencyBundle, CurrencyWallet } from '@/domain/currency'
-import { CurrencyType } from '@/domain/currency'
+import { CurrencyType, Unit } from '@/domain/currency'
 
 export default class CurrencyConverter {
   static CURRENCY_TYPE_WALLET: Record<CurrencyType, keyof CurrencyWallet> = {
@@ -63,6 +63,33 @@ export default class CurrencyConverter {
    */
   static getDisplayCost(bundle: CurrencyBundle) {
     return this.convertFromTo(bundle, CurrencyType.Silver)
+  }
+
+  static isValidWallet(wallet: CurrencyWallet): boolean {
+    return Object.values(wallet).every((v) => v >= 0)
+  }
+
+  static isWalletEmpty(wallet: CurrencyWallet): boolean {
+    return Object.values(wallet).every((v) => !v)
+  }
+
+  static getDisplayCostFromWallet(wallet: CurrencyWallet) {
+    if (!this.isValidWallet(wallet)) {
+      throw new Error(`Invalid values in wallet ${JSON.stringify(wallet)}`)
+    }
+
+    const values = [
+      [wallet.gold, Unit.Gold],
+      [wallet.silver, Unit.Silver],
+      [wallet.copper, Unit.Copper],
+    ]
+      .filter((v) => !!v[0])
+      .map(([value, suffix]) => {
+        return `${value}${suffix}`
+      })
+      .join(', ')
+
+    return values
   }
 
   static add(bundle: CurrencyBundle, wallet: CurrencyWallet): CurrencyWallet {
