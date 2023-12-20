@@ -10,7 +10,7 @@ export const getInventoryItem = <T extends EquipmentItem>(
   return deepclone<InventoryItem<T>>({
     ...item,
     inventoryId: item.name.toString() + getAutoIncrementedId(),
-    lockedCost: cost,
+    lockedCostCp: cost,
     qty: 1,
   })
 }

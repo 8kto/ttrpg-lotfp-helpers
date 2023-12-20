@@ -7,7 +7,7 @@ import type { InventoryItem } from '@/domain/inventory'
 
 export type CountableItem = Pick<
   InventoryItem<EquipmentItem>,
-  'points' | 'lockedCost' | 'name' | 'qty'
+  'points' | 'lockedCostCp' | 'name' | 'qty'
 >
 
 export const COINS_PER_ENCUMBRANCE_POINT = 100
@@ -53,7 +53,7 @@ export const getCoinItems = (
 
   return Array.from({ length: coinsEncumbrance }, () => {
     return {
-      lockedCost: 0,
+      lockedCostCp: 0,
       name: getCoinsLockedCost(type),
       points: EncumbrancePoint.Regular,
       qty: 1,

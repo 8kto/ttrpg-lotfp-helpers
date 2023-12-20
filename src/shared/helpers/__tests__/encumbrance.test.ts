@@ -24,7 +24,7 @@ describe('encumbrance helpers', () => {
     const mockCountableItemCp = (length: number) => {
       return Array.from({ length }, () => {
         return {
-          lockedCost: 0,
+          lockedCostCp: 0,
           name: '100 coins (cp)',
           points: EncumbrancePoint.Regular,
           qty: 1,
