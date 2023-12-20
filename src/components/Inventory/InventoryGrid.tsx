@@ -5,6 +5,7 @@ import React from 'react'
 import type { InventoryColumn } from '@/components/Inventory/types'
 import type { EquipmentItem } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
+import { useInventoryState } from '@/state/InventoryState'
 
 export interface InventoryTableProps<T extends InventoryItem<EquipmentItem>> {
   data: ReadonlyArray<T>
@@ -18,6 +19,8 @@ function InventoryGrid<T extends InventoryItem<EquipmentItem>>({
   onRemoveClick,
 }: InventoryTableProps<T>) {
   const { i18n } = useLingui()
+  const { state } = useInventoryState()
+
   const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left ph-color-accent uppercase`
   const cellClassnames = `p-4 font-normal text-gray-900 align-top`
 
@@ -45,7 +48,7 @@ function InventoryGrid<T extends InventoryItem<EquipmentItem>>({
                 className={`${cellClassnames} ${column.className ?? ''}`}
               >
                 {column.render
-                  ? column.render(item, i18n)
+                  ? column.render(item, i18n, state)
                   : (item[column.key] as React.ReactNode)}
               </td>
             ))}
