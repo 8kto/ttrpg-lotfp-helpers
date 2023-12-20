@@ -33,7 +33,7 @@ export const getCustomEquipmentItem = (
     cityCostCp: Number(data.cost) || 0,
     details: data.details || null,
     inventoryId: data.name + getAutoIncrementedId(),
-    lockedCost: Number(data.cost) || 0,
+    lockedCostCp: Number(data.cost) || 0,
     name: data.name,
     points: Number(data.points),
     qty: 1,

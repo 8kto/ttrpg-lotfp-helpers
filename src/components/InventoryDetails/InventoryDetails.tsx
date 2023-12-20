@@ -14,7 +14,7 @@ const InventoryDetails = () => {
   const { state: equipmentState } = useInventoryState()
   const { isCoinWeightActive, copperPieces } = equipmentState
 
-  const { totalEncumbrancePoints, totalCostSp } = useMemo(() => {
+  const { totalEncumbrancePoints, totalCostCp } = useMemo(() => {
     const encumbranceService = new Encumbrance({
       threshold: EncumbranceThreshold.Regular,
     })
@@ -45,7 +45,7 @@ const InventoryDetails = () => {
             <Trans>Inventory cost</Trans>
           </dt>
           <dd className='mt-1 leading-6 text-gray-700 sm:col-span-2 sm:mt-0'>
-            <CostFragment cost={totalCostSp} />
+            <CostFragment cost={totalCostCp} />
           </dd>
         </div>
         <div className={detailsRowClassname}>

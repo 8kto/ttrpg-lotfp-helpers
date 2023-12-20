@@ -18,7 +18,7 @@ describe('<ItemDetails />', () => {
     armorClass: 14,
     cityCost: 25,
     inventoryId: '1',
-    lockedCost: 50,
+    lockedCostCp: 50,
     name: 'Leather',
     points: EncumbrancePoint.None,
     ruralCost: 50,

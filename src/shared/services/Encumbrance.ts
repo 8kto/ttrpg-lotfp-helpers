@@ -47,7 +47,10 @@ class Encumbrance {
   /**
    * Calculates the total cost and encumbrance points for a set of items.
    */
-  getTotal(items: ReadonlyArray<CountableItem>, coinsCp: number/* FIXME use DS */) {
+  getTotal(
+    items: ReadonlyArray<CountableItem>,
+    coinsCp: number /* FIXME use DS */,
+  ) {
     const records = items.concat(getCoinItems(coinsCp, CurrencyType.Copper))
     let totalCostCp = 0
     let totalEncumbrancePoints = 0

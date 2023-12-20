@@ -4,11 +4,11 @@ import React from 'react'
 
 import CostFragment from '@/components/CostFragment/CostFragment'
 import type { EquipmentPack } from '@/domain/equipment'
-import { getEquipmentPackCost } from '@/shared/helpers/equipmentPack'
+import { getEquipmentPackCostCp } from '@/shared/helpers/equipmentPack'
 
 export const EquipmentPackEntriesList = ({ pack }: { pack: EquipmentPack }) => {
   const { _: trans } = useLingui()
-  const cost = getEquipmentPackCost(pack)
+  const cost = getEquipmentPackCostCp(pack)
 
   return (
     <>
