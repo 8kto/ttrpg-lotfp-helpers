@@ -23,7 +23,7 @@ const Wallet = () => {
       {/* 1st row */}
       <div className='my-4 flex items-center space-x-2 sm:mb-2 sm:mt-0'>
         <CostFragment
-          cost={copperPieces.get() ?? 0}
+          cost={copperPieces.get() ? copperPieces.get() : 0}
           onClick={() => setSetCoinsDrawerOpen(true)}
           copperPieces
         />

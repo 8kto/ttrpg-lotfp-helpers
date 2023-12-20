@@ -10,7 +10,11 @@ import { addItem, removeItem } from '@/state/helpers'
 
 export type InventoryStateType = {
   armor: ReadonlyArray<InventoryItem<ArmorItem>>
-  copperPieces: number // TODO support different kinds of coins
+  /**
+   * TODO support different kinds of coins
+   * @deprecated
+   */
+  copperPieces: number
   isCoinWeightActive: boolean
   isCostRural: boolean
   meleeWeapons: ReadonlyArray<InventoryItem<MeleeWeaponItem>>
