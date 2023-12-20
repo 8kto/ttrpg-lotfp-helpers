@@ -8,7 +8,7 @@ import { WeaponType } from '@/domain/weapon'
 export const MeleeWeaponItems = (): ReadonlyArray<MeleeWeaponItem> => [
   {
     categoryKey: 'meleeWeapons',
-    cityCost: 10,
+    cityCostCp: 10,
     damage: {
       dice: Dice.d3,
       x: 1,
@@ -16,12 +16,12 @@ export const MeleeWeaponItems = (): ReadonlyArray<MeleeWeaponItem> => [
     details: t`config.melee.cestus.details`,
     name: t`Cestus`,
     points: EncumbrancePoint.None,
-    ruralCost: null,
+    ruralCostCp: null,
     type: WeaponType.Melee,
   },
   {
     categoryKey: 'meleeWeapons',
-    cityCost: 5,
+    cityCostCp: 5,
     damage: {
       dice: Dice.d6,
       x: 1,
@@ -29,12 +29,12 @@ export const MeleeWeaponItems = (): ReadonlyArray<MeleeWeaponItem> => [
     details: t`Use of this weapon requires an attack from surprise, or a successful grapple. If a hit is scored, the target is considered grappled and will take 1d6 damage per round.`,
     name: t`Garrote`,
     points: EncumbrancePoint.None,
-    ruralCost: null,
+    ruralCostCp: null,
     type: WeaponType.Melee,
   },
   {
     categoryKey: 'meleeWeapons',
-    cityCost: 30,
+    cityCostCp: 30,
     damage: {
       dice: Dice.d10,
       x: 1,
@@ -45,24 +45,24 @@ export const MeleeWeaponItems = (): ReadonlyArray<MeleeWeaponItem> => [
     isTwoHanded: true,
     name: t`Lance`,
     points: EncumbrancePoint.Oversized,
-    ruralCost: null,
+    ruralCostCp: null,
     type: WeaponType.Melee,
   },
   {
     categoryKey: 'meleeWeapons',
-    cityCost: 20,
+    cityCostCp: 20,
     damage: null,
     details: t`config.melee.mancatcher.details`,
     isAbleToReceiveCharge: false,
     isTwoHanded: true,
     name: t`Mancatcher`,
     points: EncumbrancePoint.Oversized,
-    ruralCost: null,
+    ruralCostCp: null,
     type: WeaponType.Melee,
   },
   {
     categoryKey: 'meleeWeapons',
-    cityCost: 30,
+    cityCostCp: 30,
     damage: {
       dice: Dice.d8,
       x: 1,
@@ -73,12 +73,12 @@ export const MeleeWeaponItems = (): ReadonlyArray<MeleeWeaponItem> => [
     isTwoHanded: true,
     name: t`Polearm`,
     points: EncumbrancePoint.Oversized,
-    ruralCost: null,
+    ruralCostCp: null,
     type: WeaponType.Melee,
   },
   {
     categoryKey: 'meleeWeapons',
-    cityCost: 15,
+    cityCostCp: 15,
     damage: {
       dice: Dice.d8,
       x: 1,
@@ -86,12 +86,12 @@ export const MeleeWeaponItems = (): ReadonlyArray<MeleeWeaponItem> => [
     details: t`This one handed weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better.`,
     name: t`Rapier`,
     points: EncumbrancePoint.Regular,
-    ruralCost: null,
+    ruralCostCp: null,
     type: WeaponType.Melee,
   },
   {
     categoryKey: 'meleeWeapons',
-    cityCost: 5,
+    cityCostCp: 5,
     damage: {
       dice: Dice.d6,
       x: 1,
@@ -102,12 +102,12 @@ export const MeleeWeaponItems = (): ReadonlyArray<MeleeWeaponItem> => [
     isTwoHanded: false,
     name: t`Spear`,
     points: EncumbrancePoint.Regular,
-    ruralCost: 3,
+    ruralCostCp: 3,
     type: WeaponType.Melee,
   },
   {
     categoryKey: 'meleeWeapons',
-    cityCost: 5,
+    cityCostCp: 5,
     damage: {
       dice: Dice.d4,
       x: 1,
@@ -115,12 +115,12 @@ export const MeleeWeaponItems = (): ReadonlyArray<MeleeWeaponItem> => [
     isTwoHanded: true,
     name: t`Staff`,
     points: EncumbrancePoint.Regular,
-    ruralCost: 3,
+    ruralCostCp: 3,
     type: WeaponType.Melee,
   },
   {
     categoryKey: 'meleeWeapons',
-    cityCost: 50,
+    cityCostCp: 50,
     damage: {
       dice: Dice.d10,
       x: 1,
@@ -129,12 +129,12 @@ export const MeleeWeaponItems = (): ReadonlyArray<MeleeWeaponItem> => [
     isTwoHanded: true,
     name: t`Weapon, Great`,
     points: EncumbrancePoint.Oversized,
-    ruralCost: null,
+    ruralCostCp: null,
     type: WeaponType.Great,
   },
   {
     categoryKey: 'meleeWeapons',
-    cityCost: 20,
+    cityCostCp: 20,
     damage: {
       dice: Dice.d8,
       x: 1,
@@ -143,12 +143,12 @@ export const MeleeWeaponItems = (): ReadonlyArray<MeleeWeaponItem> => [
     isTwoHanded: false,
     name: t`Weapon, Medium`,
     points: EncumbrancePoint.Regular,
-    ruralCost: 50,
+    ruralCostCp: 50,
     type: WeaponType.Medium,
   },
   {
     categoryKey: 'meleeWeapons',
-    cityCost: 10,
+    cityCostCp: 10,
     damage: {
       dice: Dice.d6,
       x: 1,
@@ -156,12 +156,12 @@ export const MeleeWeaponItems = (): ReadonlyArray<MeleeWeaponItem> => [
     details: t`These are one-handed weapons, including short swords and hand axes`,
     name: t`Weapon, Small`,
     points: EncumbrancePoint.Regular,
-    ruralCost: 10,
+    ruralCostCp: 10,
     type: WeaponType.Small,
   },
   {
     categoryKey: 'meleeWeapons',
-    cityCost: 5,
+    cityCostCp: 5,
     damage: {
       dice: Dice.d4,
       x: 1,
@@ -169,12 +169,12 @@ export const MeleeWeaponItems = (): ReadonlyArray<MeleeWeaponItem> => [
     details: t`These are small one-handed weapons including daggers and clubs, and suffer a –2 penalty to hit opponents with an unadjusted AC of 15 or better.`,
     name: t`Weapon, Minor`,
     points: EncumbrancePoint.Regular,
-    ruralCost: 5,
+    ruralCostCp: 5,
     type: WeaponType.Minor,
   },
   {
     categoryKey: 'meleeWeapons',
-    cityCost: 10,
+    cityCostCp: 10,
     damage: {
       dice: Dice.d3,
       x: 1,
@@ -182,14 +182,14 @@ export const MeleeWeaponItems = (): ReadonlyArray<MeleeWeaponItem> => [
     details: t`This weapon is ineffective against targets with unadjusted AC 14 or better, but allows mêlée attacks on opponents up to 10 ft away.`,
     name: t`Whip`,
     points: EncumbrancePoint.Regular,
-    ruralCost: 25,
+    ruralCostCp: 25,
     type: WeaponType.Melee,
   },
   /* CUSTOM: concrete weapons for each of Great/Medium etc. categories */
   /* Great */
   {
     categoryKey: 'meleeWeapons',
-    cityCost: 50,
+    cityCostCp: 50,
     damage: {
       dice: Dice.d10,
       x: 1,
@@ -197,12 +197,12 @@ export const MeleeWeaponItems = (): ReadonlyArray<MeleeWeaponItem> => [
     isTwoHanded: true,
     name: t`Two-handed sword`,
     points: EncumbrancePoint.Oversized,
-    ruralCost: null,
+    ruralCostCp: null,
     type: WeaponType.Great,
   },
   {
     categoryKey: 'meleeWeapons',
-    cityCost: 50,
+    cityCostCp: 50,
     damage: {
       dice: Dice.d10,
       x: 1,
@@ -210,12 +210,12 @@ export const MeleeWeaponItems = (): ReadonlyArray<MeleeWeaponItem> => [
     isTwoHanded: true,
     name: t`Maul`,
     points: EncumbrancePoint.Oversized,
-    ruralCost: null,
+    ruralCostCp: null,
     type: WeaponType.Great,
   },
   {
     categoryKey: 'meleeWeapons',
-    cityCost: 50,
+    cityCostCp: 50,
     damage: {
       dice: Dice.d10,
       x: 1,
@@ -223,13 +223,13 @@ export const MeleeWeaponItems = (): ReadonlyArray<MeleeWeaponItem> => [
     isTwoHanded: true,
     name: t`Great axe`,
     points: EncumbrancePoint.Oversized,
-    ruralCost: null,
+    ruralCostCp: null,
     type: WeaponType.Great,
   },
   /* Medium */
   {
     categoryKey: 'meleeWeapons',
-    cityCost: 20,
+    cityCostCp: 20,
     damage: {
       dice: Dice.d8,
       x: 1,
@@ -237,12 +237,12 @@ export const MeleeWeaponItems = (): ReadonlyArray<MeleeWeaponItem> => [
     isTwoHanded: false,
     name: t`Sword`,
     points: EncumbrancePoint.Regular,
-    ruralCost: 50,
+    ruralCostCp: 50,
     type: WeaponType.Medium,
   },
   {
     categoryKey: 'meleeWeapons',
-    cityCost: 20,
+    cityCostCp: 20,
     damage: {
       dice: Dice.d8,
       x: 1,
@@ -250,12 +250,12 @@ export const MeleeWeaponItems = (): ReadonlyArray<MeleeWeaponItem> => [
     isTwoHanded: false,
     name: t`Battle axe`,
     points: EncumbrancePoint.Regular,
-    ruralCost: 50,
+    ruralCostCp: 50,
     type: WeaponType.Medium,
   },
   {
     categoryKey: 'meleeWeapons',
-    cityCost: 20,
+    cityCostCp: 20,
     damage: {
       dice: Dice.d8,
       x: 1,
@@ -263,38 +263,38 @@ export const MeleeWeaponItems = (): ReadonlyArray<MeleeWeaponItem> => [
     isTwoHanded: false,
     name: t`Mace`,
     points: EncumbrancePoint.Regular,
-    ruralCost: 50,
+    ruralCostCp: 50,
     type: WeaponType.Medium,
   },
   /* Small */
   {
     categoryKey: 'meleeWeapons',
-    cityCost: 10,
+    cityCostCp: 10,
     damage: {
       dice: Dice.d6,
       x: 1,
     },
     name: t`Short sword`,
     points: EncumbrancePoint.Regular,
-    ruralCost: 10,
+    ruralCostCp: 10,
     type: WeaponType.Small,
   },
   {
     categoryKey: 'meleeWeapons',
-    cityCost: 10,
+    cityCostCp: 10,
     damage: {
       dice: Dice.d6,
       x: 1,
     },
     name: t`Hand axe`,
     points: EncumbrancePoint.Regular,
-    ruralCost: 10,
+    ruralCostCp: 10,
     type: WeaponType.Small,
   },
   /* Minor */
   {
     categoryKey: 'meleeWeapons',
-    cityCost: 5,
+    cityCostCp: 5,
     damage: {
       dice: Dice.d4,
       x: 1,
@@ -302,12 +302,12 @@ export const MeleeWeaponItems = (): ReadonlyArray<MeleeWeaponItem> => [
     details: t`This weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better.`,
     name: t`Dagger`,
     points: EncumbrancePoint.Regular,
-    ruralCost: 5,
+    ruralCostCp: 5,
     type: WeaponType.Minor,
   },
   {
     categoryKey: 'meleeWeapons',
-    cityCost: 5,
+    cityCostCp: 5,
     damage: {
       dice: Dice.d4,
       x: 1,
@@ -315,7 +315,7 @@ export const MeleeWeaponItems = (): ReadonlyArray<MeleeWeaponItem> => [
     details: t`This weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better.`,
     name: t`Club`,
     points: EncumbrancePoint.Regular,
-    ruralCost: 5,
+    ruralCostCp: 5,
     type: WeaponType.Minor,
   },
 ]

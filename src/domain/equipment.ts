@@ -4,8 +4,8 @@ import type { EquipmentCategoryKey } from '@/state/InventoryState'
 export interface EquipmentItem {
   name: string
   categoryKey: EquipmentCategoryKey
-  cityCost: number
-  ruralCost: number | null
+  cityCostCp: number
+  ruralCostCp: number | null
   points: EncumbrancePoint
   details?: string | null
 }
