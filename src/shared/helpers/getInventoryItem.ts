@@ -5,12 +5,12 @@ import deepclone from '@/shared/helpers/deepclone'
 
 export const getInventoryItem = <T extends EquipmentItem>(
   item: T,
-  cost: number,
+  costCp: number,
 ): InventoryItem<T> => {
   return deepclone<InventoryItem<T>>({
     ...item,
     inventoryId: item.name.toString() + getAutoIncrementedId(),
-    lockedCostCp: cost,
+    lockedCostCp: costCp,
     qty: 1,
   })
 }
