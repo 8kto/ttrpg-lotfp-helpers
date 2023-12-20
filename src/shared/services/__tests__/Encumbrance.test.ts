@@ -13,9 +13,9 @@ describe('Encumbrance', () => {
   ): InventoryItem<EquipmentItem> => {
     return {
       categoryKey: 'miscEquipment',
-      cityCostCp: lockedCostCp / 10,
+      cityCostCp: lockedCostCp,
       inventoryId: `i${autoincId++}`,
-      lockedCost: lockedCostCp / 10,
+      lockedCostCp: lockedCostCp,
       name: 'Item',
       points,
       qty,
@@ -47,7 +47,7 @@ describe('Encumbrance', () => {
       })
 
       expect(service.getTotal(items, 0)).toEqual({
-        totalCostSp: 180,
+        totalCostCp: 1800,
         totalEncumbrancePoints: 6.4,
       })
     })
@@ -60,7 +60,7 @@ describe('Encumbrance', () => {
       })
 
       expect(service.getTotal(items, coinsCp)).toEqual({
-        totalCostSp: 180,
+        totalCostCp: 1800,
         totalEncumbrancePoints: 6.4 + copperCoinsEncumbrance,
       })
     })
@@ -75,7 +75,7 @@ describe('Encumbrance', () => {
         threshold: EncumbranceThreshold.Regular,
       })
       expect(service.getTotal(itemsEmpty, copperCoins)).toEqual({
-        totalCostSp: 0,
+        totalCostCp: 0,
         totalEncumbrancePoints: copperCoinsEncumbrance,
       })
     })
@@ -86,7 +86,7 @@ describe('Encumbrance', () => {
       })
 
       expect(service.getTotal([], 0)).toEqual({
-        totalCostSp: 0,
+        totalCostCp: 0,
         totalEncumbrancePoints: 0,
       })
     })
@@ -105,7 +105,7 @@ describe('Encumbrance', () => {
       })
 
       expect(service.getTotal(itemsWithQty, 0)).toEqual({
-        totalCostSp: 110,
+        totalCostCp: 1100,
         totalEncumbrancePoints: 2,
       })
     })
@@ -122,7 +122,7 @@ describe('Encumbrance', () => {
       })
 
       expect(service.getTotal(itemsWithQty, 0)).toEqual({
-        totalCostSp: 150,
+        totalCostCp: 1500,
         totalEncumbrancePoints: 6.2,
       })
     })
@@ -147,7 +147,7 @@ describe('Encumbrance', () => {
       })
 
       expect(service.getTotal(itemsWithQty, 0)).toEqual({
-        totalCostSp: 475,
+        totalCostCp: 4750,
         totalEncumbrancePoints: 11.2,
       })
     })

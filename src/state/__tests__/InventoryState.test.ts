@@ -214,7 +214,7 @@ describe('InventoryState Tests', () => {
       categoryKey: 'meleeWeapons',
       cityCostCp: 5,
       inventoryId: 'a15',
-      lockedCost: 5,
+      lockedCostCp: 5,
       name: 'Jigsaw',
       points: EncumbrancePoint.Regular,
       qty: 1,

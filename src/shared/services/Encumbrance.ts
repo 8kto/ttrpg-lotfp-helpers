@@ -47,13 +47,13 @@ class Encumbrance {
   /**
    * Calculates the total cost and encumbrance points for a set of items.
    */
-  getTotal(items: ReadonlyArray<CountableItem>, coinsCp: number) {
+  getTotal(items: ReadonlyArray<CountableItem>, coinsCp: number/* FIXME use DS */) {
     const records = items.concat(getCoinItems(coinsCp, CurrencyType.Copper))
-    let totalCostSp = 0
+    let totalCostCp = 0
     let totalEncumbrancePoints = 0
 
     records.forEach((item) => {
-      const { lockedCost, points, qty } = item
+      const { lockedCostCp, points, qty } = item
       const skipped = this.getSkippedItems(item)
 
       let increment: number = 0
@@ -69,12 +69,12 @@ class Encumbrance {
           break
       }
 
-      totalCostSp += lockedCost * qty
+      totalCostCp += lockedCostCp * qty
       totalEncumbrancePoints += increment
     })
 
     return {
-      totalCostSp: totalCostSp,
+      totalCostCp: totalCostCp,
       totalEncumbrancePoints: roundTo(totalEncumbrancePoints, 1),
     }
   }
