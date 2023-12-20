@@ -212,13 +212,13 @@ describe('InventoryState Tests', () => {
   describe('addCustomEquipmentItem', () => {
     const customItem: InventoryItem<EquipmentItem> = {
       categoryKey: 'meleeWeapons',
-      cityCost: 5,
+      cityCostCp: 5,
       inventoryId: 'a15',
       lockedCost: 5,
       name: 'Jigsaw',
       points: EncumbrancePoint.Regular,
       qty: 1,
-      ruralCost: 10,
+      ruralCostCp: 10,
     }
 
     it('adds item', () => {

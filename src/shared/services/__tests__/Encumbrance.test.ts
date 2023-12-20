@@ -13,13 +13,13 @@ describe('Encumbrance', () => {
   ): InventoryItem<EquipmentItem> => {
     return {
       categoryKey: 'miscEquipment',
-      cityCost: lockedCostCp / 10,
+      cityCostCp: lockedCostCp / 10,
       inventoryId: `i${autoincId++}`,
       lockedCost: lockedCostCp / 10,
       name: 'Item',
       points,
       qty,
-      ruralCost: null,
+      ruralCostCp: null,
     }
   }
 

@@ -20,7 +20,7 @@ const findEquipmentItem = <T extends EquipmentItem>(name: string): T | null => {
 }
 
 const getMinimalCost = (item: EquipmentItem) => {
-  const costs = [item.cityCost, item.ruralCost].map(Number).filter(Boolean)
+  const costs = [item.cityCostCp, item.ruralCostCp].map(Number).filter(Boolean)
   if (!costs.length) {
     return 0
   }
