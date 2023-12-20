@@ -135,13 +135,13 @@ describe('CurrencyConverter', () => {
 
     it('throws for unknown currency', () => {
       const wallet = { copper: 50, gold: 5, silver: 20 }
-      
+
       expect(() =>
         CurrencyConverter.add(
-          { 
+          {
             // @ts-ignore
-            coin: 'NOPE', 
-            value: 2, 
+            coin: 'NOPE',
+            value: 2,
           },
           wallet,
         ),
