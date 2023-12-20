@@ -2,19 +2,17 @@ import { hookstate, useHookstate } from '@hookstate/core'
 import { localstored } from '@hookstate/localstored'
 
 import type { ArmorItem } from '@/domain/armor'
+import type { CurrencyBundle, CurrencyWallet } from '@/domain/currency'
 import type { EquipmentItem } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
 import type { MeleeWeaponItem, MissileWeaponItem } from '@/domain/weapon'
 import deepclone from '@/shared/helpers/deepclone'
+import CurrencyConverter from '@/shared/services/CurrencyConverter'
 import { addItem, removeItem } from '@/state/helpers'
 
 export type InventoryStateType = {
   armor: ReadonlyArray<InventoryItem<ArmorItem>>
-  /**
-   * TODO support different kinds of coins
-   * @deprecated
-   */
-  copperPieces: number
+  wallet: CurrencyWallet
   isCoinWeightActive: boolean
   isCostRural: boolean
   meleeWeapons: ReadonlyArray<InventoryItem<MeleeWeaponItem>>
@@ -29,12 +27,16 @@ export type InventoryStateType = {
  */
 const initialInventoryState: Readonly<InventoryStateType> = {
   armor: Array<InventoryItem<ArmorItem>>(),
-  copperPieces: 0,
   isCoinWeightActive: true,
   isCostRural: false,
   meleeWeapons: Array<InventoryItem<MeleeWeaponItem>>(),
   miscEquipment: Array<InventoryItem<EquipmentItem>>(),
   missileWeapons: Array<InventoryItem<MissileWeaponItem>>(),
+  wallet: {
+    copper: 0,
+    gold: 0,
+    silver: 0,
+  },
 }
 
 export type EquipmentCategoryKey =
@@ -105,14 +107,14 @@ export const toggleCoinsWeightActive = () => {
   isCoinWeightActive.set(!isCoinWeightActive.get())
 }
 
-export const addCopperPieces = (value: number) => {
-  const balance = InventoryState.copperPieces
-  balance.merge((v) => v + value)
+export const addCurrency = (bundle: CurrencyBundle) => {
+  const wallet = InventoryState.wallet
+  wallet.merge((v) => CurrencyConverter.add(bundle, v))
 }
 
-export const setCopperPieces = (value: number) => {
-  const balance = InventoryState.copperPieces
-  balance.set(value)
+export const setCopperPieces = (bundle: CurrencyBundle) => {
+  const balance = InventoryState.wallet
+  balance.set(CurrencyConverter.createWalletFrom(bundle))
 }
 
 export const addCustomEquipmentItem = (data: InventoryItem<EquipmentItem>) => {
