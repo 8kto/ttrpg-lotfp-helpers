@@ -5,7 +5,10 @@ import DamageFragment from '@/components/DamageFragment'
 import DataGrid from '@/components/DataGrid/DataGrid'
 import type { DataGridSortFunction } from '@/components/DataGrid/helpers'
 import type { DataGridColumn } from '@/components/DataGrid/types'
-import { renderWeightGridCol } from '@/components/EquipmentList/gridHelpers'
+import {
+  renderCostGridCol,
+  renderWeightGridCol,
+} from '@/components/EquipmentList/gridHelpers'
 import { handleSortByDamage } from '@/components/EquipmentList/helpers'
 import ItemDetails from '@/components/Inventory/ItemDetails/ItemDetails'
 import RangeFragment from '@/components/RangeFragment'
@@ -80,6 +83,7 @@ const columns: ReadonlyArray<DataGridColumn<MissileWeaponItem>> = [
 const cityCostColumn: DataGridColumn<MissileWeaponItem> = {
   className: 'w-1/6',
   key: 'cityCostCp',
+  render: renderCostGridCol,
   get title() {
     return t`Cost, sp`
   },
@@ -87,6 +91,7 @@ const cityCostColumn: DataGridColumn<MissileWeaponItem> = {
 const ruralCostColumn: DataGridColumn<MissileWeaponItem> = {
   className: 'w-1/6',
   key: 'ruralCostCp',
+  render: renderCostGridCol,
   get title() {
     return t`Cost, sp`
   },

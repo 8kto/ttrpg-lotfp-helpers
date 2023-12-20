@@ -4,6 +4,7 @@ import type { DataGridColumn } from '@/components/DataGrid/types'
 import ItemDetails from '@/components/Inventory/ItemDetails/ItemDetails'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { EquipmentItem } from '@/domain/equipment'
+import { useInventoryState } from '@/state/InventoryState'
 
 type RenderFunction = DataGridColumn<EquipmentItem>['render']
 
@@ -34,4 +35,18 @@ export const renderNameGridCol: RenderFunction = (item, i18n) => {
       )}
     </>
   )
+}
+
+export const renderCostGridCol: RenderFunction = (item) => {
+  const {
+    state: { isCostRural },
+    // It is called within a component:
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+  } = useInventoryState()
+
+  if (isCostRural.get()) {
+    return item.ruralCostCp === null ? 0 : item.ruralCostCp / 10
+  }
+
+  return item.cityCostCp / 10
 }

@@ -5,6 +5,7 @@ import DataGrid from '@/components/DataGrid/DataGrid'
 import { trivialSort } from '@/components/DataGrid/helpers'
 import type { DataGridColumn, SortConfig } from '@/components/DataGrid/types'
 import {
+  renderCostGridCol,
   renderNameGridCol,
   renderWeightGridCol,
 } from '@/components/EquipmentList/gridHelpers'
@@ -43,6 +44,7 @@ const columns: ReadonlyArray<DataGridColumn<ArmorItem>> = [
 const cityCostColumn: DataGridColumn<ArmorItem> = {
   className: 'w-1/6',
   key: 'cityCostCp',
+  render: renderCostGridCol,
   get title() {
     return t`Cost, sp`
   },
@@ -50,6 +52,7 @@ const cityCostColumn: DataGridColumn<ArmorItem> = {
 const ruralCostColumn: DataGridColumn<ArmorItem> = {
   className: 'w-1/6',
   key: 'ruralCostCp',
+  render: renderCostGridCol,
   get title() {
     return t`Cost, sp`
   },

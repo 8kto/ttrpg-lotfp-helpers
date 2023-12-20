@@ -6,6 +6,7 @@ import DataGrid from '@/components/DataGrid/DataGrid'
 import type { DataGridSortFunction } from '@/components/DataGrid/helpers'
 import type { DataGridColumn } from '@/components/DataGrid/types'
 import {
+  renderCostGridCol,
   renderNameGridCol,
   renderWeightGridCol,
 } from '@/components/EquipmentList/gridHelpers'
@@ -45,6 +46,7 @@ const columns: ReadonlyArray<DataGridColumn<MeleeWeaponItem>> = [
 const cityCostColumn: DataGridColumn<MeleeWeaponItem> = {
   className: 'w-1/6',
   key: 'cityCostCp',
+  render: renderCostGridCol,
   get title() {
     return t`Cost, sp`
   },
@@ -52,6 +54,7 @@ const cityCostColumn: DataGridColumn<MeleeWeaponItem> = {
 const ruralCostColumn: DataGridColumn<MeleeWeaponItem> = {
   className: 'w-1/6',
   key: 'ruralCostCp',
+  render: renderCostGridCol,
   get title() {
     return t`Cost, sp`
   },
