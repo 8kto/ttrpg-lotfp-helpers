@@ -1,5 +1,5 @@
 import { XMarkIcon } from '@heroicons/react/24/solid'
-import { t, Trans } from '@lingui/macro'
+import { msg, Trans } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import { ErrorMessage, Field, Form, Formik } from 'formik'
 import React from 'react'
@@ -28,15 +28,18 @@ const formInitialValues: EquipmentItemDto = {
 }
 
 const validationSchema = Yup.object({
-  points: Yup.number().required(t`Required field`),
-  name: Yup.string().required(t`Required field`),
-  cost: Yup.number().min(0, t`The number should be equal to or greater than 0`),
+  points: Yup.number().required(msg`Required field`),
+  name: Yup.string().required(msg`Required field`),
+  cost: Yup.number().min(
+    0,
+    msg`The number should be equal to or greater than 0`,
+  ),
   currencyType: Yup.string()
     .oneOf(Object.keys(CurrencyType))
-    .required(t`Required field`),
+    .required(msg`Required field`),
   category: Yup.string()
     .oneOf(EquipmentStateKeys)
-    .required(t`Required field`),
+    .required(msg`Required field`),
   details: Yup.string(),
 })
 
@@ -91,7 +94,10 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
                 className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600'
               />
               <span className='text-sm text-red-600'>
-                <ErrorMessage name='name' />
+                <ErrorMessage
+                  name='name'
+                  render={(message) => trans(message)}
+                />
               </span>
             </div>
           </div>
@@ -116,7 +122,7 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
               id='add-equip-item--cost'
             />
             <span className='text-sm text-red-600'>
-              <ErrorMessage name='cost' />
+              <ErrorMessage name='cost' render={(message) => trans(message)} />
             </span>
 
             {/* Radios */}
