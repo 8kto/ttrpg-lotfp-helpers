@@ -6,7 +6,7 @@
 
 > The project is in active development.
 >
-> Done: <!--PROGRESS--> 73% / 22 of 30 tasks <!--/PROGRESS-->
+> Done: <!--PROGRESS--> 76% / 23 of 30 tasks <!--/PROGRESS-->
 
 Lamentations of the Flame Princess helpers.
 
@@ -36,7 +36,7 @@ https://lotfp.vercel.app
 - [x] Wallet (available money)
   - [ ] Manage costs when an item is added
 - [x] Add coins and calculate the encumbrance
-  - [ ] Track different kinds of coins
+  - [x] Track different kinds of coins
 - [x] Inventory is saved in locale storage and survives the page reload
 - [x] Languages support
 - [x] Responsive layout, mobile devices support
