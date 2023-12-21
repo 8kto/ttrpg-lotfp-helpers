@@ -259,6 +259,17 @@ describe('CurrencyConverter', () => {
         }),
       ).toEqual(false)
     })
+
+    it('should return false for invalid prop names', () => {
+      expect(
+        CurrencyConverter.isValidWallet({
+          // @ts-ignore
+          copper: 30,
+          gold: 20,
+          silver: 10,
+        }),
+      ).toEqual(false)
+    })
   })
 
   describe('.mergeWallets', () => {

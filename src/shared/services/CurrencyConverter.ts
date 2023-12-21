@@ -57,13 +57,13 @@ export default class CurrencyConverter {
     return this.convertFromTo(record, CurrencyType.Silver)
   }
 
-  static isValidWallet(wallet: CurrencyWallet): boolean {
-    const values = Object.values(wallet)
+  static isValidWallet(wallet: CurrencyWallet): boolean | void {
+    const entries = Object.entries(wallet)
 
     return (
-      values.length === 3 &&
-      values.every((v) => {
-        return !isNaN(v) && v >= 0
+      entries.length === 3 &&
+      entries.every(([key, value]) => {
+        return CurrencyType[key as CurrencyType] && !isNaN(value) && value >= 0
       })
     )
   }
@@ -102,15 +102,14 @@ export default class CurrencyConverter {
     const { currency, value } = record
     this.validateWalletKey(currency)
 
-    const newWallet: CurrencyWallet = {
+    return {
       Copper: 0,
       Gold: 0,
       Silver: 0,
       [currency]: value,
     }
-
-    return newWallet
   }
+
   static mergeWallets(
     newWallet: CurrencyWallet,
     wallet: CurrencyWallet,

@@ -1,28 +1,31 @@
 import { XMarkIcon } from '@heroicons/react/24/solid'
-import { t, Trans } from '@lingui/macro'
+import { Trans } from '@lingui/macro'
 import { Field, Form, Formik } from 'formik'
 import React from 'react'
 import * as Yup from 'yup'
 
 import { ResetFormOnDrawerClose } from '@/components/Inventory/ResetFormOnDrawerClose'
-import { setCurrencies, useInventoryState } from '@/state/InventoryState'
+import { setWallet, useInventoryState } from '@/state/InventoryState'
 
 const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
   const { state } = useInventoryState()
-  const copperPieces = state.copperPieces
+  const wallet = state.wallet.get()
 
   const handleAddCoins = ({
-    isCopper,
-    coins,
+    gold,
+    silver,
+    copper,
   }: {
-    isCopper: boolean
-    coins: number
+    gold: number | string
+    silver: number | string
+    copper: number | string
   }) => {
-    if (typeof coins === 'number' && !isNaN(coins)) {
-      const amount = isCopper ? +coins : +coins * 10
-      setCurrencies(amount)
-      handleClose()
-    }
+    setWallet({
+      Gold: Number(gold),
+      Silver: Number(silver),
+      Copper: Number(copper),
+    })
+    onClose()
   }
 
   /**
@@ -37,12 +40,14 @@ const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
     <Formik
       enableReinitialize
       initialValues={{
-        coins: copperPieces.get() / 10,
-        isCopper: false,
+        gold: wallet.Gold,
+        silver: wallet.Silver,
+        copper: wallet.Copper,
       }}
       validationSchema={Yup.object({
-        coins: Yup.number().required(t`Required field`),
-        isCopper: Yup.boolean(),
+        gold: Yup.number().min(0),
+        silver: Yup.number().min(0),
+        copper: Yup.number().min(0),
       })}
       onSubmit={(values) => {
         handleAddCoins(values)
@@ -62,7 +67,9 @@ const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
             <ResetFormOnDrawerClose
               onDrawerClose={() => {
                 resetForm()
-                void setFieldValue('coins', copperPieces.get() / 10)
+                void setFieldValue('gold', wallet.Gold)
+                void setFieldValue('silver', wallet.Silver)
+                void setFieldValue('copper', wallet.Copper)
               }}
             />
             <h5
@@ -81,35 +88,51 @@ const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
               <XMarkIcon className='h-5 w-5' />
             </button>
             <div className='space-y-4'>
+              {/* Gold */}
               <label
-                htmlFor='coins--set-coins'
+                htmlFor='coins--set-gold'
                 className='mb-2 block font-medium text-gray-700'
               >
-                <Trans>Use copper pieces instead of float numbers.</Trans>
+                <Trans>Gold pieces</Trans>
               </label>
               <Field
                 type='number'
                 className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600'
                 placeholder='0'
-                name='coins'
-                id='coins--set-coins'
+                name='gold'
+                id='coins--set-gold'
               />
 
-              {/* Checkbox */}
-              <div className='flex items-center'>
-                <Field
-                  type='checkbox'
-                  name='isCopper'
-                  id='isCopper--set-coins'
-                  className='h-4 w-4 rounded border-gray-300 bg-gray-100 focus:ring-2 focus:ring-blue-500'
-                />
-                <label
-                  htmlFor='isCopper--set-coins'
-                  className='ms-2 cursor-pointer text-sm font-medium text-gray-900'
-                >
-                  <Trans>Copper pieces</Trans>
-                </label>
-              </div>
+              {/* Silver */}
+              <label
+                htmlFor='coins--set-silver'
+                className='mb-2 block font-medium text-gray-700'
+              >
+                <Trans>Silver pieces</Trans>
+              </label>
+              <Field
+                type='number'
+                className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600'
+                placeholder='0'
+                name='silver'
+                id='coins--set-silver'
+              />
+
+              {/* Copper */}
+              <label
+                htmlFor='coins--set-copper'
+                className='mb-2 block font-medium text-gray-700'
+              >
+                <Trans>Copper pieces</Trans>
+              </label>
+              <Field
+                type='number'
+                className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600'
+                placeholder='0'
+                name='copper'
+                id='coins--set-copper'
+              />
+
               <div className='bottom-0 left-0 flex w-full justify-center space-x-4 pb-4 md:absolute md:px-4'>
                 <button
                   type='submit'
