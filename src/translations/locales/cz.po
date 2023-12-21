@@ -100,6 +100,9 @@ msgstr ""
 msgid "Bow, Short"
 msgstr ""
 
+msgid "Copper"
+msgstr ""
+
 msgid "Mêlée"
 msgstr ""
 
@@ -182,6 +185,9 @@ msgstr ""
 msgid "Packs"
 msgstr ""
 
+msgid "Silver"
+msgstr ""
+
 msgid "These are small one-handed weapons including daggers and clubs, and suffer a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 msgstr ""
 
@@ -213,6 +219,9 @@ msgid "Reset all equipment?"
 msgstr ""
 
 msgid "Tent, Personal"
+msgstr ""
+
+msgid "Gold"
 msgstr ""
 
 msgid "Filter by name"
@@ -378,6 +387,9 @@ msgid "Garlic"
 msgstr ""
 
 msgid "Sword"
+msgstr ""
+
+msgid "The number should be equal to or greater than 0"
 msgstr ""
 
 msgid "Clothing, Normal"

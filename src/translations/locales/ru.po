@@ -100,6 +100,9 @@ msgstr "Серебряные монеты"
 msgid "Bow, Short"
 msgstr "Короткий лук"
 
+msgid "Copper"
+msgstr "Медные"
+
 msgid "Mêlée"
 msgstr "Ближний бой"
 
@@ -182,6 +185,9 @@ msgstr "Это оружие имеет штраф –2 AB для противн�
 msgid "Packs"
 msgstr "Наборы"
 
+msgid "Silver"
+msgstr "Серебряные"
+
 msgid "These are small one-handed weapons including daggers and clubs, and suffer a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 msgstr "Это небольшое одноручное оружие, включая кинжалы и булавы, даёт штраф -2 AB для противников с AC 15 или выше."
 
@@ -214,6 +220,9 @@ msgstr "Сбросить всё снаряжение?"
 
 msgid "Tent, Personal"
 msgstr "Палатка, одиночная"
+
+msgid "Gold"
+msgstr "Золотые"
 
 msgid "Filter by name"
 msgstr "Фильтр по названию"
@@ -379,6 +388,9 @@ msgstr "Чеснок"
 
 msgid "Sword"
 msgstr "Меч"
+
+msgid "The number should be equal to or greater than 0"
+msgstr "Число должно быть больше или равно 0"
 
 msgid "Clothing, Normal"
 msgstr "Одежда, обычная"
