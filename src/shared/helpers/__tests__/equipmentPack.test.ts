@@ -123,13 +123,13 @@ describe('equipmentPack', () => {
 
     it('calculates the correct total cost (always minimal)', () => {
       const totalCost = getEquipmentPackCost(pack)
-      expect(totalCost).toBe(10 + 15 + 10 + 1 + 2 + 10)
+      expect(totalCost).toStrictEqual({ currency: 'Copper', value: 48 }) // 10 + 15 + 10 + 1 + 2 + 10
     })
 
     it('returns 0 for an empty equipment pack', () => {
       const emptyPack = { items: [], name: 'Empty Pack' }
       const totalCost = getEquipmentPackCost(emptyPack)
-      expect(totalCost).toBe(0)
+      expect(totalCost).toStrictEqual({ currency: 'Copper', value: 0 })
     })
 
     it('returns 0 for unknown item', () => {
@@ -138,7 +138,7 @@ describe('equipmentPack', () => {
         name: 'Treasures Pack',
       }
       const totalCost = getEquipmentPackCost(packMock)
-      expect(totalCost).toBe(0)
+      expect(totalCost).toStrictEqual({ currency: 'Copper', value: 0 })
     })
 
     it('returns 0 for both 0 costs', () => {
@@ -147,7 +147,7 @@ describe('equipmentPack', () => {
         name: 'Treasures Pack',
       }
       const totalCost = getEquipmentPackCost(packMock)
-      expect(totalCost).toBe(0)
+      expect(totalCost).toStrictEqual({ currency: 'Copper', value: 0 })
     })
 
     it('handles different quantities correctly', () => {
@@ -158,7 +158,7 @@ describe('equipmentPack', () => {
       }
 
       const totalCost = getEquipmentPackCost(modifiedPack)
-      expect(totalCost).toBe((10 + 15 + 10 + 1 + 2 + 10) * 2)
+      expect(totalCost).toStrictEqual({ currency: 'Copper', value: 96 }) // (10 + 15 + 10 + 1 + 2 + 10) * 2
     })
   })
 })
