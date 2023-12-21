@@ -119,3 +119,9 @@ details.ph-details-bullet[open] .ph-custom-indicator {
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
 }
+
+#__next {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
