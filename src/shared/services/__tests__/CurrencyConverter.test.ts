@@ -70,6 +70,7 @@ describe('CurrencyConverter', () => {
       })
     })
   })
+
   describe('.createWalletFrom', () => {
     it('should create a wallet with the correct amount of Copper', () => {
       const result = CurrencyConverter.createWalletFrom({
@@ -117,6 +118,7 @@ describe('CurrencyConverter', () => {
       ).toThrow('Unknown currency type')
     })
   })
+
   describe('.add', () => {
     it('should correctly add Copper to a wallet', () => {
       const wallet: CurrencyWallet = { Copper: 50, Gold: 5, Silver: 20 }
@@ -172,6 +174,7 @@ describe('CurrencyConverter', () => {
       ).toThrow('Unknown currency type')
     })
   })
+
   describe('.getDisplayCostFromWallet', () => {
     it('returns list of currencies', () => {
       expect(
@@ -210,6 +213,7 @@ describe('CurrencyConverter', () => {
       ).toThrow('Invalid values in wallet')
     })
   })
+
   describe('.isValidWallet', () => {
     it('should return true for valid wallet', () => {
       expect(
@@ -300,6 +304,38 @@ describe('CurrencyConverter', () => {
       expect(() => {
         CurrencyConverter.mergeWallets(wallet1, wallet2)
       }).toThrow('Invalid values in wallet')
+    })
+  })
+
+  describe('.getNormalized', () => {
+    it('should optimize wallet values', () => {
+      const wallet: CurrencyWallet = { Copper: 1000, Gold: 10, Silver: 1000 }
+      const optimizedWallet = CurrencyConverter.getNormalized(wallet)
+      expect(optimizedWallet).toEqual({ Copper: 0, Gold: 32, Silver: 0 })
+    })
+
+    it('should handle wallet with only copper', () => {
+      const wallet: CurrencyWallet = { Copper: 1500, Gold: 0, Silver: 0 }
+      const optimizedWallet = CurrencyConverter.getNormalized(wallet)
+      expect(optimizedWallet).toEqual({ Copper: 0, Gold: 3, Silver: 0 })
+    })
+
+    it('should handle wallet with only silver', () => {
+      const wallet: CurrencyWallet = { Copper: 0, Gold: 0, Silver: 150 }
+      const optimizedWallet = CurrencyConverter.getNormalized(wallet)
+      expect(optimizedWallet).toEqual({ Copper: 0, Gold: 3, Silver: 0 })
+    })
+
+    it('should handle wallet with only gold', () => {
+      const wallet: CurrencyWallet = { Copper: 0, Gold: 5, Silver: 0 }
+      const optimizedWallet = CurrencyConverter.getNormalized(wallet)
+      expect(optimizedWallet).toEqual({ Copper: 0, Gold: 5, Silver: 0 })
+    })
+
+    it('should handle empty wallet', () => {
+      const wallet: CurrencyWallet = { Copper: 0, Gold: 0, Silver: 0 }
+      const optimizedWallet = CurrencyConverter.getNormalized(wallet)
+      expect(optimizedWallet).toEqual({ Copper: 0, Gold: 0, Silver: 0 })
     })
   })
 })

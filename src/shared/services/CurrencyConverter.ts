@@ -131,4 +131,26 @@ export default class CurrencyConverter {
       { ...newWallet },
     )
   }
+
+  static getNormalized(wallet: CurrencyWallet): CurrencyWallet {
+    if (!this.isValidWallet(wallet)) {
+      throw new Error(`Invalid values in wallet ${JSON.stringify(wallet)}`)
+    }
+
+    // Convert everything to copper
+    const totalCopper =
+      wallet.Copper + wallet.Silver * 10 + wallet.Gold * 50 * 10
+
+    // Calculate the optimal mix of gold, silver, and copper
+    const gold = Math.floor(totalCopper / (50 * 10))
+    const remainingAfterGold = totalCopper - gold * 50 * 10
+    const silver = Math.floor(remainingAfterGold / 10)
+    const copper = remainingAfterGold - silver * 10
+
+    return {
+      Copper: copper,
+      Gold: gold,
+      Silver: silver,
+    }
+  }
 }

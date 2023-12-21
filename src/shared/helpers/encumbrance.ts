@@ -43,6 +43,7 @@ const getCoinsLockedCost = (type: CurrencyType) => {
 }
 
 /**
+ * FIXME fix coins encumbrance
  * Convert coins number into an array of CountableItem, weight is rounded down
  */
 export const getCoinItems = (wallet: CurrencyWallet): Array<CountableItem> => {
