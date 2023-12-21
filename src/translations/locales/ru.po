@@ -19,9 +19,6 @@ msgstr "Монеты"
 msgid "config.misc.airBladder.details"
 msgstr "Кожаный мешочек с трубкой для рта; дополнительный глоток воздуха для подводного плавания.<br />Может использоваться и как вспомогательное плавательное средство."
 
-msgid "Use copper pieces instead of float numbers."
-msgstr "Используйте медные монеты вместо дробных чисел."
-
 msgid "config.melee.mancatcher.details"
 msgstr "При успешном попадании этим оружием жертва должна сделать спасбросок от Паралича. В случае неудачи жертва считается беспомощной, как и владелец мэнкэтчера, пока цель удерживается для защиты от атак. Это оружие необходимо держать двумя руками."
 
@@ -96,6 +93,9 @@ msgstr "Воздушный пузырь"
 
 msgid "Holy Symbol, Wood"
 msgstr "Священный символ, деревянный"
+
+msgid "Silver pieces"
+msgstr "Серебряные монеты"
 
 msgid "Bow, Short"
 msgstr "Короткий лук"
@@ -619,6 +619,9 @@ msgstr "Метательное оружие"
 
 msgid "English"
 msgstr "English"
+
+msgid "Gold pieces"
+msgstr "Золотые монеты"
 
 msgid "Soap"
 msgstr "Мыло"

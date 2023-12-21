@@ -19,9 +19,6 @@ msgstr ""
 msgid "config.misc.airBladder.details"
 msgstr ""
 
-msgid "Use copper pieces instead of float numbers."
-msgstr ""
-
 msgid "config.melee.mancatcher.details"
 msgstr ""
 
@@ -95,6 +92,9 @@ msgid "Air Bladder"
 msgstr ""
 
 msgid "Holy Symbol, Wood"
+msgstr ""
+
+msgid "Silver pieces"
 msgstr ""
 
 msgid "Bow, Short"
@@ -618,6 +618,9 @@ msgid "Missile Weapons"
 msgstr ""
 
 msgid "English"
+msgstr ""
+
+msgid "Gold pieces"
 msgstr ""
 
 msgid "Soap"
