@@ -10,6 +10,7 @@ import {
   EquipLabelsDict,
   getCustomEquipmentItem,
 } from '@/components/Inventory/AddEquipmentItemFragment/helpers'
+import { CurrencyType } from '@/domain/currency'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { EquipmentItemDto } from '@/domain/equipment'
 import {
@@ -21,10 +22,23 @@ const formInitialValues: EquipmentItemDto = {
   points: EncumbrancePoint.Regular,
   name: '',
   cost: 0,
-  isCopper: false,
+  currencyType: CurrencyType.Copper,
   category: 'miscEquipment',
   details: '',
 }
+
+const validationSchema = Yup.object({
+  points: Yup.number().required(t`Required field`),
+  name: Yup.string().required(t`Required field`),
+  cost: Yup.number().min(0, t`The number should be equal to or greater than 0`),
+  currencyType: Yup.string()
+    .oneOf(Object.keys(CurrencyType))
+    .required(t`Required field`),
+  category: Yup.string()
+    .oneOf(EquipmentStateKeys)
+    .required(t`Required field`),
+  details: Yup.string(),
+})
 
 const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
   const { _: trans } = useLingui()
@@ -33,19 +47,11 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
     onClose()
   }
 
+  // todo extract
   return (
     <Formik
       initialValues={formInitialValues}
-      validationSchema={Yup.object({
-        points: Yup.number().required(t`Required field`),
-        name: Yup.string().required(t`Required field`),
-        cost: Yup.number(),
-        isCopper: Yup.boolean(),
-        category: Yup.string()
-          .oneOf(EquipmentStateKeys)
-          .required(t`Required field`),
-        details: Yup.string(),
-      })}
+      validationSchema={validationSchema}
       onSubmit={(values, formikHelpers) => {
         handleAddItem(values as EquipmentItemDto)
         formikHelpers.resetForm()
@@ -106,23 +112,63 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
               className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600'
               placeholder='0'
               name='cost'
+              min={0}
               id='add-equip-item--cost'
             />
+            <span className='text-sm text-red-600'>
+              <ErrorMessage name='cost' />
+            </span>
 
-            {/* Checkbox */}
-            <div className='flex items-center'>
-              <Field
-                type='checkbox'
-                name='isCopper'
-                id='add-equip-item--isCopper'
-                className='h-4 w-4 rounded border-gray-300 bg-gray-100 focus:ring-2 focus:ring-blue-500'
-              />
-              <label
-                htmlFor='add-equip-item--isCopper'
-                className='ms-2 cursor-pointer text-sm font-medium text-gray-900'
-              >
-                <Trans>Copper pieces</Trans>
-              </label>
+            {/* Radios */}
+            <div className='flex flex-wrap items-center'>
+              <div className='mb-2 mr-4'>
+                <Field
+                  type='radio'
+                  name='currencyType'
+                  id='add-equip-item--isCopper'
+                  value='Copper'
+                  className='h-4 w-4 rounded border-gray-300 bg-gray-100 focus:ring-2 focus:ring-blue-500'
+                />
+                <label
+                  htmlFor='add-equip-item--isCopper'
+                  className='ml-2 cursor-pointer text-sm font-medium text-gray-900'
+                >
+                  <Trans>Copper</Trans>
+                </label>
+              </div>
+
+              <div className='mb-2 mr-4'>
+                <Field
+                  type='radio'
+                  name='currencyType'
+                  id='add-equip-item--isSilver'
+                  value='Silver'
+                  checked
+                  className='h-4 w-4 rounded border-gray-300 bg-gray-100 focus:ring-2 focus:ring-blue-500'
+                />
+                <label
+                  htmlFor='add-equip-item--isSilver'
+                  className='ml-2 cursor-pointer text-sm font-medium text-gray-900'
+                >
+                  <Trans>Silver</Trans>
+                </label>
+              </div>
+
+              <div className='mb-2 mr-4'>
+                <Field
+                  type='radio'
+                  name='currencyType'
+                  id='add-equip-item--isGold'
+                  value='Gold'
+                  className='h-4 w-4 rounded border-gray-300 bg-gray-100 focus:ring-2 focus:ring-blue-500'
+                />
+                <label
+                  htmlFor='add-equip-item--isGold'
+                  className='ml-2 cursor-pointer text-sm font-medium text-gray-900'
+                >
+                  <Trans>Gold</Trans>
+                </label>
+              </div>
             </div>
           </div>
 
