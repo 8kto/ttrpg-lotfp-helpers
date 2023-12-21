@@ -1,4 +1,5 @@
 import { getCustomEquipmentItem } from '@/components/Inventory/AddEquipmentItemFragment/helpers'
+import { CurrencyType } from '@/domain/currency'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { EquipmentItemDto } from '@/domain/equipment'
 
@@ -16,8 +17,8 @@ describe('AddEquipmentItemFragment helpers', () => {
       const data: EquipmentItemDto = {
         category: 'meleeWeapons',
         cost: 100,
+        currencyType: CurrencyType.Silver,
         details: 'A sharp sword',
-        isCopper: false,
         name: 'Sword',
         points: EncumbrancePoint.Regular,
       }
@@ -26,14 +27,14 @@ describe('AddEquipmentItemFragment helpers', () => {
 
       expect(result).toEqual({
         categoryKey: 'meleeWeapons',
-        cityCostCp: 100,
+        cityCostCp: 1000,
         details: 'A sharp sword',
         inventoryId: 'Sword001',
-        lockedCostCp: 100,
+        lockedCostCp: 1000,
         name: 'Sword',
         points: EncumbrancePoint.Regular,
         qty: 1,
-        ruralCostCp: 100,
+        ruralCostCp: 1000,
       })
     })
 
@@ -41,8 +42,8 @@ describe('AddEquipmentItemFragment helpers', () => {
       const data = {
         category: 'meleeWeapons',
         cost: 100,
+        currencyType: CurrencyType.Silver,
         details: 'A sharp sword',
-        isCopper: false,
         points: EncumbrancePoint.Regular,
       } as EquipmentItemDto
       expect(() => getCustomEquipmentItem(data)).toThrow('No name provided')
@@ -52,8 +53,8 @@ describe('AddEquipmentItemFragment helpers', () => {
       const data = {
         category: 'meleeWeapons',
         cost: 100,
+        currencyType: CurrencyType.Silver,
         details: 'A sharp sword',
-        isCopper: false,
         name: 'Sword',
       } as EquipmentItemDto
       expect(() => getCustomEquipmentItem(data)).toThrow('No points provided')
@@ -62,7 +63,7 @@ describe('AddEquipmentItemFragment helpers', () => {
     it('handles missing cost and details', () => {
       const data = {
         category: 'meleeWeapons',
-        isCopper: false,
+        currencyType: CurrencyType.Silver,
         name: 'Sword',
         points: EncumbrancePoint.Regular,
       } as EquipmentItemDto
@@ -77,7 +78,7 @@ describe('AddEquipmentItemFragment helpers', () => {
         name: 'Sword',
         points: EncumbrancePoint.Regular,
         qty: 1,
-        ruralCostCp: null,
+        ruralCostCp: 0,
       })
     })
   })

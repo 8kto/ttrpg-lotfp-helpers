@@ -1,7 +1,9 @@
+import { CurrencyType } from '@/domain/currency'
 import { EncumbrancePoint } from '@/domain/encumbrance'
 import type { EquipmentItem, EquipmentItemDto } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
 import { getAutoIncrementedId } from '@/shared/helpers/autoincrement'
+import CurrencyConverter from '@/shared/services/CurrencyConverter'
 import type { EquipmentCategoryKey } from '@/state/InventoryState'
 
 export const EquipLabelsDict: Record<EquipmentCategoryKey, string> = {
@@ -28,15 +30,24 @@ export const getCustomEquipmentItem = (
     throw new Error('No points provided')
   }
 
+  const costRaw = Number(data.cost) || 0
+  const costCp = CurrencyConverter.convertFromTo(
+    {
+      currency: data.currencyType,
+      value: costRaw,
+    },
+    CurrencyType.Copper,
+  ).value
+
   return {
     categoryKey: data.category,
-    cityCostCp: Number(data.cost) || 0,
+    cityCostCp: costCp,
     details: data.details || null,
     inventoryId: data.name + getAutoIncrementedId(),
-    lockedCostCp: Number(data.cost) || 0,
+    lockedCostCp: costCp,
     name: data.name,
     points: Number(data.points),
     qty: 1,
-    ruralCostCp: data.cost || null,
+    ruralCostCp: costCp,
   }
 }
