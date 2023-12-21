@@ -1,4 +1,6 @@
 import Equipment from '@/config/Equipment'
+import type { CurrencyRecord } from '@/domain/currency'
+import { CurrencyType } from '@/domain/currency'
 import type { EquipmentItem, EquipmentPack } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
 import { getGetterNames } from '@/shared/helpers/getGetterNames'
@@ -28,18 +30,24 @@ const getMinimalCostCp = (item: EquipmentItem) => {
   return Math.min(...costs)
 }
 
-export const getEquipmentPackCostCp = (pack: EquipmentPack): number => {
-  return pack.items.reduce((acc, [itemName, qty]) => {
-    const item = findEquipmentItem(itemName)
+export const getEquipmentPackCost = (pack: EquipmentPack): CurrencyRecord => {
+  return pack.items.reduce(
+    (acc, [itemName, qty]) => {
+      const item = findEquipmentItem(itemName)
 
-    if (!item) {
-      return acc
-    }
+      if (!item) {
+        return acc
+      }
 
-    const minimalCostCp = getMinimalCostCp(item)
+      const minimalCostCp = getMinimalCostCp(item)
 
-    return acc + minimalCostCp * qty
-  }, 0)
+      return {
+        ...acc,
+        value: acc.value + minimalCostCp * qty,
+      }
+    },
+    { currency: CurrencyType.Copper, value: 0 } as CurrencyRecord,
+  )
 }
 
 export const getEquipmentPackItems = (

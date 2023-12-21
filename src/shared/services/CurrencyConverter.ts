@@ -58,14 +58,18 @@ export default class CurrencyConverter {
   }
 
   static isValidWallet(wallet: CurrencyWallet): boolean {
-    return Object.values(wallet).every((v) => v >= 0)
+    const values = Object.values(wallet)
+
+    return values.length === 3 && values.every((v) => v >= 0)
   }
 
   static isWalletEmpty(wallet: CurrencyWallet): boolean {
     return Object.values(wallet).every((v) => !v)
   }
 
-  static getDisplayCostFromWallet(wallet: CurrencyWallet) {
+  static getDisplayCostFromWallet(
+    wallet: CurrencyWallet,
+  ): Array<[number, Unit]> {
     if (!this.isValidWallet(wallet)) {
       throw new Error(`Invalid values in wallet ${JSON.stringify(wallet)}`)
     }
@@ -74,14 +78,9 @@ export default class CurrencyConverter {
       [wallet.Gold, Unit.Gold],
       [wallet.Silver, Unit.Silver],
       [wallet.Copper, Unit.Copper],
-    ]
-      .filter((v) => !!v[0])
-      .map(([value, suffix]) => {
-        return `${value}${suffix}`
-      })
-      .join(', ')
+    ].filter(([value]) => !!value)
 
-    return values
+    return values as Array<[number, Unit]>
   }
 
   static add(record: CurrencyRecord, wallet: CurrencyWallet): CurrencyWallet {

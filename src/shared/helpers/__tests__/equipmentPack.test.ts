@@ -2,7 +2,7 @@ import '@testing-library/jest-dom'
 
 import type { EquipmentPack } from '@/domain/equipment'
 import {
-  getEquipmentPackCostCp,
+  getEquipmentPackCost,
   getEquipmentPackItems,
 } from '@/shared/helpers/equipmentPack'
 
@@ -122,13 +122,13 @@ describe('equipmentPack', () => {
     }
 
     it('calculates the correct total cost (always minimal)', () => {
-      const totalCost = getEquipmentPackCostCp(pack)
+      const totalCost = getEquipmentPackCost(pack)
       expect(totalCost).toBe(10 + 15 + 10 + 1 + 2 + 10)
     })
 
     it('returns 0 for an empty equipment pack', () => {
       const emptyPack = { items: [], name: 'Empty Pack' }
-      const totalCost = getEquipmentPackCostCp(emptyPack)
+      const totalCost = getEquipmentPackCost(emptyPack)
       expect(totalCost).toBe(0)
     })
 
@@ -137,7 +137,7 @@ describe('equipmentPack', () => {
         items: [['Treasures', 5]],
         name: 'Treasures Pack',
       }
-      const totalCost = getEquipmentPackCostCp(packMock)
+      const totalCost = getEquipmentPackCost(packMock)
       expect(totalCost).toBe(0)
     })
 
@@ -146,7 +146,7 @@ describe('equipmentPack', () => {
         items: [['Rock', 15]],
         name: 'Treasures Pack',
       }
-      const totalCost = getEquipmentPackCostCp(packMock)
+      const totalCost = getEquipmentPackCost(packMock)
       expect(totalCost).toBe(0)
     })
 
@@ -157,7 +157,7 @@ describe('equipmentPack', () => {
         items: pack.items.map(([item, qty]) => [item, qty * 2]), // Doubling quantities
       }
 
-      const totalCost = getEquipmentPackCostCp(modifiedPack)
+      const totalCost = getEquipmentPackCost(modifiedPack)
       expect(totalCost).toBe((10 + 15 + 10 + 1 + 2 + 10) * 2)
     })
   })

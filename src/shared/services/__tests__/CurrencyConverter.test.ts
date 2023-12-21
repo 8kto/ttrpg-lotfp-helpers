@@ -117,7 +117,6 @@ describe('CurrencyConverter', () => {
       ).toThrow('Unknown currency type')
     })
   })
-
   describe('.add', () => {
     it('should correctly add copper to a wallet', () => {
       const wallet: CurrencyWallet = { Copper: 50, Gold: 5, Silver: 20 }
@@ -171,6 +170,84 @@ describe('CurrencyConverter', () => {
           wallet,
         ),
       ).toThrow('Unknown currency type')
+    })
+  })
+  describe('.getDisplayCostFromWallet', () => {
+    it('returns list of currencies', () => {
+      expect(
+        CurrencyConverter.getDisplayCostFromWallet({
+          Copper: 4,
+          Gold: 100,
+          Silver: 89,
+        }),
+      ).toEqual([
+        [100, 'gp'],
+        [89, 'sp'],
+        [4, 'cp'],
+      ])
+    })
+
+    it('returns only present', () => {
+      expect(
+        CurrencyConverter.getDisplayCostFromWallet({
+          Copper: 4,
+          Gold: 0,
+          Silver: 9,
+        }),
+      ).toEqual([
+        [9, 'sp'],
+        [4, 'cp'],
+      ])
+    })
+
+    it('throws if wallet is invalid', () => {
+      expect(() =>
+        CurrencyConverter.getDisplayCostFromWallet({
+          Copper: -4,
+          Gold: 0,
+          Silver: 9,
+        }),
+      ).toThrow('Invalid values in wallet')
+    })
+  })
+  describe('.isValidWallet', () => {
+    it('should return true for valid wallet', () => {
+      expect(
+        CurrencyConverter.isValidWallet({
+          Copper: 4,
+          Gold: 100,
+          Silver: 89,
+        }),
+      ).toEqual(true)
+    })
+
+    it('should return true for partial', () => {
+      expect(
+        CurrencyConverter.isValidWallet({
+          Copper: 0,
+          Gold: 1,
+          Silver: 0,
+        }),
+      ).toEqual(true)
+    })
+
+    it('should return false for negatives', () => {
+      expect(
+        CurrencyConverter.isValidWallet({
+          Copper: 0,
+          Gold: -1,
+          Silver: 0,
+        }),
+      ).toEqual(false)
+    })
+
+    it('should return false for incomplete', () => {
+      expect(
+        CurrencyConverter.isValidWallet(
+          // @ts-ignore
+          { Copper: 10 },
+        ),
+      ).toEqual(false)
     })
   })
 })
