@@ -60,7 +60,12 @@ export default class CurrencyConverter {
   static isValidWallet(wallet: CurrencyWallet): boolean {
     const values = Object.values(wallet)
 
-    return values.length === 3 && values.every((v) => v >= 0)
+    return (
+      values.length === 3 &&
+      values.every((v) => {
+        return !isNaN(v) && v >= 0
+      })
+    )
   }
 
   static isWalletEmpty(wallet: CurrencyWallet): boolean {
@@ -105,5 +110,26 @@ export default class CurrencyConverter {
     }
 
     return newWallet
+  }
+  static mergeWallets(
+    newWallet: CurrencyWallet,
+    wallet: CurrencyWallet,
+  ): CurrencyWallet {
+    if (!this.isValidWallet(wallet)) {
+      throw new Error(`Invalid values in wallet ${JSON.stringify(wallet)}`)
+    }
+    if (!this.isValidWallet(newWallet)) {
+      throw new Error(`Invalid values in wallet ${JSON.stringify(newWallet)}`)
+    }
+
+    return Object.keys(wallet).reduce(
+      (acc, key) => {
+        const walletKey = key as keyof CurrencyWallet
+        acc[walletKey] = acc[walletKey] + wallet[walletKey]
+
+        return acc
+      },
+      { ...newWallet },
+    )
   }
 }

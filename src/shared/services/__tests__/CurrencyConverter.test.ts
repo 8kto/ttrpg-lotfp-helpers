@@ -71,7 +71,7 @@ describe('CurrencyConverter', () => {
     })
   })
   describe('.createWalletFrom', () => {
-    it('should create a wallet with the correct amount of copper', () => {
+    it('should create a wallet with the correct amount of Copper', () => {
       const result = CurrencyConverter.createWalletFrom({
         currency: CurrencyType.Copper,
         value: 100,
@@ -83,7 +83,7 @@ describe('CurrencyConverter', () => {
       } as CurrencyWallet)
     })
 
-    it('should create a wallet with the correct amount of silver', () => {
+    it('should create a wallet with the correct amount of Silver', () => {
       const result = CurrencyConverter.createWalletFrom({
         currency: CurrencyType.Silver,
         value: 50,
@@ -95,7 +95,7 @@ describe('CurrencyConverter', () => {
       } as CurrencyWallet)
     })
 
-    it('should create a wallet with the correct amount of gold', () => {
+    it('should create a wallet with the correct amount of Gold', () => {
       const result = CurrencyConverter.createWalletFrom({
         currency: CurrencyType.Gold,
         value: 10,
@@ -118,7 +118,7 @@ describe('CurrencyConverter', () => {
     })
   })
   describe('.add', () => {
-    it('should correctly add copper to a wallet', () => {
+    it('should correctly add Copper to a wallet', () => {
       const wallet: CurrencyWallet = { Copper: 50, Gold: 5, Silver: 20 }
       const result = CurrencyConverter.add(
         { currency: CurrencyType.Copper, value: 100 },
@@ -131,7 +131,7 @@ describe('CurrencyConverter', () => {
       } as CurrencyWallet)
     })
 
-    it('should correctly add silver to a wallet', () => {
+    it('should correctly add Silver to a wallet', () => {
       const wallet: CurrencyWallet = { Copper: 50, Gold: 5, Silver: 20 }
       const result = CurrencyConverter.add(
         { currency: CurrencyType.Silver, value: 30 },
@@ -144,7 +144,7 @@ describe('CurrencyConverter', () => {
       } as CurrencyWallet)
     })
 
-    it('should correctly add gold to a wallet', () => {
+    it('should correctly add Gold to a wallet', () => {
       const wallet: CurrencyWallet = { Copper: 50, Gold: 5, Silver: 20 }
       const result = CurrencyConverter.add(
         { currency: CurrencyType.Gold, value: 2 },
@@ -248,6 +248,47 @@ describe('CurrencyConverter', () => {
           { Copper: 10 },
         ),
       ).toEqual(false)
+    })
+
+    it('should return false for NaN', () => {
+      expect(
+        CurrencyConverter.isValidWallet({
+          Copper: 1,
+          Gold: 1,
+          Silver: NaN,
+        }),
+      ).toEqual(false)
+    })
+  })
+
+  describe('.mergeWallets', () => {
+    it('should correctly merge two wallets', () => {
+      const wallet1: CurrencyWallet = { Copper: 100, Gold: 10, Silver: 50 }
+      const wallet2: CurrencyWallet = { Copper: 200, Gold: 5, Silver: 30 }
+      const mergedWallet = CurrencyConverter.mergeWallets(wallet1, wallet2)
+      expect(mergedWallet).toEqual({ Copper: 300, Gold: 15, Silver: 80 })
+    })
+
+    it('should correctly merge two wallets with 0s', () => {
+      const wallet1: CurrencyWallet = { Copper: 100, Gold: 10, Silver: 0 }
+      const wallet2: CurrencyWallet = { Copper: 0, Gold: 5, Silver: 30 }
+      const mergedWallet = CurrencyConverter.mergeWallets(wallet1, wallet2)
+      expect(mergedWallet).toEqual({ Copper: 100, Gold: 15, Silver: 30 })
+    })
+
+    it('should handle empty wallet', () => {
+      const wallet1: CurrencyWallet = { Copper: 0, Gold: 0, Silver: 0 }
+      const wallet2: CurrencyWallet = { Copper: 100, Gold: 20, Silver: 50 }
+      const mergedWallet = CurrencyConverter.mergeWallets(wallet1, wallet2)
+      expect(mergedWallet).toEqual({ Copper: 100, Gold: 20, Silver: 50 })
+    })
+
+    it('should throw an error for invalid wallet', () => {
+      const wallet1: CurrencyWallet = { Copper: -10, Gold: 10, Silver: 50 }
+      const wallet2: CurrencyWallet = { Copper: 100, Gold: 5, Silver: 30 }
+      expect(() => {
+        CurrencyConverter.mergeWallets(wallet1, wallet2)
+      }).toThrow('Invalid values in wallet')
     })
   })
 })
