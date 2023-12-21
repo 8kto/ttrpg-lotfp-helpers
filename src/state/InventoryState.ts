@@ -108,8 +108,7 @@ export const toggleCoinsWeightActive = () => {
 }
 
 export const addCurrency = (record: CurrencyRecord) => {
-  const wallet = InventoryState.wallet
-  wallet.merge((v) => CurrencyConverter.add(record, v))
+  InventoryState.wallet.merge((wallet) => CurrencyConverter.add(record, wallet))
 }
 
 export const setCurrencies = (record: CurrencyRecord) => {
@@ -119,6 +118,10 @@ export const setCurrencies = (record: CurrencyRecord) => {
 
 export const mergeWallets = (wallet: CurrencyWallet) => {
   InventoryState.wallet.merge((w) => CurrencyConverter.mergeWallets(wallet, w))
+}
+
+export const setWallet = (wallet: CurrencyWallet) => {
+  InventoryState.wallet.set(wallet)
 }
 
 export const resetCurrencies = () => {
