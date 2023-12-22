@@ -130,9 +130,6 @@ msgstr ""
 msgid "Book, Spell (Blank)"
 msgstr ""
 
-msgid "100 coins (sp)"
-msgstr ""
-
 msgid "Required field"
 msgstr ""
 
@@ -680,9 +677,6 @@ msgstr ""
 msgid "Select random"
 msgstr ""
 
-msgid "100 coins (cp)"
-msgstr ""
-
 msgid "Jewelry"
 msgstr ""
 
@@ -767,9 +761,6 @@ msgid "Armor"
 msgstr ""
 
 msgid "Spear"
-msgstr ""
-
-msgid "100 coins (gp)"
 msgstr ""
 
 msgid "Fighter 2"
