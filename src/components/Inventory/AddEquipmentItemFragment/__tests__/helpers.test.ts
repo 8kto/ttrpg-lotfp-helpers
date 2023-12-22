@@ -1,6 +1,6 @@
 import { getCustomEquipmentItem } from '@/components/Inventory/AddEquipmentItemFragment/helpers'
 import { CurrencyType } from '@/domain/currency'
-import { EncumbrancePoint } from '@/domain/encumbrance'
+import { EncumbranceUnit } from '@/domain/encumbrance'
 import type { EquipmentItemDto } from '@/domain/equipment'
 
 jest.mock('@/shared/helpers/autoincrement', () => ({
@@ -20,7 +20,7 @@ describe('AddEquipmentItemFragment helpers', () => {
         currencyType: CurrencyType.Silver,
         details: 'A sharp sword',
         name: 'Sword',
-        points: EncumbrancePoint.Regular,
+        points: EncumbranceUnit.Regular,
       }
 
       const result = getCustomEquipmentItem(data)
@@ -32,7 +32,7 @@ describe('AddEquipmentItemFragment helpers', () => {
         inventoryId: 'Sword001',
         lockedCostCp: 1000,
         name: 'Sword',
-        points: EncumbrancePoint.Regular,
+        points: EncumbranceUnit.Regular,
         qty: 1,
         ruralCostCp: 1000,
       })
@@ -44,7 +44,7 @@ describe('AddEquipmentItemFragment helpers', () => {
         cost: 100,
         currencyType: CurrencyType.Silver,
         details: 'A sharp sword',
-        points: EncumbrancePoint.Regular,
+        points: EncumbranceUnit.Regular,
       } as EquipmentItemDto
       expect(() => getCustomEquipmentItem(data)).toThrow('No name provided')
     })
@@ -65,7 +65,7 @@ describe('AddEquipmentItemFragment helpers', () => {
         category: 'meleeWeapons',
         currencyType: CurrencyType.Silver,
         name: 'Sword',
-        points: EncumbrancePoint.Regular,
+        points: EncumbranceUnit.Regular,
       } as EquipmentItemDto
 
       const result = getCustomEquipmentItem(data)
@@ -76,7 +76,7 @@ describe('AddEquipmentItemFragment helpers', () => {
         inventoryId: 'Sword001',
         lockedCostCp: 0,
         name: 'Sword',
-        points: EncumbrancePoint.Regular,
+        points: EncumbranceUnit.Regular,
         qty: 1,
         ruralCostCp: 0,
       })

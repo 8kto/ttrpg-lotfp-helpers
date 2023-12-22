@@ -11,7 +11,7 @@ import {
   getCustomEquipmentItem,
 } from '@/components/Inventory/AddEquipmentItemFragment/helpers'
 import { CurrencyType } from '@/domain/currency'
-import { EncumbrancePoint } from '@/domain/encumbrance'
+import { EncumbranceUnit } from '@/domain/encumbrance'
 import type { EquipmentItemDto } from '@/domain/equipment'
 import {
   addCustomEquipmentItem,
@@ -19,7 +19,7 @@ import {
 } from '@/state/InventoryState'
 
 const formInitialValues: EquipmentItemDto = {
-  points: EncumbrancePoint.Regular,
+  points: EncumbranceUnit.Regular,
   name: '',
   cost: 0,
   currencyType: CurrencyType.Copper,

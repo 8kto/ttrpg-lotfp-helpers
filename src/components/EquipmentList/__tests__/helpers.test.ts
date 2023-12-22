@@ -6,7 +6,7 @@ import type { SortConfig } from '@/components/DataGrid/types'
 import { renderWeightGridCol } from '@/components/EquipmentList/gridHelpers'
 import { handleSortByDamage } from '@/components/EquipmentList/helpers'
 import { Dice } from '@/domain'
-import { EncumbrancePoint } from '@/domain/encumbrance'
+import { EncumbranceUnit } from '@/domain/encumbrance'
 import type { EquipmentItem } from '@/domain/equipment'
 import type { MeleeWeaponItem, WeaponItem } from '@/domain/weapon'
 import type { InventoryStateType } from '@/state/InventoryState'
@@ -191,16 +191,16 @@ describe('Equipment list helpers', () => {
     const stateMock = {} as State<InventoryStateType, unknown>
 
     it('should return "-" when points are None', () => {
-      const item = { points: EncumbrancePoint.None } as EquipmentItem
+      const item = { points: EncumbranceUnit.None } as EquipmentItem
       const result = renderWeightGridCol!(item, mockI18n, stateMock)
       expect(result).toBe('-')
     })
 
     it('should return translated value for non-None points', () => {
-      const item = { points: EncumbrancePoint.Regular } as EquipmentItem
+      const item = { points: EncumbranceUnit.Regular } as EquipmentItem
       const result = renderWeightGridCol!(item, mockI18n, stateMock)
-      expect(result).toBe(`translated_${EncumbrancePoint[item.points]}`)
-      expect(mockI18n._).toHaveBeenCalledWith(EncumbrancePoint[item.points])
+      expect(result).toBe(`translated_${EncumbranceUnit[item.points]}`)
+      expect(mockI18n._).toHaveBeenCalledWith(EncumbranceUnit[item.points])
     })
   })
 })

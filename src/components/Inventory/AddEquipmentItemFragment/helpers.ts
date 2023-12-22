@@ -1,5 +1,5 @@
 import { CurrencyType } from '@/domain/currency'
-import { EncumbrancePoint } from '@/domain/encumbrance'
+import { EncumbranceUnit } from '@/domain/encumbrance'
 import type { EquipmentItem, EquipmentItemDto } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
 import { getAutoIncrementedId } from '@/shared/helpers/autoincrement'
@@ -14,11 +14,11 @@ export const EquipLabelsDict: Record<EquipmentCategoryKey, string> = {
 }
 
 // FIXME sorted when rendered
-export const EncumbrancePointsLabelsDict: Record<EncumbrancePoint, string> = {
-  [EncumbrancePoint.None]: /*i18n*/ 'None',
-  [EncumbrancePoint.Regular]: /*i18n*/ 'Regular',
-  [EncumbrancePoint.Heavy]: /*i18n*/ 'Heavy',
-  [EncumbrancePoint.Oversized]: /*i18n*/ 'Oversized',
+export const EncumbrancePointsLabelsDict: Record<EncumbranceUnit, string> = {
+  [EncumbranceUnit.None]: /*i18n*/ 'None',
+  [EncumbranceUnit.Regular]: /*i18n*/ 'Regular',
+  [EncumbranceUnit.Heavy]: /*i18n*/ 'Heavy',
+  [EncumbranceUnit.Oversized]: /*i18n*/ 'Oversized',
 }
 
 export const getCustomEquipmentItem = (

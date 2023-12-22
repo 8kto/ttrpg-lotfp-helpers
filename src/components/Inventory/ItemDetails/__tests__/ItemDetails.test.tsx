@@ -7,7 +7,7 @@ import React from 'react'
 
 import ItemDetails from '@/components/Inventory/ItemDetails/ItemDetails'
 import { ArmorType } from '@/domain/armor'
-import { EncumbrancePoint } from '@/domain/encumbrance'
+import { EncumbranceUnit } from '@/domain/encumbrance'
 
 const TestingProvider = ({ children }: { children: React.ReactNode }) => (
   <I18nProvider i18n={i18n}>{children}</I18nProvider>
@@ -20,7 +20,7 @@ describe('<ItemDetails />', () => {
     inventoryId: '1',
     lockedCostCp: 50,
     name: 'Leather',
-    points: EncumbrancePoint.None,
+    points: EncumbranceUnit.None,
     ruralCost: 50,
     type: ArmorType.Armor,
     qty: 2,
