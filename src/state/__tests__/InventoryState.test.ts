@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react'
 
 import { CurrencyType } from '@/domain/currency'
-import { EncumbrancePoint } from '@/domain/encumbrance'
+import { EncumbranceUnit } from '@/domain/encumbrance'
 import type { EquipmentItem } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
 import {
@@ -278,7 +278,7 @@ describe('InventoryState Tests', () => {
       inventoryId: 'a15',
       lockedCostCp: 5,
       name: 'Jigsaw',
-      points: EncumbrancePoint.Regular,
+      points: EncumbranceUnit.Regular,
       qty: 1,
       ruralCostCp: 10,
     }

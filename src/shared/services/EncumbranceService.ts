@@ -2,7 +2,7 @@ import type { CurrencyWallet } from '@/domain/currency'
 import type { EncumbranceThreshold } from '@/domain/encumbrance'
 import {
   Encumbrance as EncumbranceType,
-  EncumbrancePoint,
+  EncumbranceUnit,
 } from '@/domain/encumbrance'
 import type { EquipmentItem } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
@@ -33,16 +33,16 @@ class EncumbranceService {
   }
 
   static getEncumbrance(points: number): EncumbranceType {
-    if (points > 20 * EncumbrancePoint.Regular) {
+    if (points > 20 * EncumbranceUnit.Regular) {
       return EncumbranceType.OverEncumbered
     }
-    if (points > 15 * EncumbrancePoint.Regular) {
+    if (points > 15 * EncumbranceUnit.Regular) {
       return EncumbranceType.Severely
     }
-    if (points > 10 * EncumbrancePoint.Regular) {
+    if (points > 10 * EncumbranceUnit.Regular) {
       return EncumbranceType.Heavily
     }
-    if (points > 5 * EncumbrancePoint.Regular) {
+    if (points > 5 * EncumbranceUnit.Regular) {
       return EncumbranceType.Lightly
     }
 
@@ -60,7 +60,7 @@ class EncumbranceService {
     return Array.from({ length: inventorySlots }, () => {
       return {
         lockedCostCp: 0,
-        points: EncumbrancePoint.Regular,
+        points: EncumbranceUnit.Regular,
         qty: 1,
       }
     })
@@ -72,7 +72,7 @@ class EncumbranceService {
    * are not subject to encumbrance, unless they are Armor or Oversized items.
    */
   private getSkippedItems(item: CountableItem): Signal | number {
-    const isEncumbranceFree = item.points !== EncumbrancePoint.Regular
+    const isEncumbranceFree = item.points !== EncumbranceUnit.Regular
 
     if (isEncumbranceFree || this.isRegularEncumbrance) {
       return Signal.RegularEncumbrance
@@ -131,6 +131,12 @@ class EncumbranceService {
       totalCosts: totalCosts,
       totalEncumbrancePoints: roundTo(totalEncumbrancePoints, 1),
     }
+  }
+
+  static getReadableEncumbrance(encumbrance: number ): number {
+    const slots = roundTo(encumbrance / EncumbranceUnit.Regular, 1)
+
+    return Math.ceil(slots / 5)
   }
 }
 

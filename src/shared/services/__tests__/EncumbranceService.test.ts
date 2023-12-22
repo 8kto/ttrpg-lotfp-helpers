@@ -2,7 +2,7 @@
 import type { CurrencyWallet } from '@/domain/currency'
 import {
   Encumbrance as EncumbranceType,
-  EncumbrancePoint,
+  EncumbranceUnit,
   EncumbranceThreshold,
 } from '@/domain/encumbrance'
 import type { EquipmentItem } from '@/domain/equipment'
@@ -19,7 +19,7 @@ describe('EncumbranceService', () => {
 
   const getItemMock = (
     lockedCostCp: number,
-    points: EncumbrancePoint,
+    points: EncumbranceUnit,
     qty: number = 1,
   ): InventoryItem<EquipmentItem> => {
     return {
@@ -36,20 +36,20 @@ describe('EncumbranceService', () => {
 
   describe('singular items', () => {
     const items: ReadonlyArray<InventoryItem<EquipmentItem>> = [
-      getItemMock(200, EncumbrancePoint.None), // skipped as None
-      getItemMock(200, EncumbrancePoint.None), // skipped as None
-      getItemMock(50, EncumbrancePoint.Oversized),
-      getItemMock(200, EncumbrancePoint.None), // skipped as None
-      getItemMock(100, EncumbrancePoint.Regular), // skipped 1st
-      getItemMock(100, EncumbrancePoint.Regular), // skipped 2nd
-      getItemMock(200, EncumbrancePoint.Heavy),
-      getItemMock(100, EncumbrancePoint.Regular), // skipped 3rd
-      getItemMock(100, EncumbrancePoint.Regular), // skipped 4th
-      getItemMock(100, EncumbrancePoint.Regular), // skipped 5th
-      getItemMock(100, EncumbrancePoint.Regular),
-      getItemMock(100, EncumbrancePoint.Regular),
-      getItemMock(50, EncumbrancePoint.Oversized),
-      getItemMock(200, EncumbrancePoint.Heavy),
+      getItemMock(200, EncumbranceUnit.None), // skipped as None
+      getItemMock(200, EncumbranceUnit.None), // skipped as None
+      getItemMock(50, EncumbranceUnit.Oversized),
+      getItemMock(200, EncumbranceUnit.None), // skipped as None
+      getItemMock(100, EncumbranceUnit.Regular), // skipped 1st
+      getItemMock(100, EncumbranceUnit.Regular), // skipped 2nd
+      getItemMock(200, EncumbranceUnit.Heavy),
+      getItemMock(100, EncumbranceUnit.Regular), // skipped 3rd
+      getItemMock(100, EncumbranceUnit.Regular), // skipped 4th
+      getItemMock(100, EncumbranceUnit.Regular), // skipped 5th
+      getItemMock(100, EncumbranceUnit.Regular),
+      getItemMock(100, EncumbranceUnit.Regular),
+      getItemMock(50, EncumbranceUnit.Oversized),
+      getItemMock(200, EncumbranceUnit.Heavy),
     ] // sum: 1800cp
 
     it('returns total cost and points of all equipment items', () => {
@@ -138,9 +138,9 @@ describe('EncumbranceService', () => {
   describe('qty', () => {
     it('applies qty (ignored)', () => {
       const itemsWithQty: ReadonlyArray<InventoryItem<EquipmentItem>> = [
-        getItemMock(200, EncumbrancePoint.None, 2), // should be ignored no matter of qty
-        getItemMock(200, EncumbrancePoint.None, 3), // should be ignored no matter of qty
-        getItemMock(50, EncumbrancePoint.Oversized, 2), // not ignored (non-regular item)
+        getItemMock(200, EncumbranceUnit.None, 2), // should be ignored no matter of qty
+        getItemMock(200, EncumbranceUnit.None, 3), // should be ignored no matter of qty
+        getItemMock(50, EncumbranceUnit.Oversized, 2), // not ignored (non-regular item)
       ]
 
       const service = new EncumbranceService({
@@ -159,7 +159,7 @@ describe('EncumbranceService', () => {
 
     it('applies qty from the stacked items (11)', () => {
       const itemsWithQty: ReadonlyArray<InventoryItem<EquipmentItem>> = [
-        getItemMock(100, EncumbrancePoint.Regular, 11),
+        getItemMock(100, EncumbranceUnit.Regular, 11),
       ]
 
       const service = new EncumbranceService({
@@ -174,7 +174,7 @@ describe('EncumbranceService', () => {
         },
         totalEncumbrancePoints: Number(
           /* 11 slots - 5 for free = 6 slots */ (
-            6 * EncumbrancePoint.Regular
+            6 * EncumbranceUnit.Regular
           ).toPrecision(2),
         ),
       })
@@ -182,9 +182,9 @@ describe('EncumbranceService', () => {
 
     it('applies qty', () => {
       const itemsWithQty: ReadonlyArray<InventoryItem<EquipmentItem>> = [
-        getItemMock(200, EncumbrancePoint.Regular, 3), // should be ignored
-        getItemMock(200, EncumbrancePoint.Regular, 3), // 2 of 3 should be ignored
-        getItemMock(50, EncumbrancePoint.Oversized, 6), // not ignored
+        getItemMock(200, EncumbranceUnit.Regular, 3), // should be ignored
+        getItemMock(200, EncumbranceUnit.Regular, 3), // 2 of 3 should be ignored
+        getItemMock(50, EncumbranceUnit.Oversized, 6), // not ignored
       ]
 
       const service = new EncumbranceService({
@@ -203,17 +203,17 @@ describe('EncumbranceService', () => {
 
     it('appliles qty on rich set of items', () => {
       const itemsWithQty: ReadonlyArray<InventoryItem<EquipmentItem>> = [
-        getItemMock(200, EncumbrancePoint.None, 10), // skipped as None
-        getItemMock(200, EncumbrancePoint.None, 1), // skipped as None
-        getItemMock(50, EncumbrancePoint.Oversized, 2), // not skipped
-        getItemMock(200, EncumbrancePoint.None), // skipped as None
-        getItemMock(100, EncumbrancePoint.Regular, 10), // skipped 5/10
-        getItemMock(100, EncumbrancePoint.Regular, 3), // not skipped
-        getItemMock(200, EncumbrancePoint.Heavy), // not skipped
-        getItemMock(100, EncumbrancePoint.Regular, 2), // not skipped
-        getItemMock(100, EncumbrancePoint.Regular), // not skipped
-        getItemMock(50, EncumbrancePoint.Oversized), // not skipped
-        getItemMock(200, EncumbrancePoint.Heavy, 2), // not skipped
+        getItemMock(200, EncumbranceUnit.None, 10), // skipped as None
+        getItemMock(200, EncumbranceUnit.None, 1), // skipped as None
+        getItemMock(50, EncumbranceUnit.Oversized, 2), // not skipped
+        getItemMock(200, EncumbranceUnit.None), // skipped as None
+        getItemMock(100, EncumbranceUnit.Regular, 10), // skipped 5/10
+        getItemMock(100, EncumbranceUnit.Regular, 3), // not skipped
+        getItemMock(200, EncumbranceUnit.Heavy), // not skipped
+        getItemMock(100, EncumbranceUnit.Regular, 2), // not skipped
+        getItemMock(100, EncumbranceUnit.Regular), // not skipped
+        getItemMock(50, EncumbranceUnit.Oversized), // not skipped
+        getItemMock(200, EncumbranceUnit.Heavy, 2), // not skipped
       ] // sum: 1800cp
 
       const service = new EncumbranceService({
@@ -237,7 +237,7 @@ describe('EncumbranceService', () => {
         threshold: EncumbranceThreshold.Regular,
       })
       const items = Array.from({ length: 5 }, () =>
-        getItemMock(100, EncumbrancePoint.Regular),
+        getItemMock(100, EncumbranceUnit.Regular),
       )
       const result = service.getTotal(items, emptyWallet)
       expect(result.totalEncumbrancePoints).toBe(0)
@@ -248,7 +248,7 @@ describe('EncumbranceService', () => {
         threshold: EncumbranceThreshold.Dwarf,
       })
       const items = Array.from({ length: 10 }, () =>
-        getItemMock(100, EncumbrancePoint.Regular),
+        getItemMock(100, EncumbranceUnit.Regular),
       )
       const result = service.getTotal(items, emptyWallet)
       expect(result.totalEncumbrancePoints).toBe(0)
@@ -259,7 +259,7 @@ describe('EncumbranceService', () => {
     const getNmocks = (length: number) => {
       return Array.from({ length }, () => ({
         lockedCostCp: 0,
-        points: EncumbrancePoint.Regular,
+        points: EncumbranceUnit.Regular,
         qty: 1,
       }))
     }
@@ -340,8 +340,14 @@ describe('EncumbranceService', () => {
       [100, EncumbranceType.OverEncumbered],
     ])('should return %d -> %s', (input, expected) => {
       expect(
-        EncumbranceService.getEncumbrance(input * EncumbrancePoint.Regular),
+        EncumbranceService.getEncumbrance(input * EncumbranceUnit.Regular),
       ).toEqual(expected)
     })
+  })
+
+  describe('.getReadableEncumbrance', () => {
+      it('should return string', () => {
+          expect(EncumbranceService.getReadableEncumbrance(1)).toEqual('')
+      })
   })
 })
