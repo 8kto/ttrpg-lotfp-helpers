@@ -1,0 +1,271 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EquipmentPacks snapshots match whole set 1`] = `
+{
+  "Adventurer": {
+    "items": [
+      [
+        "Book, Blank",
+        1,
+      ],
+      [
+        "Candle",
+        1,
+      ],
+      [
+        "Chalk",
+        1,
+      ],
+      [
+        "Crowbar",
+        1,
+      ],
+      [
+        "Flask of Lamp Oil",
+        3,
+      ],
+      [
+        "Ink",
+        1,
+      ],
+      [
+        "Instrument",
+        1,
+      ],
+      [
+        "Lantern",
+        1,
+      ],
+      [
+        "Lock",
+        1,
+      ],
+      [
+        "Mallet",
+        1,
+      ],
+      [
+        "Mirror, Steel",
+        1,
+      ],
+      [
+        "Nails",
+        20,
+      ],
+      [
+        "Pole, 10'",
+        1,
+      ],
+      [
+        "Rope, 50'",
+        1,
+      ],
+      [
+        "Soap",
+        1,
+      ],
+      [
+        "Spike, Wooden",
+        1,
+      ],
+      [
+        "Tinderbox",
+        1,
+      ],
+      [
+        "Torch",
+        3,
+      ],
+      [
+        "Whistle",
+        1,
+      ],
+    ],
+    "name": "Adventurer",
+  },
+  "Basic": {
+    "items": [
+      [
+        "Bedroll",
+        1,
+      ],
+      [
+        "Rations, Standard/Day",
+        3,
+      ],
+      [
+        "Backpack",
+        1,
+      ],
+      [
+        "Pouch",
+        1,
+      ],
+      [
+        "Sack",
+        1,
+      ],
+      [
+        "Tinderbox",
+        1,
+      ],
+    ],
+    "name": "Basic",
+  },
+  "Cleric1": {
+    "items": [
+      [
+        "Leather",
+        1,
+      ],
+      [
+        "Shield",
+        1,
+      ],
+      [
+        "Holy Symbol, Steel",
+        1,
+      ],
+      [
+        "Mace",
+        1,
+      ],
+      [
+        "Holy Water",
+        1,
+      ],
+    ],
+    "name": "Cleric 1",
+  },
+  "Cleric2": {
+    "items": [
+      [
+        "Leather",
+        1,
+      ],
+      [
+        "Holy Symbol, Steel",
+        1,
+      ],
+      [
+        "Maul",
+        1,
+      ],
+      [
+        "Holy Water",
+        1,
+      ],
+      [
+        "Sling",
+        1,
+      ],
+      [
+        "Sling bullets (10)",
+        1,
+      ],
+    ],
+    "name": "Cleric 2",
+  },
+  "Fighter1": {
+    "items": [
+      [
+        "Chain",
+        1,
+      ],
+      [
+        "Shield",
+        1,
+      ],
+      [
+        "Two-handed sword",
+        1,
+      ],
+    ],
+    "name": "Fighter 1",
+  },
+  "Fighter2": {
+    "items": [
+      [
+        "Chain",
+        1,
+      ],
+      [
+        "Polearm",
+        1,
+      ],
+    ],
+    "name": "Fighter 2",
+  },
+  "Fighter3": {
+    "items": [
+      [
+        "Leather",
+        1,
+      ],
+      [
+        "Two-handed sword",
+        1,
+      ],
+      [
+        "Bow, Short",
+        1,
+      ],
+      [
+        "Arrows, quiver (20)",
+        1,
+      ],
+    ],
+    "name": "Fighter 3",
+  },
+  "MagicUser": {
+    "items": [
+      [
+        "Leather",
+        1,
+      ],
+      [
+        "Book, Spell (Blank)",
+        1,
+      ],
+      [
+        "Ink",
+        1,
+      ],
+      [
+        "Dagger",
+        2,
+      ],
+      [
+        "Staff",
+        1,
+      ],
+    ],
+    "name": "Magic user",
+  },
+  "Specialist": {
+    "items": [
+      [
+        "Leather",
+        1,
+      ],
+      [
+        "Specialist’s Tools",
+        1,
+      ],
+      [
+        "Short sword",
+        1,
+      ],
+      [
+        "Dagger",
+        2,
+      ],
+      [
+        "Rope, 50'",
+        1,
+      ],
+    ],
+    "name": "Specialist",
+  },
+}
+`;
