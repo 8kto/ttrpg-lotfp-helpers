@@ -1,7 +1,7 @@
 import { useLingui } from '@lingui/react'
 import React from 'react'
 
-import { getEncumbrance } from '@/shared/helpers/encumbrance'
+import EncumbranceService from '@/shared/services/EncumbranceService'
 
 const EncumbranceFragment = ({
   encumbrancePoints,
@@ -9,7 +9,7 @@ const EncumbranceFragment = ({
   encumbrancePoints: number
 }) => {
   const { i18n } = useLingui()
-  const encumbrance = getEncumbrance(encumbrancePoints)
+  const encumbrance = EncumbranceService.getEncumbrance(encumbrancePoints)
 
   // TODO plurals for feet
   // TODO modal with FAQ about encumbrance

@@ -6,7 +6,7 @@ import EncumbranceFragment from '@/components/EncumbranceFragment/EncumbranceFra
 import MovementFragment from '@/components/MovementFragment/MovementFragment'
 import Wallet from '@/components/Wallet/Wallet'
 import { EncumbranceThreshold } from '@/domain/encumbrance'
-import Encumbrance from '@/shared/services/Encumbrance'
+import EncumbranceService from '@/shared/services/EncumbranceService'
 import { combineEquipment } from '@/state/helpers'
 import { useInventoryState } from '@/state/InventoryState'
 
@@ -15,7 +15,7 @@ const InventoryDetails = () => {
   const { isCoinWeightActive, wallet } = equipmentState
 
   const { totalEncumbrancePoints, totalCosts } = useMemo(() => {
-    const encumbranceService = new Encumbrance({
+    const encumbranceService = new EncumbranceService({
       threshold: EncumbranceThreshold.Regular,
     })
 

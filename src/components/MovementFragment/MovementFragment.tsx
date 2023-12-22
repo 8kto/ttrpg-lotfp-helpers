@@ -2,14 +2,14 @@ import { Trans } from '@lingui/macro'
 import React from 'react'
 
 import { MovementRates } from '@/config/MovementRates'
-import { getEncumbrance } from '@/shared/helpers/encumbrance'
+import EncumbranceService from '@/shared/services/EncumbranceService'
 
 const MovementFragment = ({
   encumbrancePoints,
 }: {
   encumbrancePoints: number
 }) => {
-  const encumbrance = getEncumbrance(encumbrancePoints)
+  const encumbrance = EncumbranceService.getEncumbrance(encumbrancePoints)
   const movement = MovementRates[encumbrance]
 
   return (
