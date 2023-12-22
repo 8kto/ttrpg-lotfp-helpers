@@ -1,6 +1,5 @@
 /* eslint-disable sort-keys-fix/sort-keys-fix */
 import type { CurrencyWallet } from '@/domain/currency'
-import { CurrencyType } from '@/domain/currency'
 import {
   Encumbrance as EncumbranceType,
   EncumbrancePoint,
@@ -10,7 +9,7 @@ import type { EquipmentItem } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
 import EncumbranceService from '@/shared/services/EncumbranceService'
 
-describe('Encumbrance', () => {
+describe('EncumbranceService', () => {
   const emptyWallet: CurrencyWallet = Object.freeze({
     Copper: 0,
     Gold: 0,
@@ -77,14 +76,14 @@ describe('Encumbrance', () => {
         Copper: 160,
         Gold: 390,
         Silver: 0,
-      } // 1 + 3 + 0 slots = 4 * 1/5 = 0.8 enc. points
+      } // 5 slots * 1/5 = 1 enc. points
       expect(service.getTotal(items, coins)).toEqual({
         totalCosts: {
           Copper: 1800,
           Gold: 0,
           Silver: 0,
         },
-        totalEncumbrancePoints: 7.2,
+        totalEncumbrancePoints: 7.4,
       })
     })
 
@@ -233,39 +232,13 @@ describe('Encumbrance', () => {
     })
   })
 
-  describe('.getCoinItems', () => {
-    const mockCountableItemCp = (length: number) => {
-      return Array.from({ length }, () => {
-        return {
-          lockedCostCp: 0,
-          name: '100 coins (cp)',
-          points: EncumbrancePoint.Regular,
-          qty: 1,
-        }
-      })
-    }
-    const getMockFor = (type: CurrencyType) => {
-      let title
-      switch (type) {
-        case CurrencyType.Copper:
-          title = '100 coins (cp)'
-          break
-        case CurrencyType.Silver:
-          title = '100 coins (sp)'
-          break
-        case CurrencyType.Gold:
-          title = '100 coins (gp)'
-          break
-        default:
-          throw new Error('Unknown currency type')
-      }
-
-      return {
+  describe('.getCoinsEncumbrance', () => {
+    const getNmocks = (length: number) => {
+      return Array.from({ length }, () => ({
         lockedCostCp: 0,
-        name: title,
         points: EncumbrancePoint.Regular,
         qty: 1,
-      }
+      }))
     }
 
     it.each([
@@ -279,64 +252,53 @@ describe('Encumbrance', () => {
       'should return expected array of items for %d CP',
       (input, expectedLength) => {
         expect(
-          EncumbranceService.getCoinItems({
+          EncumbranceService.getCoinsEncumbrance({
             Copper: input,
             Gold: 0,
             Silver: 0,
           }),
-        ).toEqual(mockCountableItemCp(expectedLength))
+        ).toEqual(getNmocks(expectedLength))
       },
     )
 
     it('should compile items', () => {
       expect(
-        EncumbranceService.getCoinItems({
+        EncumbranceService.getCoinsEncumbrance({
           Copper: 100,
           Silver: 100,
           Gold: 100,
         }),
-      ).toEqual([
-        getMockFor(CurrencyType.Copper),
-        getMockFor(CurrencyType.Silver),
-        getMockFor(CurrencyType.Gold),
-      ])
+      ).toEqual(getNmocks(3))
     })
 
     it('should compile mixed set', () => {
       expect(
-        EncumbranceService.getCoinItems({
+        EncumbranceService.getCoinsEncumbrance({
           Copper: 200,
           Silver: 10,
           Gold: 1000,
         }),
-      ).toEqual([
-        ...Array.from({ length: 2 }, () => getMockFor(CurrencyType.Copper)),
-        ...Array.from({ length: 10 }, () => getMockFor(CurrencyType.Gold)),
-      ])
+      ).toEqual(getNmocks(12))
     })
 
     it('should ignore items < 100', () => {
       expect(
-        EncumbranceService.getCoinItems({
+        EncumbranceService.getCoinsEncumbrance({
           Copper: 20,
           Silver: 10,
           Gold: 99,
         }),
-      ).toEqual([])
+      ).toEqual(getNmocks(1))
     })
 
     it('should round down', () => {
       expect(
-        EncumbranceService.getCoinItems({
+        EncumbranceService.getCoinsEncumbrance({
           Copper: 299,
           Silver: 560,
           Gold: 115,
         }),
-      ).toEqual([
-        ...Array.from({ length: 2 }, () => getMockFor(CurrencyType.Copper)),
-        ...Array.from({ length: 5 }, () => getMockFor(CurrencyType.Silver)),
-        ...Array.from({ length: 1 }, () => getMockFor(CurrencyType.Gold)),
-      ])
+      ).toEqual(getNmocks(9))
     })
   })
 

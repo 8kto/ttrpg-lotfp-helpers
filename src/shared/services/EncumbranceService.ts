@@ -1,7 +1,4 @@
-import { t } from '@lingui/macro'
-
 import type { CurrencyWallet } from '@/domain/currency'
-import { CurrencyType } from '@/domain/currency'
 import type { EncumbranceThreshold } from '@/domain/encumbrance'
 import {
   Encumbrance as EncumbranceType,
@@ -22,7 +19,7 @@ enum Signal {
 
 export type CountableItem = Pick<
   InventoryItem<EquipmentItem>,
-  'points' | 'lockedCostCp' | 'name' | 'qty'
+  'points' | 'lockedCostCp' | 'qty'
 >
 
 export const COINS_PER_ENCUMBRANCE_POINT = 100
@@ -36,6 +33,7 @@ class EncumbranceService {
   }
 
   static getEncumbrance(points: number): EncumbranceType {
+    // FIXME?
     if (points >= 5) {
       return EncumbranceType.OverEncumbered
     }
@@ -56,34 +54,17 @@ class EncumbranceService {
    * Convert coins number into an array of CountableItem, counts are rounded down
    * That is: 120 coins weight as 100 coins and occupy 1 encumbrance slot (1/5 enc. point)
    */
-  static getCoinItems(wallet: CurrencyWallet): Array<CountableItem> {
-    return Object.entries(wallet)
-      .filter(([, value]) => !!value)
-      .flatMap(([currency, value]) => {
-        const coinsEncumbrance = Math.floor(value / COINS_PER_ENCUMBRANCE_POINT)
+  static getCoinsEncumbrance(wallet: CurrencyWallet): Array<CountableItem> {
+    const coinsNum = Object.values(wallet).reduce((acc, cur) => acc + cur, 0)
+    const inventorySlots = Math.floor(coinsNum / COINS_PER_ENCUMBRANCE_POINT)
 
-        return Array.from({ length: coinsEncumbrance }, () => {
-          return {
-            lockedCostCp: 0,
-            name: this.getCoinsLockedCost(currency as CurrencyType),
-            points: EncumbrancePoint.Regular,
-            qty: 1,
-          }
-        })
-      })
-  }
-
-  static getCoinsLockedCost(type: CurrencyType) {
-    switch (type) {
-      case CurrencyType.Copper:
-        return t`100 coins (cp)`
-      case CurrencyType.Silver:
-        return t`100 coins (sp)`
-      case CurrencyType.Gold:
-        return t`100 coins (gp)`
-      default:
-        throw new Error('Unknown coins type')
-    }
+    return Array.from({ length: inventorySlots }, () => {
+      return {
+        lockedCostCp: 0,
+        points: EncumbrancePoint.Regular,
+        qty: 1,
+      }
+    })
   }
 
   /**
@@ -119,13 +100,11 @@ class EncumbranceService {
     totalEncumbrancePoints: number
   } {
     const records = wallet
-      ? items.concat(EncumbranceService.getCoinItems(wallet))
-      : []
-    const totalCosts: CurrencyWallet = {
-      Copper: 0,
-      Gold: 0,
-      Silver: 0,
-    }
+      ? // A special countable list for coins should be processed alongside other items
+        // to ensure correct handling of free encumbrance points (e.g., the first 5 for humans)
+        items.concat(EncumbranceService.getCoinsEncumbrance(wallet))
+      : items
+    const totalCosts: CurrencyWallet = { Copper: 0, Gold: 0, Silver: 0 }
     let totalEncumbrancePoints = 0
 
     records.forEach((item) => {
