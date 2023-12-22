@@ -1,3 +1,4 @@
+import { Trans } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import React from 'react'
 
@@ -19,15 +20,15 @@ const EncumbranceFragment = ({
       {process.env.NODE_ENV === 'development' ? (
         <span className='text-gray-400'>
           ({encumbrancePoints.toPrecision(2)} e.u. /{' '}
-          {EncumbranceService.getReadableEncumbrance(
-            encumbrancePoints /*  + 5 * EncumbrancePoint.Regular */,
-          )}{' '}
-          e.p.)
+          {EncumbranceService.getReadableEncumbrance(encumbrancePoints)} e.p.)
         </span>
       ) : (
-        EncumbranceService.getReadableEncumbrance(
-          encumbrancePoints /*  + 5 * EncumbrancePoint.Regular */,
-        )
+        <>
+          <span className='text-gray-400'>
+            ({EncumbranceService.getReadableEncumbrance(encumbrancePoints)})
+          </span>{' '}
+          <Trans>e.p.</Trans>
+        </>
       )}
     </>
   )
