@@ -305,17 +305,20 @@ describe('EncumbranceService', () => {
   describe('.getEncumbrance', () => {
     it.each([
       [0, EncumbranceType.Unencumbered],
-      [1.8, EncumbranceType.Unencumbered],
-      [2, EncumbranceType.Lightly],
-      [2.8, EncumbranceType.Lightly],
-      [3, EncumbranceType.Heavily],
-      [3.8, EncumbranceType.Heavily],
-      [4, EncumbranceType.Severely],
-      [4.8, EncumbranceType.Severely],
-      [5, EncumbranceType.OverEncumbered],
+      [5, EncumbranceType.Unencumbered],
+      [6, EncumbranceType.Lightly],
+      [10, EncumbranceType.Lightly],
+      [11, EncumbranceType.Heavily],
+      [15, EncumbranceType.Heavily],
+      [16, EncumbranceType.Severely],
+      [20, EncumbranceType.Severely],
+      [21, EncumbranceType.OverEncumbered],
+      [31, EncumbranceType.OverEncumbered],
       [100, EncumbranceType.OverEncumbered],
     ])('should return %d -> %s', (input, expected) => {
-      expect(EncumbranceService.getEncumbrance(input)).toEqual(expected)
+      expect(
+        EncumbranceService.getEncumbrance(input * EncumbrancePoint.Regular),
+      ).toEqual(expected)
     })
   })
 })
