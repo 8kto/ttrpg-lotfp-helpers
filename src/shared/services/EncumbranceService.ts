@@ -33,16 +33,16 @@ class EncumbranceService {
   }
 
   static getEncumbrance(points: number): EncumbranceType {
-    if (points >= 21 * EncumbrancePoint.Regular) {
+    if (points > 20 * EncumbrancePoint.Regular) {
       return EncumbranceType.OverEncumbered
     }
-    if (points >= 16 * EncumbrancePoint.Regular) {
+    if (points > 15 * EncumbrancePoint.Regular) {
       return EncumbranceType.Severely
     }
-    if (points >= 11 * EncumbrancePoint.Regular) {
+    if (points > 10 * EncumbrancePoint.Regular) {
       return EncumbranceType.Heavily
     }
-    if (points >= 6 * EncumbrancePoint.Regular) {
+    if (points > 5 * EncumbrancePoint.Regular) {
       return EncumbranceType.Lightly
     }
 

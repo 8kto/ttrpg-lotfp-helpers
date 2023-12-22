@@ -157,6 +157,29 @@ describe('EncumbranceService', () => {
       })
     })
 
+    it('applies qty from the stacked items (11)', () => {
+      const itemsWithQty: ReadonlyArray<InventoryItem<EquipmentItem>> = [
+        getItemMock(100, EncumbrancePoint.Regular, 11),
+      ]
+
+      const service = new EncumbranceService({
+        threshold: EncumbranceThreshold.Regular,
+      })
+
+      expect(service.getTotal(itemsWithQty, emptyWallet)).toEqual({
+        totalCosts: {
+          Copper: 1100,
+          Gold: 0,
+          Silver: 0,
+        },
+        totalEncumbrancePoints: Number(
+          /* 11 slots - 5 for free = 6 slots */ (
+            6 * EncumbrancePoint.Regular
+          ).toPrecision(2),
+        ),
+      })
+    })
+
     it('applies qty', () => {
       const itemsWithQty: ReadonlyArray<InventoryItem<EquipmentItem>> = [
         getItemMock(200, EncumbrancePoint.Regular, 3), // should be ignored
