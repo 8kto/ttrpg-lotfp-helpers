@@ -13,6 +13,7 @@ export const EquipLabelsDict: Record<EquipmentCategoryKey, string> = {
   missileWeapons: /*i18n*/ 'Missile weapons',
 }
 
+// FIXME sorted when rendered
 export const EncumbrancePointsLabelsDict: Record<EncumbrancePoint, string> = {
   [EncumbrancePoint.None]: /*i18n*/ 'None',
   [EncumbrancePoint.Regular]: /*i18n*/ 'Regular',
