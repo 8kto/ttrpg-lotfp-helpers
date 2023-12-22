@@ -1,7 +1,7 @@
 import Equipment from '@/config/Equipment'
 import { Dice } from '@/domain'
 import { ArmorType } from '@/domain/armor'
-import { EncumbrancePoint } from '@/domain/encumbrance'
+import { EncumbranceUnit } from '@/domain/encumbrance'
 import { WeaponType } from '@/domain/weapon'
 
 describe('Equipment', () => {
@@ -16,7 +16,7 @@ describe('Equipment', () => {
         name: expect.any(String),
         points: expect
           // @ts-ignore
-          .toBeEnumValue(EncumbrancePoint),
+          .toBeEnumValue(EncumbranceUnit),
         ruralCostCp: expect
           // @ts-ignore
           .toBeNullOrTypeOf('number'),
@@ -46,7 +46,7 @@ describe('Equipment', () => {
         name: expect.any(String),
         points: expect
           // @ts-ignore
-          .toBeEnumValue(EncumbrancePoint),
+          .toBeEnumValue(EncumbranceUnit),
         ruralCostCp: expect
           // @ts-ignore
           .toBeNullOrTypeOf('number'),
@@ -90,7 +90,7 @@ describe('Equipment', () => {
         name: expect.any(String),
         points: expect
           // @ts-ignore
-          .toBeEnumValue(EncumbrancePoint),
+          .toBeEnumValue(EncumbranceUnit),
         ruralCostCp: expect
           // @ts-ignore
           .toBeNullOrTypeOf('number'),
@@ -131,7 +131,7 @@ describe('Equipment', () => {
         name: expect.any(String),
         points: expect
           // @ts-ignore
-          .toBeEnumValue(EncumbrancePoint),
+          .toBeEnumValue(EncumbranceUnit),
         ruralCostCp: expect
           // @ts-ignore
           .toBeNullOrTypeOf('number'),

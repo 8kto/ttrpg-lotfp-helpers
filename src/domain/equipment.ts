@@ -1,5 +1,5 @@
 import type { CurrencyType } from '@/domain/currency'
-import type { EncumbrancePoint } from '@/domain/encumbrance'
+import type { EncumbranceUnit } from '@/domain/encumbrance'
 import type { EquipmentCategoryKey } from '@/state/InventoryState'
 
 export interface EquipmentItem {
@@ -7,7 +7,7 @@ export interface EquipmentItem {
   categoryKey: EquipmentCategoryKey
   cityCostCp: number
   ruralCostCp: number | null
-  points: EncumbrancePoint
+  points: EncumbranceUnit
   details?: string | null
 }
 
@@ -16,7 +16,7 @@ export type EquipmentItemDto = {
   cost?: number
   currencyType: CurrencyType
   category: EquipmentCategoryKey
-  points: EncumbrancePoint
+  points: EncumbranceUnit
   details: string | null
 }
 
