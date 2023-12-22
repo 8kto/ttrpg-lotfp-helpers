@@ -1,3 +1,5 @@
+/* eslint-disable sort-keys-fix/sort-keys-fix */
+import { CurrencyType } from '@/domain/currency'
 import { Encumbrance, EncumbrancePoint } from '@/domain/encumbrance'
 import { getCoinItems, getEncumbrance } from '@/shared/helpers/encumbrance'
 
@@ -30,8 +32,29 @@ describe('encumbrance helpers', () => {
         }
       })
     }
+    const getMockFor = (type: CurrencyType) => {
+      let title
+      switch (type) {
+        case CurrencyType.Copper:
+          title = '100 coins (cp)'
+          break
+        case CurrencyType.Silver:
+          title = '100 coins (sp)'
+          break
+        case CurrencyType.Gold:
+          title = '100 coins (gp)'
+          break
+        default:
+          throw new Error('Unknown currency type')
+      }
 
-    // TODO extend tests
+      return {
+        lockedCostCp: 0,
+        name: title,
+        points: EncumbrancePoint.Regular,
+        qty: 1,
+      }
+    }
 
     it.each([
       [100, 1],
@@ -52,5 +75,56 @@ describe('encumbrance helpers', () => {
         ).toEqual(mockCountableItemCp(expectedLength))
       },
     )
+
+    it('should compile items', () => {
+      expect(
+        getCoinItems({
+          Copper: 100,
+          Silver: 100,
+          Gold: 100,
+        }),
+      ).toEqual([
+        getMockFor(CurrencyType.Copper),
+        getMockFor(CurrencyType.Silver),
+        getMockFor(CurrencyType.Gold),
+      ])
+    })
+
+    it('should compile mixed set', () => {
+      expect(
+        getCoinItems({
+          Copper: 200,
+          Silver: 10,
+          Gold: 1000,
+        }),
+      ).toEqual([
+        ...Array.from({ length: 2 }, () => getMockFor(CurrencyType.Copper)),
+        ...Array.from({ length: 10 }, () => getMockFor(CurrencyType.Gold)),
+      ])
+    })
+
+    it('should ignore items < 100', () => {
+      expect(
+        getCoinItems({
+          Copper: 20,
+          Silver: 10,
+          Gold: 99,
+        }),
+      ).toEqual([])
+    })
+
+    it('should round down', () => {
+      expect(
+        getCoinItems({
+          Copper: 299,
+          Silver: 560,
+          Gold: 115,
+        }),
+      ).toEqual([
+        ...Array.from({ length: 2 }, () => getMockFor(CurrencyType.Copper)),
+        ...Array.from({ length: 5 }, () => getMockFor(CurrencyType.Silver)),
+        ...Array.from({ length: 1 }, () => getMockFor(CurrencyType.Gold)),
+      ])
+    })
   })
 })

@@ -62,6 +62,26 @@ describe('Encumbrance', () => {
       })
     })
 
+    it('returns total cost and points', () => {
+      const service = new Encumbrance({
+        threshold: EncumbranceThreshold.Regular,
+      })
+
+      const coins: CurrencyWallet = {
+        Copper: 160,
+        Gold: 390,
+        Silver: 0,
+      } // 1 + 3 + 0 slots = 4 * 1/5 = 0.8 enc. points
+      expect(service.getTotal(items, coins)).toEqual({
+        totalCosts: {
+          Copper: 1800,
+          Gold: 0,
+          Silver: 0,
+        },
+        totalEncumbrancePoints: 7.2,
+      })
+    })
+
     it('returns totals when coins provided', () => {
       const copperCoins = 3500 // 35 slots
       const copperCoinsEncumbrance = 7 // each 100 coins are Regular encumbrance; 35 enc. slots / 5 === 7 enc. points
