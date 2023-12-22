@@ -2,8 +2,8 @@
 import type { CurrencyWallet } from '@/domain/currency'
 import {
   Encumbrance as EncumbranceType,
-  EncumbranceUnit,
   EncumbranceThreshold,
+  EncumbranceUnit,
 } from '@/domain/encumbrance'
 import type { EquipmentItem } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
@@ -346,8 +346,8 @@ describe('EncumbranceService', () => {
   })
 
   describe('.getReadableEncumbrance', () => {
-      it('should return string', () => {
-          expect(EncumbranceService.getReadableEncumbrance(1)).toEqual('')
-      })
+    it('should return string', () => {
+      expect(EncumbranceService.getReadableEncumbrance(1)).toEqual('')
+    })
   })
 })

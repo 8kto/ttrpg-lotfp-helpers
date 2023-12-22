@@ -16,17 +16,19 @@ const EncumbranceFragment = ({
   return (
     <>
       {i18n._(encumbrance)}{' '}
-      {process.env.NODE_ENV === 'development' ?
+      {process.env.NODE_ENV === 'development' ? (
         <span className='text-gray-400'>
           ({encumbrancePoints.toPrecision(2)} e.u. /{' '}
           {EncumbranceService.getReadableEncumbrance(
             encumbrancePoints /*  + 5 * EncumbrancePoint.Regular */,
           )}{' '}
           e.p.)
-        </span> : EncumbranceService.getReadableEncumbrance(
-            encumbrancePoints /*  + 5 * EncumbrancePoint.Regular */,
-          )
-      }
+        </span>
+      ) : (
+        EncumbranceService.getReadableEncumbrance(
+          encumbrancePoints /*  + 5 * EncumbrancePoint.Regular */,
+        )
+      )}
     </>
   )
 }

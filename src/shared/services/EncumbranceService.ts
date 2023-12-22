@@ -133,7 +133,7 @@ class EncumbranceService {
     }
   }
 
-  static getReadableEncumbrance(encumbrance: number ): number {
+  static getReadableEncumbrance(encumbrance: number): number {
     const slots = roundTo(encumbrance / EncumbranceUnit.Regular, 1)
 
     return Math.ceil(slots / 5)
