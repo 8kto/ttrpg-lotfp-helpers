@@ -253,7 +253,7 @@ msgstr "Предмет"
 
 #. js-lingui-explicit-id
 msgid "Heavily"
-msgstr "Тяжело нагружен"
+msgstr "Тяжёлая"
 
 #. js-lingui-explicit-id
 msgid "Heavy"
