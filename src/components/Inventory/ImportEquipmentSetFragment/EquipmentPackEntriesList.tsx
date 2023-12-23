@@ -4,17 +4,21 @@ import React from 'react'
 
 import CostFragment from '@/components/CostFragment/CostFragment'
 import type { EquipmentPack } from '@/domain/equipment'
-import { getEquipmentPackCostCp } from '@/shared/helpers/equipmentPack'
+import { getEquipmentPackCost } from '@/shared/helpers/equipmentPack'
+import CurrencyConverter from '@/shared/services/CurrencyConverter'
 
 export const EquipmentPackEntriesList = ({ pack }: { pack: EquipmentPack }) => {
   const { _: trans } = useLingui()
-  const cost = getEquipmentPackCostCp(pack)
+  const currencyRecord = getEquipmentPackCost(pack)
 
   return (
     <>
       <div className='mb-4'>
         <p className={'mb-2 text-red-900'}>
-          <Trans>Cost</Trans>: <CostFragment cost={cost} />
+          <Trans>Cost</Trans>:{' '}
+          <CostFragment
+            wallet={CurrencyConverter.createWalletFrom(currencyRecord)}
+          />
         </p>
       </div>
       <dl className='divide-y divide-gray-100'>

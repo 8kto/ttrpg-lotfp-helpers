@@ -1,4 +1,4 @@
-export enum EncumbrancePoint {
+export enum EncumbranceUnit {
   /*i18n*/ None = 0,
   /*i18n*/ Regular = 0.2,
   /*i18n*/ Oversized = 1,

@@ -19,9 +19,6 @@ msgstr ""
 msgid "config.misc.airBladder.details"
 msgstr ""
 
-msgid "Use copper pieces instead of float numbers."
-msgstr ""
-
 msgid "config.melee.mancatcher.details"
 msgstr ""
 
@@ -97,7 +94,13 @@ msgstr ""
 msgid "Holy Symbol, Wood"
 msgstr ""
 
+msgid "Silver pieces"
+msgstr ""
+
 msgid "Bow, Short"
+msgstr ""
+
+msgid "Copper"
 msgstr ""
 
 msgid "Mêlée"
@@ -125,9 +128,6 @@ msgid "Riding Gear"
 msgstr ""
 
 msgid "Book, Spell (Blank)"
-msgstr ""
-
-msgid "100 coins (sp)"
 msgstr ""
 
 msgid "Required field"
@@ -182,6 +182,9 @@ msgstr ""
 msgid "Packs"
 msgstr ""
 
+msgid "Silver"
+msgstr ""
+
 msgid "These are small one-handed weapons including daggers and clubs, and suffer a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 msgstr ""
 
@@ -213,6 +216,9 @@ msgid "Reset all equipment?"
 msgstr ""
 
 msgid "Tent, Personal"
+msgstr ""
+
+msgid "Gold"
 msgstr ""
 
 msgid "Filter by name"
@@ -378,6 +384,9 @@ msgid "Garlic"
 msgstr ""
 
 msgid "Sword"
+msgstr ""
+
+msgid "The number should be equal to or greater than 0"
 msgstr ""
 
 msgid "Clothing, Normal"
@@ -620,6 +629,9 @@ msgstr ""
 msgid "English"
 msgstr ""
 
+msgid "Gold pieces"
+msgstr ""
+
 msgid "Soap"
 msgstr ""
 
@@ -663,9 +675,6 @@ msgid "Cooking Pots"
 msgstr ""
 
 msgid "Select random"
-msgstr ""
-
-msgid "100 coins (cp)"
 msgstr ""
 
 msgid "Jewelry"
@@ -752,9 +761,6 @@ msgid "Armor"
 msgstr ""
 
 msgid "Spear"
-msgstr ""
-
-msgid "100 coins (gp)"
 msgstr ""
 
 msgid "Fighter 2"

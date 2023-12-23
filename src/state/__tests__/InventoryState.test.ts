@@ -1,6 +1,7 @@
 import { act, renderHook } from '@testing-library/react'
 
-import { EncumbrancePoint } from '@/domain/encumbrance'
+import { CurrencyType } from '@/domain/currency'
+import { EncumbranceUnit } from '@/domain/encumbrance'
 import type { EquipmentItem } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
 import {
@@ -15,7 +16,7 @@ import type {
 } from '@/state/InventoryState'
 import {
   addArmor,
-  addCopperPieces,
+  addCurrency,
   addCustomEquipmentItem,
   addEquipmentItem,
   addMeleeWeapon,
@@ -23,11 +24,14 @@ import {
   getInitialInventoryState,
   importEquipmentItems,
   InventoryState,
+  mergeWallets,
   removeArmor,
   removeEquipmentItem,
   removeMeleeWeapon,
   removeMissileWeapon,
-  setCopperPieces,
+  resetCurrencies,
+  setCurrencies,
+  setWallet,
   toggleCoinsWeightActive,
   toggleCost,
   useInventoryState,
@@ -63,12 +67,16 @@ describe('InventoryState Tests', () => {
 
       expect(result.current.state.get()).toEqual({
         armor: [armorItemMock1],
-        copperPieces: 0,
         isCoinWeightActive: true,
         isCostRural: true,
         meleeWeapons: [meleeWeaponItemMock1],
         miscEquipment: [miscEquipItem1],
         missileWeapons: [missileWeaponItemMock1],
+        wallet: {
+          Copper: 0,
+          Gold: 0,
+          Silver: 0,
+        },
       } as InventoryStateType)
 
       act(() => {
@@ -105,13 +113,17 @@ describe('InventoryState Tests', () => {
 
       expect(result.current.state.get()).toEqual({
         armor: [],
-        copperPieces: 0,
         isCoinWeightActive: true,
         isCostRural: true,
         meleeWeapons: [],
         miscEquipment: [],
         missileWeapons: [],
-      })
+        wallet: {
+          Copper: 0,
+          Gold: 0,
+          Silver: 0,
+        },
+      } as InventoryStateType)
     })
   })
 
@@ -193,19 +205,138 @@ describe('InventoryState Tests', () => {
     })
   })
 
-  describe('copperPieces', () => {
-    it('adds coins correctly', () => {
-      addCopperPieces(50)
-      expect(InventoryState.copperPieces.get()).toEqual(50)
-      addCopperPieces(150)
-      expect(InventoryState.copperPieces.get()).toEqual(200)
+  describe('wallet', () => {
+    it('adds coins', () => {
+      addCurrency({ currency: CurrencyType.Copper, value: 50 })
+      expect(InventoryState.wallet.get()).toEqual({
+        Copper: 50,
+        Gold: 0,
+        Silver: 0,
+      })
+      addCurrency({ currency: CurrencyType.Copper, value: 150 })
+      expect(InventoryState.wallet.get()).toEqual({
+        Copper: 200,
+        Gold: 0,
+        Silver: 0,
+      })
+    })
+
+    it('adds coins to different currencies', () => {
+      addCurrency({ currency: CurrencyType.Copper, value: 50 })
+      expect(InventoryState.wallet.get()).toEqual({
+        Copper: 50,
+        Gold: 0,
+        Silver: 0,
+      })
+      addCurrency({ currency: CurrencyType.Silver, value: 150 })
+      expect(InventoryState.wallet.get()).toEqual({
+        Copper: 50,
+        Gold: 0,
+        Silver: 150,
+      })
+      addCurrency({ currency: CurrencyType.Gold, value: 1 })
+      expect(InventoryState.wallet.get()).toEqual({
+        Copper: 50,
+        Gold: 1,
+        Silver: 150,
+      })
     })
 
     it('set coins correctly', () => {
-      setCopperPieces(1000)
-      expect(InventoryState.copperPieces.get()).toEqual(1000)
-      setCopperPieces(400)
-      expect(InventoryState.copperPieces.get()).toEqual(400)
+      setCurrencies({ currency: CurrencyType.Copper, value: 1000 })
+      expect(InventoryState.wallet.get()).toEqual({
+        Copper: 1000,
+        Gold: 0,
+        Silver: 0,
+      })
+      setCurrencies({ currency: CurrencyType.Copper, value: 42 })
+      expect(InventoryState.wallet.get()).toEqual({
+        Copper: 42,
+        Gold: 0,
+        Silver: 0,
+      })
+    })
+
+    it('set coins to different currencies', () => {
+      setCurrencies({ currency: CurrencyType.Copper, value: 1000 })
+
+      expect(InventoryState.wallet.get()).toEqual({
+        Copper: 1000,
+        Gold: 0,
+        Silver: 0,
+      })
+      setCurrencies({ currency: CurrencyType.Silver, value: 42 })
+      expect(InventoryState.wallet.get()).toEqual({
+        Copper: 0,
+        Gold: 0,
+        Silver: 42,
+      })
+    })
+
+    describe('mergeWallets', () => {
+      it('should stack added numbers', () => {
+        mergeWallets({
+          Copper: 12,
+          Gold: 14,
+          Silver: 13,
+        })
+        expect(InventoryState.wallet.get()).toEqual({
+          Copper: 12,
+          Gold: 14,
+          Silver: 13,
+        })
+        mergeWallets({
+          Copper: 3,
+          Gold: 2,
+          Silver: 1,
+        })
+        expect(InventoryState.wallet.get()).toEqual({
+          Copper: 15,
+          Gold: 16,
+          Silver: 14,
+        })
+      })
+    })
+
+    describe('setWallet', () => {
+      it('overrides values', () => {
+        setWallet({
+          Copper: 15,
+          Gold: 16,
+          Silver: 14,
+        })
+        expect(InventoryState.wallet.get()).toEqual({
+          Copper: 15,
+          Gold: 16,
+          Silver: 14,
+        })
+        setWallet({
+          Copper: 1,
+          Gold: 2,
+          Silver: 0,
+        })
+        expect(InventoryState.wallet.get()).toEqual({
+          Copper: 1,
+          Gold: 2,
+          Silver: 0,
+        })
+      })
+    })
+
+    describe('resetCurrencies', () => {
+      it('resets wallet', () => {
+        setWallet({
+          Copper: 1,
+          Gold: 2,
+          Silver: 0,
+        })
+        resetCurrencies()
+        expect(InventoryState.wallet.get()).toEqual({
+          Copper: 0,
+          Gold: 0,
+          Silver: 0,
+        })
+      })
     })
   })
 
@@ -216,7 +347,7 @@ describe('InventoryState Tests', () => {
       inventoryId: 'a15',
       lockedCostCp: 5,
       name: 'Jigsaw',
-      points: EncumbrancePoint.Regular,
+      points: EncumbranceUnit.Regular,
       qty: 1,
       ruralCostCp: 10,
     }

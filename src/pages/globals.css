@@ -22,16 +22,8 @@
 
 body {
   font-family: var(--font-regular);
-}
-
-body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: url('/images/light_noise_diagonal.png');
 }
 
 /** IMPORTANT: prefix all custom css classes with ph- suffix **/
@@ -118,4 +110,14 @@ details.ph-details-bullet[open] .ph-custom-indicator {
   text-decoration-color: #999;
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
+}
+
+/**
+ * These styles fixes the overflow of the page,
+ * and make the footer be pushed to the bottom of the page correctly
+ */
+#__next {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }

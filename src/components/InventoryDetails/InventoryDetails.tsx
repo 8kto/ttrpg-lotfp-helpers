@@ -6,24 +6,24 @@ import EncumbranceFragment from '@/components/EncumbranceFragment/EncumbranceFra
 import MovementFragment from '@/components/MovementFragment/MovementFragment'
 import Wallet from '@/components/Wallet/Wallet'
 import { EncumbranceThreshold } from '@/domain/encumbrance'
-import Encumbrance from '@/shared/services/Encumbrance'
+import EncumbranceService from '@/shared/services/EncumbranceService'
 import { combineEquipment } from '@/state/helpers'
 import { useInventoryState } from '@/state/InventoryState'
 
 const InventoryDetails = () => {
   const { state: equipmentState } = useInventoryState()
-  const { isCoinWeightActive, copperPieces } = equipmentState
+  const { isCoinWeightActive, wallet } = equipmentState
 
-  const { totalEncumbrancePoints, totalCostCp } = useMemo(() => {
-    const encumbranceService = new Encumbrance({
+  const { totalEncumbrancePoints, totalCosts } = useMemo(() => {
+    const encumbranceService = new EncumbranceService({
       threshold: EncumbranceThreshold.Regular,
     })
 
     return encumbranceService.getTotal(
       combineEquipment(equipmentState),
-      isCoinWeightActive ? copperPieces.get() : 0,
+      isCoinWeightActive ? wallet.get() : null,
     )
-  }, [copperPieces, equipmentState, isCoinWeightActive])
+  }, [wallet, equipmentState, isCoinWeightActive])
 
   const titleClassname = 'ph-font-cursive text-red-900 text-lg'
   const detailsRowClassname =
@@ -45,7 +45,7 @@ const InventoryDetails = () => {
             <Trans>Inventory cost</Trans>
           </dt>
           <dd className='mt-1 leading-6 text-gray-700 sm:col-span-2 sm:mt-0'>
-            <CostFragment cost={totalCostCp} copperPieces />
+            <CostFragment wallet={totalCosts} optimize />
           </dd>
         </div>
         <div className={detailsRowClassname}>

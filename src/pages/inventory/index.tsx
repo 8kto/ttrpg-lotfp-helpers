@@ -85,7 +85,7 @@ export default function InventoryPage() {
       <Head>
         <title>{t`Inventory`}</title>
       </Head>
-      <div className='relative flex min-h-screen flex-col bg-gray-50 pt-16'>
+      <div className='relative flex-grow flex flex-col pt-16'>
         <main className='mx-auto w-full max-w-screen-2xl flex-grow px-2.5 sm:px-6 lg:px-8'>
           {shouldRenderTabs ? (
             /* Tabs for smaller screens */

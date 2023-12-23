@@ -3,22 +3,22 @@ import { Trans } from '@lingui/macro'
 import type { DataGridColumn } from '@/components/DataGrid/types'
 import ItemDetails from '@/components/Inventory/ItemDetails/ItemDetails'
 import { CurrencyType } from '@/domain/currency'
-import { EncumbrancePoint } from '@/domain/encumbrance'
+import { EncumbranceUnit } from '@/domain/encumbrance'
 import type { EquipmentItem } from '@/domain/equipment'
 import CurrencyConverter from '@/shared/services/CurrencyConverter'
 
 type RenderFunction = DataGridColumn<EquipmentItem>['render']
 
 export const renderWeightGridCol: RenderFunction = (item, i18n) =>
-  item.points === EncumbrancePoint.None
+  item.points === EncumbranceUnit.None
     ? '-'
-    : i18n._(EncumbrancePoint[item.points])
+    : i18n._(EncumbranceUnit[item.points])
 
 export const renderNameGridCol: RenderFunction = (item, i18n) => {
   const weightLabel =
-    item.points === EncumbrancePoint.None
+    item.points === EncumbranceUnit.None
       ? null
-      : i18n._(EncumbrancePoint[item.points])
+      : i18n._(EncumbranceUnit[item.points])
 
   return (
     <>
@@ -49,7 +49,7 @@ export const renderCostGridCol: RenderFunction = (item, _, state) => {
   }
 
   return CurrencyConverter.getDisplayCost({
-    coin: CurrencyType.Copper,
+    currency: CurrencyType.Copper,
     value: valueCp,
   }).value
 }

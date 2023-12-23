@@ -1,7 +1,7 @@
 import { Dice } from '@/domain'
 import type { ArmorItem } from '@/domain/armor'
 import { ArmorType } from '@/domain/armor'
-import { EncumbrancePoint } from '@/domain/encumbrance'
+import { EncumbranceUnit } from '@/domain/encumbrance'
 import type { EquipmentItem } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
 import type { MeleeWeaponItem, MissileWeaponItem } from '@/domain/weapon'
@@ -14,7 +14,7 @@ export const armorItemMock1: InventoryItem<ArmorItem> = {
   inventoryId: '1',
   lockedCostCp: 50,
   name: 'Leather',
-  points: EncumbrancePoint.None,
+  points: EncumbranceUnit.None,
   qty: 1,
   ruralCostCp: 50,
   type: ArmorType.Armor,
@@ -27,7 +27,7 @@ export const armorItemMock2: InventoryItem<ArmorItem> = {
   inventoryId: '2',
   lockedCostCp: 50,
   name: 'Chain',
-  points: EncumbrancePoint.Oversized,
+  points: EncumbranceUnit.Oversized,
   qty: 1,
   ruralCostCp: null,
   type: ArmorType.Armor,
@@ -43,7 +43,7 @@ export const meleeWeaponItemMock1: InventoryItem<MeleeWeaponItem> = {
   inventoryId: '3',
   lockedCostCp: 10,
   name: 'Cestus',
-  points: EncumbrancePoint.None,
+  points: EncumbranceUnit.None,
   qty: 1,
   ruralCostCp: null,
   type: WeaponType.Melee,
@@ -59,7 +59,7 @@ export const meleeWeaponItemMock2: InventoryItem<MeleeWeaponItem> = {
   inventoryId: '4',
   lockedCostCp: 5,
   name: 'Garrote',
-  points: EncumbrancePoint.None,
+  points: EncumbranceUnit.None,
   qty: 1,
   ruralCostCp: null,
   type: WeaponType.Melee,
@@ -72,7 +72,7 @@ export const missileWeaponItemMock1: InventoryItem<MissileWeaponItem> = {
   inventoryId: '5',
   lockedCostCp: 5,
   name: 'Blowgun',
-  points: EncumbrancePoint.Regular,
+  points: EncumbranceUnit.Regular,
   qty: 1,
   range: { long: 80, medium: 50, short: 20 },
   ruralCostCp: null,
@@ -86,7 +86,7 @@ export const missileWeaponItemMock2: InventoryItem<MissileWeaponItem> = {
   inventoryId: '6',
   lockedCostCp: 30,
   name: 'Crossbow, Heavy',
-  points: EncumbrancePoint.Oversized,
+  points: EncumbranceUnit.Oversized,
   qty: 1,
   range: { long: 600, medium: 200, short: 50 },
   ruralCostCp: null,
@@ -99,7 +99,7 @@ export const miscEquipItem1: InventoryItem<EquipmentItem> = {
   inventoryId: '7',
   lockedCostCp: 1,
   name: 'Air Bladder',
-  points: EncumbrancePoint.None,
+  points: EncumbranceUnit.None,
   qty: 1,
   ruralCostCp: 1,
 }
@@ -110,7 +110,7 @@ export const miscEquipItem2: InventoryItem<EquipmentItem> = {
   inventoryId: '8',
   lockedCostCp: 10,
   name: 'Tent, Regular',
-  points: EncumbrancePoint.Oversized,
+  points: EncumbranceUnit.Oversized,
   qty: 1,
   ruralCostCp: 20,
 }
