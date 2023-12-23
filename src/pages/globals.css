@@ -22,16 +22,8 @@
 
 body {
   font-family: var(--font-regular);
-}
-
-body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: url('/images/light_noise_diagonal.png');
 }
 
 /** IMPORTANT: prefix all custom css classes with ph- suffix **/

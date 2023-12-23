@@ -25,9 +25,7 @@ export default function Document() {
         />
         <link rel='manifest' href='/icons/site.webmanifest' />
       </Head>
-      <body
-        className={`${cursiveFont.variable} ${regularFont.variable} bg-gray-50 bg-none`}
-      >
+      <body className={`${cursiveFont.variable} ${regularFont.variable}`}>
         <Main />
         <NextScript />
       </body>
