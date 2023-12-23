@@ -53,17 +53,15 @@ class EncumbranceService {
    * Convert coins number into an array of CountableItem, counts are rounded down
    * That is: 120 coins weight as 100 coins and occupy 1 encumbrance slot (1/5 enc. point)
    */
-  static getCoinsEncumbrance(wallet: CurrencyWallet): Array<CountableItem> {
+  static getCoinsEncumbrance(wallet: CurrencyWallet): CountableItem {
     const coinsNum = Object.values(wallet).reduce((acc, cur) => acc + cur, 0)
     const inventorySlots = Math.floor(coinsNum / COINS_PER_ENCUMBRANCE_POINT)
 
-    return Array.from({ length: inventorySlots }, () => {
-      return {
-        lockedCostCp: 0,
-        points: EncumbranceUnit.Regular,
-        qty: 1,
-      }
-    })
+    return {
+      lockedCostCp: 0,
+      points: EncumbranceUnit.Regular,
+      qty: inventorySlots,
+    }
   }
 
   /**

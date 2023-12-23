@@ -256,14 +256,6 @@ describe('EncumbranceService', () => {
   })
 
   describe('.getCoinsEncumbrance', () => {
-    const getNmocks = (length: number) => {
-      return Array.from({ length }, () => ({
-        lockedCostCp: 0,
-        points: EncumbranceUnit.Regular,
-        qty: 1,
-      }))
-    }
-
     it.each([
       [100, 1],
       [200, 2],
@@ -280,7 +272,7 @@ describe('EncumbranceService', () => {
             Gold: 0,
             Silver: 0,
           }),
-        ).toEqual(getNmocks(expectedLength))
+        ).toEqual({ lockedCostCp: 0, points: 0.2, qty: expectedLength })
       },
     )
 
@@ -291,7 +283,7 @@ describe('EncumbranceService', () => {
           Silver: 100,
           Gold: 100,
         }),
-      ).toEqual(getNmocks(3))
+      ).toEqual({ lockedCostCp: 0, points: 0.2, qty: 3 })
     })
 
     it('should compile mixed set', () => {
@@ -301,7 +293,7 @@ describe('EncumbranceService', () => {
           Silver: 10,
           Gold: 1000,
         }),
-      ).toEqual(getNmocks(12))
+      ).toEqual({ lockedCostCp: 0, points: 0.2, qty: 12 })
     })
 
     it('should ignore items < 100', () => {
@@ -310,8 +302,8 @@ describe('EncumbranceService', () => {
           Copper: 20,
           Silver: 10,
           Gold: 99,
-        }),
-      ).toEqual(getNmocks(1))
+        }), // 99 + 10 + 20 = 129 which still occupies 1 slot
+      ).toEqual({ lockedCostCp: 0, points: 0.2, qty: 1 })
     })
 
     it('should round down', () => {
@@ -321,7 +313,7 @@ describe('EncumbranceService', () => {
           Silver: 560,
           Gold: 115,
         }),
-      ).toEqual(getNmocks(9))
+      ).toEqual({ lockedCostCp: 0, points: 0.2, qty: 9 })
     })
   })
 
