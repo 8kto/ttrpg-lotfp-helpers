@@ -6,7 +6,7 @@
 
 > The project is in active development.
 >
-> Done: <!--PROGRESS--> 76% / 23 of 30 tasks <!--/PROGRESS-->
+> Done: <!--PROGRESS--> 74% / 23 of 31 tasks <!--/PROGRESS-->
 
 Lamentations of the Flame Princess helpers.
 
