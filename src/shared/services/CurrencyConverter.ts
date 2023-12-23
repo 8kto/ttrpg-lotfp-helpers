@@ -1,6 +1,9 @@
 import type { CurrencyRecord, CurrencyWallet } from '@/domain/currency'
 import { CurrencyType, Unit } from '@/domain/currency'
 
+const COPPER_PER_GOLD = 500 // 50 * 10
+const COPPER_PER_SILVER = 10
+
 export default class CurrencyConverter {
   private static convertToCopper(record: CurrencyRecord): number {
     const { currency, value } = record
@@ -9,9 +12,9 @@ export default class CurrencyConverter {
       case CurrencyType.Copper:
         return value
       case CurrencyType.Silver:
-        return value * 10
+        return value * COPPER_PER_SILVER
       case CurrencyType.Gold:
-        return value * 50 * 10
+        return value * COPPER_PER_GOLD
       default:
         throw new Error('Unknown currency type')
     }
@@ -29,10 +32,10 @@ export default class CurrencyConverter {
         value = cp
         break
       case CurrencyType.Silver:
-        value = cp / 10
+        value = cp / COPPER_PER_SILVER
         break
       case CurrencyType.Gold:
-        value = cp / 10 / 50
+        value = cp / COPPER_PER_GOLD
         break
       default:
         throw new Error('Unknown currency type')
@@ -139,13 +142,15 @@ export default class CurrencyConverter {
 
     // Convert everything to copper
     const totalCopper =
-      wallet.Copper + wallet.Silver * 10 + wallet.Gold * 50 * 10
+      wallet.Copper +
+      wallet.Silver * COPPER_PER_SILVER +
+      wallet.Gold * COPPER_PER_GOLD
 
-    // Calculate the optimal mix of gold, silver, and copper
-    const gold = Math.floor(totalCopper / (50 * 10))
-    const remainingAfterGold = totalCopper - gold * 50 * 10
-    const silver = Math.floor(remainingAfterGold / 10)
-    const copper = remainingAfterGold - silver * 10
+    const gold = Math.floor(totalCopper / COPPER_PER_GOLD)
+    const remainingCopperAfterGold = totalCopper % COPPER_PER_GOLD
+
+    const silver = Math.floor(remainingCopperAfterGold / COPPER_PER_SILVER)
+    const copper = remainingCopperAfterGold % COPPER_PER_SILVER
 
     return {
       Copper: copper,
