@@ -125,8 +125,7 @@ export const setWallet = (wallet: CurrencyWallet) => {
 }
 
 export const resetCurrencies = () => {
-  const balance = InventoryState.wallet
-  balance.set({
+  InventoryState.wallet.set({
     Copper: 0,
     Gold: 0,
     Silver: 0,
