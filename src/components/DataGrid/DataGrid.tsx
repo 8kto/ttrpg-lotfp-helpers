@@ -14,6 +14,7 @@ import type {
   SortOrder,
 } from '@/components/DataGrid/types'
 import type { EquipmentItem } from '@/domain/equipment'
+import { useInventoryState } from '@/state/InventoryState'
 
 const DataGrid = <T extends EquipmentItem>({
   data,
@@ -26,6 +27,8 @@ const DataGrid = <T extends EquipmentItem>({
   filterPlaceholder = 'Filter',
 }: DataGridProps<T>) => {
   const { i18n } = useLingui()
+  const { state } = useInventoryState()
+
   const [sortConfig, setSortConfig] = useState<SortConfig<T>>({
     direction: initialSortState?.direction || 'asc',
     key: (initialSortState?.key || '') as keyof T,
@@ -116,7 +119,7 @@ const DataGrid = <T extends EquipmentItem>({
                     )}
                   >
                     {column.render
-                      ? column.render(item, i18n)
+                      ? column.render(item, i18n, state)
                       : (item[column.key] as string)}
                   </td>
                 ))}

@@ -1,4 +1,6 @@
 import Equipment from '@/config/Equipment'
+import type { CurrencyRecord } from '@/domain/currency'
+import { CurrencyType } from '@/domain/currency'
 import type { EquipmentItem, EquipmentPack } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
 import { getGetterNames } from '@/shared/helpers/getGetterNames'
@@ -19,8 +21,8 @@ const findEquipmentItem = <T extends EquipmentItem>(name: string): T | null => {
   return null
 }
 
-const getMinimalCost = (item: EquipmentItem) => {
-  const costs = [item.cityCost, item.ruralCost].map(Number).filter(Boolean)
+const getMinimalCostCp = (item: EquipmentItem) => {
+  const costs = [item.cityCostCp, item.ruralCostCp].map(Number).filter(Boolean)
   if (!costs.length) {
     return 0
   }
@@ -28,18 +30,24 @@ const getMinimalCost = (item: EquipmentItem) => {
   return Math.min(...costs)
 }
 
-export const getEquipmentPackCost = (pack: EquipmentPack): number => {
-  return pack.items.reduce((acc, [itemName, qty]) => {
-    const item = findEquipmentItem(itemName)
+export const getEquipmentPackCost = (pack: EquipmentPack): CurrencyRecord => {
+  return pack.items.reduce(
+    (acc, [itemName, qty]) => {
+      const item = findEquipmentItem(itemName)
 
-    if (!item) {
-      return acc
-    }
+      if (!item) {
+        return acc
+      }
 
-    const minimalCost = getMinimalCost(item)
+      const minimalCostCp = getMinimalCostCp(item)
 
-    return acc + minimalCost * qty
-  }, 0)
+      return {
+        ...acc,
+        value: acc.value + minimalCostCp * qty,
+      }
+    },
+    { currency: CurrencyType.Copper, value: 0 } as CurrencyRecord,
+  )
 }
 
 export const getEquipmentPackItems = (
@@ -56,7 +64,7 @@ export const getEquipmentPackItems = (
         return acc
       }
 
-      const minimalCost = getMinimalCost(item)
+      const minimalCost = getMinimalCostCp(item)
       const copy = getInventoryItem(item, minimalCost)
       copy.qty = qty
 

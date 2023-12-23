@@ -1,27 +1,41 @@
 import React from 'react'
 
-import { getCoins } from '@/components/CostFragment/helpers'
+import type { CurrencyWallet } from '@/domain/currency'
+import CurrencyConverter from '@/shared/services/CurrencyConverter'
 
 const CostFragment = ({
-  cost,
+  wallet,
   onClick,
-  copperPieces = false,
+  optimize = false,
 }: {
-  cost: number
+  wallet: CurrencyWallet
   onClick?: () => void
-  copperPieces?: boolean
+  optimize?: boolean
 }) => {
-  const costSilver = copperPieces ? cost / 10 : cost
-  const { copperPoints, silverPoints } = getCoins(costSilver)
+  const isEmpty = CurrencyConverter.isWalletEmpty(wallet)
+
+  let currencies: ReturnType<typeof CurrencyConverter.getDisplayCostFromWallet>
+  if (isEmpty) {
+    currencies = []
+  } else {
+    const finalWallet = optimize
+      ? CurrencyConverter.getNormalized(wallet)
+      : wallet
+    currencies = CurrencyConverter.getDisplayCostFromWallet(finalWallet)
+  }
+  const lastIndex = currencies.length - 1
 
   return (
-    <span className='text-lg' onClick={onClick}>
-      <strong>{silverPoints}</strong> sp
-      {Boolean(copperPoints) ? (
-        <>
-          , <strong>{copperPoints}</strong> cp
-        </>
-      ) : null}
+    <span className='cursor-pointer text-lg' onClick={onClick}>
+      {isEmpty && '0sp'}
+      {currencies.map(([number, unit], index) => {
+        return (
+          <span key={unit} className='mr-1'>
+            <strong>{number}</strong> {unit}
+            {index !== lastIndex ? ',' : null}
+          </span>
+        )
+      })}
     </span>
   )
 }

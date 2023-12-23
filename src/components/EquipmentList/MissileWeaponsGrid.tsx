@@ -5,12 +5,15 @@ import DamageFragment from '@/components/DamageFragment'
 import DataGrid from '@/components/DataGrid/DataGrid'
 import type { DataGridSortFunction } from '@/components/DataGrid/helpers'
 import type { DataGridColumn } from '@/components/DataGrid/types'
-import { renderWeightGridCol } from '@/components/EquipmentList/gridHelpers'
+import {
+  renderCostGridCol,
+  renderWeightGridCol,
+} from '@/components/EquipmentList/gridHelpers'
 import { handleSortByDamage } from '@/components/EquipmentList/helpers'
 import ItemDetails from '@/components/Inventory/ItemDetails/ItemDetails'
 import RangeFragment from '@/components/RangeFragment'
 import Equipment from '@/config/Equipment'
-import { EncumbrancePoint } from '@/domain/encumbrance'
+import { EncumbranceUnit } from '@/domain/encumbrance'
 import type { MissileWeaponItem } from '@/domain/weapon'
 import { getInventoryItem } from '@/shared/helpers/getInventoryItem'
 import { addMissileWeapon, useInventoryState } from '@/state/InventoryState'
@@ -21,9 +24,9 @@ const columns: ReadonlyArray<DataGridColumn<MissileWeaponItem>> = [
     key: 'name',
     render: (item: MissileWeaponItem, i18n) => {
       const weightLabel =
-        item.points === EncumbrancePoint.None
+        item.points === EncumbranceUnit.None
           ? null
-          : i18n._(EncumbrancePoint[item.points])
+          : i18n._(EncumbranceUnit[item.points])
 
       return (
         <>
@@ -79,14 +82,16 @@ const columns: ReadonlyArray<DataGridColumn<MissileWeaponItem>> = [
 
 const cityCostColumn: DataGridColumn<MissileWeaponItem> = {
   className: 'w-1/6',
-  key: 'cityCost',
+  key: 'cityCostCp',
+  render: renderCostGridCol,
   get title() {
     return t`Cost, sp`
   },
 }
 const ruralCostColumn: DataGridColumn<MissileWeaponItem> = {
   className: 'w-1/6',
-  key: 'ruralCost',
+  key: 'ruralCostCp',
+  render: renderCostGridCol,
   get title() {
     return t`Cost, sp`
   },
@@ -108,13 +113,13 @@ const MissileWeaponsGrid = () => {
   const dataFilteredByCost = useMemo(() => {
     const data = Object.values(Equipment.MissileWeapons)
 
-    return isCostRural.get() ? data.filter((i) => i.ruralCost !== null) : data
+    return isCostRural.get() ? data.filter((i) => i.ruralCostCp !== null) : data
   }, [isCostRural])
 
   const handleAddClick = (item: MissileWeaponItem) => {
     const clone = getInventoryItem(
       item,
-      (isCostRural.get() ? item.ruralCost : item.cityCost)!,
+      (isCostRural.get() ? item.ruralCostCp : item.cityCostCp)!,
     )
     addMissileWeapon(clone)
   }

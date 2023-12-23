@@ -1,4 +1,4 @@
-export enum EncumbrancePoint {
+export enum EncumbranceUnit {
   /*i18n*/ None = 0,
   /*i18n*/ Regular = 0.2,
   /*i18n*/ Oversized = 1,
@@ -26,4 +26,9 @@ export type MovementDict = {
   [Movement.Combat]: number
   [Movement.Running]: number
   [Movement.MilesPerDay]: number
+}
+
+export enum EncumbranceThreshold {
+  Regular = 5,
+  Dwarf = 10,
 }

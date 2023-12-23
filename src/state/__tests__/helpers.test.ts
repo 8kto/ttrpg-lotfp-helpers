@@ -31,12 +31,16 @@ describe('Inventory helpers', () => {
       // Mock equipment state
       const mockEquipmentState = createStateMock({
         armor: [armorItemMock1, armorItemMock2],
-        copperPieces: 0,
         isCoinWeightActive: true,
         isCostRural: false,
         meleeWeapons: [meleeWeaponItemMock1, meleeWeaponItemMock2],
         miscEquipment: [miscEquipItem1, miscEquipItem2],
         missileWeapons: [missileWeaponItemMock1, missileWeaponItemMock2],
+        wallet: {
+          Copper: 0,
+          Gold: 0,
+          Silver: 0,
+        },
       })
 
       const combinedEquipment = combineEquipment(mockEquipmentState)
@@ -61,12 +65,16 @@ describe('Inventory helpers', () => {
       // Mock empty equipment state
       const mockEmptyEquipmentState = createStateMock({
         armor: [],
-        copperPieces: 0,
         isCoinWeightActive: true,
         isCostRural: false,
         meleeWeapons: [],
         miscEquipment: [],
         missileWeapons: [],
+        wallet: {
+          Copper: 0,
+          Gold: 0,
+          Silver: 0,
+        },
       })
 
       const combinedEquipment = combineEquipment(mockEmptyEquipmentState)

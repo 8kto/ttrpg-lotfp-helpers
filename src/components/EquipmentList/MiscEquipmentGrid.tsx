@@ -4,6 +4,7 @@ import React, { useMemo } from 'react'
 import DataGrid from '@/components/DataGrid/DataGrid'
 import type { DataGridColumn } from '@/components/DataGrid/types'
 import {
+  renderCostGridCol,
   renderNameGridCol,
   renderWeightGridCol,
 } from '@/components/EquipmentList/gridHelpers'
@@ -33,14 +34,16 @@ const columns: ReadonlyArray<DataGridColumn<EquipmentItem>> = [
 
 const cityCostColumn: DataGridColumn<EquipmentItem> = {
   className: 'w-1/6',
-  key: 'cityCost',
+  key: 'cityCostCp',
+  render: renderCostGridCol,
   get title() {
     return t`Cost, sp`
   },
 }
 const ruralCostColumn: DataGridColumn<EquipmentItem> = {
   className: 'w-1/6',
-  key: 'ruralCost',
+  key: 'ruralCostCp',
+  render: renderCostGridCol,
   get title() {
     return t`Cost, sp`
   },
@@ -61,13 +64,13 @@ const MiscEquipmentGrid = () => {
   const dataFilteredByCost = useMemo(() => {
     const data = Object.values(Equipment.MiscEquipment)
 
-    return isCostRural.get() ? data.filter((i) => i.ruralCost !== null) : data
+    return isCostRural.get() ? data.filter((i) => i.ruralCostCp !== null) : data
   }, [isCostRural])
 
   const handleAddClick = (item: EquipmentItem) => {
     const clone = getInventoryItem(
       item,
-      (isCostRural.get() ? item.ruralCost : item.cityCost)!,
+      (isCostRural.get() ? item.ruralCostCp : item.cityCostCp)!,
     )
 
     addEquipmentItem(clone)

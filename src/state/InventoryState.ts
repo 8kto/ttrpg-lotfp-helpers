@@ -2,15 +2,17 @@ import { hookstate, useHookstate } from '@hookstate/core'
 import { localstored } from '@hookstate/localstored'
 
 import type { ArmorItem } from '@/domain/armor'
+import type { CurrencyRecord, CurrencyWallet } from '@/domain/currency'
 import type { EquipmentItem } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
 import type { MeleeWeaponItem, MissileWeaponItem } from '@/domain/weapon'
 import deepclone from '@/shared/helpers/deepclone'
+import CurrencyConverter from '@/shared/services/CurrencyConverter'
 import { addItem, removeItem } from '@/state/helpers'
 
 export type InventoryStateType = {
   armor: ReadonlyArray<InventoryItem<ArmorItem>>
-  copperPieces: number // TODO support different kinds of coins
+  wallet: CurrencyWallet
   isCoinWeightActive: boolean
   isCostRural: boolean
   meleeWeapons: ReadonlyArray<InventoryItem<MeleeWeaponItem>>
@@ -25,12 +27,16 @@ export type InventoryStateType = {
  */
 const initialInventoryState: Readonly<InventoryStateType> = {
   armor: Array<InventoryItem<ArmorItem>>(),
-  copperPieces: 0,
   isCoinWeightActive: true,
   isCostRural: false,
   meleeWeapons: Array<InventoryItem<MeleeWeaponItem>>(),
   miscEquipment: Array<InventoryItem<EquipmentItem>>(),
   missileWeapons: Array<InventoryItem<MissileWeaponItem>>(),
+  wallet: {
+    Copper: 0,
+    Gold: 0,
+    Silver: 0,
+  },
 }
 
 export type EquipmentCategoryKey =
@@ -96,14 +102,34 @@ export const toggleCost = () => {
   isCostRural.set(!isCostRural.get())
 }
 
-export const addCopperPieces = (value: number) => {
-  const balance = InventoryState.copperPieces
-  balance.merge((v) => v + value)
+export const toggleCoinsWeightActive = () => {
+  const isCoinWeightActive = InventoryState.isCoinWeightActive
+  isCoinWeightActive.set(!isCoinWeightActive.get())
 }
 
-export const setCopperPieces = (value: number) => {
-  const balance = InventoryState.copperPieces
-  balance.set(value)
+export const addCurrency = (record: CurrencyRecord) => {
+  InventoryState.wallet.merge((wallet) => CurrencyConverter.add(record, wallet))
+}
+
+export const setCurrencies = (record: CurrencyRecord) => {
+  const balance = InventoryState.wallet
+  balance.set(CurrencyConverter.createWalletFrom(record))
+}
+
+export const mergeWallets = (wallet: CurrencyWallet) => {
+  InventoryState.wallet.merge((w) => CurrencyConverter.mergeWallets(wallet, w))
+}
+
+export const setWallet = (wallet: CurrencyWallet) => {
+  InventoryState.wallet.set(wallet)
+}
+
+export const resetCurrencies = () => {
+  InventoryState.wallet.set({
+    Copper: 0,
+    Gold: 0,
+    Silver: 0,
+  })
 }
 
 export const addCustomEquipmentItem = (data: InventoryItem<EquipmentItem>) => {

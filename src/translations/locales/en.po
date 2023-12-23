@@ -19,9 +19,6 @@ msgstr "Coins"
 msgid "config.misc.airBladder.details"
 msgstr "A leather pouch with a tube fitting into the user’s mouth; it will hold an extra breath of air, allowing a swimmer to extend his or her range.<br/>Along with helping breathe underwater, the air bladder may also be used to help a character float."
 
-msgid "Use copper pieces instead of float numbers."
-msgstr "Use copper pieces instead of float numbers."
-
 msgid "config.melee.mancatcher.details"
 msgstr "A successful hit with this weapon requires the victim to make a saving throw versus Paralysis. If unsuccessful, the victim is considered helpless, as is the wielder of the mancatcher while the target is being held for purposes of defending against attacks. This weapon must be wielded with two hands."
 
@@ -97,8 +94,14 @@ msgstr "Air Bladder"
 msgid "Holy Symbol, Wood"
 msgstr "Holy Symbol, Wood"
 
+msgid "Silver pieces"
+msgstr "Silver pieces"
+
 msgid "Bow, Short"
 msgstr "Bow, Short"
+
+msgid "Copper"
+msgstr "Copper"
 
 msgid "Mêlée"
 msgstr "Mêlée"
@@ -179,6 +182,9 @@ msgstr "This weapon suffers a –2 penalty to hit opponents with an unadjusted A
 msgid "Packs"
 msgstr "Packs"
 
+msgid "Silver"
+msgstr "Silver"
+
 msgid "These are small one-handed weapons including daggers and clubs, and suffer a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 msgstr "These are small one-handed weapons including daggers and clubs, and suffer a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 
@@ -211,6 +217,9 @@ msgstr "Reset all equipment?"
 
 msgid "Tent, Personal"
 msgstr "Tent, Personal"
+
+msgid "Gold"
+msgstr "Gold"
 
 msgid "Filter by name"
 msgstr "Filter by name"
@@ -267,6 +276,9 @@ msgstr "EN"
 
 msgid "Set coins"
 msgstr "Set coins"
+
+msgid "Reset coins"
+msgstr "Reset coins"
 
 msgid "Book, Reading"
 msgstr "Book, Reading"
@@ -373,6 +385,9 @@ msgstr "Garlic"
 
 msgid "Sword"
 msgstr "Sword"
+
+msgid "The number should be equal to or greater than 0"
+msgstr "The number should be equal to or greater than 0"
 
 msgid "Clothing, Normal"
 msgstr "Clothing, Normal"
@@ -613,6 +628,9 @@ msgstr "Missile Weapons"
 
 msgid "English"
 msgstr "English"
+
+msgid "Gold pieces"
+msgstr "Gold pieces"
 
 msgid "Soap"
 msgstr "Soap"

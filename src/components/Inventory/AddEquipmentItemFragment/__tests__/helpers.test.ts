@@ -1,5 +1,6 @@
 import { getCustomEquipmentItem } from '@/components/Inventory/AddEquipmentItemFragment/helpers'
-import { EncumbrancePoint } from '@/domain/encumbrance'
+import { CurrencyType } from '@/domain/currency'
+import { EncumbranceUnit } from '@/domain/encumbrance'
 import type { EquipmentItemDto } from '@/domain/equipment'
 
 jest.mock('@/shared/helpers/autoincrement', () => ({
@@ -16,24 +17,24 @@ describe('AddEquipmentItemFragment helpers', () => {
       const data: EquipmentItemDto = {
         category: 'meleeWeapons',
         cost: 100,
+        currencyType: CurrencyType.Silver,
         details: 'A sharp sword',
-        isCopper: false,
         name: 'Sword',
-        points: EncumbrancePoint.Regular,
+        points: EncumbranceUnit.Regular,
       }
 
       const result = getCustomEquipmentItem(data)
 
       expect(result).toEqual({
         categoryKey: 'meleeWeapons',
-        cityCost: 100,
+        cityCostCp: 1000,
         details: 'A sharp sword',
         inventoryId: 'Sword001',
-        lockedCost: 100,
+        lockedCostCp: 1000,
         name: 'Sword',
-        points: EncumbrancePoint.Regular,
+        points: EncumbranceUnit.Regular,
         qty: 1,
-        ruralCost: 100,
+        ruralCostCp: 1000,
       })
     })
 
@@ -41,9 +42,9 @@ describe('AddEquipmentItemFragment helpers', () => {
       const data = {
         category: 'meleeWeapons',
         cost: 100,
+        currencyType: CurrencyType.Silver,
         details: 'A sharp sword',
-        isCopper: false,
-        points: EncumbrancePoint.Regular,
+        points: EncumbranceUnit.Regular,
       } as EquipmentItemDto
       expect(() => getCustomEquipmentItem(data)).toThrow('No name provided')
     })
@@ -52,8 +53,8 @@ describe('AddEquipmentItemFragment helpers', () => {
       const data = {
         category: 'meleeWeapons',
         cost: 100,
+        currencyType: CurrencyType.Silver,
         details: 'A sharp sword',
-        isCopper: false,
         name: 'Sword',
       } as EquipmentItemDto
       expect(() => getCustomEquipmentItem(data)).toThrow('No points provided')
@@ -62,22 +63,22 @@ describe('AddEquipmentItemFragment helpers', () => {
     it('handles missing cost and details', () => {
       const data = {
         category: 'meleeWeapons',
-        isCopper: false,
+        currencyType: CurrencyType.Silver,
         name: 'Sword',
-        points: EncumbrancePoint.Regular,
+        points: EncumbranceUnit.Regular,
       } as EquipmentItemDto
 
       const result = getCustomEquipmentItem(data)
       expect(result).toEqual({
         categoryKey: 'meleeWeapons',
-        cityCost: 0,
+        cityCostCp: 0,
         details: null,
         inventoryId: 'Sword001',
-        lockedCost: 0,
+        lockedCostCp: 0,
         name: 'Sword',
-        points: EncumbrancePoint.Regular,
+        points: EncumbranceUnit.Regular,
         qty: 1,
-        ruralCost: null,
+        ruralCostCp: 0,
       })
     })
   })

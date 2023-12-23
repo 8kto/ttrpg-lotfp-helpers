@@ -86,7 +86,7 @@ const InventoryControls = () => {
           <button
             onClick={handleReset}
             title={t`Reset all equipment`}
-            className={iconBtnClassname}
+            className='w-full h-full text-xs inline-flex flex-col cursor-pointer justify-center items-center rounded p-2 lg:p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-900'
           >
             <TrashIcon className={iconClassname} />
             <span className='lg:hidden'>

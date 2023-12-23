@@ -26,7 +26,7 @@ describe('getInventoryItem', () => {
     expect(inventoryItem).toEqual({
       ...testItem,
       inventoryId: expect.stringContaining(testItem.name),
-      lockedCost: cost,
+      lockedCostCp: cost,
     })
   })
 

@@ -35,7 +35,7 @@ const Tabs = ({
   const { uiState } = useContext(UiContext)
   const [activeTabId, setActiveTabId] = useState(uiState.activeTabId)
   const tabTitleBaseClassname =
-    'flex-1 py-4 text-xl font-extrabold sm:text-2xl ph-font-cursive'
+    'flex-1 py-4 text-xl font-extrabold sm:text-2xl ph-font-cursive hover:border-red-500 hover:text-red-800 border-b-2'
   const tabTitleActiveClassname = 'border-b-2 border-red-900 text-red-900 '
 
   useEffect(() => {
@@ -85,7 +85,7 @@ export default function InventoryPage() {
       <Head>
         <title>{t`Inventory`}</title>
       </Head>
-      <div className='relative flex min-h-screen flex-col bg-gray-50 pt-16'>
+      <div className='relative flex-grow flex flex-col pt-16'>
         <main className='mx-auto w-full max-w-screen-2xl flex-grow px-2.5 sm:px-6 lg:px-8'>
           {shouldRenderTabs ? (
             /* Tabs for smaller screens */

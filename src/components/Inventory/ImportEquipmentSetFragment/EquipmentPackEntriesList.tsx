@@ -5,16 +5,20 @@ import React from 'react'
 import CostFragment from '@/components/CostFragment/CostFragment'
 import type { EquipmentPack } from '@/domain/equipment'
 import { getEquipmentPackCost } from '@/shared/helpers/equipmentPack'
+import CurrencyConverter from '@/shared/services/CurrencyConverter'
 
 export const EquipmentPackEntriesList = ({ pack }: { pack: EquipmentPack }) => {
   const { _: trans } = useLingui()
-  const cost = getEquipmentPackCost(pack)
+  const currencyRecord = getEquipmentPackCost(pack)
 
   return (
     <>
       <div className='mb-4'>
         <p className={'mb-2 text-red-900'}>
-          <Trans>Cost</Trans>: <CostFragment cost={cost} />
+          <Trans>Cost</Trans>:{' '}
+          <CostFragment
+            wallet={CurrencyConverter.createWalletFrom(currencyRecord)}
+          />
         </p>
       </div>
       <dl className='divide-y divide-gray-100'>
@@ -37,5 +41,3 @@ export const EquipmentPackEntriesList = ({ pack }: { pack: EquipmentPack }) => {
     </>
   )
 }
-// TODO display costs for item
-// TODO display Remove button
