@@ -4,6 +4,7 @@ import { CurrencyType, Unit } from '@/domain/currency'
 const COPPER_PER_GOLD = 500 // 50 * 10
 const COPPER_PER_SILVER = 10
 
+// TODO extend tests
 export default class CurrencyConverter {
   private static convertToCopper(record: CurrencyRecord): number {
     const { currency, value } = record
