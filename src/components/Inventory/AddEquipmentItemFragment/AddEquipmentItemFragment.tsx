@@ -50,7 +50,6 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
     onClose()
   }
 
-  // todo extract
   return (
     <Formik
       initialValues={formInitialValues}

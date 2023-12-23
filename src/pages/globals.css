@@ -112,6 +112,10 @@ details.ph-details-bullet[open] .ph-custom-indicator {
   text-decoration-thickness: 1px;
 }
 
+/**
+ * These styles fixes the overflow of the page,
+ * and make the footer be pushed to the bottom of the page correctly
+ */
 #__next {
   min-height: 100vh;
   display: flex;

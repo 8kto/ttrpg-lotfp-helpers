@@ -38,6 +38,7 @@ https://lotfp.vercel.app
 - [x] Add coins and calculate the encumbrance
   - [x] Track different kinds of coins
 - [x] Inventory is saved in locale storage and survives the page reload
+  - [ ] State can be saved in URL and shared
 - [x] Languages support
 - [x] Responsive layout, mobile devices support
 - [x] Equipment sets
