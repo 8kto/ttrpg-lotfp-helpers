@@ -346,8 +346,44 @@ describe('EncumbranceService', () => {
   })
 
   describe('.getReadableEncumbrance', () => {
-    it('should return string', () => {
-      expect(EncumbranceService.getReadableEncumbrance(1)).toEqual('')
+    it.each([
+      [1, 1],
+      [5, 1],
+      [6, 2],
+      [10, 2],
+      [11, 3],
+      [15, 3],
+      [16, 4],
+      [20, 4],
+      [21, 5],
+      [25, 5],
+    ])('returns expected for %d e.u. -> %d e.p.', (input, expected) => {
+      expect(
+        EncumbranceService.getReadableEncumbrance(
+          input * EncumbranceUnit.Regular,
+        ),
+      ).toEqual(expected)
+    })
+
+    it.each([
+      [1, EncumbranceType.Unencumbered],
+      [5, EncumbranceType.Unencumbered],
+      [6, EncumbranceType.Lightly],
+      [10, EncumbranceType.Lightly],
+      [11, EncumbranceType.Heavily],
+      [15, EncumbranceType.Heavily],
+      [16, EncumbranceType.Severely],
+      [20, EncumbranceType.Severely],
+      [21, EncumbranceType.OverEncumbered],
+      [25, EncumbranceType.OverEncumbered],
+    ])('integration %d e.u. -> %s', (input, expected) => {
+      expect(
+        EncumbranceService.getEncumbrance(
+          EncumbranceService.getReadableEncumbrance(
+            input * EncumbranceUnit.Regular,
+          ),
+        ),
+      ).toEqual(expected)
     })
   })
 })
