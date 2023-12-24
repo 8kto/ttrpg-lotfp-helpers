@@ -25,7 +25,6 @@ const CostFragment = ({
   }
   const lastIndex = currencies.length - 1
 
-  // FIXME unit is corrupted when deployed
   return (
     <span className='cursor-pointer text-lg' onClick={onClick}>
       {isEmpty && '0sp'}
