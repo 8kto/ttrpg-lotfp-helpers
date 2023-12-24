@@ -28,3 +28,4 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
     </I18nProvider>
   )
 }
+// TODO try SpeedInsights
