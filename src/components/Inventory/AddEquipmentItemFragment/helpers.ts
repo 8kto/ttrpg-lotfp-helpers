@@ -13,13 +13,14 @@ export const EquipLabelsDict: Record<EquipmentCategoryKey, string> = {
   missileWeapons: /*i18n*/ 'Missile weapons',
 }
 
-// FIXME sorted when rendered
-export const EncumbrancePointsLabelsDict: Record<EncumbranceUnit, string> = {
-  [EncumbranceUnit.None]: /*i18n*/ 'None',
-  [EncumbranceUnit.Regular]: /*i18n*/ 'Regular',
-  [EncumbranceUnit.Heavy]: /*i18n*/ 'Heavy',
-  [EncumbranceUnit.Oversized]: /*i18n*/ 'Oversized',
-}
+export const EncumbrancePointsLabelsDict: ReadonlyArray<
+  [EncumbranceUnit, string]
+> = [
+  [EncumbranceUnit.None, /*i18n*/ 'None'],
+  [EncumbranceUnit.Regular, /*i18n*/ 'Regular'],
+  [EncumbranceUnit.Heavy, /*i18n*/ 'Heavy'],
+  [EncumbranceUnit.Oversized, /*i18n*/ 'Oversized'],
+]
 
 export const getCustomEquipmentItem = (
   data: EquipmentItemDto,
