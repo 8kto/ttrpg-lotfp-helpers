@@ -34,7 +34,7 @@ const EncumbranceFragment = ({
   // TODO modal with FAQ about encumbrance
   return (
     <div className='flex flex-col'>
-      <div>
+      <div className='mb-1'>
         {trans(encumbrance)}{' '}
         {isDevEnv() ? (
           <span className='text-gray-400'>
@@ -53,7 +53,7 @@ const EncumbranceFragment = ({
         onChange={toggleEncumbranceThreshold}
         title={t`Include the extended encumbrance ability.`}
       >
-        <Trans>Dwarf encumbrance</Trans>
+        <Trans>Dwarven Encumbrance</Trans>
       </Toggle>
     </div>
   )
