@@ -1,6 +1,7 @@
 import type { State } from '@hookstate/core'
 import { hookstate } from '@hookstate/core'
 
+import { EncumbranceThreshold } from '@/domain/encumbrance'
 import type { EquipmentItem } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
 import {
@@ -31,6 +32,7 @@ describe('Inventory helpers', () => {
       // Mock equipment state
       const mockEquipmentState = createStateMock({
         armor: [armorItemMock1, armorItemMock2],
+        encumbranceThreshold: EncumbranceThreshold.Regular,
         isCoinWeightActive: true,
         isCostRural: false,
         meleeWeapons: [meleeWeaponItemMock1, meleeWeaponItemMock2],
@@ -65,6 +67,7 @@ describe('Inventory helpers', () => {
       // Mock empty equipment state
       const mockEmptyEquipmentState = createStateMock({
         armor: [],
+        encumbranceThreshold: EncumbranceThreshold.Regular,
         isCoinWeightActive: true,
         isCostRural: false,
         meleeWeapons: [],

@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react'
 
 import { CurrencyType } from '@/domain/currency'
-import { EncumbranceUnit } from '@/domain/encumbrance'
+import { EncumbranceThreshold, EncumbranceUnit } from '@/domain/encumbrance'
 import type { EquipmentItem } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
 import {
@@ -67,6 +67,7 @@ describe('InventoryState Tests', () => {
 
       expect(result.current.state.get()).toEqual({
         armor: [armorItemMock1],
+        encumbranceThreshold: EncumbranceThreshold.Regular,
         isCoinWeightActive: true,
         isCostRural: true,
         meleeWeapons: [meleeWeaponItemMock1],
@@ -113,6 +114,7 @@ describe('InventoryState Tests', () => {
 
       expect(result.current.state.get()).toEqual({
         armor: [],
+        encumbranceThreshold: EncumbranceThreshold.Regular,
         isCoinWeightActive: true,
         isCostRural: true,
         meleeWeapons: [],
