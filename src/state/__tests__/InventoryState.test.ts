@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react'
 
 import { CurrencyType } from '@/domain/currency'
-import { EncumbranceUnit } from '@/domain/encumbrance'
+import { EncumbranceThreshold, EncumbranceUnit } from '@/domain/encumbrance'
 import type { EquipmentItem } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
 import {
@@ -31,6 +31,7 @@ import {
   removeMissileWeapon,
   resetCurrencies,
   setCurrencies,
+  setEncumbranceThreshold,
   setWallet,
   toggleCoinsWeightActive,
   toggleCost,
@@ -67,6 +68,7 @@ describe('InventoryState Tests', () => {
 
       expect(result.current.state.get()).toEqual({
         armor: [armorItemMock1],
+        encumbranceThreshold: EncumbranceThreshold.Regular,
         isCoinWeightActive: true,
         isCostRural: true,
         meleeWeapons: [meleeWeaponItemMock1],
@@ -113,6 +115,7 @@ describe('InventoryState Tests', () => {
 
       expect(result.current.state.get()).toEqual({
         armor: [],
+        encumbranceThreshold: EncumbranceThreshold.Regular,
         isCoinWeightActive: true,
         isCostRural: true,
         meleeWeapons: [],
@@ -453,6 +456,19 @@ describe('InventoryState Tests', () => {
           items,
         ),
       ).toThrow('Unknown InventoryState category [unknownCategory]')
+    })
+  })
+
+  describe('setEncumbranceThreshold', () => {
+    it('sets threshold', () => {
+      setEncumbranceThreshold(EncumbranceThreshold.Dwarf)
+      expect(InventoryState.encumbranceThreshold.get()).toEqual(
+        EncumbranceThreshold.Dwarf,
+      )
+      setEncumbranceThreshold(EncumbranceThreshold.Regular)
+      expect(InventoryState.encumbranceThreshold.get()).toEqual(
+        EncumbranceThreshold.Regular,
+      )
     })
   })
 })

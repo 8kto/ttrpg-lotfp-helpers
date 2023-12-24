@@ -23,6 +23,7 @@ export type CountableItem = Pick<
 >
 
 export const COINS_PER_ENCUMBRANCE_POINT = 100
+const SLOTS_PER_ENCUMBRANCE_POINT = 5
 
 class EncumbranceService {
   private itemsCounter: number = 0
@@ -134,7 +135,7 @@ class EncumbranceService {
   static getReadableEncumbrance(encumbrance: number): number {
     const slots = roundTo(encumbrance / EncumbranceUnit.Regular, 1)
 
-    return Math.ceil(slots / 5)
+    return Math.ceil(slots / SLOTS_PER_ENCUMBRANCE_POINT)
   }
 }
 

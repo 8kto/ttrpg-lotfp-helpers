@@ -6,7 +6,7 @@
 
 > The project is in active development.
 >
-> Done: <!--PROGRESS--> 74% / 23 of 31 tasks <!--/PROGRESS-->
+> Done: <!--PROGRESS--> 77% / 24 of 31 tasks <!--/PROGRESS-->
 
 Lamentations of the Flame Princess helpers.
 
@@ -31,7 +31,7 @@ https://lotfp.vercel.app
   - [x] Encumbrance
   - [x] Movement
   - [ ] Terrain type factor
-  - [ ] Race modifier (Dwarf)
+  - [x] Dwarf modifier
 - [x] Custom equipment entries
 - [x] Wallet (available money)
   - [ ] Manage costs when an item is added

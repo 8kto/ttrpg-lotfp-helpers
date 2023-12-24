@@ -5,25 +5,24 @@ import CostFragment from '@/components/CostFragment/CostFragment'
 import EncumbranceFragment from '@/components/EncumbranceFragment/EncumbranceFragment'
 import MovementFragment from '@/components/MovementFragment/MovementFragment'
 import Wallet from '@/components/Wallet/Wallet'
-import { EncumbranceThreshold } from '@/domain/encumbrance'
 import EncumbranceService from '@/shared/services/EncumbranceService'
 import { combineEquipment } from '@/state/helpers'
 import { useInventoryState } from '@/state/InventoryState'
 
 const InventoryDetails = () => {
   const { state: equipmentState } = useInventoryState()
-  const { isCoinWeightActive, wallet } = equipmentState
+  const { isCoinWeightActive, wallet, encumbranceThreshold } = equipmentState
 
   const { totalEncumbrancePoints, totalCosts } = useMemo(() => {
     const encumbranceService = new EncumbranceService({
-      threshold: EncumbranceThreshold.Regular,
+      threshold: encumbranceThreshold.get(),
     })
 
     return encumbranceService.getTotal(
       combineEquipment(equipmentState),
       isCoinWeightActive ? wallet.get() : null,
     )
-  }, [wallet, equipmentState, isCoinWeightActive])
+  }, [encumbranceThreshold, equipmentState, isCoinWeightActive, wallet])
 
   const titleClassname = 'ph-font-cursive text-red-900 text-lg'
   const detailsRowClassname =
