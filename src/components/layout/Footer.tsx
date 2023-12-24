@@ -1,5 +1,7 @@
 import React from 'react'
 
+import isDevEnv from '@/shared/helpers/isDevEnv'
+
 const Footer = () => {
   return (
     <footer className='relative mx-auto w-full max-w-screen-2xl px-4 py-6 md:flex md:items-center md:justify-between md:py-10 2xl:px-8'>
@@ -13,7 +15,7 @@ const Footer = () => {
           Igor Okto (undefined)
         </a>
       </p>
-      {process.env.NODE_ENV === 'development' && (
+      {isDevEnv() && (
         <p className='flex items-center justify-center text-gray-500 text-center'>
           Active viewport:
           <span className='mr-1'>XS</span>

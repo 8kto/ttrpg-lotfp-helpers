@@ -69,6 +69,32 @@ describe('CurrencyConverter', () => {
         } as CurrencyRecord)
       })
     })
+
+    it('should throw for unknown CurrencyType from', () => {
+      expect(() =>
+        CurrencyConverter.convertFromTo(
+          {
+            // @ts-ignore
+            currency: 'XXX',
+            value: 10,
+          },
+          CurrencyType.Silver,
+        ),
+      ).toThrow('Unknown currency type')
+    })
+
+    it('should throw for unknown CurrencyType to', () => {
+      expect(() =>
+        CurrencyConverter.convertFromTo(
+          {
+            currency: CurrencyType.Gold,
+            value: 10,
+          },
+          // @ts-ignore
+          'XXX',
+        ),
+      ).toThrow('Unknown currency type')
+    })
   })
 
   describe('.createWalletFrom', () => {
@@ -274,6 +300,36 @@ describe('CurrencyConverter', () => {
         }),
       ).toEqual(false)
     })
+
+    it('should throw for invalid newWallet', () => {
+      expect(() =>
+        CurrencyConverter.mergeWallets(
+          {
+            Copper: 1,
+          } as CurrencyWallet,
+          {
+            Copper: 1,
+            Gold: 0,
+            Silver: 10,
+          },
+        ),
+      ).toThrow('Invalid values in wallet')
+    })
+
+    it('should throw for invalid wallet', () => {
+      expect(() =>
+        CurrencyConverter.mergeWallets(
+          {
+            Copper: 1,
+            Gold: 0,
+            Silver: 10,
+          },
+          {
+            Copper: 1,
+          } as CurrencyWallet,
+        ),
+      ).toThrow('Invalid values in wallet')
+    })
   })
 
   describe('.mergeWallets', () => {
@@ -342,6 +398,63 @@ describe('CurrencyConverter', () => {
       const wallet: CurrencyWallet = { Copper: 0, Gold: 0, Silver: 0 }
       const optimizedWallet = CurrencyConverter.getNormalized(wallet)
       expect(optimizedWallet).toEqual({ Copper: 0, Gold: 0, Silver: 0 })
+    })
+
+    it('should throw for invalid wallet', () => {
+      expect(() =>
+        CurrencyConverter.getNormalized({ Copper: 0 } as CurrencyWallet),
+      ).toThrow('Invalid values in wallet')
+    })
+  })
+
+  describe('.getDisplayCost', () => {
+    it('converts into the default currency from CP', () => {
+      expect(
+        CurrencyConverter.getDisplayCost({
+          currency: CurrencyType.Copper,
+          value: 1000,
+        }),
+      ).toEqual({ currency: 'Silver', value: 100 })
+    })
+
+    it('converts into the default currency from SP', () => {
+      expect(
+        CurrencyConverter.getDisplayCost({
+          currency: CurrencyType.Silver,
+          value: 1000,
+        }),
+      ).toEqual({ currency: 'Silver', value: 1000 })
+    })
+
+    it('converts into the default currency from GP', () => {
+      expect(
+        CurrencyConverter.getDisplayCost({
+          currency: CurrencyType.Gold,
+          value: 1000,
+        }),
+      ).toEqual({ currency: 'Silver', value: 50000 })
+    })
+  })
+
+  describe('.isWalletEmpty', () => {
+    it('returns true', () => {
+      expect(
+        CurrencyConverter.isWalletEmpty({
+          Copper: 0,
+          Gold: 0,
+          Silver: 0,
+        }),
+      ).toEqual(true)
+    })
+
+    it('returns false', () => {
+      expect(
+        CurrencyConverter.isWalletEmpty({
+          Copper: 0,
+          Gold: 10,
+          Silver: 0,
+        }),
+      ).toEqual(false)
     })
   })
 })

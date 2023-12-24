@@ -233,6 +233,9 @@ msgstr "Рыболовные снасти"
 msgid "Bedroll"
 msgstr "Спальный мешок"
 
+msgid "Include the extended encumbrance ability."
+msgstr "Включить расширенную нагрузку"
+
 msgid "config.missile.blowgun.details"
 msgstr "Длинные полые трубки из металла или дерева, используют силу лёгких владельца для стрельбы небольшими дротиками (или, возможно, другими снарядами). Обычно имеет длину около 4 футов, но нередко бывают и до 7 футов."
 
@@ -479,6 +482,9 @@ msgstr "Пайки, стандартные/День"
 
 msgid "Chain, per foot"
 msgstr "Цепь, за фут"
+
+msgid "Dwarven Encumbrance"
+msgstr "Выносливость гномов"
 
 msgid "These weapons must be wielded with two hands. Two-handed swords, mauls, and great axes are included in this category."
 msgstr "Это оружие держат двумя руками. В эту категорию входят двуручные мечи, булавы и большие топоры."

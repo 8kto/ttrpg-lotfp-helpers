@@ -233,6 +233,9 @@ msgstr ""
 msgid "Bedroll"
 msgstr ""
 
+msgid "Include the extended encumbrance ability."
+msgstr ""
+
 msgid "config.missile.blowgun.details"
 msgstr ""
 
@@ -478,6 +481,9 @@ msgid "Rations, Standard/Day"
 msgstr ""
 
 msgid "Chain, per foot"
+msgstr ""
+
+msgid "Dwarven Encumbrance"
 msgstr ""
 
 msgid "These weapons must be wielded with two hands. Two-handed swords, mauls, and great axes are included in this category."

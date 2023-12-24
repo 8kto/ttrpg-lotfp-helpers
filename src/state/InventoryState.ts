@@ -3,6 +3,7 @@ import { localstored } from '@hookstate/localstored'
 
 import type { ArmorItem } from '@/domain/armor'
 import type { CurrencyRecord, CurrencyWallet } from '@/domain/currency'
+import { EncumbranceThreshold } from '@/domain/encumbrance'
 import type { EquipmentItem } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
 import type { MeleeWeaponItem, MissileWeaponItem } from '@/domain/weapon'
@@ -18,6 +19,7 @@ export type InventoryStateType = {
   meleeWeapons: ReadonlyArray<InventoryItem<MeleeWeaponItem>>
   missileWeapons: ReadonlyArray<InventoryItem<MissileWeaponItem>>
   miscEquipment: ReadonlyArray<InventoryItem<EquipmentItem>>
+  encumbranceThreshold: EncumbranceThreshold
 }
 
 /**
@@ -27,6 +29,7 @@ export type InventoryStateType = {
  */
 const initialInventoryState: Readonly<InventoryStateType> = {
   armor: Array<InventoryItem<ArmorItem>>(),
+  encumbranceThreshold: EncumbranceThreshold.Regular,
   isCoinWeightActive: true,
   isCostRural: false,
   meleeWeapons: Array<InventoryItem<MeleeWeaponItem>>(),
@@ -201,4 +204,8 @@ export const importEquipmentItems = (
       throw new Error(`Unknown InventoryState category [${categoryKey}]`)
     }
   })
+}
+
+export const setEncumbranceThreshold = (slots: EncumbranceThreshold) => {
+  InventoryState.encumbranceThreshold.set(slots)
 }
