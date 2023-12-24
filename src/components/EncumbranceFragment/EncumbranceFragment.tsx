@@ -7,7 +7,7 @@ import { EncumbranceThreshold } from '@/domain/encumbrance'
 import isDevEnv from '@/shared/helpers/isDevEnv'
 import EncumbranceService from '@/shared/services/EncumbranceService'
 import {
-  setFreeEncumbranceSlots,
+  setEncumbranceThreshold,
   useInventoryState,
 } from '@/state/InventoryState'
 
@@ -19,12 +19,12 @@ const EncumbranceFragment = ({
   const { _: trans } = useLingui()
   const encumbrance = EncumbranceService.getEncumbrance(encumbrancePoints)
   const {
-    state: { freeEncumbranceSlots },
+    state: { encumbranceThreshold },
   } = useInventoryState()
 
   const toggleEncumbranceThreshold = () => {
-    setFreeEncumbranceSlots(
-      freeEncumbranceSlots.get() === EncumbranceThreshold.Regular
+    setEncumbranceThreshold(
+      encumbranceThreshold.get() === EncumbranceThreshold.Regular
         ? EncumbranceThreshold.Dwarf
         : EncumbranceThreshold.Regular,
     )
@@ -49,7 +49,7 @@ const EncumbranceFragment = ({
         )}
       </div>
       <Toggle
-        checked={freeEncumbranceSlots.get() === EncumbranceThreshold.Dwarf}
+        checked={encumbranceThreshold.get() === EncumbranceThreshold.Dwarf}
         onChange={toggleEncumbranceThreshold}
         title={t`Include the extended encumbrance ability.`}
       >

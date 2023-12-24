@@ -19,7 +19,7 @@ export type InventoryStateType = {
   meleeWeapons: ReadonlyArray<InventoryItem<MeleeWeaponItem>>
   missileWeapons: ReadonlyArray<InventoryItem<MissileWeaponItem>>
   miscEquipment: ReadonlyArray<InventoryItem<EquipmentItem>>
-  freeEncumbranceSlots: EncumbranceThreshold
+  encumbranceThreshold: EncumbranceThreshold
 }
 
 /**
@@ -29,7 +29,7 @@ export type InventoryStateType = {
  */
 const initialInventoryState: Readonly<InventoryStateType> = {
   armor: Array<InventoryItem<ArmorItem>>(),
-  freeEncumbranceSlots: EncumbranceThreshold.Regular,
+  encumbranceThreshold: EncumbranceThreshold.Regular,
   isCoinWeightActive: true,
   isCostRural: false,
   meleeWeapons: Array<InventoryItem<MeleeWeaponItem>>(),
@@ -206,6 +206,6 @@ export const importEquipmentItems = (
   })
 }
 
-export const setFreeEncumbranceSlots = (slots: EncumbranceThreshold) => {
-  InventoryState.freeEncumbranceSlots.set(slots)
+export const setEncumbranceThreshold = (slots: EncumbranceThreshold) => {
+  InventoryState.encumbranceThreshold.set(slots)
 }
