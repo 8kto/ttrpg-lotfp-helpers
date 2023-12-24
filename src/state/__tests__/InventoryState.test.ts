@@ -31,6 +31,7 @@ import {
   removeMissileWeapon,
   resetCurrencies,
   setCurrencies,
+  setEncumbranceThreshold,
   setWallet,
   toggleCoinsWeightActive,
   toggleCost,
@@ -455,6 +456,19 @@ describe('InventoryState Tests', () => {
           items,
         ),
       ).toThrow('Unknown InventoryState category [unknownCategory]')
+    })
+  })
+
+  describe('setEncumbranceThreshold', () => {
+    it('sets threshold', () => {
+      setEncumbranceThreshold(EncumbranceThreshold.Dwarf)
+      expect(InventoryState.encumbranceThreshold.get()).toEqual(
+        EncumbranceThreshold.Dwarf,
+      )
+      setEncumbranceThreshold(EncumbranceThreshold.Regular)
+      expect(InventoryState.encumbranceThreshold.get()).toEqual(
+        EncumbranceThreshold.Regular,
+      )
     })
   })
 })
