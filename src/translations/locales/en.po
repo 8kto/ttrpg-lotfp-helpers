@@ -233,6 +233,9 @@ msgstr "Fishing Gear"
 msgid "Bedroll"
 msgstr "Bedroll"
 
+msgid "Include the extended encumbrance ability."
+msgstr "Include the extended encumbrance ability."
+
 msgid "config.missile.blowgun.details"
 msgstr "Blowguns are long, hollow tubes of metal or wood, which use the wielders' own lung power to fire small darts (or potentially other projectiles). These weapons are typically around 4 feet in length, but lengths of up to 7 feet are not unheard of"
 
@@ -479,6 +482,9 @@ msgstr "Rations, Standard/Day"
 
 msgid "Chain, per foot"
 msgstr "Chain, per foot"
+
+msgid "Dwarven Encumbrance"
+msgstr "Dwarven Encumbrance"
 
 msgid "These weapons must be wielded with two hands. Two-handed swords, mauls, and great axes are included in this category."
 msgstr "These weapons must be wielded with two hands. Two-handed swords, mauls, and great axes are included in this category."
