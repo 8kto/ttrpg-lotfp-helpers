@@ -46,7 +46,17 @@
     "no-console": ["error", { "allow": ["error"] }],
     "no-debugger": "error",
     "no-shadow": "off",
-    "@typescript-eslint/no-shadow": "error"
+    "@typescript-eslint/no-shadow": "error",
+    "no-implicit-coercion": [
+      "error",
+      {
+        "boolean": true,
+        "string": true,
+        "number": true,
+        "disallowTemplateShorthand": true,
+        "allow": ["!!"]
+      }
+    ]
   },
   "overrides": [
     {
