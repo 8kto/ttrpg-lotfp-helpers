@@ -363,6 +363,9 @@ msgstr "Set"
 msgid "None"
 msgstr "None"
 
+msgid "title.encumbrancePoints"
+msgstr "e.p.: Encumbrance Points"
+
 msgid "Chain Barding"
 msgstr "Chain Barding"
 
