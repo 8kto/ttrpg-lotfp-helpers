@@ -16,7 +16,6 @@ const Wallet = () => {
   const [isManaged, setIsManaged] = useState(false)
   const [isSetCoinsDrawerOpen, setSetCoinsDrawerOpen] = useState(false)
 
-  // FIXME doesnt affect displayed encumbrance
   const {
     state: { wallet, isCoinWeightActive },
   } = useInventoryState()

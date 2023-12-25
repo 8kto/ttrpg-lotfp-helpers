@@ -20,7 +20,7 @@ const InventoryDetails = () => {
 
     return encumbranceService.getTotal(
       combineEquipment(equipmentState),
-      isCoinWeightActive ? wallet.get() : null,
+      isCoinWeightActive.get() ? wallet.get() : null,
     )
   }, [encumbranceThreshold, equipmentState, isCoinWeightActive, wallet])
 
@@ -32,7 +32,7 @@ const InventoryDetails = () => {
     <div className='mt-4 border-t border-gray-100 text-base'>
       <dl className='divide-y divide-gray-100'>
         <div className={detailsRowClassname}>
-          <dt className={`${titleClassname}`}>
+          <dt className={titleClassname}>
             <Trans>Wallet</Trans>
           </dt>
           <dd className='mt-1 flex items-center leading-6 text-gray-700 sm:col-span-2 sm:mt-0'>
