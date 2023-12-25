@@ -6,7 +6,6 @@ const getAdjustmentLabels = (): Record<
   TerrainAdjustment | WeatherAdjustment,
   string
 > => ({
-  [TerrainAdjustment.None]: t`None`,
   [TerrainAdjustment.Road]: t`Road`,
   [TerrainAdjustment.Trail]: t`Clear, plains, trail`,
   [TerrainAdjustment.Forest]: t`Forest, desert, hills`,
@@ -17,14 +16,18 @@ const getAdjustmentLabels = (): Record<
 })
 
 export const getMovementAdjustments = (type: 'terrain' | 'weather') => {
-  const keys =
-    type === 'terrain'
-      ? Object.keys(TerrainAdjustment)
-      : Object.keys(WeatherAdjustment)
+  let keys = Array<string>()
+  if (type === 'terrain') {
+    keys = Object.keys(TerrainAdjustment)
+  } else if (type === 'weather') {
+    keys = Object.keys(WeatherAdjustment)
+  }
+
+  if (!keys.length) {
+    throw new Error('Unknown adjustments type')
+  }
 
   return Object.entries(getAdjustmentLabels())
-    .filter(([key]) => {
-      return keys.includes(key)
-    })
+    .filter(([key]) => keys.includes(key))
     .map(([, title]) => title)
 }
