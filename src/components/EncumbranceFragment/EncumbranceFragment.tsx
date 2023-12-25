@@ -37,12 +37,12 @@ const EncumbranceFragment = ({
       <div className='mb-1'>
         {trans(encumbrance)}{' '}
         {isDevEnv() ? (
-          <span className='text-gray-400'>
+          <span className='text-gray-400' title={t`title.encumbrancePoints`}>
             ({encumbrancePoints.toPrecision(2)} e.u. /{' '}
             {EncumbranceService.getReadableEncumbrance(encumbrancePoints)} e.p.)
           </span>
         ) : (
-          <span className='text-gray-400'>
+          <span className='text-gray-400' title={t`title.encumbrancePoints`}>
             ({EncumbranceService.getReadableEncumbrance(encumbrancePoints)}{' '}
             e.p.)
           </span>

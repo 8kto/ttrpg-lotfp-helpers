@@ -18,7 +18,7 @@ type TabsProps = {
 
 const Tab = ({ active, onClick, children }: TabProps) => (
   <button
-    className={`group inline-flex items-center justify-center rounded-t-lg border-b-2 p-4 hover:border-red-500 hover:text-red-800 ${
+    className={`group inline-flex items-center justify-center rounded-t-lg border-b-2 p-4 hover:border-red-500 hover:text-red-800 outline-transparent focus-visible:border-b-transparent ${
       active
         ? 'active border-red-900 text-red-900 hover:border-red-900 hover:text-red-900'
         : 'border-transparent text-gray-500'
