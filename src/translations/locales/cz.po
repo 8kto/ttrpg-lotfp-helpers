@@ -248,6 +248,9 @@ msgstr ""
 msgid "Lock"
 msgstr ""
 
+msgid "title.encumbranceUnits"
+msgstr ""
+
 msgid "Item"
 msgstr ""
 

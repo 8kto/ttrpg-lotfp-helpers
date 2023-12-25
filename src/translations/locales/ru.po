@@ -248,6 +248,9 @@ msgstr "Одноручное оружие, включая мечи, боевые
 msgid "Lock"
 msgstr "Замок"
 
+msgid "title.encumbranceUnits"
+msgstr "Encumbrance Units"
+
 msgid "Item"
 msgstr "Предмет"
 
@@ -364,7 +367,7 @@ msgid "None"
 msgstr "Нет"
 
 msgid "title.encumbrancePoints"
-msgstr "e.p.: Encumbrance Points"
+msgstr "Encumbrance Points"
 
 msgid "Chain Barding"
 msgstr "Кольчужный бард"

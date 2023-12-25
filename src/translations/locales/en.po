@@ -248,6 +248,9 @@ msgstr "These are one-handed weapons, including swords, battle axes, maces"
 msgid "Lock"
 msgstr "Lock"
 
+msgid "title.encumbranceUnits"
+msgstr "Encumbrance Units"
+
 msgid "Item"
 msgstr "Item"
 
@@ -364,7 +367,7 @@ msgid "None"
 msgstr "None"
 
 msgid "title.encumbrancePoints"
-msgstr "e.p.: Encumbrance Points"
+msgstr "Encumbrance Points"
 
 msgid "Chain Barding"
 msgstr "Chain Barding"
