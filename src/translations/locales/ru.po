@@ -31,6 +31,9 @@ msgstr "Среднее оружие"
 msgid "This can be used to attack from the second rank, and can be used to receive a charge."
 msgstr "Можно использовать для атаки из второго ряда, а также для встречи рывка (charge)."
 
+msgid "Regular weather"
+msgstr "Обычная погода"
+
 msgid "Great axe"
 msgstr "Большой топор"
 
@@ -274,6 +277,12 @@ msgstr "Учитывать вес монет для нагрузки."
 msgid "Cost"
 msgstr "Цена"
 
+msgid "Dungeon"
+msgstr "Подземелье"
+
+msgid "Clear, plains, trail"
+msgstr "Равнины, тропы"
+
 msgid "Equipment pack"
 msgstr "Набор снаряжения"
 
@@ -356,6 +365,9 @@ msgstr "Кинжал"
 msgid "Two-handed sword"
 msgstr "Двуручный меч"
 
+msgid "Forest, desert, hills"
+msgstr "Леса, пустыни, холмы"
+
 msgid "Add item"
 msgstr "Добавить предмет"
 
@@ -397,6 +409,9 @@ msgstr "Меч"
 
 msgid "The number should be equal to or greater than 0"
 msgstr "Число должно быть больше или равно 0"
+
+msgid "Storm conditions"
+msgstr "Буря"
 
 msgid "Clothing, Normal"
 msgstr "Одежда, обычная"
@@ -491,6 +506,9 @@ msgstr "Цепь, за фут"
 
 msgid "Dwarven Encumbrance"
 msgstr "Выносливость гномов"
+
+msgid "Precipitations, high winds"
+msgstr "Осадки, сильный ветер"
 
 msgid "These weapons must be wielded with two hands. Two-handed swords, mauls, and great axes are included in this category."
 msgstr "Это оружие держат двумя руками. В эту категорию входят двуручные мечи, булавы и большие топоры."
@@ -608,11 +626,17 @@ msgstr "Медные монеты"
 msgid "Light crossbows can only be fired every once in 2 rounds and ignore 2 AC points"
 msgstr "Легкие арбалеты могут стрелять только раз в 2 раунда и игнорируют 2 пункта AC"
 
+msgid "Road"
+msgstr "Дорога"
+
 msgid "Plate"
 msgstr "Латы"
 
 msgid "Battle axe"
 msgstr "Боевой топор"
+
+msgid "Wilderness"
+msgstr "Дикая местность"
 
 msgid "Inventory cost"
 msgstr "Стоимость инвентаря"
@@ -631,6 +655,9 @@ msgstr "мили"
 
 msgid "Import"
 msgstr "Импорт"
+
+msgid "Mountains, jungle, swamp"
+msgstr "Горы, джунгли, болота"
 
 msgid "Crampons"
 msgstr "Кошки (альпинистские)"
@@ -709,6 +736,9 @@ msgstr "Дротик для духовой трубки (1)"
 
 msgid "This weapon can be used one-handed if charging on horseback. Otherwise, it is effectively a polearm (pike)"
 msgstr "Это оружие можно использовать как одноручное при атаке верхом. В противном случае, равноценна древковому оружию (пике)"
+
+msgid "(on foot: + CON mod)"
+msgstr "(пешком: + модификатор CON)"
 
 msgid "Wallet"
 msgstr "Кошелек"
