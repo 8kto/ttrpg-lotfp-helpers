@@ -1,5 +1,4 @@
 export enum TerrainAdjustment {
-  None = 'None',
   Road = 'Road',
   Trail = 'Trail',
   Forest = 'Forest',

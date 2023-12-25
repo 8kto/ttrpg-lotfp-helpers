@@ -41,7 +41,6 @@ export const Adjustments: Record<
   TerrainAdjustment | WeatherAdjustment,
   number
 > = {
-  [TerrainAdjustment.None]: 1,
   [TerrainAdjustment.Road]: 1,
   [TerrainAdjustment.Trail]: 2 / 3, // clear, plains, trail
   [TerrainAdjustment.Forest]: 1 / 2, // forest, desert, hills
