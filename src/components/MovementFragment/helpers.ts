@@ -1,5 +1,6 @@
 import { t } from '@lingui/macro'
 
+import { Adjustments } from '@/config/MovementRates'
 import { TerrainAdjustment, WeatherAdjustment } from '@/domain/movement'
 
 const getAdjustmentLabels = (): Record<
@@ -27,7 +28,22 @@ export const getMovementAdjustments = (type: 'terrain' | 'weather') => {
     throw new Error('Unknown adjustments type')
   }
 
-  return Object.entries(getAdjustmentLabels())
-    .filter(([key]) => keys.includes(key))
-    .map(([, title]) => title)
+  return Object.entries(getAdjustmentLabels()).filter(([key]) =>
+    keys.includes(key),
+  )
+}
+
+export const modifyMovement = ({
+  movement,
+  terrain,
+  weather,
+}: {
+  weather: WeatherAdjustment
+  terrain: TerrainAdjustment
+  movement: number
+}): number => {
+  const modW = Adjustments[weather]
+  const modT = Adjustments[terrain]
+
+  return movement * modW * modT
 }
