@@ -36,7 +36,7 @@ const MovementFragment = ({
       </h5>
       <p className='mb-2'>
         <Trans>Per day</Trans>: {movement['MilesPerDay']} <Trans>miles</Trans>{' '}
-        <Trans>+ CON mod on foot</Trans>
+        <Trans>(on foot: + CON mod)</Trans>
       </p>
       <select
         name='terrain-adjustments'
