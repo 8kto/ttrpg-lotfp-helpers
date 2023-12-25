@@ -189,7 +189,7 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
               name='points'
               id='add-equip-item--points'
               as='select'
-              className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500'
+              className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-primary-500 focus:ring-primary-500'
             >
               {EncumbrancePointsLabelsDict.map(([key, title]) => (
                 <option key={key} value={key}>
@@ -211,7 +211,7 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
               name='category'
               id='add-equip-item--category'
               as='select'
-              className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500'
+              className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-primary-500 focus:ring-primary-500'
             >
               {Object.entries(EquipLabelsDict).map(([key, title]) => (
                 <option key={key} value={key}>
