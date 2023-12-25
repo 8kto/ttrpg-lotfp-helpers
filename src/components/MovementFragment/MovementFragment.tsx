@@ -14,7 +14,10 @@ const MovementFragment = ({
 
   return (
     <>
-      <ul className='list-disc pl-4'>
+      <h5 className='ph-font-cursive text-lg text-red-900'>
+        <Trans>Dungeon</Trans>
+      </h5>
+      <ul className='list-disc pl-4 mb-2'>
         <li>
           <Trans>Exploration</Trans>: {movement['Exploration']}{' '}
           <Trans>ft</Trans>
@@ -25,8 +28,15 @@ const MovementFragment = ({
         <li>
           <Trans>Running</Trans>: {movement['Running']} <Trans>ft</Trans>
         </li>
+      </ul>
+
+      <h5 className='ph-font-cursive text-lg text-red-900'>
+        <Trans>Wilderness</Trans>
+      </h5>
+      <ul className='list-disc pl-4'>
         <li>
-          <Trans>Per day</Trans>: {movement['MilesPerDay']} <Trans>miles</Trans>
+          <Trans>Per day</Trans>: {movement['MilesPerDay']} <Trans>miles</Trans>{' '}
+          <Trans>+ CON mod on foot</Trans>
         </li>
       </ul>
     </>
