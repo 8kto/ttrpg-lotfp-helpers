@@ -14,833 +14,833 @@ msgstr ""
 "Plural-Forms: \n"
 
 msgid "Coins"
-msgstr ""
+msgstr "Mince"
 
 msgid "config.misc.airBladder.details"
-msgstr ""
+msgstr "config.misc.airBladder.details\"  # Requires context"
 
 msgid "config.melee.mancatcher.details"
-msgstr ""
+msgstr "config.melee.mancatcher.details\"  # Requires context"
 
 msgid "Clothing, Poor"
-msgstr ""
+msgstr "Oblečení, chudé"
 
 msgid "Weapon, Medium"
-msgstr ""
+msgstr "Zbraň, střední"
 
 msgid "This can be used to attack from the second rank, and can be used to receive a charge."
-msgstr ""
+msgstr "Toto lze použít k útoku ze druhé řady a lze jej použít k přijetí náboje."
 
 msgid "Regular weather"
-msgstr ""
+msgstr "Běžné počasí"
 
 msgid "Great axe"
-msgstr ""
+msgstr "Velká sekera"
 
 msgid "Fighter 3"
-msgstr ""
+msgstr "Bojovník 3"
 
 msgid "Leather"
-msgstr ""
+msgstr "Kůže"
 
 msgid "Holy Water"
-msgstr ""
+msgstr "Svatá voda"
 
 msgid "Basic"
-msgstr ""
+msgstr "Základní"
 
 msgid "Rations, Iron/Day"
-msgstr ""
+msgstr "Porce, železo/den"
 
 msgid "Nails"
-msgstr ""
+msgstr "Hřebíky"
 
 msgid "Pipe"
-msgstr ""
+msgstr "Dýmka"
 
 msgid "This one handed weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
-msgstr ""
+msgstr "Tato jednoruční zbraň má penalizaci -2 k zásahu protivníků s neupraveným AC 15 nebo lepším."
 
 msgid "This weapon is ineffective against targets with unadjusted AC 14 or better, but allows mêlée attacks on opponents up to 10 ft away."
-msgstr ""
+msgstr "Tato zbraň je neúčinná proti cílům s neupraveným AC 14 nebo lepším, ale umožňuje mêlée útoky na protivníky až do vzdálenosti 10 stop."
 
 msgid "Flask of Lamp Oil"
-msgstr ""
+msgstr "Láhev lampového oleje"
 
 msgid "Saddlebag"
-msgstr ""
+msgstr "Sedlová taška"
 
 msgid "Holy Symbol, Steel"
-msgstr ""
+msgstr "Svatý symbol, ocel"
 
 msgid "Fighter 1"
-msgstr ""
+msgstr "Bojovník 1"
 
 msgid "Damage"
-msgstr ""
+msgstr "Poškození"
 
 msgid "Tent, Regular"
-msgstr ""
+msgstr "Stan, běžný"
 
 msgid "Map, Local"
-msgstr ""
+msgstr "Mapa, místní"
 
 msgid "City"
-msgstr ""
+msgstr "Město"
 
 msgid "Shovel"
-msgstr ""
+msgstr "Lopata"
 
 msgid "Air Bladder"
-msgstr ""
+msgstr "Vzduchový měch"
 
 msgid "Holy Symbol, Wood"
-msgstr ""
+msgstr "Svatý symbol, dřevo"
 
 msgid "Silver pieces"
-msgstr ""
+msgstr "Stříbrné kusy"
 
 msgid "Bow, Short"
-msgstr ""
+msgstr "Luk, krátký"
 
 msgid "Copper"
-msgstr ""
+msgstr "Měď"
 
 msgid "Mêlée"
-msgstr ""
+msgstr "Mêlée"
 
 msgid "Name"
-msgstr ""
+msgstr "Název"
 
 msgid "Range"
-msgstr ""
+msgstr "Rozsah"
 
 msgid "Manacles"
-msgstr ""
+msgstr "Pouta"
 
 msgid "Mirror, Glass"
-msgstr ""
+msgstr "Zrcadlo, sklo"
 
 msgid "Hand axe"
-msgstr ""
+msgstr "Sekera"
 
 msgid "Mace"
-msgstr ""
+msgstr "Palice"
 
 msgid "Riding Gear"
-msgstr ""
+msgstr "Jízdní vybavení"
 
 msgid "Book, Spell (Blank)"
-msgstr ""
+msgstr "Kniha, kouzlo (prázdná)"
 
 msgid "Required field"
-msgstr ""
+msgstr "Požadované pole"
 
 msgid "Scroll Case"
-msgstr ""
+msgstr "Pouzdro na svitek"
 
 msgid "Equipment"
-msgstr "Zařízení"
+msgstr "Vybavení"
 
 msgid "Chalk"
-msgstr ""
+msgstr "Křída"
 
 msgid "Weapon, Great"
-msgstr ""
+msgstr "Zbraň, velká"
 
 msgid "These are one-handed weapons, including short swords and hand axes"
-msgstr ""
+msgstr "To jsou jednoruční zbraně, včetně krátkých mečů a seker"
 
 msgid "Barrel"
-msgstr ""
+msgstr "Sud"
 
 msgid "optional"
-msgstr ""
+msgstr "volitelné"
 
 msgid "Darts for blowgun, quiver (20)"
-msgstr ""
+msgstr "Šipky pro foukačku, toulec (20)"
 
 msgid "Rural"
-msgstr ""
+msgstr "Venkovský"
 
 #. js-lingui-explicit-id
 msgid "Armor"
-msgstr ""
+msgstr "Brnění"
 
 msgid "A rock for throwing, not an ammunition"
-msgstr ""
+msgstr "Kámen pro vrhání, ne munice"
 
 msgid "Clothing, Extravagant"
-msgstr ""
+msgstr "Oblečení, extravagantní"
 
 msgid "Sling bullets (10)"
-msgstr ""
+msgstr "Prakové střely (10)"
 
 msgid "Drill"
-msgstr ""
+msgstr "Vrtačka"
 
 msgid "This weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
-msgstr ""
+msgstr "Tato zbraň má penalizaci -2 k zásahu protivníků s neupraveným AC 15 nebo lepším."
 
 msgid "Packs"
-msgstr ""
+msgstr "Balíčky"
 
 msgid "Silver"
-msgstr ""
+msgstr "Stříbro"
 
 msgid "These are small one-handed weapons including daggers and clubs, and suffer a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
-msgstr ""
+msgstr "To jsou malé jednoruční zbraně včetně dýk a kyjů, které mají penalizaci -2 k zásahu protivníků s neupraveným AC 15 nebo lepším."
 
 msgid "Weapon, Minor"
-msgstr ""
+msgstr "Zbraň, menší"
 
 msgid "Slings fired with stones instead of bullets have half the listed range."
-msgstr ""
+msgstr "Pračky střílející kameny místo střel mají poloviční uvedený dosah."
 
 msgid "Crowbar"
-msgstr ""
+msgstr "Páčidlo"
 
 #. js-lingui-explicit-id
 msgid "Cumbersome"
-msgstr ""
+msgstr "Neohrabaný"
 
 msgid "RU"
-msgstr ""
+msgstr "RU"
 
 msgid "Arrow (1)"
-msgstr ""
+msgstr "Šíp (1)"
 
 msgid "Candle"
-msgstr ""
+msgstr "Svíčka"
 
 msgid "Waterskin"
-msgstr ""
+msgstr "Vodní měch"
 
 msgid "Per day"
-msgstr ""
+msgstr "Za den"
 
 msgid "Reset all equipment?"
-msgstr ""
+msgstr "Resetovat veškeré vybavení?"
 
 msgid "Tent, Personal"
-msgstr ""
+msgstr "Stan, osobní"
 
 msgid "Gold"
-msgstr ""
+msgstr "Zlato"
 
 msgid "Filter by name"
-msgstr ""
+msgstr "Filtrovat podle názvu"
 
 msgid "Wolvesbane"
-msgstr ""
+msgstr "Vlkodlak"
 
 msgid "Fishing Gear"
-msgstr ""
+msgstr "Rybářské vybavení"
 
 msgid "on foot: + CON mod"
-msgstr ""
+msgstr "pěšky: + mod KON"
 
 msgid "Bedroll"
-msgstr ""
+msgstr "Spací pytel"
 
 msgid "Include the extended encumbrance ability."
-msgstr ""
+msgstr "Zahrnout rozšířenou schopnost zatížení."
 
 msgid "config.missile.blowgun.details"
-msgstr ""
+msgstr "config.missile.blowgun.details\"  # Requires context"
 
 msgid "Whistle"
-msgstr ""
+msgstr "Píšťalka"
 
 msgid "These are one-handed weapons, including swords, battle axes, maces"
-msgstr ""
+msgstr "To jsou jednoruční zbraně, včetně mečů, bojových seker, palic"
 
 msgid "Lock"
-msgstr ""
+msgstr "Zámek"
 
 msgid "title.encumbranceUnits"
-msgstr ""
+msgstr "title.encumbranceUnits\"  # Requires context"
 
 msgid "Item"
-msgstr ""
+msgstr "Položka"
 
 #. js-lingui-explicit-id
 msgid "Heavily"
-msgstr ""
+msgstr "Značně"
 
 #. js-lingui-explicit-id
 msgid "Heavy"
-msgstr ""
+msgstr "Těžký"
 
 msgid "Holy Symbol, Silver"
-msgstr ""
+msgstr "Svatý symbol, stříbro"
 
 msgid "Polearm"
-msgstr ""
+msgstr "Hůlka"
 
 msgid "Enable the weight of coins for encumbrance calculations."
-msgstr ""
+msgstr "Povolit váhu mincí pro výpočty zatížení."
 
 msgid "Cost"
-msgstr ""
+msgstr "Cena"
 
 msgid "Dungeon"
-msgstr ""
+msgstr "Dungeon"
 
 msgid "Clear, plains, trail"
-msgstr ""
+msgstr "Jasný, rovina, stezka"
 
 msgid "Equipment pack"
-msgstr ""
+msgstr "Vybavení balíček"
 
 msgid "EN"
-msgstr ""
+msgstr "EN"
 
 msgid "Set coins"
-msgstr ""
+msgstr "Nastavit mince"
 
 msgid "Reset coins"
-msgstr ""
+msgstr "Resetovat mince"
 
 msgid "Book, Reading"
-msgstr ""
+msgstr "Kniha, čtení"
 
 msgid "Add coins"
-msgstr ""
+msgstr "Přidat mince"
 
 msgid "Ladder, 10'"
-msgstr ""
+msgstr "Žebřík, 10 stop"
 
 msgid "Category"
-msgstr ""
+msgstr "Kategorie"
 
 msgid "Specialist’s Tools"
-msgstr ""
+msgstr "Nástroje specialisty"
 
 msgid "Princess Helpers"
-msgstr ""
+msgstr "Princess Helpers"
 
 msgid "Cleric 2"
-msgstr ""
+msgstr "Kněz 2"
 
 #. js-lingui-explicit-id
 msgid "Lightly"
-msgstr ""
+msgstr "Lehce"
 
 msgid "Heavy crossbows can only be fired once in 3 rounds and ignore 4 AC points"
-msgstr ""
+msgstr "Těžké křížové luki lze vystřelit pouze jednou za 3 kola a ignorují 4 body AC"
 
 msgid "config.misc.caltrop.details"
-msgstr ""
+msgstr "config.misc.caltrop.details"
 
 msgid "Use of this weapon requires an attack from surprise, or a successful grapple. If a hit is scored, the target is considered grappled and will take 1d6 damage per round."
-msgstr ""
+msgstr "Použití této zbraně vyžaduje překvapivý útok nebo úspěšný zápas. Pokud je zásah, cíl je považován za chycený a utrpí 1d6 poškození za kolo."
 
 msgid "Chest"
-msgstr ""
+msgstr "Truhla"
 
 msgid "Pseudo"
-msgstr ""
+msgstr "Pseudo"
 
 msgid "Missiles"
-msgstr ""
+msgstr "Střely"
 
 msgid "Bottle of Wine/Liquor, Poor"
-msgstr ""
+msgstr "Láhev vína/lihoviny, chudá"
 
 msgid "Vial or Bottle"
-msgstr ""
+msgstr "Lahvička nebo láhev"
 
 msgid "Club"
-msgstr ""
+msgstr "Klub"
 
 #. js-lingui-explicit-id
 msgid "Miscellaneous"
-msgstr ""
+msgstr "Různé"
 
 #. js-lingui-explicit-id
 msgid "Missile weapons"
-msgstr ""
+msgstr "Střelné zbraně"
 
 #. js-lingui-explicit-id
 msgid "Mêlée weapons"
-msgstr ""
+msgstr "Zbraně na blízko"
 
 msgid "Dagger"
-msgstr ""
+msgstr "Dýka"
 
 msgid "Two-handed sword"
-msgstr ""
+msgstr "Dvouruční meč"
 
 msgid "Forest, desert, hills"
-msgstr ""
+msgstr "Les, poušť, kopce"
 
 msgid "Add item"
-msgstr ""
+msgstr "Přidat položku"
 
 msgid "Set"
-msgstr ""
+msgstr "Sada"
 
 #. js-lingui-explicit-id
 msgid "None"
-msgstr ""
+msgstr "Žádný"
 
 msgid "title.encumbrancePoints"
-msgstr ""
+msgstr "title.encumbrancePoints"
 
 msgid "Chain Barding"
-msgstr ""
+msgstr "Řetězové bardování"
 
 msgid "Armor Class"
-msgstr ""
+msgstr "Třída brnění"
 
 msgid "Reset"
-msgstr ""
+msgstr "Resetovat"
 
 msgid "Arrows, quiver (20)"
-msgstr ""
+msgstr "Šípy, toulec (20)"
 
 #. js-lingui-explicit-id
 msgid "OverEncumbered"
-msgstr ""
+msgstr "Přetížený"
 
 #. js-lingui-explicit-id
 msgid "Oversized"
-msgstr ""
+msgstr "Příliš velký"
 
 msgid "Garlic"
-msgstr ""
+msgstr "Česnek"
 
 msgid "Sword"
-msgstr ""
+msgstr "Meč"
 
 msgid "The number should be equal to or greater than 0"
-msgstr ""
+msgstr "Číslo by mělo být rovno nebo větší než 0"
 
 msgid "Storm conditions"
-msgstr ""
+msgstr "Podmínky bouře"
 
 msgid "Clothing, Normal"
-msgstr ""
+msgstr "Oblečení, normální"
 
 msgid "Rapier"
-msgstr ""
+msgstr "Rapír"
 
 msgid "Sling"
-msgstr ""
+msgstr "Pračka"
 
 msgid "Magic user"
-msgstr ""
+msgstr "Uživatel magie"
 
 msgid "Miscellaneous"
-msgstr ""
+msgstr "Různé"
 
 msgid "Backpack"
-msgstr ""
+msgstr "Batoh"
 
 msgid "Short"
-msgstr ""
+msgstr "Krátký"
 
 #. js-lingui-explicit-id
 msgid "Regular"
-msgstr ""
+msgstr "Pravidelný"
 
 msgid "Running"
-msgstr ""
+msgstr "Běh"
 
 msgid "Mirror, Silver"
-msgstr ""
+msgstr "Zrcadlo, stříbrné"
 
 msgid "Sling bullets, rocks (10)"
-msgstr ""
+msgstr "Prakové střely, kameny (10)"
 
 msgid "Blowgun"
-msgstr ""
+msgstr "Foukačka"
 
 msgid "Block and Tackle"
-msgstr ""
+msgstr "Kladka a táhlo"
 
 #. js-lingui-explicit-id
 msgid "Severely"
-msgstr ""
+msgstr "Vážně"
 
 msgid "Lard"
-msgstr ""
+msgstr "Sádlo"
 
 msgid "Sack"
-msgstr ""
+msgstr "Pytel"
 
 msgid "Feed, Animal/Day"
-msgstr ""
+msgstr "Krmivo, zvíře/den"
 
 msgid "Include the weight"
-msgstr ""
+msgstr "Zahrnout váhu"
 
 msgid "Lantern"
-msgstr ""
+msgstr "Lampář"
 
 msgid "Details"
-msgstr ""
+msgstr "Detaily"
 
 #. js-lingui-explicit-id
 msgid "Unencumbered"
-msgstr ""
+msgstr "Nezatížený"
 
 msgid "Leather Barding"
-msgstr ""
+msgstr "Kožené bardování"
 
 msgid "Pick, Miner’s"
-msgstr ""
+msgstr "Krumpáč, horníkův"
 
 msgid "Gem"
-msgstr ""
+msgstr "Drahokam"
 
 msgid "Weight"
-msgstr ""
+msgstr "Váha"
 
 #. js-lingui-explicit-id
 msgid "Weight"
-msgstr ""
+msgstr "Váha"
 
 msgid "Tobacco"
-msgstr ""
+msgstr "Tabák"
 
 msgid "Rations, Standard/Day"
-msgstr ""
+msgstr "Porce, standard/den"
 
 msgid "Chain, per foot"
-msgstr ""
+msgstr "Řetěz, za stopu"
 
 msgid "Dwarven Encumbrance"
-msgstr ""
+msgstr "Trpasličí zatížení"
 
 msgid "Precipitations, high winds"
-msgstr ""
+msgstr "Srážky, silný vítr"
 
 msgid "These weapons must be wielded with two hands. Two-handed swords, mauls, and great axes are included in this category."
-msgstr ""
+msgstr "Tyto zbraně musí být používány oběma rukama. Do této kategorie patří dvouruční meče, palice a velké sekery."
 
 msgid "Loading..."
-msgstr ""
+msgstr "Načítání..."
 
 msgid "Provided price is minimal"
-msgstr ""
+msgstr "Uvedená cena je minimální"
 
 msgid "Inventory"
-msgstr ""
+msgstr "Inventář"
 
 msgid "Book, Blank"
-msgstr ""
+msgstr "Kniha, prázdná"
 
 msgid "Import Equipment set"
-msgstr ""
+msgstr "Importovat soubor vybavení"
 
 msgid "Quiver"
-msgstr ""
+msgstr "Toulec"
 
 msgid "Medium"
-msgstr ""
+msgstr "Střední"
 
 msgid "CZ"
-msgstr ""
+msgstr "CZ"
 
 #. js-lingui-explicit-id
 msgid "armor.baseAc"
-msgstr ""
+msgstr "armor.baseAc"
 
 #. js-lingui-explicit-id
 msgid "armor.unadjustedAc"
-msgstr ""
+msgstr "armor.unadjustedAc"
 
 msgid "Encumbrance"
-msgstr ""
+msgstr "Zatížení"
 
 msgid "Add equipment item"
-msgstr ""
+msgstr "Přidat položku vybavení"
 
 msgid "Tent, Grand"
-msgstr ""
+msgstr "Stan, velký"
 
 msgid "Cost, sp"
-msgstr ""
+msgstr "Cena, sp"
 
 msgid "Combat"
-msgstr ""
+msgstr "Boj"
 
 msgid "Grappling Hook"
-msgstr ""
+msgstr "Háček"
 
 msgid "Specialist"
-msgstr ""
+msgstr "Specialista"
 
 msgid "Bow, Long"
-msgstr ""
+msgstr "Luk, dlouhý"
 
 msgid "config.armor.plate.details"
-msgstr ""
+msgstr "config.armor.plate.details"
 
 msgid "Cestus"
-msgstr ""
+msgstr "Cestus"
 
 msgid "Crossbow, Light"
-msgstr ""
+msgstr "Kuše, lehká"
 
 msgid "Mancatcher"
-msgstr ""
+msgstr "Chytač mužů"
 
 msgid "Map, Kingdom"
-msgstr ""
+msgstr "Mapa, království"
 
 msgid "Crossbow, Heavy"
-msgstr ""
+msgstr "Kuše, těžká"
 
 msgid "Short sword"
-msgstr ""
+msgstr "Krátký meč"
 
 msgid "ft"
-msgstr ""
+msgstr "stopa"
 
 msgid "Rope, 50'"
-msgstr ""
+msgstr "Lano, 50 stop"
 
 msgid "Rock"
-msgstr ""
+msgstr "Skála"
 
 msgid "Whip"
-msgstr ""
+msgstr "Bič"
 
 msgid "Tinderbox"
-msgstr ""
+msgstr "Křesadlo"
 
 msgid "Reset all equipment"
-msgstr ""
+msgstr "Resetovat veškeré vybavení"
 
 msgid "Paper"
-msgstr ""
+msgstr "Papír"
 
 msgid "Spike, Iron"
-msgstr ""
+msgstr "Hřebík, železný"
 
 msgid "config.melee.slingRocks.details"
-msgstr ""
+msgstr "config.melee.slingRocks.details"
 
 msgid "Shield"
-msgstr ""
+msgstr "Štít"
 
 msgid "Copper pieces"
-msgstr ""
+msgstr "Měděné kousky"
 
 msgid "Light crossbows can only be fired every once in 2 rounds and ignore 2 AC points"
-msgstr ""
+msgstr "Lehké kuše lze vystřelit pouze jednou za 2 kola a ignorují 2 body AC"
 
 msgid "Road"
-msgstr ""
+msgstr "Cesta"
 
 msgid "Plate"
-msgstr ""
+msgstr "Plát"
 
 msgid "Battle axe"
-msgstr ""
+msgstr "Bojová sekera"
 
 msgid "Wilderness"
-msgstr ""
+msgstr "Divoká příroda"
 
 msgid "Inventory cost"
-msgstr ""
+msgstr "Cena inventáře"
 
 msgid "Cleric 1"
-msgstr ""
+msgstr "Kněz 1"
 
 msgid "Adventurer"
-msgstr ""
+msgstr "Dobrodruh"
 
 msgid "Crossbow bolt (1)"
-msgstr ""
+msgstr "Kušový šíp (1)"
 
 msgid "miles"
-msgstr ""
+msgstr "míle"
 
 msgid "Import"
-msgstr ""
+msgstr "Importovat"
 
 msgid "Mountains, jungle, swamp"
-msgstr ""
+msgstr "Hory, džungle, bažiny"
 
 msgid "Crampons"
-msgstr ""
+msgstr "Mačky"
 
 msgid "Missile Weapons"
-msgstr ""
+msgstr "Střelné zbraně"
 
 msgid "English"
-msgstr ""
+msgstr "Angličtina"
 
 msgid "Gold pieces"
-msgstr ""
+msgstr "Zlaté kousky"
 
 msgid "Soap"
-msgstr ""
+msgstr "Mýdlo"
 
 msgid "Add"
-msgstr ""
+msgstr "Přidat"
 
 msgid "Caltrop"
-msgstr ""
+msgstr "Krakorec"
 
 msgid "Russian"
-msgstr ""
+msgstr "Ruština"
 
 msgid "Garrote"
-msgstr ""
+msgstr "Škrtidlo"
 
 msgid "Movement"
-msgstr ""
+msgstr "Pohyb"
 
 msgid "Mallet"
-msgstr ""
+msgstr "Kladivo"
 
 msgid "config.melee.cestus.details"
-msgstr ""
+msgstr "config.melee.cestus.details"
 
 msgid "Long"
-msgstr ""
+msgstr "Dlouhý"
 
 msgid "Exploration"
-msgstr ""
+msgstr "Průzkum"
 
 msgid "Miscellaneous Equipment"
-msgstr ""
+msgstr "Různé vybavení"
 
 msgid "Torch"
-msgstr ""
+msgstr "Pochodeň"
 
 msgid "Ink"
-msgstr ""
+msgstr "Inkoust"
 
 msgid "Cooking Pots"
-msgstr ""
+msgstr "Vařící hrnce"
 
 msgid "Select random"
-msgstr ""
+msgstr "Vybrat náhodně"
 
 msgid "Jewelry"
-msgstr ""
+msgstr "Šperky"
 
 msgid "Pole, 10'"
-msgstr ""
+msgstr "Tyč, 10 stop"
 
 msgid "Lance"
-msgstr ""
+msgstr "Kopí"
 
 msgid "No encumbrance if empty"
-msgstr ""
+msgstr "Žádné zatížení, pokud je prázdný"
 
 msgid "Hourglass"
-msgstr ""
+msgstr "Pískové hodiny"
 
 msgid "Dart for blowgun (1)"
-msgstr ""
+msgstr "Šipka pro foukačku (1)"
 
 msgid "This weapon can be used one-handed if charging on horseback. Otherwise, it is effectively a polearm (pike)"
-msgstr ""
+msgstr "Tato zbraň může být použita jednou rukou při náboji na koni. Jinak je to v podstatě hůlka (píka)"
 
 msgid "Wallet"
-msgstr ""
+msgstr "Peněženka"
 
 msgid "Mirror, Steel"
-msgstr ""
+msgstr "Zrcadlo, ocel"
 
 msgid "Weapon, Small"
-msgstr ""
+msgstr "Zbraň, malá"
 
 msgid "Bottle of Wine/Liquor, Rich"
-msgstr ""
+msgstr "Láhev vína/lihoviny, bohatá"
 
 msgid "Pouch"
-msgstr ""
+msgstr "Vak"
 
 msgid "Staff"
-msgstr ""
+msgstr "Hůl"
 
 msgid "Maul"
-msgstr ""
+msgstr "Palice"
 
 msgid "Spike, Wooden"
-msgstr ""
+msgstr "Hřebík, dřevěný"
 
 msgid "Clothing, Winter Travel"
-msgstr ""
+msgstr "Oblečení, zimní cestování"
 
 msgid "Czech"
-msgstr ""
+msgstr "Čeština"
 
 msgid "AC"
-msgstr ""
+msgstr "AC"
 
 msgid "+1 AC versus mêlée attacks, +2 AC versus missile attacks."
-msgstr ""
+msgstr "+1 AC proti útokům na blízko, +2 AC proti střelným útokům."
 
 msgid "Manage"
-msgstr ""
+msgstr "Spravovat"
 
 #. js-lingui-explicit-id
 msgid "weapons.melee.charge"
-msgstr ""
+msgstr "weapons.melee.charge"
 
 #. js-lingui-explicit-id
 msgid "weapons.melee.secondRank"
-msgstr "Some weapons can attack “from the second rank.” This is used when there is a definite battle line in combat. Usually only those on the front line of battle can strike, but those weapons usable from the second rank allow anyone immediately behind the battle line to strike as well."
+msgstr "Některé zbraně mohou útočit „ze druhé řady“. To se používá, když v boji existuje určitá bojová linie. Obvykle mohou útočit pouze ti, kteří jsou v první linii boje, ale tyto zbraně použitelné ze druhé řady umožňují každému hned za bojovou linií útočit také."
 
 #. js-lingui-explicit-id
 msgid "weapons.melee.secondRankTypes"
-msgstr ""
+msgstr "weapons.melee.secondRankTypes"
 
 #. js-lingui-explicit-id
 msgid "weapons.missile.firing"
-msgstr ""
+msgstr "weapons.missile.firing"
 
 #. js-lingui-explicit-id
 msgid "weapons.missile.range"
-msgstr ""
+msgstr "weapons.missile.range"
 
 msgid "Armor"
-msgstr ""
+msgstr "Brnění"
 
 msgid "Spear"
-msgstr ""
+msgstr "Kopí"
 
 msgid "Fighter 2"
-msgstr ""
+msgstr "Bojovník 2"
 
 msgid "Spyglass"
-msgstr ""
+msgstr "Dalekohled"
 
 msgid "Crossbow bolts, quiver (20)"
-msgstr ""
+msgstr "Kušové šípy, toulec (20)"
 
 msgid "Bottle of Wine/Liquor, Decent"
-msgstr ""
+msgstr "Láhev vína/lihoviny, slušná"
 
 msgid "Chain"
-msgstr ""
+msgstr "Řetěz"
 
 msgid "Mêlée Weapons"
-msgstr ""
+msgstr "Zbraně na blízko"
 
 msgid "Enable automatic subtraction of money when equipment items are added"
-msgstr ""
+msgstr "Povolit automatické odečítání peněz při přidávání položek vybavení"
 
 msgid "Tent, Pavilion"
-msgstr ""
+msgstr "Stan, pavilon"
 
 msgid "Dart"
-msgstr ""
+msgstr "Šipka"
 
 msgid "config.melee.polearm.details"
-msgstr ""
+msgstr "config.melee.polearm.details"
 
 msgid "Instrument"
-msgstr ""
+msgstr "Nástroj"
 
 msgid "Plate Barding"
-msgstr ""
+msgstr "Plátové bardování"
