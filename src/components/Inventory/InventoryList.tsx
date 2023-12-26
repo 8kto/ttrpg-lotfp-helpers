@@ -1,5 +1,5 @@
 import { Trans } from '@lingui/macro'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
 import ArmorInventoryGrid from '@/components/Inventory/ArmorInventoryGrid'
 import CategoryInventoryControls from '@/components/Inventory/CategoryInventoryControls'
@@ -8,7 +8,6 @@ import MeleeWeaponsInventoryGrid from '@/components/Inventory/MeleeWeaponsInvent
 import MiscEquipmentInventoryGrid from '@/components/Inventory/MiscEquipmentInventoryGrid'
 import MissileWeaponsInventoryGrid from '@/components/Inventory/MissileWeaponsInventoryGrid'
 import InventoryDetails from '@/components/InventoryDetails/InventoryDetails'
-import Spinner from '@/components/Spinner'
 import { useInventoryState } from '@/state/InventoryState'
 
 const Header = ({ children }: { children?: React.ReactNode }) => {
@@ -25,21 +24,6 @@ const Header = ({ children }: { children?: React.ReactNode }) => {
 const InventoryList = () => {
   const { state: equipmentState } = useInventoryState()
   const { armor, meleeWeapons, missileWeapons, miscEquipment } = equipmentState
-
-  // Fix the hydration errors when the data restored from the local storage
-  const [isMounted, setIsMounted] = useState(false)
-  useEffect(() => {
-    setIsMounted(true)
-  }, [])
-
-  if (!isMounted) {
-    return (
-      <>
-        <Header />
-        <Spinner />
-      </>
-    )
-  }
 
   const categoryTitleClassname = 'my-4 text-xl text-red-900'
 
