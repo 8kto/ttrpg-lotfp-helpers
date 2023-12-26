@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 type TabData = {
   key: string
@@ -14,12 +14,14 @@ type TabProps = {
 
 type TabsProps = {
   tabs: TabData[]
+  activeTabId: number
+  onTabClick: (index: number) => void
 }
 
 const Tab = ({ active, onClick, children }: TabProps) => (
   <button
     role='tab'
-    className={`group inline-flex items-center justify-center rounded-t-lg border-b-2 p-4 hover:border-red-500 hover:text-red-800 outline-transparent focus-visible:border-b-transparent ${
+    className={`group inline-flex items-center justify-center rounded-t-lg border-b-2 p-4 outline-transparent hover:border-red-500 hover:text-red-800 focus-visible:border-b-transparent ${
       active
         ? 'active border-red-900 text-red-900 hover:border-red-900 hover:text-red-900'
         : 'border-transparent text-gray-500'
@@ -30,9 +32,7 @@ const Tab = ({ active, onClick, children }: TabProps) => (
   </button>
 )
 
-const Tabs = ({ tabs }: TabsProps) => {
-  const [activeTab, setActiveTab] = useState<string>(tabs[0].key)
-
+const Tabs = ({ tabs, onTabClick, activeTabId }: TabsProps) => {
   return (
     <>
       <div className='border-b border-gray-200'>
@@ -41,11 +41,11 @@ const Tabs = ({ tabs }: TabsProps) => {
           aria-label='Tabs'
           role='tablist'
         >
-          {tabs.map((tab) => (
+          {tabs.map((tab, index) => (
             <Tab
               key={tab.key}
-              active={activeTab === tab.key}
-              onClick={() => setActiveTab(tab.key)}
+              active={index === activeTabId}
+              onClick={() => onTabClick(index)}
             >
               {tab.title}
             </Tab>
@@ -53,8 +53,8 @@ const Tabs = ({ tabs }: TabsProps) => {
         </nav>
       </div>
       {tabs.map(
-        (tab) =>
-          activeTab === tab.key && (
+        (tab, index) =>
+          index === activeTabId && (
             <div key={tab.key} role='tabpanel'>
               {tab.content}
             </div>
