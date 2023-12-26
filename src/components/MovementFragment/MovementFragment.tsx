@@ -17,21 +17,17 @@ const MovementFragment = ({
   const encumbrance = EncumbranceService.getEncumbrance(encumbrancePoints)
   const movementDict = MovementRates[encumbrance]
   const {
-    uiState,
     uiState: { weather, terrain },
     updateUiState,
   } = useContext(UiContext)
 
   const handleWeatherChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     updateUiState({
-      // TODO find out whether it can be omit
-      ...uiState,
       weather: event.target.value as WeatherAdjustment,
     })
   }
   const handleTerrainChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     updateUiState({
-      ...uiState,
       terrain: event.target.value as TerrainAdjustment,
     })
   }

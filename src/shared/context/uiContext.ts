@@ -8,7 +8,7 @@ export type UiContextType = {
     terrain: TerrainAdjustment
     weather: WeatherAdjustment
   }
-  updateUiState: (newState: UiContextType['uiState']) => void
+  updateUiState: (newState: Partial<UiContextType['uiState']>) => void
 }
 
 export const defaultUiState: UiContextType = {

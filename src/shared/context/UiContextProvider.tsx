@@ -9,8 +9,8 @@ const UiProvider = ({ children }: { children: React.ReactNode }) => {
     defaultUiState.uiState,
   )
 
-  const updateUiState = (newState: UiContextType['uiState']) => {
-    setUiState(newState)
+  const updateUiState = (newState: Partial<UiContextType['uiState']>) => {
+    setUiState((state) => ({ ...state, ...newState }))
   }
 
   return (
