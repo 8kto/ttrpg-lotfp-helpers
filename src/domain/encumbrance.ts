@@ -12,6 +12,7 @@ export enum Encumbrance {
   Heavily = /*i18n*/ 'Heavily',
   Severely = /*i18n*/ 'Severely',
   OverEncumbered = /*i18n*/ 'OverEncumbered',
+  Cumbersome = /*i18n*/ 'Cumbersome',
 }
 
 // NB Oversized is as tall as Character
