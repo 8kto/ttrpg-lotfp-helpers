@@ -1,13 +1,11 @@
 import { Trans } from '@lingui/macro'
 import React, { useContext, useMemo } from 'react'
 
-import {
-  getMovementAdjustments,
-  modifyMovement,
-} from '@/components/MovementFragment/helpers'
+import { getMovementAdjustments } from '@/components/MovementFragment/helpers'
 import { MovementRates } from '@/config/MovementRates'
 import type { TerrainAdjustment, WeatherAdjustment } from '@/domain/movement'
 import UiContext from '@/shared/context/uiContext'
+import { modifyMovement } from '@/shared/helpers/movement'
 import EncumbranceService from '@/shared/services/EncumbranceService'
 
 const MovementFragment = ({
