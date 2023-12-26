@@ -43,9 +43,9 @@ export const Adjustments: Record<
 > = {
   [TerrainAdjustment.Road]: 1,
   [TerrainAdjustment.Trail]: 2 / 3, // clear, plains, trail
-  [TerrainAdjustment.Forest]: 1 / 2, // forest, desert, hills
+  [TerrainAdjustment.Forest]: 0.5, // forest, desert, hills
   [TerrainAdjustment.Mountains]: 1 / 3, // mountains, jungle, swamp
   [WeatherAdjustment.Regular]: 1,
-  [WeatherAdjustment.Precipitations]: 1 / 2, // precipitations, high winds
+  [WeatherAdjustment.Precipitations]: 0.5, // precipitations, high winds
   [WeatherAdjustment.Storm]: 1 / 3,
 }
