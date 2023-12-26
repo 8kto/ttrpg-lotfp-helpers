@@ -45,7 +45,7 @@ https://lotfp.vercel.app
   - [x] Common
   - [x] Random
 - [ ] Multiple Inventories
-- [ ] Inventory for baggage animal
+- [ ] Mounts
 
 ### Next big things
 
