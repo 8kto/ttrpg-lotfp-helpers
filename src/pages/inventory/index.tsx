@@ -6,7 +6,7 @@ import classnames from 'classnames'
 import type { GetStaticProps } from 'next'
 import Head from 'next/head'
 import type { ReactComponentLike } from 'prop-types'
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 
 import EquipmentList from '@/components/EquipmentList/EquipmentList'
 import InventoryList from '@/components/Inventory/InventoryList'
@@ -32,15 +32,13 @@ const Tabs = ({
     component: ReactComponentLike
   }>
 }) => {
-  const { uiState } = useContext(UiContext)
-  const [activeTabId, setActiveTabId] = useState(uiState.activeTabId)
+  const {
+    uiState: { activeTabId },
+    updateUiState,
+  } = useContext(UiContext)
   const tabTitleBaseClassname =
     'flex-1 py-4 text-xl font-extrabold sm:text-2xl ph-font-cursive hover:border-red-500 hover:text-red-800 border-b-2'
   const tabTitleActiveClassname = 'border-b-2 border-red-900 text-red-900 '
-
-  useEffect(() => {
-    setActiveTabId(uiState.activeTabId)
-  }, [uiState.activeTabId])
 
   return (
     <>
@@ -51,7 +49,7 @@ const Tabs = ({
             className={classnames(tabTitleBaseClassname, {
               [tabTitleActiveClassname]: activeTabId === index,
             })}
-            onClick={() => setActiveTabId(index)}
+            onClick={() => updateUiState({ activeTabId: index })}
           >
             {item.title}
           </button>
@@ -85,7 +83,7 @@ export default function InventoryPage() {
       <Head>
         <title>{t`Inventory`}</title>
       </Head>
-      <div className='relative flex-grow flex flex-col pt-16'>
+      <div className='relative flex flex-grow flex-col pt-16'>
         <main className='mx-auto w-full max-w-screen-2xl flex-grow px-2.5 sm:px-6 lg:px-8'>
           {shouldRenderTabs ? (
             /* Tabs for smaller screens */

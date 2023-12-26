@@ -4,6 +4,7 @@ import { TerrainAdjustment, WeatherAdjustment } from '@/domain/movement'
 
 export type UiContextType = {
   uiState: {
+    // Tabs: Inventory, Equipment ...
     activeTabId: number
     terrain: TerrainAdjustment
     weather: WeatherAdjustment
