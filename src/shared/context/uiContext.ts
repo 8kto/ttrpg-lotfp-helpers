@@ -6,6 +6,8 @@ export type UiContextType = {
   uiState: {
     // Tabs: Inventory, Equipment ...
     activeTabId: number
+    // Tabs: Armor, Melee, Missiles ...
+    activeEquipmentTabId: number
     terrain: TerrainAdjustment
     weather: WeatherAdjustment
   }
@@ -14,6 +16,7 @@ export type UiContextType = {
 
 export const defaultUiState: UiContextType = {
   uiState: {
+    activeEquipmentTabId: 0,
     activeTabId: 0,
     terrain: TerrainAdjustment.Road,
     weather: WeatherAdjustment.Regular,
