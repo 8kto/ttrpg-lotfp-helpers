@@ -67,7 +67,7 @@ export const ArmorItems = (): ReadonlyArray<ArmorItem> => [
     categoryKey: 'armor',
     cityCostCp: 10000,
     name: t`Plate Barding`,
-    points: EncumbranceUnit.Oversized * 3,
+    points: EncumbranceUnit.Cumbersome,
     ruralCostCp: null,
     type: ArmorType.Barding,
   },

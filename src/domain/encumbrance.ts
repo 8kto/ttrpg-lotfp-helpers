@@ -3,6 +3,7 @@ export enum EncumbranceUnit {
   /*i18n*/ Regular = 0.2,
   /*i18n*/ Oversized = 1,
   /*i18n*/ Heavy = 2,
+  /*i18n*/ Cumbersome = 3,
 }
 
 export enum Encumbrance {
