@@ -233,6 +233,9 @@ msgstr "Wolvesbane"
 msgid "Fishing Gear"
 msgstr "Fishing Gear"
 
+msgid "on foot: + CON mod"
+msgstr "on foot: + CON mod"
+
 msgid "Bedroll"
 msgstr "Bedroll"
 
@@ -736,9 +739,6 @@ msgstr "Dart for blowgun (1)"
 
 msgid "This weapon can be used one-handed if charging on horseback. Otherwise, it is effectively a polearm (pike)"
 msgstr "This weapon can be used one-handed if charging on horseback. Otherwise, it is effectively a polearm (pike)"
-
-msgid "(on foot: + CON mod)"
-msgstr "(on foot: + CON mod)"
 
 msgid "Wallet"
 msgstr "Wallet"

@@ -233,6 +233,9 @@ msgstr ""
 msgid "Fishing Gear"
 msgstr ""
 
+msgid "on foot: + CON mod"
+msgstr ""
+
 msgid "Bedroll"
 msgstr ""
 
@@ -735,9 +738,6 @@ msgid "Dart for blowgun (1)"
 msgstr ""
 
 msgid "This weapon can be used one-handed if charging on horseback. Otherwise, it is effectively a polearm (pike)"
-msgstr ""
-
-msgid "(on foot: + CON mod)"
 msgstr ""
 
 msgid "Wallet"

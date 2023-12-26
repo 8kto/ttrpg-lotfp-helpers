@@ -233,6 +233,9 @@ msgstr "Аконит (Wolvesbane)"
 msgid "Fishing Gear"
 msgstr "Рыболовные снасти"
 
+msgid "on foot: + CON mod"
+msgstr "пешком: + модификатор CON"
+
 msgid "Bedroll"
 msgstr "Спальный мешок"
 
@@ -736,9 +739,6 @@ msgstr "Дротик для духовой трубки (1)"
 
 msgid "This weapon can be used one-handed if charging on horseback. Otherwise, it is effectively a polearm (pike)"
 msgstr "Это оружие можно использовать как одноручное при атаке верхом. В противном случае, равноценна древковому оружию (пике)"
-
-msgid "(on foot: + CON mod)"
-msgstr "(пешком: + модификатор CON)"
 
 msgid "Wallet"
 msgstr "Кошелек"
