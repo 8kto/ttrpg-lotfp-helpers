@@ -200,6 +200,10 @@ msgstr "Пращи, стреляющие камнями вместо пуль, �
 msgid "Crowbar"
 msgstr "Ломик"
 
+#. js-lingui-explicit-id
+msgid "Cumbersome"
+msgstr "Громоздкий"
+
 msgid "RU"
 msgstr "RU"
 

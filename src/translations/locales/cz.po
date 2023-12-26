@@ -200,6 +200,10 @@ msgstr ""
 msgid "Crowbar"
 msgstr ""
 
+#. js-lingui-explicit-id
+msgid "Cumbersome"
+msgstr ""
+
 msgid "RU"
 msgstr ""
 

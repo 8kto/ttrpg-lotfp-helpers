@@ -200,6 +200,10 @@ msgstr "Slings fired with stones instead of bullets have half the listed range."
 msgid "Crowbar"
 msgstr "Crowbar"
 
+#. js-lingui-explicit-id
+msgid "Cumbersome"
+msgstr "Cumbersome"
+
 msgid "RU"
 msgstr "RU"
 
