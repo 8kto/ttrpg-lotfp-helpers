@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import useUiContextFromHashParams from '@/shared/hooks/useUiContextFromHashParams'
 
@@ -13,16 +13,14 @@ const UiProvider = ({ children }: { children: React.ReactNode }) => {
     ...uiContextFromHashParams,
   })
 
+  useEffect(() => {
+    window.location.hash = new URLSearchParams(
+      uiState as unknown as Record<string, string>,
+    ).toString()
+  }, [uiState])
+
   const updateUiState = (newState: Partial<UiContextType['uiState']>) => {
-    setUiState((state) => {
-      const merged = { ...state, ...newState }
-
-      window.location.hash = new URLSearchParams(
-        merged as unknown as Record<string, string>,
-      ).toString()
-
-      return merged
-    })
+    setUiState((state) => ({ ...state, ...newState }))
   }
 
   return (
