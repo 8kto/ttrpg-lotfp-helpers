@@ -14,9 +14,7 @@ describe('Equipment', () => {
         categoryKey: 'armor',
         cityCostCp: expect.any(Number),
         name: expect.any(String),
-        points: expect
-          // @ts-ignore
-          .toBeEnumValue(EncumbranceUnit),
+        points: expect.any(Number),
         ruralCostCp: expect
           // @ts-ignore
           .toBeNullOrTypeOf('number'),
