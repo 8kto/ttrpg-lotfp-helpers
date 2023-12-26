@@ -3,9 +3,10 @@ import React, { useContext, useMemo } from 'react'
 
 import { getMovementAdjustments } from '@/components/MovementFragment/helpers'
 import { MovementRates } from '@/config/MovementRates'
-import type { TerrainAdjustment, WeatherAdjustment } from '@/domain/movement'
+import { TerrainAdjustment, WeatherAdjustment } from '@/domain/movement'
 import UiContext from '@/shared/context/uiContext'
 import { modifyMovement } from '@/shared/helpers/movement'
+import { roundTo } from '@/shared/helpers/roundTo'
 import EncumbranceService from '@/shared/services/EncumbranceService'
 
 const MovementFragment = ({
@@ -65,8 +66,9 @@ const MovementFragment = ({
         <Trans>Wilderness</Trans>
       </h5>
       <p className='mb-2'>
-        <Trans>Per day</Trans>: {movement} <Trans>miles</Trans>{' '}
-        <Trans>(on foot: + CON mod)</Trans>
+        <Trans>Per day</Trans>: {roundTo(movement, 1)} <Trans>miles</Trans>
+        <br />
+        <Trans>on foot: + CON mod</Trans>
       </p>
       <select
         name='terrain-adjustments'
@@ -75,7 +77,7 @@ const MovementFragment = ({
         value={terrain}
         className='mb-1 block w-full rounded-lg border border-gray-300 bg-gray-50 p-1 text-gray-900 focus:border-primary-500 focus:ring-primary-500'
       >
-        {getMovementAdjustments('terrain').map(([key, title]) => {
+        {getMovementAdjustments(TerrainAdjustment).map(([key, title]) => {
           return (
             <option key={key} value={key} defaultChecked={key === terrain}>
               {title}
@@ -90,7 +92,7 @@ const MovementFragment = ({
         value={weather}
         className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-1 text-gray-900 focus:border-primary-500 focus:ring-primary-500'
       >
-        {getMovementAdjustments('weather').map(([key, title]) => (
+        {getMovementAdjustments(WeatherAdjustment).map(([key, title]) => (
           <option key={key} value={key} defaultChecked={key === weather}>
             {title}
           </option>

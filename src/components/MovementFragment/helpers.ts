@@ -15,13 +15,10 @@ const getAdjustmentLabels = (): Record<
   [WeatherAdjustment.Storm]: t`Storm conditions`,
 })
 
-export const getMovementAdjustments = (type: 'terrain' | 'weather') => {
-  let keys = Array<string>()
-  if (type === 'terrain') {
-    keys = Object.keys(TerrainAdjustment)
-  } else if (type === 'weather') {
-    keys = Object.keys(WeatherAdjustment)
-  }
+export const getMovementAdjustments = (
+  type: typeof TerrainAdjustment | typeof WeatherAdjustment,
+) => {
+  const keys = Object.keys(type)
 
   if (!keys.length) {
     throw new Error('Unknown adjustments type')
