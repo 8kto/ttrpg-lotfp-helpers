@@ -11,9 +11,10 @@ import { useInventoryState } from '@/state/InventoryState'
 
 const InventoryDetails = () => {
   const { state: equipmentState } = useInventoryState()
-  const { isCoinWeightActive, wallet, encumbranceThreshold } = equipmentState
 
   const { totalEncumbrancePoints, totalCosts } = useMemo(() => {
+    const { isCoinWeightActive, wallet, encumbranceThreshold } = equipmentState
+
     const encumbranceService = new EncumbranceService({
       threshold: encumbranceThreshold.get(),
     })
@@ -22,7 +23,7 @@ const InventoryDetails = () => {
       combineEquipment(equipmentState),
       isCoinWeightActive.get() ? wallet.get() : null,
     )
-  }, [encumbranceThreshold, equipmentState, isCoinWeightActive, wallet])
+  }, [equipmentState])
 
   const titleClassname = 'ph-font-cursive text-red-900 text-lg'
   const detailsRowClassname =

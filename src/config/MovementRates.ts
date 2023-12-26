@@ -2,6 +2,7 @@
 // NB! Stop ignoring if the file contains logic
 import type { MovementDict } from '@/domain/encumbrance'
 import { Encumbrance, Movement } from '@/domain/encumbrance'
+import { TerrainAdjustment, WeatherAdjustment } from '@/domain/movement'
 
 export const MovementRates: Readonly<Record<Encumbrance, MovementDict>> = {
   [Encumbrance.Unencumbered]: {
@@ -34,4 +35,17 @@ export const MovementRates: Readonly<Record<Encumbrance, MovementDict>> = {
     [Movement.Running]: 0,
     [Movement.MilesPerDay]: 0,
   },
+}
+
+export const Adjustments: Record<
+  TerrainAdjustment | WeatherAdjustment,
+  number
+> = {
+  [TerrainAdjustment.Road]: 1,
+  [TerrainAdjustment.Trail]: 2 / 3, // clear, plains, trail
+  [TerrainAdjustment.Forest]: 0.5, // forest, desert, hills
+  [TerrainAdjustment.Mountains]: 1 / 3, // mountains, jungle, swamp
+  [WeatherAdjustment.Regular]: 1,
+  [WeatherAdjustment.Precipitations]: 0.5, // precipitations, high winds
+  [WeatherAdjustment.Storm]: 1 / 3,
 }

@@ -31,6 +31,9 @@ msgstr "Weapon, Medium"
 msgid "This can be used to attack from the second rank, and can be used to receive a charge."
 msgstr "This can be used to attack from the second rank, and can be used to receive a charge."
 
+msgid "Regular weather"
+msgstr "Regular weather"
+
 msgid "Great axe"
 msgstr "Great axe"
 
@@ -230,6 +233,9 @@ msgstr "Wolvesbane"
 msgid "Fishing Gear"
 msgstr "Fishing Gear"
 
+msgid "on foot: + CON mod"
+msgstr "on foot: + CON mod"
+
 msgid "Bedroll"
 msgstr "Bedroll"
 
@@ -273,6 +279,12 @@ msgstr "Enable the weight of coins for encumbrance calculations."
 
 msgid "Cost"
 msgstr "Cost"
+
+msgid "Dungeon"
+msgstr "Dungeon"
+
+msgid "Clear, plains, trail"
+msgstr "Clear, plains, trail"
 
 msgid "Equipment pack"
 msgstr "Equipment pack"
@@ -356,6 +368,9 @@ msgstr "Dagger"
 msgid "Two-handed sword"
 msgstr "Two-handed sword"
 
+msgid "Forest, desert, hills"
+msgstr "Forest, desert, hills"
+
 msgid "Add item"
 msgstr "Add item"
 
@@ -397,6 +412,9 @@ msgstr "Sword"
 
 msgid "The number should be equal to or greater than 0"
 msgstr "The number should be equal to or greater than 0"
+
+msgid "Storm conditions"
+msgstr "Storm conditions"
 
 msgid "Clothing, Normal"
 msgstr "Clothing, Normal"
@@ -491,6 +509,9 @@ msgstr "Chain, per foot"
 
 msgid "Dwarven Encumbrance"
 msgstr "Dwarven Encumbrance"
+
+msgid "Precipitations, high winds"
+msgstr "Precipitations, high winds"
 
 msgid "These weapons must be wielded with two hands. Two-handed swords, mauls, and great axes are included in this category."
 msgstr "These weapons must be wielded with two hands. Two-handed swords, mauls, and great axes are included in this category."
@@ -608,11 +629,17 @@ msgstr "Copper pieces"
 msgid "Light crossbows can only be fired every once in 2 rounds and ignore 2 AC points"
 msgstr "Light crossbows can only be fired every once in 2 rounds and ignore 2 AC points"
 
+msgid "Road"
+msgstr "Road"
+
 msgid "Plate"
 msgstr "Plate"
 
 msgid "Battle axe"
 msgstr "Battle axe"
+
+msgid "Wilderness"
+msgstr "Wilderness"
 
 msgid "Inventory cost"
 msgstr "Inventory cost"
@@ -631,6 +658,9 @@ msgstr "miles"
 
 msgid "Import"
 msgstr "Import"
+
+msgid "Mountains, jungle, swamp"
+msgstr "Mountains, jungle, swamp"
 
 msgid "Crampons"
 msgstr "Crampons"

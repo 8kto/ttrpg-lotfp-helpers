@@ -6,7 +6,7 @@
 
 > The project is in active development.
 >
-> Done: <!--PROGRESS--> 77% / 24 of 31 tasks <!--/PROGRESS-->
+> Done: <!--PROGRESS--> 83% / 26 of 31 tasks <!--/PROGRESS-->
 
 Lamentations of the Flame Princess helpers.
 
@@ -25,12 +25,11 @@ https://lotfp.vercel.app
   - [x] Add multiple copies of same item
 - [x] Extended list of equipment
   - [x] Expanded list of weapons
-- [ ] Firearms list
-- [ ] Calculation
+- [x] Calculation
   - [x] Cost
   - [x] Encumbrance
   - [x] Movement
-  - [ ] Terrain type factor
+  - [x] Terrain and weather adjustments
   - [x] Dwarf modifier
 - [x] Custom equipment entries
 - [x] Wallet (available money)
@@ -46,7 +45,11 @@ https://lotfp.vercel.app
   - [x] Common
   - [x] Random
 - [ ] Multiple Inventories
-- [ ] Inventory for baggage animal
+- [ ] Mounts
+
+### Next big things
+
+- [ ] Firearms list
 
 ## Getting Started
 

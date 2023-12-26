@@ -31,6 +31,9 @@ msgstr ""
 msgid "This can be used to attack from the second rank, and can be used to receive a charge."
 msgstr ""
 
+msgid "Regular weather"
+msgstr ""
+
 msgid "Great axe"
 msgstr ""
 
@@ -230,6 +233,9 @@ msgstr ""
 msgid "Fishing Gear"
 msgstr ""
 
+msgid "on foot: + CON mod"
+msgstr ""
+
 msgid "Bedroll"
 msgstr ""
 
@@ -272,6 +278,12 @@ msgid "Enable the weight of coins for encumbrance calculations."
 msgstr ""
 
 msgid "Cost"
+msgstr ""
+
+msgid "Dungeon"
+msgstr ""
+
+msgid "Clear, plains, trail"
 msgstr ""
 
 msgid "Equipment pack"
@@ -356,6 +368,9 @@ msgstr ""
 msgid "Two-handed sword"
 msgstr ""
 
+msgid "Forest, desert, hills"
+msgstr ""
+
 msgid "Add item"
 msgstr ""
 
@@ -396,6 +411,9 @@ msgid "Sword"
 msgstr ""
 
 msgid "The number should be equal to or greater than 0"
+msgstr ""
+
+msgid "Storm conditions"
 msgstr ""
 
 msgid "Clothing, Normal"
@@ -490,6 +508,9 @@ msgid "Chain, per foot"
 msgstr ""
 
 msgid "Dwarven Encumbrance"
+msgstr ""
+
+msgid "Precipitations, high winds"
 msgstr ""
 
 msgid "These weapons must be wielded with two hands. Two-handed swords, mauls, and great axes are included in this category."
@@ -608,10 +629,16 @@ msgstr ""
 msgid "Light crossbows can only be fired every once in 2 rounds and ignore 2 AC points"
 msgstr ""
 
+msgid "Road"
+msgstr ""
+
 msgid "Plate"
 msgstr ""
 
 msgid "Battle axe"
+msgstr ""
+
+msgid "Wilderness"
 msgstr ""
 
 msgid "Inventory cost"
@@ -630,6 +657,9 @@ msgid "miles"
 msgstr ""
 
 msgid "Import"
+msgstr ""
+
+msgid "Mountains, jungle, swamp"
 msgstr ""
 
 msgid "Crampons"
