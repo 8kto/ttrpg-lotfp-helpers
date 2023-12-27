@@ -6,7 +6,7 @@
 
 > The project is in active development.
 >
-> Done: <!--PROGRESS--> 83% / 26 of 31 tasks <!--/PROGRESS-->
+> Done: <!--PROGRESS--> 92% / 26 of 28 tasks <!--/PROGRESS-->
 
 Lamentations of the Flame Princess helpers.
 
@@ -15,6 +15,8 @@ Lamentations of the Flame Princess helpers.
 https://lotfp.vercel.app
 
 ## Features list
+
+<!--FEATURES_LIST-->
 
 - [x] Equipment list from the core book
   - [x] Armor
@@ -44,11 +46,17 @@ https://lotfp.vercel.app
   - [x] By class
   - [x] Common
   - [x] Random
-- [ ] Multiple Inventories
-- [ ] Mounts
+
+<!--/FEATURES_LIST-->
 
 ### Next big things
 
+I value your feedback and don't want to spend time on unnecessary things.
+Please reach out to me with your questions or comments through my GitHub profile,
+or create an Issue/Feature request.
+
+- [ ] Multiple Inventories
+- [ ] Mounts
 - [ ] Firearms list
 
 ## Getting Started
