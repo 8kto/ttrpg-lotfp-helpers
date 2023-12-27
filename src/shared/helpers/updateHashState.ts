@@ -1,7 +1,6 @@
 const updateHashState = (state: Record<string, unknown>) => {
-  window.location.hash = new URLSearchParams(
-    state as unknown as ConstructorParameters<typeof URLSearchParams>[0],
-  ).toString()
+  // FIXME merge not overwrite
+  window.location.hash = JSON.stringify(state)
 }
 
 export default updateHashState

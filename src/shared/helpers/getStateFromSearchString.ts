@@ -1,15 +1,15 @@
-import { defaultUiState, type UiContextType } from '@/shared/context/uiContext'
+import { type UiContextType } from '@/shared/context/uiContext'
 
-const getStateFromSearchString = (
+const getStateFromSearchString = <T extends Record<string, unknown>>(
   searchParamsString: string,
-): Partial<UiContextType['uiState']> => {
+  storage: T,
+): Partial<T> => {
   const searchParams = new URLSearchParams(searchParamsString)
   const params: Record<string, unknown> = {}
 
   for (const [key, value] of searchParams) {
-    if (key in defaultUiState.uiState) {
-      const defaultValue =
-        defaultUiState.uiState[key as keyof UiContextType['uiState']]
+    if (key in storage) {
+      const defaultValue = storage[key as keyof T]
 
       if (typeof defaultValue === 'number') {
         params[key as keyof UiContextType['uiState']] = Number(value)
@@ -21,7 +21,7 @@ const getStateFromSearchString = (
     }
   }
 
-  return params
+  return params as Partial<T>
 }
 
 export default getStateFromSearchString
