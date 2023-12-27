@@ -25,7 +25,7 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
   }
 
   render() {
-    if (!this.state.hasError) {
+    if (this.state.hasError) {
       return (
         <div className='relative flex flex-grow flex-col pt-16 mt-10'>
           <main className='mx-auto w-full max-w-screen-2xl flex-grow px-2.5 sm:px-6 lg:px-8'>
