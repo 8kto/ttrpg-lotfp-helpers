@@ -127,7 +127,7 @@ export const firearmWeaponItemMock1: InventoryItem<FirearmWeaponItem> = {
   damageMelee: { dice: Dice.d6, x: 1 },
   firingMechanism: FiringMechanism.Matchlock,
   inventoryId: '9',
-  isRiffled: false,
+  isRifled: false,
   isTwoHanded: true,
   lockedCostCp: 300,
   name: `Arquebus`,

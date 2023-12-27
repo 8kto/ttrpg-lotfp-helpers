@@ -16,4 +16,4 @@ export const FirearmCostCoeff: CoeffYearType = {
   },
 }
 
-export const RiffledCostCoeff = 2 as const
+export const RifledCostCoeff = 2 as const

@@ -44,7 +44,7 @@ export interface FirearmWeaponItem extends WeaponItem {
   firingMechanism: FiringMechanism
   damageMelee: DamageDice | null
   range: Range
-  isRiffled: boolean
+  isRifled: boolean
   isTwoHanded?: boolean
 }
 

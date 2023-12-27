@@ -6,9 +6,10 @@ import type { DataGridColumn } from '@/components/DataGrid/types'
 import {
   renderCostGridCol,
   renderDetailsBody,
+  renderEquipmentTitle,
   renderWeightGridCol,
 } from '@/components/EquipmentList/gridHelpers'
-import RangeFragment from '@/components/RangeFragment'
+import FirearmRangeFragment from '@/components/FirearmRangeFragment'
 import { FiringMechanism, YearPeriod } from '@/domain/firearms'
 import type { FirearmWeaponItem } from '@/domain/weapon'
 
@@ -17,6 +18,7 @@ export const columns: ReadonlyArray<DataGridColumn<FirearmWeaponItem>> = [
     className: 'w-1/3',
     key: 'name',
     shouldRenderDetails: (item) => !!item.details || !!item.range,
+    render: renderEquipmentTitle,
     renderDetails: renderDetailsBody,
     get title() {
       return t`Name`
@@ -36,7 +38,7 @@ export const columns: ReadonlyArray<DataGridColumn<FirearmWeaponItem>> = [
     className: 'w-1/6 hidden sm:table-cell',
     key: 'range',
     render: (item: FirearmWeaponItem) => (
-      <RangeFragment range={item.range} compact />
+      <FirearmRangeFragment range={item.range} compact />
     ),
     get title() {
       return t`Range`
@@ -71,6 +73,6 @@ export const ruralCostColumn: DataGridColumn<FirearmWeaponItem> = {
 
 export const defaultFilterValues = {
   firingMechanism: FiringMechanism.Wheellock,
-  riffled: false,
+  rifled: false,
   year: YearPeriod['1610-1630'],
 }
