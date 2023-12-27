@@ -55,14 +55,29 @@ export const getInitialInventoryState = (): InventoryStateType => {
   return deepclone(initialInventoryState)
 }
 
-export const InventoryState = hookstate<InventoryStateType>(
-  getInitialInventoryState(),
-  typeof window !== 'undefined'
-    ? localstored({
-        key: 'lotfp-helpers',
-      })
-    : undefined,
-)
+const LOCALSTORAGE_APP_KEY = 'lotfp-helpers'
+
+export const initState = () => {
+  try {
+    return hookstate<InventoryStateType>(
+      getInitialInventoryState(),
+      typeof window !== 'undefined'
+        ? localstored({
+            key: LOCALSTORAGE_APP_KEY,
+          })
+        : undefined,
+    )
+  } catch (err) {
+    console.error(
+      'Could not restore store, try clean localStorage and reload page',
+      err,
+    )
+
+    return hookstate<InventoryStateType>(getInitialInventoryState())
+  }
+}
+
+export const InventoryState = initState()
 
 export const useInventoryState = () => {
   const state = useHookstate(InventoryState)
