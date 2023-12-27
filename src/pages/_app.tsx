@@ -6,6 +6,7 @@ import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import type { ReactElement, ReactNode } from 'react'
 
+import ErrorBoundary from '@/components/ErrorBoundary'
 import RootLayout from '@/components/layout/Layout'
 import { useLinguiInit } from '@/translations/utils'
 
@@ -23,7 +24,9 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   return (
     <I18nProvider i18n={i18n}>
       <RootLayout>
-        <Component {...pageProps} />
+        <ErrorBoundary>
+          <Component {...pageProps} />
+        </ErrorBoundary>
       </RootLayout>
     </I18nProvider>
   )
