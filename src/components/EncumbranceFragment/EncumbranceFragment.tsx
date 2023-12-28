@@ -34,8 +34,8 @@ const EncumbranceFragment = ({
   // TODO modal with FAQ about encumbrance
   return (
     <div className='flex flex-col'>
-      <div className='mb-1'>
-        {trans(encumbrance)}{' '}
+      <div className='my-1'>
+        <span className='ph-color-secondary-bg'>{trans(encumbrance)} </span>
         {isDevEnv() ? (
           <div className='text-gray-400 inline'>
             ({encumbrancePoints.toPrecision(2)}{' '}

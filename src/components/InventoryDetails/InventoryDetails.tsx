@@ -25,9 +25,9 @@ const InventoryDetails = () => {
     )
   }, [equipmentState])
 
-  const titleClassname = 'ph-font-cursive text-red-900 text-lg'
+  const titleClassname = 'ph-font-cursive text-red-900 text-xl -ml-4 md:ml-0'
   const detailsRowClassname =
-    'px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0  align-baseline'
+    'px-4 py-6 md:px-0 sm:grid sm:grid-cols-3 sm:gap-4 align-baseline'
 
   return (
     <div className='mt-4 border-t border-gray-100 text-base'>
