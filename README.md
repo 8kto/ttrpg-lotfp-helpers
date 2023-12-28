@@ -6,7 +6,7 @@
 
 > The project is in active development.
 >
-> Done: <!--PROGRESS--> 92% / 26 of 28 tasks <!--/PROGRESS-->
+> Done: <!--PROGRESS--> 96% / 27 of 28 tasks <!--/PROGRESS-->
 
 Lamentations of the Flame Princess helpers.
 
@@ -39,7 +39,7 @@ https://lotfp.vercel.app
 - [x] Add coins and calculate the encumbrance
   - [x] Track different kinds of coins
 - [x] Inventory is saved in locale storage and survives the page reload
-  - [ ] State can be exported and imported
+  - [x] State can be exported and imported
 - [x] Languages support
 - [x] Responsive layout, mobile devices support
 - [x] Equipment sets
