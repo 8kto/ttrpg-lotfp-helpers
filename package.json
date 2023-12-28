@@ -1,6 +1,6 @@
 {
   "name": "ttrpg-lotfp-helpers",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "CC-BY-NC-4.0",
   "scripts": {
     "dev": "next dev",
@@ -14,7 +14,9 @@
     "weok": "yarn tsc && yarn lint && yarn format && yarn test && echo WE OK",
     "todos": "egrep --color=always -i '(TODO|FIXME)' -r src/",
     "translations:extract": "lingui extract --clean",
-    "update-readme-stats": "./scripts/update_readme_stats.sh README.md "
+    "update-readme-stats": "./scripts/update_readme_stats.sh README.md",
+    "bump": "npm version --no-git-tag-version",
+    "postbump": "git tag v$(node -p \"require('./package.json').version\")"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
