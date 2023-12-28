@@ -1,4 +1,5 @@
 import {
+  ArrowUpCircleIcon as ExportIcon,
   BriefcaseIcon,
   CircleStackIcon,
   PlusCircleIcon as PlusIcon,
@@ -10,6 +11,7 @@ import React, { useState } from 'react'
 import Drawer from '@/components/Drawer/Drawer'
 import AddCoinsFragment from '@/components/Inventory/AddCoinsFragment/AddCoinsFragment'
 import AddEquipmentItemFragment from '@/components/Inventory/AddEquipmentItemFragment/AddEquipmentItemFragment'
+import ExportInventoryFragment from '@/components/Inventory/ExportInventoryFragment/ExportInventoryFragment'
 import ImportEquipmentPackFragment from '@/components/Inventory/ImportEquipmentSetFragment/ImportEquipmentPackFragment'
 import { useInventoryState } from '@/state/InventoryState'
 
@@ -25,6 +27,7 @@ const InventoryControls = () => {
   const [isEquipmentDrawerOpen, setEquipmentDrawerOpen] = useState(false)
   const [isEquipmentPackDrawerOpen, setEquipmentPackDrawerOpen] =
     useState(false)
+  const [isExportInventoryOpen, setExportInventoryOpen] = useState(false)
 
   const iconBtnClassname =
     'w-full h-full text-xs inline-flex flex-col cursor-pointer justify-center items-center rounded p-2 lg:p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-900'
@@ -34,7 +37,7 @@ const InventoryControls = () => {
   return (
     <>
       {/* Buttons */}
-      <div className='flex w-full md:w-auto items-center justify-between'>
+      <div className='flex w-full md:w-auto items-start justify-between'>
         {/* Custom item */}
         <div className={buttonContainerClassname}>
           <button
@@ -81,12 +84,27 @@ const InventoryControls = () => {
             </span>
           </button>
         </div>
+        {/* Export */}
+        <div className={buttonContainerClassname}>
+          <button
+            onClick={() => {
+              setExportInventoryOpen(true)
+            }}
+            title={t`Export or Import Inventory`}
+            className={iconBtnClassname}
+          >
+            <ExportIcon className={iconClassname} />
+            <span className='lg:hidden'>
+              <Trans>Export & Import</Trans>
+            </span>
+          </button>
+        </div>
         {/* Reset */}
         <div className={buttonContainerClassname}>
           <button
             onClick={handleReset}
             title={t`Reset all equipment`}
-            className='w-full h-full text-xs inline-flex flex-col cursor-pointer justify-center items-center rounded p-2 lg:p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-900'
+            className='w-full h-full text-xs inline-flex flex-col cursor-pointer justify-center items-center rounded p-2 lg:p-1 text-gray-400 hover:bg-gray-100 hover:text-red-400'
           >
             <TrashIcon className={iconClassname} />
             <span className='lg:hidden'>
@@ -120,6 +138,15 @@ const InventoryControls = () => {
       >
         <ImportEquipmentPackFragment
           onClose={() => setEquipmentPackDrawerOpen(false)}
+        />
+      </Drawer>
+      <Drawer
+        isOpen={isExportInventoryOpen}
+        onClose={() => setExportInventoryOpen(false)}
+        ariaLabelledBy={'drawer-label'}
+      >
+        <ExportInventoryFragment
+          onClose={() => setExportInventoryOpen(false)}
         />
       </Drawer>
     </>

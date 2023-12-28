@@ -1,6 +1,7 @@
 import React from 'react'
 
 import type { CurrencyWallet } from '@/domain/currency'
+import { roundTo } from '@/shared/helpers/roundTo'
 import CurrencyConverter from '@/shared/services/CurrencyConverter'
 
 const CostFragment = ({
@@ -31,7 +32,7 @@ const CostFragment = ({
       {currencies.map(([number, unit], index) => {
         return (
           <span key={unit} className='mr-1'>
-            <strong>{number}</strong> {unit}
+            <strong>{roundTo(number, 1)}</strong> {unit}
             {index !== lastIndex ? ',' : null}
           </span>
         )

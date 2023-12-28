@@ -23,7 +23,7 @@ const Wallet = () => {
   return (
     <div className='px-0'>
       {/* 1st row */}
-      <div className='my-4 flex items-center space-x-2 sm:mb-2 sm:mt-0'>
+      <div className='mt-1 flex items-center space-x-2 sm:mb-2 sm:mt-0'>
         <CostFragment
           wallet={wallet.get()}
           onClick={() => setSetCoinsDrawerOpen(true)}

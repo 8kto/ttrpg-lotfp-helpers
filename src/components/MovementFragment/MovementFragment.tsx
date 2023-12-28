@@ -40,9 +40,11 @@ const MovementFragment = ({
     })
   }, [movementDict, terrain, weather])
 
+  const titleClassname = 'ph-font-cursive text-lg ph-color-secondary-bg'
+
   return (
     <>
-      <h5 className='ph-font-cursive text-lg text-red-900'>
+      <h5 className={titleClassname}>
         <Trans>Dungeon</Trans>
       </h5>
       <ul className='mb-5 list-disc pl-4'>
@@ -58,7 +60,7 @@ const MovementFragment = ({
         </li>
       </ul>
 
-      <h5 className='ph-font-cursive text-lg text-red-900'>
+      <h5 className={titleClassname}>
         <Trans>Wilderness</Trans>
       </h5>
       <p className='mb-2'>

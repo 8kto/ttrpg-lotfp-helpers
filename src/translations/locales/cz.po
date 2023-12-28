@@ -154,6 +154,9 @@ msgstr "To jsou jednoruční zbraně, včetně krátkých mečů a seker"
 msgid "Barrel"
 msgstr "Sud"
 
+msgid "Export or Import Inventory"
+msgstr ""
+
 msgid "optional"
 msgstr "volitelné"
 
@@ -199,6 +202,9 @@ msgstr "Pračky střílející kameny místo střel mají poloviční uvedený d
 
 msgid "Crowbar"
 msgstr "Páčidlo"
+
+msgid "Export as a file"
+msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Cumbersome"
@@ -425,6 +431,9 @@ msgstr "Oblečení, normální"
 
 msgid "Rapier"
 msgstr "Rapír"
+
+msgid "OR"
+msgstr ""
 
 msgid "Sling"
 msgstr "Pračka"
@@ -835,6 +844,9 @@ msgstr "Stan, pavilon"
 
 msgid "Dart"
 msgstr "Šipka"
+
+msgid "Export & Import"
+msgstr ""
 
 msgid "config.melee.polearm.details"
 msgstr "config.melee.polearm.details"

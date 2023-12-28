@@ -27,6 +27,12 @@ const InventoryList = () => {
 
   const categoryTitleClassname = 'my-4 text-xl text-red-900'
 
+  const hasArmor = !!armor.length
+  const hasMeleeWeapons = !!meleeWeapons.length
+  const hasMissileWeapons = !!missileWeapons.length
+  const hasMiscEquipment = !!miscEquipment.length
+  const hasAny = hasArmor || hasMeleeWeapons || hasArmor || hasMiscEquipment
+
   return (
     <>
       <Header>
@@ -34,7 +40,9 @@ const InventoryList = () => {
       </Header>
       <InventoryDetails />
 
-      {!!armor.length && (
+      {hasAny && <hr className='my-2 border-t border-gray-100' />}
+
+      {hasArmor && (
         <div className='mb-6'>
           <div className='flex w-full items-center justify-between'>
             <h2 className={categoryTitleClassname}>
@@ -46,7 +54,7 @@ const InventoryList = () => {
         </div>
       )}
 
-      {!!meleeWeapons.length && (
+      {hasMeleeWeapons && (
         <div className='mb-6'>
           <div className='flex w-full items-center justify-between'>
             <h2 className={categoryTitleClassname}>
@@ -58,7 +66,7 @@ const InventoryList = () => {
         </div>
       )}
 
-      {!!missileWeapons.length && (
+      {hasMissileWeapons && (
         <div className='mb-6'>
           <div className='flex w-full items-center justify-between'>
             <h2 className={categoryTitleClassname}>
@@ -70,7 +78,7 @@ const InventoryList = () => {
         </div>
       )}
 
-      {!!miscEquipment.length && (
+      {hasMiscEquipment && (
         <div className='mb-6'>
           <div className='flex w-full items-center justify-between'>
             <h2 className={categoryTitleClassname}>
