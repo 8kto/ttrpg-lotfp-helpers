@@ -154,6 +154,9 @@ msgstr ""
 msgid "Barrel"
 msgstr ""
 
+msgid "Export or Import Inventory"
+msgstr ""
+
 msgid "optional"
 msgstr ""
 
@@ -198,6 +201,9 @@ msgid "Slings fired with stones instead of bullets have half the listed range."
 msgstr ""
 
 msgid "Crowbar"
+msgstr ""
+
+msgid "Export as a file"
 msgstr ""
 
 #. js-lingui-explicit-id
@@ -424,6 +430,9 @@ msgid "Clothing, Normal"
 msgstr ""
 
 msgid "Rapier"
+msgstr ""
+
+msgid "OR"
 msgstr ""
 
 msgid "Sling"
@@ -834,6 +843,9 @@ msgid "Tent, Pavilion"
 msgstr ""
 
 msgid "Dart"
+msgstr ""
+
+msgid "Export & Import"
 msgstr ""
 
 msgid "config.melee.polearm.details"

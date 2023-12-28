@@ -154,6 +154,9 @@ msgstr "These are one-handed weapons, including short swords and hand axes"
 msgid "Barrel"
 msgstr "Barrel"
 
+msgid "Export or Import Inventory"
+msgstr "Export or Import Inventory"
+
 msgid "optional"
 msgstr "optional"
 
@@ -199,6 +202,9 @@ msgstr "Slings fired with stones instead of bullets have half the listed range."
 
 msgid "Crowbar"
 msgstr "Crowbar"
+
+msgid "Export as a file"
+msgstr "Export as a file"
 
 #. js-lingui-explicit-id
 msgid "Cumbersome"
@@ -425,6 +431,9 @@ msgstr "Clothing, Normal"
 
 msgid "Rapier"
 msgstr "Rapier"
+
+msgid "OR"
+msgstr "OR"
 
 msgid "Sling"
 msgstr "Sling"
@@ -835,6 +844,9 @@ msgstr "Tent, Pavilion"
 
 msgid "Dart"
 msgstr "Dart"
+
+msgid "Export & Import"
+msgstr "Export & Import"
 
 msgid "config.melee.polearm.details"
 msgstr "This two-handed weapon can be used to attack from the second rank, can be used to receive a charge, and receives a +1 bonus to hit opponents with an unadjusted AC of 16 or better."
