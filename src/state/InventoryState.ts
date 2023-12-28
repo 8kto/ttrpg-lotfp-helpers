@@ -225,4 +225,8 @@ export const setEncumbranceThreshold = (slots: EncumbranceThreshold) => {
   InventoryState.encumbranceThreshold.set(slots)
 }
 
+export const setState = (data: InventoryStateType) => {
+  InventoryState.set(data)
+}
+
 // TODO handle errors on the local storage state restore
