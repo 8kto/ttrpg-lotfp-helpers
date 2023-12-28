@@ -11,6 +11,7 @@ import React, { useState } from 'react'
 import Drawer from '@/components/Drawer/Drawer'
 import AddCoinsFragment from '@/components/Inventory/AddCoinsFragment/AddCoinsFragment'
 import AddEquipmentItemFragment from '@/components/Inventory/AddEquipmentItemFragment/AddEquipmentItemFragment'
+import ExportInventoryFragment from '@/components/Inventory/ExportInventoryFragment/ExportInventoryFragment'
 import ImportEquipmentPackFragment from '@/components/Inventory/ImportEquipmentSetFragment/ImportEquipmentPackFragment'
 import { useInventoryState } from '@/state/InventoryState'
 
@@ -26,6 +27,7 @@ const InventoryControls = () => {
   const [isEquipmentDrawerOpen, setEquipmentDrawerOpen] = useState(false)
   const [isEquipmentPackDrawerOpen, setEquipmentPackDrawerOpen] =
     useState(false)
+  const [isExportInventoryOpen, setExportInventoryOpen] = useState(false)
 
   const iconBtnClassname =
     'w-full h-full text-xs inline-flex flex-col cursor-pointer justify-center items-center rounded p-2 lg:p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-900'
@@ -86,7 +88,7 @@ const InventoryControls = () => {
         <div className={buttonContainerClassname}>
           <button
             onClick={() => {
-              setEquipmentPackDrawerOpen(true)
+              setExportInventoryOpen(true)
             }}
             title={t`Export or Import Inventory`}
             className={iconBtnClassname}
@@ -136,6 +138,15 @@ const InventoryControls = () => {
       >
         <ImportEquipmentPackFragment
           onClose={() => setEquipmentPackDrawerOpen(false)}
+        />
+      </Drawer>
+      <Drawer
+        isOpen={isExportInventoryOpen}
+        onClose={() => setExportInventoryOpen(false)}
+        ariaLabelledBy={'drawer-label'}
+      >
+        <ExportInventoryFragment
+          onClose={() => setExportInventoryOpen(false)}
         />
       </Drawer>
     </>
