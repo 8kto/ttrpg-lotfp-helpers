@@ -20,6 +20,7 @@ const ExportInventoryFragment = ({ onClose }: { onClose: () => void }) => {
     } catch (err) {
       console.error('Cannot export state', err)
     }
+    onClose()
   }
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -37,6 +38,7 @@ const ExportInventoryFragment = ({ onClose }: { onClose: () => void }) => {
 
         const json = JSON.parse(text.toString())
         setState(json)
+        onClose()
       }
       reader.readAsText(file)
     }
