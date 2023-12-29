@@ -10,6 +10,7 @@ import {
   miscEquipItem1,
   missileWeaponItemMock1,
 } from '@/shared/mocks/inventoryMocks'
+import { stateMock } from '@/shared/mocks/stateMock'
 import type {
   EquipmentCategoryKey,
   InventoryStateType,
@@ -32,6 +33,7 @@ import {
   resetCurrencies,
   setCurrencies,
   setEncumbranceThreshold,
+  setState,
   setWallet,
   toggleCoinsWeightActive,
   toggleCost,
@@ -469,6 +471,25 @@ describe('InventoryState Tests', () => {
       expect(InventoryState.encumbranceThreshold.get()).toEqual(
         EncumbranceThreshold.Regular,
       )
+    })
+  })
+
+  describe('setState', () => {
+    it('sets state', () => {
+      setState(stateMock)
+
+      // Compare individual properties instead of the entire object
+      Object.keys(stateMock).forEach((key) => {
+        expect(
+          InventoryState.nested(
+            // @ts-ignore
+            key,
+          ).value,
+        ).toEqual(
+          // @ts-ignore
+          stateMock[key],
+        )
+      })
     })
   })
 })
