@@ -588,6 +588,26 @@ msgstr ""
 msgid "config.armor.plate.details"
 msgstr ""
 
+#. js-lingui-explicit-id
+msgid "details.shareableJson1"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "details.shareableUrl1"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "details.shareableUrl2"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "details.shareableUrlSectionFiles"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "details.shareableUrlSectionUrl"
+msgstr ""
+
 msgid "Cestus"
 msgstr ""
 
