@@ -2,6 +2,7 @@ import { XMarkIcon } from '@heroicons/react/24/solid'
 import { Trans } from '@lingui/macro'
 import React, { useRef } from 'react'
 
+import ShareableUrlControl from '@/components/Inventory/ExportInventoryFragment/ShareableUrlControl'
 import exportInventoryData from '@/shared/helpers/exportInventoryData'
 import { setState, useInventoryState } from '@/state/InventoryState'
 
@@ -44,6 +45,8 @@ const ExportInventoryFragment = ({ onClose }: { onClose: () => void }) => {
     }
   }
 
+  const paragraphClassname = 'text-sm text-gray-700 my-2'
+
   return (
     <>
       <h5
@@ -61,37 +64,57 @@ const ExportInventoryFragment = ({ onClose }: { onClose: () => void }) => {
       >
         <XMarkIcon className='h-5 w-5' />
       </button>
-      <div className='mt-8 space-y-4'>
-        <div className='flex w-full justify-center'>
-          <button
-            type='button'
-            onClick={handleExport}
-            className='ph-btn-secondary w-full justify-center rounded px-5 py-2.5 text-center font-medium focus:outline-none focus:ring-4 focus:ring-primary-300'
-          >
-            <Trans>Export as a file</Trans>
-          </button>
-        </div>
+      <div className='space-y-4'>
+        <h6 className='text-xl text-gray-800'>Shareable URL</h6>
+        <section>
+          <ShareableUrlControl value='my-url' />
+          <p className={paragraphClassname}>
+            This link provides access to your current inventory. Please note
+            that due to URL length restrictions in some browsers, it may not
+            function properly, despite the URL itself being compressed.
+          </p>
+          <p className={`${paragraphClassname} mb-6`}>
+            The URL, which may exceed 2000 characters, is compatible with most
+            major browsers, but it is not supported by Edge, for example.
+          </p>
+        </section>
 
-        <label className='mb-2 block text-center font-medium text-red-800'>
-          ~ <Trans>OR</Trans> ~
-        </label>
+        <section>
+          <h6 className='text-xl text-gray-800'>Files</h6>
+          <p className={paragraphClassname}>
+            Exported data is a plain JSON file, that can be used for restoring.
+          </p>
+          <div className='flex w-full justify-center'>
+            <button
+              type='button'
+              onClick={handleExport}
+              className='ph-btn-secondary w-full justify-center rounded px-5 py-2.5 text-center font-medium focus:outline-none focus:ring-4 focus:ring-primary-300'
+            >
+              <Trans>Export as a file</Trans>
+            </button>
+          </div>
 
-        <div className='flex w-full justify-center pb-4'>
-          <input
-            type='file'
-            ref={fileInputRef}
-            onChange={handleFileChange}
-            style={{ display: 'none' }}
-            accept='application/json'
-          />
-          <button
-            type='button'
-            onClick={handleImport}
-            className='ph-btn-primary w-full justify-center rounded px-5 py-2.5 text-center font-medium focus:outline-none focus:ring-4 focus:ring-primary-300'
-          >
-            <Trans>Import</Trans>
-          </button>
-        </div>
+          <label className='my-4 block text-center font-medium text-red-800'>
+            ~ <Trans>OR</Trans> ~
+          </label>
+
+          <div className='flex w-full justify-center pb-4'>
+            <input
+              type='file'
+              ref={fileInputRef}
+              onChange={handleFileChange}
+              style={{ display: 'none' }}
+              accept='application/json'
+            />
+            <button
+              type='button'
+              onClick={handleImport}
+              className='ph-btn-primary w-full justify-center rounded px-5 py-2.5 text-center font-medium focus:outline-none focus:ring-4 focus:ring-primary-300'
+            >
+              <Trans>Import</Trans>
+            </button>
+          </div>
+        </section>
       </div>
     </>
   )
