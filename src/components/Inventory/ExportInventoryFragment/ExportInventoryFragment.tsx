@@ -69,24 +69,31 @@ const ExportInventoryFragment = ({ onClose }: { onClose: () => void }) => {
         <XMarkIcon className='h-5 w-5' />
       </button>
       <div className='space-y-4'>
-        <h6 className='text-xl text-gray-800'>Shareable URL</h6>
+        <h6 className='text-xl text-gray-800'><Trans id="details.shareableUrlSectionUrl">Shareable URL</Trans></h6>
         <section>
           <ShareableUrlControl value={shareableUrl} />
           <p className={paragraphClassname}>
-            This link provides access to your current inventory. Please note
-            that due to URL length restrictions in some browsers, it may not
-            function properly, despite the URL itself being compressed.
+            <Trans id="details.shareableUrl1">
+              This link provides access to your current inventory. Please note
+              that due to URL length restrictions in some browsers, it may not
+              function properly, despite the URL itself being compressed.
+            </Trans>
           </p>
           <p className={`${paragraphClassname} mb-6`}>
-            The URL, which may exceed 2000 characters, is compatible with most
-            major browsers, but it is not supported by Edge, for example.
+            <Trans id="details.shareableUrl2">
+              The URL, which may exceed 2000 characters, is compatible with most
+              major browsers, but it is not supported by Edge, for example.
+            </Trans>
           </p>
         </section>
 
         <section>
-          <h6 className='text-xl text-gray-800'>Files</h6>
+          <h6 className='text-xl text-gray-800'><Trans id="details.shareableUrlSectionFiles">Files</Trans></h6>
           <p className={paragraphClassname}>
-            Exported data is a plain JSON file, that can be used for restoring.
+            <Trans id="details.shareableJson1">
+              Exported data is a plain JSON file, that can be used for
+              restoring.
+            </Trans>
           </p>
           <div className='flex w-full justify-center'>
             <button
