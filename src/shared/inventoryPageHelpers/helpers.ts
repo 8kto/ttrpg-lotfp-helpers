@@ -2,6 +2,11 @@ import { decompressDataFromUrl } from '@/shared/helpers/compressDataForUrl'
 import type { InventoryStateType } from '@/state/InventoryState'
 import { setState } from '@/state/InventoryState'
 
+/**
+ * @fileOverview Helpers are extracted from the page component and put outside its directory
+ * due to NextJS restrictions
+ */
+
 export const getImportUrlParameter = () => {
   const urlParams = new URLSearchParams(window.location.search)
   const importString = urlParams.get('import')?.trim()

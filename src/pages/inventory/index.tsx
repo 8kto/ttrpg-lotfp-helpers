@@ -8,13 +8,13 @@ import React, { useEffect } from 'react'
 
 import EquipmentList from '@/components/EquipmentList/EquipmentList'
 import InventoryList from '@/components/Inventory/InventoryList'
+import InventoryPageTabs from '@/components/InventoryPageTabs'
+import useTailwindBreakpoint from '@/shared/hooks/useTailwindBreakpoint'
 import {
   getImportUrlParameter,
   resetUrlParams,
   setStateFromTheCompressedUrlData,
-} from '@/pages/inventory/helpers'
-import InventoryPageTabs from '@/pages/inventory/InventoryPageTabs'
-import useTailwindBreakpoint from '@/shared/hooks/useTailwindBreakpoint'
+} from '@/shared/inventoryPageHelpers/helpers'
 import { loadCatalog } from '@/translations/utils'
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
