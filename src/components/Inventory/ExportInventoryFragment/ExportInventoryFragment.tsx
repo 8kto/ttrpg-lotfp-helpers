@@ -1,13 +1,22 @@
 import { XMarkIcon } from '@heroicons/react/24/solid'
 import { Trans } from '@lingui/macro'
-import React, { useRef } from 'react'
+import { useRouter } from 'next/router'
+import React, { useMemo, useRef } from 'react'
 
+import {
+  getShareableUrl,
+  restoreStateFromJson,
+} from '@/components/Inventory/ExportInventoryFragment/helpers'
 import ShareableUrlControl from '@/components/Inventory/ExportInventoryFragment/ShareableUrlControl'
 import exportInventoryData from '@/shared/helpers/exportInventoryData'
 import { setState, useInventoryState } from '@/state/InventoryState'
 
 const ExportInventoryFragment = ({ onClose }: { onClose: () => void }) => {
   const { state } = useInventoryState()
+  const router = useRouter()
+  const shareableUrl = useMemo(() => {
+    return getShareableUrl(state.get(), router)
+  }, [router, state])
   const fileInputRef = useRef<HTMLInputElement>(null)
 
   const handleImport = () => {
@@ -24,24 +33,19 @@ const ExportInventoryFragment = ({ onClose }: { onClose: () => void }) => {
     onClose()
   }
 
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileImport = async (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => {
     const file = event.target.files?.[0]
 
     if (file) {
-      const reader = new FileReader()
-      reader.onload = (e) => {
-        const text = e.target?.result
-        if (!text) {
-          console.error('Cannot get file content')
-
-          return
-        }
-
-        const json = JSON.parse(text.toString())
+      try {
+        const json = await restoreStateFromJson(file)
         setState(json)
         onClose()
+      } catch (error) {
+        console.error(error)
       }
-      reader.readAsText(file)
     }
   }
 
@@ -67,7 +71,7 @@ const ExportInventoryFragment = ({ onClose }: { onClose: () => void }) => {
       <div className='space-y-4'>
         <h6 className='text-xl text-gray-800'>Shareable URL</h6>
         <section>
-          <ShareableUrlControl value='my-url' />
+          <ShareableUrlControl value={shareableUrl} />
           <p className={paragraphClassname}>
             This link provides access to your current inventory. Please note
             that due to URL length restrictions in some browsers, it may not
@@ -102,7 +106,7 @@ const ExportInventoryFragment = ({ onClose }: { onClose: () => void }) => {
             <input
               type='file'
               ref={fileInputRef}
-              onChange={handleFileChange}
+              onChange={handleFileImport}
               style={{ display: 'none' }}
               accept='application/json'
             />

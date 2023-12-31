@@ -8,16 +8,21 @@ const ShareableUrlControl = ({ value }: { value: string }) => {
   const textInputRef = useRef<HTMLInputElement>(null)
   const [isCopied, setIsCopied] = useState(false)
 
+  const copyToClipboard = () => {
+    if (textInputRef.current?.value) {
+      void navigator.clipboard.writeText(textInputRef.current.value)
+      setIsCopied(true)
+      setTimeout(() => setIsCopied(false), 2000)
+    }
+  }
+
   const handleFocus = () => {
     textInputRef.current?.select()
+    copyToClipboard()
   }
 
   const handleCopy = () => {
-    if (textInputRef.current?.value) {
-      navigator.clipboard.writeText(textInputRef.current.value)
-      setIsCopied(true)
-      setTimeout(() => setIsCopied(false), 2000) // Reset icon back to copy icon after 2 seconds
-    }
+    copyToClipboard()
   }
 
   return (
