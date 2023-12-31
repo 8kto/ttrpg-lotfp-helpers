@@ -13,7 +13,7 @@ import {
   getImportUrlParameter,
   resetUrlParams,
   setStateFromTheCompressedUrlData,
-} from '@/shared/helpers/inventoryPageHelpers'
+} from '@/shared/helpers/shareableUrl'
 import useTailwindBreakpoint from '@/shared/hooks/useTailwindBreakpoint'
 import { loadCatalog } from '@/translations/utils'
 

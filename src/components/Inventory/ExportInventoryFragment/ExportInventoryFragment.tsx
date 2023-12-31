@@ -3,12 +3,9 @@ import { Trans } from '@lingui/macro'
 import { useRouter } from 'next/router'
 import React, { useMemo, useRef } from 'react'
 
-import {
-  getShareableUrl,
-  restoreStateFromJson,
-} from '@/components/Inventory/ExportInventoryFragment/helpers'
 import ShareableUrlControl from '@/components/Inventory/ExportInventoryFragment/ShareableUrlControl'
 import exportInventoryData from '@/shared/helpers/exportInventoryData'
+import { getShareableUrl, getStateFromJson } from '@/shared/helpers/shareableUrl'
 import { setState, useInventoryState } from '@/state/InventoryState'
 
 const ExportInventoryFragment = ({ onClose }: { onClose: () => void }) => {
@@ -40,7 +37,7 @@ const ExportInventoryFragment = ({ onClose }: { onClose: () => void }) => {
 
     if (file) {
       try {
-        const json = await restoreStateFromJson(file)
+        const json = await getStateFromJson(file)
         setState(json)
         onClose()
       } catch (error) {
