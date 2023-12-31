@@ -9,12 +9,12 @@ import React, { useEffect } from 'react'
 import EquipmentList from '@/components/EquipmentList/EquipmentList'
 import InventoryList from '@/components/Inventory/InventoryList'
 import InventoryPageTabs from '@/components/InventoryPageTabs'
-import useTailwindBreakpoint from '@/shared/hooks/useTailwindBreakpoint'
 import {
   getImportUrlParameter,
   resetUrlParams,
   setStateFromTheCompressedUrlData,
-} from '@/shared/inventoryPageHelpers/helpers'
+} from '@/shared/helpers/inventoryPageHelpers'
+import useTailwindBreakpoint from '@/shared/hooks/useTailwindBreakpoint'
 import { loadCatalog } from '@/translations/utils'
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
