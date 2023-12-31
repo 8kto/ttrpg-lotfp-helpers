@@ -1,6 +1,9 @@
 import type { NextRouter } from 'next/router'
 
-import { compressDataForUrl, decompressDataFromUrl } from '@/shared/helpers/compressDataForUrl'
+import {
+  compressDataForUrl,
+  decompressDataFromUrl,
+} from '@/shared/helpers/compressDataForUrl'
 import type { InventoryStateType } from '@/state/InventoryState'
 import { setState } from '@/state/InventoryState'
 
@@ -48,9 +51,7 @@ export const getShareableUrl = (
   return url
 }
 
-export const getStateFromJson = (
-  file: File,
-): Promise<InventoryStateType> => {
+export const getStateFromJson = (file: File): Promise<InventoryStateType> => {
   if (!file) {
     throw new Error('File is not found')
   }
