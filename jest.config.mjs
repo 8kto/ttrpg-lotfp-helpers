@@ -14,6 +14,7 @@ const config = {
   moduleNameMapper: {
     '^@/components/(.*)$': '<rootDir>/src/components/$1',
     '^@/shared/(.*)$': '<rootDir>/src/shared/$1',
+    '^@/state/(.*)$': '<rootDir>/src/state/$1',
   },
 }
 
