@@ -9,14 +9,18 @@ import { setState } from '@/state/InventoryState'
 
 /**
  * @fileOverview Helpers are extracted from the page component and put outside its directory
- * due to NextJS restrictions
+ * due to Next.js restrictions
  */
 
-export const getImportUrlParameter = () => {
+export const getImportUrlParameter = (): string | null => {
+  if (typeof window === 'undefined') {
+    return null
+  }
+
   const urlParams = new URLSearchParams(window.location.search)
   const importString = urlParams.get('import')?.trim()
 
-  return importString && typeof window !== 'undefined' ? importString : null
+  return importString ?? null
 }
 
 export const setStateFromTheCompressedUrlData = (input: string): void => {
@@ -29,7 +33,7 @@ export const setStateFromTheCompressedUrlData = (input: string): void => {
 
 export const resetUrlParams = () => {
   if (typeof window !== 'undefined') {
-    const url = new URL(window.location.href)
+    const url = new window.URL(window.location.href)
     const currentUrlWithoutUrlParams = url.origin + url.pathname
 
     window.location.replace(currentUrlWithoutUrlParams)
@@ -53,7 +57,7 @@ export const getShareableUrl = (
 
 export const getStateFromJson = (file: File): Promise<InventoryStateType> => {
   if (!file) {
-    throw new Error('File is not found')
+    return Promise.reject(Error('File is not found'))
   }
 
   return new Promise((resolve, reject) => {
