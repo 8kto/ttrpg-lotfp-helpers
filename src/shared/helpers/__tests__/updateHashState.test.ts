@@ -6,36 +6,38 @@ describe('updateHashState', () => {
   beforeEach(() => {
     let hash: string
 
-    // @ts-ignore
-    delete window.location
-    // @ts-ignore
-    window.location = {
-      set hash(val: string) {
-        hash = val ? `#${val}` : ''
+    Object.defineProperty(globalThis, 'window', {
+      value: {
+        location: {
+          set hash(val: string) {
+            hash = val ? `#${val}` : ''
+          },
+          get hash() {
+            return hash
+          },
+        },
       },
-      get hash() {
-        return hash
-      },
-    }
+      writable: true,
+    })
   })
 
   afterEach(() => {
     window.location.hash = originalHash
   })
 
-  test('updates window location hash with given state', () => {
+  it('updates window location hash with given state', () => {
     const testState = { param1: 'value1', param2: 'value2' }
     updateHashState(testState)
 
     expect(window.location.hash).toBe(`#param1=value1&param2=value2`)
   })
 
-  test('handles empty state', () => {
+  it('handles empty state', () => {
     updateHashState({})
     expect(window.location.hash).toBe('')
   })
 
-  test('encodes special characters in state', () => {
+  it('encodes special characters in state', () => {
     const testState = { 'special char': 'value&value' }
     updateHashState(testState)
 
