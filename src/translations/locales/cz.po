@@ -590,23 +590,23 @@ msgstr "config.armor.plate.details"
 
 #. js-lingui-explicit-id
 msgid "details.shareableJson1"
-msgstr ""
+msgstr "Běžný JSON soubor, který lze použít pro obnovení."
 
 #. js-lingui-explicit-id
 msgid "details.shareableUrl1"
-msgstr ""
+msgstr "Odkaz obnoví váš aktuální inventář. Kvůli omezením délky URL v některých prohlížečích nemusí fungovat správně (i přes kompresi samotného URL)."
 
 #. js-lingui-explicit-id
 msgid "details.shareableUrl2"
-msgstr ""
+msgstr "URL může přesáhnout 2000 znaků a je kompatibilní s většinou hlavních prohlížečů, ale například není podporováno prohlížečem Edge."
 
 #. js-lingui-explicit-id
 msgid "details.shareableUrlSectionFiles"
-msgstr ""
+msgstr "Soubor"
 
 #. js-lingui-explicit-id
 msgid "details.shareableUrlSectionUrl"
-msgstr ""
+msgstr "Sdílet URL"
 
 msgid "Cestus"
 msgstr "Cestus"
