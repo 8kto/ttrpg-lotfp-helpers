@@ -1,16 +1,13 @@
 import type { NextRouter } from 'next/router'
 
-import * as decompressUtils from '@/shared/helpers/compressDataForUrl'
 import { compressDataForUrl } from '@/shared/helpers/compressDataForUrl'
 import {
   getImportUrlParameter,
   getShareableUrl,
   getStateFromJson,
   resetUrlParams,
-  setStateFromTheCompressedUrlData,
 } from '@/shared/helpers/shareableUrl'
 import { stateMock } from '@/shared/mocks/stateMock'
-import * as inventoryState from '@/state/InventoryState'
 
 jest.mock('@/shared/helpers/compressDataForUrl', () => ({
   compressDataForUrl: jest.fn(),
@@ -62,28 +59,6 @@ describe('shareable URL helpers', () => {
     it('should return null when window is undefined', () => {
       windowSpy.mockImplementation(() => undefined)
       expect(getImportUrlParameter()).toBeNull()
-    })
-  })
-
-  describe('setStateFromTheCompressedUrlData', () => {
-    it('should call setState with decompressed state when input is valid', () => {
-      const mockInput = 'validCompressedData'
-      const mockState = { items: ['item1', 'item2'] }
-
-      ;(decompressUtils.decompressDataFromUrl as jest.Mock).mockReturnValue(
-        mockState,
-      )
-      setStateFromTheCompressedUrlData(mockInput)
-
-      expect(inventoryState.setState).toHaveBeenCalledWith(mockState)
-    })
-
-    it('should not call setState when input is invalid', () => {
-      ;(decompressUtils.decompressDataFromUrl as jest.Mock).mockReturnValue(
-        null,
-      )
-      setStateFromTheCompressedUrlData('invalidData')
-      expect(inventoryState.setState).not.toHaveBeenCalled()
     })
   })
 

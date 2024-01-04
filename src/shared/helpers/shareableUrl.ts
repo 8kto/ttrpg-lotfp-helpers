@@ -1,11 +1,7 @@
 import type { NextRouter } from 'next/router'
 
-import {
-  compressDataForUrl,
-  decompressDataFromUrl,
-} from '@/shared/helpers/compressDataForUrl'
+import { compressDataForUrl } from '@/shared/helpers/compressDataForUrl'
 import type { InventoryStateType } from '@/state/InventoryState'
-import { setState } from '@/state/InventoryState'
 
 /**
  * @fileOverview Helpers are extracted from the page component and put outside its directory
@@ -23,14 +19,6 @@ export const getImportUrlParameter = (): string | null => {
   return importString ?? null
 }
 
-export const setStateFromTheCompressedUrlData = (input: string): void => {
-  const state = decompressDataFromUrl<InventoryStateType>(input)
-
-  if (state) {
-    setState(state)
-  }
-}
-
 export const resetUrlParams = () => {
   if (typeof window !== 'undefined') {
     const url = new window.URL(window.location.href)
@@ -44,15 +32,13 @@ export const getShareableUrl = (
   state: InventoryStateType,
   router: NextRouter,
 ) => {
-  let url = ''
+  const basePath = typeof window !== 'undefined' ? window.location.origin : ''
+  const pathWithoutHash = router.asPath.split('#')[0]
+  const url = new URL(`${basePath}/${router.locale}${pathWithoutHash}`)
 
-  if (typeof window !== 'undefined') {
-    url = `${window.location.origin}/${router.locale}${router.asPath}`
-  }
-  url = url.replace(/#.*/g, '')
-  url += `?import=${compressDataForUrl(state)}`
+  url.searchParams.set('import', compressDataForUrl(state))
 
-  return url
+  return url.toString()
 }
 
 export const getStateFromJson = (file: File): Promise<InventoryStateType> => {
