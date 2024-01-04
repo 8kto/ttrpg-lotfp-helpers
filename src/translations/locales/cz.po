@@ -155,7 +155,7 @@ msgid "Barrel"
 msgstr "Sud"
 
 msgid "Export or Import Inventory"
-msgstr ""
+msgstr "Exportovat nebo Importovat Inventář"
 
 msgid "optional"
 msgstr "volitelné"
@@ -204,7 +204,7 @@ msgid "Crowbar"
 msgstr "Páčidlo"
 
 msgid "Export as a file"
-msgstr ""
+msgstr "Exportovat jako soubor"
 
 #. js-lingui-explicit-id
 msgid "Cumbersome"
@@ -433,7 +433,7 @@ msgid "Rapier"
 msgstr "Rapír"
 
 msgid "OR"
-msgstr ""
+msgstr "NEBO"
 
 msgid "Sling"
 msgstr "Pračka"
@@ -555,11 +555,11 @@ msgstr "CZ"
 
 #. js-lingui-explicit-id
 msgid "armor.baseAc"
-msgstr "armor.baseAc"
+msgstr "Postavy bez brnění mají základní AC 12."
 
 #. js-lingui-explicit-id
 msgid "armor.unadjustedAc"
-msgstr "armor.unadjustedAc"
+msgstr "Neupravený Třída Brnění (Unadjusted AC) zahrnuje pouze brnění a štít. Modifikátory obratnosti, magické modifikátory nebo jakékoli jiné nejsou zahrnuty."
 
 msgid "Encumbrance"
 msgstr "Zatížení"
@@ -586,7 +586,7 @@ msgid "Bow, Long"
 msgstr "Luk, dlouhý"
 
 msgid "config.armor.plate.details"
-msgstr "config.armor.plate.details"
+msgstr "Cestovatelé, kteří se pohybují v klapotajících plátových brněních po kamenných podlahách, nemohou nikoho překvapit (PCB str. 56)."
 
 #. js-lingui-explicit-id
 msgid "details.shareableJson1"
@@ -651,7 +651,7 @@ msgid "Spike, Iron"
 msgstr "Hřebík, železný"
 
 msgid "config.melee.slingRocks.details"
-msgstr "config.melee.slingRocks.details"
+msgstr "Pračky střílející kameny místo střel mají uvedený dosah (polovina běžného)."
 
 msgid "Shield"
 msgstr "Štít"
@@ -729,7 +729,7 @@ msgid "Mallet"
 msgstr "Kladivo"
 
 msgid "config.melee.cestus.details"
-msgstr "config.melee.cestus.details"
+msgstr "Zahrnuje všechny typy obinadek na pěst a kastety. Trest -2 k zásahu proti jakémukoli protivníkovi s neupraveným AC 15 a vyšším."
 
 msgid "Long"
 msgstr "Dlouhý"
@@ -866,10 +866,10 @@ msgid "Dart"
 msgstr "Šipka"
 
 msgid "Export & Import"
-msgstr ""
+msgstr "Export & Import"
 
 msgid "config.melee.polearm.details"
-msgstr "config.melee.polearm.details"
+msgstr "Toto dvouruční zbraň může být použita k útoku ze druhé řady, může být použita k setkání náporu (charge) a získává bonus +1 AB proti protivníkům s neupraveným AC 16 a vyšším."
 
 msgid "Instrument"
 msgstr "Nástroj"
