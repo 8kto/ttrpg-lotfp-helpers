@@ -9,12 +9,14 @@ import React, { useEffect } from 'react'
 import EquipmentList from '@/components/EquipmentList/EquipmentList'
 import InventoryList from '@/components/Inventory/InventoryList'
 import InventoryPageTabs from '@/components/InventoryPageTabs'
+import { decompressDataFromUrl } from '@/shared/helpers/compressDataForUrl'
 import {
   getImportUrlParameter,
   resetUrlParams,
-  setStateFromTheCompressedUrlData,
 } from '@/shared/helpers/shareableUrl'
 import useTailwindBreakpoint from '@/shared/hooks/useTailwindBreakpoint'
+import type { InventoryStateType } from '@/state/InventoryState'
+import { setState } from '@/state/InventoryState'
 import { loadCatalog } from '@/translations/utils'
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
@@ -39,7 +41,12 @@ export default function InventoryPage() {
     const importUrlParameter = getImportUrlParameter()
 
     if (importUrlParameter) {
-      setStateFromTheCompressedUrlData(importUrlParameter)
+      const state =
+        decompressDataFromUrl<InventoryStateType>(importUrlParameter)
+      if (state) {
+        setState(state)
+      }
+
       resetUrlParams()
     }
   }, [])
