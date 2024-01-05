@@ -1,5 +1,4 @@
 import { t, Trans } from '@lingui/macro'
-import { useLingui } from '@lingui/react'
 import React, { useMemo } from 'react'
 
 import DamageFragment from '@/components/DamageFragment'
@@ -102,7 +101,6 @@ const MissileWeaponsGrid = () => {
   const {
     state: { isCostRural },
   } = useInventoryState()
-  const i18nContext = useLingui()
 
   const columnsFilteredByCost = useMemo(() => {
     const costCol = isCostRural.get() ? ruralCostColumn : cityCostColumn
@@ -112,17 +110,11 @@ const MissileWeaponsGrid = () => {
     return [...columns.slice(0, lastIndex), costCol, columns[lastIndex]]
   }, [isCostRural])
 
-  const dataFilteredByCost = useMemo(
-    () => {
-      const data = Object.values(Equipment.MissileWeapons)
+  const dataFilteredByCost = useMemo(() => {
+    const data = Object.values(Equipment.MissileWeapons)
 
-      return isCostRural.get()
-        ? data.filter((i) => i.ruralCostCp !== null)
-        : data
-    },
-    // NB! Don't remove i18nContext dep, since it causes the grid rerender on locale change
-    [isCostRural, i18nContext],
-  )
+    return isCostRural.get() ? data.filter((i) => i.ruralCostCp !== null) : data
+  }, [isCostRural])
 
   const handleAddClick = (item: MissileWeaponItem) => {
     const clone = getInventoryItem(

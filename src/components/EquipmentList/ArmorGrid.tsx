@@ -1,5 +1,4 @@
 import { t, Trans } from '@lingui/macro'
-import { useLingui } from '@lingui/react'
 import React, { useMemo } from 'react'
 
 import DataGrid from '@/components/DataGrid/DataGrid'
@@ -63,7 +62,6 @@ const ArmorGrid = () => {
   const {
     state: { isCostRural },
   } = useInventoryState()
-  const i18nContext = useLingui()
   const columnsFilteredByCost = useMemo(() => {
     const costCol = isCostRural.get() ? ruralCostColumn : cityCostColumn
     const lastIndex = columns.length - 1
@@ -72,17 +70,11 @@ const ArmorGrid = () => {
     return [...columns.slice(0, lastIndex), costCol, columns[lastIndex]]
   }, [isCostRural])
 
-  const dataFilteredByCost = useMemo(
-    () => {
-      const data = Object.values(Equipment.Armor)
+  const dataFilteredByCost = useMemo(() => {
+    const data = Object.values(Equipment.Armor)
 
-      return isCostRural.get()
-        ? data.filter((i) => i.ruralCostCp !== null)
-        : data
-    },
-    // NB! Don't remove i18nContext dep, since it causes the grid rerender on locale change
-    [isCostRural, i18nContext],
-  )
+    return isCostRural.get() ? data.filter((i) => i.ruralCostCp !== null) : data
+  }, [isCostRural])
 
   const handleAddClick = (item: ArmorItem) => {
     const clone = getInventoryItem(
