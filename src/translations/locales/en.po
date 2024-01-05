@@ -588,6 +588,26 @@ msgstr "Bow, Long"
 msgid "config.armor.plate.details"
 msgstr "Explorers traveling with metal armor clomping on stone floors are not able to surprise anything or anyone (PCB p.56)."
 
+#. js-lingui-explicit-id
+msgid "details.shareableJson1"
+msgstr "Exported data is a plain JSON file, that can be used for restoring."
+
+#. js-lingui-explicit-id
+msgid "details.shareableUrl1"
+msgstr "This link provides access to your current inventory. Please note that due to URL length restrictions in some browsers, it may not function properly, despite the URL itself being compressed."
+
+#. js-lingui-explicit-id
+msgid "details.shareableUrl2"
+msgstr "The URL, which may exceed 2000 characters, is compatible with most major browsers, but it is not supported by Edge, for example."
+
+#. js-lingui-explicit-id
+msgid "details.shareableUrlSectionFiles"
+msgstr "Files"
+
+#. js-lingui-explicit-id
+msgid "details.shareableUrlSectionUrl"
+msgstr "Shareable URL"
+
 msgid "Cestus"
 msgstr "Cestus"
 

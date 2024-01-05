@@ -14,6 +14,7 @@ import {
   missileWeaponItemMock1,
   missileWeaponItemMock2,
 } from '@/shared/mocks/inventoryMocks'
+import { stateMock } from '@/shared/mocks/stateMock'
 import {
   addItem,
   combineEquipment,
@@ -30,21 +31,7 @@ describe('Inventory helpers', () => {
   describe('combineEquipment', () => {
     it('should combine state props', () => {
       // Mock equipment state
-      const mockEquipmentState = createStateMock({
-        armor: [armorItemMock1, armorItemMock2],
-        encumbranceThreshold: EncumbranceThreshold.Regular,
-        isCoinWeightActive: true,
-        isCostRural: false,
-        meleeWeapons: [meleeWeaponItemMock1, meleeWeaponItemMock2],
-        miscEquipment: [miscEquipItem1, miscEquipItem2],
-        missileWeapons: [missileWeaponItemMock1, missileWeaponItemMock2],
-        wallet: {
-          Copper: 0,
-          Gold: 0,
-          Silver: 0,
-        },
-      })
-
+      const mockEquipmentState = createStateMock(stateMock)
       const combinedEquipment = combineEquipment(mockEquipmentState)
 
       // Expected combined array

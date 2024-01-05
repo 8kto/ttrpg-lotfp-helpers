@@ -588,6 +588,26 @@ msgstr "Длинный лук"
 msgid "config.armor.plate.details"
 msgstr "Путешественники, передвигающиеся в лязгающих латах по каменным полам, не могут никого застать врасплох (PCB стр. 56)."
 
+#. js-lingui-explicit-id
+msgid "details.shareableJson1"
+msgstr "Обычный JSON-файл, который может быть использован для восстановления."
+
+#. js-lingui-explicit-id
+msgid "details.shareableUrl1"
+msgstr "Ссылка восстанавливает ваш текущий инвентарь. Из-за ограничений на длину URL в некоторых браузерах может работать некорректно (даже несмотря на сжатие самого URL)."
+
+#. js-lingui-explicit-id
+msgid "details.shareableUrl2"
+msgstr "URL может превышать 2000 символов и совместим с большинством основных браузеров, но, например, не поддерживается браузером Edge."
+
+#. js-lingui-explicit-id
+msgid "details.shareableUrlSectionFiles"
+msgstr "Файл"
+
+#. js-lingui-explicit-id
+msgid "details.shareableUrlSectionUrl"
+msgstr "Поделиться URL"
+
 msgid "Cestus"
 msgstr "Цест"
 
