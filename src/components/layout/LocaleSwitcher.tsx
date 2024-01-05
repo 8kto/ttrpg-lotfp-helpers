@@ -2,9 +2,8 @@ import type { MessageDescriptor } from '@lingui/core'
 import { msg } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 import { useRouter } from 'next/router'
-import { useState } from 'react'
 
-import type { LOCALES } from '@/translations/languages'
+import type { LOCALE } from '@/translations/languages'
 
 const languages: { [key: string]: MessageDescriptor } = {
   en: msg`EN`,
@@ -12,24 +11,20 @@ const languages: { [key: string]: MessageDescriptor } = {
   cz: msg`CZ`,
 }
 
+if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') {
+  languages['pseudo'] = msg`P*`
+}
+
 const LocaleSwitcher = () => {
   const router = useRouter()
   const { i18n } = useLingui()
+  const [locale] = router.locale!.split('-')[0] as LOCALE
 
-  const [locale, setLocale] = useState<LOCALES>(
-    router.locale!.split('-')[0] as LOCALES,
-  )
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const newLocale = event.target.value as LOCALE
 
-  // if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') {
-  //   languages['pseudo'] = msg`Pseudo`
-  // }
-
-  function handleChange(event: React.ChangeEvent<HTMLSelectElement>) {
-    const newLocale = event.target.value as LOCALES
-
-    setLocale(newLocale)
-    // FIXME keep hash state
-    router.push(router.pathname, router.pathname, { locale: newLocale })
+    const newUrl = `${window.location.origin}/${newLocale}${router.pathname}${window.location.hash}`
+    window.location.href = newUrl
   }
 
   return (
@@ -41,7 +36,7 @@ const LocaleSwitcher = () => {
       {Object.keys(languages).map((currLocale) => {
         return (
           <option value={currLocale} key={currLocale}>
-            {i18n._(languages[currLocale as unknown as LOCALES])}
+            {i18n._(languages[currLocale as unknown as LOCALE])}
           </option>
         )
       })}
