@@ -84,7 +84,6 @@ const MeleeWeaponsGrid = () => {
         : data
     },
     // NB! Don't remove i18nContext dep, since it causes the grid rerender on locale change
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     [isCostRural, i18nContext],
   )
 
