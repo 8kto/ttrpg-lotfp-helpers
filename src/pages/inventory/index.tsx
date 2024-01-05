@@ -1,7 +1,6 @@
 'use client'
 
 import { t } from '@lingui/macro'
-import { useLingui } from '@lingui/react'
 import type { GetStaticProps } from 'next'
 import Head from 'next/head'
 import React, { useEffect } from 'react'
@@ -30,9 +29,6 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 }
 
 export default function InventoryPage() {
-  // Subscribe to the locale updates
-  useLingui()
-
   // Do not render components twice: programmatically check the viewport
   const breakpoint = useTailwindBreakpoint()
   const shouldRenderTabs = ['xs', 'sm', 'md'].includes(breakpoint)
