@@ -28,6 +28,7 @@ const LocaleSwitcher = () => {
     const newLocale = event.target.value as LOCALES
 
     setLocale(newLocale)
+    // FIXME keep hash state
     router.push(router.pathname, router.pathname, { locale: newLocale })
   }
 
