@@ -14,7 +14,7 @@ const Footer = () => {
           width='32'
           height='32'
         />
-        ©<span className='mr-1'>2023</span>
+        ©<span className='mr-1'>2023-2024</span>
         <a
           href='https://ivlev.blog'
           className='hover:underline'

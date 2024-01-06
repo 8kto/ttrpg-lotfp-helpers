@@ -27,6 +27,7 @@ const LocaleSwitcher = () => {
     window.location.href = newUrl
   }
 
+  // FIXME selected option is wrong
   return (
     <select
       value={locale}
