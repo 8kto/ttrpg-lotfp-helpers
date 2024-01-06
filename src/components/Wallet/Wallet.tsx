@@ -31,7 +31,7 @@ const Wallet = () => {
         <button
           onClick={resetCurrencies}
           title={t`Reset coins`}
-          className='cursor-pointer flex-col items-center justify-center rounded p-2 text-xs text-gray-400 hover:bg-gray-100 hover:text-gray-900 lg:p-1'
+          className='cursor-pointer flex-col items-center justify-center rounded p-2 text-xs text-gray-300 hover:bg-gray-100 hover:text-gray-900 lg:p-1'
         >
           <RemoveCoinsIcon className='me-auto h-5 w-5' />
         </button>

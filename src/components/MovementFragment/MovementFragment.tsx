@@ -40,7 +40,7 @@ const MovementFragment = ({
     })
   }, [movementDict, terrain, weather])
 
-  const titleClassname = 'ph-font-cursive text-lg ph-color-secondary-bg'
+  const titleClassname = 'ph-font-cursive text-lg font-semibold text-gray-600'
 
   return (
     <>
