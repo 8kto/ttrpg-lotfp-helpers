@@ -21,14 +21,14 @@ const CategoryInventoryControls = ({
   return (
     <div className='flex items-center sm:justify-end'>
       <div className='flex space-x-1'>
-        <a
-          href='#'
+        <button
+          type='button'
           onClick={handleReset}
           title={t`Reset`}
           className='cursor-pointer flex-col items-center justify-center rounded p-1 text-xs text-gray-300 hover:bg-gray-100 hover:text-gray-900 lg:p-1'
         >
           <ResetIcon className='h-5 w-5' />
-        </a>
+        </button>
       </div>
     </div>
   )
