@@ -90,7 +90,7 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
                 type='text'
                 name='name'
                 id='add-equip-item--name'
-                className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600'
+                className='block w-full rounded border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600'
               />
               <span className='text-sm text-red-600'>
                 <ErrorMessage
@@ -114,7 +114,7 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
             </label>
             <Field
               type='number'
-              className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600'
+              className='block w-full rounded border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600'
               placeholder='0'
               name='cost'
               min={0}
@@ -189,7 +189,7 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
               name='points'
               id='add-equip-item--points'
               as='select'
-              className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-primary-500 focus:ring-primary-500'
+              className='block w-full rounded border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-primary-500 focus:ring-primary-500'
             >
               {EncumbrancePointsLabelsDict.map(([key, title]) => (
                 <option key={key} value={key}>
@@ -211,7 +211,7 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
               name='category'
               id='add-equip-item--category'
               as='select'
-              className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-primary-500 focus:ring-primary-500'
+              className='block w-full rounded border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-primary-500 focus:ring-primary-500'
             >
               {Object.entries(EquipLabelsDict).map(([key, title]) => (
                 <option key={key} value={key}>
@@ -233,7 +233,7 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
               name='details'
               id='add-equip-item--details'
               as='textarea'
-              className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500'
+              className='block w-full rounded border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500'
             />
           </div>
 

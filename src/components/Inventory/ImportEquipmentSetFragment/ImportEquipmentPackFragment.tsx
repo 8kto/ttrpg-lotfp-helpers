@@ -129,7 +129,7 @@ const ImportEquipmentPackFragment = ({ onClose }: { onClose: () => void }) => {
                   name='pack'
                   id='add-equip-item--pack'
                   as='select'
-                  className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-primary-500 focus:ring-primary-500'
+                  className='block w-full rounded border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-primary-500 focus:ring-primary-500'
                   onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
                     const packName = event.target.value as EquipmentPackName
                     void formikHelpers.setFieldValue('pack', packName)

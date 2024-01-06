@@ -78,7 +78,7 @@ const AddCoinsFragment = ({ onClose }: { onClose: () => void }) => {
             </label>
             <Field
               type='number'
-              className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600'
+              className='block w-full rounded border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600'
               placeholder='0'
               name='gold'
               min={0}
@@ -94,7 +94,7 @@ const AddCoinsFragment = ({ onClose }: { onClose: () => void }) => {
             </label>
             <Field
               type='number'
-              className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600'
+              className='block w-full rounded border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600'
               placeholder='0'
               name='silver'
               min={0}
@@ -110,7 +110,7 @@ const AddCoinsFragment = ({ onClose }: { onClose: () => void }) => {
             </label>
             <Field
               type='number'
-              className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600'
+              className='block w-full rounded border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-600 focus:ring-primary-600'
               placeholder='0'
               name='copper'
               min={0}

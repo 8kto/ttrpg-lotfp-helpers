@@ -73,7 +73,7 @@ const MovementFragment = ({
         id='terrain-adjustments'
         onChange={handleTerrainChange}
         value={terrain}
-        className='mb-1 block w-full rounded-lg border border-gray-300 bg-gray-50 p-1 text-gray-900 focus:border-primary-500 focus:ring-primary-500'
+        className='mb-1 block w-full rounded border border-gray-300 bg-gray-50 p-1 text-gray-900 focus:border-primary-500 focus:ring-primary-500'
       >
         {getMovementAdjustments(TerrainAdjustment).map(([key, title]) => {
           return (
@@ -88,7 +88,7 @@ const MovementFragment = ({
         id='weather-adjustments'
         onChange={handleWeatherChange}
         value={weather}
-        className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-1 text-gray-900 focus:border-primary-500 focus:ring-primary-500'
+        className='block w-full rounded border border-gray-300 bg-gray-50 p-1 text-gray-900 focus:border-primary-500 focus:ring-primary-500'
       >
         {getMovementAdjustments(WeatherAdjustment).map(([key, title]) => (
           <option key={key} value={key} defaultChecked={key === weather}>
