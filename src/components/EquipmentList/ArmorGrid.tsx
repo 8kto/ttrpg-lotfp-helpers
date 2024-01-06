@@ -20,24 +20,18 @@ const columns: ReadonlyArray<DataGridColumn<ArmorItem>> = [
     className: 'w-1/2 sm:w-1/3',
     key: 'name',
     render: renderNameGridCol,
-    get title() {
-      return t`Name`
-    },
+    title: t`Name`,
   },
   {
     className: 'w-1/6',
     key: 'armorClass',
-    get title() {
-      return t`AC`
-    },
+    title: t`AC`,
   },
   {
     className: 'hidden sm:table-cell sm:w-1/6',
     key: 'points',
     render: renderWeightGridCol,
-    get title() {
-      return t`Weight`
-    },
+    title: t`Weight`,
   },
 ]
 
@@ -45,17 +39,13 @@ const cityCostColumn: DataGridColumn<ArmorItem> = {
   className: 'w-1/6',
   key: 'cityCostCp',
   render: renderCostGridCol,
-  get title() {
-    return t`Cost, sp`
-  },
+  title: t`Cost, sp`,
 }
 const ruralCostColumn: DataGridColumn<ArmorItem> = {
   className: 'w-1/6',
   key: 'ruralCostCp',
   render: renderCostGridCol,
-  get title() {
-    return t`Cost, sp`
-  },
+  title: t`Cost, sp`,
 }
 
 const ArmorGrid = () => {
