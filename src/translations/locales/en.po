@@ -542,6 +542,9 @@ msgstr "Loading..."
 msgid "Provided price is minimal"
 msgstr "Provided price is minimal"
 
+msgid "{miPerDay, plural, =0 {miles} one {mile} two {miles} few {miles} many {miles} other {miles}}"
+msgstr "{miPerDay, plural, =0 {miles} one {mile} two {miles} few {miles} many {miles} other {miles}}"
+
 msgid "Inventory"
 msgstr "Inventory"
 
@@ -692,9 +695,6 @@ msgstr "Adventurer"
 
 msgid "Crossbow bolt (1)"
 msgstr "Crossbow bolt (1)"
-
-msgid "miles"
-msgstr "miles"
 
 msgid "Import"
 msgstr "Import"

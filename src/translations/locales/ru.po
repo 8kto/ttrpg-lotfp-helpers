@@ -542,6 +542,9 @@ msgstr "Загрузка..."
 msgid "Provided price is minimal"
 msgstr "Указанная цена минимальная"
 
+msgid "{miPerDay, plural, =0 {miles} one {mile} two {miles} few {miles} many {miles} other {miles}}"
+msgstr "{miPerDay, plural, =0 {миль} one {миля} two {мили} few {мили} many {миль} other {миль}}"
+
 msgid "Inventory"
 msgstr "Инвентарь"
 
@@ -692,9 +695,6 @@ msgstr "Авантюрист"
 
 msgid "Crossbow bolt (1)"
 msgstr "Арбалетный болт (1)"
-
-msgid "miles"
-msgstr "мили"
 
 msgid "Import"
 msgstr "Импортировать"

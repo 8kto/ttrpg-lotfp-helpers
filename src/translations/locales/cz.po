@@ -542,6 +542,9 @@ msgstr "Načítání..."
 msgid "Provided price is minimal"
 msgstr "Uvedená cena je minimální"
 
+msgid "{miPerDay, plural, =0 {miles} one {mile} two {miles} few {miles} many {miles} other {miles}}"
+msgstr ""
+
 msgid "Inventory"
 msgstr "Inventář"
 
@@ -692,9 +695,6 @@ msgstr "Dobrodruh"
 
 msgid "Crossbow bolt (1)"
 msgstr "Kušový šíp (1)"
-
-msgid "miles"
-msgstr "míle"
 
 msgid "Import"
 msgstr "Importovat"
