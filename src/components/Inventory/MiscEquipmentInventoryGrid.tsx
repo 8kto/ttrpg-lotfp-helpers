@@ -40,5 +40,3 @@ const MiscEquipmentInventoryGrid = () => {
 }
 
 export default MiscEquipmentInventoryGrid
-
-// TODO hide weight for all inventory grids or put under the item title

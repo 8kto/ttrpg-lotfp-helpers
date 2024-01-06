@@ -30,7 +30,6 @@ const EncumbranceFragment = ({
     )
   }
 
-  // TODO plurals for feet
   // TODO modal with FAQ about encumbrance
   return (
     <div className='flex flex-col'>
