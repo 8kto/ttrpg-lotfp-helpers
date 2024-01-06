@@ -28,6 +28,9 @@ msgstr "Одежда, простая"
 msgid "Weapon, Medium"
 msgstr "Среднее оружие"
 
+msgid "Middle, -2 AB"
+msgstr "Средняя, -2 AB"
+
 msgid "This can be used to attack from the second rank, and can be used to receive a charge."
 msgstr "Можно использовать для атаки из второго ряда, а также для встречи рывка (charge)."
 
@@ -51,6 +54,9 @@ msgstr "Базовый набор"
 
 msgid "Rations, Iron/Day"
 msgstr "Пайки, железные/День"
+
+msgid "Long, -4 AB"
+msgstr "Дальняя, -4 AB"
 
 msgid "Nails"
 msgstr "Гвозди"
@@ -345,6 +351,9 @@ msgstr "Требует неожиданной атаки или успешног
 msgid "Chest"
 msgstr "Сундук"
 
+msgid "P*"
+msgstr "P*"
+
 msgid "Pseudo"
 msgstr "Псевдо"
 
@@ -393,9 +402,6 @@ msgstr "Нет"
 
 msgid "title.encumbrancePoints"
 msgstr "Encumbrance Points"
-
-msgid "Chain Barding"
-msgstr "Кольчужный бард"
 
 msgid "Armor Class"
 msgstr "Класс Брони"
@@ -451,6 +457,10 @@ msgid "Short"
 msgstr "Ближняя"
 
 #. js-lingui-explicit-id
+msgid "Range, feet"
+msgstr "Дальность, футы"
+
+#. js-lingui-explicit-id
 msgid "Regular"
 msgstr "Обычный"
 
@@ -494,9 +504,6 @@ msgstr "Детали"
 #. js-lingui-explicit-id
 msgid "Unencumbered"
 msgstr "Ненагружен"
-
-msgid "Leather Barding"
-msgstr "Кожаный бард"
 
 msgid "Pick, Miner’s"
 msgstr "Шахтёрская кирка"
@@ -873,6 +880,3 @@ msgstr "Это двуручное оружие может быть исполь�
 
 msgid "Instrument"
 msgstr "Инструмент"
-
-msgid "Plate Barding"
-msgstr "Латный бард"
