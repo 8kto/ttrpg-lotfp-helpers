@@ -44,6 +44,7 @@ export const ArmorItems = (): ReadonlyArray<ArmorItem> => [
     type: ArmorType.Shield,
   },
   // NB: These bardings derive their points from the Mounts section (PCB p. 39)
+  /*
   {
     armorClass: 14,
     categoryKey: 'armor',
@@ -71,4 +72,6 @@ export const ArmorItems = (): ReadonlyArray<ArmorItem> => [
     ruralCostCp: null,
     type: ArmorType.Barding,
   },
+
+   */
 ]
