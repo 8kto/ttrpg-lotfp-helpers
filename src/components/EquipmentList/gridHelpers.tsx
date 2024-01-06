@@ -53,3 +53,21 @@ export const renderCostGridCol: RenderFunction = (item, _, state) => {
     value: valueCp,
   }).value
 }
+
+export const renderNameInventoryGridCol: RenderFunction = (item, i18n) => {
+  const weightLabel =
+    item.points === EncumbranceUnit.None
+      ? null
+      : i18n._(EncumbranceUnit[item.points])
+
+  return (
+    <>
+      <ItemDetails item={item} compact />
+      {!!weightLabel && (
+        <p title={i18n._('Weight')} className='block text-sm text-gray-500'>
+          {weightLabel}
+        </p>
+      )}
+    </>
+  )
+}

@@ -1,8 +1,7 @@
 import { t } from '@lingui/macro'
 import React from 'react'
 
-import { renderNameGridCol } from '@/components/EquipmentList/gridHelpers'
-import { renderWeightInventoryCol } from '@/components/Inventory/helpers'
+import { renderNameInventoryGridCol } from '@/components/EquipmentList/gridHelpers'
 import InventoryGrid from '@/components/Inventory/InventoryGrid'
 import type { InventoryColumn } from '@/components/Inventory/types'
 import type { ArmorItem } from '@/domain/armor'
@@ -17,7 +16,7 @@ const inventoryTableColumns: ReadonlyArray<
   {
     className: 'w-1/2 sm:w-1/3',
     key: 'name',
-    render: renderNameGridCol,
+    render: renderNameInventoryGridCol,
     get title() {
       return t`Name`
     },
@@ -27,14 +26,6 @@ const inventoryTableColumns: ReadonlyArray<
     key: 'armorClass',
     get title() {
       return t`AC`
-    },
-  },
-  {
-    className: 'hidden sm:table-cell sm:w-1/6 text-sm',
-    key: 'points',
-    render: renderWeightInventoryCol,
-    get title() {
-      return t`Weight`
     },
   },
 ]
