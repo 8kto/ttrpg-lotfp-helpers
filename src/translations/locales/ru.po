@@ -334,7 +334,7 @@ msgid "Lightly"
 msgstr "Легко нагружен"
 
 msgid "Heavy crossbows can only be fired once in 3 rounds and ignore 4 AC points"
-msgstr "Из тяжелых арбалетов можно стрелять только один раз за 3 раунда и игнорировать 4 AC."
+msgstr "Тяжёлый арбалет стреляет только один раз за 3 раунда и игнорирует 4 AC."
 
 msgid "config.misc.caltrop.details"
 msgstr "Ежи (caltrop) — это металлические шипы, которые выглядят как распорки, у которых один острый конец всегда направлен вверх."
@@ -660,7 +660,7 @@ msgid "Copper pieces"
 msgstr "Медные монеты"
 
 msgid "Light crossbows can only be fired every once in 2 rounds and ignore 2 AC points"
-msgstr "Легкие арбалеты могут стрелять только раз в 2 раунда и игнорируют 2 пункта AC"
+msgstr "Лёгкий арбалет стреляет раз в 2 раунда и игнорирует 2 пункта AC"
 
 msgid "Road"
 msgstr "Дорога"
