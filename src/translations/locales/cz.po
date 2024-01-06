@@ -29,7 +29,7 @@ msgid "Weapon, Medium"
 msgstr "Zbraň, střední"
 
 msgid "Middle, -2 AB"
-msgstr ""
+msgstr "Střední, -2 AB"
 
 msgid "This can be used to attack from the second rank, and can be used to receive a charge."
 msgstr "Toto lze použít k útoku ze druhé řady a lze jej použít k přijetí náboje."
@@ -56,7 +56,7 @@ msgid "Rations, Iron/Day"
 msgstr "Porce, železo/den"
 
 msgid "Long, -4 AB"
-msgstr ""
+msgstr "Dlouhá, -4 AB"
 
 msgid "Nails"
 msgstr "Hřebíky"
@@ -352,7 +352,7 @@ msgid "Chest"
 msgstr "Truhla"
 
 msgid "P*"
-msgstr ""
+msgstr "P*"
 
 msgid "Pseudo"
 msgstr "Pseudo"
@@ -458,7 +458,7 @@ msgstr "Krátký"
 
 #. js-lingui-explicit-id
 msgid "Range, feet"
-msgstr ""
+msgstr "Dosah, stopy"
 
 #. js-lingui-explicit-id
 msgid "Regular"
@@ -766,7 +766,7 @@ msgid "Pole, 10'"
 msgstr "Tyč, 10 stop"
 
 msgid "Lance"
-msgstr "Kopí"
+msgstr "Dlouhé kopí"
 
 msgid "No encumbrance if empty"
 msgstr "Žádné zatížení, pokud je prázdný"
