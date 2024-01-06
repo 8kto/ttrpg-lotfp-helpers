@@ -122,3 +122,21 @@ details.ph-details-bullet[open] .ph-custom-indicator {
   display: flex;
   flex-direction: column;
 }
+
+.ph-currency-unit--gp {
+  /* .text-amber-600 */
+  --tw-text-opacity: 1;
+  color: rgb(217 119 6 / var(--tw-text-opacity));
+}
+
+.ph-currency-unit--sp {
+  /* .text-slate-600 */
+  --tw-text-opacity: 1;
+  color: rgb(71 85 105 / var(--tw-text-opacity));
+}
+
+.ph-currency-unit--cp {
+  /* .text-red-800 */
+  --tw-text-opacity: 1;
+  color: rgb(153 27 27 / var(--tw-text-opacity));
+}

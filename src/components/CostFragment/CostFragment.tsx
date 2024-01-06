@@ -27,12 +27,13 @@ const CostFragment = ({
   const lastIndex = currencies.length - 1
 
   return (
-    <span className='cursor-pointer text-lg' onClick={onClick}>
-      {isEmpty && '0sp'}
+    <span className='text-lg' onClick={onClick}>
+      {isEmpty && <span className='ph-currency-unit--sp'>0 sp</span>}
       {currencies.map(([number, unit], index) => {
         return (
           <span key={unit} className='mr-1'>
-            <strong>{roundTo(number, 1)}</strong> {unit}
+            <strong>{roundTo(number, 1)}</strong>{' '}
+            <span className={`ph-currency-unit--${unit}`}>{unit}</span>
             {index !== lastIndex ? ',' : null}
           </span>
         )
