@@ -2,9 +2,12 @@ import { Trans } from '@lingui/macro'
 
 import type { DataGridColumn } from '@/components/DataGrid/types'
 import ItemDetails from '@/components/Inventory/ItemDetails/ItemDetails'
+import RangeFragment from '@/components/RangeFragment'
 import { CurrencyType } from '@/domain/currency'
 import { EncumbranceUnit } from '@/domain/encumbrance'
 import type { EquipmentItem } from '@/domain/equipment'
+import type { InventoryItem } from '@/domain/inventory'
+import type { MissileWeaponItem } from '@/domain/weapon'
 import CurrencyConverter from '@/shared/services/CurrencyConverter'
 
 type RenderFunction = DataGridColumn<EquipmentItem>['render']
@@ -60,12 +63,22 @@ export const renderNameInventoryGridCol: RenderFunction = (item, i18n) => {
       ? null
       : i18n._(EncumbranceUnit[item.points])
 
+  const range = (item as InventoryItem<MissileWeaponItem>).range
+
   return (
     <>
       <ItemDetails item={item} compact />
       {!!weightLabel && (
         <p title={i18n._('Weight')} className='block text-sm text-gray-500'>
           {weightLabel}
+        </p>
+      )}
+      {!!range && (
+        <p
+          title={i18n._('Range, feet')}
+          className='block text-sm text-gray-500'
+        >
+          <RangeFragment range={range} compact />
         </p>
       )}
     </>
