@@ -25,7 +25,7 @@ const InventoryList = () => {
   const { state: equipmentState } = useInventoryState()
   const { armor, meleeWeapons, missileWeapons, miscEquipment } = equipmentState
 
-  const categoryTitleClassname = 'my-4 text-xl text-amber-700 mr-1'
+  const categoryTitleClassname = 'my-4 text-xl ph-color-accent mr-1'
 
   const hasArmor = !!armor.length
   const hasMeleeWeapons = !!meleeWeapons.length

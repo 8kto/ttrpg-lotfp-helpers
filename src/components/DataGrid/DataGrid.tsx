@@ -65,7 +65,7 @@ const DataGrid = <T extends EquipmentItem>({
     return sortConfig.direction === 'asc' ? '↑' : '↓'
   }
 
-  const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left ph-color-accent uppercase cursor-pointer`
+  const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left uppercase cursor-pointer`
 
   return (
     <>
@@ -97,7 +97,10 @@ const DataGrid = <T extends EquipmentItem>({
                   className={classnames(
                     headerCellClassnames,
                     column.className,
-                    { 'font-bold': sortConfig.key === column.key },
+                    {
+                      'ph-color-accent': sortConfig.key === column.key,
+                      'ph-color-muted': sortConfig.key !== column.key,
+                    },
                   )}
                   onClick={() => handleSortClick(column.key)}
                 >
