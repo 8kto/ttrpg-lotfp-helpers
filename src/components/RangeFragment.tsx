@@ -29,16 +29,11 @@ const RangeFragment = ({
         </li>
         <li>
           <Trans>Medium</Trans>: {range.medium} <Trans>ft</Trans>{' '}
-          <span className='ph-color-muted text-sm'>
-            (<Trans>-2 AB</Trans>)
-          </span>
+          <span className='ph-color-muted text-sm'>(-2 AB)</span>
         </li>
         <li>
           <Trans>Long</Trans>: {range.long} <Trans>ft</Trans>
-          <span className='ph-color-muted text-sm'>
-            {' '}
-            (<Trans>-4 AB</Trans>)
-          </span>
+          <span className='ph-color-muted text-sm'> (-4 AB)</span>
         </li>
       </ul>
     )
