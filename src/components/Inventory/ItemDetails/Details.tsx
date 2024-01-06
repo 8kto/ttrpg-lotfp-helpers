@@ -36,10 +36,10 @@ export const Summary = <T extends EquipmentItem>({
 }
 
 export const Details = <T extends EquipmentItem>({ item }: { item: T }) => {
-  const paragraphClassname = 'mb-2'
+  const paragraphClassname = ''
 
   return (
-    <div className='pt-4 text-gray-600'>
+    <div className='text-gray-600 space-y-3'>
       {isArmorItem(item) ? (
         <p className={paragraphClassname} data-testid='details--ac'>
           <Trans>Armor Class</Trans>: {item.armorClass}

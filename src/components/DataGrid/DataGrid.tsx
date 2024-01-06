@@ -87,7 +87,7 @@ const DataGrid = <T extends EquipmentItem>({
           </button>
         </div>
       </div>
-      <div className='overflow-x-auto'>
+      <div className=''>
         <table className='min-w-full table-fixed'>
           <thead className='bg-gray-100'>
             <tr>

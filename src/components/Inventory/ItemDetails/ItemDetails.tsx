@@ -4,6 +4,7 @@ import { Details, Summary } from '@/components/Inventory/ItemDetails/Details'
 import { isInventoryItem } from '@/components/Inventory/ItemDetails/helpers'
 import ItemDetailsLine from '@/components/Inventory/ItemDetails/ItemDetailsLine'
 import QtyFragment from '@/components/Inventory/ItemDetails/QtyFragment'
+import Tooltip from '@/components/Tooltip'
 import type { EquipmentItem } from '@/domain/equipment'
 
 const ItemDetails = <T extends EquipmentItem>({
@@ -16,6 +17,12 @@ const ItemDetails = <T extends EquipmentItem>({
   showDetailsBlock?: boolean
 }) => {
   const shouldShowDetails = showDetailsBlock || !!item.details
+
+  return (
+    <Tooltip title={item.name}>
+      <Details item={item} />
+    </Tooltip>
+  )
 
   if (shouldShowDetails) {
     return (
