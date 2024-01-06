@@ -1,4 +1,4 @@
-import { Trans } from '@lingui/macro'
+import { Plural, Trans } from '@lingui/macro'
 import React, { useContext, useMemo } from 'react'
 
 import { getMovementAdjustments } from '@/components/MovementFragment/helpers'
@@ -41,6 +41,7 @@ const MovementFragment = ({
   }, [movementDict, terrain, weather])
 
   const titleClassname = 'ph-font-cursive text-lg font-semibold text-gray-600'
+  const miPerDay = roundTo(movement, 1)
 
   return (
     <>
@@ -64,7 +65,18 @@ const MovementFragment = ({
         <Trans>Wilderness</Trans>
       </h5>
       <p className='mb-2'>
-        <Trans>Per day</Trans>: {roundTo(movement, 1)} <Trans>miles</Trans>
+        <Trans>Per day</Trans>: {miPerDay}{' '}
+        <Trans>
+          <Plural
+            value={miPerDay}
+            _0='miles'
+            one='mile'
+            two='miles'
+            few='miles'
+            many='miles'
+            other='miles'
+          />
+        </Trans>
         <br />
         <Trans>on foot: + CON mod</Trans>
       </p>
