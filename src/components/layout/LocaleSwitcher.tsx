@@ -18,7 +18,7 @@ if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') {
 const LocaleSwitcher = () => {
   const router = useRouter()
   const { i18n } = useLingui()
-  const [locale] = router.locale!.split('-')[0] as LOCALE
+  const locale = router.locale!.split('-')[0] as LOCALE
 
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const newLocale = event.target.value as LOCALE
@@ -27,7 +27,6 @@ const LocaleSwitcher = () => {
     window.location.href = newUrl
   }
 
-  // FIXME selected option is wrong
   return (
     <select
       value={locale}
