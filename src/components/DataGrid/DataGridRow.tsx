@@ -37,6 +37,7 @@ const DataGridRow = <T extends EquipmentItem>({
           ? () => setIsExpanded(!isExpanded)
           : undefined
 
+        // FIXME mobile devices have some cells hidden
         return (
           <td
             key={column.key as string}
