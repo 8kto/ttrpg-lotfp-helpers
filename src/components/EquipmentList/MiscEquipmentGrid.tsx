@@ -6,7 +6,6 @@ import type { DataGridColumn } from '@/components/DataGrid/types'
 import {
   renderCostGridCol,
   renderDetailsBody,
-  renderDetailsTitle,
   renderWeightGridCol,
 } from '@/components/EquipmentList/gridHelpers'
 import Equipment from '@/config/Equipment'
@@ -19,8 +18,7 @@ const columns: ReadonlyArray<DataGridColumn<EquipmentItem>> = [
     className: 'w-1/3',
     key: 'name',
     shouldRenderDetails: (item) => !!item.details,
-    renderDetailsTitle: renderDetailsTitle,
-    renderDetailsBody: renderDetailsBody,
+    renderDetails: renderDetailsBody,
     get title() {
       return t`Name`
     },

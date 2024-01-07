@@ -7,7 +7,6 @@ import type { DataGridColumn, SortConfig } from '@/components/DataGrid/types'
 import {
   renderCostGridCol,
   renderDetailsBody,
-  renderDetailsTitle,
   renderWeightGridCol,
 } from '@/components/EquipmentList/gridHelpers'
 import Equipment from '@/config/Equipment'
@@ -21,8 +20,7 @@ const columns: ReadonlyArray<DataGridColumn<ArmorItem>> = [
     className: 'w-1/2 sm:w-1/3',
     key: 'name',
     shouldRenderDetails: (item) => !!item.details,
-    renderDetailsTitle: renderDetailsTitle,
-    renderDetailsBody: renderDetailsBody,
+    renderDetails: renderDetailsBody,
     get title() {
       return t`Name`
     },
