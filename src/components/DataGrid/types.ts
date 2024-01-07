@@ -15,7 +15,11 @@ export interface DataGridColumn<T extends EquipmentItem> {
     i18n: I18n,
     state: State<InventoryStateType, unknown>,
   ) => React.ReactNode
-  renderDetails?: (item: T, i18n: I18n) => React.ReactNode
+  renderDetails?: (
+    item: T,
+    i18n: I18n,
+    state: State<InventoryStateType, unknown>,
+  ) => React.ReactNode
 }
 
 export type SortOrder = 'asc' | 'desc'

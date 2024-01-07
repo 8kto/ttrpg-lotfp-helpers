@@ -61,11 +61,11 @@ const DataGrid = <T extends EquipmentItem>({
 
   return (
     <>
-      <div className='my-4 flex w-full items-center md:w-1/2'>
+      <div className='my-4 flex w-full items-center xl:w-1/2'>
         <div className='relative w-full'>
           <input
             type='text'
-            className='block w-full border border-gray-200 bg-gray-50 p-2.5 pl-4 text-base text-gray-900'
+            className='block w-full border border-gray-200 bg-gray-50 p-2.5 pl-4 text-sm sm:text-base text-gray-900'
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
             placeholder={filterPlaceholder}
@@ -80,7 +80,7 @@ const DataGrid = <T extends EquipmentItem>({
         </div>
       </div>
       <div className='overflow-x-auto'>
-        <table className='min-w-full table-fixed'>
+        <table className='min-w-full table-fixed text-sm sm:text-base'>
           <thead className='bg-gray-100'>
             <tr>
               {columns.map((column) => (

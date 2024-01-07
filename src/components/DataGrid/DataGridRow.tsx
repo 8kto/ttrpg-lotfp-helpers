@@ -6,7 +6,54 @@ import React, { useState } from 'react'
 
 import type { DataGridColumn } from '@/components/DataGrid/types'
 import type { EquipmentItem } from '@/domain/equipment'
+import useTailwindBreakpoint from '@/shared/hooks/useTailwindBreakpoint'
 import { useInventoryState } from '@/state/InventoryState'
+
+const DataGridCell = <T extends EquipmentItem>({
+  column,
+  item,
+  colSpan,
+  onClick,
+  expanded: isExpanded,
+}: {
+  colSpan: number
+  column: DataGridColumn<T>
+  item: T
+  expanded: boolean
+  onClick: () => void
+}) => {
+  const { i18n } = useLingui()
+  const { state } = useInventoryState()
+
+  const shouldRenderDetails = !!column?.shouldRenderDetails?.(item)
+  const title = column.render
+    ? column.render(item, i18n, state)
+    : (item[column.key] as string)
+
+  return (
+    <td
+      key={column.key as string}
+      colSpan={isExpanded && shouldRenderDetails ? colSpan : 1}
+      className={classnames('p-4 font-normal text-gray-900', column.className)}
+      style={{
+        display: isExpanded && !shouldRenderDetails ? 'none' : '',
+      }}
+      onClick={onClick}
+    >
+      <span
+        className={classnames({
+          'ph-dashed-text cursor-pointer': shouldRenderDetails,
+        })}
+      >
+        {title}
+      </span>
+
+      {isExpanded && shouldRenderDetails
+        ? column?.renderDetails?.(item, i18n, state)
+        : null}
+    </td>
+  )
+}
 
 const DataGridRow = <T extends EquipmentItem>({
   columns,
@@ -19,51 +66,26 @@ const DataGridRow = <T extends EquipmentItem>({
   index: number
   onAddClick: (item: T) => void
 }) => {
-  const { i18n } = useLingui()
-  const { state } = useInventoryState()
   const [isExpanded, setIsExpanded] = useState(false)
 
-  const cellClassnames = 'p-4 font-normal text-gray-900'
+  const breakpoint = useTailwindBreakpoint()
+  const isSmallViewport = 'xs' === breakpoint
+  const colSpan = isSmallViewport ? columns.length - 1 : columns.length
 
   return (
     <tr key={item.name} className={classnames({ 'bg-gray-50': index % 2 })}>
-      {columns.map((column) => {
-        const shouldRenderDetails = !!column?.shouldRenderDetails?.(item)
-        const title = column.render
-          ? column.render(item, i18n, state)
-          : (item[column.key] as string)
-
-        const toggleExpand = shouldRenderDetails
-          ? () => setIsExpanded(!isExpanded)
-          : undefined
-
-        // FIXME mobile devices have some cells hidden
-        return (
-          <td
-            key={column.key as string}
-            colSpan={isExpanded && shouldRenderDetails ? columns.length : 1}
-            className={classnames(cellClassnames, column.className)}
-            style={{
-              display: isExpanded && !shouldRenderDetails ? 'none' : '',
-            }}
-            onClick={toggleExpand}
-          >
-            <span
-              className={classnames({
-                'ph-dashed-text cursor-pointer': shouldRenderDetails,
-              })}
-            >
-              {title}
-            </span>
-
-            {isExpanded && shouldRenderDetails
-              ? column?.renderDetails?.(item, i18n)
-              : null}
-          </td>
-        )
-      })}
+      {columns.map((column) => (
+        <DataGridCell<T>
+          item={item}
+          colSpan={colSpan}
+          onClick={() => setIsExpanded((v) => !v)}
+          column={column}
+          expanded={isExpanded}
+          key={item.name}
+        />
+      ))}
       {/* Add action btn */}
-      <td className={cellClassnames}>
+      <td className={'p-4 font-normal text-gray-900'}>
         <button
           type='button'
           className='ph-btn-secondary--off inline-flex items-center rounded bg-transparent px-4 py-2 text-sm text-gray-400 hover:text-gray-900'
