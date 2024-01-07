@@ -12,46 +12,13 @@ import type { InventoryItem } from '@/domain/inventory'
 import type { MissileWeaponItem } from '@/domain/weapon'
 import CurrencyConverter from '@/shared/services/CurrencyConverter'
 
-/**
- * @deprecated
- */
 type RenderFunction = DataGridColumn<EquipmentItem>['render']
-type RenderDetailsTitleFunction =
-  DataGridColumn<EquipmentItem>['renderDetailsTitle']
-type RenderDetailsBodyFunction =
-  DataGridColumn<EquipmentItem>['renderDetailsBody']
+type RenderDetailsFunction = DataGridColumn<EquipmentItem>['renderDetails']
 
 export const renderWeightGridCol: RenderFunction = (item, i18n) =>
   item.points === EncumbranceUnit.None
     ? '-'
     : i18n._(EncumbranceUnit[item.points])
-
-/**
- * @deprecated To be removed
- */
-export const renderNameGridCol: RenderFunction = (item, i18n) => {
-  const weightLabel =
-    item.points === EncumbranceUnit.None
-      ? null
-      : i18n._(EncumbranceUnit[item.points])
-
-  return (
-    <>
-      <ItemDetails item={item} compact />
-      {!!weightLabel && (
-        <p
-          title={i18n._('Weight')}
-          className='block text-sm text-gray-500 sm:hidden'
-        >
-          <span className='text-gray-400'>
-            <Trans>Weight</Trans>:{' '}
-          </span>
-          {weightLabel}
-        </p>
-      )}
-    </>
-  )
-}
 
 export const renderCostGridCol: RenderFunction = (item, _, state) => {
   const { isCostRural } = state
@@ -69,6 +36,7 @@ export const renderCostGridCol: RenderFunction = (item, _, state) => {
   }).value
 }
 
+// TODO refactor Inventory grid rendering funcs
 export const renderNameInventoryGridCol: RenderFunction = (item, i18n) => {
   const weightLabel =
     item.points === EncumbranceUnit.None
@@ -97,13 +65,7 @@ export const renderNameInventoryGridCol: RenderFunction = (item, i18n) => {
   )
 }
 
-export const renderDetailsTitle: RenderDetailsTitleFunction = (item) => (
-  <div className='flex cursor-pointer items-center'>
-    <span className='ph-dashed-text'>{item.name}</span>
-  </div>
-)
-
-export const renderDetailsBody: RenderDetailsBodyFunction = (item, i18n) => {
+export const renderDetailsBody: RenderDetailsFunction = (item, i18n) => {
   const weightLabel =
     item.points === EncumbranceUnit.None
       ? null
