@@ -115,17 +115,17 @@ details.ph-details-bullet[open] .ph-custom-indicator {
   background-position-x: right;
 }
 
-.ph-currency-unit--gp {
+.ph-enable--currency-colors .ph-currency-unit--gp {
   /* .text-amber-600 */
   color: rgb(217 119 6);
 }
 
-.ph-currency-unit--sp {
+.ph-enable--currency-colors .ph-currency-unit--sp {
   /* .text-slate-600 */
   color: rgb(71 85 105);
 }
 
-.ph-currency-unit--cp {
+.ph-enable--currency-colors .ph-currency-unit--cp {
   /* .text-red-800 */
   color: rgb(153 27 27);
 }
