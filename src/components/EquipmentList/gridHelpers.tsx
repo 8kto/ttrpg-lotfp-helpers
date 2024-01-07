@@ -1,6 +1,8 @@
 import { Trans } from '@lingui/macro'
+import React from 'react'
 
 import type { DataGridColumn } from '@/components/DataGrid/types'
+import { Details } from '@/components/Inventory/ItemDetails/Details'
 import ItemDetails from '@/components/Inventory/ItemDetails/ItemDetails'
 import RangeFragment from '@/components/RangeFragment'
 import { CurrencyType } from '@/domain/currency'
@@ -10,13 +12,23 @@ import type { InventoryItem } from '@/domain/inventory'
 import type { MissileWeaponItem } from '@/domain/weapon'
 import CurrencyConverter from '@/shared/services/CurrencyConverter'
 
+/**
+ * @deprecated
+ */
 type RenderFunction = DataGridColumn<EquipmentItem>['render']
+type RenderDetailsTitleFunction =
+  DataGridColumn<EquipmentItem>['renderDetailsTitle']
+type RenderDetailsBodyFunction =
+  DataGridColumn<EquipmentItem>['renderDetailsBody']
 
 export const renderWeightGridCol: RenderFunction = (item, i18n) =>
   item.points === EncumbranceUnit.None
     ? '-'
     : i18n._(EncumbranceUnit[item.points])
 
+/**
+ * @deprecated To be removed
+ */
 export const renderNameGridCol: RenderFunction = (item, i18n) => {
   const weightLabel =
     item.points === EncumbranceUnit.None
@@ -79,6 +91,33 @@ export const renderNameInventoryGridCol: RenderFunction = (item, i18n) => {
           className='block text-sm text-gray-500'
         >
           <RangeFragment range={range} compact />
+        </p>
+      )}
+    </>
+  )
+}
+
+export const renderDetailsTitle: RenderDetailsTitleFunction = (item) => (
+  <div className='flex cursor-pointer items-center'>
+    <span className='ph-dashed-text'>{item.name}</span>
+  </div>
+)
+
+export const renderDetailsBody: RenderDetailsBodyFunction = (item, i18n) => {
+  const weightLabel =
+    item.points === EncumbranceUnit.None
+      ? null
+      : i18n._(EncumbranceUnit[item.points])
+
+  return (
+    <>
+      <Details item={item} />
+      {!!weightLabel && (
+        <p className='block text-sm text-gray-500'>
+          <span className='text-gray-400'>
+            <Trans>Weight</Trans>:{' '}
+          </span>
+          {weightLabel}
         </p>
       )}
     </>
