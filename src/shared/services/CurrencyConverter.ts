@@ -3,6 +3,7 @@ import { CurrencyType, Unit } from '@/domain/currency'
 
 const COPPER_PER_GOLD = 500 // 50 * 10
 const COPPER_PER_SILVER = 10
+const DEFAULT_CURRENCY = CurrencyType.Silver
 
 export default class CurrencyConverter {
   private static convertToCopper(record: CurrencyRecord): number {
@@ -57,7 +58,7 @@ export default class CurrencyConverter {
    * Convert any cost onto the default one for displaying in UI
    */
   static getDisplayCost(record: CurrencyRecord) {
-    return this.convertFromTo(record, CurrencyType.Silver)
+    return this.convertFromTo(record, DEFAULT_CURRENCY)
   }
 
   static isValidWallet(wallet: CurrencyWallet): boolean | void {
@@ -156,6 +157,13 @@ export default class CurrencyConverter {
       Copper: copper,
       Gold: gold,
       Silver: silver,
+    }
+  }
+
+  static convertCopperToDefaultCurrency(cp: number): CurrencyRecord {
+    return {
+      currency: CurrencyType.Silver,
+      value: cp / COPPER_PER_SILVER,
     }
   }
 }
