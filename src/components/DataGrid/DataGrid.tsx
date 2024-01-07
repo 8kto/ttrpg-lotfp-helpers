@@ -87,7 +87,7 @@ const DataGrid = <T extends EquipmentItem>({
           </button>
         </div>
       </div>
-      <div className=''>
+      <div className='overflow-x-auto'>
         <table className='min-w-full table-fixed'>
           <thead className='bg-gray-100'>
             <tr>
@@ -126,6 +126,7 @@ const DataGrid = <T extends EquipmentItem>({
                       : (item[column.key] as string)}
                   </td>
                 ))}
+                {/* Add action btn */}
                 <td className='p-4 font-normal text-gray-900'>
                   <button
                     className='ph-btn-secondary--off bg-transparent text-gray-400 hover:text-gray-900 inline-flex items-center rounded px-4 py-2 text-sm'
