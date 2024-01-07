@@ -1,12 +1,8 @@
-import {
-  BackspaceIcon,
-  PlusCircleIcon as PlusIcon,
-} from '@heroicons/react/24/solid'
-import { Trans } from '@lingui/macro'
-import { useLingui } from '@lingui/react'
+import { BackspaceIcon } from '@heroicons/react/24/solid'
 import classnames from 'classnames'
 import React, { useEffect, useState } from 'react'
 
+import DataGridRow from '@/components/DataGrid/DataGridRow'
 import { trivialSort } from '@/components/DataGrid/helpers'
 import type {
   DataGridProps,
@@ -14,7 +10,6 @@ import type {
   SortOrder,
 } from '@/components/DataGrid/types'
 import type { EquipmentItem } from '@/domain/equipment'
-import { useInventoryState } from '@/state/InventoryState'
 
 const DataGrid = <T extends EquipmentItem>({
   data,
@@ -26,9 +21,6 @@ const DataGrid = <T extends EquipmentItem>({
   handleSort,
   filterPlaceholder = 'Filter',
 }: DataGridProps<T>) => {
-  const { i18n } = useLingui()
-  const { state } = useInventoryState()
-
   const [sortConfig, setSortConfig] = useState<SortConfig<T>>({
     direction: initialSortState?.direction || 'asc',
     key: (initialSortState?.key || '') as keyof T,
@@ -112,33 +104,13 @@ const DataGrid = <T extends EquipmentItem>({
           </thead>
           <tbody className='bg-white'>
             {filteredData.map((item, index) => (
-              <tr key={item.name} className={index % 2 ? 'bg-gray-50' : ''}>
-                {columns.map((column) => (
-                  <td
-                    key={column.key as string}
-                    className={classnames(
-                      'p-4 font-normal text-gray-900',
-                      column.className,
-                    )}
-                  >
-                    {column.render
-                      ? column.render(item, i18n, state)
-                      : (item[column.key] as string)}
-                  </td>
-                ))}
-                {/* Add action btn */}
-                <td className='p-4 font-normal text-gray-900'>
-                  <button
-                    className='ph-btn-secondary--off bg-transparent text-gray-400 hover:text-gray-900 inline-flex items-center rounded px-4 py-2 text-sm'
-                    onClick={() => onAddClick(item)}
-                  >
-                    <PlusIcon className='h-5 w-5 md:mr-2' />
-                    <span className='hidden xl:inline'>
-                      <Trans>Add</Trans>
-                    </span>
-                  </button>
-                </td>
-              </tr>
+              <DataGridRow
+                key={item.name}
+                columns={columns}
+                onAddClick={onAddClick}
+                item={item}
+                index={index}
+              />
             ))}
           </tbody>
         </table>

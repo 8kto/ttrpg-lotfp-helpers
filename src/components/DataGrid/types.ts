@@ -9,7 +9,19 @@ export interface DataGridColumn<T extends EquipmentItem> {
   key: keyof T
   title: string
   className?: string
+  // TODO remove leftovers, cleanup args
+  shouldRenderDetails?: (item: T) => boolean
   render?: (
+    item: T,
+    i18n: I18n,
+    state: State<InventoryStateType, unknown>,
+  ) => React.ReactNode
+  renderDetailsTitle?: (
+    item: T,
+    i18n: I18n,
+    state: State<InventoryStateType, unknown>,
+  ) => React.ReactNode
+  renderDetailsBody?: (
     item: T,
     i18n: I18n,
     state: State<InventoryStateType, unknown>,
