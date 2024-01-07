@@ -23,43 +23,40 @@ const DataGridRow = <T extends EquipmentItem>({
   const { state } = useInventoryState()
   const [isExpanded, setIsExpanded] = useState(false)
 
-  const toggleExpand = () => {
-    if (item.details) {
-      setIsExpanded(!isExpanded)
-    }
-  }
-
   const cellClassnames = 'p-4 font-normal text-gray-900'
 
   return (
     <tr key={item.name} className={classnames({ 'bg-gray-50': index % 2 })}>
-      {columns.map((column, columnIndex) => {
+      {columns.map((column) => {
         const shouldRenderDetails = !!column?.shouldRenderDetails?.(item)
+        const title = column.render
+          ? column.render(item, i18n, state)
+          : (item[column.key] as string)
 
-        let title
-        if (shouldRenderDetails) {
-          title = column?.renderDetailsTitle?.(item, i18n, state)
-        } else {
-          title = column.render
-            ? column.render(item, i18n, state)
-            : (item[column.key] as string)
-        }
+        const toggleExpand = shouldRenderDetails
+          ? () => setIsExpanded(!isExpanded)
+          : undefined
 
         return (
           <td
             key={column.key as string}
-            colSpan={isExpanded && columnIndex === 0 ? columns.length : 1}
-            className={classnames(cellClassnames, column.className, {
-              hidden: isExpanded && columnIndex !== 0,
-            })}
+            colSpan={isExpanded && shouldRenderDetails ? columns.length : 1}
+            className={classnames(cellClassnames, column.className)}
             style={{
-              display: isExpanded && columnIndex !== 0 ? 'none' : '',
+              display: isExpanded && !shouldRenderDetails ? 'none' : '',
             }}
-            onClick={columnIndex === 0 ? toggleExpand : undefined}
+            onClick={toggleExpand}
           >
-            {title}
+            <span
+              className={classnames({
+                'ph-dashed-text cursor-pointer': shouldRenderDetails,
+              })}
+            >
+              {title}
+            </span>
+
             {isExpanded && shouldRenderDetails
-              ? column?.renderDetailsBody?.(item, i18n, state)
+              ? column?.renderDetails?.(item, i18n)
               : null}
           </td>
         )
