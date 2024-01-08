@@ -1,6 +1,6 @@
-import { Trans } from '@lingui/macro'
 import React from 'react'
 
+import CostFragment from '@/components/CostFragment/CostFragment'
 import type { DataGridColumn } from '@/components/DataGrid/types'
 import { Details } from '@/components/Inventory/ItemDetails/Details'
 import ItemDetails from '@/components/Inventory/ItemDetails/ItemDetails'
@@ -65,23 +65,32 @@ export const renderNameInventoryGridCol: RenderFunction = (item, i18n) => {
   )
 }
 
-export const renderDetailsBody: RenderDetailsFunction = (item, i18n) => {
+export const renderDetailsBody: RenderDetailsFunction = (item, i18n, state) => {
+  const { isCostRural } = state
   const weightLabel =
     item.points === EncumbranceUnit.None
       ? null
       : i18n._(EncumbranceUnit[item.points])
+  const cost = isCostRural.get() ? item.ruralCostCp : item.cityCostCp
+  const currencyRecord = CurrencyConverter.convertCopperToDefaultCurrency(
+    cost || 0,
+  )
 
   return (
     <>
       <Details item={item} />
-      {!!weightLabel && (
-        <p className='block text-sm text-gray-500'>
-          <span className='text-gray-400'>
-            <Trans>Weight</Trans>:{' '}
-          </span>
-          {weightLabel}
-        </p>
-      )}
+      <div className='mt-2'>
+        {!!weightLabel && (
+          <p className='text-sm ph-color-muted'>{weightLabel}</p>
+        )}
+        {!!cost && (
+          <p className='text-sm ph-color-muted'>
+            <CostFragment
+              wallet={CurrencyConverter.createWalletFrom(currencyRecord)}
+            />
+          </p>
+        )}
+      </div>
     </>
   )
 }
