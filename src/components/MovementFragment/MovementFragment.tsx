@@ -1,4 +1,4 @@
-import { Trans } from '@lingui/macro'
+import { Plural, Trans } from '@lingui/macro'
 import React, { useContext, useMemo } from 'react'
 
 import { getMovementAdjustments } from '@/components/MovementFragment/helpers'
@@ -40,7 +40,8 @@ const MovementFragment = ({
     })
   }, [movementDict, terrain, weather])
 
-  const titleClassname = 'ph-font-cursive text-lg ph-color-secondary-bg'
+  const titleClassname = 'ph-font-cursive text-lg font-semibold text-gray-600'
+  const miPerDay = roundTo(movement, 1)
 
   return (
     <>
@@ -64,7 +65,18 @@ const MovementFragment = ({
         <Trans>Wilderness</Trans>
       </h5>
       <p className='mb-2'>
-        <Trans>Per day</Trans>: {roundTo(movement, 1)} <Trans>miles</Trans>
+        <Trans>Per day</Trans>: {miPerDay}{' '}
+        <Trans>
+          <Plural
+            value={miPerDay}
+            _0='miles'
+            one='mile'
+            two='miles'
+            few='miles'
+            many='miles'
+            other='miles'
+          />
+        </Trans>
         <br />
         <Trans>on foot: + CON mod</Trans>
       </p>
@@ -73,7 +85,7 @@ const MovementFragment = ({
         id='terrain-adjustments'
         onChange={handleTerrainChange}
         value={terrain}
-        className='mb-1 block w-full rounded-lg border border-gray-300 bg-gray-50 p-1 text-gray-900 focus:border-primary-500 focus:ring-primary-500'
+        className='mb-1 block w-full rounded border border-gray-300 bg-gray-50 p-1 text-gray-900 focus:border-primary-500 focus:ring-primary-500'
       >
         {getMovementAdjustments(TerrainAdjustment).map(([key, title]) => {
           return (
@@ -88,7 +100,7 @@ const MovementFragment = ({
         id='weather-adjustments'
         onChange={handleWeatherChange}
         value={weather}
-        className='block w-full rounded-lg border border-gray-300 bg-gray-50 p-1 text-gray-900 focus:border-primary-500 focus:ring-primary-500'
+        className='block w-full rounded border border-gray-300 bg-gray-50 p-1 text-gray-900 focus:border-primary-500 focus:ring-primary-500'
       >
         {getMovementAdjustments(WeatherAdjustment).map(([key, title]) => (
           <option key={key} value={key} defaultChecked={key === weather}>

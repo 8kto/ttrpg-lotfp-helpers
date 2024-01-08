@@ -1,5 +1,4 @@
 import { t, Trans } from '@lingui/macro'
-import { useLingui } from '@lingui/react'
 import React, { useMemo } from 'react'
 
 import DamageFragment from '@/components/DamageFragment'
@@ -8,13 +7,12 @@ import type { DataGridSortFunction } from '@/components/DataGrid/helpers'
 import type { DataGridColumn } from '@/components/DataGrid/types'
 import {
   renderCostGridCol,
+  renderDetailsBody,
   renderWeightGridCol,
 } from '@/components/EquipmentList/gridHelpers'
 import { handleSortByDamage } from '@/components/EquipmentList/helpers'
-import ItemDetails from '@/components/Inventory/ItemDetails/ItemDetails'
 import RangeFragment from '@/components/RangeFragment'
 import Equipment from '@/config/Equipment'
-import { EncumbranceUnit } from '@/domain/encumbrance'
 import type { MissileWeaponItem } from '@/domain/weapon'
 import { getInventoryItem } from '@/shared/helpers/getInventoryItem'
 import { addMissileWeapon, useInventoryState } from '@/state/InventoryState'
@@ -23,30 +21,8 @@ const columns: ReadonlyArray<DataGridColumn<MissileWeaponItem>> = [
   {
     className: 'w-1/3',
     key: 'name',
-    render: (item: MissileWeaponItem, i18n) => {
-      const weightLabel =
-        item.points === EncumbranceUnit.None
-          ? null
-          : i18n._(EncumbranceUnit[item.points])
-
-      return (
-        <>
-          <ItemDetails<MissileWeaponItem>
-            item={item}
-            compact
-            showDetailsBlock={!!item.range}
-          />
-          {!!weightLabel && (
-            <p
-              title={i18n._('Weight')}
-              className='block sm:hidden text-sm text-gray-500'
-            >
-              {weightLabel}
-            </p>
-          )}
-        </>
-      )
-    },
+    shouldRenderDetails: (item) => !!item.details || !!item.range,
+    renderDetails: renderDetailsBody,
     get title() {
       return t`Name`
     },
@@ -102,7 +78,6 @@ const MissileWeaponsGrid = () => {
   const {
     state: { isCostRural },
   } = useInventoryState()
-  const i18nContext = useLingui()
 
   const columnsFilteredByCost = useMemo(() => {
     const costCol = isCostRural.get() ? ruralCostColumn : cityCostColumn
@@ -112,17 +87,11 @@ const MissileWeaponsGrid = () => {
     return [...columns.slice(0, lastIndex), costCol, columns[lastIndex]]
   }, [isCostRural])
 
-  const dataFilteredByCost = useMemo(
-    () => {
-      const data = Object.values(Equipment.MissileWeapons)
+  const dataFilteredByCost = useMemo(() => {
+    const data = Object.values(Equipment.MissileWeapons)
 
-      return isCostRural.get()
-        ? data.filter((i) => i.ruralCostCp !== null)
-        : data
-    },
-    // NB! Don't remove i18nContext dep, since it causes the grid rerender on locale change
-    [isCostRural, i18nContext],
-  )
+    return isCostRural.get() ? data.filter((i) => i.ruralCostCp !== null) : data
+  }, [isCostRural])
 
   const handleAddClick = (item: MissileWeaponItem) => {
     const clone = getInventoryItem(

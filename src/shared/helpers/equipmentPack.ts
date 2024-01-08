@@ -50,6 +50,7 @@ export const getEquipmentPackCost = (pack: EquipmentPack): CurrencyRecord => {
   )
 }
 
+// TODO allow custom items with weight set
 export const getEquipmentPackItems = (
   pack: EquipmentPack,
 ): ReadonlyArray<InventoryItem<EquipmentItem>> => {

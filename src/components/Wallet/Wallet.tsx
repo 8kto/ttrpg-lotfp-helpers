@@ -23,15 +23,17 @@ const Wallet = () => {
   return (
     <div className='px-0'>
       {/* 1st row */}
-      <div className='mt-1 flex items-center space-x-2 sm:mb-2 sm:mt-0'>
-        <CostFragment
-          wallet={wallet.get()}
-          onClick={() => setSetCoinsDrawerOpen(true)}
-        />
+      <div className='mt-1 flex items-center sm:mb-2 sm:mt-0'>
+        <div className='text-lg'>
+          <CostFragment
+            wallet={wallet.get()}
+            onClick={() => setSetCoinsDrawerOpen(true)}
+          />
+        </div>
         <button
           onClick={resetCurrencies}
           title={t`Reset coins`}
-          className='cursor-pointer flex-col items-center justify-center rounded p-2 text-xs text-gray-400 hover:bg-gray-100 hover:text-gray-900 lg:p-1'
+          className='cursor-pointer flex-col items-center justify-center rounded p-2 text-xs text-gray-300 hover:bg-gray-100 hover:text-gray-900 lg:p-1'
         >
           <RemoveCoinsIcon className='me-auto h-5 w-5' />
         </button>

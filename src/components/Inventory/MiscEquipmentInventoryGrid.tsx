@@ -1,7 +1,7 @@
 import { t } from '@lingui/macro'
 import React from 'react'
 
-import { renderNameGridCol } from '@/components/EquipmentList/gridHelpers'
+import { renderNameInventoryGridCol } from '@/components/EquipmentList/gridHelpers'
 import InventoryGrid from '@/components/Inventory/InventoryGrid'
 import type { InventoryColumn } from '@/components/Inventory/types'
 import type { EquipmentItem } from '@/domain/equipment'
@@ -16,7 +16,7 @@ const inventoryTableColumns: ReadonlyArray<
   {
     className: 'w-2/3',
     key: 'name',
-    render: renderNameGridCol,
+    render: renderNameInventoryGridCol,
     get title() {
       return t`Name`
     },
@@ -40,5 +40,3 @@ const MiscEquipmentInventoryGrid = () => {
 }
 
 export default MiscEquipmentInventoryGrid
-
-// TODO hide weight for all inventory grids or put under the item title

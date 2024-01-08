@@ -28,6 +28,9 @@ msgstr ""
 msgid "Weapon, Medium"
 msgstr ""
 
+msgid "Middle, -2 AB"
+msgstr ""
+
 msgid "This can be used to attack from the second rank, and can be used to receive a charge."
 msgstr ""
 
@@ -50,6 +53,9 @@ msgid "Basic"
 msgstr ""
 
 msgid "Rations, Iron/Day"
+msgstr ""
+
+msgid "Long, -4 AB"
 msgstr ""
 
 msgid "Nails"
@@ -345,6 +351,9 @@ msgstr ""
 msgid "Chest"
 msgstr ""
 
+msgid "P*"
+msgstr ""
+
 msgid "Pseudo"
 msgstr ""
 
@@ -392,9 +401,6 @@ msgid "None"
 msgstr ""
 
 msgid "title.encumbrancePoints"
-msgstr ""
-
-msgid "Chain Barding"
 msgstr ""
 
 msgid "Armor Class"
@@ -451,6 +457,10 @@ msgid "Short"
 msgstr ""
 
 #. js-lingui-explicit-id
+msgid "Range, feet"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Regular"
 msgstr ""
 
@@ -495,9 +505,6 @@ msgstr ""
 msgid "Unencumbered"
 msgstr ""
 
-msgid "Leather Barding"
-msgstr ""
-
 msgid "Pick, Miner’s"
 msgstr ""
 
@@ -533,6 +540,9 @@ msgid "Loading..."
 msgstr ""
 
 msgid "Provided price is minimal"
+msgstr ""
+
+msgid "{miPerDay, plural, =0 {miles} one {mile} two {miles} few {miles} many {miles} other {miles}}"
 msgstr ""
 
 msgid "Inventory"
@@ -684,9 +694,6 @@ msgid "Adventurer"
 msgstr ""
 
 msgid "Crossbow bolt (1)"
-msgstr ""
-
-msgid "miles"
 msgstr ""
 
 msgid "Import"
@@ -872,7 +879,4 @@ msgid "config.melee.polearm.details"
 msgstr ""
 
 msgid "Instrument"
-msgstr ""
-
-msgid "Plate Barding"
 msgstr ""

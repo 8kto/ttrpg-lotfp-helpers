@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 import isDevEnv from '@/shared/helpers/isDevEnv'
@@ -5,8 +6,15 @@ import isDevEnv from '@/shared/helpers/isDevEnv'
 const Footer = () => {
   return (
     <footer className='relative mx-auto w-full max-w-screen-2xl px-4 py-6 md:flex md:items-center md:justify-between md:py-10 2xl:px-8'>
-      <p className='mb-4 text-center text-gray-500 md:mb-0'>
-        © 2023{' '}
+      <p className='mb-4 flex items-center justify-center text-gray-500 md:mb-0 md:justify-start'>
+        <Image
+          src='/icons/favicon-32x32.png'
+          className='mr-1 h-8 w-8'
+          alt='Flame Princess'
+          width='32'
+          height='32'
+        />
+        ©<span className='mr-1'>2023-2024</span>
         <a
           href='https://ivlev.blog'
           className='hover:underline'
@@ -16,7 +24,7 @@ const Footer = () => {
         </a>
       </p>
       {isDevEnv() && (
-        <p className='flex items-center justify-center text-gray-500 text-center'>
+        <p className='flex items-center justify-center text-center text-gray-500'>
           Active viewport:
           <span className='mr-1'>XS</span>
           <span className='mr-1 hidden sm:block'>SM</span>

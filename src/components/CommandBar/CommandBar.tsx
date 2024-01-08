@@ -17,7 +17,7 @@ const CommandBar = () => {
   return (
     <div className='my-4 lg:my-2 flex justify-end'>
       <div className='mr-4 flex items-center'>
-        <h3 className='font-semibold text-red-900'>
+        <h3 className='font-semibold ph-color-accent'>
           <Trans>Cost</Trans>
         </h3>
       </div>

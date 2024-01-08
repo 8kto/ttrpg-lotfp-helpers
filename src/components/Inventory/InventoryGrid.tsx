@@ -21,7 +21,7 @@ function InventoryGrid<T extends InventoryItem<EquipmentItem>>({
   const { i18n } = useLingui()
   const { state } = useInventoryState()
 
-  const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left ph-color-accent uppercase`
+  const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left ph-color-muted uppercase`
   const cellClassnames = `p-4 font-normal text-gray-900 align-top`
 
   return (
@@ -36,7 +36,7 @@ function InventoryGrid<T extends InventoryItem<EquipmentItem>>({
               {column.title}
             </th>
           ))}
-          <th className='font-base w-1/6 text-center text-xs text-gray-500'></th>
+          <th className='font-base w-1/6'></th>
         </tr>
       </thead>
       <tbody className='bg-white'>

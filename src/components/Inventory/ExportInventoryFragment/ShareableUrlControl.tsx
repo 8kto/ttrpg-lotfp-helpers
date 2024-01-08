@@ -33,11 +33,11 @@ const ShareableUrlControl = ({ value }: { value: string }) => {
         value={value}
         onFocus={handleFocus}
         readOnly
-        className='flex-grow rounded-l-md border border-gray-300 p-2 focus:border-blue-500 focus:outline-none'
+        className='flex-grow rounded-l border border-gray-300 p-2 focus:border-blue-500 focus:outline-none'
       />
       <button
         onClick={handleCopy}
-        className='ph-btn-secondary flex items-center justify-center rounded-r-md px-4 font-bold'
+        className='ph-btn-secondary flex items-center justify-center rounded-r px-4 font-bold'
       >
         {isCopied ? (
           <CheckIcon className='h-5 w-5' />

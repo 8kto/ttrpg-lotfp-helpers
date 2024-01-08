@@ -28,6 +28,9 @@ msgstr "Clothing, Poor"
 msgid "Weapon, Medium"
 msgstr "Weapon, Medium"
 
+msgid "Middle, -2 AB"
+msgstr "Middle, -2 AB"
+
 msgid "This can be used to attack from the second rank, and can be used to receive a charge."
 msgstr "This can be used to attack from the second rank, and can be used to receive a charge."
 
@@ -51,6 +54,9 @@ msgstr "Basic"
 
 msgid "Rations, Iron/Day"
 msgstr "Rations, Iron/Day"
+
+msgid "Long, -4 AB"
+msgstr "Long, -4 AB"
 
 msgid "Nails"
 msgstr "Nails"
@@ -345,6 +351,9 @@ msgstr "Use of this weapon requires an attack from surprise, or a successful gra
 msgid "Chest"
 msgstr "Chest"
 
+msgid "P*"
+msgstr "P*"
+
 msgid "Pseudo"
 msgstr "Pseudo"
 
@@ -393,9 +402,6 @@ msgstr "None"
 
 msgid "title.encumbrancePoints"
 msgstr "Encumbrance Points"
-
-msgid "Chain Barding"
-msgstr "Chain Barding"
 
 msgid "Armor Class"
 msgstr "Armor Class"
@@ -451,6 +457,10 @@ msgid "Short"
 msgstr "Short"
 
 #. js-lingui-explicit-id
+msgid "Range, feet"
+msgstr "Range, feet"
+
+#. js-lingui-explicit-id
 msgid "Regular"
 msgstr "Regular"
 
@@ -495,9 +505,6 @@ msgstr "Details"
 msgid "Unencumbered"
 msgstr "Unencumbered"
 
-msgid "Leather Barding"
-msgstr "Leather Barding"
-
 msgid "Pick, Miner’s"
 msgstr "Pick, Miner’s"
 
@@ -534,6 +541,9 @@ msgstr "Loading..."
 
 msgid "Provided price is minimal"
 msgstr "Provided price is minimal"
+
+msgid "{miPerDay, plural, =0 {miles} one {mile} two {miles} few {miles} many {miles} other {miles}}"
+msgstr "{miPerDay, plural, =0 {miles} one {mile} two {miles} few {miles} many {miles} other {miles}}"
 
 msgid "Inventory"
 msgstr "Inventory"
@@ -685,9 +695,6 @@ msgstr "Adventurer"
 
 msgid "Crossbow bolt (1)"
 msgstr "Crossbow bolt (1)"
-
-msgid "miles"
-msgstr "miles"
 
 msgid "Import"
 msgstr "Import"
@@ -873,6 +880,3 @@ msgstr "This two-handed weapon can be used to attack from the second rank, can b
 
 msgid "Instrument"
 msgstr "Instrument"
-
-msgid "Plate Barding"
-msgstr "Plate Barding"

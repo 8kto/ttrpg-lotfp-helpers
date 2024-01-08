@@ -28,6 +28,9 @@ msgstr "Oblečení, chudé"
 msgid "Weapon, Medium"
 msgstr "Zbraň, střední"
 
+msgid "Middle, -2 AB"
+msgstr "Střední, -2 AB"
+
 msgid "This can be used to attack from the second rank, and can be used to receive a charge."
 msgstr "Toto lze použít k útoku ze druhé řady a lze jej použít k přijetí náboje."
 
@@ -51,6 +54,9 @@ msgstr "Základní"
 
 msgid "Rations, Iron/Day"
 msgstr "Porce, železo/den"
+
+msgid "Long, -4 AB"
+msgstr "Dlouhá, -4 AB"
 
 msgid "Nails"
 msgstr "Hřebíky"
@@ -345,6 +351,9 @@ msgstr "Použití této zbraně vyžaduje překvapivý útok nebo úspěšný z�
 msgid "Chest"
 msgstr "Truhla"
 
+msgid "P*"
+msgstr "P*"
+
 msgid "Pseudo"
 msgstr "Pseudo"
 
@@ -393,9 +402,6 @@ msgstr "Žádný"
 
 msgid "title.encumbrancePoints"
 msgstr "title.encumbrancePoints"
-
-msgid "Chain Barding"
-msgstr "Řetězové bardování"
 
 msgid "Armor Class"
 msgstr "Třída brnění"
@@ -451,6 +457,10 @@ msgid "Short"
 msgstr "Krátký"
 
 #. js-lingui-explicit-id
+msgid "Range, feet"
+msgstr "Dosah, stopy"
+
+#. js-lingui-explicit-id
 msgid "Regular"
 msgstr "Pravidelný"
 
@@ -495,9 +505,6 @@ msgstr "Detaily"
 msgid "Unencumbered"
 msgstr "Nezatížený"
 
-msgid "Leather Barding"
-msgstr "Kožené bardování"
-
 msgid "Pick, Miner’s"
 msgstr "Krumpáč, horníkův"
 
@@ -534,6 +541,9 @@ msgstr "Načítání..."
 
 msgid "Provided price is minimal"
 msgstr "Uvedená cena je minimální"
+
+msgid "{miPerDay, plural, =0 {miles} one {mile} two {miles} few {miles} many {miles} other {miles}}"
+msgstr ""
 
 msgid "Inventory"
 msgstr "Inventář"
@@ -686,9 +696,6 @@ msgstr "Dobrodruh"
 msgid "Crossbow bolt (1)"
 msgstr "Kušový šíp (1)"
 
-msgid "miles"
-msgstr "míle"
-
 msgid "Import"
 msgstr "Importovat"
 
@@ -759,7 +766,7 @@ msgid "Pole, 10'"
 msgstr "Tyč, 10 stop"
 
 msgid "Lance"
-msgstr "Kopí"
+msgstr "Dlouhé kopí"
 
 msgid "No encumbrance if empty"
 msgstr "Žádné zatížení, pokud je prázdný"
@@ -873,6 +880,3 @@ msgstr "Toto dvouruční zbraň může být použita k útoku ze druhé řady, m
 
 msgid "Instrument"
 msgstr "Nástroj"
-
-msgid "Plate Barding"
-msgstr "Plátové bardování"

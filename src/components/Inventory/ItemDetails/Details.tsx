@@ -13,6 +13,9 @@ import QtyFragment from '@/components/Inventory/ItemDetails/QtyFragment'
 import RangeFragment from '@/components/RangeFragment'
 import type { EquipmentItem } from '@/domain/equipment'
 
+/**
+ * @deprecated Will be dropped
+ */
 export const Summary = <T extends EquipmentItem>({
   item,
   compact = false,
@@ -36,15 +39,17 @@ export const Summary = <T extends EquipmentItem>({
 }
 
 export const Details = <T extends EquipmentItem>({ item }: { item: T }) => {
-  const paragraphClassname = 'mb-2'
+  const paragraphClassname = ''
 
   return (
-    <div className='pt-4 text-gray-600'>
+    <div className='text-gray-600 space-y-3'>
+      {/* Armor */}
       {isArmorItem(item) ? (
         <p className={paragraphClassname} data-testid='details--ac'>
           <Trans>Armor Class</Trans>: {item.armorClass}
         </p>
       ) : null}
+
       {/* All weapons */}
       {isWeaponItem(item) ? (
         <p className={paragraphClassname} data-testid='details--damage'>

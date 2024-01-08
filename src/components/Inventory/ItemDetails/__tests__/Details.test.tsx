@@ -77,7 +77,7 @@ describe('Details component', () => {
       })
       expect(screen.getByTestId('details--range')).toBeVisible()
       expect(screen.getByTestId('details--range').textContent).toEqual(
-        'RangeShort: 20 ftMedium: 50 ftLong: 80 ft',
+        'RangeShort: 20 ftMedium: 50 ft (-2 AB)Long: 80 ft (-4 AB)',
       )
     })
   })

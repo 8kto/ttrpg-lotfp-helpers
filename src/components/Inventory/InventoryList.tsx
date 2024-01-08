@@ -25,7 +25,7 @@ const InventoryList = () => {
   const { state: equipmentState } = useInventoryState()
   const { armor, meleeWeapons, missileWeapons, miscEquipment } = equipmentState
 
-  const categoryTitleClassname = 'my-4 text-xl text-red-900'
+  const categoryTitleClassname = 'my-4 text-xl ph-color-accent mr-1'
 
   const hasArmor = !!armor.length
   const hasMeleeWeapons = !!meleeWeapons.length
@@ -44,7 +44,7 @@ const InventoryList = () => {
 
       {hasArmor && (
         <div className='mb-6'>
-          <div className='flex w-full items-center justify-between'>
+          <div className='flex w-full items-center'>
             <h2 className={categoryTitleClassname}>
               <Trans>Armor</Trans>
             </h2>
@@ -56,7 +56,7 @@ const InventoryList = () => {
 
       {hasMeleeWeapons && (
         <div className='mb-6'>
-          <div className='flex w-full items-center justify-between'>
+          <div className='flex w-full items-center'>
             <h2 className={categoryTitleClassname}>
               <Trans>Mêlée Weapons</Trans>
             </h2>
@@ -68,7 +68,7 @@ const InventoryList = () => {
 
       {hasMissileWeapons && (
         <div className='mb-6'>
-          <div className='flex w-full items-center justify-between'>
+          <div className='flex w-full items-center'>
             <h2 className={categoryTitleClassname}>
               <Trans>Missile Weapons</Trans>
             </h2>
@@ -80,7 +80,7 @@ const InventoryList = () => {
 
       {hasMiscEquipment && (
         <div className='mb-6'>
-          <div className='flex w-full items-center justify-between'>
+          <div className='flex w-full items-center'>
             <h2 className={categoryTitleClassname}>
               <Trans>Miscellaneous Equipment</Trans>
             </h2>

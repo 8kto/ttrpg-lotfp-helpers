@@ -1,10 +1,10 @@
 import type { MessageDescriptor } from '@lingui/core'
 import { msg } from '@lingui/macro'
 
-export type LOCALES = 'en-us' | 'ru-ru' | 'cz-cz' | 'pseudo'
+export type LOCALE = 'en-us' | 'ru-ru' | 'cz-cz' | 'pseudo'
 
 interface Languages {
-  locale: LOCALES
+  locale: LOCALE
   msg: MessageDescriptor
   territory?: string
   rtl: boolean

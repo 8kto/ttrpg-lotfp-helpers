@@ -1,3 +1,4 @@
+/* Based on Flowbite template */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,18 +7,6 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  --ph-secondary-control-bg: #de9c66;
-  --ph-secondary-color: #fff;
-  --ph-color-control-regular: #024545;
-  --ph-color-accent: #723503;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
 }
 
 body {
@@ -26,19 +15,59 @@ body {
   background: url('/images/light_noise_diagonal.png');
 }
 
-/** IMPORTANT: prefix all custom css classes with ph- suffix **/
-/** Color palette: https://paletton.com/#uid=7000u0kqmjdhorVmfnkvbenGu97 **/
-
 h1,
 h2,
 h3,
 h4,
 h5,
-h6,
-.ph-font-cursive {
+h6 {
   font-family: var(--font-cursive);
 }
 
+/** IMPORTANT: prefix all custom css classes with ph- suffix **/
+/** Color palette: https://paletton.com/#uid=7000u0kqmjdhorVmfnkvbenGu97 **/
+
+/*---- COLORS ----*/
+.ph-color-accent {
+  /* amber-700 */
+  color: rgb(180 83 9);
+}
+.hover\:ph-color-accent:hover {
+  color: rgb(180 83 9);
+}
+
+.ph-color-muted {
+  /* text-gray-500 */
+  color: rgb(107 114 128);
+}
+/*---- /COLORS ----*/
+
+/*---- BUTTONS ----*/
+.ph-btn-primary {
+  /* bg-red-800 */
+  background-color: rgb(153 27 27);
+  color: #fff;
+  font-weight: bold;
+}
+
+.ph-btn-primary:hover {
+  /* bg-red-500 */
+  background-color: rgb(239 68 68);
+}
+
+.ph-btn-secondary {
+  background-color: #de9c66;
+  color: #fff;
+  font-weight: bold;
+}
+
+.ph-btn-secondary:hover {
+  /* bg-red-500 */
+  background-color: rgb(239 68 68);
+}
+/*---- /BUTTONS ----*/
+
+/*---- LISTS ----*/
 details.ph-details-bullet > summary {
   list-style: none;
 }
@@ -56,53 +85,10 @@ details.ph-details-bullet > summary::-webkit-details-marker {
 details.ph-details-bullet[open] .ph-custom-indicator {
   transform: rotate(90deg);
 }
+/*---- /LISTS ----*/
 
-.ph-btn-primary {
-  /* bg-red-800 */
-  --tw-bg-opacity: 1;
-  background-color: rgb(153 27 27 / var(--tw-bg-opacity));
-  color: #fff;
-  font-weight: bold;
-}
-
-.ph-btn-primary:hover {
-  /* bg-red-500 */
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
-}
-
-.ph-btn-secondary {
-  background-color: var(--ph-secondary-control-bg);
-  color: var(--ph-secondary-color);
-  font-weight: bold;
-}
-
-.ph-btn-secondary:hover {
-  /* bg-red-500 */
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
-}
-
-.ph-color-secondary {
-  color: var(--ph-color-control-regular);
-}
-
-.ph-color-secondary-bg {
-  color: var(--ph-secondary-control-bg);
-}
-
-.ph-color-accent {
-  /*color: var(--ph-color-accent)*/
-  /* bg-red-900 */
-  --tw-text-opacity: 1;
-  color: rgb(127 29 29 / var(--tw-text-opacity));
-}
-
-.ph-header-wrapper {
-  background-image: linear-gradient(to left, transparent, black),
-    url('/images/tentacles-bg-3.png');
-  background-position-y: -90%;
-  background-position-x: right;
+.ph-font-cursive {
+  font-family: var(--font-cursive);
 }
 
 .ph-dashed-text {
@@ -120,4 +106,26 @@ details.ph-details-bullet[open] .ph-custom-indicator {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.ph-header-wrapper {
+  background-image: linear-gradient(to left, transparent, black),
+    url('/images/tentacles-bg-3.png');
+  background-position-y: -90%;
+  background-position-x: right;
+}
+
+.ph-enable--currency-colors .ph-currency-unit--gp {
+  /* .text-amber-600 */
+  color: rgb(217 119 6);
+}
+
+.ph-enable--currency-colors .ph-currency-unit--sp {
+  /* .text-slate-600 */
+  color: rgb(71 85 105);
+}
+
+.ph-enable--currency-colors .ph-currency-unit--cp {
+  /* .text-red-800 */
+  color: rgb(153 27 27);
 }

@@ -25,7 +25,7 @@ const InventoryDetails = () => {
     )
   }, [equipmentState])
 
-  const titleClassname = 'ph-font-cursive text-red-900 text-xl -ml-4 md:ml-0'
+  const titleClassname = 'ph-color-accent ph-font-cursive text-xl -ml-4 md:ml-0'
   const detailsRowClassname =
     'px-4 py-6 md:px-0 sm:grid sm:grid-cols-3 sm:gap-4 align-baseline'
 
@@ -40,11 +40,11 @@ const InventoryDetails = () => {
             <Wallet />
           </dd>
         </div>
-        <div className={detailsRowClassname}>
+        <div className={`${detailsRowClassname} items-center`}>
           <dt className={titleClassname}>
             <Trans>Inventory cost</Trans>
           </dt>
-          <dd className='mt-1 leading-6 text-gray-700 sm:col-span-2 sm:mt-0'>
+          <dd className='mt-1 leading-6 text-gray-700 sm:col-span-2 sm:mt-0 text-lg'>
             <CostFragment wallet={totalCosts} optimize />
           </dd>
         </div>

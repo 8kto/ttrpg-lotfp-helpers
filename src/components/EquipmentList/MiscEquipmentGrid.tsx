@@ -1,12 +1,11 @@
 import { t } from '@lingui/macro'
-import { useLingui } from '@lingui/react'
 import React, { useMemo } from 'react'
 
 import DataGrid from '@/components/DataGrid/DataGrid'
 import type { DataGridColumn } from '@/components/DataGrid/types'
 import {
   renderCostGridCol,
-  renderNameGridCol,
+  renderDetailsBody,
   renderWeightGridCol,
 } from '@/components/EquipmentList/gridHelpers'
 import Equipment from '@/config/Equipment'
@@ -18,7 +17,8 @@ const columns: ReadonlyArray<DataGridColumn<EquipmentItem>> = [
   {
     className: 'w-1/3',
     key: 'name',
-    render: renderNameGridCol,
+    shouldRenderDetails: (item) => !!item.details,
+    renderDetails: renderDetailsBody,
     get title() {
       return t`Name`
     },
@@ -54,8 +54,6 @@ const MiscEquipmentGrid = () => {
   const {
     state: { isCostRural },
   } = useInventoryState()
-  const i18nContext = useLingui()
-
   const columnsFilteredByCost = useMemo(() => {
     const costCol = isCostRural.get() ? ruralCostColumn : cityCostColumn
     const lastIndex = columns.length - 1
@@ -64,17 +62,11 @@ const MiscEquipmentGrid = () => {
     return [...columns.slice(0, lastIndex), costCol, columns[lastIndex]]
   }, [isCostRural])
 
-  const dataFilteredByCost = useMemo(
-    () => {
-      const data = Object.values(Equipment.MiscEquipment)
+  const dataFilteredByCost = useMemo(() => {
+    const data = Object.values(Equipment.MiscEquipment)
 
-      return isCostRural.get()
-        ? data.filter((i) => i.ruralCostCp !== null)
-        : data
-    },
-    // NB! Don't remove i18nContext dep, since it causes the grid rerender on locale change
-    [isCostRural, i18nContext],
-  )
+    return isCostRural.get() ? data.filter((i) => i.ruralCostCp !== null) : data
+  }, [isCostRural])
 
   const handleAddClick = (item: EquipmentItem) => {
     const clone = getInventoryItem(
