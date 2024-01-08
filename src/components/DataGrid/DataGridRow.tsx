@@ -37,7 +37,7 @@ const DataGridCell = <T extends EquipmentItem>({
       style={{
         display: isExpanded && !shouldRenderDetails ? 'none' : '',
       }}
-      onClick={onClick}
+      onClick={shouldRenderDetails ? onClick : undefined}
     >
       <span
         className={classnames({
