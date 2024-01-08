@@ -32,7 +32,6 @@ const DataGridCell = <T extends EquipmentItem>({
 
   return (
     <td
-      key={column.key as string}
       colSpan={isExpanded && shouldRenderDetails ? colSpan : 1}
       className={classnames('p-4 font-normal text-gray-900', column.className)}
       style={{
@@ -81,7 +80,7 @@ const DataGridRow = <T extends EquipmentItem>({
           onClick={() => setIsExpanded((v) => !v)}
           column={column}
           expanded={isExpanded}
-          key={item.name}
+          key={column.key as string}
         />
       ))}
       {/* Add action btn */}
