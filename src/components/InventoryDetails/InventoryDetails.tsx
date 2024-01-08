@@ -40,11 +40,11 @@ const InventoryDetails = () => {
             <Wallet />
           </dd>
         </div>
-        <div className={detailsRowClassname}>
+        <div className={`${detailsRowClassname} items-center`}>
           <dt className={titleClassname}>
             <Trans>Inventory cost</Trans>
           </dt>
-          <dd className='mt-1 leading-6 text-gray-700 sm:col-span-2 sm:mt-0'>
+          <dd className='mt-1 leading-6 text-gray-700 sm:col-span-2 sm:mt-0 text-lg'>
             <CostFragment wallet={totalCosts} optimize />
           </dd>
         </div>

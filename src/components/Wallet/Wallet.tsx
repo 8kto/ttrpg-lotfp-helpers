@@ -24,10 +24,12 @@ const Wallet = () => {
     <div className='px-0'>
       {/* 1st row */}
       <div className='mt-1 flex items-center sm:mb-2 sm:mt-0'>
-        <CostFragment
-          wallet={wallet.get()}
-          onClick={() => setSetCoinsDrawerOpen(true)}
-        />
+        <div className='text-lg'>
+          <CostFragment
+            wallet={wallet.get()}
+            onClick={() => setSetCoinsDrawerOpen(true)}
+          />
+        </div>
         <button
           onClick={resetCurrencies}
           title={t`Reset coins`}

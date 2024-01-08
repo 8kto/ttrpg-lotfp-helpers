@@ -27,7 +27,7 @@ const CostFragment = ({
   const lastIndex = currencies.length - 1
 
   return (
-    <span className='text-lg' onClick={onClick}>
+    <span onClick={onClick}>
       {isEmpty && <span className='ph-currency-unit--sp'>0 sp</span>}
       {currencies.map(([number, unit], index) => {
         return (
