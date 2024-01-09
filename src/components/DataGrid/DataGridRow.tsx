@@ -3,59 +3,12 @@ import {
   PlusCircleIcon as PlusIcon,
 } from '@heroicons/react/24/solid'
 import { Trans } from '@lingui/macro'
-import { useLingui } from '@lingui/react'
 import classnames from 'classnames'
 import React, { useState } from 'react'
 
+import DataGridCell from '@/components/DataGrid/DataGridCell'
 import type { DataGridColumn } from '@/components/DataGrid/types'
 import type { EquipmentItem } from '@/domain/equipment'
-import { useInventoryState } from '@/state/InventoryState'
-
-// TODO extract
-const DataGridCell = <T extends EquipmentItem>({
-  column,
-  item,
-  colSpan,
-  onClick,
-  expanded: isExpanded,
-}: {
-  colSpan: number
-  column: DataGridColumn<T>
-  item: T
-  expanded: boolean
-  onClick: () => void
-}) => {
-  const { i18n } = useLingui()
-  const { state } = useInventoryState()
-
-  const shouldRenderDetails = !!column?.shouldRenderDetails?.(item)
-  const title = column.render
-    ? column.render(item, i18n, state)
-    : (item[column.key] as string)
-
-  return (
-    <td
-      colSpan={isExpanded && shouldRenderDetails ? colSpan : 1}
-      className={classnames('p-4 font-normal text-gray-900', column.className)}
-      style={{
-        display: isExpanded && !shouldRenderDetails ? 'none' : '',
-      }}
-      onClick={shouldRenderDetails ? onClick : undefined}
-    >
-      <span
-        className={classnames({
-          'ph-dashed-text cursor-pointer': shouldRenderDetails,
-        })}
-      >
-        {title}
-      </span>
-
-      {isExpanded && shouldRenderDetails
-        ? column?.renderDetails?.(item, i18n, state)
-        : null}
-    </td>
-  )
-}
 
 export type DataGridRowProps<T extends EquipmentItem> = {
   columns: ReadonlyArray<DataGridColumn<T>>
@@ -89,7 +42,7 @@ const DataGridRow = <T extends EquipmentItem>({
         />
       ))}
 
-      <td className={'p-4 font-normal text-gray-900'}>
+      <td className={'p-2 sm:p-4 font-normal text-gray-900'}>
         {/* Add btn */}
         {typeof onAddClick === 'function' && (
           <button
@@ -111,7 +64,7 @@ const DataGridRow = <T extends EquipmentItem>({
             onClick={() => onRemoveClick(item)}
           >
             <MinusIcon className='h-5 w-5 md:mr-2' />
-            {/* Due to a limited use cases for this button I let myself
+            {/* Due to limited use cases for this button I let myself
               not to mess with extra props hiding/showing the label,
               and simply removed it. */}
           </button>
