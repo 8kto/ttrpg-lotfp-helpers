@@ -13,6 +13,7 @@ import Equipment from '@/config/Equipment'
 import type { ArmorItem } from '@/domain/armor'
 import type { EquipmentItem } from '@/domain/equipment'
 import { getInventoryItem } from '@/shared/helpers/getInventoryItem'
+import useTailwindBreakpoint from '@/shared/hooks/useTailwindBreakpoint'
 import { addArmor, useInventoryState } from '@/state/InventoryState'
 
 const columns: ReadonlyArray<DataGridColumn<ArmorItem>> = [
@@ -63,6 +64,7 @@ const ArmorGrid = () => {
   const {
     state: { isCostRural },
   } = useInventoryState()
+  const breakpoint = useTailwindBreakpoint()
   const columnsFilteredByCost = useMemo(() => {
     const costCol = isCostRural.get() ? ruralCostColumn : cityCostColumn
     const lastIndex = columns.length - 1
@@ -76,6 +78,11 @@ const ArmorGrid = () => {
 
     return isCostRural.get() ? data.filter((i) => i.ruralCostCp !== null) : data
   }, [isCostRural])
+
+  const isSmallViewport = 'xs' === breakpoint
+  const colSpan = isSmallViewport
+    ? columnsFilteredByCost.length - 1
+    : columnsFilteredByCost.length
 
   const handleAddClick = (item: ArmorItem) => {
     const clone = getInventoryItem(
@@ -138,6 +145,7 @@ const ArmorGrid = () => {
         filterFn={filterName}
         filterPlaceholder={t`Filter by name`}
         handleSort={handleSort as typeof trivialSort}
+        spanDetails={colSpan}
       />
     </>
   )
