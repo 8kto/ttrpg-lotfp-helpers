@@ -11,6 +11,7 @@ import {
 import Equipment from '@/config/Equipment'
 import type { EquipmentItem } from '@/domain/equipment'
 import { getInventoryItem } from '@/shared/helpers/getInventoryItem'
+import useTailwindBreakpoint from '@/shared/hooks/useTailwindBreakpoint'
 import { addEquipmentItem, useInventoryState } from '@/state/InventoryState'
 
 const columns: ReadonlyArray<DataGridColumn<EquipmentItem>> = [
@@ -54,6 +55,7 @@ const MiscEquipmentGrid = () => {
   const {
     state: { isCostRural },
   } = useInventoryState()
+  const breakpoint = useTailwindBreakpoint()
   const columnsFilteredByCost = useMemo(() => {
     const costCol = isCostRural.get() ? ruralCostColumn : cityCostColumn
     const lastIndex = columns.length - 1
@@ -81,6 +83,11 @@ const MiscEquipmentGrid = () => {
     return item.name.toLocaleLowerCase().includes(filterBy.toLocaleLowerCase())
   }
 
+  const isSmallViewport = 'xs' === breakpoint
+  const colSpan = isSmallViewport
+    ? columnsFilteredByCost.length - 1
+    : columnsFilteredByCost.length
+
   return (
     <DataGrid<EquipmentItem>
       data={dataFilteredByCost}
@@ -88,6 +95,7 @@ const MiscEquipmentGrid = () => {
       onAddClick={handleAddClick}
       filterFn={filterName}
       filterPlaceholder={t`Filter by name`}
+      spanDetails={colSpan}
     />
   )
 }

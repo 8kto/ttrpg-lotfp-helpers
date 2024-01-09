@@ -14,6 +14,7 @@ import { handleSortByDamage } from '@/components/EquipmentList/helpers'
 import Equipment from '@/config/Equipment'
 import type { MeleeWeaponItem } from '@/domain/weapon'
 import { getInventoryItem } from '@/shared/helpers/getInventoryItem'
+import useTailwindBreakpoint from '@/shared/hooks/useTailwindBreakpoint'
 import { addMeleeWeapon, useInventoryState } from '@/state/InventoryState'
 
 const columns: ReadonlyArray<DataGridColumn<MeleeWeaponItem>> = [
@@ -65,7 +66,7 @@ const MeleeWeaponsGrid = () => {
   const {
     state: { isCostRural },
   } = useInventoryState()
-
+  const breakpoint = useTailwindBreakpoint()
   const columnsFilteredByCost = useMemo(() => {
     const costCol = isCostRural.get() ? ruralCostColumn : cityCostColumn
     const lastIndex = columns.length - 1
@@ -91,6 +92,11 @@ const MeleeWeaponsGrid = () => {
   const filterName = (item: MeleeWeaponItem, filterBy: string) => {
     return item.name.toLocaleLowerCase().includes(filterBy.toLocaleLowerCase())
   }
+
+  const isSmallViewport = 'xs' === breakpoint
+  const colSpan = isSmallViewport
+    ? columnsFilteredByCost.length - 1
+    : columnsFilteredByCost.length
 
   return (
     <>
@@ -123,6 +129,7 @@ const MeleeWeaponsGrid = () => {
         filterFn={filterName}
         filterPlaceholder={t`Filter by name`}
         handleSort={handleSortByDamage as DataGridSortFunction}
+        spanDetails={colSpan}
       />
     </>
   )
