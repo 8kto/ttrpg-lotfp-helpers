@@ -2,22 +2,21 @@ import { t } from '@lingui/macro'
 import React from 'react'
 
 import DamageFragment from '@/components/DamageFragment'
-import { renderNameInventoryGridCol } from '@/components/EquipmentList/gridHelpers'
-import InventoryGrid from '@/components/Inventory/InventoryGrid'
-import type { InventoryColumn } from '@/components/Inventory/types'
+import DataGrid from '@/components/DataGrid/DataGrid'
+import type { DataGridColumn } from '@/components/DataGrid/types'
+import { renderDetailsBody } from '@/components/EquipmentList/gridHelpers'
 import type { InventoryItem } from '@/domain/inventory'
 import type { MeleeWeaponItem } from '@/domain/weapon'
 import { removeMeleeWeapon, useInventoryState } from '@/state/InventoryState'
 
 type MeleeWeaponInventoryItem = InventoryItem<MeleeWeaponItem>
 
-const inventoryTableColumns: ReadonlyArray<
-  InventoryColumn<MeleeWeaponInventoryItem>
-> = [
+const columns: ReadonlyArray<DataGridColumn<MeleeWeaponInventoryItem>> = [
   {
     className: 'w-1/2 sm:w-1/3',
     key: 'name',
-    render: renderNameInventoryGridCol,
+    shouldRenderDetails: (item) => !!item.details,
+    renderDetails: renderDetailsBody,
     get title() {
       return t`Name`
     },
@@ -42,12 +41,19 @@ const MeleeWeaponsInventoryGrid = () => {
     removeMeleeWeapon(item)
 
   return (
-    <InventoryGrid<MeleeWeaponInventoryItem>
+    <DataGrid<MeleeWeaponInventoryItem>
       data={meleeWeapons.get()}
-      columns={inventoryTableColumns}
+      columns={columns}
       onRemoveClick={onRemoveClick}
+      spanDetails={columns.length}
+      initialSortState={{
+        key: '' as keyof MeleeWeaponInventoryItem,
+        direction: 'asc',
+      }}
+      noFilter
     />
   )
 }
 
 export default MeleeWeaponsInventoryGrid
+// TODO display Two-handed
