@@ -35,7 +35,6 @@ export interface DataGridProps<T extends EquipmentItem> {
   initialSortState?: SortConfig<T>
   onAddClick?: (item: T) => void
   onRemoveClick?: (item: T) => void
-  onSortChange?: (key: keyof T, direction: SortOrder) => void
   handleSort?: <Type extends EquipmentItem>(
     sortConfig: SortConfig<Type>,
   ) => (a: Type, b: Type) => 1 | -1 | 0

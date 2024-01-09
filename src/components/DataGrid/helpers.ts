@@ -15,5 +15,5 @@ export const trivialSort =
 
     return 0
   }
-
+// TODO add localeCompare for strings
 export type DataGridSortFunction = typeof trivialSort

@@ -19,7 +19,6 @@ const DataGrid = <T extends EquipmentItem>({
   initialSortState,
   onAddClick,
   onRemoveClick,
-  onSortChange,
   filterFn,
   handleSort,
   filterPlaceholder = 'Filter',
@@ -48,7 +47,6 @@ const DataGrid = <T extends EquipmentItem>({
       direction = 'desc'
     }
     setSortConfig({ direction, key })
-    onSortChange?.(key, direction)
   }
 
   const handleFilterReset = () => setFilter('')
