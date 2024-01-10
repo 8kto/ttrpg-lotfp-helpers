@@ -51,7 +51,7 @@ describe('ItemDetails helpers', () => {
     it('should return false', () => {
       const mock = { ...miscEquipItem1 }
       // @ts-ignore
-      delete mock.qty
+      delete mock.inventoryId
       expect(isInventoryItem(mock)).toBeFalsy()
     })
   })
