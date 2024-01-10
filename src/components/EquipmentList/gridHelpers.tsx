@@ -6,6 +6,7 @@ import type { DataGridColumn } from '@/components/DataGrid/types'
 import MeleeWeaponTraitsFragment from '@/components/EquipmentList/MeleeWeaponTraitsFragment'
 import { Details } from '@/components/Inventory/ItemDetails/Details'
 import { isMeleeWeaponItem } from '@/components/Inventory/ItemDetails/helpers'
+import QtyFragment from '@/components/Inventory/ItemDetails/QtyFragment'
 import RangeFragment from '@/components/RangeFragment'
 import { CurrencyType } from '@/domain/currency'
 import { EncumbranceUnit } from '@/domain/encumbrance'
@@ -80,6 +81,7 @@ export const renderInventoryTitle: RenderFunction<
       ? null
       : i18n._(EncumbranceUnit[item.points])
   const range = (item as InventoryItem<MissileWeaponItem>).range
+  const hasQty = item.qty > 1
 
   return (
     <>
@@ -89,6 +91,7 @@ export const renderInventoryTitle: RenderFunction<
         })}
       >
         {item.name}
+        {hasQty && <QtyFragment item={item} />}
       </span>
       {!isExpanded && !!weightLabel && (
         <p title={i18n._(`Weight`)} className='ph-color-muted text-sm'>
