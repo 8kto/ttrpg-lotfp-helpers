@@ -11,9 +11,9 @@ const languages: { [key: string]: MessageDescriptor } = {
   cz: msg`CZ`,
 }
 
-if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') {
-  languages['pseudo'] = msg`P*`
-}
+// if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') {
+//   languages['pseudo'] = msg`P*`
+// }
 
 const LocaleSwitcher = () => {
   const router = useRouter()
