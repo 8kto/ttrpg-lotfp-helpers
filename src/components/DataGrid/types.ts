@@ -14,6 +14,8 @@ export interface DataGridColumn<T extends EquipmentItem> {
     item: T,
     i18n: I18n,
     state: State<InventoryStateType, unknown>,
+    isExpanded: boolean,
+    shouldRenderDetails: boolean,
   ) => React.ReactNode
   renderDetails?: (
     item: T,

@@ -23,15 +23,12 @@ const DataGridCell = <T extends EquipmentItem>({
   const { state } = useInventoryState()
 
   const shouldRenderDetails = !!column?.shouldRenderDetails?.(item)
-  const title = column.render
-    ? column.render(item, i18n, state)
-    : (item[column.key] as string)
 
   return (
     <td
       colSpan={isExpanded && shouldRenderDetails ? colSpan : 1}
       className={classnames(
-        'p-2 sm:p-4 font-normal text-gray-900',
+        'p-2 font-normal text-gray-900 sm:p-4',
         column.className,
       )}
       style={{
@@ -39,13 +36,17 @@ const DataGridCell = <T extends EquipmentItem>({
       }}
       onClick={shouldRenderDetails ? onClick : undefined}
     >
-      <span
-        className={classnames({
-          'ph-dashed-text cursor-pointer': shouldRenderDetails,
-        })}
-      >
-        {title}
-      </span>
+      {column.render ? (
+        column.render(item, i18n, state, isExpanded, shouldRenderDetails)
+      ) : (
+        <span
+          className={classnames({
+            'ph-dashed-text cursor-pointer': shouldRenderDetails,
+          })}
+        >
+          {item[column.key] as string}
+        </span>
+      )}
 
       {isExpanded && shouldRenderDetails
         ? column?.renderDetails?.(item, i18n, state)
