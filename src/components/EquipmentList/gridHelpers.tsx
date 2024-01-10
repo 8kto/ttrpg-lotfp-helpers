@@ -1,8 +1,11 @@
+import classnames from 'classnames'
 import React from 'react'
 
 import CostFragment from '@/components/CostFragment/CostFragment'
 import type { DataGridColumn } from '@/components/DataGrid/types'
+import MeleeWeaponTraitsFragment from '@/components/EquipmentList/MeleeWeaponTraitsFragment'
 import { Details } from '@/components/Inventory/ItemDetails/Details'
+import { isMeleeWeaponItem } from '@/components/Inventory/ItemDetails/helpers'
 import ItemDetails from '@/components/Inventory/ItemDetails/ItemDetails'
 import RangeFragment from '@/components/RangeFragment'
 import { CurrencyType } from '@/domain/currency'
@@ -12,8 +15,10 @@ import type { InventoryItem } from '@/domain/inventory'
 import type { MissileWeaponItem } from '@/domain/weapon'
 import CurrencyConverter from '@/shared/services/CurrencyConverter'
 
-type RenderFunction = DataGridColumn<EquipmentItem>['render']
-type RenderDetailsFunction = DataGridColumn<EquipmentItem>['renderDetails']
+type RenderFunction<T extends EquipmentItem = EquipmentItem> =
+  DataGridColumn<T>['render']
+type RenderDetailsFunction<T extends EquipmentItem = EquipmentItem> =
+  DataGridColumn<T>['renderDetails']
 
 export const renderWeightGridCol: RenderFunction = (item, i18n) =>
   item.points === EncumbranceUnit.None
@@ -81,16 +86,67 @@ export const renderDetailsBody: RenderDetailsFunction = (item, i18n, state) => {
       <Details item={item} />
       <div className='mt-2'>
         {!!weightLabel && (
-          <p className='text-sm ph-color-muted'>{weightLabel}</p>
+          <p title={i18n._(`Weight`)} className='ph-color-muted text-sm'>
+            {weightLabel}
+          </p>
         )}
         {!!cost && (
-          <p className='text-sm ph-color-muted'>
+          <p className='ph-color-muted text-sm'>
             <CostFragment
               wallet={CurrencyConverter.createWalletFrom(currencyRecord)}
             />
           </p>
         )}
       </div>
+    </>
+  )
+}
+
+export const renderInventoryTitle: RenderFunction<
+  InventoryItem<EquipmentItem>
+> = (item, i18n, _, isExpanded, shouldRenderDetails) => {
+  const weightLabel =
+    item.points === EncumbranceUnit.None
+      ? null
+      : i18n._(EncumbranceUnit[item.points])
+
+  return (
+    <>
+      <span
+        className={classnames({
+          'ph-dashed-text cursor-pointer': shouldRenderDetails,
+        })}
+      >
+        {item.name}
+      </span>
+      {!isExpanded && !!weightLabel && (
+        <p title={i18n._(`Weight`)} className='ph-color-muted text-sm'>
+          {weightLabel}
+        </p>
+      )}
+      {!isExpanded && isMeleeWeaponItem(item) && (
+        <MeleeWeaponTraitsFragment item={item} />
+      )}
+    </>
+  )
+}
+
+export const renderInventoryDetailsBody: RenderDetailsFunction<
+  InventoryItem<EquipmentItem>
+> = (item, i18n) => {
+  const weightLabel =
+    item.points === EncumbranceUnit.None
+      ? null
+      : i18n._(EncumbranceUnit[item.points])
+
+  return (
+    <>
+      <Details item={item} />
+      {!!weightLabel && (
+        <p title={i18n._(`Weight`)} className='ph-color-muted text-sm'>
+          {weightLabel}
+        </p>
+      )}
     </>
   )
 }
