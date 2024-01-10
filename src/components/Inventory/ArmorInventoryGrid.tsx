@@ -3,7 +3,10 @@ import React from 'react'
 
 import DataGrid from '@/components/DataGrid/DataGrid'
 import type { DataGridColumn } from '@/components/DataGrid/types'
-import { renderDetailsBody } from '@/components/EquipmentList/gridHelpers'
+import {
+  renderInventoryDetailsBody,
+  renderInventoryTitle,
+} from '@/components/EquipmentList/gridHelpers'
 import type { ArmorItem } from '@/domain/armor'
 import type { InventoryItem } from '@/domain/inventory'
 import { removeArmor, useInventoryState } from '@/state/InventoryState'
@@ -15,7 +18,8 @@ const columns: ReadonlyArray<DataGridColumn<ArmorInventoryItem>> = [
     className: 'w-1/2 sm:w-1/3',
     key: 'name',
     shouldRenderDetails: (item) => !!item.details,
-    renderDetails: renderDetailsBody,
+    render: renderInventoryTitle,
+    renderDetails: renderInventoryDetailsBody,
     get title() {
       return t`Name`
     },

@@ -4,7 +4,10 @@ import React from 'react'
 import DamageFragment from '@/components/DamageFragment'
 import DataGrid from '@/components/DataGrid/DataGrid'
 import type { DataGridColumn } from '@/components/DataGrid/types'
-import { renderDetailsBody } from '@/components/EquipmentList/gridHelpers'
+import {
+  renderInventoryDetailsBody,
+  renderInventoryTitle,
+} from '@/components/EquipmentList/gridHelpers'
 import type { InventoryItem } from '@/domain/inventory'
 import type { MeleeWeaponItem } from '@/domain/weapon'
 import { removeMeleeWeapon, useInventoryState } from '@/state/InventoryState'
@@ -16,7 +19,8 @@ const columns: ReadonlyArray<DataGridColumn<MeleeWeaponInventoryItem>> = [
     className: 'w-1/2 sm:w-1/3',
     key: 'name',
     shouldRenderDetails: (item) => !!item.details,
-    renderDetails: renderDetailsBody,
+    render: renderInventoryTitle,
+    renderDetails: renderInventoryDetailsBody,
     get title() {
       return t`Name`
     },
@@ -56,4 +60,3 @@ const MeleeWeaponsInventoryGrid = () => {
 }
 
 export default MeleeWeaponsInventoryGrid
-// TODO display Two-handed
