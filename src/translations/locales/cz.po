@@ -17,10 +17,10 @@ msgid "Coins"
 msgstr "Mince"
 
 msgid "config.misc.airBladder.details"
-msgstr "config.misc.airBladder.details\"  # Requires context"
+msgstr "Kožený sáček s trubičkou pro ústa; dodatečný nádech vzduchu pro podvodní plavání.<br />Může být použit i jako pomocný plavecký prostředek."
 
 msgid "config.melee.mancatcher.details"
-msgstr "config.melee.mancatcher.details\"  # Requires context"
+msgstr "Při úspěšném zásahu touto zbraní musí oběť provést záchraný hod proti Paralýze. V případě neúspěchu je oběť považována za bezbrannou, stejně jako majitel mancatcheru, dokud je cíl držen pro obranu před útoky. Tuto zbraň je nutné držet oběma rukama."
 
 msgid "Clothing, Poor"
 msgstr "Oblečení, chudé"
@@ -234,6 +234,9 @@ msgstr "Za den"
 msgid "Reset all equipment?"
 msgstr "Resetovat veškeré vybavení?"
 
+msgid "Second rank"
+msgstr "Druhá řada"
+
 msgid "Tent, Personal"
 msgstr "Stan, osobní"
 
@@ -259,7 +262,7 @@ msgid "Include the extended encumbrance ability."
 msgstr "Zahrnout rozšířenou schopnost zatížení."
 
 msgid "config.missile.blowgun.details"
-msgstr "config.missile.blowgun.details\"  # Requires context"
+msgstr "Dlouhé duté trubky z kovu nebo dřeva, používají sílu plic majitele k vystřelování malých šipek (nebo možná jiných projektilů). Obvykle mají délku kolem 4 stop, ale často bývají až 7 stop dlouhé."
 
 msgid "Whistle"
 msgstr "Píšťalka"
@@ -271,7 +274,7 @@ msgid "Lock"
 msgstr "Zámek"
 
 msgid "title.encumbranceUnits"
-msgstr "title.encumbranceUnits\"  # Requires context"
+msgstr "Jednotky zatížení"
 
 msgid "Item"
 msgstr "Položka"
@@ -343,7 +346,7 @@ msgid "Heavy crossbows can only be fired once in 3 rounds and ignore 4 AC points
 msgstr "Těžké křížové luki lze vystřelit pouze jednou za 3 kola a ignorují 4 body AC"
 
 msgid "config.misc.caltrop.details"
-msgstr "config.misc.caltrop.details"
+msgstr "Ježci (caltrop) jsou kovové hroty, které vypadají jako podpěry, přičemž jeden ostrý konec je vždy nasměrován nahoru."
 
 msgid "Use of this weapon requires an attack from surprise, or a successful grapple. If a hit is scored, the target is considered grappled and will take 1d6 damage per round."
 msgstr "Použití této zbraně vyžaduje překvapivý útok nebo úspěšný zápas. Pokud je zásah, cíl je považován za chycený a utrpí 1d6 poškození za kolo."
@@ -432,6 +435,9 @@ msgstr "Číslo by mělo být rovno nebo větší než 0"
 msgid "Storm conditions"
 msgstr "Podmínky bouře"
 
+msgid "weapons.melee.secondRank"
+msgstr "Možnost útoku ze druhé řady"
+
 msgid "Clothing, Normal"
 msgstr "Oblečení, normální"
 
@@ -492,6 +498,9 @@ msgstr "Pytel"
 msgid "Feed, Animal/Day"
 msgstr "Krmivo, zvíře/den"
 
+msgid "weapons.melee.charge"
+msgstr "Zbraň, která umožňuje přijmout na sebe nápor (charge) (újma x2, útočí první): kopí, hůl."
+
 msgid "Include the weight"
 msgstr "Zahrnout váhu"
 
@@ -543,7 +552,7 @@ msgid "Provided price is minimal"
 msgstr "Uvedená cena je minimální"
 
 msgid "{miPerDay, plural, =0 {miles} one {mile} two {miles} few {miles} many {miles} other {miles}}"
-msgstr ""
+msgstr "{miPerDay, plural, =0 {mil} one {mil} two {míle} few {míle} many {mil} other {mil}}"
 
 msgid "Inventory"
 msgstr "Inventář"
@@ -576,6 +585,9 @@ msgstr "Zatížení"
 
 msgid "Add equipment item"
 msgstr "Přidat položku vybavení"
+
+msgid "Receives charge"
+msgstr "Přijímá nápor"
 
 msgid "Tent, Grand"
 msgstr "Stan, velký"
@@ -720,6 +732,9 @@ msgstr "Mýdlo"
 msgid "Add"
 msgstr "Přidat"
 
+msgid "Two-handed"
+msgstr "Obouruční"
+
 msgid "Caltrop"
 msgstr "Krakorec"
 
@@ -804,6 +819,9 @@ msgstr "Palice"
 msgid "Spike, Wooden"
 msgstr "Hřebík, dřevěný"
 
+msgid "weapons.melee.twoHanded"
+msgstr "Tato zbraň zabírá obě ruce"
+
 msgid "Clothing, Winter Travel"
 msgstr "Oblečení, zimní cestování"
 
@@ -821,23 +839,23 @@ msgstr "Spravovat"
 
 #. js-lingui-explicit-id
 msgid "weapons.melee.charge"
-msgstr "weapons.melee.charge"
+msgstr "Zbraň, která umožňuje přijmout na sebe nápor (charge) (poškození x2, útočí první): kopí, hůl."
 
 #. js-lingui-explicit-id
 msgid "weapons.melee.secondRank"
-msgstr "Některé zbraně mohou útočit „ze druhé řady“. To se používá, když v boji existuje určitá bojová linie. Obvykle mohou útočit pouze ti, kteří jsou v první linii boje, ale tyto zbraně použitelné ze druhé řady umožňují každému hned za bojovou linií útočit také."
+msgstr "Některé zbraně mohou útočit 'ze druhé řady'. To se používá, když v boji existuje jasná bojová linie. Obvykle mohou útočit pouze ti, kteří jsou na přední linii, ale zbraně, které lze použít ze druhé řady, umožňují útok i těm, kteří jsou hned za bojovou linií."
 
 #. js-lingui-explicit-id
 msgid "weapons.melee.secondRankTypes"
-msgstr "weapons.melee.secondRankTypes"
+msgstr "Zbraně druhé řady: dlouhé kopí, hůl, kopí."
 
 #. js-lingui-explicit-id
 msgid "weapons.missile.firing"
-msgstr "weapons.missile.firing"
+msgstr "Každou vrhací zbraň lze použít jednou za kolo, kromě kuše."
 
 #. js-lingui-explicit-id
 msgid "weapons.missile.range"
-msgstr "weapons.missile.range"
+msgstr "Cíle na střední vzdálenosti mají –2 k zásahu, –4 k zásahu na dlouhé vzdálenosti."
 
 msgid "Armor"
 msgstr "Brnění"

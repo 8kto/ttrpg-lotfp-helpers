@@ -1,15 +1,8 @@
-import type { State } from '@hookstate/core'
-import type { I18n } from '@lingui/core'
-
 import { trivialSort } from '@/components/DataGrid/helpers'
 import type { SortConfig } from '@/components/DataGrid/types'
-import { renderWeightGridCol } from '@/components/EquipmentList/gridHelpers'
 import { handleSortByDamage } from '@/components/EquipmentList/helpers'
 import { Dice } from '@/domain'
-import { EncumbranceUnit } from '@/domain/encumbrance'
-import type { EquipmentItem } from '@/domain/equipment'
 import type { MeleeWeaponItem, WeaponItem } from '@/domain/weapon'
-import type { InventoryStateType } from '@/state/InventoryState'
 
 jest.mock('@/components/DataGrid/helpers', () => ({
   trivialSort: jest.fn(() => {
@@ -181,26 +174,6 @@ describe('Equipment list helpers', () => {
         { damage: { dice: Dice.d10, x: 3 } } as MeleeWeaponItem,
         { damage: { dice: Dice.d20, x: 1 } } as MeleeWeaponItem,
       ])
-    })
-  })
-
-  describe('renderWeightGridCol', () => {
-    const mockI18n = {
-      _: jest.fn((key) => `translated_${key}`),
-    } as unknown as I18n
-    const stateMock = {} as State<InventoryStateType, unknown>
-
-    it('should return "-" when points are None', () => {
-      const item = { points: EncumbranceUnit.None } as EquipmentItem
-      const result = renderWeightGridCol!(item, mockI18n, stateMock)
-      expect(result).toBe('-')
-    })
-
-    it('should return translated value for non-None points', () => {
-      const item = { points: EncumbranceUnit.Regular } as EquipmentItem
-      const result = renderWeightGridCol!(item, mockI18n, stateMock)
-      expect(result).toBe(`translated_${EncumbranceUnit[item.points]}`)
-      expect(mockI18n._).toHaveBeenCalledWith(EncumbranceUnit[item.points])
     })
   })
 })

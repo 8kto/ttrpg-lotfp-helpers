@@ -15,6 +15,7 @@ import RangeFragment from '@/components/RangeFragment'
 import Equipment from '@/config/Equipment'
 import type { MissileWeaponItem } from '@/domain/weapon'
 import { getInventoryItem } from '@/shared/helpers/getInventoryItem'
+import useTailwindBreakpoint from '@/shared/hooks/useTailwindBreakpoint'
 import { addMissileWeapon, useInventoryState } from '@/state/InventoryState'
 
 const columns: ReadonlyArray<DataGridColumn<MissileWeaponItem>> = [
@@ -78,6 +79,7 @@ const MissileWeaponsGrid = () => {
   const {
     state: { isCostRural },
   } = useInventoryState()
+  const breakpoint = useTailwindBreakpoint()
 
   const columnsFilteredByCost = useMemo(() => {
     const costCol = isCostRural.get() ? ruralCostColumn : cityCostColumn
@@ -105,6 +107,11 @@ const MissileWeaponsGrid = () => {
     return item.name.toLocaleLowerCase().includes(filterBy.toLocaleLowerCase())
   }
 
+  const isSmallViewport = 'xs' === breakpoint
+  const colSpan = isSmallViewport
+    ? columnsFilteredByCost.length - 1
+    : columnsFilteredByCost.length
+
   return (
     <>
       <div className='py-6 text-gray-800'>
@@ -127,6 +134,7 @@ const MissileWeaponsGrid = () => {
         filterFn={filterName}
         filterPlaceholder={t`Filter by name`}
         handleSort={handleSortByDamage as DataGridSortFunction}
+        spanDetails={colSpan}
       />
     </>
   )

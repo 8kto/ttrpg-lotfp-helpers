@@ -14,6 +14,8 @@ export interface DataGridColumn<T extends EquipmentItem> {
     item: T,
     i18n: I18n,
     state: State<InventoryStateType, unknown>,
+    isExpanded: boolean,
+    shouldRenderDetails: boolean,
   ) => React.ReactNode
   renderDetails?: (
     item: T,
@@ -31,12 +33,14 @@ export type SortConfig<T extends EquipmentItem> = {
 export interface DataGridProps<T extends EquipmentItem> {
   data: ReadonlyArray<T>
   columns: ReadonlyArray<DataGridColumn<T>>
+  spanDetails: number
   initialSortState?: SortConfig<T>
-  onAddClick: (item: T) => void
-  onSortChange?: (key: keyof T, direction: SortOrder) => void
+  onAddClick?: (item: T) => void
+  onRemoveClick?: (item: T) => void
   handleSort?: <Type extends EquipmentItem>(
     sortConfig: SortConfig<Type>,
   ) => (a: Type, b: Type) => 1 | -1 | 0
-  filterFn: (item: T, filter: string) => boolean
+  filterFn?: (item: T, filter: string) => boolean
   filterPlaceholder?: string
+  noFilter?: boolean
 }

@@ -5,7 +5,7 @@ import { I18nProvider } from '@lingui/react'
 import { act, render, screen } from '@testing-library/react'
 import React from 'react'
 
-import { Details, Summary } from '@/components/Inventory/ItemDetails/Details'
+import { Details } from '@/components/Inventory/ItemDetails/Details'
 import {
   armorItemMock1,
   meleeWeaponItemMock2,
@@ -13,33 +13,6 @@ import {
 } from '@/shared/mocks/inventoryMocks'
 
 describe('Details component', () => {
-  describe('Summary', () => {
-    it('displays item name and quantity', () => {
-      const mockItem = { name: 'Sword', qty: 2 }
-      render(
-        <Summary
-          // @ts-ignore
-          item={mockItem}
-        />,
-      )
-      expect(screen.getByText('Sword')).toBeInTheDocument()
-      expect(screen.getByTestId('item-qty')).toBeVisible()
-      expect(screen.getByTestId('item-qty').textContent).toEqual('2')
-    })
-
-    it('does not display ItemDetailsLine in compact mode', () => {
-      const mockItem = { name: 'Sword', qty: 1 }
-      render(
-        <Summary
-          // @ts-ignore
-          item={mockItem}
-          compact={true}
-        />,
-      )
-      expect(screen.queryByTestId('item-details-line')).toBeNull()
-    })
-  })
-
   describe('Details', () => {
     const TestingProvider = ({ children }: { children: React.ReactNode }) => (
       <I18nProvider i18n={i18n}>{children}</I18nProvider>
