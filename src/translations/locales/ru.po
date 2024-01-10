@@ -234,6 +234,9 @@ msgstr "В день"
 msgid "Reset all equipment?"
 msgstr "Сбросить всё снаряжение?"
 
+msgid "Second rank"
+msgstr "Второй ряд"
+
 msgid "Tent, Personal"
 msgstr "Палатка, одиночная"
 
@@ -432,6 +435,9 @@ msgstr "Число должно быть больше или равно 0"
 msgid "Storm conditions"
 msgstr "Буря"
 
+msgid "weapons.melee.secondRank"
+msgstr "Возможность атаки из второго ряда"
+
 msgid "Clothing, Normal"
 msgstr "Одежда, обычная"
 
@@ -491,6 +497,9 @@ msgstr "Мешок"
 
 msgid "Feed, Animal/Day"
 msgstr "Корм для животных/День"
+
+msgid "weapons.melee.charge"
+msgstr "Оружие, позволяющее принимать на себя рывок (charge) (урон х2, атакует первым): древковое оружие, копьё."
 
 msgid "Include the weight"
 msgstr "Учитывать вес"
@@ -576,6 +585,9 @@ msgstr "Нагрузка"
 
 msgid "Add equipment item"
 msgstr "Добавить предмет"
+
+msgid "Receives charge"
+msgstr "Встречает рывок"
 
 msgid "Tent, Grand"
 msgstr "Большая палатка"
@@ -720,6 +732,9 @@ msgstr "Мыло"
 msgid "Add"
 msgstr "Добавить"
 
+msgid "Two-handed"
+msgstr "Двуручное"
+
 msgid "Caltrop"
 msgstr "Ёж"
 
@@ -803,6 +818,9 @@ msgstr "Молот"
 
 msgid "Spike, Wooden"
 msgstr "Шип, деревянный"
+
+msgid "weapons.melee.twoHanded"
+msgstr "Это оружие занимает обе руки"
 
 msgid "Clothing, Winter Travel"
 msgstr "Одежда для зимних путешествий"

@@ -234,6 +234,9 @@ msgstr "Per day"
 msgid "Reset all equipment?"
 msgstr "Reset all equipment?"
 
+msgid "Second rank"
+msgstr "Second rank"
+
 msgid "Tent, Personal"
 msgstr "Tent, Personal"
 
@@ -432,6 +435,9 @@ msgstr "The number should be equal to or greater than 0"
 msgid "Storm conditions"
 msgstr "Storm conditions"
 
+msgid "weapons.melee.secondRank"
+msgstr "Can attack from the second rank"
+
 msgid "Clothing, Normal"
 msgstr "Clothing, Normal"
 
@@ -491,6 +497,9 @@ msgstr "Sack"
 
 msgid "Feed, Animal/Day"
 msgstr "Feed, Animal/Day"
+
+msgid "weapons.melee.charge"
+msgstr "Weapons that allow to receive charge (damage x2, act first): polearm, spear."
 
 msgid "Include the weight"
 msgstr "Include the weight"
@@ -576,6 +585,9 @@ msgstr "Encumbrance"
 
 msgid "Add equipment item"
 msgstr "Add equipment item"
+
+msgid "Receives charge"
+msgstr "Receives charge"
 
 msgid "Tent, Grand"
 msgstr "Tent, Grand"
@@ -720,6 +732,9 @@ msgstr "Soap"
 msgid "Add"
 msgstr "Add"
 
+msgid "Two-handed"
+msgstr "Two-handed"
+
 msgid "Caltrop"
 msgstr "Caltrop"
 
@@ -803,6 +818,9 @@ msgstr "Maul"
 
 msgid "Spike, Wooden"
 msgstr "Spike, Wooden"
+
+msgid "weapons.melee.twoHanded"
+msgstr "These weapons must be wielded with two hands."
 
 msgid "Clothing, Winter Travel"
 msgstr "Clothing, Winter Travel"

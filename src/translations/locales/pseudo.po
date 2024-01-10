@@ -234,6 +234,9 @@ msgstr ""
 msgid "Reset all equipment?"
 msgstr ""
 
+msgid "Second rank"
+msgstr ""
+
 msgid "Tent, Personal"
 msgstr ""
 
@@ -432,6 +435,9 @@ msgstr ""
 msgid "Storm conditions"
 msgstr ""
 
+msgid "weapons.melee.secondRank"
+msgstr ""
+
 msgid "Clothing, Normal"
 msgstr ""
 
@@ -490,6 +496,9 @@ msgid "Sack"
 msgstr ""
 
 msgid "Feed, Animal/Day"
+msgstr ""
+
+msgid "weapons.melee.charge"
 msgstr ""
 
 msgid "Include the weight"
@@ -575,6 +584,9 @@ msgid "Encumbrance"
 msgstr ""
 
 msgid "Add equipment item"
+msgstr ""
+
+msgid "Receives charge"
 msgstr ""
 
 msgid "Tent, Grand"
@@ -720,6 +732,9 @@ msgstr ""
 msgid "Add"
 msgstr ""
 
+msgid "Two-handed"
+msgstr ""
+
 msgid "Caltrop"
 msgstr ""
 
@@ -802,6 +817,9 @@ msgid "Maul"
 msgstr ""
 
 msgid "Spike, Wooden"
+msgstr ""
+
+msgid "weapons.melee.twoHanded"
 msgstr ""
 
 msgid "Clothing, Winter Travel"

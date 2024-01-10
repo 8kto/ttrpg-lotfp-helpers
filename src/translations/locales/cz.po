@@ -234,6 +234,9 @@ msgstr "Za den"
 msgid "Reset all equipment?"
 msgstr "Resetovat veškeré vybavení?"
 
+msgid "Second rank"
+msgstr ""
+
 msgid "Tent, Personal"
 msgstr "Stan, osobní"
 
@@ -432,6 +435,9 @@ msgstr "Číslo by mělo být rovno nebo větší než 0"
 msgid "Storm conditions"
 msgstr "Podmínky bouře"
 
+msgid "weapons.melee.secondRank"
+msgstr ""
+
 msgid "Clothing, Normal"
 msgstr "Oblečení, normální"
 
@@ -491,6 +497,9 @@ msgstr "Pytel"
 
 msgid "Feed, Animal/Day"
 msgstr "Krmivo, zvíře/den"
+
+msgid "weapons.melee.charge"
+msgstr ""
 
 msgid "Include the weight"
 msgstr "Zahrnout váhu"
@@ -576,6 +585,9 @@ msgstr "Zatížení"
 
 msgid "Add equipment item"
 msgstr "Přidat položku vybavení"
+
+msgid "Receives charge"
+msgstr ""
 
 msgid "Tent, Grand"
 msgstr "Stan, velký"
@@ -720,6 +732,9 @@ msgstr "Mýdlo"
 msgid "Add"
 msgstr "Přidat"
 
+msgid "Two-handed"
+msgstr ""
+
 msgid "Caltrop"
 msgstr "Krakorec"
 
@@ -803,6 +818,9 @@ msgstr "Palice"
 
 msgid "Spike, Wooden"
 msgstr "Hřebík, dřevěný"
+
+msgid "weapons.melee.twoHanded"
+msgstr ""
 
 msgid "Clothing, Winter Travel"
 msgstr "Oblečení, zimní cestování"
