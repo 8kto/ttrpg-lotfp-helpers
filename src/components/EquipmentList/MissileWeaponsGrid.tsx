@@ -10,7 +10,7 @@ import {
   renderDetailsBody,
   renderWeightGridCol,
 } from '@/components/EquipmentList/gridHelpers'
-import { handleSortByDamage } from '@/components/EquipmentList/helpers'
+import { sortWeapons } from '@/components/EquipmentList/helpers'
 import RangeFragment from '@/components/RangeFragment'
 import Equipment from '@/config/Equipment'
 import type { MissileWeaponItem } from '@/domain/weapon'
@@ -133,7 +133,7 @@ const MissileWeaponsGrid = () => {
         onAddClick={handleAddClick}
         filterFn={filterName}
         filterPlaceholder={t`Filter by name`}
-        handleSort={handleSortByDamage as DataGridSortFunction}
+        handleSort={sortWeapons as DataGridSortFunction}
         spanDetails={colSpan}
       />
     </>
