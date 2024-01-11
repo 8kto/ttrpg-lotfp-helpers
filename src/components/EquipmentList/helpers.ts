@@ -1,23 +1,29 @@
 import { trivialSort } from '@/components/DataGrid/helpers'
 import type { SortConfig } from '@/components/DataGrid/types'
 import type { Dice } from '@/domain'
-import type { MeleeWeaponItem, WeaponItem } from '@/domain/weapon'
+import type {
+  MeleeWeaponItem,
+  MissileWeaponItem,
+  Range,
+  WeaponItem,
+} from '@/domain/weapon'
 
-const parseDiceValue = (dice?: Dice) => {
+const normalizeDiceValue = (dice?: Dice) => {
   return dice ? parseInt(dice.substring(1), 10) : 0
 }
 
-export const handleSortByDamage = (sortConfig: SortConfig<WeaponItem>) => {
-  const isSpecialCase =
-    (sortConfig as SortConfig<MeleeWeaponItem>).key === 'damage'
+const normalizeRange = (range: Range | null) => {
+  if (!range) {
+    return ''
+  }
 
+  return `${range.short}-${range.medium}-${range.long}`
+}
+
+export const sortByDamage = (sortConfig: SortConfig<WeaponItem>) => {
   return (a: MeleeWeaponItem, b: MeleeWeaponItem) => {
-    const diceValueA = parseDiceValue(a.damage?.dice)
-    const diceValueB = parseDiceValue(b.damage?.dice)
-
-    if (!isSpecialCase) {
-      return trivialSort(sortConfig)(a, b)
-    }
+    const diceValueA = normalizeDiceValue(a.damage?.dice)
+    const diceValueB = normalizeDiceValue(b.damage?.dice)
 
     if (diceValueA !== diceValueB) {
       return sortConfig.direction === 'asc'
@@ -33,4 +39,35 @@ export const handleSortByDamage = (sortConfig: SortConfig<WeaponItem>) => {
 
     return 0
   }
+}
+
+/**
+ * A simple sort by range
+ */
+export const sortByRange = (sortConfig: SortConfig<MissileWeaponItem>) => {
+  return (a: MissileWeaponItem, b: MissileWeaponItem) => {
+    const rangeA = normalizeRange(a.range)
+    const rangeB = normalizeRange(b.range)
+
+    return sortConfig.direction === 'asc'
+      ? rangeA.localeCompare(rangeB)
+      : rangeB.localeCompare(rangeA)
+  }
+}
+
+export const sortWeapons = (sortConfig: SortConfig<WeaponItem>) => {
+  const shouldSortByDamage =
+    (sortConfig as SortConfig<MeleeWeaponItem>).key === 'damage'
+
+  const shouldSortByRange =
+    (sortConfig as SortConfig<MissileWeaponItem>).key === 'range'
+
+  if (shouldSortByDamage) {
+    return sortByDamage(sortConfig)
+  }
+  if (shouldSortByRange) {
+    return sortByRange(sortConfig)
+  }
+
+  return trivialSort(sortConfig)
 }
