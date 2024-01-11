@@ -10,7 +10,7 @@ import {
   renderDetailsBody,
   renderWeightGridCol,
 } from '@/components/EquipmentList/gridHelpers'
-import { handleSortByDamage } from '@/components/EquipmentList/helpers'
+import { sortWeapons } from '@/components/EquipmentList/helpers'
 import Equipment from '@/config/Equipment'
 import type { MeleeWeaponItem } from '@/domain/weapon'
 import { getInventoryItem } from '@/shared/helpers/getInventoryItem'
@@ -128,7 +128,7 @@ const MeleeWeaponsGrid = () => {
         onAddClick={handleAddClick}
         filterFn={filterName}
         filterPlaceholder={t`Filter by name`}
-        handleSort={handleSortByDamage as DataGridSortFunction}
+        handleSort={sortWeapons as DataGridSortFunction}
         spanDetails={colSpan}
       />
     </>
