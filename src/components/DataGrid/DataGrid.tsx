@@ -10,6 +10,7 @@ import type {
   SortConfig,
   SortOrder,
 } from '@/components/DataGrid/types'
+import Toast from '@/components/Toast/Toast'
 import type { EquipmentItem } from '@/domain/equipment'
 
 const DataGrid = <T extends EquipmentItem>({
@@ -60,14 +61,38 @@ const DataGrid = <T extends EquipmentItem>({
   }
 
   const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left uppercase cursor-pointer`
+  const [showToast, setShowToast] = useState(false)
+  const [toastMessage, setToastMessage] = useState('')
+
+  const showToastMessage = (message: string) => {
+    setToastMessage(message)
+    setShowToast(true)
+
+    setTimeout(() => {
+      setShowToast(false)
+    }, 900)
+  }
+
   const eventHandlers: Partial<DataGridRowProps<T>> = {
-    onAddClick: typeof onAddClick === 'function' ? onAddClick : undefined,
+    onAddClick:
+      typeof onAddClick === 'function'
+        ? (item) => {
+            onAddClick(item)
+            showToastMessage('Added')
+          }
+        : undefined,
     onRemoveClick:
-      typeof onRemoveClick === 'function' ? onRemoveClick : undefined,
+      typeof onRemoveClick === 'function'
+        ? (item) => {
+            onRemoveClick(item)
+            showToastMessage('Removed')
+          }
+        : undefined,
   }
 
   return (
     <>
+      <Toast show={showToast} message={toastMessage} />
       {!noFilter && (
         <div className='my-4 flex w-full items-center xl:w-1/2'>
           <div className='relative w-full'>
