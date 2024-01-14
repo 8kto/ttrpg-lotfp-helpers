@@ -1,4 +1,5 @@
 import { BackspaceIcon } from '@heroicons/react/24/solid'
+import { t } from '@lingui/macro'
 import classnames from 'classnames'
 import React, { useMemo, useState } from 'react'
 
@@ -68,14 +69,14 @@ const DataGrid = <T extends EquipmentItem>({
       typeof onAddClick === 'function'
         ? (item) => {
             onAddClick(item)
-            dispatchAction(Action.ShowToast, { message: 'Added' })
+            dispatchAction(Action.ShowToast, { message: t`Added` })
           }
         : undefined,
     onRemoveClick:
       typeof onRemoveClick === 'function'
         ? (item) => {
             onRemoveClick(item)
-            dispatchAction(Action.ShowToast, { message: 'Removed' })
+            dispatchAction(Action.ShowToast, { message: t`Removed` })
           }
         : undefined,
   }
