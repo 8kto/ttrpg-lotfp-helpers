@@ -1,6 +1,7 @@
 enum Action {
-  DrawerClose = 'DrawerClose',
-  TabSelected = 'TabSelected',
+  CloseDrawer = 'CloseDrawer',
+  SelectTab = 'SelectTab',
+  ShowToast = 'ShowToast',
 }
 
 export default Action
