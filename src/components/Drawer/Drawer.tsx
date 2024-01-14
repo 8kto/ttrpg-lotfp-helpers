@@ -30,7 +30,7 @@ const Drawer = ({
   const handleClose = useCallback(
     (event: React.MouseEvent) => {
       onClose(event)
-      dispatchAction(Action.DrawerClose)
+      dispatchAction(Action.CloseDrawer)
     },
     [onClose],
   )
