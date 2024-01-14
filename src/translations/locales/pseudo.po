@@ -354,9 +354,6 @@ msgstr ""
 msgid "Chest"
 msgstr ""
 
-msgid "P*"
-msgstr ""
-
 msgid "Pseudo"
 msgstr ""
 
@@ -639,6 +636,9 @@ msgstr ""
 msgid "Mancatcher"
 msgstr ""
 
+msgid "Removed"
+msgstr ""
+
 msgid "Map, Kingdom"
 msgstr ""
 
@@ -673,6 +673,9 @@ msgid "Spike, Iron"
 msgstr ""
 
 msgid "config.melee.slingRocks.details"
+msgstr ""
+
+msgid "Added"
 msgstr ""
 
 msgid "Shield"
