@@ -41,7 +41,8 @@ const DataGridCell = <T extends EquipmentItem>({
       ) : (
         <span
           className={classnames({
-            'ph-dashed-text cursor-pointer': shouldRenderDetails,
+            'ph-dashed-text cursor-pointer hover:text-red-800 active:text-red-600 transition-all duration-200':
+              shouldRenderDetails,
           })}
         >
           {item[column.key] as string}
