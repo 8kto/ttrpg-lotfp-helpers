@@ -1,18 +1,38 @@
 import classnames from 'classnames'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-const Toast = ({ show, message }: { show: boolean; message: string }) => {
+import Action from '@/shared/actions/actions'
+import { subscribe } from '@/shared/actions/helpers'
+
+const Toast = ({ fadeOutIn = 900 }: { fadeOutIn?: number }) => {
+  const [isVisible, setToastVisible] = useState(false)
+  const [toastMessage, setToastMessage] = useState('')
+
+  useEffect(() => {
+    return subscribe(Action.ShowToast, (event) => {
+      const { detail } = event as CustomEvent
+      const { message } = detail
+
+      setToastVisible(true)
+      setToastMessage(message)
+
+      setTimeout(() => {
+        setToastVisible(false)
+      }, fadeOutIn)
+    })
+  }, [fadeOutIn])
+
   return (
     <div
       className={classnames(
-        `text-sm fixed bottom-2 left-1/2 transform -translate-x-1/2 bg-black text-white py-2.5 px-5 rounded transition-all duration-200 ease-out`,
+        `fixed bottom-8 left-1/2 -translate-x-1/2 transform rounded bg-black px-5 py-2.5 text-sm text-white transition-all duration-200 ease-out`,
         {
-          'opacity-100 visible': show,
-          'translate-y-full opacity-0 invisible': !show,
+          'visible opacity-100': isVisible,
+          'invisible translate-y-full opacity-0': !isVisible,
         },
       )}
     >
-      {message}
+      {toastMessage}
     </div>
   )
 }
