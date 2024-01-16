@@ -354,9 +354,6 @@ msgstr "Použití této zbraně vyžaduje překvapivý útok nebo úspěšný z�
 msgid "Chest"
 msgstr "Truhla"
 
-msgid "P*"
-msgstr "P*"
-
 msgid "Pseudo"
 msgstr "Pseudo"
 
@@ -639,6 +636,9 @@ msgstr "Kuše, lehká"
 msgid "Mancatcher"
 msgstr "Chytač mužů"
 
+msgid "Removed"
+msgstr ""
+
 msgid "Map, Kingdom"
 msgstr "Mapa, království"
 
@@ -674,6 +674,9 @@ msgstr "Hřebík, železný"
 
 msgid "config.melee.slingRocks.details"
 msgstr "Pračky střílející kameny místo střel mají uvedený dosah (polovina běžného)."
+
+msgid "Added"
+msgstr ""
 
 msgid "Shield"
 msgstr "Štít"

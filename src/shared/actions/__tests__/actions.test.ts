@@ -2,8 +2,8 @@ import Action from '@/shared/actions/actions'
 import { dispatchAction, subscribe } from '@/shared/actions/helpers'
 
 describe('actions', () => {
-  const actionName: Action = Action.DrawerClose
-  const otherAction: Action = Action.TabSelected
+  const actionName: Action = Action.CloseDrawer
+  const otherAction: Action = Action.SelectTab
 
   afterEach(() => {
     jest.clearAllMocks()

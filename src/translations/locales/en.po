@@ -354,9 +354,6 @@ msgstr "Use of this weapon requires an attack from surprise, or a successful gra
 msgid "Chest"
 msgstr "Chest"
 
-msgid "P*"
-msgstr "P*"
-
 msgid "Pseudo"
 msgstr "Pseudo"
 
@@ -639,6 +636,9 @@ msgstr "Crossbow, Light"
 msgid "Mancatcher"
 msgstr "Mancatcher"
 
+msgid "Removed"
+msgstr "Removed"
+
 msgid "Map, Kingdom"
 msgstr "Map, Kingdom"
 
@@ -674,6 +674,9 @@ msgstr "Spike, Iron"
 
 msgid "config.melee.slingRocks.details"
 msgstr "Slings fired with stones instead of bullets have the listed range (half of the regular)."
+
+msgid "Added"
+msgstr "Added"
 
 msgid "Shield"
 msgstr "Shield"

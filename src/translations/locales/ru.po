@@ -354,9 +354,6 @@ msgstr "Требует неожиданной атаки или успешног
 msgid "Chest"
 msgstr "Сундук"
 
-msgid "P*"
-msgstr "P*"
-
 msgid "Pseudo"
 msgstr "Псевдо"
 
@@ -639,6 +636,9 @@ msgstr "Легкий арбалет"
 msgid "Mancatcher"
 msgstr "Мэнкетчер"
 
+msgid "Removed"
+msgstr "Удалено"
+
 msgid "Map, Kingdom"
 msgstr "Карта королевства"
 
@@ -674,6 +674,9 @@ msgstr "Шип, железный"
 
 msgid "config.melee.slingRocks.details"
 msgstr "Пращи, стреляющие камнями вместо пуль, имеют указанную дальность (половина обычной)."
+
+msgid "Added"
+msgstr "Добавлено"
 
 msgid "Shield"
 msgstr "Щит"

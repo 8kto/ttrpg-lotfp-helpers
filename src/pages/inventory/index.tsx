@@ -8,6 +8,7 @@ import React, { useEffect } from 'react'
 import EquipmentList from '@/components/EquipmentList/EquipmentList'
 import InventoryList from '@/components/Inventory/InventoryList'
 import InventoryPageTabs from '@/components/InventoryPageTabs'
+import Toast from '@/components/Toast/Toast'
 import { decompressDataFromUrl } from '@/shared/helpers/compressDataForUrl'
 import {
   getImportUrlParameter,
@@ -77,6 +78,7 @@ export default function InventoryPage() {
           )}
         </main>
       </div>
+      <Toast />
     </>
   )
 }
