@@ -65,13 +65,7 @@ const DataGrid = <T extends EquipmentItem>({
   const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left uppercase cursor-pointer`
 
   const eventHandlers: Partial<DataGridRowProps<T>> = {
-    onAddClick:
-      typeof onAddClick === 'function'
-        ? (item) => {
-            onAddClick(item)
-            dispatchAction(Action.ShowToast, { message: t`Added` })
-          }
-        : undefined,
+    onAddClick: typeof onAddClick === 'function' ? onAddClick : undefined,
     onRemoveClick:
       typeof onRemoveClick === 'function'
         ? (item) => {
