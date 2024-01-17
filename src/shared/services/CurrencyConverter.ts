@@ -48,9 +48,23 @@ export default class CurrencyConverter {
     }
   }
 
-  private static validateWalletKey(currency: CurrencyType): void | never {
-    if (!CurrencyType[currency]) {
-      throw new Error('Unknown currency type')
+  private static validateCurrencyRecord(
+    currencyRecord: CurrencyRecord,
+  ): void | never {
+    if (!CurrencyType[currencyRecord.currency]) {
+      throw new Error('Unknown currency record type')
+    }
+    if (
+      typeof currencyRecord.value === 'undefined' ||
+      isNaN(Number(currencyRecord.value))
+    ) {
+      throw new Error('Invalid currency record value')
+    }
+  }
+
+  private static validateWallet(wallet: CurrencyWallet): void | never {
+    if (!this.isValidWallet(wallet)) {
+      throw new Error(`Invalid wallet ${JSON.stringify(wallet)}`)
     }
   }
 
@@ -79,9 +93,7 @@ export default class CurrencyConverter {
   static getDisplayCostFromWallet(
     wallet: CurrencyWallet,
   ): Array<[number, Unit]> {
-    if (!this.isValidWallet(wallet)) {
-      throw new Error(`Invalid values in wallet ${JSON.stringify(wallet)}`)
-    }
+    this.validateWallet(wallet)
 
     const values = [
       [wallet.Gold, Unit.Gold],
@@ -92,19 +104,80 @@ export default class CurrencyConverter {
     return values as Array<[number, Unit]>
   }
 
+  static getWalletValue(
+    wallet: CurrencyWallet,
+    currency: CurrencyType,
+  ): CurrencyRecord {
+    this.validateWallet(wallet)
+
+    const valueCp = Object.entries(wallet).reduce(
+      (acc, [currencyType, value]) => {
+        switch (currencyType) {
+          case CurrencyType.Copper:
+            return acc + value
+          case CurrencyType.Silver:
+            return acc + value * COPPER_PER_SILVER
+          case CurrencyType.Gold:
+            return acc + value * COPPER_PER_GOLD
+          default:
+            throw new Error('Unknown currency type')
+        }
+      },
+      0,
+    )
+
+    return this.convertFromTo(
+      {
+        currency: CurrencyType.Copper,
+        value: valueCp,
+      },
+      currency,
+    )
+  }
+
+  static hasEnoughFundsInWallet(
+    record: CurrencyRecord,
+    wallet: CurrencyWallet,
+  ): boolean {
+    this.validateWallet(wallet)
+    this.validateCurrencyRecord(record)
+
+    const cp = this.convertToCopper(record)
+    const walletValue = this.getWalletValue(wallet, CurrencyType.Copper)
+
+    return walletValue.value >= cp
+  }
+
   static add(record: CurrencyRecord, wallet: CurrencyWallet): CurrencyWallet {
+    this.validateWallet(wallet)
+    this.validateCurrencyRecord(record)
+
     const { currency, value } = record
     const newWallet = { ...wallet }
-    this.validateWalletKey(currency)
 
     newWallet[currency] += value
 
     return newWallet
   }
 
+  static subtract(
+    record: CurrencyRecord,
+    wallet: CurrencyWallet,
+  ): CurrencyWallet {
+    this.validateWallet(wallet)
+    this.validateCurrencyRecord(record)
+
+    const { currency, value } = record
+    const newWallet = { ...wallet }
+
+    newWallet[currency] -= value
+
+    return newWallet
+  }
+
   static createWalletFrom(record: CurrencyRecord): CurrencyWallet {
     const { currency, value } = record
-    this.validateWalletKey(currency)
+    this.validateCurrencyRecord(record)
 
     return {
       Copper: 0,
@@ -118,12 +191,8 @@ export default class CurrencyConverter {
     newWallet: CurrencyWallet,
     wallet: CurrencyWallet,
   ): CurrencyWallet {
-    if (!this.isValidWallet(wallet)) {
-      throw new Error(`Invalid values in wallet ${JSON.stringify(wallet)}`)
-    }
-    if (!this.isValidWallet(newWallet)) {
-      throw new Error(`Invalid values in wallet ${JSON.stringify(newWallet)}`)
-    }
+    this.validateWallet(wallet)
+    this.validateWallet(newWallet)
 
     return Object.keys(wallet).reduce(
       (acc, key) => {
@@ -137,9 +206,7 @@ export default class CurrencyConverter {
   }
 
   static getNormalized(wallet: CurrencyWallet): CurrencyWallet {
-    if (!this.isValidWallet(wallet)) {
-      throw new Error(`Invalid values in wallet ${JSON.stringify(wallet)}`)
-    }
+    this.validateWallet(wallet)
 
     // Convert everything to copper
     const totalCopper =

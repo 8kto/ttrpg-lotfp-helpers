@@ -143,48 +143,19 @@ describe('CurrencyConverter', () => {
           currency: 'IMPOSSIBRU',
           value: 42,
         }),
-      ).toThrow('Unknown currency type')
+      ).toThrow('Unknown currency record type')
     })
   })
 
   describe('.add', () => {
-    it('should correctly add Copper to a wallet', () => {
+    it.each([
+      [CurrencyType.Copper, 100, { Copper: 150, Gold: 5, Silver: 20 }],
+      [CurrencyType.Silver, 30, { Copper: 50, Gold: 5, Silver: 50 }],
+      [CurrencyType.Gold, 2, { Copper: 50, Gold: 7, Silver: 20 }],
+    ])('should correctly add %s to a wallet', (currency, value, expected) => {
       const wallet: CurrencyWallet = { Copper: 50, Gold: 5, Silver: 20 }
-      const result = CurrencyConverter.add(
-        { currency: CurrencyType.Copper, value: 100 },
-        wallet,
-      )
-      expect(result).toEqual({
-        Copper: 150,
-        Gold: 5,
-        Silver: 20,
-      } as CurrencyWallet)
-    })
-
-    it('should correctly add Silver to a wallet', () => {
-      const wallet: CurrencyWallet = { Copper: 50, Gold: 5, Silver: 20 }
-      const result = CurrencyConverter.add(
-        { currency: CurrencyType.Silver, value: 30 },
-        wallet,
-      )
-      expect(result).toEqual({
-        Copper: 50,
-        Gold: 5,
-        Silver: 50,
-      } as CurrencyWallet)
-    })
-
-    it('should correctly add Gold to a wallet', () => {
-      const wallet: CurrencyWallet = { Copper: 50, Gold: 5, Silver: 20 }
-      const result = CurrencyConverter.add(
-        { currency: CurrencyType.Gold, value: 2 },
-        wallet,
-      )
-      expect(result).toEqual({
-        Copper: 50,
-        Gold: 7,
-        Silver: 20,
-      } as CurrencyWallet)
+      const result = CurrencyConverter.add({ currency, value }, wallet)
+      expect(result).toEqual(expected as CurrencyWallet)
     })
 
     it('throws for unknown currency', () => {
@@ -199,7 +170,7 @@ describe('CurrencyConverter', () => {
           },
           wallet,
         ),
-      ).toThrow('Unknown currency type')
+      ).toThrow('Unknown currency record type')
     })
   })
 
@@ -555,18 +526,41 @@ describe('CurrencyConverter', () => {
       ).toEqual(true)
     })
 
-    it.each([[CurrencyType.Copper, 5063, true]])(
-      'returns expected for mixed currencies (%j %j %j)',
+    it.each([
+      [CurrencyType.Copper, 1],
+      [CurrencyType.Silver, 1],
+      [CurrencyType.Gold, 1],
+    ])('returns false for mixed currencies (%j %j)', (ctype, value) => {
+      expect(
+        CurrencyConverter.hasEnoughFundsInWallet(
+          { currency: ctype, value },
+          {
+            Copper: 0,
+            Silver: 0,
+            Gold: 0,
+          },
+        ),
+      ).toEqual(false)
+    })
+
+    it.each([
+      [CurrencyType.Copper, 5000, true],
+      [CurrencyType.Copper, 5064, false],
+      [CurrencyType.Silver, 500, true],
+      [CurrencyType.Silver, 507, false],
+      [CurrencyType.Gold, 10, true],
+      [CurrencyType.Gold, 10.5, false],
+    ])(
+      'returns expected for mixed currencies (%j, %j, %j)',
       (ctype, value, expected) => {
         expect(
           CurrencyConverter.hasEnoughFundsInWallet(
-            {currency: ctype, value},
+            { currency: ctype, value },
             {
-              Copper: 0,
-              Silver: 0,
-              Gold: 0,
-              [ctype]: value,
-            },
+              Copper: 23,
+              Silver: 4, // 40 cp
+              Gold: 10, // 500sp = 5000cp
+            }, // 5000 + 40 + 23 = 5063cp / 506.3sp / 10.126gp
           ),
         ).toEqual(expected)
       },
@@ -574,11 +568,52 @@ describe('CurrencyConverter', () => {
 
     it('should throw for invalid wallet', () => {
       expect(() =>
-        CurrencyConverter.getWalletValue(
+        CurrencyConverter.hasEnoughFundsInWallet(
+          { currency: CurrencyType.Copper, value: 10 },
           { Copper: 0 } as CurrencyWallet,
-          CurrencyType.Gold,
         ),
       ).toThrow('Invalid wallet')
+    })
+
+    it('should throw for invalid record', () => {
+      expect(() =>
+        CurrencyConverter.hasEnoughFundsInWallet(
+          { currency: 'XXX' as CurrencyType, value: 10 },
+          {
+            Copper: 0,
+            Silver: 0,
+            Gold: 0,
+          },
+        ),
+      ).toThrow('Unknown currency record type')
+    })
+  })
+
+  describe('.subtract', () => {
+    const wallet: CurrencyWallet = { Copper: 50, Gold: 5, Silver: 20 }
+
+    it.each([
+      [CurrencyType.Copper, 50, { Copper: 0, Gold: 5, Silver: 20 }],
+      [CurrencyType.Silver, 10, { Copper: 50, Gold: 5, Silver: 10 }],
+      [CurrencyType.Gold, 2, { Copper: 50, Gold: 3, Silver: 20 }],
+    ])(
+      'should correctly subtract %s to a wallet',
+      (currency, value, expected) => {
+        const result = CurrencyConverter.subtract({ currency, value }, wallet)
+        expect(result).toEqual(expected as CurrencyWallet)
+      },
+    )
+
+    it('throws for unknown currency', () => {
+      expect(() =>
+        CurrencyConverter.subtract(
+          {
+            currency: 'NOPE' as CurrencyType,
+            value: 2,
+          },
+          wallet,
+        ),
+      ).toThrow('Unknown currency record type')
     })
   })
 })
