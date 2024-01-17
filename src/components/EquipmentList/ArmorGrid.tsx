@@ -9,6 +9,7 @@ import {
   renderDetailsBody,
   renderWeightGridCol,
 } from '@/components/EquipmentList/gridHelpers'
+import { subtractCost } from '@/components/EquipmentList/helpers'
 import Equipment from '@/config/Equipment'
 import type { ArmorItem } from '@/domain/armor'
 import type { EquipmentItem } from '@/domain/equipment'
@@ -62,7 +63,7 @@ const ruralCostColumn: DataGridColumn<ArmorItem> = {
 
 const ArmorGrid = () => {
   const {
-    state: { isCostRural },
+    state: { isCostRural, isWalletManaged, wallet },
   } = useInventoryState()
   const breakpoint = useTailwindBreakpoint()
   const columnsFilteredByCost = useMemo(() => {
@@ -91,6 +92,7 @@ const ArmorGrid = () => {
     )
 
     addArmor(clone)
+    subtractCost(clone.lockedCostCp, wallet.get(), isWalletManaged.get())
   }
 
   const filterName = (item: ArmorItem, filterBy: string) => {

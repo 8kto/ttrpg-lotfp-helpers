@@ -1,12 +1,15 @@
 import { trivialSort } from '@/components/DataGrid/helpers'
 import type { SortConfig } from '@/components/DataGrid/types'
 import type { Dice } from '@/domain'
+import type { CurrencyWallet } from '@/domain/currency'
+import { CurrencyType } from '@/domain/currency'
 import type {
   MeleeWeaponItem,
   MissileWeaponItem,
   Range,
   WeaponItem,
 } from '@/domain/weapon'
+import { subtractCurrency } from '@/state/InventoryState'
 
 const normalizeDiceValue = (dice?: Dice) => {
   return dice ? parseInt(dice.substring(1), 10) : 0
@@ -70,4 +73,17 @@ export const sortWeapons = (sortConfig: SortConfig<WeaponItem>) => {
   }
 
   return trivialSort(sortConfig)
+}
+
+export const subtractCost = (
+  costCp: number,
+  wallet: CurrencyWallet,
+  isWalletManaged: boolean,
+) => {
+  if (isWalletManaged) {
+    subtractCurrency({
+      currency: CurrencyType.Copper,
+      value: costCp,
+    })
+  }
 }
