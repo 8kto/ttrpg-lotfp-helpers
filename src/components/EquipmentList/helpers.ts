@@ -1,15 +1,35 @@
+import { t } from '@lingui/macro'
+
 import { trivialSort } from '@/components/DataGrid/helpers'
 import type { SortConfig } from '@/components/DataGrid/types'
+import {
+  isArmorItem,
+  isMeleeWeaponItem,
+  isMiscEquipmentItem,
+  isMissileItem,
+} from '@/components/Inventory/ItemDetails/helpers'
 import type { Dice } from '@/domain'
 import type { CurrencyWallet } from '@/domain/currency'
 import { CurrencyType } from '@/domain/currency'
+import type { EquipmentItem } from '@/domain/equipment'
 import type {
   MeleeWeaponItem,
   MissileWeaponItem,
   Range,
   WeaponItem,
 } from '@/domain/weapon'
-import { subtractCurrency } from '@/state/InventoryState'
+import Action from '@/shared/actions/actions'
+import { dispatchAction } from '@/shared/actions/helpers'
+import { getInventoryItem } from '@/shared/helpers/getInventoryItem'
+import CurrencyConverter from '@/shared/services/CurrencyConverter'
+import {
+  addArmor,
+  addEquipmentItem,
+  addMeleeWeapon,
+  addMissileWeapon,
+  InventoryState,
+  subtractCurrency,
+} from '@/state/InventoryState'
 
 const normalizeDiceValue = (dice?: Dice) => {
   return dice ? parseInt(dice.substring(1), 10) : 0
@@ -75,15 +95,59 @@ export const sortWeapons = (sortConfig: SortConfig<WeaponItem>) => {
   return trivialSort(sortConfig)
 }
 
-export const subtractCost = (
+/**
+ * Return true if the subtraction is valid
+ */
+const subtractCost = (
   costCp: number,
   wallet: CurrencyWallet,
   isWalletManaged: boolean,
-) => {
+): boolean => {
   if (isWalletManaged) {
-    subtractCurrency({
+    const record = {
       currency: CurrencyType.Copper,
       value: costCp,
+    }
+
+    if (CurrencyConverter.hasEnoughFundsInWallet(record, wallet)) {
+      subtractCurrency(record)
+
+      return true
+    }
+
+    return false
+  }
+
+  return true
+}
+
+export const handleAddClick = <T extends EquipmentItem>(item: T) => {
+  const { isCostRural, isWalletManaged, wallet } = InventoryState
+
+  const lockedCostCp =
+    (isCostRural.get() ? item.ruralCostCp : item.cityCostCp) || 0
+
+  if (subtractCost(lockedCostCp, wallet.get(), isWalletManaged.get())) {
+    const clone = getInventoryItem<T>(item, lockedCostCp)
+
+    if (isArmorItem(clone)) {
+      addArmor(clone)
+    } else if (isMeleeWeaponItem(clone)) {
+      addMeleeWeapon(clone)
+    } else if (isMissileItem(clone)) {
+      addMissileWeapon(clone)
+    } else if (isMiscEquipmentItem(clone)) {
+      addEquipmentItem(clone)
+    } else {
+      throw new Error('Unknown item')
+    }
+
+    dispatchAction(Action.ShowToast, { message: t`Added` })
+  } else {
+    dispatchAction(Action.ShowToast, {
+      delayMs: 2000,
+      message: t`Not enough funds in wallet`,
+      type: 'error',
     })
   }
 }
