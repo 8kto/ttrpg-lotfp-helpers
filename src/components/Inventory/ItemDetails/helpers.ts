@@ -34,3 +34,9 @@ export const isInventoryItem = <T extends EquipmentItem>(
 ): item is InventoryItem<T> => {
   return 'inventoryId' in item
 }
+
+export const isMiscEquipmentItem = (
+  item: EquipmentItem,
+): item is EquipmentItem => {
+  return item.categoryKey === 'miscEquipment'
+}
