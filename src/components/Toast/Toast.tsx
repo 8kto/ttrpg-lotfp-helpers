@@ -7,18 +7,19 @@ import { subscribe } from '@/shared/actions/helpers'
 const Toast = ({ fadeOutIn = 600 }: { fadeOutIn?: number }) => {
   const [isVisible, setToastVisible] = useState(false)
   const [toastMessage, setToastMessage] = useState('')
-
+  // todo type
   useEffect(() => {
     return subscribe(Action.ShowToast, (event) => {
       const { detail } = event as CustomEvent
-      const { message, delay = fadeOutIn } = detail
+      const { message, delayMs = fadeOutIn } = detail
 
       setToastVisible(true)
       setToastMessage(message)
 
       setTimeout(() => {
         setToastVisible(false)
-      }, delay)
+        setToastMessage('')
+      }, delayMs)
     })
   }, [fadeOutIn])
 
