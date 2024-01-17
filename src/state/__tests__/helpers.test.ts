@@ -57,6 +57,7 @@ describe('Inventory helpers', () => {
         encumbranceThreshold: EncumbranceThreshold.Regular,
         isCoinWeightActive: true,
         isCostRural: false,
+        isWalletManaged: false,
         meleeWeapons: [],
         miscEquipment: [],
         missileWeapons: [],

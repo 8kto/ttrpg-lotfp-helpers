@@ -16,6 +16,7 @@ export const stateMock: InventoryStateType = Object.freeze({
   encumbranceThreshold: EncumbranceThreshold.Regular,
   isCoinWeightActive: true,
   isCostRural: false,
+  isWalletManaged: false,
   meleeWeapons: [meleeWeaponItemMock1, meleeWeaponItemMock2],
   miscEquipment: [miscEquipItem1, miscEquipItem2],
   missileWeapons: [missileWeaponItemMock1, missileWeaponItemMock2],
@@ -24,4 +25,4 @@ export const stateMock: InventoryStateType = Object.freeze({
     Gold: 25,
     Silver: 31,
   },
-})
+} as InventoryStateType)
