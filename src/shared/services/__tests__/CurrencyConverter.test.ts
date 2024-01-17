@@ -1,3 +1,5 @@
+/* eslint-disable sort-keys-fix/sort-keys-fix */
+
 import type { CurrencyRecord, CurrencyWallet } from '@/domain/currency'
 import { CurrencyType } from '@/domain/currency'
 import CurrencyConverter from '@/shared/services/CurrencyConverter'
@@ -229,14 +231,14 @@ describe('CurrencyConverter', () => {
       ])
     })
 
-    it('throws if wallet is invalid', () => {
+    it('throws if Invalid wallet', () => {
       expect(() =>
         CurrencyConverter.getDisplayCostFromWallet({
           Copper: -4,
           Gold: 0,
           Silver: 9,
         }),
-      ).toThrow('Invalid values in wallet')
+      ).toThrow('Invalid wallet')
     })
   })
 
@@ -313,7 +315,7 @@ describe('CurrencyConverter', () => {
             Silver: 10,
           },
         ),
-      ).toThrow('Invalid values in wallet')
+      ).toThrow('Invalid wallet')
     })
 
     it('should throw for invalid wallet', () => {
@@ -328,7 +330,7 @@ describe('CurrencyConverter', () => {
             Copper: 1,
           } as CurrencyWallet,
         ),
-      ).toThrow('Invalid values in wallet')
+      ).toThrow('Invalid wallet')
     })
   })
 
@@ -359,7 +361,7 @@ describe('CurrencyConverter', () => {
       const wallet2: CurrencyWallet = { Copper: 100, Gold: 5, Silver: 30 }
       expect(() => {
         CurrencyConverter.mergeWallets(wallet1, wallet2)
-      }).toThrow('Invalid values in wallet')
+      }).toThrow('Invalid wallet')
     })
   })
 
@@ -403,7 +405,7 @@ describe('CurrencyConverter', () => {
     it('should throw for invalid wallet', () => {
       expect(() =>
         CurrencyConverter.getNormalized({ Copper: 0 } as CurrencyWallet),
-      ).toThrow('Invalid values in wallet')
+      ).toThrow('Invalid wallet')
     })
   })
 
@@ -455,6 +457,128 @@ describe('CurrencyConverter', () => {
           Silver: 0,
         }),
       ).toEqual(false)
+    })
+  })
+
+  describe('.getWalletValue', () => {
+    it('returns value for Copper', () => {
+      expect(
+        CurrencyConverter.getWalletValue(
+          {
+            Copper: 12,
+            Gold: 0,
+            Silver: 0,
+          },
+          CurrencyType.Copper,
+        ),
+      ).toEqual({ currency: 'Copper', value: 12 })
+      expect(
+        CurrencyConverter.getWalletValue(
+          {
+            Copper: 0,
+            Gold: 110,
+            Silver: 0,
+          },
+          CurrencyType.Copper,
+        ),
+      ).toEqual({ currency: 'Copper', value: 55000 })
+      expect(
+        CurrencyConverter.getWalletValue(
+          {
+            Copper: 0,
+            Gold: 0,
+            Silver: 5,
+          },
+          CurrencyType.Copper,
+        ),
+      ).toEqual({ currency: 'Copper', value: 50 })
+    })
+
+    it.each([
+      [CurrencyType.Copper, 5063],
+      [CurrencyType.Silver, 506.3 /* 5063 / 10 */],
+      [CurrencyType.Gold, 10.126 /* 506.3 / 50 */],
+    ])('returns value for mixed currencies (%s %d)', (ctype, value) => {
+      expect(
+        CurrencyConverter.getWalletValue(
+          {
+            Copper: 23,
+            Silver: 4, // 40 cp
+            Gold: 10, // 500sp = 5000cp
+          }, // 5000 + 40 + 23 = 5063cp
+          ctype,
+        ),
+      ).toEqual({ currency: ctype, value })
+    })
+
+    it('should throw for invalid wallet', () => {
+      expect(() =>
+        CurrencyConverter.getWalletValue(
+          { Copper: 0 } as CurrencyWallet,
+          CurrencyType.Gold,
+        ),
+      ).toThrow('Invalid wallet')
+    })
+  })
+
+  describe('.hasEnoughFundsInWallet', () => {
+    it('returns true', () => {
+      expect(
+        CurrencyConverter.hasEnoughFundsInWallet(
+          { value: 10, currency: CurrencyType.Copper },
+          {
+            Copper: 12,
+            Gold: 0,
+            Silver: 0,
+          },
+        ),
+      ).toEqual(true)
+      expect(
+        CurrencyConverter.hasEnoughFundsInWallet(
+          { value: 10, currency: CurrencyType.Gold },
+          {
+            Copper: 0,
+            Gold: 110,
+            Silver: 0,
+          },
+        ),
+      ).toEqual(true)
+      expect(
+        CurrencyConverter.hasEnoughFundsInWallet(
+          { value: 1, currency: CurrencyType.Silver },
+          {
+            Copper: 0,
+            Gold: 0,
+            Silver: 5,
+          },
+        ),
+      ).toEqual(true)
+    })
+
+    it.each([[CurrencyType.Copper, 5063, true]])(
+      'returns expected for mixed currencies (%j %j %j)',
+      (ctype, value, expected) => {
+        expect(
+          CurrencyConverter.hasEnoughFundsInWallet(
+            {currency: ctype, value},
+            {
+              Copper: 0,
+              Silver: 0,
+              Gold: 0,
+              [ctype]: value,
+            },
+          ),
+        ).toEqual(expected)
+      },
+    )
+
+    it('should throw for invalid wallet', () => {
+      expect(() =>
+        CurrencyConverter.getWalletValue(
+          { Copper: 0 } as CurrencyWallet,
+          CurrencyType.Gold,
+        ),
+      ).toThrow('Invalid wallet')
     })
   })
 })
