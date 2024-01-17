@@ -37,6 +37,7 @@ const ArmorInventoryGrid = () => {
   const { state: equipmentState } = useInventoryState()
   const { armor } = equipmentState
 
+  // TODO add funds to managed wallet
   const onRemoveClick = (item: ArmorInventoryItem) => removeArmor(item)
 
   return (
