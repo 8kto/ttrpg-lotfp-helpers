@@ -160,6 +160,9 @@ msgstr ""
 msgid "Barrel"
 msgstr ""
 
+msgid "Not enough funds in wallet"
+msgstr ""
+
 msgid "Export or Import Inventory"
 msgstr ""
 
@@ -232,6 +235,9 @@ msgid "Per day"
 msgstr ""
 
 msgid "Reset all equipment?"
+msgstr ""
+
+msgid "Active"
 msgstr ""
 
 msgid "Second rank"
@@ -835,9 +841,6 @@ msgid "AC"
 msgstr ""
 
 msgid "+1 AC versus mêlée attacks, +2 AC versus missile attacks."
-msgstr ""
-
-msgid "Manage"
 msgstr ""
 
 #. js-lingui-explicit-id

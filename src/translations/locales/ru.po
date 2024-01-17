@@ -160,6 +160,9 @@ msgstr "Это одноручное оружие, включая коротки�
 msgid "Barrel"
 msgstr "Бочка"
 
+msgid "Not enough funds in wallet"
+msgstr "Не хватает денег"
+
 msgid "Export or Import Inventory"
 msgstr "Экспорт или Импорт инвентаря"
 
@@ -233,6 +236,9 @@ msgstr "В день"
 
 msgid "Reset all equipment?"
 msgstr "Сбросить всё снаряжение?"
+
+msgid "Active"
+msgstr "Активный"
 
 msgid "Second rank"
 msgstr "Второй ряд"
@@ -836,9 +842,6 @@ msgstr "AC"
 
 msgid "+1 AC versus mêlée attacks, +2 AC versus missile attacks."
 msgstr "+1 AC против рукопашных, +2 AC против дальнобойных атак."
-
-msgid "Manage"
-msgstr "Управление"
 
 #. js-lingui-explicit-id
 msgid "weapons.melee.charge"

@@ -160,6 +160,9 @@ msgstr "To jsou jednoruční zbraně, včetně krátkých mečů a seker"
 msgid "Barrel"
 msgstr "Sud"
 
+msgid "Not enough funds in wallet"
+msgstr ""
+
 msgid "Export or Import Inventory"
 msgstr "Exportovat nebo Importovat Inventář"
 
@@ -233,6 +236,9 @@ msgstr "Za den"
 
 msgid "Reset all equipment?"
 msgstr "Resetovat veškeré vybavení?"
+
+msgid "Active"
+msgstr ""
 
 msgid "Second rank"
 msgstr "Druhá řada"
@@ -836,9 +842,6 @@ msgstr "AC"
 
 msgid "+1 AC versus mêlée attacks, +2 AC versus missile attacks."
 msgstr "+1 AC proti útokům na blízko, +2 AC proti střelným útokům."
-
-msgid "Manage"
-msgstr "Spravovat"
 
 #. js-lingui-explicit-id
 msgid "weapons.melee.charge"

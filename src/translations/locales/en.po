@@ -160,6 +160,9 @@ msgstr "These are one-handed weapons, including short swords and hand axes"
 msgid "Barrel"
 msgstr "Barrel"
 
+msgid "Not enough funds in wallet"
+msgstr "Not enough funds in wallet"
+
 msgid "Export or Import Inventory"
 msgstr "Export or Import Inventory"
 
@@ -233,6 +236,9 @@ msgstr "Per day"
 
 msgid "Reset all equipment?"
 msgstr "Reset all equipment?"
+
+msgid "Active"
+msgstr "Active"
 
 msgid "Second rank"
 msgstr "Second rank"
@@ -836,9 +842,6 @@ msgstr "AC"
 
 msgid "+1 AC versus mêlée attacks, +2 AC versus missile attacks."
 msgstr "+1 AC versus mêlée attacks, +2 AC versus missile attacks."
-
-msgid "Manage"
-msgstr "Manage"
 
 #. js-lingui-explicit-id
 msgid "weapons.melee.charge"
