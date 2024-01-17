@@ -136,6 +136,12 @@ export const addCurrency = (record: CurrencyRecord) => {
   InventoryState.wallet.merge((wallet) => CurrencyConverter.add(record, wallet))
 }
 
+export const subtractCurrency = (record: CurrencyRecord) => {
+  InventoryState.wallet.merge((wallet) =>
+    CurrencyConverter.subtract(record, wallet),
+  )
+}
+
 export const setCurrencies = (record: CurrencyRecord) => {
   const balance = InventoryState.wallet
   balance.set(CurrencyConverter.createWalletFrom(record))
