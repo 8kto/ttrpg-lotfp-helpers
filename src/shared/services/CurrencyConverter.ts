@@ -5,7 +5,7 @@ import { roundTo } from '@/shared/helpers/roundTo'
 const COPPER_PER_GOLD = 500 // 50 * 10
 const COPPER_PER_SILVER = 10
 const SILVER_PER_GOLD = 50
-const DEFAULT_CURRENCY = CurrencyType.Silver
+export const DEFAULT_CURRENCY = CurrencyType.Silver
 
 export default class CurrencyConverter {
   private static convertToCopper(record: CurrencyRecord): number {
@@ -74,6 +74,8 @@ export default class CurrencyConverter {
    * Convert any cost onto the default one for displaying in UI
    */
   static getDisplayCost(record: CurrencyRecord) {
+    this.validateCurrencyRecord(record)
+
     return this.convertFromTo(record, DEFAULT_CURRENCY)
   }
 
