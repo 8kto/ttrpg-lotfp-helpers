@@ -121,7 +121,9 @@ const subtractCost = (
   return true
 }
 
-export const handleAddClick = <T extends EquipmentItem>(item: T) => {
+export const handleAddEquipmentItemClick = <T extends EquipmentItem>(
+  item: T,
+) => {
   const { isCostRural, isWalletManaged, wallet } = InventoryState
 
   const lockedCostCp =
