@@ -101,10 +101,7 @@ const ImportEquipmentPackFragment = ({ onClose }: { onClose: () => void }) => {
               }}
             >
               <ResetFormOnDrawerClose onDrawerClose={handleClose} />
-              <h5
-                id='drawer-label--add-coins'
-                className='ph-color-accent mb-6 inline-flex items-center text-2xl'
-              >
+              <h5 className='ph-color-accent mb-6 inline-flex items-center text-2xl'>
                 <Trans>Import</Trans>
               </h5>
               <button
