@@ -1,8 +1,10 @@
 import type { CurrencyRecord, CurrencyWallet } from '@/domain/currency'
 import { CurrencyType, Unit } from '@/domain/currency'
+import { roundTo } from '@/shared/helpers/roundTo'
 
 const COPPER_PER_GOLD = 500 // 50 * 10
 const COPPER_PER_SILVER = 10
+const SILVER_PER_GOLD = 50
 const DEFAULT_CURRENCY = CurrencyType.Silver
 
 export default class CurrencyConverter {
@@ -160,6 +162,7 @@ export default class CurrencyConverter {
     return newWallet
   }
 
+  // TODO rethink one more time -- just stick to the normalized wallet?
   static subtract(
     record: CurrencyRecord,
     wallet: CurrencyWallet,
@@ -171,6 +174,32 @@ export default class CurrencyConverter {
     const newWallet = { ...wallet }
 
     newWallet[currency] -= value
+
+    if (newWallet[currency] < 0) {
+      let remained = newWallet[currency]
+      let currCurrency = currency
+
+      while (remained < 0) {
+        let nextCurrency = CurrencyType.Silver
+        let factor = COPPER_PER_SILVER
+
+        if (currCurrency === CurrencyType.Silver) {
+          nextCurrency = CurrencyType.Gold
+          factor = SILVER_PER_GOLD
+        }
+        if (currCurrency === CurrencyType.Gold) {
+          throw new Error('Not enough funds')
+        }
+
+        newWallet[currCurrency] = 0
+        newWallet[nextCurrency] = roundTo(
+          newWallet[nextCurrency] - Math.abs(remained) / factor,
+          1,
+        )
+        remained = newWallet[nextCurrency]
+        currCurrency = nextCurrency
+      }
+    }
 
     return newWallet
   }

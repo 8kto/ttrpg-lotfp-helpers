@@ -546,6 +546,7 @@ describe('CurrencyConverter', () => {
     it.each([
       [CurrencyType.Copper, 5000, true],
       [CurrencyType.Copper, 5064, false],
+      [CurrencyType.Copper, 60, true],
       [CurrencyType.Silver, 500, true],
       [CurrencyType.Silver, 507, false],
       [CurrencyType.Gold, 10, true],
@@ -590,7 +591,12 @@ describe('CurrencyConverter', () => {
   })
 
   describe('.subtract', () => {
-    const wallet: CurrencyWallet = { Copper: 50, Gold: 5, Silver: 20 }
+    const wallet: CurrencyWallet = {
+      Copper: 50, // 50cp   == 5sp   == 0.1gp
+      Silver: 20, // 200cp  == 20sp  == 0.4gp
+      Gold: 5, // 2500cp == 250sp == 5gp
+      // Total:      2750cp == 275sp == 5.5gp
+    }
 
     it.each([
       [CurrencyType.Copper, 50, { Copper: 0, Gold: 5, Silver: 20 }],
@@ -603,6 +609,18 @@ describe('CurrencyConverter', () => {
         expect(result).toEqual(expected as CurrencyWallet)
       },
     )
+
+    it.each([
+      [CurrencyType.Copper, 60, { Copper: 0, Silver: 19, Gold: 5 }],
+      [CurrencyType.Copper, 750, { Copper: 0, Silver: 0, Gold: 4 }],
+      [CurrencyType.Copper, 2750, { Copper: 0, Silver: 0, Gold: 0 }],
+      // [CurrencyType.Silver, 275, { Copper: 0, Silver: 0, Gold: 0 }], // TODO
+      [CurrencyType.Silver, 20, { Copper: 50, Silver: 0, Gold: 5 }],
+      [CurrencyType.Silver, 260, { Copper: 50, Silver: 0, Gold: 0.2 }],
+    ])('should pass over the remains (%j %j)', (currency, value, expected) => {
+      const result = CurrencyConverter.subtract({ currency, value }, wallet)
+      expect(result).toEqual(expected as CurrencyWallet)
+    })
 
     it('throws for unknown currency', () => {
       expect(() =>
