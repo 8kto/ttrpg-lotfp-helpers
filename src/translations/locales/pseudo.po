@@ -351,6 +351,9 @@ msgstr ""
 msgid "Heavy crossbows can only be fired once in 3 rounds and ignore 4 AC points"
 msgstr ""
 
+msgid "Total, optimised"
+msgstr ""
+
 msgid "config.misc.caltrop.details"
 msgstr ""
 

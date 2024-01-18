@@ -351,6 +351,9 @@ msgstr "Легко нагружен"
 msgid "Heavy crossbows can only be fired once in 3 rounds and ignore 4 AC points"
 msgstr "Тяжёлый арбалет стреляет только один раз за 3 раунда и игнорирует 4 AC."
 
+msgid "Total, optimised"
+msgstr "Всего (упорядочено)"
+
 msgid "config.misc.caltrop.details"
 msgstr "Ежи (caltrop) — это металлические шипы, которые выглядят как распорки, у которых один острый конец всегда направлен вверх."
 
