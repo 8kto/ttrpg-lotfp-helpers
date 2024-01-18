@@ -10,13 +10,15 @@ import {
   renderDetailsBody,
   renderWeightGridCol,
 } from '@/components/EquipmentList/gridHelpers'
-import { sortWeapons } from '@/components/EquipmentList/helpers'
+import {
+  handleAddEquipmentItemClick,
+  sortWeapons,
+} from '@/components/EquipmentList/helpers'
 import RangeFragment from '@/components/RangeFragment'
 import Equipment from '@/config/Equipment'
 import type { MissileWeaponItem } from '@/domain/weapon'
-import { getInventoryItem } from '@/shared/helpers/getInventoryItem'
 import useTailwindBreakpoint from '@/shared/hooks/useTailwindBreakpoint'
-import { addMissileWeapon, useInventoryState } from '@/state/InventoryState'
+import { useInventoryState } from '@/state/InventoryState'
 
 const columns: ReadonlyArray<DataGridColumn<MissileWeaponItem>> = [
   {
@@ -95,14 +97,6 @@ const MissileWeaponsGrid = () => {
     return isCostRural.get() ? data.filter((i) => i.ruralCostCp !== null) : data
   }, [isCostRural])
 
-  const handleAddClick = (item: MissileWeaponItem) => {
-    const clone = getInventoryItem(
-      item,
-      (isCostRural.get() ? item.ruralCostCp : item.cityCostCp)!,
-    )
-    addMissileWeapon(clone)
-  }
-
   const filterName = (item: MissileWeaponItem, filterBy: string) => {
     return item.name.toLocaleLowerCase().includes(filterBy.toLocaleLowerCase())
   }
@@ -130,7 +124,7 @@ const MissileWeaponsGrid = () => {
       <DataGrid<MissileWeaponItem>
         data={dataFilteredByCost}
         columns={columnsFilteredByCost}
-        onAddClick={handleAddClick}
+        onAddClick={handleAddEquipmentItemClick}
         filterFn={filterName}
         filterPlaceholder={t`Filter by name`}
         handleSort={sortWeapons as DataGridSortFunction}

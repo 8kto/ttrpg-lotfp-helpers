@@ -8,7 +8,7 @@ import {
   renderDetailsBody,
   renderWeightGridCol,
 } from '@/components/EquipmentList/gridHelpers'
-import { handleAddClick } from '@/components/EquipmentList/helpers'
+import { handleAddEquipmentItemClick } from '@/components/EquipmentList/helpers'
 import Equipment from '@/config/Equipment'
 import type { EquipmentItem } from '@/domain/equipment'
 import useTailwindBreakpoint from '@/shared/hooks/useTailwindBreakpoint'
@@ -83,7 +83,7 @@ const MiscEquipmentGrid = () => {
     <DataGrid<EquipmentItem>
       data={dataFilteredByCost}
       columns={columnsFilteredByCost}
-      onAddClick={handleAddClick}
+      onAddClick={handleAddEquipmentItemClick}
       filterFn={filterName}
       filterPlaceholder={t`Filter by name`}
       spanDetails={colSpan}

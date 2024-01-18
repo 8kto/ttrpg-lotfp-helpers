@@ -10,12 +10,14 @@ import {
   renderDetailsBody,
   renderWeightGridCol,
 } from '@/components/EquipmentList/gridHelpers'
-import { sortWeapons } from '@/components/EquipmentList/helpers'
+import {
+  handleAddEquipmentItemClick,
+  sortWeapons,
+} from '@/components/EquipmentList/helpers'
 import Equipment from '@/config/Equipment'
 import type { MeleeWeaponItem } from '@/domain/weapon'
-import { getInventoryItem } from '@/shared/helpers/getInventoryItem'
 import useTailwindBreakpoint from '@/shared/hooks/useTailwindBreakpoint'
-import { addMeleeWeapon, useInventoryState } from '@/state/InventoryState'
+import { useInventoryState } from '@/state/InventoryState'
 
 const columns: ReadonlyArray<DataGridColumn<MeleeWeaponItem>> = [
   {
@@ -81,14 +83,6 @@ const MeleeWeaponsGrid = () => {
     return isCostRural.get() ? data.filter((i) => i.ruralCostCp !== null) : data
   }, [isCostRural])
 
-  const handleAddClick = (item: MeleeWeaponItem) => {
-    const clone = getInventoryItem(
-      item,
-      (isCostRural.get() ? item.ruralCostCp : item.cityCostCp)!,
-    )
-    addMeleeWeapon(clone)
-  }
-
   const filterName = (item: MeleeWeaponItem, filterBy: string) => {
     return item.name.toLocaleLowerCase().includes(filterBy.toLocaleLowerCase())
   }
@@ -125,7 +119,7 @@ const MeleeWeaponsGrid = () => {
       <DataGrid<MeleeWeaponItem>
         data={dataFilteredByCost}
         columns={columnsFilteredByCost}
-        onAddClick={handleAddClick}
+        onAddClick={handleAddEquipmentItemClick}
         filterFn={filterName}
         filterPlaceholder={t`Filter by name`}
         handleSort={sortWeapons as DataGridSortFunction}

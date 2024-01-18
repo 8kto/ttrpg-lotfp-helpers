@@ -9,13 +9,12 @@ import {
   renderDetailsBody,
   renderWeightGridCol,
 } from '@/components/EquipmentList/gridHelpers'
-import { subtractCost } from '@/components/EquipmentList/helpers'
+import { handleAddEquipmentItemClick } from '@/components/EquipmentList/helpers'
 import Equipment from '@/config/Equipment'
 import type { ArmorItem } from '@/domain/armor'
 import type { EquipmentItem } from '@/domain/equipment'
-import { getInventoryItem } from '@/shared/helpers/getInventoryItem'
 import useTailwindBreakpoint from '@/shared/hooks/useTailwindBreakpoint'
-import { addArmor, useInventoryState } from '@/state/InventoryState'
+import { useInventoryState } from '@/state/InventoryState'
 
 const columns: ReadonlyArray<DataGridColumn<ArmorItem>> = [
   {
@@ -63,7 +62,7 @@ const ruralCostColumn: DataGridColumn<ArmorItem> = {
 
 const ArmorGrid = () => {
   const {
-    state: { isCostRural, isWalletManaged, wallet },
+    state: { isCostRural },
   } = useInventoryState()
   const breakpoint = useTailwindBreakpoint()
   const columnsFilteredByCost = useMemo(() => {
@@ -84,16 +83,6 @@ const ArmorGrid = () => {
   const colSpan = isSmallViewport
     ? columnsFilteredByCost.length - 1
     : columnsFilteredByCost.length
-
-  const handleAddClick = (item: ArmorItem) => {
-    const clone = getInventoryItem(
-      item,
-      (isCostRural.get() ? item.ruralCostCp : item.cityCostCp)!,
-    )
-
-    addArmor(clone)
-    subtractCost(clone.lockedCostCp, wallet.get(), isWalletManaged.get())
-  }
 
   const filterName = (item: ArmorItem, filterBy: string) => {
     return item.name.toLocaleLowerCase().includes(filterBy.toLocaleLowerCase())
@@ -143,7 +132,7 @@ const ArmorGrid = () => {
       <DataGrid<ArmorItem>
         data={dataFilteredByCost}
         columns={columnsFilteredByCost}
-        onAddClick={handleAddClick}
+        onAddClick={handleAddEquipmentItemClick}
         filterFn={filterName}
         filterPlaceholder={t`Filter by name`}
         handleSort={handleSort as typeof trivialSort}
