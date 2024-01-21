@@ -200,6 +200,9 @@ msgstr "Наборы"
 msgid "Silver"
 msgstr "Серебряные"
 
+msgid "Optimise wallet"
+msgstr "Упорядочить"
+
 msgid "These are small one-handed weapons including daggers and clubs, and suffer a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 msgstr "Это небольшое одноручное оружие, включая кинжалы и булавы, даёт штраф -2 AB для противников с AC 15 или выше."
 

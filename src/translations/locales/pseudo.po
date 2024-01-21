@@ -200,6 +200,9 @@ msgstr ""
 msgid "Silver"
 msgstr ""
 
+msgid "Optimise wallet"
+msgstr ""
+
 msgid "These are small one-handed weapons including daggers and clubs, and suffer a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 msgstr ""
 

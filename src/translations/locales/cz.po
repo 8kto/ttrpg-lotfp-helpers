@@ -200,6 +200,9 @@ msgstr "Balíčky"
 msgid "Silver"
 msgstr "Stříbro"
 
+msgid "Optimise wallet"
+msgstr ""
+
 msgid "These are small one-handed weapons including daggers and clubs, and suffer a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 msgstr "To jsou malé jednoruční zbraně včetně dýk a kyjů, které mají penalizaci -2 k zásahu protivníků s neupraveným AC 15 nebo lepším."
 
