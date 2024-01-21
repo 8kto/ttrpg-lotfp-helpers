@@ -53,10 +53,7 @@ const AddCoinsFragment = ({ onClose }: { onClose: () => void }) => {
             }
           }}
         >
-          <h5
-            id='drawer-label--add-coins'
-            className='ph-color-accent mb-6 inline-flex items-center text-2xl'
-          >
+          <h5 className='ph-color-accent mb-6 inline-flex items-center text-2xl'>
             <Trans>Add coins</Trans>
           </h5>
           <button

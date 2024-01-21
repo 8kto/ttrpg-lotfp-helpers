@@ -7,9 +7,10 @@ import {
   renderInventoryDetailsBody,
   renderInventoryTitle,
 } from '@/components/EquipmentList/gridHelpers'
+import { handleRemoveEquipmentItemClick } from '@/components/EquipmentList/helpers'
 import type { EquipmentItem } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
-import { removeEquipmentItem, useInventoryState } from '@/state/InventoryState'
+import { useInventoryState } from '@/state/InventoryState'
 
 type EquipmentInventoryItem = InventoryItem<EquipmentItem>
 
@@ -30,14 +31,11 @@ const MiscEquipmentInventoryGrid = () => {
   const { state: equipmentState } = useInventoryState()
   const { miscEquipment } = equipmentState
 
-  const onRemoveClick = (item: EquipmentInventoryItem) =>
-    removeEquipmentItem(item)
-
   return (
     <DataGrid<EquipmentInventoryItem>
       data={miscEquipment.get()}
       columns={columns}
-      onRemoveClick={onRemoveClick}
+      onRemoveClick={handleRemoveEquipmentItemClick}
       spanDetails={columns.length}
       initialSortState={{
         key: '' as keyof EquipmentInventoryItem,

@@ -160,6 +160,9 @@ msgstr "To jsou jednoruční zbraně, včetně krátkých mečů a seker"
 msgid "Barrel"
 msgstr "Sud"
 
+msgid "Not enough funds in wallet"
+msgstr ""
+
 msgid "Export or Import Inventory"
 msgstr "Exportovat nebo Importovat Inventář"
 
@@ -197,6 +200,9 @@ msgstr "Balíčky"
 msgid "Silver"
 msgstr "Stříbro"
 
+msgid "Optimise wallet"
+msgstr ""
+
 msgid "These are small one-handed weapons including daggers and clubs, and suffer a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 msgstr "To jsou malé jednoruční zbraně včetně dýk a kyjů, které mají penalizaci -2 k zásahu protivníků s neupraveným AC 15 nebo lepším."
 
@@ -233,6 +239,9 @@ msgstr "Za den"
 
 msgid "Reset all equipment?"
 msgstr "Resetovat veškeré vybavení?"
+
+msgid "Active"
+msgstr ""
 
 msgid "Second rank"
 msgstr "Druhá řada"
@@ -344,6 +353,9 @@ msgstr "Lehce"
 
 msgid "Heavy crossbows can only be fired once in 3 rounds and ignore 4 AC points"
 msgstr "Těžké křížové luki lze vystřelit pouze jednou za 3 kola a ignorují 4 body AC"
+
+msgid "Total, optimised"
+msgstr ""
 
 msgid "config.misc.caltrop.details"
 msgstr "Ježci (caltrop) jsou kovové hroty, které vypadají jako podpěry, přičemž jeden ostrý konec je vždy nasměrován nahoru."
@@ -836,9 +848,6 @@ msgstr "AC"
 
 msgid "+1 AC versus mêlée attacks, +2 AC versus missile attacks."
 msgstr "+1 AC proti útokům na blízko, +2 AC proti střelným útokům."
-
-msgid "Manage"
-msgstr "Spravovat"
 
 #. js-lingui-explicit-id
 msgid "weapons.melee.charge"

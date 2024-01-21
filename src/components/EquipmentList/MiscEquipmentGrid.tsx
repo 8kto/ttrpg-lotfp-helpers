@@ -8,11 +8,11 @@ import {
   renderDetailsBody,
   renderWeightGridCol,
 } from '@/components/EquipmentList/gridHelpers'
+import { handleAddEquipmentItemClick } from '@/components/EquipmentList/helpers'
 import Equipment from '@/config/Equipment'
 import type { EquipmentItem } from '@/domain/equipment'
-import { getInventoryItem } from '@/shared/helpers/getInventoryItem'
 import useTailwindBreakpoint from '@/shared/hooks/useTailwindBreakpoint'
-import { addEquipmentItem, useInventoryState } from '@/state/InventoryState'
+import { useInventoryState } from '@/state/InventoryState'
 
 const columns: ReadonlyArray<DataGridColumn<EquipmentItem>> = [
   {
@@ -70,15 +70,6 @@ const MiscEquipmentGrid = () => {
     return isCostRural.get() ? data.filter((i) => i.ruralCostCp !== null) : data
   }, [isCostRural])
 
-  const handleAddClick = (item: EquipmentItem) => {
-    const clone = getInventoryItem(
-      item,
-      (isCostRural.get() ? item.ruralCostCp : item.cityCostCp)!,
-    )
-
-    addEquipmentItem(clone)
-  }
-
   const filterName = (item: EquipmentItem, filterBy: string) => {
     return item.name.toLocaleLowerCase().includes(filterBy.toLocaleLowerCase())
   }
@@ -92,7 +83,7 @@ const MiscEquipmentGrid = () => {
     <DataGrid<EquipmentItem>
       data={dataFilteredByCost}
       columns={columnsFilteredByCost}
-      onAddClick={handleAddClick}
+      onAddClick={handleAddEquipmentItemClick}
       filterFn={filterName}
       filterPlaceholder={t`Filter by name`}
       spanDetails={colSpan}

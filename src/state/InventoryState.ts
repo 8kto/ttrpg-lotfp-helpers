@@ -16,6 +16,7 @@ export type InventoryStateType = {
   wallet: CurrencyWallet
   isCoinWeightActive: boolean
   isCostRural: boolean
+  isWalletManaged: boolean
   meleeWeapons: ReadonlyArray<InventoryItem<MeleeWeaponItem>>
   missileWeapons: ReadonlyArray<InventoryItem<MissileWeaponItem>>
   miscEquipment: ReadonlyArray<InventoryItem<EquipmentItem>>
@@ -32,6 +33,7 @@ const initialInventoryState: Readonly<InventoryStateType> = {
   encumbranceThreshold: EncumbranceThreshold.Regular,
   isCoinWeightActive: true,
   isCostRural: false,
+  isWalletManaged: false,
   meleeWeapons: Array<InventoryItem<MeleeWeaponItem>>(),
   miscEquipment: Array<InventoryItem<EquipmentItem>>(),
   missileWeapons: Array<InventoryItem<MissileWeaponItem>>(),
@@ -125,8 +127,19 @@ export const toggleCoinsWeightActive = () => {
   isCoinWeightActive.set(!isCoinWeightActive.get())
 }
 
+export const toggleWalletIsManaged = () => {
+  const isWalletManaged = InventoryState.isWalletManaged
+  isWalletManaged.set(!isWalletManaged.get())
+}
+
 export const addCurrency = (record: CurrencyRecord) => {
   InventoryState.wallet.merge((wallet) => CurrencyConverter.add(record, wallet))
+}
+
+export const subtractCurrency = (record: CurrencyRecord) => {
+  InventoryState.wallet.merge((wallet) =>
+    CurrencyConverter.subtract(record, wallet),
+  )
 }
 
 export const setCurrencies = (record: CurrencyRecord) => {

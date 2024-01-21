@@ -160,6 +160,9 @@ msgstr ""
 msgid "Barrel"
 msgstr ""
 
+msgid "Not enough funds in wallet"
+msgstr ""
+
 msgid "Export or Import Inventory"
 msgstr ""
 
@@ -197,6 +200,9 @@ msgstr ""
 msgid "Silver"
 msgstr ""
 
+msgid "Optimise wallet"
+msgstr ""
+
 msgid "These are small one-handed weapons including daggers and clubs, and suffer a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 msgstr ""
 
@@ -232,6 +238,9 @@ msgid "Per day"
 msgstr ""
 
 msgid "Reset all equipment?"
+msgstr ""
+
+msgid "Active"
 msgstr ""
 
 msgid "Second rank"
@@ -343,6 +352,9 @@ msgid "Lightly"
 msgstr ""
 
 msgid "Heavy crossbows can only be fired once in 3 rounds and ignore 4 AC points"
+msgstr ""
+
+msgid "Total, optimised"
 msgstr ""
 
 msgid "config.misc.caltrop.details"
@@ -835,9 +847,6 @@ msgid "AC"
 msgstr ""
 
 msgid "+1 AC versus mêlée attacks, +2 AC versus missile attacks."
-msgstr ""
-
-msgid "Manage"
 msgstr ""
 
 #. js-lingui-explicit-id

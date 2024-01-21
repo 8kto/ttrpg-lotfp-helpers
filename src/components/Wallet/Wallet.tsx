@@ -9,15 +9,15 @@ import Toggle from '@/components/Toggle/Toggle'
 import {
   resetCurrencies,
   toggleCoinsWeightActive,
+  toggleWalletIsManaged,
   useInventoryState,
 } from '@/state/InventoryState'
 
 const Wallet = () => {
-  const [isManaged, setIsManaged] = useState(false)
   const [isSetCoinsDrawerOpen, setSetCoinsDrawerOpen] = useState(false)
 
   const {
-    state: { wallet, isCoinWeightActive },
+    state: { wallet, isCoinWeightActive, isWalletManaged },
   } = useInventoryState()
 
   return (
@@ -38,7 +38,7 @@ const Wallet = () => {
           <RemoveCoinsIcon className='me-auto h-5 w-5' />
         </button>
         <Drawer
-          isOpen={isSetCoinsDrawerOpen}
+          open={isSetCoinsDrawerOpen}
           onClose={() => setSetCoinsDrawerOpen(false)}
           ariaLabelledBy={'drawer-label'}
         >
@@ -47,24 +47,15 @@ const Wallet = () => {
       </div>
       {/* 2nd row */}
       <>
-        {/* TODO enable this toggle */}
-        <label className='relative inline-flex hidden cursor-pointer items-center'>
-          <input
-            type='checkbox'
-            checked={isManaged}
-            className='peer sr-only'
-            onChange={() => {
-              setIsManaged((v) => !v)
-            }}
-          />
-          <div className="peer h-6 w-11 scale-90 rounded-full bg-gray-200 after:absolute after:start-[2px] after:top-[2px] after:h-5 after:w-5 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-red-900 peer-checked:after:translate-x-full peer-checked:after:border-white peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-red-300"></div>
-          <span
-            className='ms-2'
+        <div className='block m-0'>
+          <Toggle
+            checked={isWalletManaged.get()}
+            onChange={toggleWalletIsManaged}
             title={t`Enable automatic subtraction of money when equipment items are added`}
           >
-            <Trans>Manage</Trans>
-          </span>
-        </label>
+            <Trans>Active</Trans>
+          </Toggle>
+        </div>
         <Toggle
           checked={isCoinWeightActive.get()}
           onChange={toggleCoinsWeightActive}

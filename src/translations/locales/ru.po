@@ -160,6 +160,9 @@ msgstr "Это одноручное оружие, включая коротки�
 msgid "Barrel"
 msgstr "Бочка"
 
+msgid "Not enough funds in wallet"
+msgstr "Не хватает денег"
+
 msgid "Export or Import Inventory"
 msgstr "Экспорт или Импорт инвентаря"
 
@@ -197,6 +200,9 @@ msgstr "Наборы"
 msgid "Silver"
 msgstr "Серебряные"
 
+msgid "Optimise wallet"
+msgstr "Упорядочить"
+
 msgid "These are small one-handed weapons including daggers and clubs, and suffer a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 msgstr "Это небольшое одноручное оружие, включая кинжалы и булавы, даёт штраф -2 AB для противников с AC 15 или выше."
 
@@ -233,6 +239,9 @@ msgstr "В день"
 
 msgid "Reset all equipment?"
 msgstr "Сбросить всё снаряжение?"
+
+msgid "Active"
+msgstr "Активный"
 
 msgid "Second rank"
 msgstr "Второй ряд"
@@ -344,6 +353,9 @@ msgstr "Легко нагружен"
 
 msgid "Heavy crossbows can only be fired once in 3 rounds and ignore 4 AC points"
 msgstr "Тяжёлый арбалет стреляет только один раз за 3 раунда и игнорирует 4 AC."
+
+msgid "Total, optimised"
+msgstr "Всего (упорядочено)"
 
 msgid "config.misc.caltrop.details"
 msgstr "Ежи (caltrop) — это металлические шипы, которые выглядят как распорки, у которых один острый конец всегда направлен вверх."
@@ -836,9 +848,6 @@ msgstr "AC"
 
 msgid "+1 AC versus mêlée attacks, +2 AC versus missile attacks."
 msgstr "+1 AC против рукопашных, +2 AC против дальнобойных атак."
-
-msgid "Manage"
-msgstr "Управление"
 
 #. js-lingui-explicit-id
 msgid "weapons.melee.charge"

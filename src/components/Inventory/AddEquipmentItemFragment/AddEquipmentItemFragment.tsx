@@ -61,10 +61,7 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
     >
       {() => (
         <Form>
-          <h5
-            id='drawer-label--add-coins'
-            className='ph-color-accent mb-6 inline-flex items-center text-2xl'
-          >
+          <h5 className='ph-color-accent mb-6 inline-flex items-center text-2xl'>
             <Trans>Add equipment item</Trans>
           </h5>
           <button
