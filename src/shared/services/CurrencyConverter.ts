@@ -206,6 +206,63 @@ export default class CurrencyConverter {
     return newWallet
   }
 
+  private static subtractMixed(record: CurrencyRecord, wallet: CurrencyWallet) {
+    const currencies = [
+      CurrencyType.Copper,
+      CurrencyType.Silver,
+      CurrencyType.Gold,
+    ]
+
+    // Cycle through the currencies, subtract while there is no remained value
+    let deficit = 0
+    for (const ctype of currencies) {
+      const converted = this.convertFromTo(record, ctype)
+      wallet[ctype] = roundTo(wallet[ctype] - converted.value, 3)
+
+      if (wallet[ctype] >= 0) {
+        deficit = 0
+        break
+      }
+
+      deficit = Math.abs(wallet[ctype])
+      const originalDeficitCurrency = CurrencyConverter.convertFromTo(
+        {
+          currency: ctype,
+          value: deficit,
+        },
+        record.currency,
+      )
+      record.value = originalDeficitCurrency.value
+      wallet[ctype] = 0
+    }
+
+    if (deficit) {
+      throw new Error('Not enough funds in wallet')
+    }
+
+    return wallet
+  }
+
+  static reshuffleCurrencies(wallet: CurrencyWallet): CurrencyWallet {
+    this.validateWallet(wallet)
+
+    const walletCopy = { ...wallet }
+
+    // Get float part of Gold or remaining Silver
+    const silver = walletCopy.Gold * SILVER_PER_GOLD
+    const remainingSilver = silver % SILVER_PER_GOLD
+    walletCopy.Gold = (silver - remainingSilver) / SILVER_PER_GOLD
+    walletCopy.Silver += remainingSilver
+
+    // Get float part of Silver or remaining Copper
+    const copper = walletCopy.Silver * COPPER_PER_SILVER
+    const remainingCopper = copper % COPPER_PER_SILVER
+    walletCopy.Silver = (copper - remainingCopper) / COPPER_PER_SILVER
+    walletCopy.Copper += remainingCopper
+
+    return walletCopy
+  }
+
   static subtract(
     record: CurrencyRecord,
     wallet: CurrencyWallet,
@@ -213,42 +270,18 @@ export default class CurrencyConverter {
     this.validateWallet(wallet)
     this.validateCurrencyRecord(record)
 
-    const newWallet = { ...wallet }
+    // If there is enough currency of the same type
+    const walletCopy = { ...wallet }
+    if (walletCopy[record.currency] >= record.value) {
+      walletCopy[record.currency] -= record.value
+
+      return walletCopy
+    }
+
     const recordCopy = { ...record }
-    const currencies = [
-      CurrencyType.Copper,
-      CurrencyType.Silver,
-      CurrencyType.Gold,
-    ]
+    const result = this.subtractMixed(recordCopy, walletCopy)
 
-    let deficit = 0
-    for (const ctype of currencies) {
-      const converted = this.convertFromTo(recordCopy, ctype)
-      newWallet[ctype] = roundTo(newWallet[ctype] - converted.value, 3)
-
-      if (newWallet[ctype] >= 0) {
-        deficit = 0
-        break
-      }
-
-      deficit = Math.abs(newWallet[ctype])
-      const originalDeficitCurrency = CurrencyConverter.convertFromTo(
-        {
-          currency: ctype,
-          value: deficit,
-        },
-        recordCopy.currency,
-      )
-      recordCopy.value = originalDeficitCurrency.value
-      newWallet[ctype] = 0
-    }
-
-    if (deficit) {
-      throw new Error('Not enough funds in wallet')
-    }
-
-    // TODO reshuffle floats
-    return newWallet
+    return this.reshuffleCurrencies(result)
   }
 
   static createWalletFrom(record: CurrencyRecord): CurrencyWallet {
