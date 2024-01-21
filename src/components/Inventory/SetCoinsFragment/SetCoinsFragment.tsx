@@ -4,30 +4,36 @@ import { Field, Form, Formik } from 'formik'
 import React from 'react'
 import * as Yup from 'yup'
 
-import CostFragment from '@/components/CostFragment/CostFragment'
 import { ResetFormOnDrawerClose } from '@/components/Inventory/ResetFormOnDrawerClose'
 import CurrencyConverter from '@/shared/services/CurrencyConverter'
 import { setWallet, useInventoryState } from '@/state/InventoryState'
+
+type FormSubmitValues = {
+  gold: number | string
+  silver: number | string
+  copper: number | string
+}
 
 const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
   const { state } = useInventoryState()
   const wallet = state.wallet.get()
 
-  const handleAddCoins = ({
-    gold,
-    silver,
-    copper,
-  }: {
-    gold: number | string
-    silver: number | string
-    copper: number | string
-  }) => {
+  const handleAddCoins = ({ gold, silver, copper }: FormSubmitValues) => {
     setWallet({
       Gold: Number(gold),
       Silver: Number(silver),
       Copper: Number(copper),
     })
     onClose()
+  }
+
+  const handleOptimiseClick = ({ gold, silver, copper }: FormSubmitValues) => {
+    const optimised = CurrencyConverter.getNormalized({
+      Gold: Number(gold),
+      Silver: Number(silver),
+      Copper: Number(copper),
+    })
+    setWallet(optimised)
   }
 
   /**
@@ -57,12 +63,12 @@ const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
           handleClose()
         }}
       >
-        {({ handleSubmit, resetForm, setFieldValue }) => {
+        {({ handleSubmit, resetForm, setFieldValue, values }) => {
           return (
             <Form
-              onKeyDown={(e) => {
-                if (e.key === 'Enter') {
-                  e.preventDefault()
+              onKeyDown={(event) => {
+                if (event.key === 'Enter') {
+                  event.preventDefault()
                   handleSubmit()
                 }
               }}
@@ -145,16 +151,22 @@ const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
                   </button>
                 </div>
               </div>
+              <div className='my-4 flex w-full justify-center space-x-4 pb-4'>
+                <button
+                  type='button'
+                  className='ph-btn-secondary w-full justify-center rounded px-5 py-2.5 text-center font-medium focus:outline-none focus:ring-4 focus:ring-primary-300'
+                  tabIndex={0}
+                  onClick={() => {
+                    handleOptimiseClick(values)
+                  }}
+                >
+                  <Trans>Optimise wallet</Trans>
+                </button>
+              </div>
             </Form>
           )
         }}
       </Formik>
-      <p className='my-6'>
-        <span className='ph-color-accent'>
-          <Trans>Total, optimised</Trans>
-        </span>
-        : <CostFragment wallet={CurrencyConverter.getNormalized(wallet)} />
-      </p>
     </>
   )
 }
