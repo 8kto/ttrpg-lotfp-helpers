@@ -7,9 +7,10 @@ import {
   renderInventoryDetailsBody,
   renderInventoryTitle,
 } from '@/components/EquipmentList/gridHelpers'
+import { handleRemoveEquipmentItemClick } from '@/components/EquipmentList/helpers'
 import type { ArmorItem } from '@/domain/armor'
 import type { InventoryItem } from '@/domain/inventory'
-import { removeArmor, useInventoryState } from '@/state/InventoryState'
+import { useInventoryState } from '@/state/InventoryState'
 
 type ArmorInventoryItem = InventoryItem<ArmorItem>
 
@@ -37,14 +38,11 @@ const ArmorInventoryGrid = () => {
   const { state: equipmentState } = useInventoryState()
   const { armor } = equipmentState
 
-  // TODO add funds to managed wallet
-  const onRemoveClick = (item: ArmorInventoryItem) => removeArmor(item)
-
   return (
     <DataGrid<ArmorInventoryItem>
       data={armor.get()}
       columns={columns}
-      onRemoveClick={onRemoveClick}
+      onRemoveClick={handleRemoveEquipmentItemClick}
       spanDetails={columns.length}
       initialSortState={{
         key: '' as keyof ArmorInventoryItem,
