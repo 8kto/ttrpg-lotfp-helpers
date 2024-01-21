@@ -12,6 +12,7 @@ import type { Dice } from '@/domain'
 import type { CurrencyWallet } from '@/domain/currency'
 import { CurrencyType } from '@/domain/currency'
 import type { EquipmentItem } from '@/domain/equipment'
+import type { InventoryItem } from '@/domain/inventory'
 import type {
   MeleeWeaponItem,
   MissileWeaponItem,
@@ -28,6 +29,10 @@ import {
   addMeleeWeapon,
   addMissileWeapon,
   InventoryState,
+  removeArmor,
+  removeEquipmentItem,
+  removeMeleeWeapon,
+  removeMissileWeapon,
   subtractCurrency,
 } from '@/state/InventoryState'
 
@@ -152,4 +157,24 @@ export const handleAddEquipmentItemClick = <T extends EquipmentItem>(
       type: 'error',
     })
   }
+}
+
+export const handleRemoveEquipmentItemClick = <
+  T extends InventoryItem<EquipmentItem>,
+>(
+  item: T,
+) => {
+  if (isArmorItem(item)) {
+    removeArmor(item)
+  } else if (isMeleeWeaponItem(item)) {
+    removeMeleeWeapon(item)
+  } else if (isMissileItem(item)) {
+    removeMissileWeapon(item)
+  } else if (isMiscEquipmentItem(item)) {
+    removeEquipmentItem(item)
+  } else {
+    throw new Error('Unknown item')
+  }
+
+  dispatchAction(Action.ShowToast, { message: t`Removed` })
 }
