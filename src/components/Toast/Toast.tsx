@@ -1,16 +1,17 @@
 import classnames from 'classnames'
 import React, { useEffect, useState } from 'react'
 
+import type { ShowToastPayload } from '@/shared/actions/actions'
 import Action from '@/shared/actions/actions'
 import { subscribe } from '@/shared/actions/helpers'
 
 const Toast = ({ fadeOutIn = 600 }: { fadeOutIn?: number }) => {
   const [isVisible, setToastVisible] = useState(false)
   const [toastMessage, setToastMessage] = useState('')
-  // todo type
+
   useEffect(() => {
     return subscribe(Action.ShowToast, (event) => {
-      const { detail } = event as CustomEvent
+      const { detail } = event as CustomEvent<ShowToastPayload>
       const { message, delayMs = fadeOutIn } = detail
 
       setToastVisible(true)

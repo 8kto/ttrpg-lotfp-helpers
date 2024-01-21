@@ -1,20 +1,5 @@
+import type { DispatchActionFunction } from '@/shared/actions/actions'
 import type Action from '@/shared/actions/actions'
-
-interface DispatchActionFunction {
-  (
-    actionName: Action.ShowToast,
-    payload: {
-      message: string
-      delayMs?: number
-      type?: 'error' | 'default'
-    },
-  ): void
-
-  <T = unknown>(
-    actionName: Exclude<Action, Action.ShowToast>,
-    payload?: T,
-  ): void
-}
 
 export const dispatchAction: DispatchActionFunction = <T = unknown>(
   actionName: Action,
