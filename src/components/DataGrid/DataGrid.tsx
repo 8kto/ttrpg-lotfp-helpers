@@ -1,5 +1,4 @@
 import { BackspaceIcon } from '@heroicons/react/24/solid'
-import { t } from '@lingui/macro'
 import classnames from 'classnames'
 import React, { useMemo, useState } from 'react'
 
@@ -12,8 +11,6 @@ import type {
   SortOrder,
 } from '@/components/DataGrid/types'
 import type { EquipmentItem } from '@/domain/equipment'
-import Action from '@/shared/actions/actions'
-import { dispatchAction } from '@/shared/actions/helpers'
 
 const DataGrid = <T extends EquipmentItem>({
   data,
@@ -67,12 +64,7 @@ const DataGrid = <T extends EquipmentItem>({
   const eventHandlers: Partial<DataGridRowProps<T>> = {
     onAddClick: typeof onAddClick === 'function' ? onAddClick : undefined,
     onRemoveClick:
-      typeof onRemoveClick === 'function'
-        ? (item) => {
-            onRemoveClick(item)
-            dispatchAction(Action.ShowToast, { message: t`Removed` })
-          }
-        : undefined,
+      typeof onRemoveClick === 'function' ? onRemoveClick : undefined,
   }
 
   return (
