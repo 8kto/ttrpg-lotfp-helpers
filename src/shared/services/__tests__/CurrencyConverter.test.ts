@@ -600,8 +600,8 @@ describe('CurrencyConverter', () => {
 
     it.each([
       [CurrencyType.Copper, 50, { Copper: 0, Silver: 20, Gold: 5 }],
-      [CurrencyType.Silver, 10, { Copper: 0, Silver: 15, Gold: 5 }],
-      [CurrencyType.Gold, 2, { Copper: 0, Silver: 0, Gold: 3.5 }],
+      [CurrencyType.Silver, 10, { Copper: 50, Silver: 10, Gold: 5 }],
+      [CurrencyType.Gold, 2, { Copper: 50, Silver: 20, Gold: 3 }],
     ])(
       'should correctly subtract %s from wallet',
       (currency, value, expected) => {
@@ -615,10 +615,59 @@ describe('CurrencyConverter', () => {
       [CurrencyType.Copper, 750, { Copper: 0, Silver: 0, Gold: 4 }],
       [CurrencyType.Copper, 2750, { Copper: 0, Silver: 0, Gold: 0 }],
       [CurrencyType.Silver, 275, { Copper: 0, Silver: 0, Gold: 0 }],
-      [CurrencyType.Silver, 20, { Copper: 0, Silver: 5, Gold: 5 }],
-      [CurrencyType.Silver, 260, { Copper: 0, Silver: 0, Gold: 0.3 }],
-    ])('should pass over the remains (%j %j)', (currency, value, expected) => {
-      const result = CurrencyConverter.subtract({ currency, value }, wallet)
+      [CurrencyType.Silver, 20, { Copper: 50, Silver: 0, Gold: 5 }],
+      [CurrencyType.Silver, 260, { Copper: 0, Silver: 15, Gold: 0 }],
+    ])(
+      'should support mixed values and remains (%j %j)',
+      (currency, value, expected) => {
+        const result = CurrencyConverter.subtract({ currency, value }, wallet)
+        expect(result).toEqual(expected as CurrencyWallet)
+      },
+    )
+
+    it.each([
+      // To Silver
+      [259, { Copper: 0, Silver: 16, Gold: 0 }],
+      [258, { Copper: 0, Silver: 17, Gold: 0 }],
+      [257, { Copper: 0, Silver: 18, Gold: 0 }],
+      [256, { Copper: 0, Silver: 19, Gold: 0 }],
+      [255, { Copper: 0, Silver: 20, Gold: 0 }],
+      [254, { Copper: 0, Silver: 21, Gold: 0 }],
+      [253, { Copper: 0, Silver: 22, Gold: 0 }],
+      [252, { Copper: 0, Silver: 23, Gold: 0 }],
+      [251, { Copper: 0, Silver: 24, Gold: 0 }],
+      [250, { Copper: 0, Silver: 25, Gold: 0 }],
+    ])('correctly reshuffles remains for Silver (%j)', (value, expected) => {
+      const result = CurrencyConverter.subtract(
+        { currency: CurrencyType.Silver, value },
+        wallet,
+      )
+      expect(result).toEqual(expected as CurrencyWallet)
+    })
+
+    it.each([
+      [495, { Copper: 5, Silver: 55, Gold: 0 }],
+      [494, { Copper: 6, Silver: 55, Gold: 0 }],
+      [493, { Copper: 7, Silver: 55, Gold: 0 }],
+      [492, { Copper: 8, Silver: 55, Gold: 0 }],
+      [491, { Copper: 9, Silver: 55, Gold: 0 }],
+      [490, { Copper: 0, Silver: 56, Gold: 0 }],
+      [489, { Copper: 1, Silver: 56, Gold: 0 }],
+      [488, { Copper: 2, Silver: 56, Gold: 0 }],
+      [487, { Copper: 3, Silver: 56, Gold: 0 }],
+      [486, { Copper: 4, Silver: 56, Gold: 0 }],
+    ])('correctly reshuffles remains for Copper (%j)', (value, expected) => {
+      const walletMock: CurrencyWallet = {
+        Copper: 50, // 50cp   == 5sp   == 0.1gp
+        Silver: 100, // 1000cp  == 100sp  == 2gp
+        Gold: 0,
+        // Total:      1050cp == 105sp == 2.1gp
+      }
+
+      const result = CurrencyConverter.subtract(
+        { currency: CurrencyType.Copper, value },
+        walletMock,
+      )
       expect(result).toEqual(expected as CurrencyWallet)
     })
 
@@ -644,6 +693,37 @@ describe('CurrencyConverter', () => {
           wallet,
         ),
       ).toThrow('Not enough funds in wallet')
+    })
+  })
+
+  describe('.reshuffleCurrencies', () => {
+    it.each([
+      [
+        { Copper: 9, Silver: 21, Gold: 5.5 },
+        { Copper: 9, Silver: 46, Gold: 5 },
+      ],
+      [
+        { Copper: 9, Silver: 21.5, Gold: 5 },
+        { Copper: 14, Silver: 21, Gold: 5 },
+      ],
+      [
+        { Copper: 9, Silver: 21.5, Gold: 5.5 },
+        { Copper: 14, Silver: 46, Gold: 5 },
+      ],
+      [
+        { Copper: 9.5, Silver: 215, Gold: 55 },
+        { Copper: 9.5, Silver: 215, Gold: 55 },
+      ],
+      [
+        { Copper: 96, Silver: 219, Gold: 51 },
+        { Copper: 96, Silver: 219, Gold: 51 },
+      ],
+    ])('should rearrange currencies %j', (input, expected) => {
+      const result = CurrencyConverter.reshuffleCurrencies(input)
+      expect(result).toEqual(expected as CurrencyWallet)
+      expect(
+        CurrencyConverter.getWalletValue(result, CurrencyType.Copper),
+      ).toEqual(CurrencyConverter.getWalletValue(expected, CurrencyType.Copper))
     })
   })
 })
