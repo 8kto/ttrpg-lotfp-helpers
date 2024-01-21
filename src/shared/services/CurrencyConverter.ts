@@ -164,48 +164,6 @@ export default class CurrencyConverter {
     return newWallet
   }
 
-  // TODO rethink one more time -- just stick to the normalized wallet?
-  static subtract__old(
-    record: CurrencyRecord,
-    wallet: CurrencyWallet,
-  ): CurrencyWallet {
-    this.validateWallet(wallet)
-    this.validateCurrencyRecord(record)
-
-    const { currency, value } = record
-    const newWallet = { ...wallet }
-
-    newWallet[currency] -= value
-
-    if (newWallet[currency] < 0) {
-      let remained = newWallet[currency]
-      let currCurrency = currency
-
-      while (remained < 0) {
-        let nextCurrency = CurrencyType.Silver
-        let factor = COPPER_PER_SILVER
-
-        if (currCurrency === CurrencyType.Silver) {
-          nextCurrency = CurrencyType.Gold
-          factor = SILVER_PER_GOLD
-        }
-        if (currCurrency === CurrencyType.Gold) {
-          throw new Error('Not enough funds')
-        }
-
-        newWallet[currCurrency] = 0
-        newWallet[nextCurrency] = roundTo(
-          newWallet[nextCurrency] - Math.abs(remained) / factor,
-          1,
-        )
-        remained = newWallet[nextCurrency]
-        currCurrency = nextCurrency
-      }
-    }
-
-    return newWallet
-  }
-
   private static subtractMixed(record: CurrencyRecord, wallet: CurrencyWallet) {
     const currencies = [
       CurrencyType.Copper,
