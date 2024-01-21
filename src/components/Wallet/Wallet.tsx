@@ -38,7 +38,7 @@ const Wallet = () => {
           <RemoveCoinsIcon className='me-auto h-5 w-5' />
         </button>
         <Drawer
-          isOpen={isSetCoinsDrawerOpen}
+          open={isSetCoinsDrawerOpen}
           onClose={() => setSetCoinsDrawerOpen(false)}
           ariaLabelledBy={'drawer-label'}
         >
