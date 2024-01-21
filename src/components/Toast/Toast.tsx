@@ -5,21 +5,31 @@ import type { ShowToastPayload } from '@/shared/actions/actions'
 import Action from '@/shared/actions/actions'
 import { subscribe } from '@/shared/actions/helpers'
 
+const DEFAULT_TOAST_TYPE = 'info'
+
 const Toast = ({ fadeOutIn = 600 }: { fadeOutIn?: number }) => {
   const [isVisible, setToastVisible] = useState(false)
   const [toastMessage, setToastMessage] = useState('')
+  const [toastType, setToastType] = useState(DEFAULT_TOAST_TYPE)
 
   useEffect(() => {
     return subscribe(Action.ShowToast, (event) => {
       const { detail } = event as CustomEvent<ShowToastPayload>
-      const { message, delayMs = fadeOutIn } = detail
+      const { message, delayMs = fadeOutIn, type = DEFAULT_TOAST_TYPE } = detail
 
       setToastVisible(true)
       setToastMessage(message)
+      setToastType(type)
 
       setTimeout(() => {
         setToastVisible(false)
-        setToastMessage('')
+
+        // Type change causes styles flickering during the fade out transition
+        // so this delay added
+        setTimeout(() => {
+          setToastMessage('')
+          setToastType(DEFAULT_TOAST_TYPE)
+        }, 100)
       }, delayMs)
     })
   }, [fadeOutIn])
@@ -28,8 +38,10 @@ const Toast = ({ fadeOutIn = 600 }: { fadeOutIn?: number }) => {
     <div
       role='alert'
       className={classnames(
-        `fixed bottom-8 left-1/2 max-w-xs -translate-x-1/2 transform rounded bg-gray-800 text-sm text-white shadow-lg transition-all duration-200 ease-out`,
+        `z-50 fixed bottom-8 left-1/2 max-w-xs -translate-x-1/2 transform rounded text-sm shadow-lg transition-all duration-100 ease-out`,
         {
+          'bg-gray-800 text-white': toastType !== 'error',
+          'bg-red-100 text-red-800': toastType === 'error',
           'visible opacity-100': isVisible,
           'invisible translate-y-full opacity-0': !isVisible,
         },
@@ -41,7 +53,13 @@ const Toast = ({ fadeOutIn = 600 }: { fadeOutIn?: number }) => {
         <div className='ms-auto'>
           <button
             type='button'
-            className='inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-lg text-white opacity-50 hover:text-white hover:opacity-100 focus:opacity-100 focus:outline-none'
+            className={classnames(
+              'inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded opacity-50 hover:opacity-100 focus:opacity-100 focus:outline-none',
+              {
+                'text-white hover:text-white': toastType !== 'error',
+                'text-gray-800 hover:text-black': toastType === 'error',
+              },
+            )}
             onClick={() => {
               setToastVisible(false)
             }}
