@@ -63,7 +63,7 @@ export const removeItem = <T extends EquipmentItem>(
     (items[existingItemIndex].get() as InventoryItem<T>).qty > 1
   ) {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
+    // @ts-ignore
     decrementQty(items[existingItemIndex])
   } else {
     items.set((a) => a.filter((i) => i.inventoryId !== item.inventoryId))
