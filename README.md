@@ -4,9 +4,9 @@
 
 <!-- For PROGRESS update, run yarn update-readme-stats -->
 
-> The project is in active development.
+> The project is in active development. Now I review translations and test the UI on mobiles.
 >
-> Done: <!--PROGRESS--> 96% / 27 of 28 tasks <!--/PROGRESS-->
+> Done: <!--PROGRESS--> 100% / 28 of 28 tasks <!--/PROGRESS-->
 
 Lamentations of the Flame Princess helpers.
 
@@ -35,7 +35,7 @@ https://lotfp.vercel.app
   - [x] Dwarf modifier
 - [x] Custom equipment entries
 - [x] Wallet (available money)
-  - [ ] Manage costs when an item is added
+  - [x] Manage costs when an item is added
 - [x] Add coins and calculate the encumbrance
   - [x] Track different kinds of coins
 - [x] Inventory is saved in locale storage and survives the page reload
