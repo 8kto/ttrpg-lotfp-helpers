@@ -15,9 +15,9 @@ export default class CurrencyConverter {
       case CurrencyType.Copper:
         return value
       case CurrencyType.Silver:
-        return roundTo(value * COPPER_PER_SILVER, 2)
+        return roundTo(value * COPPER_PER_SILVER, 3)
       case CurrencyType.Gold:
-        return roundTo(value * COPPER_PER_GOLD, 2)
+        return roundTo(value * COPPER_PER_GOLD, 3)
       default:
         throw new Error('Unknown currency type')
     }
@@ -29,6 +29,10 @@ export default class CurrencyConverter {
   ): CurrencyRecord {
     const cp = this.convertToCopper(currencyRecord)
     let value: number
+
+    if (currencyRecord.currency === to) {
+      return currencyRecord
+    }
 
     switch (to) {
       case CurrencyType.Copper:
