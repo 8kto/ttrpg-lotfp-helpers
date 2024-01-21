@@ -599,11 +599,11 @@ describe('CurrencyConverter', () => {
     }
 
     it.each([
-      [CurrencyType.Copper, 50, { Copper: 0, Gold: 5, Silver: 20 }],
-      [CurrencyType.Silver, 10, { Copper: 50, Gold: 5, Silver: 10 }],
-      [CurrencyType.Gold, 2, { Copper: 50, Gold: 3, Silver: 20 }],
+      [CurrencyType.Copper, 50, { Copper: 0, Silver: 20, Gold: 5 }],
+      [CurrencyType.Silver, 10, { Copper: 0, Silver: 15, Gold: 5 }],
+      [CurrencyType.Gold, 2, { Copper: 0, Silver: 0, Gold: 3.5 }],
     ])(
-      'should correctly subtract %s to a wallet',
+      'should correctly subtract %s from wallet',
       (currency, value, expected) => {
         const result = CurrencyConverter.subtract({ currency, value }, wallet)
         expect(result).toEqual(expected as CurrencyWallet)
@@ -614,9 +614,9 @@ describe('CurrencyConverter', () => {
       [CurrencyType.Copper, 60, { Copper: 0, Silver: 19, Gold: 5 }],
       [CurrencyType.Copper, 750, { Copper: 0, Silver: 0, Gold: 4 }],
       [CurrencyType.Copper, 2750, { Copper: 0, Silver: 0, Gold: 0 }],
-      // [CurrencyType.Silver, 275, { Copper: 0, Silver: 0, Gold: 0 }], // TODO
-      [CurrencyType.Silver, 20, { Copper: 50, Silver: 0, Gold: 5 }],
-      [CurrencyType.Silver, 260, { Copper: 50, Silver: 0, Gold: 0.2 }],
+      [CurrencyType.Silver, 275, { Copper: 0, Silver: 0, Gold: 0 }],
+      [CurrencyType.Silver, 20, { Copper: 0, Silver: 5, Gold: 5 }],
+      [CurrencyType.Silver, 260, { Copper: 0, Silver: 0, Gold: 0.3 }],
     ])('should pass over the remains (%j %j)', (currency, value, expected) => {
       const result = CurrencyConverter.subtract({ currency, value }, wallet)
       expect(result).toEqual(expected as CurrencyWallet)
@@ -632,6 +632,18 @@ describe('CurrencyConverter', () => {
           wallet,
         ),
       ).toThrow('Unknown currency record type')
+    })
+
+    it('throws for insufficient funds', () => {
+      expect(() =>
+        CurrencyConverter.subtract(
+          {
+            currency: CurrencyType.Gold,
+            value: 100,
+          },
+          wallet,
+        ),
+      ).toThrow('Not enough funds in wallet')
     })
   })
 })

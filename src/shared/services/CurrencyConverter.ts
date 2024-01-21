@@ -15,9 +15,9 @@ export default class CurrencyConverter {
       case CurrencyType.Copper:
         return value
       case CurrencyType.Silver:
-        return value * COPPER_PER_SILVER
+        return roundTo(value * COPPER_PER_SILVER, 2)
       case CurrencyType.Gold:
-        return value * COPPER_PER_GOLD
+        return roundTo(value * COPPER_PER_GOLD, 2)
       default:
         throw new Error('Unknown currency type')
     }
@@ -165,7 +165,7 @@ export default class CurrencyConverter {
   }
 
   // TODO rethink one more time -- just stick to the normalized wallet?
-  static subtract(
+  static subtract__old(
     record: CurrencyRecord,
     wallet: CurrencyWallet,
   ): CurrencyWallet {
@@ -203,6 +203,51 @@ export default class CurrencyConverter {
       }
     }
 
+    return newWallet
+  }
+
+  static subtract(
+    record: CurrencyRecord,
+    wallet: CurrencyWallet,
+  ): CurrencyWallet {
+    this.validateWallet(wallet)
+    this.validateCurrencyRecord(record)
+
+    const newWallet = { ...wallet }
+    const recordCopy = { ...record }
+    const currencies = [
+      CurrencyType.Copper,
+      CurrencyType.Silver,
+      CurrencyType.Gold,
+    ]
+
+    let deficit = 0
+    for (const ctype of currencies) {
+      const converted = this.convertFromTo(recordCopy, ctype)
+      newWallet[ctype] = roundTo(newWallet[ctype] - converted.value, 3)
+
+      if (newWallet[ctype] >= 0) {
+        deficit = 0
+        break
+      }
+
+      deficit = Math.abs(newWallet[ctype])
+      const originalDeficitCurrency = CurrencyConverter.convertFromTo(
+        {
+          currency: ctype,
+          value: deficit,
+        },
+        recordCopy.currency,
+      )
+      recordCopy.value = originalDeficitCurrency.value
+      newWallet[ctype] = 0
+    }
+
+    if (deficit) {
+      throw new Error('Not enough funds in wallet')
+    }
+
+    // TODO reshuffle floats
     return newWallet
   }
 
