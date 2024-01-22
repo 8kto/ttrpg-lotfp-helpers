@@ -129,3 +129,34 @@ details.ph-details-bullet[open] .ph-custom-indicator {
   /* .text-red-800 */
   color: rgb(153 27 27);
 }
+
+/* Hide vertical scrollbar */
+.ph-tabs-scrollbar {
+  overflow-y: hidden;
+}
+
+/* Style horizontal scrollbar for Chrome, Safari, and Edge */
+.ph-tabs-scrollbar::-webkit-scrollbar {
+  height: 4px; /* height of the horizontal scrollbar */
+}
+
+.ph-tabs-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1; /* color of the horizontal tracking area */
+}
+
+.ph-tabs-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-gray-400; /* color of the horizontal scroll thumb */
+  border-radius: 2px; /* roundness of the horizontal scroll thumb */
+  border: 1px solid #f1f1f1; /* creates padding around horizontal scroll thumb */
+}
+
+.ph-tabs-scrollbar::-webkit-scrollbar-thumb:hover {
+  /* color of the horizontal scroll thumb on hover */
+  @apply bg-gray-400;
+}
+
+/* Style horizontal scrollbar for Firefox */
+.ph-tabs-scrollbar {
+  scrollbar-width: thin; /* "auto" or "thin" for horizontal scrollbar */
+  scrollbar-color: #888 #f1f1f1; /* thumb and track color for horizontal scrollbar */
+}
