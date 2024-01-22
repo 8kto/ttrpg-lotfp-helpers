@@ -145,18 +145,27 @@ details.ph-details-bullet[open] .ph-custom-indicator {
 }
 
 .ph-tabs-scrollbar::-webkit-scrollbar-thumb {
-  @apply bg-gray-400; /* color of the horizontal scroll thumb */
+  background-color: #b8b8b8; /* muted color of the horizontal scroll thumb */
   border-radius: 2px; /* roundness of the horizontal scroll thumb */
   border: 1px solid #f1f1f1; /* creates padding around horizontal scroll thumb */
 }
 
-.ph-tabs-scrollbar::-webkit-scrollbar-thumb:hover {
-  /* color of the horizontal scroll thumb on hover */
-  @apply bg-gray-400;
+.ph-tabs-scrollbar::-webkit-scrollbar-thumb:hover,
+.ph-tabs-scrollbar::-webkit-scrollbar-thumb:active {
+  background-color: #888; /* brighter color of the horizontal scroll thumb on hover/active */
 }
 
 /* Style horizontal scrollbar for Firefox */
 .ph-tabs-scrollbar {
   scrollbar-width: thin; /* "auto" or "thin" for horizontal scrollbar */
   scrollbar-color: #888 #f1f1f1; /* thumb and track color for horizontal scrollbar */
+}
+
+.ph-tabs-scrollbar:hover::-webkit-scrollbar-thumb,
+.ph-tabs-scrollbar:active::-webkit-scrollbar-thumb {
+  background-color: #888; /* brighter color of the horizontal scroll thumb on hover/active for Firefox */
+}
+
+.ph-tabs-scrollbar.active-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #888; /* brighter color for active scrollbar */
 }
