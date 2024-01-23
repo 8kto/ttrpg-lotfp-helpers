@@ -1,5 +1,5 @@
 import classnames from 'classnames'
-import React from 'react'
+import React, { useState } from 'react'
 
 type TabData = {
   key: string
@@ -20,16 +20,6 @@ type TabsProps = {
 }
 
 const Tab = ({ active, onClick, children }: TabProps) => {
-  const handleDragStart = () => {
-    const scrollbar = document.querySelector('.ph-tabs-scrollbar')
-    scrollbar?.classList.add('active-scrollbar')
-  }
-
-  const handleDragEnd = () => {
-    const scrollbar = document.querySelector('.ph-tabs-scrollbar')
-    scrollbar?.classList.remove('active-scrollbar')
-  }
-
   return (
     <button
       role='tab'
@@ -43,9 +33,6 @@ const Tab = ({ active, onClick, children }: TabProps) => {
         },
       )}
       onClick={onClick}
-      onDragStart={handleDragStart}
-      onDragEnd={handleDragEnd}
-      draggable='true'
     >
       {children}
     </button>
@@ -53,9 +40,25 @@ const Tab = ({ active, onClick, children }: TabProps) => {
 }
 
 const Tabs = ({ tabs, onTabClick, activeTabId }: TabsProps) => {
+  const [scrollbarVisibility, setScrollbarVisibility] = useState('')
+
+  const handleInteractionStart = () => {
+    setScrollbarVisibility('active-scrollbar')
+  }
+
+  const handleInteractionEnd = () => {
+    // Hide scrollbar after a delay
+    setTimeout(() => setScrollbarVisibility(''), 300)
+  }
+
   return (
     <>
-      <div className='ph-tabs-scrollbar overflow-x-auto md:border-b md:border-gray-200'>
+      <div
+        className={`ph-tabs-scrollbar border-b md:border-gray-200 ${scrollbarVisibility}`}
+        onTouchStart={handleInteractionStart}
+        onTouchEnd={handleInteractionEnd}
+        onScroll={handleInteractionStart}
+      >
         <nav
           className='-mb-px flex flex-nowrap whitespace-nowrap'
           aria-label='Tabs'

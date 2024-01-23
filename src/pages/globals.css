@@ -133,39 +133,41 @@ details.ph-details-bullet[open] .ph-custom-indicator {
 /* Hide vertical scrollbar */
 .ph-tabs-scrollbar {
   overflow-y: hidden;
+  margin-bottom: 4px;
 }
 
 /* Style horizontal scrollbar for Chrome, Safari, and Edge */
 .ph-tabs-scrollbar::-webkit-scrollbar {
-  height: 4px; /* height of the horizontal scrollbar */
+  height: 0; /* Initially hidden */
+  transition: height 0.3s;
+}
+
+.ph-tabs-scrollbar.active-scrollbar::-webkit-scrollbar {
+  height: 4px; /* Visible when active */
 }
 
 .ph-tabs-scrollbar::-webkit-scrollbar-track {
-  background: #f1f1f1; /* color of the horizontal tracking area */
+  background: #f1f1f1;
 }
 
 .ph-tabs-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #b8b8b8; /* muted color of the horizontal scroll thumb */
-  border-radius: 2px; /* roundness of the horizontal scroll thumb */
-  border: 1px solid #f1f1f1; /* creates padding around horizontal scroll thumb */
+  background-color: #b8b8b8;
+  border-radius: 2px;
+  border: 1px solid #f1f1f1;
 }
 
 .ph-tabs-scrollbar::-webkit-scrollbar-thumb:hover,
 .ph-tabs-scrollbar::-webkit-scrollbar-thumb:active {
-  background-color: #888; /* brighter color of the horizontal scroll thumb on hover/active */
+  background-color: #888;
 }
 
 /* Style horizontal scrollbar for Firefox */
 .ph-tabs-scrollbar {
-  scrollbar-width: thin; /* "auto" or "thin" for horizontal scrollbar */
-  scrollbar-color: #888 #f1f1f1; /* thumb and track color for horizontal scrollbar */
+  scrollbar-width: none;
+  scrollbar-color: #888 #f1f1f1;
 }
 
-.ph-tabs-scrollbar:hover::-webkit-scrollbar-thumb,
-.ph-tabs-scrollbar:active::-webkit-scrollbar-thumb {
-  background-color: #888; /* brighter color of the horizontal scroll thumb on hover/active for Firefox */
-}
-
-.ph-tabs-scrollbar.active-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #888; /* brighter color for active scrollbar */
+.ph-tabs-scrollbar.active-scrollbar {
+  scrollbar-width: thin;
+  margin-bottom: 0;
 }
