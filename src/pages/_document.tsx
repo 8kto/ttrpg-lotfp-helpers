@@ -14,6 +14,12 @@ export default function Document() {
         <link
           rel='icon'
           type='image/png'
+          sizes='64x64'
+          href='/icons/favicon-64x64.png'
+        />
+        <link
+          rel='icon'
+          type='image/png'
           sizes='32x32'
           href='/icons/favicon-32x32.png'
         />
