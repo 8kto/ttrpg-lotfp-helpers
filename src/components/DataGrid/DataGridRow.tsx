@@ -42,7 +42,7 @@ const DataGridRow = <T extends EquipmentItem>({
         />
       ))}
 
-      <td className={'p-2 sm:p-4 font-normal text-gray-900'}>
+      <td className='p-2 sm:p-4 font-normal text-gray-900'>
         {/* Add btn */}
         {typeof onAddClick === 'function' && (
           <button
