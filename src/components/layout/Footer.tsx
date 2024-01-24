@@ -5,10 +5,10 @@ import isDevEnv from '@/shared/helpers/isDevEnv'
 
 const Footer = () => {
   return (
-    <footer className='relative mx-auto w-full max-w-screen-2xl px-4 py-6 md:flex md:items-center md:justify-between md:py-10 2xl:px-8'>
+    <footer className='text-sm relative mx-auto w-full max-w-screen-2xl px-4 py-6 md:flex md:items-center md:justify-between md:py-10 2xl:px-8'>
       <p className='mb-4 flex items-center justify-center text-gray-500 md:mb-0 md:justify-start'>
         <Image
-          src='/icons/favicon-32x32.png'
+          src='/icons/favicon-64x64.png'
           className='mr-1 h-8 w-8'
           alt='Flame Princess'
           width='32'
