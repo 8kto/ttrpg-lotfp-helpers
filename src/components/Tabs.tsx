@@ -1,5 +1,5 @@
 import classnames from 'classnames'
-import React, { useState } from 'react'
+import React from 'react'
 
 type TabData = {
   key: string
@@ -26,6 +26,7 @@ const Tab = ({ active, onClick, children }: TabProps) => {
       className={classnames(
         'group inline-flex items-center justify-center p-4',
         'text-sm font-medium text-gray-500 md:text-base',
+        'border-b',
         'hover:ph-color-accent outline-gray-200 focus-visible:border-b-transparent',
         {
           'active ph-color-accent rounded-tl rounded-tr border': active,
@@ -40,25 +41,9 @@ const Tab = ({ active, onClick, children }: TabProps) => {
 }
 
 const Tabs = ({ tabs, onTabClick, activeTabId }: TabsProps) => {
-  const [scrollbarVisibility, setScrollbarVisibility] = useState('')
-
-  const handleInteractionStart = () => {
-    setScrollbarVisibility('active-scrollbar')
-  }
-
-  const handleInteractionEnd = () => {
-    // Hide scrollbar after a delay
-    setTimeout(() => setScrollbarVisibility(''), 300)
-  }
-
   return (
     <>
-      <div
-        className={`ph-tabs-scrollbar border-b md:border-gray-200 ${scrollbarVisibility}`}
-        onTouchStart={handleInteractionStart}
-        onTouchEnd={handleInteractionEnd}
-        onScroll={handleInteractionStart}
-      >
+      <div className={`ph-tabs-scrollbar border-b md:border-gray-200`}>
         <nav
           className='-mb-px flex flex-nowrap whitespace-nowrap'
           aria-label='Tabs'
