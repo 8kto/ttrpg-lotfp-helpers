@@ -137,6 +137,7 @@ const ArmorGrid = () => {
         filterPlaceholder={t`Filter by name`}
         handleSort={handleSort as typeof trivialSort}
         spanDetails={colSpan}
+        noFilter
       />
     </>
   )

@@ -41,7 +41,7 @@ const columns: ReadonlyArray<DataGridColumn<MissileWeaponItem>> = [
     },
   },
   {
-    className: 'w-1/6',
+    className: 'w-1/6 hidden sm:table-cell',
     key: 'range',
     render: (item: MissileWeaponItem) => (
       <RangeFragment range={item.range} compact />
@@ -103,7 +103,7 @@ const MissileWeaponsGrid = () => {
 
   const isSmallViewport = 'xs' === breakpoint
   const colSpan = isSmallViewport
-    ? columnsFilteredByCost.length - 1
+    ? columnsFilteredByCost.length - 2
     : columnsFilteredByCost.length
 
   return (
