@@ -28,7 +28,7 @@ const DataGridCell = <T extends EquipmentItem>({
     <td
       colSpan={isExpanded && shouldRenderDetails ? colSpan : 1}
       className={classnames(
-        'p-2 font-normal text-gray-900 sm:p-4',
+        'p-2 font-normal text-gray-900 sm:p-4 break-keep',
         column.className,
       )}
       style={{

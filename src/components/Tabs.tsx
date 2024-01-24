@@ -1,3 +1,4 @@
+import classnames from 'classnames'
 import React from 'react'
 
 type TabData = {
@@ -18,26 +19,33 @@ type TabsProps = {
   onTabClick: (index: number) => void
 }
 
-const Tab = ({ active, onClick, children }: TabProps) => (
-  <button
-    role='tab'
-    className={`group inline-flex items-center justify-center rounded-t-lg border-b-2 p-4 outline-transparent hover:ph-color-accent hover:border-red-500 focus-visible:border-b-transparent ${
-      active
-        ? 'active border-red-900 ph-color-accent hover:border-red-900'
-        : 'border-transparent text-gray-500'
-    }`}
-    onClick={onClick}
-  >
-    {children}
-  </button>
-)
+const Tab = ({ active, onClick, children }: TabProps) => {
+  return (
+    <button
+      role='tab'
+      className={classnames(
+        'group inline-flex items-center justify-center p-4',
+        'text-sm font-medium text-gray-500 md:text-base',
+        'border-b',
+        'hover:ph-color-accent outline-gray-200 focus-visible:border-b-transparent',
+        {
+          'active ph-color-accent rounded-tl rounded-tr border': active,
+          'bg-gray-50 text-gray-500 hover:text-red-800': !active,
+        },
+      )}
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  )
+}
 
 const Tabs = ({ tabs, onTabClick, activeTabId }: TabsProps) => {
   return (
     <>
-      <div className='border-b border-gray-200'>
+      <div className={`ph-tabs-scrollbar border-b md:border-gray-200`}>
         <nav
-          className='-mb-px flex flex-wrap text-center font-medium text-gray-500 dark:text-gray-400'
+          className='-mb-px flex flex-nowrap whitespace-nowrap'
           aria-label='Tabs'
           role='tablist'
         >

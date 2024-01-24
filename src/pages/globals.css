@@ -129,3 +129,45 @@ details.ph-details-bullet[open] .ph-custom-indicator {
   /* .text-red-800 */
   color: rgb(153 27 27);
 }
+
+/* Hide vertical scrollbar */
+.ph-tabs-scrollbar {
+  overflow-y: hidden;
+  margin-bottom: 4px;
+}
+
+/* Style horizontal scrollbar for Chrome, Safari, and Edge */
+.ph-tabs-scrollbar::-webkit-scrollbar {
+  height: 0; /* Initially hidden */
+  transition: height 0.3s;
+}
+
+.ph-tabs-scrollbar.active-scrollbar::-webkit-scrollbar {
+  height: 4px; /* Visible when active */
+}
+
+.ph-tabs-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.ph-tabs-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #b8b8b8;
+  border-radius: 2px;
+  border: 1px solid #f1f1f1;
+}
+
+.ph-tabs-scrollbar::-webkit-scrollbar-thumb:hover,
+.ph-tabs-scrollbar::-webkit-scrollbar-thumb:active {
+  background-color: #888;
+}
+
+/* Style horizontal scrollbar for Firefox */
+.ph-tabs-scrollbar {
+  scrollbar-width: none;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+.ph-tabs-scrollbar.active-scrollbar {
+  scrollbar-width: thin;
+  margin-bottom: 0;
+}
