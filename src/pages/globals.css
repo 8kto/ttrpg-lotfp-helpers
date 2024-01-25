@@ -36,6 +36,11 @@ h6 {
   color: rgb(180 83 9);
 }
 
+.ph-color-primary {
+  /* red-800 */
+  color: rgb(153 27 27);
+}
+
 .ph-color-muted {
   /* text-gray-500 */
   color: rgb(107 114 128);
