@@ -33,6 +33,52 @@ export default function AboutPage() {
             This is an online inventory and equipment generator for the LotFP
             system.
           </p>
+          <details>
+            <summary>Features list</summary>
+            <ul>
+              <li>
+                Lists of equipment including armor, weapons, miscellaneous
+                items, and some tips about these items.
+              </li>
+              <li>
+                Calculation
+                <ul>
+                  <li>Encumbrance</li>
+                  <li>Movement</li>
+                  <li>Terrain and weather adjustments</li>
+                </ul>
+              </li>
+              <li>Custom equipment entries</li>
+              <li>
+                Inventory is saved in locale storage and survives the page
+                reload
+                <ul>
+                  <li>State can be exported and imported</li>
+                </ul>
+              </li>
+              <li>Languages support</li>
+              <li>Responsive layout, mobile devices support</li>
+              <li>
+                Equipment sets
+                <ul>
+                  <li>By class</li>
+                  <li>Common</li>
+                  <li>Random</li>
+                </ul>
+              </li>
+            </ul>
+          </details>
+          <p>
+            The full list of features is available on the{' '}
+            <a
+              target='_blank'
+              rel='noopener noreferrer'
+              href='https://github.com/8kto/ttrpg-lotfp-helpers?tab=readme-ov-file#features-list'
+            >
+              project page
+            </a>
+            .
+          </p>
         </section>
         <section>
           <header>

@@ -192,3 +192,39 @@ details.ph-details-bullet[open] .ph-custom-indicator {
 .ph-content-container section header {
   @apply ph-color-primary mb-2 text-2xl text-gray-900 sm:text-2xl;
 }
+
+.ph-content-container ul {
+  @apply list-disc list-inside space-y-2;
+}
+
+.ph-content-container li {
+  @apply ml-2;
+}
+
+.ph-content-container ul ul {
+  @apply mt-2 ml-2 pl-4 border-l border-gray-200;
+}
+
+.ph-content-container li li {
+  @apply ml-2;
+}
+
+.ph-content-container details {
+  @apply relative mb-4 block cursor-pointer;
+}
+
+.ph-content-container summary {
+  @apply list-none py-2 px-4 rounded bg-gray-50 text-gray-700 hover:bg-gray-200 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50;
+}
+
+.ph-content-container details[open] summary {
+  @apply rounded-t bg-gray-100;
+}
+
+.ph-content-container details[open] {
+  @apply pb-2;
+}
+
+.ph-content-container details > *:not(summary) {
+  @apply px-4 pt-2 pb-4;
+}
