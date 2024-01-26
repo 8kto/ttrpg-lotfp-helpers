@@ -176,3 +176,19 @@ details.ph-details-bullet[open] .ph-custom-indicator {
   scrollbar-width: thin;
   margin-bottom: 0;
 }
+
+.ph-content-container p {
+  @apply mb-2;
+}
+
+.ph-content-container a {
+  @apply ph-color-accent underline-offset-2 hover:underline;
+}
+
+.ph-content-container section {
+  @apply mb-8;
+}
+
+.ph-content-container section header {
+  @apply ph-color-primary mb-2 text-2xl text-gray-900 sm:text-2xl;
+}
