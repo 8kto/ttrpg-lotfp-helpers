@@ -86,6 +86,7 @@ export default function AboutPage() {
           <header>
             <h2>Contacts</h2>
           </header>
+          <p>I&apos;d love to hear that you&apos;re using it in your games.</p>
           <p>
             My website:{' '}
             <a
@@ -110,6 +111,18 @@ export default function AboutPage() {
               Princess Helpers on GitHub
             </a>
             .
+          </p>
+          <p>
+            If you enjoy the tool, feel free to share it, star it on GitHub,
+            hack it,{' '}
+            <a
+              target='_blank'
+              rel='noopener noreferrer'
+              href='https://www.buymeacoffee.com/8kto'
+            >
+              buy me a coffee
+            </a>{' '}
+            (don&apos;t: I will spend that money on role-playing games).
           </p>
         </section>
       </PageLayout>
