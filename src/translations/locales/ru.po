@@ -693,6 +693,9 @@ msgstr "Щит"
 msgid "Copper pieces"
 msgstr "Медные монеты"
 
+msgid "Disclaimer"
+msgstr "Дисклеймер"
+
 msgid "Light crossbows can only be fired every once in 2 rounds and ignore 2 AC points"
 msgstr "Лёгкий арбалет стреляет раз в 2 раунда и игнорирует 2 пункта AC"
 

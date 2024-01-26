@@ -5,7 +5,7 @@ import type { GetStaticProps } from 'next'
 import Head from 'next/head'
 import React from 'react'
 
-import Toast from '@/components/Toast/Toast'
+import PageLayout from '@/components/layout/PageLayout'
 import { loadCatalog } from '@/translations/utils'
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
@@ -24,87 +24,95 @@ export default function AboutPage() {
       <Head>
         <title>{t`About`}</title>
       </Head>
-      <div className='relative flex flex-grow flex-col pt-16'>
-        <main className='ph-content-container mx-auto mb-4 w-full max-w-screen-md flex-grow px-2.5 sm:px-6 lg:px-8'>
-          <div className='mt-6'>
-            <div className='col-span-1 rounded border border-gray-200 bg-white p-4 shadow-sm sm:p-6'>
-              <section>
-                <header>
-                  <h2>Disclaimer</h2>
-                </header>
-                <p>
-                  This project is created just for fun and is not officially
-                  affiliated with or endorsed by the publishers of
-                  &quot;Lamentations of the Flame Princess&quot; (LotFP) or any
-                  other related entities.
-                </p>
+      <PageLayout>
+        <section>
+          <header>
+            <h2>About</h2>
+          </header>
+          <p>
+            This is an online inventory and equipment tool for the LotFP TTRPG
+            system. Currently, it does not include mounts, animals, or firearms.
+            I plan to revisit this after a [short] break.
+          </p>
+          <details className='mb-4' open>
+            <summary>Features list</summary>
+            <ul>
+              <li>
+                Lists of equipment including armor, weapons, miscellaneous
+                items, and some tips about these items.
+              </li>
+              <li>
+                Calculation
+                <ul>
+                  <li>Encumbrance</li>
+                  <li>Movement</li>
+                  <li>Terrain and weather adjustments</li>
+                </ul>
+              </li>
+              <li>Custom equipment entries</li>
+              <li>
+                Inventory is saved in locale storage and survives the page
+                reload
+                <ul>
+                  <li>State can be exported and imported</li>
+                </ul>
+              </li>
+              <li>Languages support</li>
+              <li>Responsive layout, mobile devices support</li>
+              <li>
+                Equipment sets
+                <ul>
+                  <li>By class</li>
+                  <li>Common</li>
+                  <li>Random</li>
+                </ul>
+              </li>
+            </ul>
+          </details>
+          <p>
+            The full list of features is available on the{' '}
+            <a
+              target='_blank'
+              rel='noopener noreferrer'
+              href='https://github.com/8kto/ttrpg-lotfp-helpers?tab=readme-ov-file#features-list'
+            >
+              project page
+            </a>
+            .
+          </p>
+        </section>
 
-                <p>
-                  The content utilized in this project has been sourced from
-                  publicly available materials, including but not limited to the{' '}
-                  <a
-                    href='https://preview.drivethrurpg.com/en/product/115059/LotFP-Rules--Magic-Free-Version'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                  >
-                    LotFP Rules & Magic Free Version
-                  </a>{' '}
-                  and resources from{' '}
-                  <a
-                    href='https://www.basicfantasy.org/downloads.html'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                  >
-                    Basic Fantasy RPG
-                  </a>
-                  .
-                </p>
-              </section>
-              <section>
-                <header>
-                  <h2>About</h2>
-                </header>
-                <p>
-                  This is an online inventory and equipment generator for the
-                  LotFP system.
-                </p>
-              </section>
-              <section>
-                <header>
-                  <h2>Encumbrance</h2>
-                </header>
-                <p>The encumbrance points and slots are explained.</p>
-              </section>
-              <section>
-                <header>
-                  <h2>Feedback, bug reports, features requests</h2>
-                </header>
-                <p>
-                  My webpage:{' '}
-                  <a
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    href='https://ivlev.blog/'
-                  >
-                    ivlev.blog
-                  </a>
-                </p>
-                <p>
-                  GitHub:{' '}
-                  <a
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    href='https://github.com/8kto/ttrpg-lotfp-helpers'
-                  >
-                    Princess Helpers
-                  </a>
-                </p>
-              </section>
-            </div>
-          </div>
-        </main>
-      </div>
-      <Toast />
+        <section>
+          <header>
+            <h2>Contacts</h2>
+          </header>
+          <p>
+            My website:{' '}
+            <a
+              href='https://ivlev.blog/'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              ivlev.blog
+            </a>
+            , and Telegram channel:{' '}
+            <a href='https://t.me/oktottrpg'>What Does Octopus Say</a> for
+            updates.
+          </p>
+          <p>
+            For feedback, bug reports, feature requests, translations (some are
+            machine-translated), or other comments, visit{' '}
+            <a
+              href='https://github.com/8kto/ttrpg-lotfp-helpers'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              Princess Helpers on GitHub
+            </a>
+            .
+          </p>
+        </section>
+      </PageLayout>
     </>
   )
 }

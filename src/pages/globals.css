@@ -181,6 +181,10 @@ details.ph-details-bullet[open] .ph-custom-indicator {
   @apply mb-2;
 }
 
+.ph-content-container ul {
+  @apply mb-4;
+}
+
 .ph-content-container a {
   @apply ph-color-accent underline-offset-2 hover:underline;
 }
@@ -189,6 +193,68 @@ details.ph-details-bullet[open] .ph-custom-indicator {
   @apply mb-8;
 }
 
-.ph-content-container section header {
-  @apply ph-color-primary mb-2 text-2xl text-gray-900 sm:text-2xl;
+.ph-content-container section header h2 {
+  @apply ph-color-primary mb-2 text-2xl text-gray-900;
+}
+
+.ph-content-container section h3 {
+  @apply ph-color-accent mb-2 text-xl;
+}
+
+.ph-content-container ul {
+  @apply list-disc list-inside space-y-2;
+}
+
+.ph-content-container li {
+  @apply ml-2;
+}
+
+.ph-content-container ul ul {
+  @apply mt-2 ml-2 pl-4 border-l border-gray-200;
+}
+
+.ph-content-container li li {
+  @apply ml-2;
+}
+
+.ph-content-container details {
+  @apply relative block;
+}
+
+.ph-content-container details[open] {
+}
+
+.ph-content-container summary {
+  @apply list-none py-2 px-4 rounded bg-gray-50 text-gray-700;
+  @apply hover:bg-gray-200 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50;
+  @apply hover:cursor-pointer;
+}
+
+.ph-content-container details[open] summary {
+  @apply rounded-t bg-gray-100;
+  @apply mb-4;
+}
+
+.ph-content-container details > *:not(summary) {
+  @apply mt-2 mb-4;
+}
+
+.ph-content-container details[open] h3 {
+  @apply mb-2 mt-1 py-0;
+}
+
+.ph-content-container table {
+  @apply min-w-full table-fixed text-sm sm:text-base border;
+}
+
+.ph-content-container table thead {
+  @apply bg-gray-100;
+}
+
+.ph-content-container table thead th {
+  @apply py-2 px-2 text-xs font-medium tracking-wider text-left uppercase cursor-pointer;
+}
+
+.ph-content-container table tbody td {
+  @apply p-2 font-normal text-gray-900;
 }
