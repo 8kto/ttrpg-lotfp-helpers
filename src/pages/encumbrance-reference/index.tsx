@@ -38,7 +38,7 @@ export default function EncumbranceReferencePage() {
             <li>
               <strong>Items</strong>: Carrying 6 or more different items adds
               encumbrance points, with additional points for every 5 items
-              beyond the initial 6.
+              beyond the initial 6. Weapons included.
             </li>
             <li>
               <strong>Oversized Items</strong>: Great and two-handed weapons, or
@@ -46,7 +46,7 @@ export default function EncumbranceReferencePage() {
               oversized items and each adds encumbrance points.
             </li>
             <li>
-              <strong>Coins</strong>: 100 any coins equal 1 encumbrance point.
+              <strong>Coins</strong>: 100 any coins count as 1 regular item.
             </li>
           </ul>
 
