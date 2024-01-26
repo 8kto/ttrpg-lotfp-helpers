@@ -18,7 +18,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   }
 }
 
-export default function AboutPage() {
+export default function DisclaimerPage() {
   return (
     <>
       <Head>
@@ -27,42 +27,33 @@ export default function AboutPage() {
       <PageLayout>
         <section>
           <header>
-            <h2>About</h2>
+            <h2>Disclaimer</h2>
           </header>
           <p>
-            This is an online inventory and equipment generator for the LotFP
-            system.
+            This project is created just for fun and is not officially
+            affiliated with or endorsed by the publishers of &quot;Lamentations
+            of the Flame Princess&quot; (LotFP) or any other related entities.
           </p>
-        </section>
-        <section>
-          <header>
-            <h2>Encumbrance</h2>
-          </header>
-          <p>The encumbrance points and slots are explained.</p>
-        </section>
-        <section>
-          <header>
-            <h2>Feedback, bug reports, features requests</h2>
-          </header>
+
           <p>
-            My webpage:{' '}
+            The content utilized in this project has been sourced from publicly
+            available materials, including but not limited to the{' '}
             <a
+              href='https://preview.drivethrurpg.com/en/product/115059/LotFP-Rules--Magic-Free-Version'
               target='_blank'
               rel='noopener noreferrer'
-              href='https://ivlev.blog/'
             >
-              ivlev.blog
-            </a>
-          </p>
-          <p>
-            GitHub:{' '}
+              LotFP Rules & Magic Free Version
+            </a>{' '}
+            and resources from{' '}
             <a
+              href='https://www.basicfantasy.org/downloads.html'
               target='_blank'
               rel='noopener noreferrer'
-              href='https://github.com/8kto/ttrpg-lotfp-helpers'
             >
-              Princess Helpers
+              Basic Fantasy RPG
             </a>
+            .
           </p>
         </section>
       </PageLayout>
