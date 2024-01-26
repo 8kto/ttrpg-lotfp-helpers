@@ -45,6 +45,9 @@ export default function EncumbranceReferencePage() {
               any item requiring two hands or as tall as the character, count as
               oversized items and each adds encumbrance points.
             </li>
+            <li>
+              <strong>Coins</strong>: 100 any coins equal 1 encumbrance point.
+            </li>
           </ul>
 
           <h3>What does not count</h3>
@@ -141,6 +144,42 @@ export default function EncumbranceReferencePage() {
               <strong>Miles per Day</strong>: Encumbrance affects how far your
               character can travel per day, with significant reductions based on
               the level of encumbrance.
+            </li>
+          </ul>
+        </section>
+        <section>
+          <header>
+            <h2>In app</h2>
+          </header>
+          <p>Encumbrance Units and Points:</p>
+          <ul>
+            <li>
+              <strong>Encumbrance Points</strong>: These are used to determine
+              the encumbrance level of a character. The system uses a conversion
+              where 1 encumbrance point equals 5 encumbrance units. Taken from
+              the core book.
+            </li>
+            <li>
+              <strong>Encumbrance Units</strong>: Smaller divisions of
+              encumbrance points, with 1 encumbrance unit being 1/5 of a point.
+              All elements in the system have a weight expressed in e.u.
+            </li>
+          </ul>
+
+          <p>Special Rules:</p>
+          <ul>
+            <li>
+              <strong>Coins Encumbrance</strong>: 100 coins count as 1 regular
+              item or 1 e.u. This option can be disabled in the Wallet settings.
+            </li>
+            <li>
+              <strong>Item Threshold</strong>: The first 5 items for regular
+              characters (and 10 for dwarves) do not count towards encumbrance
+              unless they are Armor or Oversized items.
+            </li>
+            <li>
+              <strong>Oversized Items</strong>: Have a higher encumbrance value,
+              with each oversized item equating to 1 full encumbrance point.
             </li>
           </ul>
         </section>

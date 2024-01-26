@@ -34,7 +34,7 @@ export default function AboutPage() {
             system. Currently, it does not include mounts, animals, or firearms.
             I plan to revisit this after a [short] break.
           </p>
-          <details className='mb-4'>
+          <details className='mb-4' open>
             <summary>Features list</summary>
             <ul>
               <li>
@@ -81,12 +81,7 @@ export default function AboutPage() {
             .
           </p>
         </section>
-        <section>
-          <header>
-            <h2>Encumbrance</h2>
-          </header>
-          <p>The encumbrance points and slots are explained.</p>
-        </section>
+
         <section>
           <header>
             <h2>Contacts</h2>
