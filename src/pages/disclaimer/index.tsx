@@ -31,8 +31,15 @@ export default function DisclaimerPage() {
           </header>
           <p>
             This project is created just for fun and is not officially
-            affiliated with or endorsed by the publishers of &quot;Lamentations
-            of the Flame Princess&quot; (LotFP) or any other related entities.
+            affiliated with or endorsed by the publishers of{' '}
+            <a
+              target='_blank'
+              rel='noopener noreferrer'
+              href='https://www.lotfp.com/RPG/'
+            >
+              &quot;Lamentations of the Flame Princess&quot; (LotFP)
+            </a>{' '}
+            or any other related entities.
           </p>
 
           <p>
