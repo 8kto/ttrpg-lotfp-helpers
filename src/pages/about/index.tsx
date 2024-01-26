@@ -33,7 +33,7 @@ export default function AboutPage() {
             This is an online inventory and equipment generator for the LotFP
             system.
           </p>
-          <details>
+          <details className='mb-4'>
             <summary>Features list</summary>
             <ul>
               <li>
@@ -88,27 +88,103 @@ export default function AboutPage() {
         </section>
         <section>
           <header>
-            <h2>Feedback, bug reports, features requests</h2>
+            <h2>Encumbrance quick reference</h2>
+          </header>
+          <details>
+            <summary>Show</summary>
+            <h3>What counts towards encumbrance</h3>
+            <ul>
+              <li>
+                <strong>Armor</strong>: Chain and plate armors add encumbrance
+                points but are not included in the regular equipment count.
+              </li>
+              <li>
+                <strong>Items</strong>: Carrying 6 or more different items adds
+                encumbrance points, with additional points for every 5 items
+                beyond the initial 6.
+              </li>
+              <li>
+                <strong>Oversized Items</strong>: Great and two-handed weapons,
+                or any item requiring two hands or as tall as the character,
+                count as oversized items and each adds encumbrance points.
+              </li>
+            </ul>
+
+            <h3>What does not count</h3>
+            <ul>
+              <li>
+                Worn items like cloaks, jewelry, and backpacks do not count
+                towards encumbrance.
+              </li>
+              <li>
+                Small items of the same type (e.g., arrows, spikes) count as one
+                item.
+              </li>
+              <li>
+                Very small items may not count towards encumbrance, at the
+                Referee&apos;s discretion.
+              </li>
+            </ul>
+
+            <h3>How to count</h3>
+            <ul>
+              <li>
+                <strong>Chain or Plate Armor</strong>: +1 or +2 points
+                respectively.
+              </li>
+              <li>
+                <strong>Carrying Items</strong>: +1 point for every 5 items
+                beyond the first 5. Dwarves can carry an additional 5 items (10
+                in total) before encumbrance penalties apply.
+              </li>
+              <li>
+                <strong>Oversized Items</strong>: +1 point per oversized item.
+              </li>
+            </ul>
+
+            <h3>Effects</h3>
+            <ul>
+              <li>
+                <strong>Movement Rate</strong>: Encumbrance points reduce your
+                character&apos;s movement in exploration, combat, and running,
+                potentially down to 0 if overly encumbered.
+              </li>
+              <li>
+                <strong>Miles per Day</strong>: Encumbrance affects how far your
+                character can travel per day, with significant reductions based
+                on the level of encumbrance.
+              </li>
+            </ul>
+          </details>
+        </section>
+        <section>
+          <header>
+            <h2>Contacts</h2>
           </header>
           <p>
-            My webpage:{' '}
+            My website:{' '}
             <a
+              href='https://ivlev.blog/'
               target='_blank'
               rel='noopener noreferrer'
-              href='https://ivlev.blog/'
             >
               ivlev.blog
             </a>
+            , and Telegram channel:{' '}
+            <a href='https://t.me/oktottrpg'>What Does Octopus Say</a> for
+            updates.
           </p>
           <p>
-            GitHub:{' '}
+            For feedback, bug reports, feature requests, translations (some are
+            machine-translated), or other comments, visit{' '}
             <a
+              href='https://github.com/8kto/ttrpg-lotfp-helpers'
               target='_blank'
               rel='noopener noreferrer'
-              href='https://github.com/8kto/ttrpg-lotfp-helpers'
             >
-              Princess Helpers
+              Princess Helpers on GitHub
             </a>
+            .
           </p>
         </section>
       </PageLayout>

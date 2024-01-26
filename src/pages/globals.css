@@ -189,8 +189,12 @@ details.ph-details-bullet[open] .ph-custom-indicator {
   @apply mb-8;
 }
 
-.ph-content-container section header {
-  @apply ph-color-primary mb-2 text-2xl text-gray-900 sm:text-2xl;
+.ph-content-container section header h2 {
+  @apply ph-color-primary mb-2 text-2xl text-gray-900;
+}
+
+.ph-content-container section h3 {
+  @apply ph-color-primary mb-2 text-xl text-gray-900;
 }
 
 .ph-content-container ul {
@@ -210,21 +214,27 @@ details.ph-details-bullet[open] .ph-custom-indicator {
 }
 
 .ph-content-container details {
-  @apply relative mb-4 block cursor-pointer;
+  @apply relative block;
+}
+
+.ph-content-container details[open] {
 }
 
 .ph-content-container summary {
-  @apply list-none py-2 px-4 rounded bg-gray-50 text-gray-700 hover:bg-gray-200 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50;
+  @apply list-none py-2 px-4 rounded bg-gray-50 text-gray-700;
+  @apply hover:bg-gray-200 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50;
+  @apply hover:cursor-pointer;
 }
 
 .ph-content-container details[open] summary {
   @apply rounded-t bg-gray-100;
-}
-
-.ph-content-container details[open] {
-  @apply pb-2;
+  @apply mb-4;
 }
 
 .ph-content-container details > *:not(summary) {
-  @apply px-4 pt-2 pb-4;
+  @apply mt-2 mb-4;
+}
+
+.ph-content-container details[open] h3 {
+  @apply mb-2 mt-1 py-0;
 }
