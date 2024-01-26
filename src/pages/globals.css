@@ -36,6 +36,11 @@ h6 {
   color: rgb(180 83 9);
 }
 
+.ph-color-primary {
+  /* red-800 */
+  color: rgb(153 27 27);
+}
+
 .ph-color-muted {
   /* text-gray-500 */
   color: rgb(107 114 128);
@@ -170,4 +175,20 @@ details.ph-details-bullet[open] .ph-custom-indicator {
 .ph-tabs-scrollbar.active-scrollbar {
   scrollbar-width: thin;
   margin-bottom: 0;
+}
+
+.ph-content-container p {
+  @apply mb-2;
+}
+
+.ph-content-container a {
+  @apply ph-color-accent underline-offset-2 hover:underline;
+}
+
+.ph-content-container section {
+  @apply mb-8;
+}
+
+.ph-content-container section header {
+  @apply ph-color-primary mb-2 text-2xl text-gray-900 sm:text-2xl;
 }

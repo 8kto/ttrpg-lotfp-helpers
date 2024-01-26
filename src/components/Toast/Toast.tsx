@@ -7,6 +7,7 @@ import { subscribe } from '@/shared/actions/helpers'
 
 const DEFAULT_TOAST_TYPE = 'info'
 
+// TODO check multiple messages, cancel prev?
 const Toast = ({ fadeOutIn = 600 }: { fadeOutIn?: number }) => {
   const [isVisible, setToastVisible] = useState(false)
   const [toastMessage, setToastMessage] = useState('')

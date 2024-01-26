@@ -354,9 +354,6 @@ msgstr "Lightly"
 msgid "Heavy crossbows can only be fired once in 3 rounds and ignore 4 AC points"
 msgstr "Heavy crossbows can only be fired once in 3 rounds and ignore 4 AC points"
 
-msgid "Total, optimised"
-msgstr "Total, optimised"
-
 msgid "config.misc.caltrop.details"
 msgstr "Caltrops are metal spikes that look like large jacks, shaped so that there is always one sharp point facing up."
 
@@ -830,6 +827,9 @@ msgstr "Staff"
 
 msgid "Maul"
 msgstr "Maul"
+
+msgid "About"
+msgstr "About"
 
 msgid "Spike, Wooden"
 msgstr "Spike, Wooden"

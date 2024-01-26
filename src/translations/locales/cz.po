@@ -354,9 +354,6 @@ msgstr "Lehce"
 msgid "Heavy crossbows can only be fired once in 3 rounds and ignore 4 AC points"
 msgstr "Těžké křížové luki lze vystřelit pouze jednou za 3 kola a ignorují 4 body AC"
 
-msgid "Total, optimised"
-msgstr ""
-
 msgid "config.misc.caltrop.details"
 msgstr "Ježci (caltrop) jsou kovové hroty, které vypadají jako podpěry, přičemž jeden ostrý konec je vždy nasměrován nahoru."
 
@@ -830,6 +827,9 @@ msgstr "Hůl"
 
 msgid "Maul"
 msgstr "Palice"
+
+msgid "About"
+msgstr ""
 
 msgid "Spike, Wooden"
 msgstr "Hřebík, dřevěný"
