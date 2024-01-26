@@ -693,6 +693,9 @@ msgstr "Štít"
 msgid "Copper pieces"
 msgstr "Měděné kousky"
 
+msgid "Disclaimer"
+msgstr ""
+
 msgid "Light crossbows can only be fired every once in 2 rounds and ignore 2 AC points"
 msgstr "Lehké kuše lze vystřelit pouze jednou za 2 kola a ignorují 2 body AC"
 
