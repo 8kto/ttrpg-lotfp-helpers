@@ -16,7 +16,7 @@ const Header = () => {
           <div className='flex items-center'>
             <Link href='/' className='flex items-center'>
               <h1
-                className={`${cursiveFont.className} whitespace-nowrap text-2xl font-semibold sm:text-3xl`}
+                className={`${cursiveFont.className} whitespace-nowrap text-3xl font-semibold`}
               >
                 <Trans>Princess Helpers</Trans>
               </h1>

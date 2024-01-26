@@ -63,6 +63,7 @@ const Footer = () => {
               viewportDebugHidden ? 'hidden' : ''
             }`}
             onClick={() => setViewportDebugHidden(true)}
+            title='Click to hide'
           >
             Active viewport:
             <span className='mx-1'>XS</span>
