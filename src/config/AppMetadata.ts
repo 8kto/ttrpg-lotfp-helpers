@@ -12,4 +12,5 @@ export const AppMetadata: Metadata = {
 export const getNavLinks = () => [
   { href: '/disclaimer', title: t`Disclaimer` },
   { href: '/about', title: t`About` },
+  { href: '/encumbrance-reference', title: t`Encumbrance` },
 ]

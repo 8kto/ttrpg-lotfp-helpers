@@ -181,6 +181,10 @@ details.ph-details-bullet[open] .ph-custom-indicator {
   @apply mb-2;
 }
 
+.ph-content-container ul {
+  @apply mb-4;
+}
+
 .ph-content-container a {
   @apply ph-color-accent underline-offset-2 hover:underline;
 }
@@ -194,7 +198,7 @@ details.ph-details-bullet[open] .ph-custom-indicator {
 }
 
 .ph-content-container section h3 {
-  @apply ph-color-primary mb-2 text-xl text-gray-900;
+  @apply ph-color-accent mb-2 text-xl;
 }
 
 .ph-content-container ul {
@@ -237,4 +241,20 @@ details.ph-details-bullet[open] .ph-custom-indicator {
 
 .ph-content-container details[open] h3 {
   @apply mb-2 mt-1 py-0;
+}
+
+.ph-content-container table {
+  @apply min-w-full table-fixed text-sm sm:text-base border;
+}
+
+.ph-content-container table thead {
+  @apply bg-gray-100;
+}
+
+.ph-content-container table thead th {
+  @apply py-2 px-2 text-xs font-medium tracking-wider text-left uppercase cursor-pointer;
+}
+
+.ph-content-container table tbody td {
+  @apply p-2 font-normal text-gray-900;
 }
