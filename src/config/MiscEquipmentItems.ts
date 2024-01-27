@@ -58,6 +58,7 @@ export const MiscEquipmentItems = (): ReadonlyArray<EquipmentItem> => [
   {
     categoryKey: 'miscEquipment',
     cityCostCp: 1,
+    details: t`Emits light in a 10' radius. Burns for 2 hours.`,
     name: t`Candle`,
     points: EncumbranceUnit.None,
     ruralCostCp: 1,
@@ -72,7 +73,18 @@ export const MiscEquipmentItems = (): ReadonlyArray<EquipmentItem> => [
   {
     categoryKey: 'miscEquipment',
     cityCostCp: 1,
+    details: t`Chalk is useful for “blazing a trail” through a dungeon or
+ruin, to ensure that the adventurers can find their way
+back out again`,
     name: t`Chalk`,
+    points: EncumbranceUnit.None,
+    ruralCostCp: 1,
+  },
+  {
+    categoryKey: 'miscEquipment',
+    cityCostCp: 1,
+    details: t`Charcoal pieces of carbonized wood, which can be used like chalk (with black markings), or to add to tinder`,
+    name: t`Charcoal`,
     points: EncumbranceUnit.None,
     ruralCostCp: 1,
   },
@@ -115,6 +127,7 @@ export const MiscEquipmentItems = (): ReadonlyArray<EquipmentItem> => [
   {
     categoryKey: 'miscEquipment',
     cityCostCp: 50,
+    details: t`Spikes for your boots – better success at climbing and keeping balance on ice`,
     name: t`Crampons`,
     points: EncumbranceUnit.Regular,
     ruralCostCp: 50,
@@ -207,6 +220,7 @@ export const MiscEquipmentItems = (): ReadonlyArray<EquipmentItem> => [
   {
     categoryKey: 'miscEquipment',
     cityCostCp: 1,
+    details: t`Writing ink: Stored in a small ceramic jar or tin and sufficient for 50 pages of normal writing`,
     name: t`Ink`,
     points: EncumbranceUnit.None,
     ruralCostCp: 5,
@@ -237,6 +251,7 @@ export const MiscEquipmentItems = (): ReadonlyArray<EquipmentItem> => [
   {
     categoryKey: 'miscEquipment',
     cityCostCp: 30,
+    details: t`Emits light in a 30' radius. Burns for 4 hours. Uses flasks of oil as fuel.`,
     name: t`Lantern`,
     points: EncumbranceUnit.Regular,
     ruralCostCp: 50,
@@ -258,6 +273,12 @@ export const MiscEquipmentItems = (): ReadonlyArray<EquipmentItem> => [
   {
     categoryKey: 'miscEquipment',
     cityCostCp: 3,
+    details: t`A hammer or mallet with a head made of
+treated wood, plant resins, or other materials. The head of
+this hammer makes very little sound when striking things
+(such as a stake, nail, or head). This does not keep what
+is being hit from making noise – a glass window will still
+make noise when it shatters.`,
     name: t`Mallet`,
     points: EncumbranceUnit.Regular,
     ruralCostCp: 3,
@@ -286,6 +307,7 @@ export const MiscEquipmentItems = (): ReadonlyArray<EquipmentItem> => [
   {
     categoryKey: 'miscEquipment',
     cityCostCp: 100,
+    details: t`Mirrors are useful for many reasons; for instance, they can be used for looking around corners or for sending signals outdoors using reflected sunlight.`,
     name: t`Mirror, Glass`,
     points: EncumbranceUnit.Regular,
     ruralCostCp: 150,
@@ -293,6 +315,7 @@ export const MiscEquipmentItems = (): ReadonlyArray<EquipmentItem> => [
   {
     categoryKey: 'miscEquipment',
     cityCostCp: 300,
+    details: t`Mirrors are useful for many reasons; for instance, they can be used for looking around corners or for sending signals outdoors using reflected sunlight.`,
     name: t`Mirror, Silver`,
     points: EncumbranceUnit.None,
     ruralCostCp: null,
@@ -300,6 +323,7 @@ export const MiscEquipmentItems = (): ReadonlyArray<EquipmentItem> => [
   {
     categoryKey: 'miscEquipment',
     cityCostCp: 10,
+    details: t`Mirrors are useful for many reasons; for instance, they can be used for looking around corners or for sending signals outdoors using reflected sunlight.`,
     name: t`Mirror, Steel`,
     points: EncumbranceUnit.None,
     ruralCostCp: 50,
@@ -384,6 +408,7 @@ export const MiscEquipmentItems = (): ReadonlyArray<EquipmentItem> => [
   {
     categoryKey: 'miscEquipment',
     cityCostCp: 3,
+    details: t`Spikes are useful for spiking doors closed (or spiking them open) and may be used as crude pitons in appropriate situations.`,
     name: t`Spike, Iron`,
     points: EncumbranceUnit.None,
     ruralCostCp: 5,
@@ -391,6 +416,7 @@ export const MiscEquipmentItems = (): ReadonlyArray<EquipmentItem> => [
   {
     categoryKey: 'miscEquipment',
     cityCostCp: 1,
+    details: t`Spikes are useful for spiking doors closed (or spiking them open) and may be used as crude pitons in appropriate situations.`,
     name: t`Spike, Wooden`,
     points: EncumbranceUnit.None,
     ruralCostCp: 1,
@@ -433,6 +459,9 @@ export const MiscEquipmentItems = (): ReadonlyArray<EquipmentItem> => [
   {
     categoryKey: 'miscEquipment',
     cityCostCp: 10,
+    details: `A Tinderbox is generally purchased with a flint and steel;
+the flint, a piece of hard rock, is struck vigorously against a C-shaped piece of high-carbon steel. 
+When done correctly, hot sparks will fly from the flint and steel into the tinder, hopefully starting a fire.`,
     name: t`Tinderbox`,
     points: EncumbranceUnit.Regular,
     ruralCostCp: 50,
@@ -447,6 +476,7 @@ export const MiscEquipmentItems = (): ReadonlyArray<EquipmentItem> => [
   {
     categoryKey: 'miscEquipment',
     cityCostCp: 1,
+    details: t`Emits light in a 30' radius. Burns for 1 hour.`,
     name: t`Torch`,
     points: EncumbranceUnit.Regular,
     ruralCostCp: 1,
@@ -462,6 +492,11 @@ export const MiscEquipmentItems = (): ReadonlyArray<EquipmentItem> => [
   {
     categoryKey: 'miscEquipment',
     cityCostCp: 10,
+    details: t`Wineskin/Waterskin is a container for drinking water or
+wine; though generally water is taken into a dungeon or
+wilderness environment. The standard waterskin holds
+one quart of liquid, which is the minimum amount
+required by a normal character in a single day.`,
     name: t`Waterskin`,
     points: EncumbranceUnit.Regular,
     ruralCostCp: 10,
@@ -484,6 +519,10 @@ export const MiscEquipmentItems = (): ReadonlyArray<EquipmentItem> => [
   {
     categoryKey: 'miscEquipment',
     cityCostCp: 20,
+    details: t`Iron (dry) Rations may consist of dry bread, hard cheese, dried
+fruit, nuts, beans, jerky, or any other food which will not
+“go bad” in less than about a month (if not longer). Dry
+rations are packaged in waxed or oiled cloth to protect them`,
     name: t`Rations, Iron/Day`,
     points: EncumbranceUnit.Regular,
     ruralCostCp: 10,
@@ -491,6 +530,11 @@ export const MiscEquipmentItems = (): ReadonlyArray<EquipmentItem> => [
   {
     categoryKey: 'miscEquipment',
     cityCostCp: 10,
+    details: t`Standard Rations include cured meats, seasonal fruits
+and vegetables, and fresh breads or biscuits, often
+wrapped in cloth. These are tastier than dry rations, but
+will generally only keep for a few days in all but the coldest
+or driest climates (up to 1 week)`,
     name: t`Rations, Standard/Day`,
     points: EncumbranceUnit.Regular,
     ruralCostCp: 5,
