@@ -23,7 +23,7 @@ msgid "config.misc.airBladder.details"
 msgstr "Кожаный мешочек с трубкой для рта; дополнительный глоток воздуха для подводного плавания.<br />Может использоваться и как вспомогательное плавательное средство."
 
 msgid "config.melee.mancatcher.details"
-msgstr "При успешном попадании этим оружием жертва должна сделать спасбросок от Паралича. В случае неудачи жертва считается беспомощной, как и владелец мэнкэтчера, пока цель удерживается для защиты от атак. Это оружие необходимо держать двумя руками."
+msgstr "При успешном попадании, жертва должна сделать спасбросок от Паралича. В случае неудачи жертва считается беспомощной, как и владелец мэнкэтчера, пока цель удерживается. Двуручное."
 
 msgid "Clothing, Poor"
 msgstr "Одежда, простая"
@@ -126,7 +126,7 @@ msgid "Quick Reference on Encumbrance from the LotFP Core Rules"
 msgstr "Гайд по нагрузке LotFP"
 
 msgid "Spikes for your boots – better success at climbing and keeping balance on ice"
-msgstr "Шипы для ботинок - помогают при лазании и сохранении равновесия на льду."
+msgstr "Шипы для ботинок - помогают при лазании и сохранении равновесия на льду"
 
 msgid "Bow, Short"
 msgstr "Короткий лук"
@@ -159,10 +159,10 @@ msgid "Mace"
 msgstr "Булава"
 
 msgid "Riding Gear"
-msgstr "Снаряжение, верховая езда"
+msgstr "Снаряжение для верховой езды"
 
 msgid "Emits light in a 30' radius. Burns for 4 hours. Uses flasks of oil as fuel."
-msgstr "Даёт освещение в радиусе 30 футов. Горит 4 часа. Требует в качестве топлива фляги с маслом."
+msgstr "Даёт освещение в радиусе 30 футов. Горит 4 часа. Использует фляги с маслом как топливо."
 
 msgid "Book, Spell (Blank)"
 msgstr "Книга заклинаний (пустая)"
@@ -183,7 +183,7 @@ msgid "Weapon, Great"
 msgstr "Большое оружие"
 
 msgid "These are one-handed weapons, including short swords and hand axes"
-msgstr "Это одноручное оружие, включая короткие мечи и секиры"
+msgstr "Одноручное оружие, включая короткие мечи и секиры"
 
 msgid ""
 "Wineskin/Waterskin is a container for drinking water or\n"
@@ -258,7 +258,7 @@ msgid "Encumbrance calculator, inventory manager for the LotFP TTRPG system"
 msgstr "Калькулятор нагрузки, инвентарь для LotFP"
 
 msgid "Slings fired with stones instead of bullets have half the listed range."
-msgstr "Пращи, стреляющие камнями вместо пуль, имеют половину указанной дальности."
+msgstr "Пращи, стреляющие камнями вместо пуль, имеют половину указанной дальности"
 
 msgid "Crowbar"
 msgstr "Ломик"
@@ -698,7 +698,7 @@ msgstr "Путешественники, передвигающиеся в ляз
 
 #. js-lingui-explicit-id
 msgid "details.shareableJson1"
-msgstr "Обычный JSON-файл, который может быть использован для восстановления."
+msgstr "Обычный JSON-файл, который может быть использован для восстановления инвентаря."
 
 #. js-lingui-explicit-id
 msgid "details.shareableUrl1"
@@ -728,7 +728,7 @@ msgid ""
 msgstr ""
 "Стандартные пайки включают вяленое мясо, сезонные фрукты\n"
 "и овощи, а также свежий хлеб или бисквиты, часто\n"
-"завернутые в ткань. Они вкуснее сухих пайков, но\n"
+"завёрнутые в ткань. Они вкуснее сухих пайков, но\n"
 "обычно сохраняются всего несколько дней во всех климатах, кроме самых холодных\n"
 "или сухих (до 1 недели)"
 
@@ -907,10 +907,10 @@ msgid "Dart for blowgun (1)"
 msgstr "Дротик для духовой трубки (1)"
 
 msgid "This weapon can be used one-handed if charging on horseback. Otherwise, it is effectively a polearm (pike)"
-msgstr "Это оружие можно использовать как одноручное при атаке верхом. В противном случае, равноценна древковому оружию (пике)"
+msgstr "Это оружие можно использовать как одноручное при атаке верхом. В противном случае, равноценно древковому оружию (пике)"
 
 msgid "Wallet"
-msgstr "Кошелек"
+msgstr "Кошелёк"
 
 msgid "Mirror, Steel"
 msgstr "Зеркало, стальное"
