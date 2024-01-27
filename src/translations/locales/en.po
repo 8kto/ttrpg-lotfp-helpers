@@ -106,6 +106,9 @@ msgstr "Holy Symbol, Wood"
 msgid "Silver pieces"
 msgstr "Silver pieces"
 
+msgid "Quick Reference on Encumbrance from the LotFP Core Rules"
+msgstr "Quick Reference on Encumbrance from the LotFP Core Rules"
+
 msgid "Bow, Short"
 msgstr "Bow, Short"
 
@@ -208,6 +211,9 @@ msgstr "These are small one-handed weapons including daggers and clubs, and suff
 
 msgid "Weapon, Minor"
 msgstr "Weapon, Minor"
+
+msgid "Encumbrance calculator, inventory manager for the LotFP TTRPG system"
+msgstr "Encumbrance calculator, inventory manager for the LotFP TTRPG system"
 
 msgid "Slings fired with stones instead of bullets have half the listed range."
 msgstr "Slings fired with stones instead of bullets have half the listed range."
@@ -485,6 +491,9 @@ msgstr "Mirror, Silver"
 msgid "Sling bullets, rocks (10)"
 msgstr "Sling bullets, rocks (10)"
 
+msgid "page.title.suffix"
+msgstr " — Princess Helpers, LotFP tools"
+
 msgid "Blowgun"
 msgstr "Blowgun"
 
@@ -529,12 +538,18 @@ msgstr "Gem"
 msgid "Weight"
 msgstr "Weight"
 
+msgid "About LotFP tools project"
+msgstr "About LotFP tools project"
+
 #. js-lingui-explicit-id
 msgid "Weight"
 msgstr "Weight"
 
 msgid "Tobacco"
 msgstr "Tobacco"
+
+msgid "Encumbrance quick reference"
+msgstr "Encumbrance quick reference"
 
 msgid "Rations, Standard/Day"
 msgstr "Rations, Standard/Day"
