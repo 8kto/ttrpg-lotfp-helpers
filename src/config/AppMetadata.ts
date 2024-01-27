@@ -3,6 +3,8 @@
 import { t } from '@lingui/macro'
 import type { Metadata } from 'next'
 
+export const APP_URL = 'https://lotfp.vercel.app'
+
 // TODO translate
 export const AppMetadata: Metadata = {
   description: 'Lamentations of the Flame Princess helpers',
