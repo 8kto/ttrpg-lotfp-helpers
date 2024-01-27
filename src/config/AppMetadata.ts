@@ -3,10 +3,16 @@
 import { t } from '@lingui/macro'
 import type { Metadata } from 'next'
 
-// TODO translate
+export const APP_URL = 'https://lotfp.vercel.app'
+
 export const AppMetadata: Metadata = {
-  description: 'Lamentations of the Flame Princess helpers',
-  title: 'Princess Helpers',
+  get description() {
+    return t`Lamentations of the Flame Princess helpers`
+  },
+
+  get title() {
+    return t`Princess Helpers`
+  },
 }
 
 export const getNavLinks = () => [

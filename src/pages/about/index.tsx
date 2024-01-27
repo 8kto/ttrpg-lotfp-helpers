@@ -2,9 +2,9 @@
 
 import { t } from '@lingui/macro'
 import type { GetStaticProps } from 'next'
-import Head from 'next/head'
 import React from 'react'
 
+import HeadMetadata from '@/components/layout/HeadMetadata'
 import PageLayout from '@/components/layout/PageLayout'
 import { loadCatalog } from '@/translations/utils'
 
@@ -21,9 +21,10 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 export default function AboutPage() {
   return (
     <>
-      <Head>
-        <title>{t`About`}</title>
-      </Head>
+      <HeadMetadata
+        title={t`About`}
+        description={t`About LotFP tools project`}
+      />
       <PageLayout>
         <section>
           <header>
@@ -33,6 +34,14 @@ export default function AboutPage() {
             This is an online inventory and equipment tool for the LotFP TTRPG
             system. Currently, it does not include mounts, animals, or firearms.
             I plan to revisit this after a [short] break.
+          </p>
+          <p>
+            The main purpose of the app is to allow gaming with a phone in hand,
+            without any registrations, quickly and conveniently, to have a quick
+            reference for items and equipment, and to create an inventory for a
+            new character quickly and easily (including importing pre-made
+            sets). The inventory can be shared, it is saved between page
+            refreshes, and there is an export and import feature.
           </p>
           <details className='mb-4' open>
             <summary>Features list</summary>
@@ -86,7 +95,9 @@ export default function AboutPage() {
           <header>
             <h2>Contacts</h2>
           </header>
-          <p>I&apos;d love to hear that you&apos;re using it in your games.</p>
+          <p>
+            I&apos;d love to hear that you&apos;re using the app in your games.
+          </p>
           <p>
             My website:{' '}
             <a

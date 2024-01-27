@@ -2,9 +2,9 @@
 
 import { t } from '@lingui/macro'
 import type { GetStaticProps } from 'next'
-import Head from 'next/head'
 import React from 'react'
 
+import HeadMetadata from '@/components/layout/HeadMetadata'
 import PageLayout from '@/components/layout/PageLayout'
 import { loadCatalog } from '@/translations/utils'
 
@@ -21,9 +21,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 export default function DisclaimerPage() {
   return (
     <>
-      <Head>
-        <title>{t`About`}</title>
-      </Head>
+      <HeadMetadata title={t`Disclaimer`} />
       <PageLayout>
         <section>
           <header>

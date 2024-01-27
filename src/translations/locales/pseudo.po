@@ -13,6 +13,9 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+msgid "Lamentations of the Flame Princess helpers"
+msgstr ""
+
 msgid "Coins"
 msgstr ""
 
@@ -73,6 +76,13 @@ msgstr ""
 msgid "Flask of Lamp Oil"
 msgstr ""
 
+msgid ""
+"Iron (dry) Rations may consist of dry bread, hard cheese, dried\n"
+"fruit, nuts, beans, jerky, or any other food which will not\n"
+"“go bad” in less than about a month (if not longer). Dry\n"
+"rations are packaged in waxed or oiled cloth to protect them"
+msgstr ""
+
 msgid "Saddlebag"
 msgstr ""
 
@@ -100,10 +110,19 @@ msgstr ""
 msgid "Air Bladder"
 msgstr ""
 
+msgid "Emits light in a 30' radius. Burns for 1 hour."
+msgstr ""
+
 msgid "Holy Symbol, Wood"
 msgstr ""
 
 msgid "Silver pieces"
+msgstr ""
+
+msgid "Quick Reference on Encumbrance from the LotFP Core Rules"
+msgstr ""
+
+msgid "Spikes for your boots – better success at climbing and keeping balance on ice"
 msgstr ""
 
 msgid "Bow, Short"
@@ -124,6 +143,9 @@ msgstr ""
 msgid "Manacles"
 msgstr ""
 
+msgid "Writing ink: Stored in a small ceramic jar or tin and sufficient for 50 pages of normal writing"
+msgstr ""
+
 msgid "Mirror, Glass"
 msgstr ""
 
@@ -134,6 +156,9 @@ msgid "Mace"
 msgstr ""
 
 msgid "Riding Gear"
+msgstr ""
+
+msgid "Emits light in a 30' radius. Burns for 4 hours. Uses flasks of oil as fuel."
 msgstr ""
 
 msgid "Book, Spell (Blank)"
@@ -157,6 +182,14 @@ msgstr ""
 msgid "These are one-handed weapons, including short swords and hand axes"
 msgstr ""
 
+msgid ""
+"Wineskin/Waterskin is a container for drinking water or\n"
+"wine; though generally water is taken into a dungeon or\n"
+"wilderness environment. The standard waterskin holds\n"
+"one quart of liquid, which is the minimum amount\n"
+"required by a normal character in a single day."
+msgstr ""
+
 msgid "Barrel"
 msgstr ""
 
@@ -177,6 +210,12 @@ msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Armor"
+msgstr ""
+
+msgid ""
+"A Tinderbox is generally purchased with a flint and steel;\n"
+"the flint, a piece of hard rock, is struck vigorously against a C-shaped piece of high-carbon steel. \n"
+"When done correctly, hot sparks will fly from the flint and steel into the tinder, hopefully starting a fire."
 msgstr ""
 
 msgid "A rock for throwing, not an ammunition"
@@ -209,6 +248,9 @@ msgstr ""
 msgid "Weapon, Minor"
 msgstr ""
 
+msgid "Encumbrance calculator, inventory manager for the LotFP TTRPG system"
+msgstr ""
+
 msgid "Slings fired with stones instead of bullets have half the listed range."
 msgstr ""
 
@@ -220,6 +262,9 @@ msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Cumbersome"
+msgstr ""
+
+msgid "Mirrors are useful for many reasons; for instance, they can be used for looking around corners or for sending signals outdoors using reflected sunlight."
 msgstr ""
 
 msgid "RU"
@@ -250,6 +295,12 @@ msgid "Tent, Personal"
 msgstr ""
 
 msgid "Gold"
+msgstr ""
+
+msgid ""
+"Chalk is useful for “blazing a trail” through a dungeon or\n"
+"ruin, to ensure that the adventurers can find their way\n"
+"back out again"
 msgstr ""
 
 msgid "Filter by name"
@@ -390,6 +441,15 @@ msgstr ""
 msgid "Mêlée weapons"
 msgstr ""
 
+msgid ""
+"A hammer or mallet with a head made of\n"
+"treated wood, plant resins, or other materials. The head of\n"
+"this hammer makes very little sound when striking things\n"
+"(such as a stake, nail, or head). This does not keep what\n"
+"is being hit from making noise – a glass window will still\n"
+"make noise when it shatters."
+msgstr ""
+
 msgid "Dagger"
 msgstr ""
 
@@ -485,6 +545,9 @@ msgstr ""
 msgid "Sling bullets, rocks (10)"
 msgstr ""
 
+msgid "page.title.suffix"
+msgstr ""
+
 msgid "Blowgun"
 msgstr ""
 
@@ -529,11 +592,17 @@ msgstr ""
 msgid "Weight"
 msgstr ""
 
+msgid "About LotFP tools project"
+msgstr ""
+
 #. js-lingui-explicit-id
 msgid "Weight"
 msgstr ""
 
 msgid "Tobacco"
+msgstr ""
+
+msgid "Encumbrance quick reference"
 msgstr ""
 
 msgid "Rations, Standard/Day"
@@ -546,6 +615,9 @@ msgid "Dwarven Encumbrance"
 msgstr ""
 
 msgid "Precipitations, high winds"
+msgstr ""
+
+msgid "Emits light in a 10' radius. Burns for 2 hours."
 msgstr ""
 
 msgid "These weapons must be wielded with two hands. Two-handed swords, mauls, and great axes are included in this category."
@@ -636,6 +708,17 @@ msgstr ""
 msgid "details.shareableUrlSectionUrl"
 msgstr ""
 
+msgid "Spikes are useful for spiking doors closed (or spiking them open) and may be used as crude pitons in appropriate situations."
+msgstr ""
+
+msgid ""
+"Standard Rations include cured meats, seasonal fruits\n"
+"and vegetables, and fresh breads or biscuits, often\n"
+"wrapped in cloth. These are tastier than dry rations, but\n"
+"will generally only keep for a few days in all but the coldest\n"
+"or driest climates (up to 1 week)"
+msgstr ""
+
 msgid "Cestus"
 msgstr ""
 
@@ -697,6 +780,9 @@ msgid "Disclaimer"
 msgstr ""
 
 msgid "Light crossbows can only be fired every once in 2 rounds and ignore 2 AC points"
+msgstr ""
+
+msgid "Charcoal"
 msgstr ""
 
 msgid "Road"
@@ -832,6 +918,9 @@ msgid "Maul"
 msgstr ""
 
 msgid "About"
+msgstr ""
+
+msgid "Charcoal pieces of carbonized wood, which can be used like chalk (with black markings), or to add to tinder"
 msgstr ""
 
 msgid "Spike, Wooden"

@@ -13,6 +13,9 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+msgid "Lamentations of the Flame Princess helpers"
+msgstr "Помощник для Lamentations of the Flame Princess"
+
 msgid "Coins"
 msgstr "Монеты"
 
@@ -20,7 +23,7 @@ msgid "config.misc.airBladder.details"
 msgstr "Кожаный мешочек с трубкой для рта; дополнительный глоток воздуха для подводного плавания.<br />Может использоваться и как вспомогательное плавательное средство."
 
 msgid "config.melee.mancatcher.details"
-msgstr "При успешном попадании этим оружием жертва должна сделать спасбросок от Паралича. В случае неудачи жертва считается беспомощной, как и владелец мэнкэтчера, пока цель удерживается для защиты от атак. Это оружие необходимо держать двумя руками."
+msgstr "При успешном попадании жертва должна сделать спасбросок от Паралича. В случае провала, жертва считается беспомощной, как и владелец мэнкэтчера, пока цель удерживается. Двуручное."
 
 msgid "Clothing, Poor"
 msgstr "Одежда, простая"
@@ -73,6 +76,16 @@ msgstr "Это оружие неэффективно против целей с 
 msgid "Flask of Lamp Oil"
 msgstr "Фляга с маслом для ламп"
 
+msgid ""
+"Iron (dry) Rations may consist of dry bread, hard cheese, dried\n"
+"fruit, nuts, beans, jerky, or any other food which will not\n"
+"“go bad” in less than about a month (if not longer). Dry\n"
+"rations are packaged in waxed or oiled cloth to protect them"
+msgstr ""
+"Железные (сухие) пайки могут включать сухой хлеб, твердый сыр, сушёные\n"
+"фрукты, орехи, бобы, вяленое мясо или любую другую пищу, которая не\n"
+"испортится менее чем за месяц (если не дольше). Сухие продукты упакованы в промасленную или вощёную ткань для защиты."
+
 msgid "Saddlebag"
 msgstr "Седельная сумка"
 
@@ -100,11 +113,20 @@ msgstr "Лопата"
 msgid "Air Bladder"
 msgstr "Воздушный пузырь"
 
+msgid "Emits light in a 30' radius. Burns for 1 hour."
+msgstr "Даёт освещение в радиусе 30 футов. Горит 1 час."
+
 msgid "Holy Symbol, Wood"
 msgstr "Священный символ, деревянный"
 
 msgid "Silver pieces"
 msgstr "Серебряные монеты"
+
+msgid "Quick Reference on Encumbrance from the LotFP Core Rules"
+msgstr "Гайд по нагрузке LotFP"
+
+msgid "Spikes for your boots – better success at climbing and keeping balance on ice"
+msgstr "Шипы для ботинок - помогают при лазании и сохранении равновесия на льду"
 
 msgid "Bow, Short"
 msgstr "Короткий лук"
@@ -124,6 +146,9 @@ msgstr "Дальность"
 msgid "Manacles"
 msgstr "Кандалы"
 
+msgid "Writing ink: Stored in a small ceramic jar or tin and sufficient for 50 pages of normal writing"
+msgstr "Писчие чернила: Хранятся в небольшой керамической баночке или жестяной коробке, достаточно для 50 страниц обычного письма."
+
 msgid "Mirror, Glass"
 msgstr "Зеркало, стеклянное"
 
@@ -134,7 +159,10 @@ msgid "Mace"
 msgstr "Булава"
 
 msgid "Riding Gear"
-msgstr "Снаряжение, верховая езда"
+msgstr "Снаряжение для верховой езды"
+
+msgid "Emits light in a 30' radius. Burns for 4 hours. Uses flasks of oil as fuel."
+msgstr "Даёт освещение в радиусе 30 футов. Горит 4 часа. Использует фляги с маслом как топливо."
 
 msgid "Book, Spell (Blank)"
 msgstr "Книга заклинаний (пустая)"
@@ -155,7 +183,18 @@ msgid "Weapon, Great"
 msgstr "Большое оружие"
 
 msgid "These are one-handed weapons, including short swords and hand axes"
-msgstr "Это одноручное оружие, включая короткие мечи и секиры"
+msgstr "Одноручное оружие, включая короткие мечи и секиры"
+
+msgid ""
+"Wineskin/Waterskin is a container for drinking water or\n"
+"wine; though generally water is taken into a dungeon or\n"
+"wilderness environment. The standard waterskin holds\n"
+"one quart of liquid, which is the minimum amount\n"
+"required by a normal character in a single day."
+msgstr ""
+"Бурдюк/Мешок для воды - это контейнер для питьевой воды или\n"
+"вина. Стандартный мешок для воды вмещает\n"
+"одну кварту жидкости, что является минимальным количеством для обычного персонажем за один день."
 
 msgid "Barrel"
 msgstr "Бочка"
@@ -178,6 +217,12 @@ msgstr "Деревня"
 #. js-lingui-explicit-id
 msgid "Armor"
 msgstr "Броня"
+
+msgid ""
+"A Tinderbox is generally purchased with a flint and steel;\n"
+"the flint, a piece of hard rock, is struck vigorously against a C-shaped piece of high-carbon steel. \n"
+"When done correctly, hot sparks will fly from the flint and steel into the tinder, hopefully starting a fire."
+msgstr "Трутница, как правило, приобретается вместе с кремнем и сталью; кремень, кусок твёрдой породы, энергично ударяется о С-образный кусок высокоуглеродистой стали. Используется для разведения огня."
 
 msgid "A rock for throwing, not an ammunition"
 msgstr "Камень для метания, не боеприпас"
@@ -209,8 +254,11 @@ msgstr "Это небольшое одноручное оружие, включ�
 msgid "Weapon, Minor"
 msgstr "Мелкое оружие"
 
+msgid "Encumbrance calculator, inventory manager for the LotFP TTRPG system"
+msgstr "Калькулятор нагрузки, инвентарь для LotFP"
+
 msgid "Slings fired with stones instead of bullets have half the listed range."
-msgstr "Пращи, стреляющие камнями вместо пуль, имеют половину указанной дальности."
+msgstr "Пращи, стреляющие камнями вместо пуль, имеют половину указанной дальности"
 
 msgid "Crowbar"
 msgstr "Ломик"
@@ -221,6 +269,9 @@ msgstr "Сохранить как файл"
 #. js-lingui-explicit-id
 msgid "Cumbersome"
 msgstr "Громоздкий"
+
+msgid "Mirrors are useful for many reasons; for instance, they can be used for looking around corners or for sending signals outdoors using reflected sunlight."
+msgstr "Зеркала полезны по многим причинам; например, их можно использовать для подглядывания из-за угла или для отправки сигналов с помощью отраженных лучей света"
 
 msgid "RU"
 msgstr "RU"
@@ -251,6 +302,12 @@ msgstr "Палатка, одиночная"
 
 msgid "Gold"
 msgstr "Золотые"
+
+msgid ""
+"Chalk is useful for “blazing a trail” through a dungeon or\n"
+"ruin, to ensure that the adventurers can find their way\n"
+"back out again"
+msgstr "Мел может быть использован для меток, чтобы отмечать путь"
 
 msgid "Filter by name"
 msgstr "Фильтр по названию"
@@ -390,6 +447,17 @@ msgstr "Метательное оружие"
 msgid "Mêlée weapons"
 msgstr "Рукопашное оружие"
 
+msgid ""
+"A hammer or mallet with a head made of\n"
+"treated wood, plant resins, or other materials. The head of\n"
+"this hammer makes very little sound when striking things\n"
+"(such as a stake, nail, or head). This does not keep what\n"
+"is being hit from making noise – a glass window will still\n"
+"make noise when it shatters."
+msgstr ""
+"Киянка или молоток с головкой из обработанного дерева, растительных смол или других материалов. Киянка издает очень мало звука при ударе по вещам. Это не предотвращает шума от того,\n"
+"что бьётся - стеклянное окно все равно будет звенеть, когда разобьётся."
+
 msgid "Dagger"
 msgstr "Кинжал"
 
@@ -485,6 +553,9 @@ msgstr "Зеркало, серебряное"
 msgid "Sling bullets, rocks (10)"
 msgstr "Снаряды для пращи, камни (10)"
 
+msgid "page.title.suffix"
+msgstr " — Princess Helpers, LotFP tools"
+
 msgid "Blowgun"
 msgstr "Духовая трубка"
 
@@ -529,12 +600,18 @@ msgstr "Драгоценный камень"
 msgid "Weight"
 msgstr "Вес"
 
+msgid "About LotFP tools project"
+msgstr "О проекте, помощники для LotFP"
+
 #. js-lingui-explicit-id
 msgid "Weight"
 msgstr "Вес"
 
 msgid "Tobacco"
 msgstr "Табак"
+
+msgid "Encumbrance quick reference"
+msgstr "Гайд по нагрузке LotFP"
 
 msgid "Rations, Standard/Day"
 msgstr "Пайки, стандартные/День"
@@ -547,6 +624,9 @@ msgstr "Выносливость гномов"
 
 msgid "Precipitations, high winds"
 msgstr "Осадки, сильный ветер"
+
+msgid "Emits light in a 10' radius. Burns for 2 hours."
+msgstr "Даёт освещение в радиусе 10 футов. Горит 2 часа."
 
 msgid "These weapons must be wielded with two hands. Two-handed swords, mauls, and great axes are included in this category."
 msgstr "Это оружие держат двумя руками. В эту категорию входят двуручные мечи, булавы и большие топоры."
@@ -618,7 +698,7 @@ msgstr "Путешественники, передвигающиеся в ляз
 
 #. js-lingui-explicit-id
 msgid "details.shareableJson1"
-msgstr "Обычный JSON-файл, который может быть использован для восстановления."
+msgstr "Обычный JSON-файл, который может быть использован для восстановления инвентаря."
 
 #. js-lingui-explicit-id
 msgid "details.shareableUrl1"
@@ -635,6 +715,22 @@ msgstr "Файл"
 #. js-lingui-explicit-id
 msgid "details.shareableUrlSectionUrl"
 msgstr "Поделиться URL"
+
+msgid "Spikes are useful for spiking doors closed (or spiking them open) and may be used as crude pitons in appropriate situations."
+msgstr "Шипы полезны для блокировки дверей и могут использоваться как грубые крюки в подходящих ситуациях."
+
+msgid ""
+"Standard Rations include cured meats, seasonal fruits\n"
+"and vegetables, and fresh breads or biscuits, often\n"
+"wrapped in cloth. These are tastier than dry rations, but\n"
+"will generally only keep for a few days in all but the coldest\n"
+"or driest climates (up to 1 week)"
+msgstr ""
+"Стандартные пайки включают вяленое мясо, сезонные фрукты\n"
+"и овощи, а также свежий хлеб или бисквиты, часто\n"
+"завёрнутые в ткань. Они вкуснее сухих пайков, но\n"
+"обычно сохраняются всего несколько дней во всех климатах, кроме самых холодных\n"
+"или сухих (до 1 недели)"
 
 msgid "Cestus"
 msgstr "Цест"
@@ -698,6 +794,9 @@ msgstr "Дисклеймер"
 
 msgid "Light crossbows can only be fired every once in 2 rounds and ignore 2 AC points"
 msgstr "Лёгкий арбалет стреляет раз в 2 раунда и игнорирует 2 пункта AC"
+
+msgid "Charcoal"
+msgstr "Уголь"
 
 msgid "Road"
 msgstr "Дорога"
@@ -808,10 +907,10 @@ msgid "Dart for blowgun (1)"
 msgstr "Дротик для духовой трубки (1)"
 
 msgid "This weapon can be used one-handed if charging on horseback. Otherwise, it is effectively a polearm (pike)"
-msgstr "Это оружие можно использовать как одноручное при атаке верхом. В противном случае, равноценна древковому оружию (пике)"
+msgstr "Это оружие можно использовать как одноручное при атаке верхом. В противном случае, равноценно древковому оружию (пике)"
 
 msgid "Wallet"
-msgstr "Кошелек"
+msgstr "Кошелёк"
 
 msgid "Mirror, Steel"
 msgstr "Зеркало, стальное"
@@ -833,6 +932,9 @@ msgstr "Молот"
 
 msgid "About"
 msgstr "О проекте"
+
+msgid "Charcoal pieces of carbonized wood, which can be used like chalk (with black markings), or to add to tinder"
+msgstr "Кусочки угля, которые можно использовать так же, как и мел, или добавлять в трут."
 
 msgid "Spike, Wooden"
 msgstr "Шип, деревянный"
