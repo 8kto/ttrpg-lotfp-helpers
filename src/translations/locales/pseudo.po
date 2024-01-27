@@ -13,6 +13,9 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+msgid "Lamentations of the Flame Princess helpers"
+msgstr ""
+
 msgid "Coins"
 msgstr ""
 
