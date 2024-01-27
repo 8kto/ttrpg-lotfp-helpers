@@ -220,6 +220,12 @@ msgstr "Venkovský"
 msgid "Armor"
 msgstr "Brnění"
 
+msgid ""
+"A Tinderbox is generally purchased with a flint and steel;\n"
+"the flint, a piece of hard rock, is struck vigorously against a C-shaped piece of high-carbon steel. \n"
+"When done correctly, hot sparks will fly from the flint and steel into the tinder, hopefully starting a fire."
+msgstr "Krabička na doutnák se obvykle kupuje s křemenem a ocelí; křemen, kus tvrdého kamene, se energicky udeří o C-tvarovaný kus vysokouhlíkové oceli. Je-li to provedeno správně, z křemene a oceli do doutnáku vyletí horké jiskry a snad zažehnou oheň."
+
 msgid "A rock for throwing, not an ammunition"
 msgstr "Kámen pro vrhání, ne munice"
 

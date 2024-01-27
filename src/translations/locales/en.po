@@ -221,6 +221,15 @@ msgstr "Rural"
 msgid "Armor"
 msgstr "Armor"
 
+msgid ""
+"A Tinderbox is generally purchased with a flint and steel;\n"
+"the flint, a piece of hard rock, is struck vigorously against a C-shaped piece of high-carbon steel. \n"
+"When done correctly, hot sparks will fly from the flint and steel into the tinder, hopefully starting a fire."
+msgstr ""
+"A Tinderbox is generally purchased with a flint and steel;\n"
+"the flint, a piece of hard rock, is struck vigorously against a C-shaped piece of high-carbon steel. \n"
+"When done correctly, hot sparks will fly from the flint and steel into the tinder, hopefully starting a fire."
+
 msgid "A rock for throwing, not an ammunition"
 msgstr "A rock for throwing, not an ammunition"
 
