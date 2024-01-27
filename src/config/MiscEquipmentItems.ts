@@ -459,7 +459,7 @@ make noise when it shatters.`,
   {
     categoryKey: 'miscEquipment',
     cityCostCp: 10,
-    details: `A Tinderbox is generally purchased with a flint and steel;
+    details: t`A Tinderbox is generally purchased with a flint and steel;
 the flint, a piece of hard rock, is struck vigorously against a C-shaped piece of high-carbon steel. 
 When done correctly, hot sparks will fly from the flint and steel into the tinder, hopefully starting a fire.`,
     name: t`Tinderbox`,
