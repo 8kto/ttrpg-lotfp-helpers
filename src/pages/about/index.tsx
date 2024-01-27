@@ -2,9 +2,9 @@
 
 import { t } from '@lingui/macro'
 import type { GetStaticProps } from 'next'
-import Head from 'next/head'
 import React from 'react'
 
+import HeadMetadata from '@/components/layout/HeadMetadata'
 import PageLayout from '@/components/layout/PageLayout'
 import { loadCatalog } from '@/translations/utils'
 
@@ -21,9 +21,10 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 export default function AboutPage() {
   return (
     <>
-      <Head>
-        <title>{t`About`}</title>
-      </Head>
+      <HeadMetadata
+        title={t`About`}
+        description={t`About LotFP tools project`}
+      />
       <PageLayout>
         <section>
           <header>
@@ -94,7 +95,9 @@ export default function AboutPage() {
           <header>
             <h2>Contacts</h2>
           </header>
-          <p>I&apos;d love to hear that you&apos;re using the app in your games.</p>
+          <p>
+            I&apos;d love to hear that you&apos;re using the app in your games.
+          </p>
           <p>
             My website:{' '}
             <a

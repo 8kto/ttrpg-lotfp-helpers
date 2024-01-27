@@ -2,12 +2,12 @@
 
 import { t } from '@lingui/macro'
 import type { GetStaticProps } from 'next'
-import Head from 'next/head'
 import React, { useEffect } from 'react'
 
 import EquipmentList from '@/components/EquipmentList/EquipmentList'
 import InventoryList from '@/components/Inventory/InventoryList'
 import InventoryPageTabs from '@/components/InventoryPageTabs'
+import HeadMetadata from '@/components/layout/HeadMetadata'
 import Toast from '@/components/Toast/Toast'
 import { decompressDataFromUrl } from '@/shared/helpers/compressDataForUrl'
 import {
@@ -50,9 +50,10 @@ export default function InventoryPage() {
 
   return (
     <>
-      <Head>
-        <title>{t`Inventory`}</title>
-      </Head>
+      <HeadMetadata
+        title={t`Inventory`}
+        description={t`Encumbrance calculator, inventory manager for the LotFP TTRPG system`}
+      />
       <div className='relative flex flex-grow flex-col pt-[3.6rem] md:pt-16'>
         <main className='mx-auto w-full max-w-screen-2xl flex-grow px-2.5 sm:px-6 lg:px-8 mb-4'>
           {shouldRenderTabs ? (
