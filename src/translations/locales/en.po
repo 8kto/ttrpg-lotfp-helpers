@@ -76,6 +76,17 @@ msgstr "This weapon is ineffective against targets with unadjusted AC 14 or bett
 msgid "Flask of Lamp Oil"
 msgstr "Flask of Lamp Oil"
 
+msgid ""
+"Iron (dry) Rations may consist of dry bread, hard cheese, dried\n"
+"fruit, nuts, beans, jerky, or any other food which will not\n"
+"“go bad” in less than about a month (if not longer). Dry\n"
+"rations are packaged in waxed or oiled cloth to protect them"
+msgstr ""
+"Iron (dry) Rations may consist of dry bread, hard cheese, dried\n"
+"fruit, nuts, beans, jerky, or any other food which will not\n"
+"“go bad” in less than about a month (if not longer). Dry\n"
+"rations are packaged in waxed or oiled cloth to protect them"
+
 msgid "Saddlebag"
 msgstr "Saddlebag"
 
@@ -103,6 +114,9 @@ msgstr "Shovel"
 msgid "Air Bladder"
 msgstr "Air Bladder"
 
+msgid "Emits light in a 30' radius. Burns for 1 hour."
+msgstr "Emits light in a 30' radius. Burns for 1 hour."
+
 msgid "Holy Symbol, Wood"
 msgstr "Holy Symbol, Wood"
 
@@ -111,6 +125,9 @@ msgstr "Silver pieces"
 
 msgid "Quick Reference on Encumbrance from the LotFP Core Rules"
 msgstr "Quick Reference on Encumbrance from the LotFP Core Rules"
+
+msgid "Spikes for your boots – better success at climbing and keeping balance on ice"
+msgstr "Spikes for your boots – better success at climbing and keeping balance on ice"
 
 msgid "Bow, Short"
 msgstr "Bow, Short"
@@ -130,6 +147,9 @@ msgstr "Range"
 msgid "Manacles"
 msgstr "Manacles"
 
+msgid "Writing ink: Stored in a small ceramic jar or tin and sufficient for 50 pages of normal writing"
+msgstr "Writing ink: Stored in a small ceramic jar or tin and sufficient for 50 pages of normal writing"
+
 msgid "Mirror, Glass"
 msgstr "Mirror, Glass"
 
@@ -141,6 +161,9 @@ msgstr "Mace"
 
 msgid "Riding Gear"
 msgstr "Riding Gear"
+
+msgid "Emits light in a 30' radius. Burns for 4 hours. Uses flasks of oil as fuel."
+msgstr "Emits light in a 30' radius. Burns for 4 hours. Uses flasks of oil as fuel."
 
 msgid "Book, Spell (Blank)"
 msgstr "Book, Spell (Blank)"
@@ -162,6 +185,19 @@ msgstr "Weapon, Great"
 
 msgid "These are one-handed weapons, including short swords and hand axes"
 msgstr "These are one-handed weapons, including short swords and hand axes"
+
+msgid ""
+"Wineskin/Waterskin is a container for drinking water or\n"
+"wine; though generally water is taken into a dungeon or\n"
+"wilderness environment. The standard waterskin holds\n"
+"one quart of liquid, which is the minimum amount\n"
+"required by a normal character in a single day."
+msgstr ""
+"Wineskin/Waterskin is a container for drinking water or\n"
+"wine; though generally water is taken into a dungeon or\n"
+"wilderness environment. The standard waterskin holds\n"
+"one quart of liquid, which is the minimum amount\n"
+"required by a normal character in a single day."
 
 msgid "Barrel"
 msgstr "Barrel"
@@ -231,6 +267,9 @@ msgstr "Export as a file"
 msgid "Cumbersome"
 msgstr "Cumbersome"
 
+msgid "Mirrors are useful for many reasons; for instance, they can be used for looking around corners or for sending signals outdoors using reflected sunlight."
+msgstr "Mirrors are useful for many reasons; for instance, they can be used for looking around corners or for sending signals outdoors using reflected sunlight."
+
 msgid "RU"
 msgstr "RU"
 
@@ -260,6 +299,15 @@ msgstr "Tent, Personal"
 
 msgid "Gold"
 msgstr "Gold"
+
+msgid ""
+"Chalk is useful for “blazing a trail” through a dungeon or\n"
+"ruin, to ensure that the adventurers can find their way\n"
+"back out again"
+msgstr ""
+"Chalk is useful for “blazing a trail” through a dungeon or\n"
+"ruin, to ensure that the adventurers can find their way\n"
+"back out again"
 
 msgid "Filter by name"
 msgstr "Filter by name"
@@ -398,6 +446,21 @@ msgstr "Missile weapons"
 #. js-lingui-explicit-id
 msgid "Mêlée weapons"
 msgstr "Mêlée weapons"
+
+msgid ""
+"A hammer or mallet with a head made of\n"
+"treated wood, plant resins, or other materials. The head of\n"
+"this hammer makes very little sound when striking things\n"
+"(such as a stake, nail, or head). This does not keep what\n"
+"is being hit from making noise – a glass window will still\n"
+"make noise when it shatters."
+msgstr ""
+"A hammer or mallet with a head made of\n"
+"treated wood, plant resins, or other materials. The head of\n"
+"this hammer makes very little sound when striking things\n"
+"(such as a stake, nail, or head). This does not keep what\n"
+"is being hit from making noise – a glass window will still\n"
+"make noise when it shatters."
 
 msgid "Dagger"
 msgstr "Dagger"
@@ -566,6 +629,9 @@ msgstr "Dwarven Encumbrance"
 msgid "Precipitations, high winds"
 msgstr "Precipitations, high winds"
 
+msgid "Emits light in a 10' radius. Burns for 2 hours."
+msgstr "Emits light in a 10' radius. Burns for 2 hours."
+
 msgid "These weapons must be wielded with two hands. Two-handed swords, mauls, and great axes are included in this category."
 msgstr "These weapons must be wielded with two hands. Two-handed swords, mauls, and great axes are included in this category."
 
@@ -654,6 +720,22 @@ msgstr "Files"
 msgid "details.shareableUrlSectionUrl"
 msgstr "Shareable URL"
 
+msgid "Spikes are useful for spiking doors closed (or spiking them open) and may be used as crude pitons in appropriate situations."
+msgstr "Spikes are useful for spiking doors closed (or spiking them open) and may be used as crude pitons in appropriate situations."
+
+msgid ""
+"Standard Rations include cured meats, seasonal fruits\n"
+"and vegetables, and fresh breads or biscuits, often\n"
+"wrapped in cloth. These are tastier than dry rations, but\n"
+"will generally only keep for a few days in all but the coldest\n"
+"or driest climates (up to 1 week)"
+msgstr ""
+"Standard Rations include cured meats, seasonal fruits\n"
+"and vegetables, and fresh breads or biscuits, often\n"
+"wrapped in cloth. These are tastier than dry rations, but\n"
+"will generally only keep for a few days in all but the coldest\n"
+"or driest climates (up to 1 week)"
+
 msgid "Cestus"
 msgstr "Cestus"
 
@@ -716,6 +798,9 @@ msgstr "Disclaimer"
 
 msgid "Light crossbows can only be fired every once in 2 rounds and ignore 2 AC points"
 msgstr "Light crossbows can only be fired every once in 2 rounds and ignore 2 AC points"
+
+msgid "Charcoal"
+msgstr "Charcoal"
 
 msgid "Road"
 msgstr "Road"
@@ -851,6 +936,9 @@ msgstr "Maul"
 
 msgid "About"
 msgstr "About"
+
+msgid "Charcoal pieces of carbonized wood, which can be used like chalk (with black markings), or to add to tinder"
+msgstr "Charcoal pieces of carbonized wood, which can be used like chalk (with black markings), or to add to tinder"
 
 msgid "Spike, Wooden"
 msgstr "Spike, Wooden"
