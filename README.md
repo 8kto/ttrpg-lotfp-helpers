@@ -4,10 +4,6 @@
 
 <!-- For PROGRESS update, run yarn update-readme-stats -->
 
-> The project is in active development. Now I review translations and test the UI on mobiles.
->
-> Done: <!--PROGRESS--> 100% / 28 of 28 tasks <!--/PROGRESS-->
-
 Lamentations of the Flame Princess helpers.
 
 ## Demo
@@ -58,6 +54,8 @@ or create an Issue/Feature request.
 - [ ] Multiple Inventories
 - [ ] Mounts
 - [ ] Firearms list
+
+I would also be glad to add more languages. Please reach out to me if you're interested in volunteering.
 
 ## Getting Started
 
