@@ -1,0 +1,44 @@
+name: Automated Release with Archive
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag Name for Release (leave empty for last tag)'
+        required: false
+        default: ''
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+
+      - name: Determine tag
+        id: last_tag
+        run: |
+          echo "LAST_TAG=$(git describe --tags `git rev-list --tags --max-count=1`)" >> $GITHUB_ENV
+
+      - name: Create archive
+        run: |
+          if [ -z "${{ github.event.inputs.tag }}" ]; then
+            TAG_NAME=${{ env.LAST_TAG }}
+          else
+            TAG_NAME=${{ github.event.inputs.tag }}
+          fi
+          zip -r ${TAG_NAME}.zip .
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.last_tag.outputs.tag_name || github.event.inputs.tag }}
+          name: Release ${{ steps.last_tag.outputs.tag_name || github.event.inputs.tag }}
+          files: |
+            ./${{ steps.last_tag.outputs.tag_name || github.event.inputs.tag }}.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
