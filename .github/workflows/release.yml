@@ -15,6 +15,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 100 # Only tags from last 100 commits will be available
+          fetch-tags: true
 
       - name: Setup
         uses: actions/setup-node@v2
