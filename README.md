@@ -59,6 +59,8 @@ I would also be glad to add more languages. Please reach out to me if you're int
 
 ## Getting Started
 
+Run `yarn` to install project dependencies.
+
 Run the development server:
 
 ```bash
