@@ -15,7 +15,7 @@
     "todos": "egrep --color=always -i '(TODO|FIXME)' -r src/",
     "translations:extract": "lingui extract --clean",
     "update-readme-stats": "./scripts/update_readme_stats.sh README.md",
-    "bump": "npm version --no-git-tag-version",
+    "bump": "npm version --no-git-tag-version && git add package.json && git commit -m 'Bump version to v$(node -p \"require('./package.json').version\")'",
     "postbump": "git tag v$(node -p \"require('./package.json').version\")"
   },
   "dependencies": {
