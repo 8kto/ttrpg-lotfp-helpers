@@ -36,12 +36,11 @@ export default function AboutPage() {
             I plan to revisit this after a [short] break.
           </p>
           <p>
-            The main purpose of the app is to allow gaming with a phone in hand,
-            without any registrations, quickly and conveniently, to have a quick
-            reference for items and equipment, and to create an inventory for a
-            new character quickly and easily (including importing pre-made
-            sets). The inventory can be shared, it is saved between page
-            refreshes, and there is an export and import feature.
+            The main task this tool aims to solve is to allow playing from a
+            phone or desktop, quickly create inventory, and easily calculate
+            encumbrance and movement rate (speed). The inventory can be shared,
+            it is saved between page refreshes, and there is an export and
+            import feature.
           </p>
           <details className='mb-4' open>
             <summary>Features list</summary>
@@ -98,22 +97,34 @@ export default function AboutPage() {
           <p>
             I&apos;d love to hear that you&apos;re using the app in your games.
           </p>
+          <ul>
+            <li>
+              <a
+                href='https://quoteque.itch.io/princess-helpers'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                quoteque.itch.io/princess-helpers
+              </a>
+            </li>
+            <li>
+              My website:{' '}
+              <a
+                href='https://ivlev.blog/'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                ivlev.blog
+              </a>
+            </li>
+            <li>
+              <a href='https://t.me/oktottrpg'>What Does Oktopus Say</a> in
+              Telegram.
+            </li>
+          </ul>
           <p>
-            My website:{' '}
-            <a
-              href='https://ivlev.blog/'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              ivlev.blog
-            </a>
-            , and Telegram channel:{' '}
-            <a href='https://t.me/oktottrpg'>What Does Octopus Say</a> for
-            updates.
-          </p>
-          <p>
-            For feedback, bug reports, feature requests, translations (some are
-            machine-translated), or other comments, visit{' '}
+            For feedback, bug reports, feature requests, typos in translations
+            (some are machine-translated), or other comments, visit{' '}
             <a
               href='https://github.com/8kto/ttrpg-lotfp-helpers'
               target='_blank'
@@ -121,7 +132,8 @@ export default function AboutPage() {
             >
               Princess Helpers on GitHub
             </a>
-            .
+            . <br />
+            You may <strong>suggest translation</strong> at the same page.
           </p>
           <p>
             If you enjoy the tool, feel free to share it, star it on GitHub,
@@ -133,7 +145,8 @@ export default function AboutPage() {
             >
               buy me a coffee
             </a>{' '}
-            (don&apos;t: I will spend that money on role-playing games).
+            (I will spend that money on role-playing games; your name would be
+            added to the contributors list).
           </p>
         </section>
       </PageLayout>
