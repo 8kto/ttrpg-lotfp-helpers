@@ -58,7 +58,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ env.LAST_TAG }}
-          name: Release ${{ env.LAST_TAG }}
+          name: ${{ env.LAST_TAG }}
           body: |
             Changes:
             ${{ env.COMMIT_LIST }}
