@@ -33,13 +33,13 @@ jobs:
           else
             TAG_NAME=${{ github.event.inputs.tag }}
           fi
-          zip -r ${TAG_NAME}.zip .
+          zip -r princess-helpers-${TAG_NAME}.zip .
 
       - name: Create GitHub release
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ env.LAST_TAG }}
           name: Release ${{ env.LAST_TAG }}
-          files: ./*.zip
+          files: princess-helpers-${{ env.LAST_TAG }}.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
