@@ -40,6 +40,6 @@ jobs:
         with:
           tag_name: ${{ env.LAST_TAG }}
           name: Release ${{ env.LAST_TAG }}
-          files: ./.zip
+          files: ./*.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
