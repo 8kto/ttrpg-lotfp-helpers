@@ -77,7 +77,7 @@ export default function EncumbranceReferencePage() {
             </li>
           </ul>
 
-          <details className='mb-4' open>
+          <details className='mb-4'>
             <summary>Show encumbrance and movement tables</summary>
             <div className='mb-4 overflow-x-auto'>
               <table>
