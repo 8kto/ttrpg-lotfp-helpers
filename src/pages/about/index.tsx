@@ -42,7 +42,7 @@ export default function AboutPage() {
             it is saved between page refreshes, and there is an export and
             import feature.
           </p>
-          <details className='mb-4' open>
+          <details className='mb-4'>
             <summary>Features list</summary>
             <ul>
               <li>
