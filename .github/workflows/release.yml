@@ -21,34 +21,34 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Determine tag
-        id: last_tag
+      - name: Determine tags
+        id: last_tags
         run: |
-          echo "LAST_TAG=$(git describe --tags `git rev-list --tags --max-count=1`)" >> $GITHUB_ENV
+          TAGS=($(git for-each-ref --sort='-committerdate' --format "%(refname:short)" refs/tags))
+          if [ -z "${{ github.event.inputs.tag }}" ]; then
+            CURRENT_TAG=${{ env.TAGS[0] }}
+            PREVIOUS_TAG=${{ env.TAGS[1] }}
+          else
+            CURRENT_TAG=${{ github.event.inputs.tag }}
+            PREVIOUS_TAG=$(git describe --tags --abbrev=0 $CURRENT_TAG^ 2>/dev/null || echo "")
+          fi
+          echo "CURRENT_TAG=${{ env.CURRENT_TAG }}" >> $GITHUB_ENV
+          echo "PREVIOUS_TAG=${{ env.PREVIOUS_TAG }}" >> $GITHUB_ENV
 
       - name: Create archive
         run: |
-          if [ -z "${{ github.event.inputs.tag }}" ]; then
-            TAG_NAME=${{ env.LAST_TAG }}
-          else
-            TAG_NAME=${{ github.event.inputs.tag }}
-          fi
-          zip -r princess-helpers-${TAG_NAME}.zip .
+          TAG_NAME=${{ env.CURRENT_TAG }}
+          zip -r princess-helpers-${{ env.CURRENT_TAG }}.zip .
 
       - name: Generate commit list
         id: generate_commits
         run: |
-          if [ -z "${{ github.event.inputs.tag }}" ]; then
-            TAG_NAME=${{ env.LAST_TAG }}
-          else
-            TAG_NAME=${{ github.event.inputs.tag }}
-          fi
-          PREVIOUS_TAG=$(git describe --tags --abbrev=0 ${TAG_NAME}^ 2>/dev/null || echo "")
+          PREVIOUS_TAG=${{ env.PREVIOUS_TAG }}
           if [ -z "$PREVIOUS_TAG" ]; then
             # Fallback in case there's no previous tag
             COMMIT_LIST=$(git log --pretty=format:"- %H %s")
           else
-            COMMIT_LIST=$(git log $PREVIOUS_TAG..$TAG_NAME --pretty=format:"- %H %s")
+            COMMIT_LIST=$(git log $PREVIOUS_TAG..${{ env.CURRENT_TAG }} --pretty=format:"- %H %s")
           fi
           echo "COMMIT_LIST<<EOF" >> $GITHUB_ENV
           echo "$COMMIT_LIST" >> $GITHUB_ENV
@@ -57,11 +57,11 @@ jobs:
       - name: Create GitHub release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ env.LAST_TAG }}
-          name: ${{ env.LAST_TAG }}
+          tag_name: ${{ env.CURRENT_TAG }}
+          name: ${{ env.CURRENT_TAG }}
           body: |
             Changes:
             ${{ env.COMMIT_LIST }}
-          files: princess-helpers-${{ env.LAST_TAG }}.zip
+          files: princess-helpers-${{ env.CURRENT_TAG }}.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
