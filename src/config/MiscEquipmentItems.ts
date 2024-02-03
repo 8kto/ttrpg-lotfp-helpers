@@ -43,6 +43,7 @@ export const MiscEquipmentItems = (): ReadonlyArray<EquipmentItem> => [
   {
     categoryKey: 'miscEquipment',
     cityCostCp: 1000,
+    details: t`Magic-Users and Elves start with spellbooks containing their initial spells.`,
     name: t`Book, Spell (Blank)`,
     points: EncumbranceUnit.Regular,
     ruralCostCp: null,
@@ -401,6 +402,7 @@ make noise when it shatters.`,
   {
     categoryKey: 'miscEquipment',
     cityCostCp: 500,
+    details: t`Specialist tools are required for Specialists to utilize their Search skill for finding traps or their Tinker skill for opening locks and conducting similar tasks.`,
     name: t`Specialist’s Tools`,
     points: EncumbranceUnit.Regular,
     ruralCostCp: null,

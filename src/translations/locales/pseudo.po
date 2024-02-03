@@ -227,6 +227,9 @@ msgstr ""
 msgid "Sling bullets (10)"
 msgstr ""
 
+msgid "Magic-Users and Elves start with spellbooks containing their initial spells."
+msgstr ""
+
 msgid "Drill"
 msgstr ""
 
@@ -918,6 +921,9 @@ msgid "Maul"
 msgstr ""
 
 msgid "About"
+msgstr ""
+
+msgid "Specialist tools are required for Specialists to utilize their Search skill for finding traps or their Tinker skill for opening locks and conducting similar tasks."
 msgstr ""
 
 msgid "Charcoal pieces of carbonized wood, which can be used like chalk (with black markings), or to add to tinder"
