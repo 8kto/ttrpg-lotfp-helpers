@@ -594,8 +594,8 @@ msgstr "Feed, Animal/Day"
 msgid "weapons.melee.charge"
 msgstr "Weapons that allow to receive charge (damage x2, act first): polearm, spear."
 
-msgid "Include the weight"
-msgstr "Include the weight"
+msgid "Coin weight"
+msgstr "Coin weight"
 
 msgid "Lantern"
 msgstr "Lantern"

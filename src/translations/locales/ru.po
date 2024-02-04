@@ -581,8 +581,8 @@ msgstr "Корм для животных/День"
 msgid "weapons.melee.charge"
 msgstr "Оружие, позволяющее принимать на себя рывок (charge) (урон х2, атакует первым): древковое оружие, копьё."
 
-msgid "Include the weight"
-msgstr "Учитывать вес"
+msgid "Coin weight"
+msgstr "Учитывать вес монет"
 
 msgid "Lantern"
 msgstr "Фонарь"

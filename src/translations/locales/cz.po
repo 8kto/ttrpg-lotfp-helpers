@@ -590,7 +590,7 @@ msgstr "Krmivo, zvíře/den"
 msgid "weapons.melee.charge"
 msgstr "Zbraň, která umožňuje přijmout na sebe nápor (charge) (újma x2, útočí první): kopí, hůl."
 
-msgid "Include the weight"
+msgid "Coin weight"
 msgstr "Zahrnout váhu"
 
 msgid "Lantern"

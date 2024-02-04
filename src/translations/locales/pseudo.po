@@ -573,7 +573,7 @@ msgstr ""
 msgid "weapons.melee.charge"
 msgstr ""
 
-msgid "Include the weight"
+msgid "Coin weight"
 msgstr ""
 
 msgid "Lantern"
