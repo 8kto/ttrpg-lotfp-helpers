@@ -1,18 +1,23 @@
+import { Trans } from '@lingui/macro'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 
 import NavigationLinks from '@/components/layout/NavigationLinks'
+import UiContext from '@/shared/context/uiContext'
 import isDevEnv from '@/shared/helpers/isDevEnv'
 
 const Footer = () => {
   const [viewportDebugHidden, setViewportDebugHidden] = useState(false)
+  const {
+    uiState: { version },
+  } = useContext(UiContext)
 
   return (
     <footer className='text-base text-gray-700'>
       <div className='mx-auto max-w-screen-2xl px-4 py-6 sm:px-6 lg:px-8'>
         <div className='flex flex-col md:flex-row items-center justify-between'>
-          <div className='mb-2 text-base md:mb-0 whitespace-normal break-words'>
+          <div className='max-w-full mb-2 text-base md:mb-0 whitespace-normal break-words'>
             <NavigationLinks />
             <Link
               href='https://github.com/8kto/ttrpg-lotfp-helpers'
@@ -31,7 +36,7 @@ const Footer = () => {
               className='mr-2'
             />
             <span className='text-sm'>
-              © 2023-2024{' '}
+              <Trans>Princess Helpers</Trans> v{version} © 2023-2024{' '}
               <Link
                 href='https://ivlev.blog/'
                 className='hover:underline underline-offset-4 whitespace-nowrap'
