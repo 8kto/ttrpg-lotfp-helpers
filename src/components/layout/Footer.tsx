@@ -22,7 +22,7 @@ const Footer = () => {
             <Link
               href='https://github.com/8kto/ttrpg-lotfp-helpers'
               target='_blank'
-              className='ph-color-accent underline-offset-4 hover:underline'
+              className='ph-color-accent underline-offset-4 hover:underline whitespace-nowrap'
             >
               GitHub
             </Link>
