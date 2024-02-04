@@ -132,8 +132,8 @@ msgstr "Holy Symbol, Wood"
 msgid "Silver pieces"
 msgstr "Silver pieces"
 
-msgid "Quick Reference on Encumbrance from the LotFP Core Rules"
-msgstr "Quick Reference on Encumbrance from the LotFP Core Rules"
+msgid "Quick Reference on Encumbrance and Movement from the LotFP Core Rules"
+msgstr "Quick Reference on Encumbrance and Movement from the LotFP Core Rules"
 
 msgid "Spikes for your boots – better success at climbing and keeping balance on ice"
 msgstr "Spikes for your boots – better success at climbing and keeping balance on ice"
