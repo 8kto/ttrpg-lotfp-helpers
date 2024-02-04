@@ -17,7 +17,7 @@ msgid "Lamentations of the Flame Princess helpers"
 msgstr ""
 
 msgid "Writing ink: Stored in a small ceramic jar or tin and sufficient for 50 pages of normal writing. Required for mapping."
-msgstr "Psací inkoust: Uchováván v malé keramické nádobě nebo plechovce, dostatečný pro 50 stran běžného psaní."
+msgstr "Psací inkoust: Uchováván v malé keramické nádobě nebo plechovce a postačující pro 50 stran normálního psaní. Vyžadováno pro mapování."
 
 msgid "Coins"
 msgstr "Mince"
@@ -93,7 +93,7 @@ msgid "Saddlebag"
 msgstr "Sedlová taška"
 
 msgid "Using a crowbar adds a +1 bonus to the Open Doors roll chances."
-msgstr ""
+msgstr "Použití páčidla přidává +1 bonus k šancím na otevření dveří."
 
 msgid "Holy Symbol, Steel"
 msgstr "Svatý symbol, ocel"
@@ -282,7 +282,7 @@ msgid "Mirrors are useful for many reasons; for instance, they can be used for l
 msgstr "Zrcadla jsou užitečná z mnoha důvodů; například mohou být použita pro nahlížení za rohy nebo pro posílání signálů venku pomocí odráženého slunečního světla."
 
 msgid "An aromatic herb that repels vampires and some other undead monsters."
-msgstr ""
+msgstr "Aromatická bylina, která odpuzuje upíry a některé další nemrtvé nestvůry."
 
 msgid "RU"
 msgstr "RU"
@@ -401,7 +401,7 @@ msgid "Book, Reading"
 msgstr "Kniha, čtení"
 
 msgid "Aconite, also known as wolvesbane (wolfsbane) is sold dried or fresh in single sprigs. This herb is used to drive off lycanthropes, who cannot stand it."
-msgstr ""
+msgstr "Omorika, známá také jako vlčí bobek, se prodává sušená nebo čerstvá po jednotlivých větvičkách. Tato bylina se používá k odpuzení lykantropů, kteří ji nemohou vystát."
 
 msgid "Add coins"
 msgstr "Přidat mince"
@@ -1011,7 +1011,7 @@ msgid "Fighter 2"
 msgstr "Bojovník 2"
 
 msgid "Required for mapping."
-msgstr ""
+msgstr "Vyžadováno pro mapování."
 
 msgid "Spyglass"
 msgstr "Dalekohled"
