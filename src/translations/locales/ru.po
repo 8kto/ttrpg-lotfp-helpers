@@ -98,6 +98,9 @@ msgstr "Воин 1"
 msgid "Damage"
 msgstr "Урон"
 
+msgid "Coin weight"
+msgstr "Учитывать вес монет"
+
 msgid "Tent, Regular"
 msgstr "Палатка, обычная"
 
@@ -247,9 +250,6 @@ msgstr "Наборы"
 
 msgid "Silver"
 msgstr "Серебряные"
-
-msgid "Optimise wallet"
-msgstr "Упорядочить"
 
 msgid "These are small one-handed weapons including daggers and clubs, and suffer a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 msgstr "Это небольшое одноручное оружие, включая кинжалы и булавы, даёт штраф -2 AB для противников с AC 15 или выше."
@@ -581,9 +581,6 @@ msgstr "Корм для животных/День"
 msgid "weapons.melee.charge"
 msgstr "Оружие, позволяющее принимать на себя рывок (charge) (урон х2, атакует первым): древковое оружие, копьё."
 
-msgid "Coin weight"
-msgstr "Учитывать вес монет"
-
 msgid "Lantern"
 msgstr "Фонарь"
 
@@ -645,6 +642,9 @@ msgstr "{miPerDay, plural, =0 {миль} one {миля} two {мили} few {ми
 
 msgid "Inventory"
 msgstr "Инвентарь"
+
+msgid "* Exchange and sort coins, e.g., turn <0>{0} cp</0> into <1>{1} gp 25 sp</1>."
+msgstr "* Конвертировать и сортировать по монетам, т.е. разменять <0>{0} cp</0> на <1>{1} gp 25 sp</1>."
 
 msgid "Book, Blank"
 msgstr "Книга, пустая"
@@ -848,6 +848,9 @@ msgstr "Мыло"
 
 msgid "Add"
 msgstr "Добавить"
+
+msgid "Exchange coins *"
+msgstr "Разменять *"
 
 msgid "Two-handed"
 msgstr "Двуручное"
