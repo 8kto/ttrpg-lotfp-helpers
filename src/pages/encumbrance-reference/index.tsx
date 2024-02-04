@@ -23,7 +23,7 @@ export default function EncumbranceReferencePage() {
     <>
       <HeadMetadata
         title={t`Encumbrance quick reference`}
-        description={t`Quick Reference on Encumbrance from the LotFP Core Rules`}
+        description={t`Quick Reference on Encumbrance and Movement from the LotFP Core Rules`}
       />
       <PageLayout>
         <section>
