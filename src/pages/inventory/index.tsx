@@ -54,7 +54,7 @@ export default function InventoryPage() {
         title={t`Inventory`}
         description={t`Encumbrance calculator, inventory manager for the LotFP TTRPG system`}
       />
-      <div className='relative flex flex-grow flex-col pt-[3.6rem] md:pt-16'>
+      <div className='relative flex flex-grow flex-col pt-[3.6rem] md:pt-24'>
         <main className='mx-auto w-full max-w-screen-2xl flex-grow px-2.5 sm:px-6 lg:px-8 mb-4'>
           {shouldRenderTabs ? (
             /* Tabs for smaller screens */
@@ -68,7 +68,7 @@ export default function InventoryPage() {
             </div>
           ) : (
             /* Two columns for lg and wider screens */
-            <div className='ph-inventory-page-content--columns mt-6 hidden lg:grid lg:grid-cols-2 lg:gap-4 xl:grid-cols-3'>
+            <div className='ph-inventory-page-content--columns hidden lg:grid lg:grid-cols-2 lg:gap-4 xl:grid-cols-3'>
               <div className='col-span-1 rounded border border-gray-200 bg-white p-4 shadow-sm sm:p-6 lg:col-span-1 xl:col-span-2'>
                 <EquipmentList />
               </div>
