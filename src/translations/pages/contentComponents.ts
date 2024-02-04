@@ -10,12 +10,12 @@ type PageEntry = Partial<
 
 const contentComponents: Record<string, PageEntry> = {
   about: {
-    [DEFAULT_LOCALE]: lazy(() => import('@/translations/pages/en/about')),
-    ru: lazy(() => import('@/translations/pages/ru/about')),
+    [DEFAULT_LOCALE]: lazy(() => import('@/translations/pages/en/About')),
+    ru: lazy(() => import('@/translations/pages/ru/About')),
   },
   'encumbrance-reference': {
-    [DEFAULT_LOCALE]: lazy(() => import('@/translations/pages/en/about')),
-    ru: lazy(() => import('@/translations/pages/ru/about')),
+    [DEFAULT_LOCALE]: lazy(() => import('@/translations/pages/en/EncumbranceReference')),
+    ru: lazy(() => import('@/translations/pages/ru/EncumbranceReference')),
   },
 }
 
