@@ -67,6 +67,35 @@ const About = () => {
 
       <section>
         <header>
+          <h2>Sources</h2>
+        </header>
+        <p>
+          I used the{' '}
+          <a
+            href='https://preview.drivethrurpg.com/en/product/115059/LotFP-Rules--Magic-Free-Version'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            LotFP Rules & Magic Free Version
+          </a>{' '}
+          rulebook and resources from{' '}
+          <a
+            href='https://www.basicfantasy.org/downloads.html'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            Basic Fantasy RPG
+          </a>
+          , specifically the Equipment Emporium (r24) for the details on
+          Miscellaneous Equipment.
+        </p>
+        <p>
+          I also expanded the Weapons list, adding specific items for Great,
+          Medium, Small, and Minor weapons to enhance clarity.
+        </p>
+      </section>
+      <section>
+        <header>
           <h2>Contacts</h2>
         </header>
         <p>
