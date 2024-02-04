@@ -160,9 +160,19 @@ const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
                     handleOptimiseClick(values)
                   }}
                 >
-                  <Trans>Optimise wallet</Trans>
+                  <Trans>Exchange coins *</Trans>
                 </button>
               </div>
+              <p>
+                <Trans>
+                  * Exchange and sort coins, e.g., turn{' '}
+                  <span className='text-red-800'>{1250}&nbsp;cp</span> into{' '}
+                  <span className='text-red-800'>
+                    {2}&nbsp;gp&nbsp;25&nbsp;sp
+                  </span>
+                  .
+                </Trans>
+              </p>
             </Form>
           )
         }}

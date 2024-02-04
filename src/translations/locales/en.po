@@ -99,6 +99,9 @@ msgstr "Fighter 1"
 msgid "Damage"
 msgstr "Damage"
 
+msgid "Coin weight"
+msgstr "Coin weight"
+
 msgid "Tent, Regular"
 msgstr "Tent, Regular"
 
@@ -253,9 +256,6 @@ msgstr "Packs"
 
 msgid "Silver"
 msgstr "Silver"
-
-msgid "Optimise wallet"
-msgstr "Optimise wallet"
 
 msgid "These are small one-handed weapons including daggers and clubs, and suffer a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 msgstr "These are small one-handed weapons including daggers and clubs, and suffer a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
@@ -594,9 +594,6 @@ msgstr "Feed, Animal/Day"
 msgid "weapons.melee.charge"
 msgstr "Weapons that allow to receive charge (damage x2, act first): polearm, spear."
 
-msgid "Include the weight"
-msgstr "Include the weight"
-
 msgid "Lantern"
 msgstr "Lantern"
 
@@ -658,6 +655,9 @@ msgstr "{miPerDay, plural, =0 {miles} one {mile} two {miles} few {miles} many {m
 
 msgid "Inventory"
 msgstr "Inventory"
+
+msgid "* Exchange and sort coins, e.g., turn <0>{0} cp</0> into <1>{1} gp 25 sp</1>."
+msgstr "* Exchange and sort coins, e.g., turn <0>{0} cp</0> into <1>{1} gp 25 sp</1>."
 
 msgid "Book, Blank"
 msgstr "Book, Blank"
@@ -861,6 +861,9 @@ msgstr "Soap"
 
 msgid "Add"
 msgstr "Add"
+
+msgid "Exchange coins *"
+msgstr "Exchange coins *"
 
 msgid "Two-handed"
 msgstr "Two-handed"

@@ -178,10 +178,6 @@ details.ph-details-bullet[open] .ph-custom-indicator {
 }
 
 .ph-content-container p {
-  @apply mb-2;
-}
-
-.ph-content-container ul {
   @apply mb-4;
 }
 
@@ -203,6 +199,7 @@ details.ph-details-bullet[open] .ph-custom-indicator {
 
 .ph-content-container ul {
   @apply list-disc list-inside space-y-2;
+  @apply mb-8;
 }
 
 .ph-content-container li {

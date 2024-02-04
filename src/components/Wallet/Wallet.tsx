@@ -61,7 +61,7 @@ const Wallet = () => {
           onChange={toggleCoinsWeightActive}
           title={t`Enable the weight of coins for encumbrance calculations.`}
         >
-          <Trans>Include the weight</Trans>
+          <Trans>Coin weight</Trans>
         </Toggle>
       </>
     </div>

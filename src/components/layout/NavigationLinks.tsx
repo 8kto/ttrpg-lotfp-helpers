@@ -19,10 +19,13 @@ const NavLink: React.FC<NavLinkProps> = ({ href, title }) => {
   return (
     <Link
       href={href}
-      className={classnames('ph-color-accent mr-4 underline-offset-4 sm:mr-6', {
-        'font-bold underline': isActive,
-        'hover:underline': !isActive,
-      })}
+      className={classnames(
+        'ph-color-accent mr-4 underline-offset-4 sm:mr-6 whitespace-nowrap',
+        {
+          'font-bold underline': isActive,
+          'hover:underline': !isActive,
+        },
+      )}
     >
       {trans(title)}
     </Link>

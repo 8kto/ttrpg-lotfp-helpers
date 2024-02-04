@@ -11,8 +11,8 @@ const Footer = () => {
   return (
     <footer className='text-base text-gray-700'>
       <div className='mx-auto max-w-screen-2xl px-4 py-6 sm:px-6 lg:px-8'>
-        <div className='flex flex-col md:flex-row md:items-center md:justify-between'>
-          <div className='mb-2 text-base md:mb-0'>
+        <div className='flex flex-col md:flex-row items-center justify-between'>
+          <div className='mb-2 text-base md:mb-0 whitespace-normal break-words'>
             <NavigationLinks />
             <Link
               href='https://github.com/8kto/ttrpg-lotfp-helpers'
@@ -34,7 +34,7 @@ const Footer = () => {
               © 2023-2024{' '}
               <Link
                 href='https://ivlev.blog/'
-                className='hover:underline underline-offset-4'
+                className='hover:underline underline-offset-4 whitespace-nowrap'
                 target='_blank'
               >
                 Igor Okto (undefined)

@@ -98,6 +98,9 @@ msgstr "Bojovník 1"
 msgid "Damage"
 msgstr "Poškození"
 
+msgid "Coin weight"
+msgstr "Zahrnout váhu"
+
 msgid "Tent, Regular"
 msgstr "Stan, běžný"
 
@@ -249,9 +252,6 @@ msgstr "Balíčky"
 
 msgid "Silver"
 msgstr "Stříbro"
-
-msgid "Optimise wallet"
-msgstr ""
 
 msgid "These are small one-handed weapons including daggers and clubs, and suffer a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 msgstr "To jsou malé jednoruční zbraně včetně dýk a kyjů, které mají penalizaci -2 k zásahu protivníků s neupraveným AC 15 nebo lepším."
@@ -590,9 +590,6 @@ msgstr "Krmivo, zvíře/den"
 msgid "weapons.melee.charge"
 msgstr "Zbraň, která umožňuje přijmout na sebe nápor (charge) (újma x2, útočí první): kopí, hůl."
 
-msgid "Include the weight"
-msgstr "Zahrnout váhu"
-
 msgid "Lantern"
 msgstr "Lampář"
 
@@ -654,6 +651,9 @@ msgstr "{miPerDay, plural, =0 {mil} one {mil} two {míle} few {míle} many {mil}
 
 msgid "Inventory"
 msgstr "Inventář"
+
+msgid "* Exchange and sort coins, e.g., turn <0>{0} cp</0> into <1>{1} gp 25 sp</1>."
+msgstr ""
 
 msgid "Book, Blank"
 msgstr "Kniha, prázdná"
@@ -857,6 +857,9 @@ msgstr "Mýdlo"
 
 msgid "Add"
 msgstr "Přidat"
+
+msgid "Exchange coins *"
+msgstr ""
 
 msgid "Two-handed"
 msgstr "Obouruční"
