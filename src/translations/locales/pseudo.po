@@ -16,6 +16,9 @@ msgstr ""
 msgid "Lamentations of the Flame Princess helpers"
 msgstr ""
 
+msgid "Writing ink: Stored in a small ceramic jar or tin and sufficient for 50 pages of normal writing. Required for mapping."
+msgstr ""
+
 msgid "Coins"
 msgstr ""
 
@@ -86,6 +89,9 @@ msgstr ""
 msgid "Saddlebag"
 msgstr ""
 
+msgid "Using a crowbar adds a +1 bonus to the Open Doors roll chances."
+msgstr ""
+
 msgid "Holy Symbol, Steel"
 msgstr ""
 
@@ -144,9 +150,6 @@ msgid "Range"
 msgstr ""
 
 msgid "Manacles"
-msgstr ""
-
-msgid "Writing ink: Stored in a small ceramic jar or tin and sufficient for 50 pages of normal writing"
 msgstr ""
 
 msgid "Mirror, Glass"
@@ -977,6 +980,9 @@ msgid "Spear"
 msgstr ""
 
 msgid "Fighter 2"
+msgstr ""
+
+msgid "Required for mapping."
 msgstr ""
 
 msgid "Spyglass"

@@ -16,6 +16,9 @@ msgstr ""
 msgid "Lamentations of the Flame Princess helpers"
 msgstr ""
 
+msgid "Writing ink: Stored in a small ceramic jar or tin and sufficient for 50 pages of normal writing. Required for mapping."
+msgstr "Psací inkoust: Uchováván v malé keramické nádobě nebo plechovce, dostatečný pro 50 stran běžného psaní."
+
 msgid "Coins"
 msgstr "Mince"
 
@@ -89,6 +92,9 @@ msgstr ""
 msgid "Saddlebag"
 msgstr "Sedlová taška"
 
+msgid "Using a crowbar adds a +1 bonus to the Open Doors roll chances."
+msgstr ""
+
 msgid "Holy Symbol, Steel"
 msgstr "Svatý symbol, ocel"
 
@@ -148,9 +154,6 @@ msgstr "Rozsah"
 
 msgid "Manacles"
 msgstr "Pouta"
-
-msgid "Writing ink: Stored in a small ceramic jar or tin and sufficient for 50 pages of normal writing"
-msgstr "Psací inkoust: Uchováván v malé keramické nádobě nebo plechovce, dostatečný pro 50 stran běžného psaní."
 
 msgid "Mirror, Glass"
 msgstr "Zrcadlo, sklo"
@@ -1000,6 +1003,9 @@ msgstr "Kopí"
 
 msgid "Fighter 2"
 msgstr "Bojovník 2"
+
+msgid "Required for mapping."
+msgstr ""
 
 msgid "Spyglass"
 msgstr "Dalekohled"

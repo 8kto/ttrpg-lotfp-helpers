@@ -16,6 +16,9 @@ msgstr ""
 msgid "Lamentations of the Flame Princess helpers"
 msgstr "Помощник для Lamentations of the Flame Princess"
 
+msgid "Writing ink: Stored in a small ceramic jar or tin and sufficient for 50 pages of normal writing. Required for mapping."
+msgstr "Писчие чернила: Хранятся в небольшой керамической баночке или жестяной коробке, достаточно для 50 страниц обычного письма. Обязательны для рисования карт."
+
 msgid "Coins"
 msgstr "Монеты"
 
@@ -89,6 +92,9 @@ msgstr ""
 msgid "Saddlebag"
 msgstr "Седельная сумка"
 
+msgid "Using a crowbar adds a +1 bonus to the Open Doors roll chances."
+msgstr "Использование ломика добавляет бонус в +1 для броска на Открытие Дверей"
+
 msgid "Holy Symbol, Steel"
 msgstr "Священный символ, стальной"
 
@@ -148,9 +154,6 @@ msgstr "Дальность"
 
 msgid "Manacles"
 msgstr "Кандалы"
-
-msgid "Writing ink: Stored in a small ceramic jar or tin and sufficient for 50 pages of normal writing"
-msgstr "Писчие чернила: Хранятся в небольшой керамической баночке или жестяной коробке, достаточно для 50 страниц обычного письма."
 
 msgid "Mirror, Glass"
 msgstr "Зеркало, стеклянное"
@@ -991,6 +994,9 @@ msgstr "Копьё"
 
 msgid "Fighter 2"
 msgstr "Воин 2"
+
+msgid "Required for mapping."
+msgstr "Обязательна для рисования карт."
 
 msgid "Spyglass"
 msgstr "Подзорная труба"
