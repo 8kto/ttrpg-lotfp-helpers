@@ -8,9 +8,15 @@ type PageEntry = Partial<
   Record<LOCALE_SHORT, LazyExoticComponent<ComponentType>>
 >
 
-export const contentComponents: Record<string, PageEntry> = {
+const contentComponents: Record<string, PageEntry> = {
   about: {
     [DEFAULT_LOCALE]: lazy(() => import('@/translations/pages/en/about')),
     ru: lazy(() => import('@/translations/pages/ru/about')),
   },
+  'encumbrance-reference': {
+    [DEFAULT_LOCALE]: lazy(() => import('@/translations/pages/en/about')),
+    ru: lazy(() => import('@/translations/pages/ru/about')),
+  },
 }
+
+export default contentComponents

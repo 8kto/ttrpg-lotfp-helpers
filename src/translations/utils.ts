@@ -5,7 +5,7 @@ import { type ComponentType, useEffect } from 'react'
 
 import type { LOCALE_SHORT } from '@/translations/languages'
 import { DEFAULT_LOCALE } from '@/translations/languages'
-import { contentComponents } from '@/translations/pages'
+import contentComponents from '@/translations/pages/contentComponents'
 
 export async function loadCatalog(locale: string) {
   const catalog = await import(`@lingui/loader!./locales/${locale}.po`)
