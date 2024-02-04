@@ -72,3 +72,9 @@ yarn dev    # Start the development server
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Disclaimer
+
+This project is created just for fun and is not officially affiliated with or endorsed by the publishers of ["Lamentations of the Flame Princess" (LotFP)](https://www.lotfp.com/RPG/) or any other related entities.
+
+The content utilized in this project has been sourced from publicly available materials, including but not limited to the [LotFP Rules & Magic Free Version](https://preview.drivethrurpg.com/en/product/115059/LotFP-Rules--Magic-Free-Version) and resources from [Basic Fantasy RPG](https://www.basicfantasy.org/downloads.html).
