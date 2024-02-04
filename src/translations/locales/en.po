@@ -285,6 +285,9 @@ msgstr "Cumbersome"
 msgid "Mirrors are useful for many reasons; for instance, they can be used for looking around corners or for sending signals outdoors using reflected sunlight."
 msgstr "Mirrors are useful for many reasons; for instance, they can be used for looking around corners or for sending signals outdoors using reflected sunlight."
 
+msgid "An aromatic herb that repels vampires and some other undead monsters."
+msgstr "An aromatic herb that repels vampires and some other undead monsters."
+
 msgid "RU"
 msgstr "RU"
 
@@ -400,6 +403,9 @@ msgstr "Reset coins"
 
 msgid "Book, Reading"
 msgstr "Book, Reading"
+
+msgid "Aconite, also known as wolvesbane (wolfsbane) is sold dried or fresh in single sprigs. This herb is used to drive off lycanthropes, who cannot stand it."
+msgstr "Aconite, also known as wolvesbane (wolfsbane) is sold dried or fresh in single sprigs. This herb is used to drive off lycanthropes, who cannot stand it."
 
 msgid "Add coins"
 msgstr "Add coins"

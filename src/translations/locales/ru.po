@@ -279,6 +279,9 @@ msgstr "Громоздкий"
 msgid "Mirrors are useful for many reasons; for instance, they can be used for looking around corners or for sending signals outdoors using reflected sunlight."
 msgstr "Зеркала полезны по многим причинам; например, их можно использовать для подглядывания из-за угла или для отправки сигналов с помощью отраженных лучей света"
 
+msgid "An aromatic herb that repels vampires and some other undead monsters."
+msgstr "Ароматное растение, что отпугивает вампиров и некоторую другую нежить."
+
 msgid "RU"
 msgstr "RU"
 
@@ -319,7 +322,7 @@ msgid "Filter by name"
 msgstr "Фильтр по названию"
 
 msgid "Wolvesbane"
-msgstr "Аконит"
+msgstr "Аконит (Wolvesbane)"
 
 msgid "Fishing Gear"
 msgstr "Рыболовные снасти"
@@ -391,6 +394,9 @@ msgstr "Сбросить монеты"
 
 msgid "Book, Reading"
 msgstr "Книга, для чтения"
+
+msgid "Aconite, also known as wolvesbane (wolfsbane) is sold dried or fresh in single sprigs. This herb is used to drive off lycanthropes, who cannot stand it."
+msgstr "Аконит, также известный как волчий корень или волкобой, продаётся сушёным или свежем, отдельными веточками. Используется для отпугивания оборотней."
 
 msgid "Add coins"
 msgstr "Добавить монет"

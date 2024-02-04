@@ -281,6 +281,9 @@ msgstr "Neohrabaný"
 msgid "Mirrors are useful for many reasons; for instance, they can be used for looking around corners or for sending signals outdoors using reflected sunlight."
 msgstr "Zrcadla jsou užitečná z mnoha důvodů; například mohou být použita pro nahlížení za rohy nebo pro posílání signálů venku pomocí odráženého slunečního světla."
 
+msgid "An aromatic herb that repels vampires and some other undead monsters."
+msgstr ""
+
 msgid "RU"
 msgstr "RU"
 
@@ -396,6 +399,9 @@ msgstr "Resetovat mince"
 
 msgid "Book, Reading"
 msgstr "Kniha, čtení"
+
+msgid "Aconite, also known as wolvesbane (wolfsbane) is sold dried or fresh in single sprigs. This herb is used to drive off lycanthropes, who cannot stand it."
+msgstr ""
 
 msgid "Add coins"
 msgstr "Přidat mince"
