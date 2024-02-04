@@ -2,7 +2,7 @@ import { createContext } from 'react'
 
 import { TerrainAdjustment, WeatherAdjustment } from '@/domain/movement'
 
-import { version } from '../../../package.json'
+import packageJson from '../../../package.json'
 
 export type UiContextType = {
   uiState: {
@@ -22,7 +22,7 @@ export const defaultUiState: UiContextType = {
     activeEquipmentTabId: 0,
     activeTabId: 0,
     terrain: TerrainAdjustment.Road,
-    version,
+    version: packageJson.version,
     weather: WeatherAdjustment.Regular,
   },
   updateUiState: () => defaultUiState,
