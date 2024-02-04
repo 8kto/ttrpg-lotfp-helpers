@@ -393,7 +393,7 @@ msgid "Book, Reading"
 msgstr "Книга, для чтения"
 
 msgid "Aconite, also known as wolvesbane (wolfsbane) is sold dried or fresh in single sprigs. This herb is used to drive off lycanthropes, who cannot stand it."
-msgstr "Аконит, также известный как волчий корень или волкобой, продаётся сушёным или свежем, отдельными веточками. Используется для отпугивания оборотней."
+msgstr "Аконит, также известный как волчий корень или волкобой, продаётся сушёным или свежим, отдельными веточками. Используется для отпугивания оборотней."
 
 msgid "Add coins"
 msgstr "Добавить монет"
