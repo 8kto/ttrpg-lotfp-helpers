@@ -20,9 +20,16 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
   }
 }
 
-export default function EncumbranceReferencePage({ locale }: { locale: LOCALE_SHORT }) {
-  const ContentComponent = getTranslatedPageContent('encumbrance-reference', locale)
-  
+export default function EncumbranceReferencePage({
+  locale,
+}: {
+  locale: LOCALE_SHORT
+}) {
+  const ContentComponent = getTranslatedPageContent(
+    'encumbrance-reference',
+    locale,
+  )
+
   return (
     <>
       <HeadMetadata
@@ -30,7 +37,7 @@ export default function EncumbranceReferencePage({ locale }: { locale: LOCALE_SH
         description={t`Quick Reference on Encumbrance and Movement from the LotFP Core Rules`}
       />
       <PageLayout>
-        <ContentComponent/>
+        <ContentComponent />
       </PageLayout>
     </>
   )

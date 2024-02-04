@@ -15,8 +15,8 @@ const EncumbranceReference = () => {
           </li>
           <li>
             <strong>Items</strong>: Carrying 6 or more different items adds
-            encumbrance points, with additional points for every 5 items
-            beyond the initial 6. <strong>Weapons</strong> included.
+            encumbrance points, with additional points for every 5 items beyond
+            the initial 6. <strong>Weapons</strong> included.
           </li>
           <li>
             <strong>Oversized Items</strong>: Great and two-handed weapons, or
@@ -41,8 +41,7 @@ const EncumbranceReference = () => {
         <h3>How to count</h3>
         <ul>
           <li>
-            <strong>Chain or Plate Armor</strong>: +1 or +2 points
-            respectively.
+            <strong>Chain or Plate Armor</strong>: +1 or +2 points respectively.
           </li>
           <li>
             <strong>Carrying Items</strong>: +1 point for every 5 items beyond
@@ -59,50 +58,50 @@ const EncumbranceReference = () => {
           <div className='mb-4 overflow-x-auto'>
             <table>
               <thead>
-              <tr>
-                <th>Points</th>
-                <th>Encumbrance</th>
-                <th>Exploration</th>
-                <th>Combat</th>
-                <th>Run</th>
-              </tr>
+                <tr>
+                  <th>Points</th>
+                  <th>Encumbrance</th>
+                  <th>Exploration</th>
+                  <th>Combat</th>
+                  <th>Run</th>
+                </tr>
               </thead>
               <tbody>
-              <tr>
-                <td>0–1</td>
-                <td>Unencumbered</td>
-                <td>120&apos;</td>
-                <td>40&apos;</td>
-                <td>120&apos;</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Lightly Encumbered</td>
-                <td>90&apos;</td>
-                <td>30&apos;</td>
-                <td>90&apos;</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Heavily Encumbered</td>
-                <td>60&apos;</td>
-                <td>20&apos;</td>
-                <td>60&apos;</td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>Severely Encumbered</td>
-                <td>30&apos;</td>
-                <td>10&apos;</td>
-                <td>30&apos;</td>
-              </tr>
-              <tr>
-                <td>5+</td>
-                <td>Over Encumbered</td>
-                <td>0&apos;</td>
-                <td>0&apos;</td>
-                <td>0&apos;</td>
-              </tr>
+                <tr>
+                  <td>0–1</td>
+                  <td>Unencumbered</td>
+                  <td>120&apos;</td>
+                  <td>40&apos;</td>
+                  <td>120&apos;</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Lightly Encumbered</td>
+                  <td>90&apos;</td>
+                  <td>30&apos;</td>
+                  <td>90&apos;</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Heavily Encumbered</td>
+                  <td>60&apos;</td>
+                  <td>20&apos;</td>
+                  <td>60&apos;</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Severely Encumbered</td>
+                  <td>30&apos;</td>
+                  <td>10&apos;</td>
+                  <td>30&apos;</td>
+                </tr>
+                <tr>
+                  <td>5+</td>
+                  <td>Over Encumbered</td>
+                  <td>0&apos;</td>
+                  <td>0&apos;</td>
+                  <td>0&apos;</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -111,28 +110,28 @@ const EncumbranceReference = () => {
           <div className='mb-4 overflow-x-auto'>
             <table>
               <thead>
-              <tr>
-                <th>Terrain</th>
-                <th>Adjustment</th>
-              </tr>
+                <tr>
+                  <th>Terrain</th>
+                  <th>Adjustment</th>
+                </tr>
               </thead>
               <tbody>
-              <tr>
-                <td>Jungle, Mountains, Swamp</td>
-                <td>×⅓</td>
-              </tr>
-              <tr>
-                <td>Desert, Forest, Hills</td>
-                <td>×½</td>
-              </tr>
-              <tr>
-                <td>Clear, Plains, Trail</td>
-                <td>×⅔</td>
-              </tr>
-              <tr>
-                <td>Road</td>
-                <td>×1</td>
-              </tr>
+                <tr>
+                  <td>Jungle, Mountains, Swamp</td>
+                  <td>×⅓</td>
+                </tr>
+                <tr>
+                  <td>Desert, Forest, Hills</td>
+                  <td>×½</td>
+                </tr>
+                <tr>
+                  <td>Clear, Plains, Trail</td>
+                  <td>×⅔</td>
+                </tr>
+                <tr>
+                  <td>Road</td>
+                  <td>×1</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -141,20 +140,20 @@ const EncumbranceReference = () => {
           <div className='mb-4 overflow-x-auto'>
             <table>
               <thead>
-              <tr>
-                <th>Conditions</th>
-                <th>Adjustment</th>
-              </tr>
+                <tr>
+                  <th>Conditions</th>
+                  <th>Adjustment</th>
+                </tr>
               </thead>
               <tbody>
-              <tr>
-                <td>High Winds or Precipitation</td>
-                <td>×½</td>
-              </tr>
-              <tr>
-                <td>Storm Conditions</td>
-                <td>×⅓</td>
-              </tr>
+                <tr>
+                  <td>High Winds or Precipitation</td>
+                  <td>×½</td>
+                </tr>
+                <tr>
+                  <td>Storm Conditions</td>
+                  <td>×⅓</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -164,8 +163,8 @@ const EncumbranceReference = () => {
         <ul>
           <li>
             <strong>Specialist</strong> must be unencumbered to use any class
-            abilities involving movement without penalty, or suffer a one
-            point skill penalty for level of encumbrance.
+            abilities involving movement without penalty, or suffer a one point
+            skill penalty for level of encumbrance.
           </li>
           <li>
             <strong>Magic-Users</strong> cannot cast spells if they are more
@@ -181,13 +180,13 @@ const EncumbranceReference = () => {
         <p>Encumbrance Units and Points:</p>
         <ul>
           <li>
-            <strong>Encumbrance Points</strong>: These are used to determine
-            the encumbrance level of a character. Taken from the core book.
+            <strong>Encumbrance Points</strong>: These are used to determine the
+            encumbrance level of a character. Taken from the core book.
           </li>
           <li>
-            <strong>Encumbrance Units</strong>: Smaller divisions of
-            encumbrance points, with 1 encumbrance unit being 1/5 of a point.
-            All elements in the system have a weight expressed in e.u.
+            <strong>Encumbrance Units</strong>: Smaller divisions of encumbrance
+            points, with 1 encumbrance unit being 1/5 of a point. All elements
+            in the system have a weight expressed in e.u.
           </li>
         </ul>
 

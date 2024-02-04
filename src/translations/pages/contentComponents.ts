@@ -14,7 +14,9 @@ const contentComponents: Record<string, PageEntry> = {
     ru: lazy(() => import('@/translations/pages/ru/About')),
   },
   'encumbrance-reference': {
-    [DEFAULT_LOCALE]: lazy(() => import('@/translations/pages/en/EncumbranceReference')),
+    [DEFAULT_LOCALE]: lazy(
+      () => import('@/translations/pages/en/EncumbranceReference'),
+    ),
     ru: lazy(() => import('@/translations/pages/ru/EncumbranceReference')),
   },
 }
