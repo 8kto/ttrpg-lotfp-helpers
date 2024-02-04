@@ -349,6 +349,12 @@ describe('CurrencyConverter', () => {
       expect(optimizedWallet).toEqual({ Copper: 5, Gold: 2, Silver: 4 })
     })
 
+    it('should optimize wallet mixed values (2)', () => {
+      const wallet: CurrencyWallet = { Copper: 1250, Gold: 0, Silver: 0 }
+      const optimizedWallet = CurrencyConverter.getNormalized(wallet)
+      expect(optimizedWallet).toEqual({ Copper: 0, Silver: 25, Gold: 2 })
+    })
+
     it('should handle wallet with only copper', () => {
       const wallet: CurrencyWallet = { Copper: 1500, Gold: 0, Silver: 0 }
       const optimizedWallet = CurrencyConverter.getNormalized(wallet)
