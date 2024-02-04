@@ -131,9 +131,6 @@ msgstr "Священный символ, деревянный"
 msgid "Silver pieces"
 msgstr "Серебряные монеты"
 
-msgid "Quick Reference on Encumbrance and Movement from the LotFP Core Rules"
-msgstr "Гайд по нагрузке и передвижению LotFP"
-
 msgid "Spikes for your boots – better success at climbing and keeping balance on ice"
 msgstr "Шипы для ботинок - помогают при лазании и сохранении равновесия на льду"
 
@@ -872,6 +869,9 @@ msgstr "Русский"
 
 msgid "Garrote"
 msgstr "Гаррота"
+
+msgid "Quick Reference on Encumbrance and Movement from the LotFP Core Rules"
+msgstr "Гайд по нагрузке и передвижению LotFP"
 
 msgid "Movement"
 msgstr "Передвижение"

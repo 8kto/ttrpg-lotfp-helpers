@@ -131,9 +131,6 @@ msgstr "Svatý symbol, dřevo"
 msgid "Silver pieces"
 msgstr "Stříbrné kusy"
 
-msgid "Quick Reference on Encumbrance and Movement from the LotFP Core Rules"
-msgstr ""
-
 msgid "Spikes for your boots – better success at climbing and keeping balance on ice"
 msgstr "Hřeby pro vaše boty - lepší úspěch při lezení a udržování rovnováhy na ledu."
 
@@ -881,6 +878,9 @@ msgstr "Ruština"
 
 msgid "Garrote"
 msgstr "Škrtidlo"
+
+msgid "Quick Reference on Encumbrance and Movement from the LotFP Core Rules"
+msgstr ""
 
 msgid "Movement"
 msgstr "Pohyb"
