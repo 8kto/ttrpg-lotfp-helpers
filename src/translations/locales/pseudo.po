@@ -101,9 +101,6 @@ msgstr ""
 msgid "Damage"
 msgstr ""
 
-msgid "Coin weight"
-msgstr ""
-
 msgid "Tent, Regular"
 msgstr ""
 
@@ -774,6 +771,9 @@ msgid "Spike, Iron"
 msgstr ""
 
 msgid "config.melee.slingRocks.details"
+msgstr ""
+
+msgid "Coins weigh"
 msgstr ""
 
 msgid "Added"

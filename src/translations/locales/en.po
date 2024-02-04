@@ -105,9 +105,6 @@ msgstr "Fighter 1"
 msgid "Damage"
 msgstr "Damage"
 
-msgid "Coin weight"
-msgstr "Coin weight"
-
 msgid "Tent, Regular"
 msgstr "Tent, Regular"
 
@@ -801,6 +798,9 @@ msgstr "Spike, Iron"
 
 msgid "config.melee.slingRocks.details"
 msgstr "Slings fired with stones instead of bullets have the listed range (half of the regular)."
+
+msgid "Coins weigh"
+msgstr "Coins weigh"
 
 msgid "Added"
 msgstr "Added"

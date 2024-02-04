@@ -104,9 +104,6 @@ msgstr "Bojovník 1"
 msgid "Damage"
 msgstr "Poškození"
 
-msgid "Coin weight"
-msgstr "Zahrnout váhu"
-
 msgid "Tent, Regular"
 msgstr "Stan, běžný"
 
@@ -797,6 +794,9 @@ msgstr "Hřebík, železný"
 
 msgid "config.melee.slingRocks.details"
 msgstr "Pračky střílející kameny místo střel mají uvedený dosah (polovina běžného)."
+
+msgid "Coins weigh"
+msgstr "Zahrnout váhu"
 
 msgid "Added"
 msgstr ""

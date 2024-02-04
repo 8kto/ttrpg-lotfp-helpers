@@ -104,9 +104,6 @@ msgstr "Воин 1"
 msgid "Damage"
 msgstr "Урон"
 
-msgid "Coin weight"
-msgstr "Учитывать вес монет"
-
 msgid "Tent, Regular"
 msgstr "Палатка, обычная"
 
@@ -788,6 +785,9 @@ msgstr "Шип, железный"
 
 msgid "config.melee.slingRocks.details"
 msgstr "Пращи, стреляющие камнями вместо пуль, имеют указанную дальность (половина обычной)."
+
+msgid "Coins weigh"
+msgstr "Учитывать вес монет"
 
 msgid "Added"
 msgstr "Добавлено"
