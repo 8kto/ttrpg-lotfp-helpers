@@ -1,7 +1,11 @@
 import type { Messages } from '@lingui/core'
 import { i18n } from '@lingui/core'
 import { useRouter } from 'next/router'
-import { useEffect } from 'react'
+import { type ComponentType, useEffect } from 'react'
+
+import type { LOCALE_SHORT } from '@/translations/languages'
+import { DEFAULT_LOCALE } from '@/translations/languages'
+import contentComponents from '@/translations/pages/contentComponents'
 
 export async function loadCatalog(locale: string) {
   const catalog = await import(`@lingui/loader!./locales/${locale}.po`)
@@ -33,4 +37,16 @@ export function useLinguiInit(messages: Messages) {
   }, [locale, messages])
 
   return i18n
+}
+
+export const getTranslatedPageContent = (
+  pageName: string,
+  locale: LOCALE_SHORT,
+): ComponentType => {
+  const pageEntry = contentComponents[pageName]
+  if (!pageEntry) {
+    throw new Error(`Unknown page name: ${pageName}`)
+  }
+
+  return (pageEntry[locale] || pageEntry[DEFAULT_LOCALE]) as ComponentType
 }

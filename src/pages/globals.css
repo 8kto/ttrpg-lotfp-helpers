@@ -207,7 +207,7 @@ details.ph-details-bullet[open] .ph-custom-indicator {
 }
 
 .ph-content-container ul ul {
-  @apply mt-2 ml-2 pl-4 border-l border-gray-200;
+  @apply mt-2 ml-2 pl-4 border-l border-gray-200 mb-2;
 }
 
 .ph-content-container li li {

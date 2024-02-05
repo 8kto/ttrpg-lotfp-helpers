@@ -16,6 +16,9 @@ msgstr ""
 msgid "Lamentations of the Flame Princess helpers"
 msgstr ""
 
+msgid "Writing ink: Stored in a small ceramic jar or tin and sufficient for 50 pages of normal writing. Required for mapping."
+msgstr ""
+
 msgid "Coins"
 msgstr ""
 
@@ -86,6 +89,9 @@ msgstr ""
 msgid "Saddlebag"
 msgstr ""
 
+msgid "Using a crowbar adds a +1 bonus to the Open Doors roll chances."
+msgstr ""
+
 msgid "Holy Symbol, Steel"
 msgstr ""
 
@@ -93,9 +99,6 @@ msgid "Fighter 1"
 msgstr ""
 
 msgid "Damage"
-msgstr ""
-
-msgid "Coin weight"
 msgstr ""
 
 msgid "Tent, Regular"
@@ -122,9 +125,6 @@ msgstr ""
 msgid "Silver pieces"
 msgstr ""
 
-msgid "Quick Reference on Encumbrance from the LotFP Core Rules"
-msgstr ""
-
 msgid "Spikes for your boots – better success at climbing and keeping balance on ice"
 msgstr ""
 
@@ -144,9 +144,6 @@ msgid "Range"
 msgstr ""
 
 msgid "Manacles"
-msgstr ""
-
-msgid "Writing ink: Stored in a small ceramic jar or tin and sufficient for 50 pages of normal writing"
 msgstr ""
 
 msgid "Mirror, Glass"
@@ -270,6 +267,9 @@ msgstr ""
 msgid "Mirrors are useful for many reasons; for instance, they can be used for looking around corners or for sending signals outdoors using reflected sunlight."
 msgstr ""
 
+msgid "An aromatic herb that repels vampires and some other undead monsters."
+msgstr ""
+
 msgid "RU"
 msgstr ""
 
@@ -381,6 +381,9 @@ msgid "Reset coins"
 msgstr ""
 
 msgid "Book, Reading"
+msgstr ""
+
+msgid "Aconite, also known as wolvesbane (wolfsbane) is sold dried or fresh in single sprigs. This herb is used to drive off lycanthropes, who cannot stand it."
 msgstr ""
 
 msgid "Add coins"
@@ -770,6 +773,9 @@ msgstr ""
 msgid "config.melee.slingRocks.details"
 msgstr ""
 
+msgid "Coins weigh"
+msgstr ""
+
 msgid "Added"
 msgstr ""
 
@@ -849,6 +855,9 @@ msgid "Russian"
 msgstr ""
 
 msgid "Garrote"
+msgstr ""
+
+msgid "Quick Reference on Encumbrance and Movement from the LotFP Core Rules"
 msgstr ""
 
 msgid "Movement"
@@ -977,6 +986,9 @@ msgid "Spear"
 msgstr ""
 
 msgid "Fighter 2"
+msgstr ""
+
+msgid "Required for mapping."
 msgstr ""
 
 msgid "Spyglass"

@@ -16,6 +16,9 @@ msgstr ""
 msgid "Lamentations of the Flame Princess helpers"
 msgstr "Lamentations of the Flame Princess helpers"
 
+msgid "Writing ink: Stored in a small ceramic jar or tin and sufficient for 50 pages of normal writing. Required for mapping."
+msgstr "Writing ink: Stored in a small ceramic jar or tin and sufficient for 50 pages of normal writing. Required for mapping."
+
 msgid "Coins"
 msgstr "Coins"
 
@@ -90,6 +93,9 @@ msgstr ""
 msgid "Saddlebag"
 msgstr "Saddlebag"
 
+msgid "Using a crowbar adds a +1 bonus to the Open Doors roll chances."
+msgstr "Using a crowbar adds a +1 bonus to the Open Doors roll chances."
+
 msgid "Holy Symbol, Steel"
 msgstr "Holy Symbol, Steel"
 
@@ -98,9 +104,6 @@ msgstr "Fighter 1"
 
 msgid "Damage"
 msgstr "Damage"
-
-msgid "Coin weight"
-msgstr "Coin weight"
 
 msgid "Tent, Regular"
 msgstr "Tent, Regular"
@@ -126,9 +129,6 @@ msgstr "Holy Symbol, Wood"
 msgid "Silver pieces"
 msgstr "Silver pieces"
 
-msgid "Quick Reference on Encumbrance from the LotFP Core Rules"
-msgstr "Quick Reference on Encumbrance from the LotFP Core Rules"
-
 msgid "Spikes for your boots – better success at climbing and keeping balance on ice"
 msgstr "Spikes for your boots – better success at climbing and keeping balance on ice"
 
@@ -149,9 +149,6 @@ msgstr "Range"
 
 msgid "Manacles"
 msgstr "Manacles"
-
-msgid "Writing ink: Stored in a small ceramic jar or tin and sufficient for 50 pages of normal writing"
-msgstr "Writing ink: Stored in a small ceramic jar or tin and sufficient for 50 pages of normal writing"
 
 msgid "Mirror, Glass"
 msgstr "Mirror, Glass"
@@ -282,6 +279,9 @@ msgstr "Cumbersome"
 msgid "Mirrors are useful for many reasons; for instance, they can be used for looking around corners or for sending signals outdoors using reflected sunlight."
 msgstr "Mirrors are useful for many reasons; for instance, they can be used for looking around corners or for sending signals outdoors using reflected sunlight."
 
+msgid "An aromatic herb that repels vampires and some other undead monsters."
+msgstr "An aromatic herb that repels vampires and some other undead monsters."
+
 msgid "RU"
 msgstr "RU"
 
@@ -397,6 +397,9 @@ msgstr "Reset coins"
 
 msgid "Book, Reading"
 msgstr "Book, Reading"
+
+msgid "Aconite, also known as wolvesbane (wolfsbane) is sold dried or fresh in single sprigs. This herb is used to drive off lycanthropes, who cannot stand it."
+msgstr "Aconite, also known as wolvesbane (wolfsbane) is sold dried or fresh in single sprigs. This herb is used to drive off lycanthropes, who cannot stand it."
 
 msgid "Add coins"
 msgstr "Add coins"
@@ -796,6 +799,9 @@ msgstr "Spike, Iron"
 msgid "config.melee.slingRocks.details"
 msgstr "Slings fired with stones instead of bullets have the listed range (half of the regular)."
 
+msgid "Coins weigh"
+msgstr "Coins weigh"
+
 msgid "Added"
 msgstr "Added"
 
@@ -876,6 +882,9 @@ msgstr "Russian"
 
 msgid "Garrote"
 msgstr "Garrote"
+
+msgid "Quick Reference on Encumbrance and Movement from the LotFP Core Rules"
+msgstr "Quick Reference on Encumbrance and Movement from the LotFP Core Rules"
 
 msgid "Movement"
 msgstr "Movement"
@@ -1004,6 +1013,9 @@ msgstr "Spear"
 
 msgid "Fighter 2"
 msgstr "Fighter 2"
+
+msgid "Required for mapping."
+msgstr "Required for mapping."
 
 msgid "Spyglass"
 msgstr "Spyglass"

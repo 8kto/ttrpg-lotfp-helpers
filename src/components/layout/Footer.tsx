@@ -1,23 +1,28 @@
+import { Trans } from '@lingui/macro'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 
 import NavigationLinks from '@/components/layout/NavigationLinks'
+import UiContext from '@/shared/context/uiContext'
 import isDevEnv from '@/shared/helpers/isDevEnv'
 
 const Footer = () => {
   const [viewportDebugHidden, setViewportDebugHidden] = useState(false)
+  const {
+    uiState: { version },
+  } = useContext(UiContext)
 
   return (
     <footer className='text-base text-gray-700'>
       <div className='mx-auto max-w-screen-2xl px-4 py-6 sm:px-6 lg:px-8'>
-        <div className='flex flex-col md:flex-row items-center justify-between'>
-          <div className='mb-2 text-base md:mb-0 whitespace-normal break-words'>
+        <div className='flex flex-col items-center justify-between'>
+          <div className='mb-4 max-w-full whitespace-normal break-words text-base'>
             <NavigationLinks />
             <Link
               href='https://github.com/8kto/ttrpg-lotfp-helpers'
               target='_blank'
-              className='ph-color-accent hover:underline underline-offset-4'
+              className='ph-color-accent underline-offset-4 hover:underline whitespace-nowrap'
             >
               GitHub
             </Link>
@@ -28,18 +33,19 @@ const Footer = () => {
               alt='Flame Princess'
               width='32'
               height='32'
-              className='mr-2'
+              className='mr-1'
             />
-            <span className='text-sm'>
-              © 2023-2024{' '}
+            <div className='inline-block text-sm text-gray-600'>
+              <Trans>Princess Helpers</Trans> v{version}{' '}
+              <span className='ml-4'>© 2023-2024 </span>
               <Link
                 href='https://ivlev.blog/'
-                className='hover:underline underline-offset-4 whitespace-nowrap'
+                className='whitespace-nowrap underline-offset-4 hover:underline'
                 target='_blank'
               >
                 Igor Okto (undefined)
               </Link>
-            </span>
+            </div>
           </div>
         </div>
         {isDevEnv() && (

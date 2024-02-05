@@ -16,6 +16,9 @@ msgstr ""
 msgid "Lamentations of the Flame Princess helpers"
 msgstr ""
 
+msgid "Writing ink: Stored in a small ceramic jar or tin and sufficient for 50 pages of normal writing. Required for mapping."
+msgstr "Psací inkoust: Uchováván v malé keramické nádobě nebo plechovce a postačující pro 50 stran normálního psaní. Vyžadováno pro mapování."
+
 msgid "Coins"
 msgstr "Mince"
 
@@ -89,6 +92,9 @@ msgstr ""
 msgid "Saddlebag"
 msgstr "Sedlová taška"
 
+msgid "Using a crowbar adds a +1 bonus to the Open Doors roll chances."
+msgstr "Použití páčidla přidává +1 bonus k šancím na otevření dveří."
+
 msgid "Holy Symbol, Steel"
 msgstr "Svatý symbol, ocel"
 
@@ -97,9 +103,6 @@ msgstr "Bojovník 1"
 
 msgid "Damage"
 msgstr "Poškození"
-
-msgid "Coin weight"
-msgstr "Zahrnout váhu"
 
 msgid "Tent, Regular"
 msgstr "Stan, běžný"
@@ -125,9 +128,6 @@ msgstr "Svatý symbol, dřevo"
 msgid "Silver pieces"
 msgstr "Stříbrné kusy"
 
-msgid "Quick Reference on Encumbrance from the LotFP Core Rules"
-msgstr ""
-
 msgid "Spikes for your boots – better success at climbing and keeping balance on ice"
 msgstr "Hřeby pro vaše boty - lepší úspěch při lezení a udržování rovnováhy na ledu."
 
@@ -148,9 +148,6 @@ msgstr "Rozsah"
 
 msgid "Manacles"
 msgstr "Pouta"
-
-msgid "Writing ink: Stored in a small ceramic jar or tin and sufficient for 50 pages of normal writing"
-msgstr "Psací inkoust: Uchováván v malé keramické nádobě nebo plechovce, dostatečný pro 50 stran běžného psaní."
 
 msgid "Mirror, Glass"
 msgstr "Zrcadlo, sklo"
@@ -278,6 +275,9 @@ msgstr "Neohrabaný"
 msgid "Mirrors are useful for many reasons; for instance, they can be used for looking around corners or for sending signals outdoors using reflected sunlight."
 msgstr "Zrcadla jsou užitečná z mnoha důvodů; například mohou být použita pro nahlížení za rohy nebo pro posílání signálů venku pomocí odráženého slunečního světla."
 
+msgid "An aromatic herb that repels vampires and some other undead monsters."
+msgstr "Aromatická bylina, která odpuzuje upíry a některé další nemrtvé nestvůry."
+
 msgid "RU"
 msgstr "RU"
 
@@ -393,6 +393,9 @@ msgstr "Resetovat mince"
 
 msgid "Book, Reading"
 msgstr "Kniha, čtení"
+
+msgid "Aconite, also known as wolvesbane (wolfsbane) is sold dried or fresh in single sprigs. This herb is used to drive off lycanthropes, who cannot stand it."
+msgstr "Omorika, známá také jako vlčí bobek, se prodává sušená nebo čerstvá po jednotlivých větvičkách. Tato bylina se používá k odpuzení lykantropů, kteří ji nemohou vystát."
 
 msgid "Add coins"
 msgstr "Přidat mince"
@@ -792,6 +795,9 @@ msgstr "Hřebík, železný"
 msgid "config.melee.slingRocks.details"
 msgstr "Pračky střílející kameny místo střel mají uvedený dosah (polovina běžného)."
 
+msgid "Coins weigh"
+msgstr "Zahrnout váhu"
+
 msgid "Added"
 msgstr ""
 
@@ -872,6 +878,9 @@ msgstr "Ruština"
 
 msgid "Garrote"
 msgstr "Škrtidlo"
+
+msgid "Quick Reference on Encumbrance and Movement from the LotFP Core Rules"
+msgstr ""
 
 msgid "Movement"
 msgstr "Pohyb"
@@ -1000,6 +1009,9 @@ msgstr "Kopí"
 
 msgid "Fighter 2"
 msgstr "Bojovník 2"
+
+msgid "Required for mapping."
+msgstr "Vyžadováno pro mapování."
 
 msgid "Spyglass"
 msgstr "Dalekohled"
