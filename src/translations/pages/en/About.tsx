@@ -138,7 +138,8 @@ const About = () => {
             Princess Helpers on GitHub
           </a>
           . <br />
-          You may <strong>suggest translation</strong> at the same page.
+          You may <strong>suggest translation</strong> at the same page. If you
+          find GitHub challenging but have enthusiasm, write to me on Telegram.
         </p>
         <p>
           If you enjoy the tool, feel free to share it, star it on GitHub, hack
