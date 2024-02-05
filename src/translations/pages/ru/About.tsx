@@ -65,7 +65,36 @@ const About = () => {
           перерыва.
         </p>
       </section>
-
+      <section>
+        <header>
+          <h2>Источники</h2>
+        </header>
+        <p>
+          Я использовал{' '}
+          <a
+            href='https://preview.drivethrurpg.com/en/product/115059/LotFP-Rules--Magic-Free-Version'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            LotFP Rules & Magic Free Version
+          </a>{' '}
+          и ресурсы из{' '}
+          <a
+            href='https://www.basicfantasy.org/downloads.html'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            Basic Fantasy RPG
+          </a>
+          , в частности, Equipment Emporium (r24) для подсказок для разного
+          снаряжения.
+        </p>
+        <p>
+          Я также расширил список оружия, добавив конкретные экземпляры для
+          Большого, Среднего, Малого и Незначительного оружия (Great, Medium,
+          Small, Minor) для большей наглядности.
+        </p>
+      </section>
       <section>
         <header>
           <h2>Контакты</h2>

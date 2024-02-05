@@ -65,7 +65,6 @@ const About = () => {
           to revisit this after a [short] break.
         </p>
       </section>
-
       <section>
         <header>
           <h2>Sources</h2>

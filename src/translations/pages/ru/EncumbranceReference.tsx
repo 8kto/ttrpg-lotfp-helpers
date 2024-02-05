@@ -5,99 +5,101 @@ const EncumbranceReference = () => {
     <>
       <section>
         <header>
-          <h2>Encumbrance quick reference</h2>
+          <h2>Краткая справка по нагрузке</h2>
         </header>
-        <h3>What counts towards encumbrance</h3>
+        <h3>Что учитывается</h3>
         <ul>
           <li>
-            <strong>Armor</strong>: Chain and plate armors add encumbrance
-            points but are not included in the regular equipment count.
+            <strong>Доспехи</strong>: Кольчуга и латные доспехи увеличивают
+            нагрузку, но не включаются в список снаряжения.
           </li>
           <li>
-            <strong>Items</strong>: Carrying 6 or more different items adds
-            encumbrance points, with additional points for every 5 items beyond
-            the initial 6. <strong>Weapons</strong> included.
+            <strong>Предметы</strong>: дополнительное очко нагрузки за каждые 5
+            предметов сверх начальных 6. <strong>Оружие</strong> учитывается
+            также.
           </li>
           <li>
-            <strong>Oversized Items</strong>: Great and two-handed weapons, or
-            any item requiring two hands or as tall as the character, count as
-            oversized items and each adds encumbrance points.
+            <strong>Габаритные предметы</strong>: Большое и двуручное оружие, а
+            также любой предмет, требующий для использования двух рук или равный
+            росту персонажа, считаются крупногабаритными и увеличивают нагрузку.
           </li>
           <li>
-            <strong>Coins</strong>: 100 any coins count as 1 regular item.
+            <strong>Монеты</strong>: 100 любых монет считаются за 1 обычный
+            предмет.
           </li>
           <li>
-            Small items of the same type (e.g., arrows, spikes) count as one
-            item.
+            Мелкие предметы одного типа (например, стрелы, колышки) считаются за
+            один предмет.
           </li>
         </ul>
 
-        <h3>What does not count</h3>
+        <h3>Что не учитывается</h3>
         <ul>
-          <li>Worn items like cloaks, jewelry, and backpacks.</li>
-          <li>Very small items, at the Referee&apos;s discretion.</li>
+          <li>Носимые предметы, такие как плащи, украшения и рюкзаки.</li>
+          <li>Очень мелкие предметы, по усмотрению Рефери.</li>
         </ul>
 
-        <h3>How to count</h3>
+        <h3>Как считать</h3>
         <ul>
           <li>
-            <strong>Chain or Plate Armor</strong>: +1 or +2 points respectively.
+            <strong>Кольчуга или Латные Доспехи</strong>: +1 или +2 очка
+            соответственно.
           </li>
           <li>
-            <strong>Carrying Items</strong>: +1 point for every 5 items beyond
-            the first 5. Dwarves can carry an additional 5 items (10 in total)
-            before encumbrance penalties apply.
+            <strong>Предметы</strong>: +1 очко за каждые 5 предметов сверх
+            первых 5. Гномы могут нести дополнительные 5 предметов (всего 10)
+            прежде, чем применяются штрафы за нагрузку.
           </li>
           <li>
-            <strong>Oversized Items</strong>: +1 point per oversized item.
+            <strong>Габаритные предметы</strong>: +1 очко за каждый.
           </li>
         </ul>
 
         <details className='mb-4'>
-          <summary>Show encumbrance and movement tables</summary>
+          <summary>Показать таблицы нагрузки и скорости передвижения</summary>
           <div className='mb-4 overflow-x-auto'>
             <table>
               <thead>
                 <tr>
-                  <th>Points</th>
-                  <th>Encumbrance</th>
-                  <th>Exploration</th>
-                  <th>Combat</th>
-                  <th>Run</th>
+                  <th>Очки</th>
+                  <th>Нагрузка</th>
+                  <th>Исследование</th>
+                  <th>Бой</th>
+                  <th>Бег</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>0–1</td>
-                  <td>Unencumbered</td>
+                  <td>Ненагружен</td>
                   <td>120&apos;</td>
                   <td>40&apos;</td>
                   <td>120&apos;</td>
                 </tr>
                 <tr>
                   <td>2</td>
-                  <td>Lightly Encumbered</td>
+                  <td>Легко нагружен</td>
                   <td>90&apos;</td>
                   <td>30&apos;</td>
                   <td>90&apos;</td>
                 </tr>
                 <tr>
                   <td>3</td>
-                  <td>Heavily Encumbered</td>
+                  <td>Сильно нагружен</td>
                   <td>60&apos;</td>
                   <td>20&apos;</td>
                   <td>60&apos;</td>
                 </tr>
                 <tr>
                   <td>4</td>
-                  <td>Severely Encumbered</td>
+                  <td>Тяжело нагружен</td>
                   <td>30&apos;</td>
                   <td>10&apos;</td>
                   <td>30&apos;</td>
                 </tr>
                 <tr>
                   <td>5+</td>
-                  <td>Over Encumbered</td>
+                  <td>Перегружен</td>
                   <td>0&apos;</td>
                   <td>0&apos;</td>
                   <td>0&apos;</td>
@@ -106,52 +108,52 @@ const EncumbranceReference = () => {
             </table>
           </div>
 
-          <p>The terrain type alters the rate:</p>
+          <p>Тип местности влияет на скорость:</p>
           <div className='mb-4 overflow-x-auto'>
             <table>
               <thead>
                 <tr>
-                  <th>Terrain</th>
-                  <th>Adjustment</th>
+                  <th>Местность</th>
+                  <th>Корректировка</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Jungle, Mountains, Swamp</td>
+                  <td>Горы, джунгли, болото</td>
                   <td>×⅓</td>
                 </tr>
                 <tr>
-                  <td>Desert, Forest, Hills</td>
+                  <td>Леса, пустыни, холмы</td>
                   <td>×½</td>
                 </tr>
                 <tr>
-                  <td>Clear, Plains, Trail</td>
+                  <td>Равнины, тропы</td>
                   <td>×⅔</td>
                 </tr>
                 <tr>
-                  <td>Road</td>
+                  <td>Дорога</td>
                   <td>×1</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
-          <p>Bad weather also affects travel:</p>
+          <p>Плохая погода также влияет на передвижение:</p>
           <div className='mb-4 overflow-x-auto'>
             <table>
               <thead>
                 <tr>
-                  <th>Conditions</th>
-                  <th>Adjustment</th>
+                  <th>Условия</th>
+                  <th>Корректировка</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>High Winds or Precipitation</td>
+                  <td>Осадки, сильный ветер</td>
                   <td>×½</td>
                 </tr>
                 <tr>
-                  <td>Storm Conditions</td>
+                  <td>Буря</td>
                   <td>×⅓</td>
                 </tr>
               </tbody>
@@ -159,42 +161,44 @@ const EncumbranceReference = () => {
           </div>
         </details>
 
-        <h3>Effects</h3>
+        <h3>Эффекты</h3>
         <ul>
           <li>
-            <strong>Specialist</strong> must be unencumbered to use any class
-            abilities involving movement without penalty, or suffer a one point
-            skill penalty for level of encumbrance.
+            <strong>Специалисты</strong> должны быть ненагружены, чтобы
+            использовать любые способности класса, связанные с передвижением без
+            штрафов, или получить штраф к проверке: -1 за каждый уровень
+            нагрузки.
           </li>
           <li>
-            <strong>Magic-Users</strong> cannot cast spells if they are more
-            than Lightly encumbered. <strong>Elves</strong> cannot cast spells
-            if they are more than Heavily encumbered.
+            <strong>Маги</strong> не могут использовать заклинания, если они
+            более чем Легко нагружены. <strong>Эльфы</strong> не могут
+            использовать заклинания, если они более чем Сильно нагружены.
           </li>
         </ul>
       </section>
+
       <section>
         <header>
-          <h2>In app</h2>
+          <h2>В приложении</h2>
         </header>
-        <p>Encumbrance Units and Points:</p>
+        <p>Единицы и очки нагрузки:</p>
         <ul>
           <li>
-            <strong>Encumbrance Points</strong>: These are used to determine the
-            encumbrance level of a character. Taken from the core book.
+            <strong>Очки нагрузки (Encumbrance Points)</strong>: Используются
+            для определения уровня нагрузки персонажа. Взяты из рулбука LotFP.
           </li>
           <li>
-            <strong>Encumbrance Units</strong>: Smaller divisions of encumbrance
-            points, with 1 encumbrance unit being 1/5 of a point. All elements
-            in the system have a weight expressed in e.u.
+            <strong>Единицы нагрузки (Encumbrance Units)</strong>: Меньшая
+            единица для измерения нагрузки, равна 1/5 Очка Нагрузки. Все
+            предметы в приложении имеют вес, выраженный в e.u.
           </li>
         </ul>
 
-        <p>Special Rules:</p>
+        <p>Особые правила:</p>
         <ul>
           <li>
-            <strong>Coins Encumbrance</strong>: 100 coins count as 1 regular
-            item or 1 e.u. This option can be disabled in the Wallet settings.
+            <strong>100 монет</strong> считаются за 1 обычный предмет или 1 e.u.
+            Эту опцию можно отключить в настройках Кошелька.
           </li>
         </ul>
       </section>

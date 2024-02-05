@@ -14,7 +14,7 @@ msgstr ""
 "Plural-Forms: \n"
 
 msgid "Lamentations of the Flame Princess helpers"
-msgstr ""
+msgstr "Lamentations of the Flame Princess helpers"
 
 msgid "Writing ink: Stored in a small ceramic jar or tin and sufficient for 50 pages of normal writing. Required for mapping."
 msgstr "Psací inkoust: Uchováván v malé keramické nádobě nebo plechovce a postačující pro 50 stran normálního psaní. Vyžadováno pro mapování."
@@ -202,7 +202,7 @@ msgid "Barrel"
 msgstr "Sud"
 
 msgid "Not enough funds in wallet"
-msgstr ""
+msgstr "V peněžence není dostatek prostředků"
 
 msgid "Export or Import Inventory"
 msgstr "Exportovat nebo Importovat Inventář"
@@ -257,7 +257,7 @@ msgid "Weapon, Minor"
 msgstr "Zbraň, menší"
 
 msgid "Encumbrance calculator, inventory manager for the LotFP TTRPG system"
-msgstr ""
+msgstr "Kalkulačka zátěže, správce inventáře pro systém TTRPG LotFP"
 
 msgid "Slings fired with stones instead of bullets have half the listed range."
 msgstr "Pračky střílející kameny místo střel mají poloviční uvedený dosah."
@@ -297,7 +297,7 @@ msgid "Reset all equipment?"
 msgstr "Resetovat veškeré vybavení?"
 
 msgid "Active"
-msgstr ""
+msgstr "Aktivní"
 
 msgid "Second rank"
 msgstr "Druhá řada"
@@ -613,7 +613,7 @@ msgid "Weight"
 msgstr "Váha"
 
 msgid "About LotFP tools project"
-msgstr ""
+msgstr "O projektu nástrojů LotFP"
 
 #. js-lingui-explicit-id
 msgid "Weight"
@@ -623,7 +623,7 @@ msgid "Tobacco"
 msgstr "Tabák"
 
 msgid "Encumbrance quick reference"
-msgstr ""
+msgstr "Rychlá reference zátěže"
 
 msgid "Rations, Standard/Day"
 msgstr "Porce, standard/den"
@@ -656,7 +656,7 @@ msgid "Inventory"
 msgstr "Inventář"
 
 msgid "* Exchange and sort coins, e.g., turn <0>{0} cp</0> into <1>{1} gp 25 sp</1>."
-msgstr ""
+msgstr "* Výměna a třídění mincí, např. přeměnit <0>{0} cp</0> na <1>{1} gp 25 sp</1>."
 
 msgid "Book, Blank"
 msgstr "Kniha, prázdná"
@@ -757,7 +757,7 @@ msgid "Mancatcher"
 msgstr "Chytač mužů"
 
 msgid "Removed"
-msgstr ""
+msgstr "Odstraněno"
 
 msgid "Map, Kingdom"
 msgstr "Mapa, království"
@@ -799,7 +799,7 @@ msgid "Coins weigh"
 msgstr "Zahrnout váhu"
 
 msgid "Added"
-msgstr ""
+msgstr "Přidáno"
 
 msgid "Shield"
 msgstr "Štít"
@@ -808,7 +808,7 @@ msgid "Copper pieces"
 msgstr "Měděné kousky"
 
 msgid "Disclaimer"
-msgstr ""
+msgstr "Vyloučení odpovědnosti"
 
 msgid "Light crossbows can only be fired every once in 2 rounds and ignore 2 AC points"
 msgstr "Lehké kuše lze vystřelit pouze jednou za 2 kola a ignorují 2 body AC"
@@ -865,7 +865,7 @@ msgid "Add"
 msgstr "Přidat"
 
 msgid "Exchange coins *"
-msgstr ""
+msgstr "Vyměnit mince *"
 
 msgid "Two-handed"
 msgstr "Obouruční"
@@ -880,7 +880,7 @@ msgid "Garrote"
 msgstr "Škrtidlo"
 
 msgid "Quick Reference on Encumbrance and Movement from the LotFP Core Rules"
-msgstr ""
+msgstr "Rychlá reference na zátěž a pohyb z hlavních pravidel LotFP"
 
 msgid "Movement"
 msgstr "Pohyb"
@@ -955,7 +955,7 @@ msgid "Maul"
 msgstr "Palice"
 
 msgid "About"
-msgstr ""
+msgstr "O aplikaci"
 
 msgid "Specialist tools are required for Specialists to utilize their Search skill for finding traps or their Tinker skill for opening locks and conducting similar tasks."
 msgstr "Specialisté potřebují specializované nástroje k využití své dovednosti Hledání pro hledání pastí nebo své dovednosti Tesař pro otevírání zámků a provádění podobných úkolů."

@@ -570,7 +570,7 @@ msgstr "Блок и полиспаст"
 
 #. js-lingui-explicit-id
 msgid "Severely"
-msgstr "Серьёзно нагружен"
+msgstr "Сильно нагружен"
 
 msgid "Lard"
 msgstr "Сало"
@@ -614,7 +614,7 @@ msgid "Tobacco"
 msgstr "Табак"
 
 msgid "Encumbrance quick reference"
-msgstr "Гайд по нагрузке LotFP"
+msgstr "Краткая справка по нагрузке LotFP"
 
 msgid "Rations, Standard/Day"
 msgstr "Пайки, стандартные/День"
@@ -871,7 +871,7 @@ msgid "Garrote"
 msgstr "Гаррота"
 
 msgid "Quick Reference on Encumbrance and Movement from the LotFP Core Rules"
-msgstr "Гайд по нагрузке и передвижению LotFP"
+msgstr "Краткая справка по нагрузке и передвижению LotFP"
 
 msgid "Movement"
 msgstr "Передвижение"
