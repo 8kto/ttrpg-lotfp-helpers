@@ -9,14 +9,14 @@ const About = () => {
         </header>
         <p>
           This is an online inventory and equipment tool for the LotFP TTRPG
-          system. Currently, it does not include mounts, animals, or firearms. I
-          plan to revisit this after a [short] break.
+          system. It allows tracking of encumbrance and movement speed.
         </p>
         <p>
-          The main task this tool aims to solve is to allow playing from a phone
-          or desktop, quickly create inventory, and easily calculate encumbrance
-          and movement rate (speed). The inventory can be shared, it is saved
-          between page refreshes, and there is an export and import feature.
+          I created the Princess Helper to provide a convenient way to play from
+          a phone or computer, quickly create inventory, and calculate
+          encumbrance and movement speed. The inventory can be shared, it is
+          saved between page refreshes, and there is an export and import
+          feature.
         </p>
         <details className='mb-4'>
           <summary>Features list</summary>
@@ -61,7 +61,8 @@ const About = () => {
           >
             project page
           </a>
-          .
+          . Currently, it does not include mounts, animals, or firearms. I plan
+          to revisit this after a [short] break.
         </p>
       </section>
 

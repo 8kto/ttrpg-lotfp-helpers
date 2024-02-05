@@ -8,69 +8,71 @@ const About = () => {
           <h2>О проекте</h2>
         </header>
         <p>
-          This is an online inventory and equipment tool for the LotFP TTRPG
-          system. Currently, it does not include mounts, animals, or firearms. I
-          plan to revisit this after a [short] break.
+          Учёт инвентаря и снаряжения, нагрузки и скорости в НРИ-системе LotFP.
         </p>
         <p>
-          The main task this tool aims to solve is to allow playing from a phone
-          or desktop, quickly create inventory, and easily calculate encumbrance
-          and movement rate (speed). The inventory can be shared, it is saved
-          between page refreshes, and there is an export and import feature.
+          Я написал Помощник, чтобы был удобный способ играть с телефона или
+          компьютера, быстро создавать инвентарь и рассчитывать нагрузку и
+          скорость передвижения. Инвентарь можно расшарить, он сохраняется между
+          обновлениями страницы, есть функция экспорта и импорта.
         </p>
         <details className='mb-4'>
-          <summary>Features list</summary>
+          <summary>Список функций</summary>
           <ul>
             <li>
-              Lists of equipment including armor, weapons, miscellaneous items,
-              and some tips about these items.
+              Списки снаряжения, включая броню, оружие, различные предметы, а
+              также некоторые детали этих предметов.
             </li>
             <li>
-              Calculation
+              Подсчёт
               <ul>
-                <li>Encumbrance</li>
-                <li>Movement</li>
-                <li>Terrain and weather adjustments</li>
+                <li>Нагрузка</li>
+                <li>Передвижение</li>
+                <li>Корректировки для местности и погоды</li>
               </ul>
             </li>
-            <li>Custom equipment entries</li>
+            <li>Кастомные предметы для инвентаря</li>
             <li>
-              Inventory is saved in locale storage and survives the page reload
+              Инвентарь сохраняется в локальном хранилище браузера и сохраняется
+              при перезагрузке страницы
               <ul>
-                <li>State can be exported and imported</li>
+                <li>Экспорт и импорт</li>
               </ul>
             </li>
-            <li>Languages support</li>
-            <li>Responsive layout, mobile devices support</li>
+            <li>Поддержка языков</li>
+            <li>Адаптивный дизайн, поддержка мобильных устройств</li>
             <li>
-              Equipment sets
+              Наборы снаряжения
               <ul>
-                <li>By class</li>
-                <li>Common</li>
-                <li>Random</li>
+                <li>По классу</li>
+                <li>Общие</li>
+                <li>Случайные</li>
               </ul>
             </li>
           </ul>
         </details>
         <p>
-          The full list of features is available on the{' '}
+          Полный список функций доступен на{' '}
           <a
             target='_blank'
             rel='noopener noreferrer'
             href='https://github.com/8kto/ttrpg-lotfp-helpers?tab=readme-ov-file#features-list'
           >
-            project page
+            странице проекта
           </a>
-          .
+          . Сейчас нет поддержки вьючных животных и езды верхом, а также
+          огнестрельного оружия. Я планирую вернуться к этому после некоторого
+          перерыва.
         </p>
       </section>
 
       <section>
         <header>
-          <h2>Contacts</h2>
+          <h2>Контакты</h2>
         </header>
         <p>
-          I&apos;d love to hear that you&apos;re using the app in your games.
+          Дайте знать, если вы используете приложение в своих играх, я буду рад
+          услышать обратную связь.
         </p>
         <ul>
           <li>
@@ -83,7 +85,7 @@ const About = () => {
             </a>
           </li>
           <li>
-            My website:{' '}
+            Мой сайт:{' '}
             <a
               href='https://ivlev.blog/'
               target='_blank'
@@ -93,35 +95,36 @@ const About = () => {
             </a>
           </li>
           <li>
-            <a href='https://t.me/oktottrpg'>What Does Oktopus Say</a> in
+            <a href='https://t.me/oktottrpg'>What does Oktopus say</a> в
             Telegram.
           </li>
         </ul>
         <p>
-          For feedback, bug reports, feature requests, typos in translations
-          (some are machine-translated), or other comments, visit{' '}
+          Для обратной связи, сообщений об ошибках, запросов, опечаток в
+          переводах (некоторый перевод — машинный, я мог что-то пропустить) или
+          других комментариев:{' '}
           <a
             href='https://github.com/8kto/ttrpg-lotfp-helpers'
             target='_blank'
             rel='noopener noreferrer'
           >
-            Princess Helpers on GitHub
+            Princess Helpers на GitHub
           </a>
           . <br />
-          You may <strong>suggest translation</strong> at the same page.
+          Вы можете <strong>предложить перевод</strong> на той же странице.
         </p>
         <p>
-          If you enjoy the tool, feel free to share it, star it on GitHub, hack
-          it,{' '}
+          Если вам нравится проект, поделитесь им, поставьте звезду на GitHub,
+          хакните его,{' '}
           <a
             target='_blank'
             rel='noopener noreferrer'
             href='https://www.buymeacoffee.com/8kto'
           >
-            buy me a coffee
+            купите мне кофе
           </a>{' '}
-          (I will spend that money on role-playing games; your name would be
-          added to the contributors list).
+          (я потрачу эти деньги на настольные ролевые игры; ваше имя будет
+          добавлено в почётный список где-нибудь здесь).
         </p>
       </section>
     </>
