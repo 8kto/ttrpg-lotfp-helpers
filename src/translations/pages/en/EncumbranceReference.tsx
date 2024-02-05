@@ -181,12 +181,12 @@ const EncumbranceReference = () => {
         <ul>
           <li>
             <strong>Encumbrance Points</strong>: These are used to determine the
-            encumbrance level of a character. Taken from the core book.
+            encumbrance level of a character. Taken from the LotFP core book.
           </li>
           <li>
             <strong>Encumbrance Units</strong>: Smaller divisions of encumbrance
             points, with 1 encumbrance unit being 1/5 of a point. All elements
-            in the system have a weight expressed in e.u.
+            in the application have a weight expressed in e.u.
           </li>
         </ul>
 

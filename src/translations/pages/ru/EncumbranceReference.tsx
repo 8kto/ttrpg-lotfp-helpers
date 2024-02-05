@@ -179,26 +179,26 @@ const EncumbranceReference = () => {
 
       <section>
         <header>
-          <h2>In app</h2>
+          <h2>В приложении</h2>
         </header>
-        <p>Encumbrance Units and Points:</p>
+        <p>Единицы и очки нагрузки:</p>
         <ul>
           <li>
-            <strong>Encumbrance Points</strong>: These are used to determine the
-            encumbrance level of a character. Taken from the core book.
+            <strong>Очки нагрузки (Encumbrance Points)</strong>: Используются
+            для определения уровня нагрузки персонажа. Взяты из рулбука LotFP.
           </li>
           <li>
-            <strong>Encumbrance Units</strong>: Smaller divisions of encumbrance
-            points, with 1 encumbrance unit being 1/5 of a point. All elements
-            in the system have a weight expressed in e.u.
+            <strong>Единицы нагрузки (Encumbrance Units)</strong>: Меньшая
+            единица для измерения нагрузки, равна 1/5 Очка Нагрузки. Все
+            предметы в приложении имеют вес, выраженный в e.u.
           </li>
         </ul>
 
-        <p>Special Rules:</p>
+        <p>Особые правила:</p>
         <ul>
           <li>
-            <strong>Coins Encumbrance</strong>: 100 coins count as 1 regular
-            item or 1 e.u. This option can be disabled in the Wallet settings.
+            <strong>100 монет</strong> считаются за 1 обычный предмет или 1 e.u.
+            Эту опцию можно отключить в настройках Кошелька.
           </li>
         </ul>
       </section>
