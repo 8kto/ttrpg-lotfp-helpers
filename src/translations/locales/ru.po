@@ -570,7 +570,7 @@ msgstr "Блок и полиспаст"
 
 #. js-lingui-explicit-id
 msgid "Severely"
-msgstr "Серьёзно нагружен"
+msgstr "Сильно нагружен"
 
 msgid "Lard"
 msgstr "Сало"
