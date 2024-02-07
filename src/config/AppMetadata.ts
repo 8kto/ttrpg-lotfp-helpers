@@ -3,7 +3,7 @@
 import { t } from '@lingui/macro'
 import type { Metadata } from 'next'
 
-export const APP_URL = 'https://lotfp.vercel.app'
+export const APP_URL = 'https://princess-helpers.vercel.app'
 
 export const AppMetadata: Metadata = {
   get description() {

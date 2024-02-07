@@ -25,9 +25,9 @@ const InventoryPageTabs = ({
 
   if (!isMounted) {
     return (
-      <>
+      <div className='min-h-screen'>
         <Spinner />
-      </>
+      </div>
     )
   }
 

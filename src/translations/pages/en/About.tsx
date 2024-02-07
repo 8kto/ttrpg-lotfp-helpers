@@ -8,8 +8,9 @@ const About = () => {
           <h2>About</h2>
         </header>
         <p>
-          This is an online inventory and equipment tool for the LotFP TTRPG
-          system. It allows tracking of encumbrance and movement speed.
+          This is an online inventory and equipment tool compatible with the
+          LotFP TTRPG system. It allows tracking of encumbrance and movement
+          speed.
         </p>
         <p>
           I created the Princess Helper to provide a convenient way to play from

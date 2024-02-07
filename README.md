@@ -4,12 +4,20 @@
 
 <!-- For PROGRESS update, run yarn update-readme-stats -->
 
-Lamentations of the Flame Princess Helpers: an online inventory and equipment tool for the LotFP TTRPG
-system.
+An online inventory and equipment tool compatible with the LotFP TTRPG system.
 
 The main task this tool aims to solve is to allow playing from a
 phone or desktop, quickly create inventory, and easily calculate
 encumbrance and movement rate (speed).
+
+## Disclaimer
+
+This product is an independent production by [Igor Okto / undefined](https://github.com/8kto)
+and is not affiliated with Lamentations of the Flame Princess.
+Lamentations of the Flame Princess is a registered trademark owned
+by James Edward Raggi IV.
+
+The content utilized in this project has been sourced from publicly available materials, including but not limited to the [LotFP Rules & Magic Free Version](https://preview.drivethrurpg.com/en/product/115059/LotFP-Rules--Magic-Free-Version) and resources from [Basic Fantasy RPG](https://www.basicfantasy.org/downloads.html).
 
 ## Demo
 
@@ -72,9 +80,3 @@ yarn dev    # Start the development server
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## Disclaimer
-
-This project is created just for fun and is not officially affiliated with or endorsed by the publishers of ["Lamentations of the Flame Princess" (LotFP)](https://www.lotfp.com/RPG/) or any other related entities.
-
-The content utilized in this project has been sourced from publicly available materials, including but not limited to the [LotFP Rules & Magic Free Version](https://preview.drivethrurpg.com/en/product/115059/LotFP-Rules--Magic-Free-Version) and resources from [Basic Fantasy RPG](https://www.basicfantasy.org/downloads.html).

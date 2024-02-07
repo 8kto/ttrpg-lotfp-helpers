@@ -28,16 +28,25 @@ export default function DisclaimerPage() {
             <h2>Disclaimer</h2>
           </header>
           <p>
-            This project is created just for fun and is not officially
-            affiliated with or endorsed by the publishers of{' '}
+            This product is an independent production by{' '}
             <a
               target='_blank'
               rel='noopener noreferrer'
-              href='https://www.lotfp.com/RPG/'
+              href='https://github.com/8kto'
             >
-              &quot;Lamentations of the Flame Princess&quot; (LotFP)
+              Igor Okto / undefined
             </a>{' '}
-            or any other related entities.
+            and is not affiliated with Lamentations of the Flame Princess.
+            Lamentations of the Flame Princess is a registered trademark owned
+            by James Edward Raggi IV.
+            <br />
+            <a
+              target='_blank'
+              rel='noopener noreferrer'
+              href='https://www.lotfp.com/RPG/3rd-party-support'
+            >
+              LotFP Compatibility License Terms 1.4
+            </a>
           </p>
 
           <p>
