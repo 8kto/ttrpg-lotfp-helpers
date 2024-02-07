@@ -560,7 +560,7 @@ msgid "Sling bullets, rocks (10)"
 msgstr "Снаряды для пращи, камни (10)"
 
 msgid "page.title.suffix"
-msgstr " — Princess Helpers, LotFP tools"
+msgstr " — Princess Helpers, генератор инвентаря, расчёт нагрузки"
 
 msgid "Blowgun"
 msgstr "Духовая трубка"
