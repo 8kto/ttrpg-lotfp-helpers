@@ -13,6 +13,15 @@ const nextConfig = {
     defaultLocale: linguiConfig.sourceLocale,
   },
   distDir: 'build',
+  async redirects()    {
+    return [
+      {
+        source: '/',
+        destination: '/inventory',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 module.exports = nextConfig
