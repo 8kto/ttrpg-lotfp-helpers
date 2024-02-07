@@ -5,7 +5,11 @@ const IndexPage = () => {
   const router = useRouter()
 
   useEffect(() => {
-    router.push('/inventory')
+    router.prefetch('/inventory')
+
+    requestAnimationFrame(() => {
+      router.push('/inventory')
+    })
   }, [router])
 
   return null // Render nothing or a loader while redirecting
