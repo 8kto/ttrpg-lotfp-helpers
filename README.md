@@ -21,7 +21,7 @@ The content utilized in this project has been sourced from publicly available ma
 
 ## Demo
 
-https://lotfp.vercel.app
+https://princess-helpers.vercel.app
 
 ## Features list
 
