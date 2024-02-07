@@ -569,7 +569,7 @@ msgid "Sling bullets, rocks (10)"
 msgstr "Prakové střely, kameny (10)"
 
 msgid "page.title.suffix"
-msgstr " — Princess Helpers, LotFP tools"
+msgstr " — Princess Helpers"
 
 msgid "Blowgun"
 msgstr "Foukačka"
