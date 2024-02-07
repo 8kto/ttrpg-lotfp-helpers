@@ -18,7 +18,7 @@ const nextConfig = {
       {
         source: '/',
         destination: '/inventory',
-        permanent: true,
+        permanent: false,
       },
     ]
   },
