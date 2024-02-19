@@ -1,13 +1,15 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const linguiConfig = require('./lingui.config')
+/* eslint-disable @typescript-eslint/no-var-requires */
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const withPWA = require("next-pwa")({
-  dest: "public",
+const runtimeCaching = require("next-pwa/cache")
+const withPwa = require("next-pwa")({
+  dest: "build",
   register: true,
   skipWaiting: true,
-  disableDevLogs: true,
+  disableDevLogs: process.env.NODE_ENV === 'production',
+  runtimeCaching,
 })
+
+const linguiConfig = require('./lingui.config')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -32,4 +34,4 @@ const nextConfig = {
   },
 }
 
-module.exports = withPWA(nextConfig)
+module.exports = withPwa(nextConfig)
