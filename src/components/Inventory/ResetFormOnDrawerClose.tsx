@@ -16,7 +16,7 @@ export const ResetFormOnDrawerClose = ({
   const formikContext = useFormikContext()
 
   useEffect(() => {
-    return subscribe(Action.DrawerClose, () => {
+    return subscribe(Action.CloseDrawer, () => {
       formikContext.resetForm()
       onDrawerClose()
     })

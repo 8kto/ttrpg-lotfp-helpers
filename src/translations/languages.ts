@@ -2,6 +2,7 @@ import type { MessageDescriptor } from '@lingui/core'
 import { msg } from '@lingui/macro'
 
 export type LOCALE = 'en-us' | 'ru-ru' | 'cz-cz' | 'pseudo'
+export type LOCALE_SHORT = 'en' | 'ru' | 'cz'
 
 interface Languages {
   locale: LOCALE
@@ -35,5 +36,7 @@ if (process.env.NODE_ENV !== 'production') {
     rtl: false,
   })
 }
+
+export const DEFAULT_LOCALE = 'en'
 
 export default languages

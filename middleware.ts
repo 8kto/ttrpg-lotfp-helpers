@@ -1,6 +1,8 @@
 import type { NextRequest } from 'next/server'
 import { NextResponse } from 'next/server'
 
+import { DEFAULT_LOCALE } from '@/translations/languages'
+
 const PUBLIC_FILE = /\.(.*)$/
 
 export async function middleware(req: NextRequest) {
@@ -13,7 +15,7 @@ export async function middleware(req: NextRequest) {
   }
 
   if (req.nextUrl.locale === 'default') {
-    const locale = req.cookies.get('NEXT_LOCALE')?.value || 'en'
+    const locale = req.cookies.get('NEXT_LOCALE')?.value || DEFAULT_LOCALE
 
     return NextResponse.redirect(
       new URL(

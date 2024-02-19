@@ -1,60 +1,54 @@
-import * as compressUtils from '@/shared/helpers/compressDataForUrl'
-
-jest.mock('@/shared/helpers/compressDataForUrl')
+import {
+  compressDataForUrl,
+  decompressDataFromUrl,
+} from '@/shared/helpers/compressDataForUrl'
 
 describe('compressed data utils', () => {
+  const loggerError = jest.spyOn(console, 'error').mockImplementation(() => {
+    /*do not write in console*/
+  })
+
   afterEach(() => {
     jest.clearAllMocks()
   })
 
   it('should return empty string for invalid data during compression', () => {
-    ;(compressUtils.compressDataForUrl as jest.Mock).mockImplementation(
-      () => '',
-    )
-    const invalidData = () => {}
-    const compressed = compressUtils.compressDataForUrl(invalidData)
+    const objectWithCircularReference = { myself: {} }
+    objectWithCircularReference.myself = objectWithCircularReference
+
+    const compressed = compressDataForUrl(objectWithCircularReference)
     expect(compressed).toBe('')
-    expect(compressUtils.compressDataForUrl).toHaveBeenCalledWith(invalidData)
+    expect(loggerError).toHaveBeenCalledWith(
+      expect.stringMatching('Error during data compression for URL:'),
+      expect.any(Error),
+    )
   })
 
   it('should return null for invalid input during decompression', () => {
-    ;(compressUtils.decompressDataFromUrl as jest.Mock).mockImplementation(
-      () => null,
-    )
-    const invalidInput = 'invalid compressed data'
-    const decompressed = compressUtils.decompressDataFromUrl(invalidInput)
+    const invalidInput = '{key: value'
+
+    const decompressed = decompressDataFromUrl(invalidInput)
     expect(decompressed).toBeNull()
-    expect(compressUtils.decompressDataFromUrl).toHaveBeenCalledWith(
-      invalidInput,
+    expect(loggerError).toHaveBeenCalledWith(
+      expect.stringMatching('Error during data compression for URL:'),
+      expect.any(Error),
     )
   })
 
   describe('integration', () => {
-    beforeAll(() => {
-      jest.unmock('@/shared/helpers/compressDataForUrl')
-      jest.resetModules()
-    })
-
     it('should compress and decompress data correctly', () => {
-      const actualCompressUtils = jest.requireActual(
-        '@/shared/helpers/compressDataForUrl',
-      )
-
       const data = { key: 'value' }
-      const compressed = actualCompressUtils.compressDataForUrl(data)
+      const compressed = compressDataForUrl(data)
       expect(compressed).not.toBe('')
 
-      const decompressed = actualCompressUtils.decompressDataFromUrl(compressed)
+      const decompressed = decompressDataFromUrl(compressed)
       expect(decompressed).toEqual(data)
     })
 
     it('should compress data', () => {
-      const actualCompressUtils = jest.requireActual(
-        '@/shared/helpers/compressDataForUrl',
-      )
-
       const data = { another: false, key: 'value', prop: 2 }
-      expect(actualCompressUtils.compressDataForUrl(data)).toEqual(
+
+      expect(compressDataForUrl(data)).toEqual(
         'N4Ighgdg9gLgFgUwE4gFwDMwBsDOCA0IA1ggJ5ogBu2ArgiIQA5JSNoBMAvkA',
       )
     })

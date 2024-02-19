@@ -1,0 +1,67 @@
+name: Automated Release with Archive
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag Name for Release (leave empty for last tag)'
+        required: false
+        default: ''
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20'
+
+      - name: Determine tag
+        id: last_tag
+        run: |
+          echo "LAST_TAG=$(git describe --tags `git rev-list --tags --max-count=1`)" >> $GITHUB_ENV
+
+      - name: Create archive
+        run: |
+          if [ -z "${{ github.event.inputs.tag }}" ]; then
+            TAG_NAME=${{ env.LAST_TAG }}
+          else
+            TAG_NAME=${{ github.event.inputs.tag }}
+          fi
+          zip -r princess-helpers-${TAG_NAME}.zip .
+
+      - name: Generate commit list
+        id: generate_commits
+        run: |
+          if [ -z "${{ github.event.inputs.tag }}" ]; then
+            TAG_NAME=${{ env.LAST_TAG }}
+          else
+            TAG_NAME=${{ github.event.inputs.tag }}
+          fi
+          PREVIOUS_TAG=$(git describe --tags --abbrev=0 ${TAG_NAME}^ 2>/dev/null || echo "")
+          if [ -z "$PREVIOUS_TAG" ]; then
+            # Fallback in case there's no previous tag
+            COMMIT_LIST=$(git log --pretty=format:"- %H %s")
+          else
+            COMMIT_LIST=$(git log $PREVIOUS_TAG..$TAG_NAME --pretty=format:"- %H %s")
+          fi
+          echo "COMMIT_LIST<<EOF" >> $GITHUB_ENV
+          echo "$COMMIT_LIST" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ env.LAST_TAG }}
+          name: ${{ env.LAST_TAG }}
+          body: |
+            Changes:
+            ${{ env.COMMIT_LIST }}
+          files: princess-helpers-${{ env.LAST_TAG }}.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -10,13 +10,15 @@ import {
   renderDetailsBody,
   renderWeightGridCol,
 } from '@/components/EquipmentList/gridHelpers'
-import { handleSortByDamage } from '@/components/EquipmentList/helpers'
+import {
+  handleAddEquipmentItemClick,
+  sortWeapons,
+} from '@/components/EquipmentList/helpers'
 import RangeFragment from '@/components/RangeFragment'
 import Equipment from '@/config/Equipment'
 import type { MissileWeaponItem } from '@/domain/weapon'
-import { getInventoryItem } from '@/shared/helpers/getInventoryItem'
 import useTailwindBreakpoint from '@/shared/hooks/useTailwindBreakpoint'
-import { addMissileWeapon, useInventoryState } from '@/state/InventoryState'
+import { useInventoryState } from '@/state/InventoryState'
 
 const columns: ReadonlyArray<DataGridColumn<MissileWeaponItem>> = [
   {
@@ -39,7 +41,7 @@ const columns: ReadonlyArray<DataGridColumn<MissileWeaponItem>> = [
     },
   },
   {
-    className: 'w-1/6',
+    className: 'w-1/6 hidden sm:table-cell',
     key: 'range',
     render: (item: MissileWeaponItem) => (
       <RangeFragment range={item.range} compact />
@@ -95,26 +97,18 @@ const MissileWeaponsGrid = () => {
     return isCostRural.get() ? data.filter((i) => i.ruralCostCp !== null) : data
   }, [isCostRural])
 
-  const handleAddClick = (item: MissileWeaponItem) => {
-    const clone = getInventoryItem(
-      item,
-      (isCostRural.get() ? item.ruralCostCp : item.cityCostCp)!,
-    )
-    addMissileWeapon(clone)
-  }
-
   const filterName = (item: MissileWeaponItem, filterBy: string) => {
     return item.name.toLocaleLowerCase().includes(filterBy.toLocaleLowerCase())
   }
 
   const isSmallViewport = 'xs' === breakpoint
   const colSpan = isSmallViewport
-    ? columnsFilteredByCost.length - 1
+    ? columnsFilteredByCost.length - 2
     : columnsFilteredByCost.length
 
   return (
     <>
-      <div className='py-6 text-gray-800'>
+      <div className='pt-6 pb-4 text-gray-800'>
         <p className={'mb-2'}>
           <Trans id='weapons.missile.firing'>
             Each missile weapon can be fired once per round with the exception
@@ -130,10 +124,10 @@ const MissileWeaponsGrid = () => {
       <DataGrid<MissileWeaponItem>
         data={dataFilteredByCost}
         columns={columnsFilteredByCost}
-        onAddClick={handleAddClick}
+        onAddClick={handleAddEquipmentItemClick}
         filterFn={filterName}
         filterPlaceholder={t`Filter by name`}
-        handleSort={handleSortByDamage as DataGridSortFunction}
+        handleSort={sortWeapons as DataGridSortFunction}
         spanDetails={colSpan}
       />
     </>

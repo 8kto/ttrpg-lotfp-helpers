@@ -1,8 +1,17 @@
+/* eslint-disable sort-keys-fix/sort-keys-fix */
 import { trivialSort } from '@/components/DataGrid/helpers'
 import type { SortConfig } from '@/components/DataGrid/types'
-import { handleSortByDamage } from '@/components/EquipmentList/helpers'
+import {
+  sortByDamage,
+  sortByRange,
+  sortWeapons,
+} from '@/components/EquipmentList/helpers'
 import { Dice } from '@/domain'
-import type { MeleeWeaponItem, WeaponItem } from '@/domain/weapon'
+import type {
+  MeleeWeaponItem,
+  MissileWeaponItem,
+  WeaponItem,
+} from '@/domain/weapon'
 
 jest.mock('@/components/DataGrid/helpers', () => ({
   trivialSort: jest.fn(() => {
@@ -17,13 +26,13 @@ describe('Equipment list helpers', () => {
     jest.clearAllMocks()
   })
 
-  describe('handleSortByDamage', () => {
+  describe('sortByDamage', () => {
     it('should sort items in ascending order based on dice value', () => {
       const sortConfig: SortConfig<WeaponItem> = {
         direction: 'asc',
         key: 'damage',
       }
-      const sortFunction = handleSortByDamage(sortConfig)
+      const sortFunction = sortByDamage(sortConfig)
       expect(
         [
           { damage: { dice: Dice.d20 } } as MeleeWeaponItem,
@@ -46,7 +55,7 @@ describe('Equipment list helpers', () => {
         direction: 'desc',
         key: 'damage',
       }
-      const sortFunction = handleSortByDamage(sortConfig)
+      const sortFunction = sortByDamage(sortConfig)
       expect(
         [
           { damage: { dice: Dice.d20 } } as MeleeWeaponItem,
@@ -64,26 +73,12 @@ describe('Equipment list helpers', () => {
       ])
     })
 
-    it('should use trivialSort for non-special case sorting', () => {
-      const sortConfig = {
-        direction: 'asc',
-        key: 'name',
-      } as unknown as SortConfig<WeaponItem>
-
-      const sortFunction = handleSortByDamage(sortConfig)
-      sortFunction(
-        { damage: { dice: Dice.d20 } } as MeleeWeaponItem,
-        { damage: { dice: Dice.d10 } } as MeleeWeaponItem,
-      )
-      expect(trivialSort).toHaveBeenCalled()
-    })
-
     it('should sort by x values when dice values are equal', () => {
       const sortConfig: SortConfig<WeaponItem> = {
         direction: 'asc',
         key: 'damage',
       }
-      const sortFunction = handleSortByDamage(sortConfig)
+      const sortFunction = sortByDamage(sortConfig)
       expect(
         [
           { damage: { dice: Dice.d20, x: 1 } } as MeleeWeaponItem,
@@ -106,7 +101,7 @@ describe('Equipment list helpers', () => {
         direction: 'desc',
         key: 'damage',
       }
-      const sortFunction = handleSortByDamage(sortConfig)
+      const sortFunction = sortByDamage(sortConfig)
       expect(
         [
           { damage: { dice: Dice.d20, x: 1 } } as MeleeWeaponItem,
@@ -129,7 +124,7 @@ describe('Equipment list helpers', () => {
         direction: 'asc',
         key: 'damage',
       }
-      const sortFunction = handleSortByDamage(sortConfig)
+      const sortFunction = sortByDamage(sortConfig)
       expect(
         [
           { damage: { dice: Dice.d10, x: 3 } } as MeleeWeaponItem,
@@ -148,7 +143,7 @@ describe('Equipment list helpers', () => {
         direction: 'asc',
         key: 'damage',
       }
-      const sortFunction = handleSortByDamage(sortConfig)
+      const sortFunction = sortByDamage(sortConfig)
       expect(
         sortFunction(
           { damage: { dice: Dice.d10, x: 2 } } as MeleeWeaponItem,
@@ -162,7 +157,7 @@ describe('Equipment list helpers', () => {
         direction: 'asc',
         key: 'damage',
       }
-      const sortFunction = handleSortByDamage(sortConfig)
+      const sortFunction = sortByDamage(sortConfig)
       expect(
         [
           { damage: { dice: Dice.d20, x: 1 } } as MeleeWeaponItem,
@@ -174,6 +169,73 @@ describe('Equipment list helpers', () => {
         { damage: { dice: Dice.d10, x: 3 } } as MeleeWeaponItem,
         { damage: { dice: Dice.d20, x: 1 } } as MeleeWeaponItem,
       ])
+    })
+  })
+
+  describe('sortByRange', () => {
+    it('should sort items in ascending order', () => {
+      const sortConfig: SortConfig<MissileWeaponItem> = {
+        direction: 'asc',
+        key: 'range',
+      }
+      const sortFunction = sortByRange(sortConfig)
+      expect(
+        [
+          { range: { short: 20, medium: 35, long: 50 } } as MissileWeaponItem,
+          {
+            range: { short: 200, medium: 300, long: 500 },
+          } as MissileWeaponItem,
+          { range: { short: 10, medium: 20, long: 30 } } as MissileWeaponItem,
+        ].sort(sortFunction),
+      ).toEqual([
+        { range: { short: 10, medium: 20, long: 30 } } as MissileWeaponItem,
+        { range: { short: 20, medium: 35, long: 50 } } as MissileWeaponItem,
+        { range: { short: 200, medium: 300, long: 500 } } as MissileWeaponItem,
+      ])
+    })
+
+    it('should sort items in desc order', () => {
+      const sortConfig: SortConfig<MissileWeaponItem> = {
+        direction: 'desc',
+        key: 'range',
+      }
+      const sortFunction = sortByRange(sortConfig)
+      expect(
+        [
+          { range: { short: 20, medium: 35, long: 50 } } as MissileWeaponItem,
+          {
+            range: { short: 200, medium: 300, long: 500 },
+          } as MissileWeaponItem,
+          { range: { short: 10, medium: 20, long: 30 } } as MissileWeaponItem,
+        ].sort(sortFunction),
+      ).toEqual([
+        { range: { short: 200, medium: 300, long: 500 } } as MissileWeaponItem,
+        { range: { short: 20, medium: 35, long: 50 } } as MissileWeaponItem,
+        { range: { short: 10, medium: 20, long: 30 } } as MissileWeaponItem,
+      ])
+    })
+  })
+
+  describe('sortWeapons', () => {
+    it('should use trivialSort for non-special case sorting', () => {
+      const sortConfig = {
+        direction: 'asc',
+        key: 'name',
+      } as unknown as SortConfig<WeaponItem>
+
+      const sortFunction = sortWeapons(sortConfig)
+      sortFunction(
+        // @ts-ignore
+        {
+          categoryKey: 'meleeWeapons',
+          damage: { dice: Dice.d20 },
+        } as WeaponItem,
+        {
+          categoryKey: 'meleeWeapons',
+          damage: { dice: Dice.d10 },
+        } as WeaponItem,
+      )
+      expect(trivialSort).toHaveBeenCalled()
     })
   })
 })

@@ -1,14 +1,20 @@
 import { useRouter } from 'next/router'
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
+
+import Spinner from '@/components/Spinner'
 
 const IndexPage = () => {
   const router = useRouter()
 
   useEffect(() => {
-    router.push('/inventory')
+    router.prefetch('/inventory')
+
+    requestAnimationFrame(() => {
+      router.push('/inventory')
+    })
   }, [router])
 
-  return null // Render nothing or a loader while redirecting
+  return <Spinner />
 }
 
 export default IndexPage

@@ -13,6 +13,12 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+msgid "Lamentations of the Flame Princess helpers"
+msgstr "Lamentations of the Flame Princess helpers"
+
+msgid "Writing ink: Stored in a small ceramic jar or tin and sufficient for 50 pages of normal writing. Required for mapping."
+msgstr "Psací inkoust: Uchováván v malé keramické nádobě nebo plechovce a postačující pro 50 stran normálního psaní. Vyžadováno pro mapování."
+
 msgid "Coins"
 msgstr "Mince"
 
@@ -73,8 +79,21 @@ msgstr "Tato zbraň je neúčinná proti cílům s neupraveným AC 14 nebo lepš
 msgid "Flask of Lamp Oil"
 msgstr "Láhev lampového oleje"
 
+msgid ""
+"Iron (dry) Rations may consist of dry bread, hard cheese, dried\n"
+"fruit, nuts, beans, jerky, or any other food which will not\n"
+"“go bad” in less than about a month (if not longer). Dry\n"
+"rations are packaged in waxed or oiled cloth to protect them"
+msgstr ""
+"Železné (suché) dávky mohou obsahovat suchý chléb, tvrdý sýr, sušené\n"
+"ovoce, ořechy, fazole, sušené maso nebo jakékoli jiné potraviny, které se\n"
+"nezkazí méně než za měsíc (pokud ne déle). Suché dávky jsou baleny do voskovaného nebo olejovaného plátna pro ochranu."
+
 msgid "Saddlebag"
 msgstr "Sedlová taška"
+
+msgid "Using a crowbar adds a +1 bonus to the Open Doors roll chances."
+msgstr "Použití páčidla přidává +1 bonus k šancím na otevření dveří."
 
 msgid "Holy Symbol, Steel"
 msgstr "Svatý symbol, ocel"
@@ -100,11 +119,17 @@ msgstr "Lopata"
 msgid "Air Bladder"
 msgstr "Vzduchový měch"
 
+msgid "Emits light in a 30' radius. Burns for 1 hour."
+msgstr "Vyzařuje světlo v poloměru 30 stop. Hoří 1 hodinu."
+
 msgid "Holy Symbol, Wood"
 msgstr "Svatý symbol, dřevo"
 
 msgid "Silver pieces"
 msgstr "Stříbrné kusy"
+
+msgid "Spikes for your boots – better success at climbing and keeping balance on ice"
+msgstr "Hřeby pro vaše boty - lepší úspěch při lezení a udržování rovnováhy na ledu."
 
 msgid "Bow, Short"
 msgstr "Luk, krátký"
@@ -136,6 +161,9 @@ msgstr "Palice"
 msgid "Riding Gear"
 msgstr "Jízdní vybavení"
 
+msgid "Emits light in a 30' radius. Burns for 4 hours. Uses flasks of oil as fuel."
+msgstr "Vyzařuje světlo v poloměru 30 stop. Hoří 4 hodiny. Používá jako palivo lahve s olejem."
+
 msgid "Book, Spell (Blank)"
 msgstr "Kniha, kouzlo (prázdná)"
 
@@ -157,8 +185,24 @@ msgstr "Zbraň, velká"
 msgid "These are one-handed weapons, including short swords and hand axes"
 msgstr "To jsou jednoruční zbraně, včetně krátkých mečů a seker"
 
+msgid ""
+"Wineskin/Waterskin is a container for drinking water or\n"
+"wine; though generally water is taken into a dungeon or\n"
+"wilderness environment. The standard waterskin holds\n"
+"one quart of liquid, which is the minimum amount\n"
+"required by a normal character in a single day."
+msgstr ""
+"Vinný měch/Vodní měch je nádoba na pitnou vodu nebo\n"
+"víno, i když obvykle se voda bere do jeskyně nebo\n"
+"do divočiny. Standardní vodní měch pojme\n"
+"jeden quart tekutiny, což je minimální množství\n"
+"požadované běžnou postavou za jeden den."
+
 msgid "Barrel"
 msgstr "Sud"
+
+msgid "Not enough funds in wallet"
+msgstr "V peněžence není dostatek prostředků"
 
 msgid "Export or Import Inventory"
 msgstr "Exportovat nebo Importovat Inventář"
@@ -176,6 +220,12 @@ msgstr "Venkovský"
 msgid "Armor"
 msgstr "Brnění"
 
+msgid ""
+"A Tinderbox is generally purchased with a flint and steel;\n"
+"the flint, a piece of hard rock, is struck vigorously against a C-shaped piece of high-carbon steel. \n"
+"When done correctly, hot sparks will fly from the flint and steel into the tinder, hopefully starting a fire."
+msgstr "Krabička na doutnák se obvykle kupuje s křemenem a ocelí; křemen, kus tvrdého kamene, se energicky udeří o C-tvarovaný kus vysokouhlíkové oceli. Je-li to provedeno správně, z křemene a oceli do doutnáku vyletí horké jiskry a snad zažehnou oheň."
+
 msgid "A rock for throwing, not an ammunition"
 msgstr "Kámen pro vrhání, ne munice"
 
@@ -184,6 +234,9 @@ msgstr "Oblečení, extravagantní"
 
 msgid "Sling bullets (10)"
 msgstr "Prakové střely (10)"
+
+msgid "Magic-Users and Elves start with spellbooks containing their initial spells."
+msgstr "Kouzelníci a Elfové začínají s kouzelnickými knihami obsahujícími jejich počáteční kouzla."
 
 msgid "Drill"
 msgstr "Vrtačka"
@@ -203,6 +256,9 @@ msgstr "To jsou malé jednoruční zbraně včetně dýk a kyjů, které mají p
 msgid "Weapon, Minor"
 msgstr "Zbraň, menší"
 
+msgid "Encumbrance calculator, inventory manager for the LotFP TTRPG system"
+msgstr "Kalkulačka zátěže, správce inventáře pro systém TTRPG LotFP"
+
 msgid "Slings fired with stones instead of bullets have half the listed range."
 msgstr "Pračky střílející kameny místo střel mají poloviční uvedený dosah."
 
@@ -215,6 +271,12 @@ msgstr "Exportovat jako soubor"
 #. js-lingui-explicit-id
 msgid "Cumbersome"
 msgstr "Neohrabaný"
+
+msgid "Mirrors are useful for many reasons; for instance, they can be used for looking around corners or for sending signals outdoors using reflected sunlight."
+msgstr "Zrcadla jsou užitečná z mnoha důvodů; například mohou být použita pro nahlížení za rohy nebo pro posílání signálů venku pomocí odráženého slunečního světla."
+
+msgid "An aromatic herb that repels vampires and some other undead monsters."
+msgstr "Aromatická bylina, která odpuzuje upíry a některé další nemrtvé nestvůry."
 
 msgid "RU"
 msgstr "RU"
@@ -234,6 +296,9 @@ msgstr "Za den"
 msgid "Reset all equipment?"
 msgstr "Resetovat veškeré vybavení?"
 
+msgid "Active"
+msgstr "Aktivní"
+
 msgid "Second rank"
 msgstr "Druhá řada"
 
@@ -242,6 +307,15 @@ msgstr "Stan, osobní"
 
 msgid "Gold"
 msgstr "Zlato"
+
+msgid ""
+"Chalk is useful for “blazing a trail” through a dungeon or\n"
+"ruin, to ensure that the adventurers can find their way\n"
+"back out again"
+msgstr ""
+"Křída je užitečná pro „vytyčení cesty“ skrz jeskyni nebo\n"
+"zříceninu, aby se zajistilo, že dobrodruzi najdou cestu\n"
+"zpět ven."
 
 msgid "Filter by name"
 msgstr "Filtrovat podle názvu"
@@ -320,6 +394,9 @@ msgstr "Resetovat mince"
 msgid "Book, Reading"
 msgstr "Kniha, čtení"
 
+msgid "Aconite, also known as wolvesbane (wolfsbane) is sold dried or fresh in single sprigs. This herb is used to drive off lycanthropes, who cannot stand it."
+msgstr "Omorika, známá také jako vlčí bobek, se prodává sušená nebo čerstvá po jednotlivých větvičkách. Tato bylina se používá k odpuzení lykantropů, kteří ji nemohou vystát."
+
 msgid "Add coins"
 msgstr "Přidat mince"
 
@@ -354,9 +431,6 @@ msgstr "Použití této zbraně vyžaduje překvapivý útok nebo úspěšný z�
 msgid "Chest"
 msgstr "Truhla"
 
-msgid "P*"
-msgstr "P*"
-
 msgid "Pseudo"
 msgstr "Pseudo"
 
@@ -383,6 +457,21 @@ msgstr "Střelné zbraně"
 #. js-lingui-explicit-id
 msgid "Mêlée weapons"
 msgstr "Zbraně na blízko"
+
+msgid ""
+"A hammer or mallet with a head made of\n"
+"treated wood, plant resins, or other materials. The head of\n"
+"this hammer makes very little sound when striking things\n"
+"(such as a stake, nail, or head). This does not keep what\n"
+"is being hit from making noise – a glass window will still\n"
+"make noise when it shatters."
+msgstr ""
+"Kladivo nebo palice s hlavou z\n"
+"opracovaného dřeva, rostlinných pryskyřic nebo jiných materiálů. Hlava\n"
+"tohoto kladiva dělá při úderu na věci\n"
+"(jako je kůl, hřebík nebo hlava) velmi málo zvuku. To nezabraňuje tomu,\n"
+"co je zasaženo, aby dělalo hluk - skleněné okno stále\n"
+"udělá hluk, když se rozbije."
 
 msgid "Dagger"
 msgstr "Dýka"
@@ -479,6 +568,9 @@ msgstr "Zrcadlo, stříbrné"
 msgid "Sling bullets, rocks (10)"
 msgstr "Prakové střely, kameny (10)"
 
+msgid "page.title.suffix"
+msgstr " — Princess Helpers"
+
 msgid "Blowgun"
 msgstr "Foukačka"
 
@@ -501,9 +593,6 @@ msgstr "Krmivo, zvíře/den"
 msgid "weapons.melee.charge"
 msgstr "Zbraň, která umožňuje přijmout na sebe nápor (charge) (újma x2, útočí první): kopí, hůl."
 
-msgid "Include the weight"
-msgstr "Zahrnout váhu"
-
 msgid "Lantern"
 msgstr "Lampář"
 
@@ -523,12 +612,18 @@ msgstr "Drahokam"
 msgid "Weight"
 msgstr "Váha"
 
+msgid "About LotFP tools project"
+msgstr "O projektu nástrojů LotFP"
+
 #. js-lingui-explicit-id
 msgid "Weight"
 msgstr "Váha"
 
 msgid "Tobacco"
 msgstr "Tabák"
+
+msgid "Encumbrance quick reference"
+msgstr "Rychlá reference zátěže"
 
 msgid "Rations, Standard/Day"
 msgstr "Porce, standard/den"
@@ -541,6 +636,9 @@ msgstr "Trpasličí zatížení"
 
 msgid "Precipitations, high winds"
 msgstr "Srážky, silný vítr"
+
+msgid "Emits light in a 10' radius. Burns for 2 hours."
+msgstr "Vyzařuje světlo v poloměru 10 stop. Hoří 2 hodiny."
 
 msgid "These weapons must be wielded with two hands. Two-handed swords, mauls, and great axes are included in this category."
 msgstr "Tyto zbraně musí být používány oběma rukama. Do této kategorie patří dvouruční meče, palice a velké sekery."
@@ -556,6 +654,9 @@ msgstr "{miPerDay, plural, =0 {mil} one {mil} two {míle} few {míle} many {mil}
 
 msgid "Inventory"
 msgstr "Inventář"
+
+msgid "* Exchange and sort coins, e.g., turn <0>{0} cp</0> into <1>{1} gp 25 sp</1>."
+msgstr "* Výměna a třídění mincí, např. přeměnit <0>{0} cp</0> na <1>{1} gp 25 sp</1>."
 
 msgid "Book, Blank"
 msgstr "Kniha, prázdná"
@@ -630,6 +731,22 @@ msgstr "Soubor"
 msgid "details.shareableUrlSectionUrl"
 msgstr "Sdílet URL"
 
+msgid "Spikes are useful for spiking doors closed (or spiking them open) and may be used as crude pitons in appropriate situations."
+msgstr "Hřeby jsou užitečné pro zabouchávání dveří (nebo jejich otevírání) a mohou být použity jako hrubé špice v příslušných situacích."
+
+msgid ""
+"Standard Rations include cured meats, seasonal fruits\n"
+"and vegetables, and fresh breads or biscuits, often\n"
+"wrapped in cloth. These are tastier than dry rations, but\n"
+"will generally only keep for a few days in all but the coldest\n"
+"or driest climates (up to 1 week)"
+msgstr ""
+"Standardní dávky zahrnují uzené maso, sezónní ovoce\n"
+"a zeleninu a čerstvý chléb nebo sušenky, často\n"
+"zabalené v plátěném obalu. Jsou chutnější než suché dávky, ale\n"
+"obvykle vydrží jen několik dní ve všech klimatických podmínkách kromě nejchladnějších\n"
+"nebo nejsušších (až 1 týden)"
+
 msgid "Cestus"
 msgstr "Cestus"
 
@@ -638,6 +755,9 @@ msgstr "Kuše, lehká"
 
 msgid "Mancatcher"
 msgstr "Chytač mužů"
+
+msgid "Removed"
+msgstr "Odstraněno"
 
 msgid "Map, Kingdom"
 msgstr "Mapa, království"
@@ -675,14 +795,26 @@ msgstr "Hřebík, železný"
 msgid "config.melee.slingRocks.details"
 msgstr "Pračky střílející kameny místo střel mají uvedený dosah (polovina běžného)."
 
+msgid "Coins weigh"
+msgstr "Zahrnout váhu"
+
+msgid "Added"
+msgstr "Přidáno"
+
 msgid "Shield"
 msgstr "Štít"
 
 msgid "Copper pieces"
 msgstr "Měděné kousky"
 
+msgid "Disclaimer"
+msgstr "Vyloučení odpovědnosti"
+
 msgid "Light crossbows can only be fired every once in 2 rounds and ignore 2 AC points"
 msgstr "Lehké kuše lze vystřelit pouze jednou za 2 kola a ignorují 2 body AC"
+
+msgid "Charcoal"
+msgstr "Dřevěné uhlí"
 
 msgid "Road"
 msgstr "Cesta"
@@ -732,6 +864,9 @@ msgstr "Mýdlo"
 msgid "Add"
 msgstr "Přidat"
 
+msgid "Exchange coins *"
+msgstr "Vyměnit mince *"
+
 msgid "Two-handed"
 msgstr "Obouruční"
 
@@ -743,6 +878,9 @@ msgstr "Ruština"
 
 msgid "Garrote"
 msgstr "Škrtidlo"
+
+msgid "Quick Reference on Encumbrance and Movement from the LotFP Core Rules"
+msgstr "Rychlá reference na zátěž a pohyb z hlavních pravidel LotFP"
 
 msgid "Movement"
 msgstr "Pohyb"
@@ -816,6 +954,15 @@ msgstr "Hůl"
 msgid "Maul"
 msgstr "Palice"
 
+msgid "About"
+msgstr "O aplikaci"
+
+msgid "Specialist tools are required for Specialists to utilize their Search skill for finding traps or their Tinker skill for opening locks and conducting similar tasks."
+msgstr "Specialisté potřebují specializované nástroje k využití své dovednosti Hledání pro hledání pastí nebo své dovednosti Tesař pro otevírání zámků a provádění podobných úkolů."
+
+msgid "Charcoal pieces of carbonized wood, which can be used like chalk (with black markings), or to add to tinder"
+msgstr "Kousky dřevěného uhlí, které lze použít jako křídu (s černými značkami), nebo přidat do třísky."
+
 msgid "Spike, Wooden"
 msgstr "Hřebík, dřevěný"
 
@@ -833,9 +980,6 @@ msgstr "AC"
 
 msgid "+1 AC versus mêlée attacks, +2 AC versus missile attacks."
 msgstr "+1 AC proti útokům na blízko, +2 AC proti střelným útokům."
-
-msgid "Manage"
-msgstr "Spravovat"
 
 #. js-lingui-explicit-id
 msgid "weapons.melee.charge"
@@ -865,6 +1009,9 @@ msgstr "Kopí"
 
 msgid "Fighter 2"
 msgstr "Bojovník 2"
+
+msgid "Required for mapping."
+msgstr "Vyžadováno pro mapování."
 
 msgid "Spyglass"
 msgstr "Dalekohled"

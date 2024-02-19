@@ -12,18 +12,18 @@ const Header = () => {
   return (
     <header>
       <nav className='ph-header-wrapper fixed z-30 w-full border-2 border-b border-gray-400 px-4 py-4 text-white'>
-        <div className='mx-auto w-full max-w-screen-2xl flex-grow px-0 sm:px-4 lg:px-4 xl:px-8 flex items-center justify-between'>
-          <div className='flex items-center justify-start'>
-            <Link href='/' className='mr-14 flex'>
+        <div className='mx-auto flex w-full max-w-screen-2xl items-center justify-between px-0 sm:px-4 lg:px-4 xl:px-8'>
+          <div className='flex items-center'>
+            <Link href='/inventory' className='flex items-center'>
               <h1
-                className={`${cursiveFont.className} self-center whitespace-nowrap text-3xl font-semibold sm:flex`}
+                className={`${cursiveFont.className} whitespace-nowrap text-3xl font-semibold`}
               >
                 <Trans>Princess Helpers</Trans>
               </h1>
             </Link>
           </div>
 
-          <div className='flex items-center'>
+          <div className='flex items-center gap-8'>
             <LocaleSwitcher />
           </div>
         </div>

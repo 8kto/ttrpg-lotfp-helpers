@@ -8,9 +8,10 @@ import {
   renderInventoryDetailsBody,
   renderInventoryTitle,
 } from '@/components/EquipmentList/gridHelpers'
+import { handleRemoveEquipmentItemClick } from '@/components/EquipmentList/helpers'
 import type { InventoryItem } from '@/domain/inventory'
 import type { MissileWeaponItem } from '@/domain/weapon'
-import { removeMissileWeapon, useInventoryState } from '@/state/InventoryState'
+import { useInventoryState } from '@/state/InventoryState'
 
 type MissileWeaponInventoryItem = InventoryItem<MissileWeaponItem>
 
@@ -18,7 +19,7 @@ const columns: ReadonlyArray<DataGridColumn<MissileWeaponInventoryItem>> = [
   {
     className: 'w-1/2 sm:w-1/3',
     key: 'name',
-    shouldRenderDetails: (item) => !!item.details,
+    shouldRenderDetails: (item) => !!item.details || !!item.range,
     render: renderInventoryTitle,
     renderDetails: renderInventoryDetailsBody,
     get title() {
@@ -41,14 +42,11 @@ const MissileWeaponsInventoryGrid = () => {
   const { state: equipmentState } = useInventoryState()
   const { missileWeapons } = equipmentState
 
-  const onRemoveClick = (item: MissileWeaponInventoryItem) =>
-    removeMissileWeapon(item)
-
   return (
     <DataGrid<MissileWeaponInventoryItem>
       data={missileWeapons.get()}
       columns={columns}
-      onRemoveClick={onRemoveClick}
+      onRemoveClick={handleRemoveEquipmentItemClick}
       spanDetails={columns.length}
       initialSortState={{
         key: '' as keyof MissileWeaponItem,

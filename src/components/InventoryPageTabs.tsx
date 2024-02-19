@@ -17,10 +17,6 @@ const InventoryPageTabs = ({
     uiState: { activeTabId },
     updateUiState,
   } = useContext(UiContext)
-  const tabTitleBaseClassname =
-    'flex-1 py-4 text-xl font-extrabold sm:text-2xl ph-font-cursive hover:border-red-500 hover:text-red-800 border-b-2 outline-transparent focus-visible:border-b-transparent'
-  const tabTitleActiveClassname = 'border-b-2 border-red-900 text-red-900 '
-
   // Fix the SSR hydration quirks
   const [isMounted, setIsMounted] = useState(false)
   useEffect(() => {
@@ -29,9 +25,9 @@ const InventoryPageTabs = ({
 
   if (!isMounted) {
     return (
-      <>
+      <div className='min-h-screen'>
         <Spinner />
-      </>
+      </div>
     )
   }
 
@@ -43,10 +39,16 @@ const InventoryPageTabs = ({
             role='tab'
             key={item.title}
             suppressHydrationWarning
-            className={classnames(tabTitleBaseClassname, {
-              [tabTitleActiveClassname]: activeTabId === index,
-              'ph-active-tab': index === activeTabId,
-            })}
+            className={classnames(
+              'ph-font-cursive border border-b-transparent focus-visible:border-b-transparent outline-transparent',
+              'bg-gray-50 text-gray-500 hover:text-red-800',
+              'flex-1 py-4',
+              'text-xl font-semibold tracking-wide sm:text-2xl',
+              {
+                'ph-active-tab bg-white text-red-900 border-none':
+                  activeTabId === index,
+              },
+            )}
             onClick={() => updateUiState({ activeTabId: index })}
           >
             {item.title}

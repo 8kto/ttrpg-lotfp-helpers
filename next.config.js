@@ -21,6 +21,15 @@ const nextConfig = {
     defaultLocale: linguiConfig.sourceLocale,
   },
   distDir: 'build',
+  async redirects()    {
+    return [
+      {
+        source: '/',
+        destination: '/inventory',
+        permanent: false,
+      },
+    ]
+  },
 }
 
 module.exports = withPWA(nextConfig)

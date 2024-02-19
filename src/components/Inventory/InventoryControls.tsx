@@ -116,14 +116,14 @@ const InventoryControls = () => {
 
       {/* Drawers */}
       <Drawer
-        isOpen={isCoinDrawerOpen}
+        open={isCoinDrawerOpen}
         onClose={() => setCoinDrawerOpen(false)}
         ariaLabelledBy={'drawer-label'}
       >
         <AddCoinsFragment onClose={() => setCoinDrawerOpen(false)} />
       </Drawer>
       <Drawer
-        isOpen={isEquipmentDrawerOpen}
+        open={isEquipmentDrawerOpen}
         onClose={() => setEquipmentDrawerOpen(false)}
         ariaLabelledBy={'drawer-label'}
       >
@@ -132,7 +132,7 @@ const InventoryControls = () => {
         />
       </Drawer>
       <Drawer
-        isOpen={isEquipmentPackDrawerOpen}
+        open={isEquipmentPackDrawerOpen}
         onClose={() => setEquipmentPackDrawerOpen(false)}
         ariaLabelledBy={'drawer-label'}
       >
@@ -141,7 +141,7 @@ const InventoryControls = () => {
         />
       </Drawer>
       <Drawer
-        isOpen={isExportInventoryOpen}
+        open={isExportInventoryOpen}
         onClose={() => setExportInventoryOpen(false)}
         ariaLabelledBy={'drawer-label'}
       >

@@ -42,12 +42,12 @@ const DataGridRow = <T extends EquipmentItem>({
         />
       ))}
 
-      <td className={'p-2 sm:p-4 font-normal text-gray-900'}>
+      <td className='p-2 sm:p-4 font-normal text-gray-900'>
         {/* Add btn */}
         {typeof onAddClick === 'function' && (
           <button
             type='button'
-            className='ph-btn-secondary--off inline-flex items-center rounded bg-transparent px-4 py-2 text-sm text-gray-400 hover:text-gray-900'
+            className='ph-btn-secondary--off inline-flex items-center rounded bg-transparent px-4 py-2 text-sm text-gray-400 hover:text-gray-900 active:text-red-800 transition-all duration-100'
             onClick={() => onAddClick(item)}
           >
             <PlusIcon className='h-5 w-5 md:mr-2' />
@@ -60,7 +60,7 @@ const DataGridRow = <T extends EquipmentItem>({
         {typeof onRemoveClick === 'function' && (
           <button
             type='button'
-            className='ph-btn-secondary--off inline-flex items-center rounded bg-transparent px-4 py-2 text-sm text-gray-400 hover:text-gray-900'
+            className='ph-btn-secondary--off inline-flex items-center rounded bg-transparent px-4 py-2 text-sm text-gray-400 hover:text-gray-900 active:text-red-800 transition-all duration-100'
             onClick={() => onRemoveClick(item)}
           >
             <MinusIcon className='h-5 w-5 md:mr-2' />

@@ -1,7 +1,6 @@
 import type { EquipmentItem } from '@/domain/equipment'
 import type { Dice } from '@/domain/index'
 
-// TODO convert to class to utilize toString() for sort/serialization
 export type Range = {
   short: number
   medium: number

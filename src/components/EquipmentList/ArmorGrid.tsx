@@ -9,12 +9,12 @@ import {
   renderDetailsBody,
   renderWeightGridCol,
 } from '@/components/EquipmentList/gridHelpers'
+import { handleAddEquipmentItemClick } from '@/components/EquipmentList/helpers'
 import Equipment from '@/config/Equipment'
 import type { ArmorItem } from '@/domain/armor'
 import type { EquipmentItem } from '@/domain/equipment'
-import { getInventoryItem } from '@/shared/helpers/getInventoryItem'
 import useTailwindBreakpoint from '@/shared/hooks/useTailwindBreakpoint'
-import { addArmor, useInventoryState } from '@/state/InventoryState'
+import { useInventoryState } from '@/state/InventoryState'
 
 const columns: ReadonlyArray<DataGridColumn<ArmorItem>> = [
   {
@@ -84,15 +84,6 @@ const ArmorGrid = () => {
     ? columnsFilteredByCost.length - 1
     : columnsFilteredByCost.length
 
-  const handleAddClick = (item: ArmorItem) => {
-    const clone = getInventoryItem(
-      item,
-      (isCostRural.get() ? item.ruralCostCp : item.cityCostCp)!,
-    )
-
-    addArmor(clone)
-  }
-
   const filterName = (item: ArmorItem, filterBy: string) => {
     return item.name.toLocaleLowerCase().includes(filterBy.toLocaleLowerCase())
   }
@@ -124,7 +115,7 @@ const ArmorGrid = () => {
 
   return (
     <>
-      <div className='py-6 text-gray-800'>
+      <div className='pt-6 pb-4 text-gray-800'>
         <p className={'mb-2'}>
           <Trans id='armor.baseAc'>
             Unarmored characters have a Base AC of 12.
@@ -141,11 +132,12 @@ const ArmorGrid = () => {
       <DataGrid<ArmorItem>
         data={dataFilteredByCost}
         columns={columnsFilteredByCost}
-        onAddClick={handleAddClick}
+        onAddClick={handleAddEquipmentItemClick}
         filterFn={filterName}
         filterPlaceholder={t`Filter by name`}
         handleSort={handleSort as typeof trivialSort}
         spanDetails={colSpan}
+        noFilter
       />
     </>
   )
