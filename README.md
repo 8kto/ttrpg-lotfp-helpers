@@ -80,3 +80,8 @@ yarn dev    # Start the development server
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+```sh
+# This command runs linter, tests and type checks
+yarn weok
+```
