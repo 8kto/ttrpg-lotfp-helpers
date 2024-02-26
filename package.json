@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "cp build/sw.js build/workbox-* public/",
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
