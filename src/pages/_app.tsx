@@ -4,6 +4,7 @@ import { i18n } from '@lingui/core'
 import { I18nProvider } from '@lingui/react'
 import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
+import Head from 'next/head'
 import type { ReactElement, ReactNode } from 'react'
 
 import ErrorBoundary from '@/components/ErrorBoundary'
@@ -22,13 +23,21 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   useLinguiInit(pageProps.translation)
 
   return (
-    <I18nProvider i18n={i18n}>
-      <RootLayout>
-        <ErrorBoundary>
-          <Component {...pageProps} />
-        </ErrorBoundary>
-      </RootLayout>
-    </I18nProvider>
+    <>
+      <Head>
+        <meta
+          name='viewport'
+          content='initial-scale=1, viewport-fit=cover, width=device-width'
+        ></meta>
+      </Head>
+      <I18nProvider i18n={i18n}>
+        <RootLayout>
+          <ErrorBoundary>
+            <Component {...pageProps} />
+          </ErrorBoundary>
+        </RootLayout>
+      </I18nProvider>
+    </>
   )
 }
 // TODO try SpeedInsights
