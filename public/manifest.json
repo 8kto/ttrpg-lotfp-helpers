@@ -1,12 +1,17 @@
 {
   "theme_color": "#000000",
-  "background_color": "#f69435",
+  "background_color": "#000000",
   "display": "standalone",
   "scope": "/",
   "start_url": "/inventory",
+  "id": "/inventory",
   "name": "Princess Helpers",
   "description": "Tools compatible with the Lamentations of the Flame Princess RPG",
-  "short_name": "princess-helpers",
+  "short_name": "Princess Helpers",
+  "display_override": ["window-controls-overlay"],
+  "launch_handler": {
+    "client_mode": ["navigate-existing", "auto"]
+  },
   "icons": [
     {
       "src": "/icons/icon-192x192.png",
@@ -33,6 +38,29 @@
       "sizes": "512x512",
       "type": "image/x-icon",
       "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "label": "Desktop UI",
+      "src": "screenshots/desktop.png",
+      "description": "Test 1",
+      "sizes": "1846x1317",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "label": "Mobile UI",
+      "src": "screenshots/mobiles.png",
+      "sizes": "430x927",
+      "type": "image/png",
+      "form_factor": "narrow"
     }
   ]
 }
