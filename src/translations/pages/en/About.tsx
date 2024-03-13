@@ -154,7 +154,6 @@ const About = () => {
           (I will spend that money on role-playing games; your name would be
           added to the contributors list).
         </p>
-        <p>Test paragraph.</p>
       </section>
     </>
   )
