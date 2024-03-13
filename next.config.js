@@ -9,7 +9,7 @@ const withPwa = require('next-pwa')({
   skipWaiting: true,
   disableDevLogs: isProd,
   runtimeCaching,
-  //disable: !isProd,
+  disable: !isProd,
 })
 
 const linguiConfig = require('./lingui.config')
