@@ -5,9 +5,12 @@
   "scope": "/",
   "start_url": "/inventory",
   "id": "/inventory",
+  "lang": "en",
+  "dir": "ltr",
   "name": "Princess Helpers",
   "description": "Tools compatible with the Lamentations of the Flame Princess RPG",
   "short_name": "Princess Helpers",
+  "categories": ["games", "ttrpg", "rpg", "role-playing games"],
   "display_override": ["window-controls-overlay"],
   "orientation": "any",
   "launch_handler": {
