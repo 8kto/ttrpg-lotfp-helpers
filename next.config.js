@@ -1,12 +1,15 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
+const isProd = process.env.NODE_ENV === 'production'
+
 const runtimeCaching = require('next-pwa/cache')
 const withPwa = require('next-pwa')({
   dest: 'build',
   register: true,
   skipWaiting: true,
-  disableDevLogs: process.env.NODE_ENV === 'production',
+  disableDevLogs: isProd,
   runtimeCaching,
+  //disable: !isProd,
 })
 
 const linguiConfig = require('./lingui.config')
