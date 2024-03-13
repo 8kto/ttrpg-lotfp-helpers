@@ -4,7 +4,7 @@ const isProd = process.env.NODE_ENV === 'production'
 
 const runtimeCaching = require('next-pwa/cache')
 const withPwa = require('next-pwa')({
-  dest: 'build',
+  dest: 'public',
   register: true,
   skipWaiting: true,
   disableDevLogs: isProd,
