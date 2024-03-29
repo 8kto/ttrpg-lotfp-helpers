@@ -54,7 +54,23 @@
     {
       "label": "Desktop UI",
       "src": "screenshots/desktop.png",
-      "description": "Test 1",
+      "description": "Desktop UI",
+      "sizes": "1846x1317",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "label": "Desktop UI (export)",
+      "src": "screenshots/desktop-export.png",
+      "description": "Desktop UI: Export and share an equipment set",
+      "sizes": "1846x1317",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "label": "Desktop UI (import)",
+      "src": "screenshots/desktop-import.png",
+      "description": "Desktop UI: Import a predefined equipment pack",
       "sizes": "1846x1317",
       "type": "image/png",
       "form_factor": "wide"
@@ -62,6 +78,31 @@
     {
       "label": "Mobile UI",
       "src": "screenshots/mobiles.png",
+      "description": "Mobile UI",
+      "sizes": "430x927",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "label": "Mobile UI",
+      "src": "screenshots/mobiles-inventory.png",
+      "description": "Mobile UI: Inventory",
+      "sizes": "430x927",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "label": "Mobile UI",
+      "src": "screenshots/mobiles-import.png",
+      "description": "Mobile UI: Import a predefined equipment pack",
+      "sizes": "430x927",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "label": "Mobile UI",
+      "src": "screenshots/mobiles-export.png",
+      "description": "Mobile UI: Export and share an equipment set",
       "sizes": "430x927",
       "type": "image/png",
       "form_factor": "narrow"
