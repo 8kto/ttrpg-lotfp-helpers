@@ -2,6 +2,7 @@ import './globals.css'
 
 import { i18n } from '@lingui/core'
 import { I18nProvider } from '@lingui/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
@@ -35,9 +36,10 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
           <ErrorBoundary>
             <Component {...pageProps} />
           </ErrorBoundary>
+          <SpeedInsights />
         </RootLayout>
       </I18nProvider>
     </>
   )
 }
-// TODO try SpeedInsights
+
