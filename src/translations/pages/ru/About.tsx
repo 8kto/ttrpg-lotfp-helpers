@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { PROJECT_URL } from '@/config/AppMetadata'
+
 const About = () => {
   return (
     <>
@@ -57,7 +59,7 @@ const About = () => {
           <a
             target='_blank'
             rel='noopener noreferrer'
-            href='https://github.com/8kto/ttrpg-lotfp-helpers?tab=readme-ov-file#features-list'
+            href={`${PROJECT_URL}?tab=readme-ov-file#features-list`}
           >
             странице проекта
           </a>
@@ -133,11 +135,7 @@ const About = () => {
           Для обратной связи, сообщений об ошибках, запросов, опечаток в
           переводах (некоторый перевод — машинный, я мог что-то пропустить) или
           других комментариев:{' '}
-          <a
-            href='https://github.com/8kto/ttrpg-lotfp-helpers'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
+          <a href={PROJECT_URL} target='_blank' rel='noopener noreferrer'>
             Princess Helpers на GitHub
           </a>
           . <br />

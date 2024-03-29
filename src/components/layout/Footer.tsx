@@ -4,6 +4,7 @@ import Link from 'next/link'
 import React, { useContext, useState } from 'react'
 
 import NavigationLinks from '@/components/layout/NavigationLinks'
+import { PROJECT_URL } from '@/config/AppMetadata'
 import UiContext from '@/shared/context/uiContext'
 import isDevEnv from '@/shared/helpers/isDevEnv'
 
@@ -12,6 +13,8 @@ const Footer = () => {
   const {
     uiState: { version },
   } = useContext(UiContext)
+  const linkClassnames =
+    'whitespace-nowrap underline-offset-4 hover:underline decoration-gray-400'
 
   return (
     <footer className='text-base text-gray-700'>
@@ -20,9 +23,9 @@ const Footer = () => {
           <div className='mb-4 max-w-full whitespace-normal break-words text-base'>
             <NavigationLinks />
             <Link
-              href='https://github.com/8kto/ttrpg-lotfp-helpers'
+              href={PROJECT_URL}
               target='_blank'
-              className='ph-color-accent underline-offset-4 hover:underline whitespace-nowrap'
+              className={`${linkClassnames} ph-color-accent decoration-amber-700`}
             >
               GitHub
             </Link>
@@ -36,11 +39,17 @@ const Footer = () => {
               className='mr-1'
             />
             <div className='inline-block text-sm text-gray-600'>
-              <Trans>Princess Helpers</Trans> v{version}{' '}
-              <span className='ml-4'>© 2023-2024 </span>
+              <Link
+                href={PROJECT_URL}
+                className={linkClassnames}
+                target='_blank'
+              >
+                <Trans>Princess Helpers</Trans> v{version}{' '}
+              </Link>
+              <span className='ml-4'>&copy; 2023-2024 </span>
               <Link
                 href='https://ivlev.blog/'
-                className='whitespace-nowrap underline-offset-4 hover:underline'
+                className={linkClassnames}
                 target='_blank'
               >
                 Igor Okto (undefined)
@@ -52,7 +61,7 @@ const Footer = () => {
           <div
             className={`mt-6 text-center ${
               viewportDebugHidden ? 'hidden' : ''
-            }`}
+            } text-gray-500`}
             onClick={() => setViewportDebugHidden(true)}
             title='Click to hide'
           >
