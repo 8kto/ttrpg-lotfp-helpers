@@ -65,6 +65,7 @@ Please reach out to me with your questions or comments through my GitHub profile
 or create an Issue/Feature request.
 
 - [x] PWA
+- [ ] Basic E2E tests
 - [ ] Multiple Inventories
 - [ ] Mounts
 - [ ] Firearms list
