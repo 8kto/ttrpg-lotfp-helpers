@@ -427,7 +427,7 @@ msgid "Pseudo"
 msgstr "Псевдо"
 
 msgid "Missiles"
-msgstr "Метательное"
+msgstr "Дальнобойное"
 
 msgid "Bottle of Wine/Liquor, Poor"
 msgstr "Бутылка вина/ликёра, простая"
@@ -444,7 +444,7 @@ msgstr "Разное"
 
 #. js-lingui-explicit-id
 msgid "Missile weapons"
-msgstr "Метательное оружие"
+msgstr "Дальнобойное оружие"
 
 #. js-lingui-explicit-id
 msgid "Mêlée weapons"
@@ -841,7 +841,7 @@ msgid "Crampons"
 msgstr "Кошки (альпинистские)"
 
 msgid "Missile Weapons"
-msgstr "Метательное оружие"
+msgstr "Дальнобойное оружие"
 
 msgid "English"
 msgstr "English"
@@ -986,7 +986,7 @@ msgstr "Оружие второго ряда: длинное копьё, дре�
 
 #. js-lingui-explicit-id
 msgid "weapons.missile.firing"
-msgstr "Каждое метательное оружие можно использовать один раз за раунд, кроме арбалетов."
+msgstr "Каждое дальнобойное оружие можно использовать один раз за раунд, кроме арбалетов."
 
 #. js-lingui-explicit-id
 msgid "weapons.missile.range"
