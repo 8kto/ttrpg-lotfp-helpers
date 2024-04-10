@@ -58,7 +58,7 @@ msgstr "Базовый набор"
 msgid "Rations, Iron/Day"
 msgstr "Пайки, железные/День"
 
-msgid "Delete all in list?"
+msgid "Delete all from list?"
 msgstr "Удалить всё из списка?"
 
 msgid "Long, -4 AB"

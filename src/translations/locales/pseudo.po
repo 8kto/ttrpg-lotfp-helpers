@@ -58,7 +58,7 @@ msgstr ""
 msgid "Rations, Iron/Day"
 msgstr ""
 
-msgid "Delete all in list?"
+msgid "Delete all from list?"
 msgstr ""
 
 msgid "Long, -4 AB"

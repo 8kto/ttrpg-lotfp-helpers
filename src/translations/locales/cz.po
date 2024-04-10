@@ -58,7 +58,7 @@ msgstr "Základní"
 msgid "Rations, Iron/Day"
 msgstr "Porce, železo/den"
 
-msgid "Delete all in list?"
+msgid "Delete all from list?"
 msgstr ""
 
 msgid "Long, -4 AB"
