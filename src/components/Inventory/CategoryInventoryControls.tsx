@@ -15,7 +15,9 @@ const CategoryInventoryControls = ({
 }) => {
   const { state: equipmentState } = useInventoryState()
   const handleReset = () => {
-    equipmentState.nested(category).set(getInitialInventoryState()[category])
+    if (confirm(t`Delete all in list?`)) {
+      equipmentState.nested(category).set(getInitialInventoryState()[category])
+    }
   }
 
   return (
