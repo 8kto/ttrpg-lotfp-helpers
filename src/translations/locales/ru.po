@@ -13,9 +13,6 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-msgid "Lamentations of the Flame Princess helpers"
-msgstr "Помощник для Lamentations of the Flame Princess"
-
 msgid "Writing ink: Stored in a small ceramic jar or tin and sufficient for 50 pages of normal writing. Required for mapping."
 msgstr "Писчие чернила: Хранятся в небольшой керамической баночке или жестяной коробке, достаточно для 50 страниц обычного письма. Обязательны для рисования карт."
 
@@ -830,6 +827,9 @@ msgstr "Авантюрист"
 
 msgid "Crossbow bolt (1)"
 msgstr "Арбалетный болт (1)"
+
+msgid "Lamentations of the Flame Princess helpers, LotFP generator, LotFP equipment, LotFP inventory"
+msgstr "Помощник для Lamentations of the Flame Princess, LotFP генератор, LotFP инвентарь"
 
 msgid "Import"
 msgstr "Импортировать"
