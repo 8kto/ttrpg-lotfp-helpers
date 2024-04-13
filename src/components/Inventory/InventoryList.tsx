@@ -1,6 +1,5 @@
-import {
-  PlusCircleIcon as PlusIcon} from '@heroicons/react/24/solid'
-import { t, Trans } from '@lingui/macro'
+
+import { Trans } from '@lingui/macro'
 import React from 'react'
 
 import ArmorInventoryGrid from '@/components/Inventory/ArmorInventoryGrid'
@@ -86,19 +85,7 @@ const InventoryList = () => {
             <h2 className={categoryTitleClassname}>
               <Trans>Miscellaneous Equipment</Trans>
             </h2>
-            <CategoryInventoryControls category='miscEquipment'>
-              <button
-                type='button'
-                onClick={() => {
-                  // TODO
-                  // setEquipmentDrawerOpen(true)
-                }}
-                title={t`Add item`}
-                className='cursor-pointer flex-col items-center justify-center rounded p-1 text-xs ph-color-accent hover:text-red-800 hover:bg-gray-100 lg:p-1'
-              >
-                <PlusIcon className='h-5 w-5' />
-              </button>
-            </CategoryInventoryControls>
+            <CategoryInventoryControls category='miscEquipment'></CategoryInventoryControls>
           </div>
           <MiscEquipmentInventoryGrid />
         </div>
