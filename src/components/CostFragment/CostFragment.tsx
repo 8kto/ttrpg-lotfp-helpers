@@ -29,7 +29,7 @@ const CostFragment = ({
   return (
     <span
       onClick={onClick}
-      className={!!onClick ? 'border-b border-dashed border-b-gray-400' : ''}
+      className={!!onClick ? 'border-b border-dashed border-b-gray-400 mr-1' : ''}
     >
       {isEmpty && <span className='ph-currency-unit--sp'>0 sp</span>}
       {currencies.map(([number, unit], index) => {
