@@ -647,7 +647,7 @@ msgid "Inventory"
 msgstr "Инвентарь"
 
 msgid "* Exchange and sort coins, e.g., turn <0>{0} cp</0> into <1>{1} gp 25 sp</1>."
-msgstr "* Конвертировать и сортировать по монетам, например, разменять <0>{0} cp</0> на <1>{1} gp 25 sp</1>."
+msgstr "* Конвертировать и сортировать по монетам. Например, разменять <0>{0} cp</0> на <1>{1} gp 25 sp</1>."
 
 msgid "Book, Blank"
 msgstr "Книга, пустая"
