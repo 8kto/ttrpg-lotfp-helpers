@@ -1,5 +1,6 @@
 import { XCircleIcon as ResetIcon } from '@heroicons/react/24/solid'
 import { t } from '@lingui/macro'
+import type { ReactNode } from 'react'
 import React from 'react'
 
 import type { EquipmentCategoryKey } from '@/state/InventoryState'
@@ -10,8 +11,10 @@ import {
 
 const CategoryInventoryControls = ({
   category,
+  children,
 }: {
   category: EquipmentCategoryKey
+  children?: ReactNode
 }) => {
   const { state: equipmentState } = useInventoryState()
   const handleReset = () => {
@@ -23,6 +26,7 @@ const CategoryInventoryControls = ({
   return (
     <div className='flex items-center sm:justify-end'>
       <div className='flex space-x-1'>
+        {children}
         <button
           type='button'
           onClick={handleReset}
