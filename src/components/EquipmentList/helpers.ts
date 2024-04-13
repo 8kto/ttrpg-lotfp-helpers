@@ -167,6 +167,8 @@ export const handleRemoveEquipmentItemClick = <
 >(
   item: T,
 ) => {
+  const { name } = item
+
   if (isArmorItem(item)) {
     removeArmor(item)
   } else if (isMeleeWeaponItem(item)) {
@@ -179,5 +181,8 @@ export const handleRemoveEquipmentItemClick = <
     throw new Error('Unknown item')
   }
 
-  dispatchAction(Action.ShowToast, { message: t`Removed` })
+  dispatchAction(Action.ShowToast, {
+    delayMs: 1000,
+    message: t`Removed`.concat(`: ${name}`),
+  })
 }
