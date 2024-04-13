@@ -149,7 +149,10 @@ export const handleAddEquipmentItemClick = <T extends EquipmentItem>(
       throw new Error('Unknown item')
     }
 
-    dispatchAction(Action.ShowToast, { message: t`Added` })
+    dispatchAction(Action.ShowToast, {
+      delayMs: 1000,
+      message: t`Added`.concat(`: ${clone.name}`),
+    })
   } else {
     dispatchAction(Action.ShowToast, {
       delayMs: 2000,
