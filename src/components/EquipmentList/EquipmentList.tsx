@@ -23,6 +23,9 @@ export default function EquipmentList() {
         <Trans>Equipment</Trans>
       </h1>
       <CommandBar />
+      <p className='lg:hidden mt-4 mb-2 ph-color-muted text-sm'>
+        <Trans>The Equipment tab list is scrollable.</Trans>
+      </p>
       <Tabs
         activeTabId={activeEquipmentTabId}
         onTabClick={(index) => updateUiState({ activeEquipmentTabId: index })}
