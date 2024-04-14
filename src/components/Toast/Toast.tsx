@@ -43,8 +43,8 @@ const Toast = ({ fadeOutIn = 600 }: { fadeOutIn?: number }) => {
         {
           'bg-gray-800 text-white': toastType !== 'error',
           'bg-red-100 text-red-800': toastType === 'error',
-          'visible opacity-100': isVisible,
-          'invisible translate-y-full opacity-0': !isVisible,
+          'visible opacity-100': isVisible && toastMessage,
+          'invisible translate-y-full opacity-0': !isVisible || !toastMessage,
         },
       )}
     >

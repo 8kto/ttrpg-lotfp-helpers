@@ -13,9 +13,6 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-msgid "Lamentations of the Flame Princess helpers"
-msgstr "Помощник для Lamentations of the Flame Princess"
-
 msgid "Writing ink: Stored in a small ceramic jar or tin and sufficient for 50 pages of normal writing. Required for mapping."
 msgstr "Писчие чернила: Хранятся в небольшой керамической баночке или жестяной коробке, достаточно для 50 страниц обычного письма. Обязательны для рисования карт."
 
@@ -294,6 +291,9 @@ msgstr "В день"
 msgid "Reset all equipment?"
 msgstr "Сбросить всё снаряжение?"
 
+msgid "The Equipment tab list is scrollable."
+msgstr "Список табов прокручивается."
+
 msgid "Active"
 msgstr "Активный"
 
@@ -430,7 +430,7 @@ msgid "Pseudo"
 msgstr "Псевдо"
 
 msgid "Missiles"
-msgstr "Метательное"
+msgstr "Дальнобойное"
 
 msgid "Bottle of Wine/Liquor, Poor"
 msgstr "Бутылка вина/ликёра, простая"
@@ -447,7 +447,7 @@ msgstr "Разное"
 
 #. js-lingui-explicit-id
 msgid "Missile weapons"
-msgstr "Метательное оружие"
+msgstr "Дальнобойное оружие"
 
 #. js-lingui-explicit-id
 msgid "Mêlée weapons"
@@ -647,7 +647,7 @@ msgid "Inventory"
 msgstr "Инвентарь"
 
 msgid "* Exchange and sort coins, e.g., turn <0>{0} cp</0> into <1>{1} gp 25 sp</1>."
-msgstr "* Конвертировать и сортировать по монетам, т.е. разменять <0>{0} cp</0> на <1>{1} gp 25 sp</1>."
+msgstr "* Конвертировать и сортировать по монетам. Например, разменять <0>{0} cp</0> на <1>{1} gp 25 sp</1>."
 
 msgid "Book, Blank"
 msgstr "Книга, пустая"
@@ -831,6 +831,9 @@ msgstr "Авантюрист"
 msgid "Crossbow bolt (1)"
 msgstr "Арбалетный болт (1)"
 
+msgid "Lamentations of the Flame Princess helpers, LotFP generator, LotFP equipment, LotFP inventory"
+msgstr "Помощник для Lamentations of the Flame Princess, LotFP генератор, LotFP инвентарь"
+
 msgid "Import"
 msgstr "Импортировать"
 
@@ -841,7 +844,7 @@ msgid "Crampons"
 msgstr "Кошки (альпинистские)"
 
 msgid "Missile Weapons"
-msgstr "Метательное оружие"
+msgstr "Дальнобойное оружие"
 
 msgid "English"
 msgstr "English"
@@ -986,7 +989,7 @@ msgstr "Оружие второго ряда: длинное копьё, дре�
 
 #. js-lingui-explicit-id
 msgid "weapons.missile.firing"
-msgstr "Каждое метательное оружие можно использовать один раз за раунд, кроме арбалетов."
+msgstr "Каждое дальнобойное оружие можно использовать один раз за раунд, кроме арбалетов."
 
 #. js-lingui-explicit-id
 msgid "weapons.missile.range"
@@ -1033,6 +1036,9 @@ msgstr "Экспорт и импорт"
 
 msgid "config.melee.polearm.details"
 msgstr "Это двуручное оружие может быть использовано для атаки из второго ряда, может быть использовано для встречи рывка (charge) и получает бонус +1 AB к противников с немодифицированным AC 16 и выше."
+
+msgid "Delete all from list?"
+msgstr "Удалить всё из списка?"
 
 msgid "Instrument"
 msgstr "Инструмент"

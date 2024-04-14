@@ -13,9 +13,6 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-msgid "Lamentations of the Flame Princess helpers"
-msgstr ""
-
 msgid "Writing ink: Stored in a small ceramic jar or tin and sufficient for 50 pages of normal writing. Required for mapping."
 msgstr ""
 
@@ -286,6 +283,9 @@ msgid "Per day"
 msgstr ""
 
 msgid "Reset all equipment?"
+msgstr ""
+
+msgid "The Equipment tab list is scrollable."
 msgstr ""
 
 msgid "Active"
@@ -818,6 +818,9 @@ msgstr ""
 msgid "Crossbow bolt (1)"
 msgstr ""
 
+msgid "Lamentations of the Flame Princess helpers, LotFP generator, LotFP equipment, LotFP inventory"
+msgstr ""
+
 msgid "Import"
 msgstr ""
 
@@ -1019,6 +1022,9 @@ msgid "Export & Import"
 msgstr ""
 
 msgid "config.melee.polearm.details"
+msgstr ""
+
+msgid "Delete all from list?"
 msgstr ""
 
 msgid "Instrument"

@@ -84,7 +84,7 @@ const InventoryList = () => {
             <h2 className={categoryTitleClassname}>
               <Trans>Miscellaneous Equipment</Trans>
             </h2>
-            <CategoryInventoryControls category='miscEquipment' />
+            <CategoryInventoryControls category='miscEquipment'></CategoryInventoryControls>
           </div>
           <MiscEquipmentInventoryGrid />
         </div>

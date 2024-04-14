@@ -142,7 +142,7 @@ const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
                   id='coins--set-copper'
                 />
 
-                <div className='bottom-0 left-0 flex w-full justify-center space-x-4 pb-4 md:absolute md:px-4'>
+                <div className='flex w-full justify-center space-x-4 pt-4'>
                   <button
                     type='submit'
                     className='ph-btn-primary w-full justify-center rounded px-5 py-2.5 text-center font-medium focus:outline-none focus:ring-4 focus:ring-primary-300'
@@ -151,6 +151,9 @@ const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
                   </button>
                 </div>
               </div>
+              <label className='my-4 block text-center font-medium text-red-800'>
+                ~ <Trans>OR</Trans> ~
+              </label>
               <div className='my-4 flex w-full justify-center space-x-4 pb-4'>
                 <button
                   type='button'
