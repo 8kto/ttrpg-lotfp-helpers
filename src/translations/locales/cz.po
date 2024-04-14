@@ -58,9 +58,6 @@ msgstr "Základní"
 msgid "Rations, Iron/Day"
 msgstr "Porce, železo/den"
 
-msgid "Delete all from list?"
-msgstr ""
-
 msgid "Long, -4 AB"
 msgstr "Dlouhá, -4 AB"
 
@@ -295,6 +292,9 @@ msgstr "Za den"
 
 msgid "Reset all equipment?"
 msgstr "Resetovat veškeré vybavení?"
+
+msgid "The Equipment tab list is scrollable."
+msgstr "Seznam karet je posuvný."
 
 msgid "Active"
 msgstr "Aktivní"
@@ -1045,6 +1045,9 @@ msgstr "Export & Import"
 
 msgid "config.melee.polearm.details"
 msgstr "Toto dvouruční zbraň může být použita k útoku ze druhé řady, může být použita k setkání náporu (charge) a získává bonus +1 AB proti protivníkům s neupraveným AC 16 a vyšším."
+
+msgid "Delete all from list?"
+msgstr ""
 
 msgid "Instrument"
 msgstr "Nástroj"

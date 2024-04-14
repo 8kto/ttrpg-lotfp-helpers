@@ -58,9 +58,6 @@ msgstr "Базовый набор"
 msgid "Rations, Iron/Day"
 msgstr "Пайки, железные/День"
 
-msgid "Delete all from list?"
-msgstr "Удалить всё из списка?"
-
 msgid "Long, -4 AB"
 msgstr "Дальняя, -4 AB"
 
@@ -293,6 +290,9 @@ msgstr "В день"
 
 msgid "Reset all equipment?"
 msgstr "Сбросить всё снаряжение?"
+
+msgid "The Equipment tab list is scrollable."
+msgstr "Список табов прокручивается."
 
 msgid "Active"
 msgstr "Активный"
@@ -1036,6 +1036,9 @@ msgstr "Экспорт и импорт"
 
 msgid "config.melee.polearm.details"
 msgstr "Это двуручное оружие может быть использовано для атаки из второго ряда, может быть использовано для встречи рывка (charge) и получает бонус +1 AB к противников с немодифицированным AC 16 и выше."
+
+msgid "Delete all from list?"
+msgstr "Удалить всё из списка?"
 
 msgid "Instrument"
 msgstr "Инструмент"

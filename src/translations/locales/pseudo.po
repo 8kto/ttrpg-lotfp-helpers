@@ -58,9 +58,6 @@ msgstr ""
 msgid "Rations, Iron/Day"
 msgstr ""
 
-msgid "Delete all from list?"
-msgstr ""
-
 msgid "Long, -4 AB"
 msgstr ""
 
@@ -286,6 +283,9 @@ msgid "Per day"
 msgstr ""
 
 msgid "Reset all equipment?"
+msgstr ""
+
+msgid "The Equipment tab list is scrollable."
 msgstr ""
 
 msgid "Active"
@@ -1022,6 +1022,9 @@ msgid "Export & Import"
 msgstr ""
 
 msgid "config.melee.polearm.details"
+msgstr ""
+
+msgid "Delete all from list?"
 msgstr ""
 
 msgid "Instrument"

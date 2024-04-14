@@ -58,9 +58,6 @@ msgstr "Basic"
 msgid "Rations, Iron/Day"
 msgstr "Rations, Iron/Day"
 
-msgid "Delete all from list?"
-msgstr "Delete all from list?"
-
 msgid "Long, -4 AB"
 msgstr "Long, -4 AB"
 
@@ -299,6 +296,9 @@ msgstr "Per day"
 
 msgid "Reset all equipment?"
 msgstr "Reset all equipment?"
+
+msgid "The Equipment tab list is scrollable."
+msgstr "The Equipment tab list is scrollable."
 
 msgid "Active"
 msgstr "Active"
@@ -1049,6 +1049,9 @@ msgstr "Export & Import"
 
 msgid "config.melee.polearm.details"
 msgstr "This two-handed weapon can be used to attack from the second rank, can be used to receive a charge, and receives a +1 bonus to hit opponents with an unadjusted AC of 16 or better."
+
+msgid "Delete all from list?"
+msgstr "Delete all from list?"
 
 msgid "Instrument"
 msgstr "Instrument"
