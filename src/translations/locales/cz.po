@@ -1047,7 +1047,7 @@ msgid "config.melee.polearm.details"
 msgstr "Toto dvouruční zbraň může být použita k útoku ze druhé řady, může být použita k setkání náporu (charge) a získává bonus +1 AB proti protivníkům s neupraveným AC 16 a vyšším."
 
 msgid "Delete all from list?"
-msgstr ""
+msgstr "Odstranit vše ze seznamu?"
 
 msgid "Instrument"
 msgstr "Nástroj"
