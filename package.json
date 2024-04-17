@@ -42,6 +42,7 @@
     "@lingui/loader": "^4.5.0",
     "@lingui/macro": "^4.5.0",
     "@lingui/swc-plugin": "^4.0.4",
+    "@playwright/test": "^1.43.1",
     "@testing-library/jest-dom": "^6.1.4",
     "@testing-library/react": "^14.1.0",
     "@types/jest": "^29.5.8",
