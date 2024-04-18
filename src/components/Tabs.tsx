@@ -8,6 +8,7 @@ type TabData = {
 }
 
 type TabProps = {
+  id: string
   active: boolean
   onClick: () => void
   children: React.ReactNode
@@ -19,10 +20,11 @@ type TabsProps = {
   onTabClick: (index: number) => void
 }
 
-const Tab = ({ active, onClick, children }: TabProps) => {
+const Tab = ({ active, onClick, children, id }: TabProps) => {
   return (
     <button
       role='tab'
+      data-testid={`Tab-${id}`}
       className={classnames(
         'group inline-flex items-center justify-center p-4',
         'text-sm font-medium text-gray-500 md:text-base',
@@ -52,6 +54,7 @@ const Tabs = ({ tabs, onTabClick, activeTabId }: TabsProps) => {
           {tabs.map((tab, index) => (
             <Tab
               key={tab.key}
+              id={tab.key}
               active={index === activeTabId}
               onClick={() => onTabClick(index)}
             >

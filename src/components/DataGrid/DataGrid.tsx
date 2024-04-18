@@ -90,7 +90,7 @@ const DataGrid = <T extends EquipmentItem>({
         </div>
       )}
       <div className='overflow-x-auto'>
-        <table className='min-w-full table-fixed text-sm sm:text-base'>
+        <table className='min-w-full table-fixed text-sm sm:text-base' data-testid="DataGrid__Table">
           <thead className='bg-gray-100'>
             <tr>
               {columns.map((column) => (
