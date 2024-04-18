@@ -16,6 +16,7 @@ const config = {
     '^@/shared/(.*)$': '<rootDir>/src/shared/$1',
     '^@/state/(.*)$': '<rootDir>/src/state/$1',
   },
+  testMatch: ['<rootDir>/src/**/*.test.ts', '<rootDir>/src/**/*.test.tsx'],
 }
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
