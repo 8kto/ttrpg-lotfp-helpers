@@ -5,6 +5,7 @@ import React, { useContext } from 'react'
 
 import CommandBar from '@/components/CommandBar/CommandBar'
 import ArmorGrid from '@/components/EquipmentList/ArmorGrid'
+import FirearmWeaponsGrid from '@/components/EquipmentList/FirearmWeaponsGrid'
 import MeleeWeaponsGrid from '@/components/EquipmentList/MeleeWeaponsGrid'
 import MiscEquipmentGrid from '@/components/EquipmentList/MiscEquipmentGrid'
 import MissileWeaponsGrid from '@/components/EquipmentList/MissileWeaponsGrid'
@@ -45,6 +46,11 @@ export default function EquipmentList() {
             content: <MiscEquipmentGrid />,
             key: 'miscEquipment',
             title: t`Miscellaneous`,
+          },
+          {
+            content: <FirearmWeaponsGrid />,
+            key: 'firearm',
+            title: t`Firearms`,
           },
         ]}
       />
