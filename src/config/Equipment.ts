@@ -4,9 +4,14 @@ import {
   MiscEquipmentItems,
   MissileWeaponItems,
 } from '@/config'
+import { FirearmWeaponItems } from '@/config/FirearmWeaponItems'
 import type { ArmorItem } from '@/domain/armor'
 import type { EquipmentItem } from '@/domain/equipment'
-import type { MeleeWeaponItem, MissileWeaponItem } from '@/domain/weapon'
+import type {
+  FirearmWeaponItem,
+  MeleeWeaponItem,
+  MissileWeaponItem,
+} from '@/domain/weapon'
 import deepclone from '@/shared/helpers/deepclone'
 
 /**
@@ -16,6 +21,10 @@ import deepclone from '@/shared/helpers/deepclone'
 const Equipment = {
   get Armor(): ReadonlyArray<ArmorItem> {
     return deepclone(ArmorItems())
+  },
+
+  get FirearmWeapons(): ReadonlyArray<FirearmWeaponItem> {
+    return deepclone(FirearmWeaponItems())
   },
 
   get MeleeWeapons(): ReadonlyArray<MeleeWeaponItem> {
