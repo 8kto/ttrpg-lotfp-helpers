@@ -15,7 +15,7 @@ const CommandBar = () => {
   const labelClassnames = 'ml-2 text-sm text-gray-900 cursor-pointer'
 
   return (
-    <div className='my-4 lg:my-2 flex justify-end'>
+    <div data-testid='CommandBar' className='my-4 lg:my-2 flex justify-end'>
       <div className='mr-4 flex items-center'>
         <h3 className='font-semibold ph-color-accent'>
           <Trans>Cost</Trans>
