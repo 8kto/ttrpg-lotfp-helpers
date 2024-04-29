@@ -1,4 +1,4 @@
-import { t } from '@lingui/macro'
+import { t, Trans } from '@lingui/macro'
 import React, { useMemo } from 'react'
 
 import DamageFragment from '@/components/DamageFragment'
@@ -97,10 +97,6 @@ const MissileWeaponsGrid = () => {
     return isCostRural.get() ? data.filter((i) => i.ruralCostCp !== null) : data
   }, [isCostRural])
 
-  const filterName = (item: FirearmWeaponItem, filterBy: string) => {
-    return item.name.toLocaleLowerCase().includes(filterBy.toLocaleLowerCase())
-  }
-
   const isSmallViewport = 'xs' === breakpoint
   const colSpan = isSmallViewport
     ? columnsFilteredByCost.length - 2
@@ -108,17 +104,21 @@ const MissileWeaponsGrid = () => {
 
   return (
     <>
-      <div className='pt-6 pb-4 text-gray-800'>
-        <p className={'mb-2'}></p>
+      <div className='pb-4 pt-6 text-gray-800'>
+        <p className={'mb-2'}>
+          <Trans>
+            Targets at Medium range are –4 to hit, –8 to hit at Long range.
+            Rifled barrels halve the range penalties, but cost twice as much.
+          </Trans>
+        </p>
       </div>
       <DataGrid<FirearmWeaponItem>
         data={dataFilteredByCost}
         columns={columnsFilteredByCost}
         onAddClick={handleAddEquipmentItemClick}
-        filterFn={filterName}
-        filterPlaceholder={t`Filter by name`}
         handleSort={sortWeapons as DataGridSortFunction}
         spanDetails={colSpan}
+        noFilter
       />
     </>
   )

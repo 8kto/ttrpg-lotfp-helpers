@@ -4,6 +4,7 @@ import React from 'react'
 import DamageFragment from '@/components/DamageFragment'
 import {
   isArmorItem,
+  isFirearmItem,
   isMissileItem,
   isWeaponItem,
 } from '@/components/Inventory/ItemDetails/helpers'
@@ -35,6 +36,16 @@ export const Details = <T extends EquipmentItem>({ item }: { item: T }) => {
       {/* Missile weapons */}
       {isMissileItem(item) ? (
         <div className={paragraphClassname} data-testid='details--range'>
+          <strong>
+            <Trans>Range</Trans>
+          </strong>
+          <RangeFragment range={item.range} />
+        </div>
+      ) : null}
+
+      {/* Firearms weapons */}
+      {isFirearmItem(item) ? (
+        <div className={paragraphClassname} data-testid='details--firearms'>
           <strong>
             <Trans>Range</Trans>
           </strong>
