@@ -5,7 +5,7 @@ import React, { useContext } from 'react'
 
 import CommandBar from '@/components/CommandBar/CommandBar'
 import ArmorGrid from '@/components/EquipmentList/ArmorGrid'
-import FirearmWeaponsGrid from '@/components/EquipmentList/FirearmWeaponsGrid'
+import FirearmWeaponsGrid from '@/components/EquipmentList/FirearmWeaponsGrid/FirearmWeaponsGrid'
 import MeleeWeaponsGrid from '@/components/EquipmentList/MeleeWeaponsGrid'
 import MiscEquipmentGrid from '@/components/EquipmentList/MiscEquipmentGrid'
 import MissileWeaponsGrid from '@/components/EquipmentList/MissileWeaponsGrid'

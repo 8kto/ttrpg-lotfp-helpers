@@ -5,6 +5,7 @@ import DamageFragment from '@/components/DamageFragment'
 import DataGrid from '@/components/DataGrid/DataGrid'
 import type { DataGridSortFunction } from '@/components/DataGrid/helpers'
 import type { DataGridColumn } from '@/components/DataGrid/types'
+import FirearmsFilterPanel from '@/components/EquipmentList/FirearmWeaponsGrid/FirearmsFilterPanel'
 import {
   renderCostGridCol,
   renderDetailsBody,
@@ -105,13 +106,17 @@ const MissileWeaponsGrid = () => {
   return (
     <>
       <div className='pb-4 pt-6 text-gray-800'>
-        <p className={'mb-2'}>
+        <p className='mb-4'>
           <Trans>
             Targets at Medium range are –4 to hit, –8 to hit at Long range.
             Rifled barrels halve the range penalties, but cost twice as much.
           </Trans>
         </p>
+        <div className={'mb-2'}>
+          <FirearmsFilterPanel />
+        </div>
       </div>
+
       <DataGrid<FirearmWeaponItem>
         data={dataFilteredByCost}
         columns={columnsFilteredByCost}
