@@ -3,6 +3,7 @@ import React from 'react'
 
 import ArmorInventoryGrid from '@/components/Inventory/ArmorInventoryGrid'
 import CategoryInventoryControls from '@/components/Inventory/CategoryInventoryControls'
+import FirearmWeaponsInventoryGrid from '@/components/Inventory/FirearmWeaponsInventoryGrid'
 import InventoryControls from '@/components/Inventory/InventoryControls'
 import MeleeWeaponsInventoryGrid from '@/components/Inventory/MeleeWeaponsInventoryGrid'
 import MiscEquipmentInventoryGrid from '@/components/Inventory/MiscEquipmentInventoryGrid'
@@ -23,13 +24,15 @@ const Header = ({ children }: { children?: React.ReactNode }) => {
 
 const InventoryList = () => {
   const { state: equipmentState } = useInventoryState()
-  const { armor, meleeWeapons, missileWeapons, miscEquipment } = equipmentState
+  const { armor, meleeWeapons, missileWeapons, firearmWeapons, miscEquipment } =
+    equipmentState
 
   const categoryTitleClassname = 'my-4 text-xl ph-color-accent mr-1'
 
   const hasArmor = !!armor.length
   const hasMeleeWeapons = !!meleeWeapons.length
   const hasMissileWeapons = !!missileWeapons.length
+  const hasFirearmWeapons = !!firearmWeapons.length
   const hasMiscEquipment = !!miscEquipment.length
   const hasAny = hasArmor || hasMeleeWeapons || hasArmor || hasMiscEquipment
 
@@ -75,6 +78,18 @@ const InventoryList = () => {
             <CategoryInventoryControls category='missileWeapons' />
           </div>
           <MissileWeaponsInventoryGrid />
+        </div>
+      )}
+
+      {hasFirearmWeapons && (
+        <div className='mb-6'>
+          <div className='flex w-full items-center'>
+            <h2 className={categoryTitleClassname}>
+              <Trans>Firearm Weapons</Trans>
+            </h2>
+            <CategoryInventoryControls category='firearmWeapons' />
+          </div>
+          <FirearmWeaponsInventoryGrid />
         </div>
       )}
 

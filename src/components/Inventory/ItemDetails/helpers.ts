@@ -42,7 +42,7 @@ export const isMiscEquipmentItem = (
   return item.categoryKey === 'miscEquipment'
 }
 
-export const isFirearmEquipmentItem = (
+export const isFirearmItem = (
   item: EquipmentItem,
 ): item is FirearmWeaponItem => {
   return item.categoryKey === 'firearmWeapons'

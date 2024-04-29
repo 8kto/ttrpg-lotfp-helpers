@@ -4,7 +4,7 @@ import { trivialSort } from '@/components/DataGrid/helpers'
 import type { SortConfig } from '@/components/DataGrid/types'
 import {
   isArmorItem,
-  isFirearmEquipmentItem,
+  isFirearmItem,
   isMeleeWeaponItem,
   isMiscEquipmentItem,
   isMissileItem,
@@ -33,6 +33,7 @@ import {
   InventoryState,
   removeArmor,
   removeEquipmentItem,
+  removeFirearmWeapon,
   removeMeleeWeapon,
   removeMissileWeapon,
   subtractCurrency,
@@ -147,7 +148,7 @@ export const handleAddEquipmentItemClick = <T extends EquipmentItem>(
       addMissileWeapon(clone)
     } else if (isMiscEquipmentItem(clone)) {
       addEquipmentItem(clone)
-    } else if (isFirearmEquipmentItem(clone)) {
+    } else if (isFirearmItem(clone)) {
       addFirearmWeapon(clone)
     } else {
       throw new Error('Unknown item')
@@ -179,6 +180,8 @@ export const handleRemoveEquipmentItemClick = <
     removeMeleeWeapon(item)
   } else if (isMissileItem(item)) {
     removeMissileWeapon(item)
+  } else if (isFirearmItem(item)) {
+    removeFirearmWeapon(item)
   } else if (isMiscEquipmentItem(item)) {
     removeEquipmentItem(item)
   } else {
