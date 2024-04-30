@@ -7,7 +7,7 @@ export enum FiringMechanism {
 export const CoeffYear = {
   [FiringMechanism.Flintlock]: {
     '1610-1630': 2,
-    '1630-1660': 1.5,
+    '1631-1660': 1.5,
   },
   default: 1,
 } as const
