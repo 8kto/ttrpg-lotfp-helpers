@@ -1,9 +1,34 @@
 import { Trans } from '@lingui/macro'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+
+import { FiringMechanism } from '@/domain/firearms'
+
+type FilterValues = {
+  firingMechanism: FiringMechanism
+  riffled: boolean
+  year: string
+}
 
 const FirearmsFilterPanel = () => {
-  const radioClassnames = 'h-4 w-4 focus:ring-red-500'
-  const labelClassnames = 'ml-2 text-sm text-gray-900 cursor-pointer'
+  const [formValues, setFormValues] = useState<FilterValues>({
+    firingMechanism: FiringMechanism.Matchlock,
+    riffled: false,
+    year: '> 1661',
+  })
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value, type, checked } = event.target
+
+    setFormValues((prevState) => ({
+      ...prevState,
+      [name]: type === 'checkbox' ? checked : value,
+    }))
+  }
+
+  useEffect(() => {
+    // eslint-disable-next-line no-console
+    console.log(formValues)
+  }, [formValues])
 
   return (
     <div data-testid='FirearmsFilterPanel'>
@@ -16,48 +41,63 @@ const FirearmsFilterPanel = () => {
             <Trans>Firearm mechanism</Trans>
           </h3>
         </div>
-        <div className='mr-4 flex items-center'>
-          <input
-            id='matchlock-radio'
-            type='radio'
-            value='matchlock'
-            name='inline-radio-group'
-            checked={true}
-            className={radioClassnames}
-          />
-          <label htmlFor='matchlock-radio' className={labelClassnames}>
-            <Trans>Matchlock</Trans>
-          </label>
-        </div>
-        <div className='mr-4 flex items-center'>
-          <input
-            id='wheellock-radio'
-            type='radio'
-            value='wheellock'
-            name='inline-radio-group'
-            className={radioClassnames}
-            checked={false}
-          />
-          <label htmlFor='wheellock-radio' className={labelClassnames}>
-            <Trans>Wheellock</Trans>
-          </label>
-        </div>
-        <div className='mr-4 flex items-center'>
-          <input
-            id='flintlock-radio'
-            type='radio'
-            value='flintlock'
-            name='inline-radio-group'
-            className={radioClassnames}
-            checked={false}
-          />
-          <label htmlFor='flintlock-radio' className={labelClassnames}>
-            <Trans>Flintlock</Trans>
-          </label>
-        </div>
+        {[
+          FiringMechanism.Matchlock,
+          FiringMechanism.Wheellock,
+          FiringMechanism.Flintlock,
+        ].map((mechanism) => (
+          <div key={mechanism} className='mr-4 flex items-center'>
+            <input
+              id={`${mechanism}-radio`}
+              type='radio'
+              value={mechanism}
+              checked={formValues.firingMechanism === mechanism}
+              onChange={handleChange}
+              name='firingMechanism'
+              className='h-4 w-4 focus:ring-red-500'
+            />
+            <label
+              htmlFor={`${mechanism}-radio`}
+              className='ml-2 cursor-pointer text-sm text-gray-900'
+            >
+              {mechanism}
+            </label>
+          </div>
+        ))}
       </div>
       <div
         data-testid='FirearmsFilterPanel__secondLine'
+        className='my-4 flex justify-start lg:my-2'
+      >
+        <div className='mr-4 flex items-center'>
+          <h3 className='ph-color-accent font-semibold'>
+            <label htmlFor='year-checkbox'>
+              <Trans>Year</Trans>
+            </label>
+          </h3>
+        </div>
+        {['1610-1630', '1631-1660', '> 1661'].map((year) => (
+          <div key={year} className='mr-4 flex items-center'>
+            <input
+              id={`${year}-radio`}
+              type='radio'
+              value={year}
+              checked={formValues.year === year}
+              onChange={handleChange}
+              name='year'
+              className='h-4 w-4 focus:ring-red-500'
+            />
+            <label
+              htmlFor={`${year}-radio`}
+              className='ml-2 cursor-pointer text-sm text-gray-900'
+            >
+              {year}
+            </label>
+          </div>
+        ))}
+      </div>
+      <div
+        data-testid='FirearmsFilterPanel__thirdLine'
         className='my-4 flex justify-start lg:my-2'
       >
         <div className='mr-4 flex items-center'>
@@ -71,10 +111,10 @@ const FirearmsFilterPanel = () => {
           <input
             id='riffled-checkbox'
             type='checkbox'
-            value='riffled'
-            name='inline-radio-group'
-            checked={true}
-            className={radioClassnames}
+            checked={formValues.riffled}
+            onChange={handleChange}
+            name='riffled'
+            className='h-4 w-4 focus:ring-red-500'
           />
         </div>
       </div>
