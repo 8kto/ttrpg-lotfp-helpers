@@ -1,19 +1,23 @@
 import { Trans } from '@lingui/macro'
 import React, { useEffect, useState } from 'react'
 
-import { FiringMechanism } from '@/domain/firearms'
+import { FiringMechanism,YearPeriod  } from '@/domain/firearms'
 
-type FilterValues = {
+export type FilterValues = {
   firingMechanism: FiringMechanism
   riffled: boolean
-  year: string
+  year: YearPeriod
 }
 
-const FirearmsFilterPanel = () => {
+type FirearmsFilterPanelProps = {
+  onChange: (v: FilterValues) => void
+}
+
+const FirearmsFilterPanel = ({ onChange }: FirearmsFilterPanelProps) => {
   const [formValues, setFormValues] = useState<FilterValues>({
     firingMechanism: FiringMechanism.Matchlock,
     riffled: false,
-    year: '> 1661',
+    year: YearPeriod['> 1661'],
   })
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -26,9 +30,8 @@ const FirearmsFilterPanel = () => {
   }
 
   useEffect(() => {
-    // eslint-disable-next-line no-console
-    console.log(formValues)
-  }, [formValues])
+    onChange(formValues)
+  }, [formValues, onChange])
 
   return (
     <div data-testid='FirearmsFilterPanel'>
@@ -76,7 +79,7 @@ const FirearmsFilterPanel = () => {
             </label>
           </h3>
         </div>
-        {['1610-1630', '1631-1660', '> 1661'].map((year) => (
+        {[YearPeriod['1610-1630'], YearPeriod['1631-1660'], YearPeriod['> 1661']].map((year) => (
           <div key={year} className='mr-4 flex items-center'>
             <input
               id={`${year}-radio`}

@@ -5,6 +5,7 @@ import DamageFragment from '@/components/DamageFragment'
 import DataGrid from '@/components/DataGrid/DataGrid'
 import type { DataGridSortFunction } from '@/components/DataGrid/helpers'
 import type { DataGridColumn } from '@/components/DataGrid/types'
+import type { FilterValues } from '@/components/EquipmentList/FirearmWeaponsGrid/FirearmsFilterPanel'
 import FirearmsFilterPanel from '@/components/EquipmentList/FirearmWeaponsGrid/FirearmsFilterPanel'
 import {
   renderCostGridCol,
@@ -17,7 +18,9 @@ import {
 } from '@/components/EquipmentList/helpers'
 import RangeFragment from '@/components/RangeFragment'
 import Equipment from '@/config/Equipment'
+import { CoeffYear } from '@/domain/firearms'
 import type { FirearmWeaponItem } from '@/domain/weapon'
+import deepclone from '@/shared/helpers/deepclone'
 import useTailwindBreakpoint from '@/shared/hooks/useTailwindBreakpoint'
 import { useInventoryState } from '@/state/InventoryState'
 
@@ -93,10 +96,30 @@ const MissileWeaponsGrid = () => {
   }, [isCostRural])
 
   const dataFilteredByCost = useMemo(() => {
-    const data = Object.values(Equipment.FirearmWeapons)
+    const data = Object.values(deepclone(Equipment.FirearmWeapons))
 
     return isCostRural.get() ? data.filter((i) => i.ruralCostCp !== null) : data
   }, [isCostRural])
+
+  const onFilterChange = (filterValues: FilterValues) => {
+    // console.log(filterValues)
+
+    for (const firearmWeaponItem of dataFilteredByCost) {
+      firearmWeaponItem.isRiffled = filterValues.riffled
+      firearmWeaponItem.firingMechanism = filterValues.firingMechanism
+
+      let coeff =
+        CoeffYear[firearmWeaponItem.firingMechanism][filterValues.year] ||
+        CoeffYear[firearmWeaponItem.firingMechanism].default
+
+      if (firearmWeaponItem.isRiffled) {
+        coeff *= 2
+      }
+
+      // eslint-disable-next-line no-console
+      console.log('cost', (firearmWeaponItem.cityCostCp * coeff))
+    }
+  }
 
   const isSmallViewport = 'xs' === breakpoint
   const colSpan = isSmallViewport
@@ -113,7 +136,7 @@ const MissileWeaponsGrid = () => {
           </Trans>
         </p>
         <div className={'mb-2'}>
-          <FirearmsFilterPanel />
+          <FirearmsFilterPanel onChange={onFilterChange} />
         </div>
       </div>
 
