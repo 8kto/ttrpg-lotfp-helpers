@@ -4,7 +4,11 @@ import { ArmorType } from '@/domain/armor'
 import { EncumbranceUnit } from '@/domain/encumbrance'
 import type { EquipmentItem } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
-import type { MeleeWeaponItem, MissileWeaponItem } from '@/domain/weapon'
+import type {
+  FirearmWeaponItem,
+  MeleeWeaponItem,
+  MissileWeaponItem,
+} from '@/domain/weapon'
 import { WeaponType } from '@/domain/weapon'
 
 export const armorItemMock1: InventoryItem<ArmorItem> = {
@@ -113,4 +117,18 @@ export const miscEquipItem2: InventoryItem<EquipmentItem> = {
   points: EncumbranceUnit.Oversized,
   qty: 1,
   ruralCostCp: 20,
+}
+
+export const firearmWeaponItemMock1: InventoryItem<FirearmWeaponItem> = {
+  categoryKey: 'firearmWeapons',
+  cityCostCp: 5,
+  damage: null,
+  inventoryId: '5',
+  lockedCostCp: 5,
+  name: 'Blowgun',
+  points: EncumbranceUnit.Regular,
+  qty: 1,
+  range: { long: 80, medium: 50, short: 20 },
+  ruralCostCp: null,
+  type: WeaponType.Missile,
 }
