@@ -20,7 +20,7 @@ type CoeffYearType = {
   [key in FiringMechanism]: PeriodCoefficients
 }
 
-export const CoeffYear: CoeffYearType = {
+export const FirearmCostCoeff: CoeffYearType = {
   [FiringMechanism.Flintlock]: {
     [YearPeriod['1610-1630']]: 2,
     [YearPeriod['1631-1660']]: 1.5,
@@ -34,11 +34,5 @@ export const CoeffYear: CoeffYearType = {
     default: 7,
   },
 }
-
-export const FirearmCostCoeff = {
-  [FiringMechanism.Matchlock]: 1,
-  [FiringMechanism.Wheellock]: 7,
-  [FiringMechanism.Flintlock]: 2,
-} as const
 
 export const RiffledCostCoeff = 2 as const
