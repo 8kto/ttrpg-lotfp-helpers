@@ -83,7 +83,7 @@ const MissileWeaponsGrid = () => {
         </p>
         <div className={'mb-2'}>
           <FirearmsFilterPanel onChange={onFilterChange} />
-          <span className='text-sm'>
+          <span className='text-sm ph-color-muted'>
             <Trans>Cost coefficient</Trans>: {costCoeff}
           </span>
         </div>

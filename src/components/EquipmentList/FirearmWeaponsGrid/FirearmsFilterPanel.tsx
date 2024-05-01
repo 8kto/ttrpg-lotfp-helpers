@@ -30,10 +30,10 @@ const FirearmsFilterPanel = ({ onChange }: FirearmsFilterPanelProps) => {
     <div data-testid='FirearmsFilterPanel'>
       <div
         data-testid='FirearmsFilterPanel__firstLine'
-        className='my-4 flex justify-start lg:my-2'
+        className='my-4 flex flex-wrap justify-start lg:my-2'
       >
-        <div className='mr-4 flex items-center'>
-          <h3 className='ph-color-accent font-semibold'>
+        <div className='w-full md:w-auto'>
+          <h3 className='ph-color-accent mr-4 font-semibold'>
             <Trans>Firearm mechanism</Trans>
           </h3>
         </div>
@@ -63,10 +63,10 @@ const FirearmsFilterPanel = ({ onChange }: FirearmsFilterPanelProps) => {
       </div>
       <div
         data-testid='FirearmsFilterPanel__secondLine'
-        className='my-4 flex justify-start lg:my-2'
+        className='my-4 flex flex-wrap justify-start lg:my-2'
       >
-        <div className='mr-4 flex items-center'>
-          <h3 className='ph-color-accent font-semibold'>
+        <div className='w-full md:w-auto'>
+          <h3 className='ph-color-accent mr-4 font-semibold'>
             <label htmlFor='year-checkbox'>
               <Trans>Year</Trans>
             </label>
@@ -96,9 +96,10 @@ const FirearmsFilterPanel = ({ onChange }: FirearmsFilterPanelProps) => {
           </div>
         ))}
       </div>
+
       <div
         data-testid='FirearmsFilterPanel__thirdLine'
-        className='my-4 flex justify-start lg:my-2'
+        className='my-4 flex flex-wrap justify-start lg:my-2'
       >
         <div className='mr-4 flex items-center'>
           <h3 className='ph-color-accent font-semibold'>
