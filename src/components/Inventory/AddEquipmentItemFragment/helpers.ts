@@ -8,6 +8,7 @@ import type { EquipmentCategoryKey } from '@/state/InventoryState'
 
 export const EquipLabelsDict: Record<EquipmentCategoryKey, string> = {
   armor: /*i18n*/ 'Armor',
+  firearmWeapons: /*i18n*/ 'Firearms',
   meleeWeapons: /*i18n*/ 'Mêlée weapons',
   miscEquipment: /*i18n*/ 'Miscellaneous',
   missileWeapons: /*i18n*/ 'Missile weapons',
