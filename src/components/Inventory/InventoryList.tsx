@@ -85,7 +85,7 @@ const InventoryList = () => {
         <div className='mb-6'>
           <div className='flex w-full items-center'>
             <h2 className={categoryTitleClassname}>
-              <Trans>Firearm Weapons</Trans>
+              <Trans>Firearms</Trans>
             </h2>
             <CategoryInventoryControls category='firearmWeapons' />
           </div>
