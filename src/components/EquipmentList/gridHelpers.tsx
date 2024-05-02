@@ -1,3 +1,4 @@
+import { t, Trans } from '@lingui/macro'
 import classnames from 'classnames'
 import React from 'react'
 
@@ -5,7 +6,10 @@ import CostFragment from '@/components/CostFragment/CostFragment'
 import type { DataGridColumn } from '@/components/DataGrid/types'
 import MeleeWeaponTraitsFragment from '@/components/EquipmentList/MeleeWeaponTraitsFragment'
 import { Details } from '@/components/Inventory/ItemDetails/Details'
-import { isMeleeWeaponItem } from '@/components/Inventory/ItemDetails/helpers'
+import {
+  isFirearmItem,
+  isMeleeWeaponItem,
+} from '@/components/Inventory/ItemDetails/helpers'
 import QtyFragment from '@/components/Inventory/ItemDetails/QtyFragment'
 import RangeFragment from '@/components/RangeFragment'
 import { CurrencyType } from '@/domain/currency'
@@ -101,6 +105,14 @@ export const renderInventoryTitle: RenderFunction<
       {!isExpanded && isMeleeWeaponItem(item) && (
         <MeleeWeaponTraitsFragment item={item} />
       )}
+      {!isExpanded && isFirearmItem(item) && item.isTwoHanded && (
+        <p
+          title={t`weapons.melee.twoHanded`}
+          className='ph-color-muted text-sm'
+        >
+          <Trans>Two-handed</Trans>
+        </p>
+      )}
       {!isExpanded && !!range && (
         <p title={i18n._('Range, feet')} className='ph-color-muted text-sm'>
           <RangeFragment range={range} compact />
@@ -122,7 +134,7 @@ export const renderInventoryDetailsBody: RenderDetailsFunction<
     <>
       <Details item={item} />
       {!!weightLabel && (
-        <p title={i18n._(`Weight`)} className='mt-2 ph-color-muted text-sm'>
+        <p title={i18n._(`Weight`)} className='ph-color-muted mt-2 text-sm'>
           {weightLabel}
         </p>
       )}
