@@ -41,6 +41,7 @@ describe('getGetterNames', () => {
     it('should return expected list of translated Equipment categories', () => {
       expect(getGetterNames(Equipment)).toEqual([
         'Armor',
+        'FirearmWeapons',
         'MeleeWeapons',
         'MiscEquipment',
         'MissileWeapons',
