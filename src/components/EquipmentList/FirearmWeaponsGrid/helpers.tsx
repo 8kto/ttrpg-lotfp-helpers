@@ -1,6 +1,6 @@
 import type { FilterValues } from '@/components/EquipmentList/FirearmWeaponsGrid/types'
 import Equipment from '@/config/Equipment'
-import { FirearmCostCoeff, RiffledCostCoeff } from '@/domain/firearms'
+import { FirearmCostCoeff, RiffledCostCoeff } from '@/config/Firearms'
 
 export const getFilteredData = (isCostRural: boolean) => {
   const data = Object.values(Equipment.FirearmWeapons)
