@@ -10,9 +10,11 @@ import {
   ruralCostColumn,
 } from '@/components/EquipmentList/FirearmWeaponsGrid/consts'
 import FirearmsFilterPanel from '@/components/EquipmentList/FirearmWeaponsGrid/FirearmsFilterPanel'
+import type { GridDataProcessor } from '@/components/EquipmentList/FirearmWeaponsGrid/helpers'
 import {
   getFilteredData,
   getFirearmsCostCoefficient,
+  handlePistols,
 } from '@/components/EquipmentList/FirearmWeaponsGrid/helpers'
 import type { FilterValues } from '@/components/EquipmentList/FirearmWeaponsGrid/types'
 import {
@@ -22,6 +24,8 @@ import {
 import type { FirearmWeaponItem } from '@/domain/weapon'
 import useTailwindBreakpoint from '@/shared/hooks/useTailwindBreakpoint'
 import { useInventoryState } from '@/state/InventoryState'
+
+const gridDataProcessors: Array<GridDataProcessor> = [handlePistols]
 
 const MissileWeaponsGrid = () => {
   const {
@@ -60,7 +64,10 @@ const MissileWeaponsGrid = () => {
       }
     }
 
-    return data
+    return gridDataProcessors.reduce(
+      (acc, fn) => fn(acc, firingMechanism),
+      data,
+    )
   }, [filterValues, isCostRural, costCoeff])
 
   const onFilterChange = (values: FilterValues) => {
@@ -83,7 +90,7 @@ const MissileWeaponsGrid = () => {
         </p>
         <div className={'mb-2'}>
           <FirearmsFilterPanel onChange={onFilterChange} />
-          <span className='text-sm ph-color-muted'>
+          <span className='ph-color-muted text-sm'>
             <Trans>Cost coefficient</Trans>: {costCoeff}
           </span>
         </div>

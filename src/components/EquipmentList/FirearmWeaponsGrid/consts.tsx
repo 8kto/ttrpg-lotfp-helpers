@@ -70,7 +70,7 @@ export const ruralCostColumn: DataGridColumn<FirearmWeaponItem> = {
 }
 
 export const defaultFilterValues = {
-  firingMechanism: FiringMechanism.Matchlock,
+  firingMechanism: FiringMechanism.Wheellock,
   riffled: false,
   year: YearPeriod['> 1661'],
 }
