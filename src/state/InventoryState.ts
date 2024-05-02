@@ -6,7 +6,11 @@ import type { CurrencyRecord, CurrencyWallet } from '@/domain/currency'
 import { EncumbranceThreshold } from '@/domain/encumbrance'
 import type { EquipmentItem } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
-import type { MeleeWeaponItem, MissileWeaponItem } from '@/domain/weapon'
+import type {
+  FirearmWeaponItem,
+  MeleeWeaponItem,
+  MissileWeaponItem,
+} from '@/domain/weapon'
 import deepclone from '@/shared/helpers/deepclone'
 import CurrencyConverter from '@/shared/services/CurrencyConverter'
 import { addItem, removeItem } from '@/state/helpers'
@@ -19,6 +23,7 @@ export type InventoryStateType = {
   isWalletManaged: boolean
   meleeWeapons: ReadonlyArray<InventoryItem<MeleeWeaponItem>>
   missileWeapons: ReadonlyArray<InventoryItem<MissileWeaponItem>>
+  firearmWeapons: ReadonlyArray<InventoryItem<FirearmWeaponItem>>
   miscEquipment: ReadonlyArray<InventoryItem<EquipmentItem>>
   encumbranceThreshold: EncumbranceThreshold
 }
@@ -31,6 +36,7 @@ export type InventoryStateType = {
 const initialInventoryState: Readonly<InventoryStateType> = {
   armor: Array<InventoryItem<ArmorItem>>(),
   encumbranceThreshold: EncumbranceThreshold.Regular,
+  firearmWeapons: Array<InventoryItem<FirearmWeaponItem>>(),
   isCoinWeightActive: true,
   isCostRural: false,
   isWalletManaged: false,
@@ -44,14 +50,22 @@ const initialInventoryState: Readonly<InventoryStateType> = {
   },
 }
 
+// TODO convert to enum?
 export type EquipmentCategoryKey =
   | 'armor'
   | 'meleeWeapons'
   | 'missileWeapons'
+  | 'firearmWeapons'
   | 'miscEquipment'
 
 export const EquipmentStateKeys: ReadonlyArray<EquipmentCategoryKey> =
-  Object.freeze(['armor', 'meleeWeapons', 'missileWeapons', 'miscEquipment'])
+  Object.freeze([
+    'armor',
+    'meleeWeapons',
+    'missileWeapons',
+    'miscEquipment',
+    'firearmWeapons',
+  ])
 
 export const getInitialInventoryState = (): InventoryStateType => {
   return deepclone(initialInventoryState)
@@ -91,6 +105,7 @@ export const useInventoryState = () => {
   const resetEquipment = () => {
     state.merge({
       armor: Array<InventoryItem<ArmorItem>>(),
+      firearmWeapons: Array<InventoryItem<FirearmWeaponItem>>(),
       meleeWeapons: Array<InventoryItem<MeleeWeaponItem>>(),
       miscEquipment: Array<InventoryItem<EquipmentItem>>(),
       missileWeapons: Array<InventoryItem<MissileWeaponItem>>(),
@@ -116,6 +131,10 @@ export const addEquipmentItem = (item: InventoryItem<EquipmentItem>) =>
   addItem(InventoryState.miscEquipment, item)
 export const removeEquipmentItem = (item: InventoryItem<EquipmentItem>) =>
   removeItem(InventoryState.miscEquipment, item)
+export const addFirearmWeapon = (item: InventoryItem<FirearmWeaponItem>) =>
+  addItem(InventoryState.firearmWeapons, item)
+export const removeFirearmWeapon = (item: InventoryItem<FirearmWeaponItem>) =>
+  removeItem(InventoryState.firearmWeapons, item)
 
 export const toggleCost = () => {
   const isCostRural = InventoryState.isCostRural
@@ -195,6 +214,10 @@ export const EquipmentStateActions: EquipmentStateActionsType = {
   armor: {
     add: addArmor,
     remove: removeArmor,
+  },
+  firearmWeapons: {
+    add: addFirearmWeapon,
+    remove: removeFirearmWeapon,
   },
   meleeWeapons: {
     add: addMeleeWeapon,

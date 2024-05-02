@@ -6,6 +6,7 @@ import type { EquipmentItem } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
 import {
   armorItemMock1,
+  firearmWeaponItemMock1,
   meleeWeaponItemMock1,
   miscEquipItem1,
   missileWeaponItemMock1,
@@ -59,18 +60,21 @@ describe('InventoryState Tests', () => {
         const meleeWeapons = result.current.state.meleeWeapons
         const missileWeapons = result.current.state.missileWeapons
         const miscEquipment = result.current.state.miscEquipment
+        const firearmWeapons = result.current.state.firearmWeapons
         const isCostRural = result.current.state.isCostRural
 
         armor[armor.length].set(armorItemMock1)
         meleeWeapons[meleeWeapons.length].set(meleeWeaponItemMock1)
         missileWeapons[missileWeapons.length].set(missileWeaponItemMock1)
         miscEquipment[miscEquipment.length].set(miscEquipItem1)
+        firearmWeapons[firearmWeapons.length].set(firearmWeaponItemMock1)
         isCostRural.set(!isCostRural.get())
       })
 
       expect(result.current.state.get()).toEqual({
         armor: [armorItemMock1],
         encumbranceThreshold: EncumbranceThreshold.Regular,
+        firearmWeapons: [firearmWeaponItemMock1],
         isCoinWeightActive: true,
         isCostRural: true,
         isWalletManaged: false,
@@ -119,6 +123,7 @@ describe('InventoryState Tests', () => {
       expect(result.current.state.get()).toEqual({
         armor: [],
         encumbranceThreshold: EncumbranceThreshold.Regular,
+        firearmWeapons: [],
         isCoinWeightActive: true,
         isCostRural: true,
         isWalletManaged: false,

@@ -2,8 +2,10 @@ import { Trans } from '@lingui/macro'
 import React from 'react'
 
 import DamageFragment from '@/components/DamageFragment'
+import FirearmRangeFragment from '@/components/FirearmRangeFragment'
 import {
   isArmorItem,
+  isFirearmItem,
   isMissileItem,
   isWeaponItem,
 } from '@/components/Inventory/ItemDetails/helpers'
@@ -39,6 +41,16 @@ export const Details = <T extends EquipmentItem>({ item }: { item: T }) => {
             <Trans>Range</Trans>
           </strong>
           <RangeFragment range={item.range} />
+        </div>
+      ) : null}
+
+      {/* Firearms weapons */}
+      {isFirearmItem(item) ? (
+        <div className={paragraphClassname} data-testid='details--firearms'>
+          <strong>
+            <Trans>Range</Trans>
+          </strong>
+          <FirearmRangeFragment range={item.range} />
         </div>
       ) : null}
 

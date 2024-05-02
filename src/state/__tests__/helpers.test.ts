@@ -7,6 +7,7 @@ import type { InventoryItem } from '@/domain/inventory'
 import {
   armorItemMock1,
   armorItemMock2,
+  firearmWeaponItemMock1,
   meleeWeaponItemMock1,
   meleeWeaponItemMock2,
   miscEquipItem1,
@@ -44,6 +45,7 @@ describe('Inventory helpers', () => {
         miscEquipItem2,
         missileWeaponItemMock1,
         missileWeaponItemMock2,
+        firearmWeaponItemMock1,
       ]
 
       expect(combinedEquipment).toEqual(expect.arrayContaining(expected))
@@ -55,6 +57,7 @@ describe('Inventory helpers', () => {
       const mockEmptyEquipmentState = createStateMock({
         armor: [],
         encumbranceThreshold: EncumbranceThreshold.Regular,
+        firearmWeapons: [],
         isCoinWeightActive: true,
         isCostRural: false,
         isWalletManaged: false,

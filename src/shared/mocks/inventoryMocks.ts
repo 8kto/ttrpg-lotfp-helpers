@@ -3,8 +3,13 @@ import type { ArmorItem } from '@/domain/armor'
 import { ArmorType } from '@/domain/armor'
 import { EncumbranceUnit } from '@/domain/encumbrance'
 import type { EquipmentItem } from '@/domain/equipment'
+import { FiringMechanism } from '@/domain/firearms'
 import type { InventoryItem } from '@/domain/inventory'
-import type { MeleeWeaponItem, MissileWeaponItem } from '@/domain/weapon'
+import type {
+  FirearmWeaponItem,
+  MeleeWeaponItem,
+  MissileWeaponItem,
+} from '@/domain/weapon'
 import { WeaponType } from '@/domain/weapon'
 
 export const armorItemMock1: InventoryItem<ArmorItem> = {
@@ -113,4 +118,22 @@ export const miscEquipItem2: InventoryItem<EquipmentItem> = {
   points: EncumbranceUnit.Oversized,
   qty: 1,
   ruralCostCp: 20,
+}
+
+export const firearmWeaponItemMock1: InventoryItem<FirearmWeaponItem> = {
+  categoryKey: 'firearmWeapons',
+  cityCostCp: 300,
+  damage: { dice: Dice.d8, x: 1 },
+  damageMelee: { dice: Dice.d6, x: 1 },
+  firingMechanism: FiringMechanism.Matchlock,
+  inventoryId: '9',
+  isRiffled: false,
+  isTwoHanded: true,
+  lockedCostCp: 300,
+  name: `Arquebus`,
+  points: EncumbranceUnit.Regular,
+  qty: 1,
+  range: { long: 600, medium: 100, short: 50 },
+  ruralCostCp: 500,
+  type: WeaponType.Firearms,
 }
