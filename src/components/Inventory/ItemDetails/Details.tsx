@@ -2,6 +2,7 @@ import { Trans } from '@lingui/macro'
 import React from 'react'
 
 import DamageFragment from '@/components/DamageFragment'
+import FirearmRangeFragment from '@/components/FirearmRangeFragment'
 import {
   isArmorItem,
   isFirearmItem,
@@ -49,7 +50,7 @@ export const Details = <T extends EquipmentItem>({ item }: { item: T }) => {
           <strong>
             <Trans>Range</Trans>
           </strong>
-          <RangeFragment range={item.range} />
+          <FirearmRangeFragment range={item.range} />
         </div>
       ) : null}
 
