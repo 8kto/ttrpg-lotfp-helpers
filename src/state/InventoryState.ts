@@ -242,14 +242,13 @@ type EquipmentStateAction<T extends EquipmentItem> = {
   remove: (item: InventoryItem<T>) => void
 }
 
-type InferEquipmentItem<T> = T extends ReadonlyArray<InventoryItem<infer U>>
-  ? U
-  : never
+type InferEquipmentItem<T> =
+  T extends ReadonlyArray<InventoryItem<infer U>> ? U : never
 
 type EquipmentStateActionsType = {
-  [K in keyof InventoryStateType as K extends EquipmentCategoryKey
-    ? K
-    : never]: EquipmentStateAction<InferEquipmentItem<InventoryStateType[K]>>
+  [
+    K in keyof InventoryStateType as K extends EquipmentCategoryKey ? K : never
+  ]: EquipmentStateAction<InferEquipmentItem<InventoryStateType[K]>>
 }
 
 export const EquipmentStateActions: EquipmentStateActionsType = {
