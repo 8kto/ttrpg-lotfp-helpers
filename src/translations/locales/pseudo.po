@@ -95,6 +95,9 @@ msgstr ""
 msgid "Fighter 1"
 msgstr ""
 
+msgid "Year"
+msgstr ""
+
 msgid "Damage"
 msgstr ""
 
@@ -120,6 +123,9 @@ msgid "Holy Symbol, Wood"
 msgstr ""
 
 msgid "Silver pieces"
+msgstr ""
+
+msgid "Riffled"
 msgstr ""
 
 msgid "Spikes for your boots – better success at climbing and keeping balance on ice"
@@ -297,7 +303,18 @@ msgstr ""
 msgid "Tent, Personal"
 msgstr ""
 
+msgid "Pistol"
+msgstr ""
+
 msgid "Gold"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Firearms"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Flintlock"
 msgstr ""
 
 msgid ""
@@ -310,6 +327,9 @@ msgid "Filter by name"
 msgstr ""
 
 msgid "Wolvesbane"
+msgstr ""
+
+msgid "Firearms"
 msgstr ""
 
 msgid "Fishing Gear"
@@ -436,6 +456,10 @@ msgid "Club"
 msgstr ""
 
 #. js-lingui-explicit-id
+msgid "Matchlock"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Miscellaneous"
 msgstr ""
 
@@ -476,6 +500,9 @@ msgid "None"
 msgstr ""
 
 msgid "title.encumbrancePoints"
+msgstr ""
+
+msgid "Middle, -4 AB"
 msgstr ""
 
 msgid "Armor Class"
@@ -564,6 +591,9 @@ msgstr ""
 msgid "Severely"
 msgstr ""
 
+msgid "Pistol brace"
+msgstr ""
+
 msgid "Lard"
 msgstr ""
 
@@ -602,6 +632,13 @@ msgstr ""
 msgid "Weight"
 msgstr ""
 
+#. js-lingui-explicit-id
+msgid "Wheellock"
+msgstr ""
+
+msgid "Pistols are about the size of a man’s forearm and require one hand to fire. Pistols never use the matchlock firing mechanism. Can be used as a mêlée weapon (d4 damage)."
+msgstr ""
+
 msgid "Tobacco"
 msgstr ""
 
@@ -623,6 +660,9 @@ msgstr ""
 msgid "Emits light in a 10' radius. Burns for 2 hours."
 msgstr ""
 
+msgid "Cost coefficient"
+msgstr ""
+
 msgid "These weapons must be wielded with two hands. Two-handed swords, mauls, and great axes are included in this category."
 msgstr ""
 
@@ -639,6 +679,9 @@ msgid "Inventory"
 msgstr ""
 
 msgid "* Exchange and sort coins, e.g., turn <0>{0} cp</0> into <1>{1} gp 25 sp</1>."
+msgstr ""
+
+msgid "Arquebus is a handheld long gun which does not require a fork rest in order to fire properly. Can be used as a mêlée weapon (d6 damage)."
 msgstr ""
 
 msgid "Book, Blank"
@@ -686,6 +729,9 @@ msgid "Grappling Hook"
 msgstr ""
 
 msgid "Specialist"
+msgstr ""
+
+msgid "Brace of two pistols."
 msgstr ""
 
 msgid "Bow, Long"
@@ -770,6 +816,9 @@ msgstr ""
 msgid "Spike, Iron"
 msgstr ""
 
+msgid "Arquebus"
+msgstr ""
+
 msgid "config.melee.slingRocks.details"
 msgstr ""
 
@@ -806,6 +855,9 @@ msgstr ""
 msgid "Wilderness"
 msgstr ""
 
+msgid "Musket is a large handheld long gun which requires a fork rest in order to fire; not having the rest levies a –2 penalty to hit. Can be used as a mêlée weapon (d6 damage)."
+msgstr ""
+
 msgid "Inventory cost"
 msgstr ""
 
@@ -834,6 +886,9 @@ msgid "Missile Weapons"
 msgstr ""
 
 msgid "English"
+msgstr ""
+
+msgid "Long, -8 AB"
 msgstr ""
 
 msgid "Gold pieces"
@@ -896,6 +951,9 @@ msgstr ""
 msgid "Jewelry"
 msgstr ""
 
+msgid "Targets at Medium range are –4 to hit, –8 to hit at Long range. Rifled barrels halve the range penalties, but cost twice as much."
+msgstr ""
+
 msgid "Pole, 10'"
 msgstr ""
 
@@ -906,6 +964,9 @@ msgid "No encumbrance if empty"
 msgstr ""
 
 msgid "Hourglass"
+msgstr ""
+
+msgid "Firearm mechanism"
 msgstr ""
 
 msgid "Dart for blowgun (1)"
@@ -942,6 +1003,9 @@ msgid "Specialist tools are required for Specialists to utilize their Search ski
 msgstr ""
 
 msgid "Charcoal pieces of carbonized wood, which can be used like chalk (with black markings), or to add to tinder"
+msgstr ""
+
+msgid "Musket"
 msgstr ""
 
 msgid "Spike, Wooden"

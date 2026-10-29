@@ -98,6 +98,9 @@ msgstr "Svatý symbol, ocel"
 msgid "Fighter 1"
 msgstr "Bojovník 1"
 
+msgid "Year"
+msgstr ""
+
 msgid "Damage"
 msgstr "Poškození"
 
@@ -124,6 +127,9 @@ msgstr "Svatý symbol, dřevo"
 
 msgid "Silver pieces"
 msgstr "Stříbrné kusy"
+
+msgid "Riffled"
+msgstr ""
 
 msgid "Spikes for your boots – better success at climbing and keeping balance on ice"
 msgstr "Hřeby pro vaše boty - lepší úspěch při lezení a udržování rovnováhy na ledu."
@@ -305,8 +311,19 @@ msgstr "Druhá řada"
 msgid "Tent, Personal"
 msgstr "Stan, osobní"
 
+msgid "Pistol"
+msgstr ""
+
 msgid "Gold"
 msgstr "Zlato"
+
+#. js-lingui-explicit-id
+msgid "Firearms"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "Flintlock"
+msgstr ""
 
 msgid ""
 "Chalk is useful for “blazing a trail” through a dungeon or\n"
@@ -322,6 +339,9 @@ msgstr "Filtrovat podle názvu"
 
 msgid "Wolvesbane"
 msgstr "Vlkodlak"
+
+msgid "Firearms"
+msgstr ""
 
 msgid "Fishing Gear"
 msgstr "Rybářské vybavení"
@@ -447,6 +467,10 @@ msgid "Club"
 msgstr "Klub"
 
 #. js-lingui-explicit-id
+msgid "Matchlock"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Miscellaneous"
 msgstr "Různé"
 
@@ -494,6 +518,9 @@ msgstr "Žádný"
 
 msgid "title.encumbrancePoints"
 msgstr "title.encumbrancePoints"
+
+msgid "Middle, -4 AB"
+msgstr ""
 
 msgid "Armor Class"
 msgstr "Třída brnění"
@@ -581,6 +608,9 @@ msgstr "Kladka a táhlo"
 msgid "Severely"
 msgstr "Vážně"
 
+msgid "Pistol brace"
+msgstr ""
+
 msgid "Lard"
 msgstr "Sádlo"
 
@@ -619,6 +649,13 @@ msgstr "O projektu nástrojů LotFP"
 msgid "Weight"
 msgstr "Váha"
 
+#. js-lingui-explicit-id
+msgid "Wheellock"
+msgstr ""
+
+msgid "Pistols are about the size of a man’s forearm and require one hand to fire. Pistols never use the matchlock firing mechanism. Can be used as a mêlée weapon (d4 damage)."
+msgstr ""
+
 msgid "Tobacco"
 msgstr "Tabák"
 
@@ -640,6 +677,9 @@ msgstr "Srážky, silný vítr"
 msgid "Emits light in a 10' radius. Burns for 2 hours."
 msgstr "Vyzařuje světlo v poloměru 10 stop. Hoří 2 hodiny."
 
+msgid "Cost coefficient"
+msgstr ""
+
 msgid "These weapons must be wielded with two hands. Two-handed swords, mauls, and great axes are included in this category."
 msgstr "Tyto zbraně musí být používány oběma rukama. Do této kategorie patří dvouruční meče, palice a velké sekery."
 
@@ -657,6 +697,9 @@ msgstr "Inventář"
 
 msgid "* Exchange and sort coins, e.g., turn <0>{0} cp</0> into <1>{1} gp 25 sp</1>."
 msgstr "* Výměna a třídění mincí, např. přeměnit <0>{0} cp</0> na <1>{1} gp 25 sp</1>."
+
+msgid "Arquebus is a handheld long gun which does not require a fork rest in order to fire properly. Can be used as a mêlée weapon (d6 damage)."
+msgstr ""
 
 msgid "Book, Blank"
 msgstr "Kniha, prázdná"
@@ -704,6 +747,9 @@ msgstr "Háček"
 
 msgid "Specialist"
 msgstr "Specialista"
+
+msgid "Brace of two pistols."
+msgstr ""
 
 msgid "Bow, Long"
 msgstr "Luk, dlouhý"
@@ -792,6 +838,9 @@ msgstr "Papír"
 msgid "Spike, Iron"
 msgstr "Hřebík, železný"
 
+msgid "Arquebus"
+msgstr ""
+
 msgid "config.melee.slingRocks.details"
 msgstr "Pračky střílející kameny místo střel mají uvedený dosah (polovina běžného)."
 
@@ -828,6 +877,9 @@ msgstr "Bojová sekera"
 msgid "Wilderness"
 msgstr "Divoká příroda"
 
+msgid "Musket is a large handheld long gun which requires a fork rest in order to fire; not having the rest levies a –2 penalty to hit. Can be used as a mêlée weapon (d6 damage)."
+msgstr ""
+
 msgid "Inventory cost"
 msgstr "Cena inventáře"
 
@@ -857,6 +909,9 @@ msgstr "Střelné zbraně"
 
 msgid "English"
 msgstr "Angličtina"
+
+msgid "Long, -8 AB"
+msgstr ""
 
 msgid "Gold pieces"
 msgstr "Zlaté kousky"
@@ -918,6 +973,9 @@ msgstr "Vybrat náhodně"
 msgid "Jewelry"
 msgstr "Šperky"
 
+msgid "Targets at Medium range are –4 to hit, –8 to hit at Long range. Rifled barrels halve the range penalties, but cost twice as much."
+msgstr ""
+
 msgid "Pole, 10'"
 msgstr "Tyč, 10 stop"
 
@@ -929,6 +987,9 @@ msgstr "Žádné zatížení, pokud je prázdný"
 
 msgid "Hourglass"
 msgstr "Pískové hodiny"
+
+msgid "Firearm mechanism"
+msgstr ""
 
 msgid "Dart for blowgun (1)"
 msgstr "Šipka pro foukačku (1)"
@@ -965,6 +1026,9 @@ msgstr "Specialisté potřebují specializované nástroje k využití své dove
 
 msgid "Charcoal pieces of carbonized wood, which can be used like chalk (with black markings), or to add to tinder"
 msgstr "Kousky dřevěného uhlí, které lze použít jako křídu (s černými značkami), nebo přidat do třísky."
+
+msgid "Musket"
+msgstr ""
 
 msgid "Spike, Wooden"
 msgstr "Hřebík, dřevěný"
