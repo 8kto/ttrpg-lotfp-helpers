@@ -10,6 +10,7 @@ import type {
   SortConfig,
   SortOrder,
 } from '@/components/DataGrid/types'
+import { isInventoryItem } from '@/components/Inventory/ItemDetails/helpers'
 import type { EquipmentItem } from '@/domain/equipment'
 
 const DataGrid = <T extends EquipmentItem>({
@@ -118,7 +119,7 @@ const DataGrid = <T extends EquipmentItem>({
           <tbody className='bg-white'>
             {filteredData.map((item, index) => (
               <DataGridRow<T>
-                key={item.name}
+                key={isInventoryItem(item) ? item.inventoryId : item.name}
                 columns={columns}
                 item={item}
                 index={index}

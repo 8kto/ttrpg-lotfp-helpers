@@ -30,7 +30,7 @@ const DataGridRow = <T extends EquipmentItem>({
   const [isExpanded, setIsExpanded] = useState(false)
 
   return (
-    <tr key={item.name} className={classnames({ 'bg-gray-50': index % 2 })}>
+    <tr className={classnames({ 'bg-gray-50': index % 2 })}>
       {columns.map((column) => (
         <DataGridCell<T>
           item={item}
