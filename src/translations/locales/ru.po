@@ -392,6 +392,10 @@ msgstr "Не нагружен"
 msgid "Bedroll"
 msgstr "Спальный мешок"
 
+msgctxt "equipment tab"
+msgid "Firearms"
+msgstr "Огнестрельное"
+
 msgid "Include the extended encumbrance ability."
 msgstr "Включить расширенную нагрузку"
 

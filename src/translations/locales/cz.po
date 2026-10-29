@@ -397,6 +397,10 @@ msgstr "Nezatížený"
 msgid "Bedroll"
 msgstr "Spací pytel"
 
+msgctxt "equipment tab"
+msgid "Firearms"
+msgstr ""
+
 msgid "Include the extended encumbrance ability."
 msgstr "Zahrnout rozšířenou schopnost zatížení."
 

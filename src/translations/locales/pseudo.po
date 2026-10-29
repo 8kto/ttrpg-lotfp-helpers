@@ -386,6 +386,10 @@ msgstr ""
 msgid "Bedroll"
 msgstr ""
 
+msgctxt "equipment tab"
+msgid "Firearms"
+msgstr ""
+
 msgid "Include the extended encumbrance ability."
 msgstr ""
 

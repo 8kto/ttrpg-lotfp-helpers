@@ -401,6 +401,10 @@ msgstr "Unencumbered"
 msgid "Bedroll"
 msgstr "Bedroll"
 
+msgctxt "equipment tab"
+msgid "Firearms"
+msgstr "Firearms"
+
 msgid "Include the extended encumbrance ability."
 msgstr "Include the extended encumbrance ability."
 
