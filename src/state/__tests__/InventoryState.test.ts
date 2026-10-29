@@ -39,6 +39,7 @@ import {
   setWallet,
   toggleCoinsWeightActive,
   toggleCost,
+  toggleFirearmsCampaign,
   useInventoryState,
 } from '@/state/InventoryState'
 
@@ -105,6 +106,7 @@ describe('InventoryState Tests', () => {
         firearmWeapons: [firearmWeaponItemMock1],
         isCoinWeightActive: true,
         isCostRural: true,
+        isFirearmsCampaign: false,
         isWalletManaged: false,
         meleeWeapons: [meleeWeaponItemMock1],
         miscEquipment: [miscEquipItem1],
@@ -154,6 +156,7 @@ describe('InventoryState Tests', () => {
         firearmWeapons: [],
         isCoinWeightActive: true,
         isCostRural: true,
+        isFirearmsCampaign: false,
         isWalletManaged: false,
         meleeWeapons: [],
         miscEquipment: [],
@@ -202,6 +205,14 @@ describe('InventoryState Tests', () => {
       expect(InventoryState.isCostRural.get()).toEqual(false)
       toggleCost()
       expect(InventoryState.isCostRural.get()).toEqual(true)
+    })
+  })
+
+  describe('isFirearmsCampaign', () => {
+    it('is off by default and toggles', () => {
+      expect(InventoryState.isFirearmsCampaign.get()).toEqual(false)
+      toggleFirearmsCampaign()
+      expect(InventoryState.isFirearmsCampaign.get()).toEqual(true)
     })
   })
 
@@ -510,6 +521,19 @@ describe('InventoryState Tests', () => {
   })
 
   describe('setState', () => {
+    it('fills keys missing in an imported state of an older version', () => {
+      const oldState: Partial<InventoryStateType> = {
+        ...stateMock,
+        meleeWeapons: [meleeWeaponItemMock1],
+      }
+      delete oldState.firearmWeapons
+
+      setState(oldState as InventoryStateType)
+
+      expect(InventoryState.firearmWeapons.get()).toEqual([])
+      expect(InventoryState.meleeWeapons.get()).toEqual([meleeWeaponItemMock1])
+    })
+
     it('sets state', () => {
       setState(stateMock)
 

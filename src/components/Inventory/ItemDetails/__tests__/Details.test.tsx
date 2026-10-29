@@ -6,6 +6,7 @@ import { act, render, screen } from '@testing-library/react'
 import React from 'react'
 
 import { Details } from '@/components/Inventory/ItemDetails/Details'
+import { ArmorType } from '@/domain/armor'
 import { FiringMechanism } from '@/domain/firearms'
 import {
   armorItemMock1,
@@ -34,6 +35,30 @@ describe('Details component', () => {
       expect(screen.getByTestId('details--ac').textContent).toEqual(
         'Armor Class: 14',
       )
+    })
+
+    it('displays the physical damage save bonus for helmets', () => {
+      render(
+        <Details
+          item={{
+            ...armorItemMock1,
+            armorClass: '+1',
+            physicalSaveBonus: 2,
+            type: ArmorType.Accessory,
+          }}
+        />,
+        { wrapper: TestingProvider },
+      )
+      expect(screen.getByTestId('details--physical-save').textContent).toEqual(
+        'Saving throws vs physical damage: +2',
+      )
+    })
+
+    it('does not display the save bonus for regular armor', () => {
+      render(<Details item={armorItemMock1} />, { wrapper: TestingProvider })
+      expect(
+        screen.queryByTestId('details--physical-save'),
+      ).not.toBeInTheDocument()
     })
 
     it('displays damage for weapon items', () => {
@@ -118,7 +143,7 @@ describe('Details component', () => {
       expect(screen.getByTestId('details--reload').textContent).toEqual(
         'Reload: 10 rounds (8 for Fighters) + Encumbrance (now 0) – Dexterity modifier' +
           '; ×½ for flintlock (Fighters round down, others round up)' +
-          '; ×1.5 for rifled barrel',
+          '; ×1.5 for rifled barrel (round to the nearest)',
       )
       expect(screen.getByTestId('details--misfire').textContent).toEqual(
         'Misfire: 1 in 10; damp 2 in 10, rain 4 in 10',

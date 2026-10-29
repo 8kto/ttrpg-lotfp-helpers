@@ -2,7 +2,7 @@ import '@testing-library/jest-dom'
 
 import { i18n } from '@lingui/core'
 import { I18nProvider } from '@lingui/react'
-import { render, screen } from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
 import React from 'react'
 
 import DataGrid from '@/components/DataGrid/DataGrid'
@@ -48,5 +48,46 @@ describe('DataGrid', () => {
       expect.anything(),
     )
     consoleError.mockRestore()
+  })
+
+  it('disables the Add button with an explanation when adding is off', () => {
+    const onAddClick = jest.fn()
+
+    render(
+      <I18nProvider i18n={i18n}>
+        <DataGrid<Item>
+          data={[firearmWeaponItemMock1]}
+          columns={columns}
+          spanDetails={1}
+          initialSortState={{ key: '' as keyof Item, direction: 'asc' }}
+          onAddClick={onAddClick}
+          addDisabledReason='Enable the firearms campaign'
+          noFilter
+        />
+      </I18nProvider>,
+    )
+
+    const button = screen.getByRole('button', { name: 'Add' })
+    expect(button).toBeDisabled()
+    expect(button).toHaveAttribute('title', 'Enable the firearms campaign')
+    fireEvent.click(button)
+    expect(onAddClick).not.toHaveBeenCalled()
+  })
+
+  it('keeps the Add button enabled by default', () => {
+    render(
+      <I18nProvider i18n={i18n}>
+        <DataGrid<Item>
+          data={[firearmWeaponItemMock1]}
+          columns={columns}
+          spanDetails={1}
+          initialSortState={{ key: '' as keyof Item, direction: 'asc' }}
+          onAddClick={jest.fn()}
+          noFilter
+        />
+      </I18nProvider>,
+    )
+
+    expect(screen.getByRole('button', { name: 'Add' })).toBeEnabled()
   })
 })

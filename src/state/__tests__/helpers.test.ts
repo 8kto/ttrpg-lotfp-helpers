@@ -61,6 +61,7 @@ describe('Inventory helpers', () => {
         firearmWeapons: [],
         isCoinWeightActive: true,
         isCostRural: false,
+        isFirearmsCampaign: false,
         isWalletManaged: false,
         meleeWeapons: [],
         miscEquipment: [],
