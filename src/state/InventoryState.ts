@@ -21,6 +21,8 @@ export type InventoryStateType = {
   wallet: CurrencyWallet
   isCoinWeightActive: boolean
   isCostRural: boolean
+  // Optional firearms rules: firearms can be bought, basic armor costs +50%
+  isFirearmsCampaign: boolean
   isWalletManaged: boolean
   meleeWeapons: ReadonlyArray<InventoryItem<MeleeWeaponItem>>
   missileWeapons: ReadonlyArray<InventoryItem<MissileWeaponItem>>
@@ -40,6 +42,7 @@ const initialInventoryState: Readonly<InventoryStateType> = {
   firearmWeapons: Array<InventoryItem<FirearmWeaponItem>>(),
   isCoinWeightActive: true,
   isCostRural: false,
+  isFirearmsCampaign: false,
   isWalletManaged: false,
   meleeWeapons: Array<InventoryItem<MeleeWeaponItem>>(),
   miscEquipment: Array<InventoryItem<EquipmentItem>>(),
@@ -75,15 +78,19 @@ export const getInitialInventoryState = (): InventoryStateType => {
 const LOCALSTORAGE_APP_KEY = 'lotfp-helpers'
 
 /**
- * State stored by an older app version may lack the newer keys
+ * State saved or exported by an older app version may lack the newer keys
  * (e.g. firearmWeapons), so fill them in with the initial values.
  */
+const withInitialState = (
+  state: Partial<InventoryStateType>,
+): InventoryStateType => ({
+  ...getInitialInventoryState(),
+  ...state,
+})
+
 export const fillMissingStateKeys = (storedState: string): string => {
   try {
-    return JSON.stringify({
-      ...getInitialInventoryState(),
-      ...JSON.parse(storedState),
-    })
+    return JSON.stringify(withInitialState(JSON.parse(storedState)))
   } catch {
     return storedState
   }
@@ -169,6 +176,11 @@ export const removeFirearmWeapon = (item: InventoryItem<FirearmWeaponItem>) =>
 export const toggleCost = () => {
   const isCostRural = InventoryState.isCostRural
   isCostRural.set(!isCostRural.get())
+}
+
+export const toggleFirearmsCampaign = () => {
+  const isFirearmsCampaign = InventoryState.isFirearmsCampaign
+  isFirearmsCampaign.set(!isFirearmsCampaign.get())
 }
 
 export const toggleCoinsWeightActive = () => {
@@ -291,8 +303,8 @@ export const setEncumbranceThreshold = (slots: EncumbranceThreshold) => {
   InventoryState.encumbranceThreshold.set(slots)
 }
 
-export const setState = (data: InventoryStateType) => {
-  InventoryState.set(data)
+export const setState = (data: Partial<InventoryStateType>) => {
+  InventoryState.set(withInitialState(data))
 }
 
 // TODO handle errors on the local storage state restore

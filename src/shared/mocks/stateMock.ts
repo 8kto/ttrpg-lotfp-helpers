@@ -18,6 +18,7 @@ export const stateMock: InventoryStateType = Object.freeze({
   firearmWeapons: [firearmWeaponItemMock1],
   isCoinWeightActive: true,
   isCostRural: false,
+  isFirearmsCampaign: false,
   isWalletManaged: false,
   meleeWeapons: [meleeWeaponItemMock1, meleeWeaponItemMock2],
   miscEquipment: [miscEquipItem1, miscEquipItem2],
