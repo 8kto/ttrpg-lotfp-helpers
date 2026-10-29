@@ -128,9 +128,6 @@ msgstr "Священный символ, деревянный"
 msgid "Silver pieces"
 msgstr "Серебряные монеты"
 
-msgid "Riffled"
-msgstr "Нарезной"
-
 msgid "Spikes for your boots – better success at climbing and keeping balance on ice"
 msgstr "Шипы для ботинок - помогают при лазании и сохранении равновесия на льду"
 
@@ -250,6 +247,9 @@ msgstr "Наборы"
 
 msgid "Silver"
 msgstr "Серебряные"
+
+msgid "Rifled"
+msgstr "Нарезной"
 
 msgid "These are small one-handed weapons including daggers and clubs, and suffer a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 msgstr "Это небольшое одноручное оружие, включая кинжалы и булавы, даёт штраф -2 AB для противников с AC 15 или выше."
@@ -510,9 +510,6 @@ msgstr "Нет"
 msgid "title.encumbrancePoints"
 msgstr "Encumbrance Points"
 
-msgid "Middle, -4 AB"
-msgstr "Средняя, -4 AB"
-
 msgid "Armor Class"
 msgstr "Класс Брони"
 
@@ -726,6 +723,9 @@ msgstr "Встречает рывок"
 
 msgid "Tent, Grand"
 msgstr "Большая палатка"
+
+msgid "Medium, -4 AB"
+msgstr "Средняя, -4 AB"
 
 msgid "Cost, sp"
 msgstr "Цена, sp"

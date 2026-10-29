@@ -129,9 +129,6 @@ msgstr "Holy Symbol, Wood"
 msgid "Silver pieces"
 msgstr "Silver pieces"
 
-msgid "Riffled"
-msgstr "Riffled"
-
 msgid "Spikes for your boots – better success at climbing and keeping balance on ice"
 msgstr "Spikes for your boots – better success at climbing and keeping balance on ice"
 
@@ -256,6 +253,9 @@ msgstr "Packs"
 
 msgid "Silver"
 msgstr "Silver"
+
+msgid "Rifled"
+msgstr "Riffled"
 
 msgid "These are small one-handed weapons including daggers and clubs, and suffer a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 msgstr "These are small one-handed weapons including daggers and clubs, and suffer a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
@@ -523,9 +523,6 @@ msgstr "None"
 msgid "title.encumbrancePoints"
 msgstr "Encumbrance Points"
 
-msgid "Middle, -4 AB"
-msgstr "Middle, -4 AB"
-
 msgid "Armor Class"
 msgstr "Armor Class"
 
@@ -739,6 +736,9 @@ msgstr "Receives charge"
 
 msgid "Tent, Grand"
 msgstr "Tent, Grand"
+
+msgid "Medium, -4 AB"
+msgstr "Middle, -4 AB"
 
 msgid "Cost, sp"
 msgstr "Cost, sp"

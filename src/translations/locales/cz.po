@@ -128,9 +128,6 @@ msgstr "Svatý symbol, dřevo"
 msgid "Silver pieces"
 msgstr "Stříbrné kusy"
 
-msgid "Riffled"
-msgstr ""
-
 msgid "Spikes for your boots – better success at climbing and keeping balance on ice"
 msgstr "Hřeby pro vaše boty - lepší úspěch při lezení a udržování rovnováhy na ledu."
 
@@ -252,6 +249,9 @@ msgstr "Balíčky"
 
 msgid "Silver"
 msgstr "Stříbro"
+
+msgid "Rifled"
+msgstr ""
 
 msgid "These are small one-handed weapons including daggers and clubs, and suffer a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 msgstr "To jsou malé jednoruční zbraně včetně dýk a kyjů, které mají penalizaci -2 k zásahu protivníků s neupraveným AC 15 nebo lepším."
@@ -519,9 +519,6 @@ msgstr "Žádný"
 msgid "title.encumbrancePoints"
 msgstr "title.encumbrancePoints"
 
-msgid "Middle, -4 AB"
-msgstr ""
-
 msgid "Armor Class"
 msgstr "Třída brnění"
 
@@ -735,6 +732,9 @@ msgstr "Přijímá nápor"
 
 msgid "Tent, Grand"
 msgstr "Stan, velký"
+
+msgid "Medium, -4 AB"
+msgstr ""
 
 msgid "Cost, sp"
 msgstr "Cena, sp"
