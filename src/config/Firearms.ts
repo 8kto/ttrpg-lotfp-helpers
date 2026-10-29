@@ -23,3 +23,10 @@ export const FiringMechanismLabels: Record<FiringMechanism, string> = {
   [FiringMechanism.Wheellock]: /*i18n*/ 'Wheellock',
   [FiringMechanism.Flintlock]: /*i18n*/ 'Flintlock',
 }
+
+/**
+ * Matchlocks (and their modifications, wheellocks and flintlocks) suffer
+ * double the normal range penalties. Rifling eliminates the increase.
+ */
+export const getFirearmRangePenalties = (isRifled: boolean) =>
+  isRifled ? { long: -4, medium: -2 } : { long: -8, medium: -4 }
