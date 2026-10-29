@@ -532,7 +532,7 @@ msgstr "Перегружен"
 
 #. js-lingui-explicit-id
 msgid "Oversized"
-msgstr "Габаритный"
+msgstr "Негабаритный"
 
 msgid "Garlic"
 msgstr "Чеснок"
