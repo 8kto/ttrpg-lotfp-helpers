@@ -12,6 +12,7 @@ import {
 import FirearmsFilterPanel from '@/components/EquipmentList/FirearmWeaponsGrid/FirearmsFilterPanel'
 import type { GridDataProcessor } from '@/components/EquipmentList/FirearmWeaponsGrid/helpers'
 import {
+  applyFilterValues,
   getFilteredData,
   getFirearmsCostCoefficient,
   handlePistols,
@@ -49,26 +50,16 @@ const FirearmWeaponsGrid = () => {
   )
 
   const gridData = useMemo(() => {
-    const data = getFilteredData(isCostRural.get())
-    const { firingMechanism, rifled } = filterValues
-
-    if (costCoeff !== 1) {
-      for (const firearmWeaponItem of data) {
-        firearmWeaponItem.isRifled = rifled
-        firearmWeaponItem.firingMechanism = firingMechanism
-
-        firearmWeaponItem.cityCostCp *= costCoeff
-        if (firearmWeaponItem.ruralCostCp) {
-          firearmWeaponItem.ruralCostCp *= costCoeff
-        }
-      }
-    }
+    const data = applyFilterValues(
+      getFilteredData(isCostRural.get()),
+      filterValues,
+    )
 
     return gridDataProcessors.reduce(
-      (acc, fn) => fn(acc, firingMechanism),
+      (acc, fn) => fn(acc, filterValues.firingMechanism),
       data,
     )
-  }, [filterValues, isCostRural, costCoeff])
+  }, [filterValues, isCostRural])
 
   const isSmallViewport = 'xs' === breakpoint
   const colSpan = isSmallViewport

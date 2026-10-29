@@ -3,6 +3,7 @@ import { hookstate } from '@hookstate/core'
 
 import { EncumbranceThreshold } from '@/domain/encumbrance'
 import type { EquipmentItem } from '@/domain/equipment'
+import { FiringMechanism } from '@/domain/firearms'
 import type { InventoryItem } from '@/domain/inventory'
 import {
   armorItemMock1,
@@ -152,6 +153,41 @@ describe('Inventory helpers', () => {
         miscEquipItem2,
       ])
     })
+
+    it('increases quantity if the same firearm variant already exists', () => {
+      const mockEmptyEquipmentState = createStateMock({
+        firearmWeapons: [firearmWeaponItemMock1],
+      } as unknown as InventoryStateType)
+
+      addItem(mockEmptyEquipmentState.firearmWeapons, {
+        ...firearmWeaponItemMock1,
+        inventoryId: '10',
+      })
+      expect(mockEmptyEquipmentState.firearmWeapons.get()).toEqual([
+        { ...firearmWeaponItemMock1, qty: 2 },
+      ])
+    })
+
+    it.each([
+      ['firing mechanism', { firingMechanism: FiringMechanism.Flintlock }],
+      ['rifling', { isRifled: true }],
+      ['cost', { cityCostCp: 450, ruralCostCp: 750 }],
+    ])('adds a separate firearm if %s differs', (_, diff) => {
+      const mockEmptyEquipmentState = createStateMock({
+        firearmWeapons: [firearmWeaponItemMock1],
+      } as unknown as InventoryStateType)
+      const otherVariant = {
+        ...firearmWeaponItemMock1,
+        ...diff,
+        inventoryId: '10',
+      }
+
+      addItem(mockEmptyEquipmentState.firearmWeapons, otherVariant)
+      expect(mockEmptyEquipmentState.firearmWeapons.get()).toEqual([
+        firearmWeaponItemMock1,
+        otherVariant,
+      ])
+    })
   })
 
   describe('removeItem', () => {
@@ -174,6 +210,24 @@ describe('Inventory helpers', () => {
       removeItem(mockEmptyEquipmentState.miscEquipment, miscEquipItem1)
       expect(mockEmptyEquipmentState.miscEquipment.get()).toEqual([
         miscEquipItem2,
+      ])
+    })
+
+    it('decreases QTY of the matching firearm variant only', () => {
+      const rifledVariant = {
+        ...firearmWeaponItemMock1,
+        inventoryId: '10',
+        isRifled: true,
+        qty: 2,
+      }
+      const mockEmptyEquipmentState = createStateMock({
+        firearmWeapons: [{ ...firearmWeaponItemMock1, qty: 2 }, rifledVariant],
+      } as unknown as InventoryStateType)
+
+      removeItem(mockEmptyEquipmentState.firearmWeapons, rifledVariant)
+      expect(mockEmptyEquipmentState.firearmWeapons.get()).toEqual([
+        { ...firearmWeaponItemMock1, qty: 2 },
+        { ...rifledVariant, qty: 1 },
       ])
     })
 

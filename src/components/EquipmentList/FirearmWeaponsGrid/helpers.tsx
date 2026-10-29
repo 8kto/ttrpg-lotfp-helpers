@@ -27,6 +27,23 @@ export const getFirearmsCostCoefficient = (
   return coefficient
 }
 
+export const applyFilterValues = (
+  data: Array<FirearmWeaponItem>,
+  filterValues: FilterValues,
+): Array<FirearmWeaponItem> => {
+  const { firingMechanism, rifled } = filterValues
+  const costCoeff = getFirearmsCostCoefficient(filterValues)
+
+  return data.map((item) => ({
+    ...item,
+    cityCostCp: item.cityCostCp * costCoeff,
+    firingMechanism,
+    isRifled: rifled,
+    ruralCostCp:
+      item.ruralCostCp === null ? null : item.ruralCostCp * costCoeff,
+  }))
+}
+
 export type GridDataProcessor = (
   data: Array<FirearmWeaponItem>,
   firingMechanism: FiringMechanism,

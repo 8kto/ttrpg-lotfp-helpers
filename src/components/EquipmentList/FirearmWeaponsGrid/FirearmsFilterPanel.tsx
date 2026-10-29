@@ -64,6 +64,7 @@ const FirearmsFilterPanel = ({
               htmlFor={`${mechanism}-radio`}
               className='ml-2 cursor-pointer text-sm text-gray-900'
             >
+              {/* TODO add short tooltips */}
               {trans(FiringMechanismLabels[mechanism])}
             </label>
           </div>
