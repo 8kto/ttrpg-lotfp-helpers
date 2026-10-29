@@ -1,15 +1,23 @@
 import { Trans } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
 import React, { useEffect, useState } from 'react'
 
 import { defaultFilterValues } from '@/components/EquipmentList/FirearmWeaponsGrid/consts'
 import type { FilterValues } from '@/components/EquipmentList/FirearmWeaponsGrid/types'
 import { FiringMechanism, YearPeriod } from '@/domain/firearms'
 
+const FiringMechanismLabels: Record<FiringMechanism, string> = {
+  [FiringMechanism.Matchlock]: /*i18n*/ 'Matchlock',
+  [FiringMechanism.Wheellock]: /*i18n*/ 'Wheellock',
+  [FiringMechanism.Flintlock]: /*i18n*/ 'Flintlock',
+}
+
 type FirearmsFilterPanelProps = {
   onChange: (v: FilterValues) => void
 }
 
 const FirearmsFilterPanel = ({ onChange }: FirearmsFilterPanelProps) => {
+  const { _: trans } = useLingui()
   const [formValues, setFormValues] =
     useState<FilterValues>(defaultFilterValues)
 
@@ -56,7 +64,7 @@ const FirearmsFilterPanel = ({ onChange }: FirearmsFilterPanelProps) => {
               htmlFor={`${mechanism}-radio`}
               className='ml-2 cursor-pointer text-sm text-gray-900'
             >
-              {mechanism}
+              {trans(FiringMechanismLabels[mechanism])}
             </label>
           </div>
         ))}
