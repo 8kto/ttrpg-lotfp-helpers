@@ -318,6 +318,10 @@ msgid "Gold"
 msgstr "Zlato"
 
 #. js-lingui-explicit-id
+msgid "Firearm mechanism"
+msgstr ""
+
+#. js-lingui-explicit-id
 msgid "Firearms"
 msgstr ""
 
@@ -795,6 +799,9 @@ msgstr ""
 
 msgid "Cestus"
 msgstr "Cestus"
+
+msgid "rifled"
+msgstr ""
 
 msgid "Crossbow, Light"
 msgstr "Kuše, lehká"
