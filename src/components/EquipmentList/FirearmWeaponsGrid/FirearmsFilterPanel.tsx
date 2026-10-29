@@ -3,13 +3,8 @@ import { useLingui } from '@lingui/react'
 import React from 'react'
 
 import type { FilterValues } from '@/components/EquipmentList/FirearmWeaponsGrid/types'
+import { FiringMechanismLabels } from '@/config/Firearms'
 import { FiringMechanism, YearPeriod } from '@/domain/firearms'
-
-const FiringMechanismLabels: Record<FiringMechanism, string> = {
-  [FiringMechanism.Matchlock]: /*i18n*/ 'Matchlock',
-  [FiringMechanism.Wheellock]: /*i18n*/ 'Wheellock',
-  [FiringMechanism.Flintlock]: /*i18n*/ 'Flintlock',
-}
 
 type FirearmsFilterPanelProps = {
   values: FilterValues

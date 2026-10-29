@@ -1,4 +1,7 @@
-import { applyFilterValues } from '@/components/EquipmentList/FirearmWeaponsGrid/helpers'
+import {
+  applyFilterValues,
+  handleMatchlockCompatibility,
+} from '@/components/EquipmentList/FirearmWeaponsGrid/helpers'
 import Equipment from '@/config/Equipment'
 import { FiringMechanism, YearPeriod } from '@/domain/firearms'
 
@@ -54,4 +57,30 @@ describe('applyFilterValues', () => {
     expect(arquebus.cityCostCp).toEqual(300)
     expect(arquebus.ruralCostCp).toEqual(500)
   })
+})
+
+describe('handleMatchlockCompatibility', () => {
+  // Names are translated, so the filter must not rely on them
+  const items = Equipment.FirearmWeapons.map((item) => ({
+    ...item,
+    name: `translated ${item.name}`,
+  }))
+
+  it('removes pistols and pistol braces for matchlock', () => {
+    const data = handleMatchlockCompatibility(items, FiringMechanism.Matchlock)
+
+    expect(data.map((i) => i.name)).toEqual([
+      'translated Arquebus',
+      'translated Musket',
+    ])
+  })
+
+  it.each([FiringMechanism.Wheellock, FiringMechanism.Flintlock])(
+    'keeps all firearms for %s',
+    (firingMechanism) => {
+      expect(handleMatchlockCompatibility(items, firingMechanism)).toHaveLength(
+        items.length,
+      )
+    },
+  )
 })

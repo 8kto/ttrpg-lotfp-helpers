@@ -1,5 +1,3 @@
-import { t } from '@lingui/macro'
-
 import type { FilterValues } from '@/components/EquipmentList/FirearmWeaponsGrid/types'
 import Equipment from '@/config/Equipment'
 import { FirearmCostCoeff, RifledCostCoeff } from '@/config/Firearms'
@@ -49,9 +47,12 @@ export type GridDataProcessor = (
   firingMechanism: FiringMechanism,
 ) => Array<FirearmWeaponItem>
 
-export const handlePistols: GridDataProcessor = (data, firingMechanism) => {
+export const handleMatchlockCompatibility: GridDataProcessor = (
+  data,
+  firingMechanism,
+) => {
   if (firingMechanism === FiringMechanism.Matchlock) {
-    return data.filter((item) => item.name !== t`Pistol`)
+    return data.filter((item) => !item.isMatchlockIncompatible)
   }
 
   return data

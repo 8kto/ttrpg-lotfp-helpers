@@ -5,6 +5,7 @@ import CostFragment from '@/components/CostFragment/CostFragment'
 import type { DataGridColumn } from '@/components/DataGrid/types'
 import FirearmTraitsFragment from '@/components/EquipmentList/FirearmTraitsFragment'
 import MeleeWeaponTraitsFragment from '@/components/EquipmentList/MeleeWeaponTraitsFragment'
+import FirearmMechanismFragment from '@/components/FirearmMechanismFragment'
 import { Details } from '@/components/Inventory/ItemDetails/Details'
 import {
   isFirearmItem,
@@ -131,7 +132,15 @@ export const renderInventoryTitle: RenderFunction<
         <MeleeWeaponTraitsFragment item={item} />
       )}
       {!isExpanded && isFirearmItem(item) && (
-        <FirearmTraitsFragment item={item} />
+        <>
+          <p
+            title={i18n._('Firearm mechanism')}
+            className='ph-color-muted text-sm'
+          >
+            <FirearmMechanismFragment item={item} />
+          </p>
+          <FirearmTraitsFragment item={item} />
+        </>
       )}
       {!isExpanded && !!range && (
         <p title={i18n._('Range, feet')} className='ph-color-muted text-sm'>

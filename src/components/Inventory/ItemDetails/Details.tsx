@@ -2,6 +2,7 @@ import { Trans } from '@lingui/macro'
 import React from 'react'
 
 import DamageFragment from '@/components/DamageFragment'
+import FirearmMechanismFragment from '@/components/FirearmMechanismFragment'
 import FirearmRangeFragment from '@/components/FirearmRangeFragment'
 import {
   isArmorItem,
@@ -16,7 +17,7 @@ export const Details = <T extends EquipmentItem>({ item }: { item: T }) => {
   const paragraphClassname = ''
 
   return (
-    <div className='text-gray-600 space-y-3'>
+    <div className='space-y-3 text-gray-600'>
       {/* Armor */}
       {isArmorItem(item) ? (
         <p className={paragraphClassname} data-testid='details--ac'>
@@ -46,12 +47,20 @@ export const Details = <T extends EquipmentItem>({ item }: { item: T }) => {
 
       {/* Firearms weapons */}
       {isFirearmItem(item) ? (
-        <div className={paragraphClassname} data-testid='details--firearms'>
-          <strong>
-            <Trans>Range</Trans>
-          </strong>
-          <FirearmRangeFragment range={item.range} />
-        </div>
+        <>
+          <p className={paragraphClassname} data-testid='details--mechanism'>
+            <strong>
+              <Trans>Firearm mechanism</Trans>
+            </strong>
+            : <FirearmMechanismFragment item={item} />
+          </p>
+          <div className={paragraphClassname} data-testid='details--firearms'>
+            <strong>
+              <Trans>Range</Trans>
+            </strong>
+            <FirearmRangeFragment range={item.range} />
+          </div>
+        </>
       ) : null}
 
       {/* All items */}

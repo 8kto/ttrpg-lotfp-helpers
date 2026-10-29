@@ -6,8 +6,10 @@ import { act, render, screen } from '@testing-library/react'
 import React from 'react'
 
 import { Details } from '@/components/Inventory/ItemDetails/Details'
+import { FiringMechanism } from '@/domain/firearms'
 import {
   armorItemMock1,
+  firearmWeaponItemMock1,
   meleeWeaponItemMock2,
   missileWeaponItemMock1,
 } from '@/shared/mocks/inventoryMocks'
@@ -51,6 +53,31 @@ describe('Details component', () => {
       expect(screen.getByTestId('details--range')).toBeVisible()
       expect(screen.getByTestId('details--range').textContent).toEqual(
         'RangeShort: 20 ftMedium: 50 ft (-2 AB)Long: 80 ft (-4 AB)',
+      )
+    })
+
+    it('displays firing mechanism for firearm items', () => {
+      render(<Details item={firearmWeaponItemMock1} />, {
+        wrapper: TestingProvider,
+      })
+      expect(screen.getByTestId('details--mechanism').textContent).toEqual(
+        'Firearm mechanism: Matchlock',
+      )
+    })
+
+    it('displays rifling for rifled firearm items', () => {
+      render(
+        <Details
+          item={{
+            ...firearmWeaponItemMock1,
+            firingMechanism: FiringMechanism.Wheellock,
+            isRifled: true,
+          }}
+        />,
+        { wrapper: TestingProvider },
+      )
+      expect(screen.getByTestId('details--mechanism').textContent).toEqual(
+        'Firearm mechanism: Wheellock, rifled',
       )
     })
   })

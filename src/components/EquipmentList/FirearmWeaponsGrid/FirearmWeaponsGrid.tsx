@@ -15,7 +15,7 @@ import {
   applyFilterValues,
   getFilteredData,
   getFirearmsCostCoefficient,
-  handlePistols,
+  handleMatchlockCompatibility,
 } from '@/components/EquipmentList/FirearmWeaponsGrid/helpers'
 import type { FilterValues } from '@/components/EquipmentList/FirearmWeaponsGrid/types'
 import {
@@ -26,7 +26,9 @@ import type { FirearmWeaponItem } from '@/domain/weapon'
 import useTailwindBreakpoint from '@/shared/hooks/useTailwindBreakpoint'
 import { useInventoryState } from '@/state/InventoryState'
 
-const gridDataProcessors: Array<GridDataProcessor> = [handlePistols]
+const gridDataProcessors: Array<GridDataProcessor> = [
+  handleMatchlockCompatibility,
+]
 
 const FirearmWeaponsGrid = () => {
   const {
