@@ -1112,7 +1112,7 @@ msgid "Select random"
 msgstr "Select random"
 
 msgid "config.firearms.fireBomb.details"
-msgstr "Fired instead of normal shot: it does not penetrate, but explodes in a small fireball on impact, dealing 1d4 damage and igniting flammables; a misfire blows it up. A character carrying fire bombs who is hit by a fire-based attack saves versus Breath Weapon each round, taking fire bomb damage for each failure."
+msgstr "Fired instead of normal shot: it does not penetrate, but explodes in a small fireball on impact, dealing 1d4 damage and igniting flammables; a misfire blows it up. A character carrying fire bombs who is hit by a fire-based attack makes one saving throw versus Breath Weapon for each fire bomb carried, taking fire bomb damage for each failure."
 
 msgid "Jewelry"
 msgstr "Jewelry"

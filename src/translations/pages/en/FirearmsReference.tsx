@@ -185,6 +185,7 @@ const FirearmsReference = () => {
         <header>
           <h2>In app</h2>
         </header>
+        <p>Artillery is intentionally not included in the app.</p>
         <ul>
           <li>
             Turn on the Firearms campaign switch in the equipment list to add
@@ -222,9 +223,17 @@ const FirearmsReference = () => {
           </li>
         </ul>
         <p>
-          The rifling ×1.5 reload time is rounded to the nearest whole number.
-          The rules don&apos;t specify in what order to apply reload modifiers;
-          the Referee decides.
+          Apply all cost multipliers without intermediate rounding. Round the
+          final price to the nearest whole copper piece, with half a copper
+          piece rounded up; there are no smaller coin denominations.
+        </p>
+        <p>
+          For rifling, this app uses ordinary rounding after the ×1.5 reload
+          modifier: round to the nearest whole round, with halves rounded up.
+          This is an app convention; the firearms rules do not specify rounding
+          for rifling. The explicit flintlock rule still applies when halving
+          reload time: Fighters round down, everyone else rounds up. The Referee
+          decides the order of reload modifiers.
         </p>
       </section>
     </>
