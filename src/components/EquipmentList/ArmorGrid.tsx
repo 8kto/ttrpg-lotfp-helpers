@@ -4,6 +4,7 @@ import React, { useMemo } from 'react'
 import DataGrid from '@/components/DataGrid/DataGrid'
 import { trivialSort } from '@/components/DataGrid/helpers'
 import type { DataGridColumn, SortConfig } from '@/components/DataGrid/types'
+import { applyFirearmsCampaignCost } from '@/components/EquipmentList/armorHelpers'
 import {
   renderCostGridCol,
   renderDetailsBody,
@@ -60,9 +61,15 @@ const ruralCostColumn: DataGridColumn<ArmorItem> = {
   },
 }
 
-const ArmorGrid = () => {
+type ArmorGridProps = {
+  // Defaults to the core armor list, priced for the current campaign
+  items?: ReadonlyArray<ArmorItem>
+  addDisabledReason?: string
+}
+
+const ArmorGrid = ({ items, addDisabledReason }: ArmorGridProps) => {
   const {
-    state: { isCostRural },
+    state: { isCostRural, isFirearmsCampaign },
   } = useInventoryState()
   const breakpoint = useTailwindBreakpoint()
   const columnsFilteredByCost = useMemo(() => {
@@ -74,10 +81,12 @@ const ArmorGrid = () => {
   }, [isCostRural])
 
   const dataFilteredByCost = useMemo(() => {
-    const data = Object.values(Equipment.Armor)
+    const data =
+      items ??
+      applyFirearmsCampaignCost(Equipment.Armor, isFirearmsCampaign.get())
 
     return isCostRural.get() ? data.filter((i) => i.ruralCostCp !== null) : data
-  }, [isCostRural])
+  }, [isCostRural, isFirearmsCampaign, items])
 
   const isSmallViewport = 'xs' === breakpoint
   const colSpan = isSmallViewport
@@ -115,24 +124,35 @@ const ArmorGrid = () => {
 
   return (
     <>
-      <div className='pt-6 pb-4 text-gray-800'>
-        <p className={'mb-2'}>
-          <Trans id='armor.baseAc'>
-            Unarmored characters have a Base AC of 12.
-          </Trans>
-        </p>
-        <p className={'mb-2'}>
-          <Trans id='armor.unadjustedAc'>
-            Unadjusted AC is that of solely the armor and shield. Dexterity
-            modifiers, magical modifiers, or any other adjustments are not
-            counted.
-          </Trans>
-        </p>
-      </div>
+      {!items && (
+        <div className='pt-6 pb-4 text-gray-800'>
+          <p className={'mb-2'}>
+            <Trans id='armor.baseAc'>
+              Unarmored characters have a Base AC of 12.
+            </Trans>
+          </p>
+          <p className={'mb-2'}>
+            <Trans id='armor.unadjustedAc'>
+              Unadjusted AC is that of solely the armor and shield. Dexterity
+              modifiers, magical modifiers, or any other adjustments are not
+              counted.
+            </Trans>
+          </p>
+          {isFirearmsCampaign.get() && (
+            <p className='mb-2 underline'>
+              <Trans>
+                Firearms campaign: the cost of armor and shields is raised by
+                50%.
+              </Trans>
+            </p>
+          )}
+        </div>
+      )}
       <DataGrid<ArmorItem>
         data={dataFilteredByCost}
         columns={columnsFilteredByCost}
         onAddClick={handleAddEquipmentItemClick}
+        addDisabledReason={addDisabledReason}
         filterFn={filterName}
         filterPlaceholder={t`Filter by name`}
         handleSort={handleSort as typeof trivialSort}

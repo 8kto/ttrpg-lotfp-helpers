@@ -25,6 +25,12 @@ export const Details = <T extends EquipmentItem>({ item }: { item: T }) => {
           <Trans>Armor Class</Trans>: {item.armorClass}
         </p>
       ) : null}
+      {isArmorItem(item) && !!item.physicalSaveBonus ? (
+        <p className={paragraphClassname} data-testid='details--physical-save'>
+          <Trans>Saving throws vs physical damage</Trans>: +
+          {item.physicalSaveBonus}
+        </p>
+      ) : null}
 
       {/* All weapons */}
       {isWeaponItem(item) ? (

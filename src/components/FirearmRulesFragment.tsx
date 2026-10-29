@@ -45,7 +45,7 @@ const FirearmRulesFragment = ({
         )}
         {item.isRifled && (
           <>
-            ; <Trans>×1.5 for rifled barrel</Trans>
+            ; <Trans>×1.5 for rifled barrel (round to the nearest)</Trans>
           </>
         )}
       </p>

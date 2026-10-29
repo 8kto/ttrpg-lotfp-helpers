@@ -19,6 +19,7 @@ const DataGrid = <T extends EquipmentItem>({
   spanDetails,
   initialSortState,
   onAddClick,
+  addDisabledReason,
   onRemoveClick,
   filterFn,
   handleSort,
@@ -63,6 +64,7 @@ const DataGrid = <T extends EquipmentItem>({
   const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left uppercase cursor-pointer`
 
   const eventHandlers: Partial<DataGridRowProps<T>> = {
+    addDisabledReason,
     onAddClick: typeof onAddClick === 'function' ? onAddClick : undefined,
     onRemoveClick:
       typeof onRemoveClick === 'function' ? onRemoveClick : undefined,

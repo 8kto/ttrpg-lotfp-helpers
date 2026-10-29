@@ -54,9 +54,14 @@ type MiscEquipmentGridProps = {
   // Defaults to the core miscellaneous equipment list
   items?: ReadonlyArray<EquipmentItem>
   noFilter?: boolean
+  addDisabledReason?: string
 }
 
-const MiscEquipmentGrid = ({ items, noFilter }: MiscEquipmentGridProps) => {
+const MiscEquipmentGrid = ({
+  items,
+  noFilter,
+  addDisabledReason,
+}: MiscEquipmentGridProps) => {
   const {
     state: { isCostRural },
   } = useInventoryState()
@@ -85,6 +90,7 @@ const MiscEquipmentGrid = ({ items, noFilter }: MiscEquipmentGridProps) => {
       data={dataFilteredByCost}
       columns={columnsFilteredByCost}
       onAddClick={handleAddEquipmentItemClick}
+      addDisabledReason={addDisabledReason}
       filterFn={filterName}
       filterPlaceholder={t`Filter by name`}
       spanDetails={colSpan}
