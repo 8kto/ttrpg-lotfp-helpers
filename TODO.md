@@ -1,0 +1,7 @@
+- version for the storage, handling the incompatibilities
+- export
+  - CSV
+  - char sheet
+- hints for firearms
+  - page like Encumbrance
+  - inline tooltips
