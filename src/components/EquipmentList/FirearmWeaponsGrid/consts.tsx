@@ -38,7 +38,11 @@ export const columns: ReadonlyArray<DataGridColumn<FirearmWeaponItem>> = [
     className: 'w-1/6 hidden sm:table-cell',
     key: 'range',
     render: (item: FirearmWeaponItem) => (
-      <FirearmRangeFragment range={item.range} compact />
+      <FirearmRangeFragment
+        range={item.range}
+        isRifled={item.isRifled}
+        compact
+      />
     ),
     get title() {
       return t`Range`

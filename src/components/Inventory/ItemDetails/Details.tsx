@@ -54,11 +54,22 @@ export const Details = <T extends EquipmentItem>({ item }: { item: T }) => {
             </strong>
             : <FirearmMechanismFragment item={item} />
           </p>
+          {!!item.damageMelee && (
+            <p
+              className={paragraphClassname}
+              data-testid='details--damage-melee'
+            >
+              <strong>
+                <Trans>Mêlée damage</Trans>
+              </strong>
+              : <DamageFragment damage={item.damageMelee} />
+            </p>
+          )}
           <div className={paragraphClassname} data-testid='details--firearms'>
             <strong>
               <Trans>Range</Trans>
             </strong>
-            <FirearmRangeFragment range={item.range} />
+            <FirearmRangeFragment range={item.range} isRifled={item.isRifled} />
           </div>
         </>
       ) : null}

@@ -14,7 +14,9 @@ export const isArmorItem = (item: EquipmentItem): item is ArmorItem => {
 
 export const isWeaponItem = (item: EquipmentItem): item is WeaponItem => {
   return (
-    item.categoryKey === 'meleeWeapons' || item.categoryKey === 'missileWeapons'
+    item.categoryKey === 'meleeWeapons' ||
+    item.categoryKey === 'missileWeapons' ||
+    item.categoryKey === 'firearmWeapons'
   )
 }
 

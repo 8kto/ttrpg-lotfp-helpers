@@ -6,6 +6,7 @@ import {
 } from '@/components/Inventory/ItemDetails/helpers'
 import {
   armorItemMock1,
+  firearmWeaponItemMock1,
   meleeWeaponItemMock1,
   miscEquipItem1,
   missileWeaponItemMock1,
@@ -26,6 +27,7 @@ describe('ItemDetails helpers', () => {
     it('should return true', () => {
       expect(isWeaponItem(missileWeaponItemMock2)).toBeTruthy()
       expect(isWeaponItem(meleeWeaponItemMock1)).toBeTruthy()
+      expect(isWeaponItem(firearmWeaponItemMock1)).toBeTruthy()
     })
     it('should return false', () => {
       expect(isArmorItem(miscEquipItem1)).toBeFalsy()

@@ -56,6 +56,36 @@ describe('Details component', () => {
       )
     })
 
+    it('displays ranged and mêlée damage for firearm items', () => {
+      render(<Details item={firearmWeaponItemMock1} />, {
+        wrapper: TestingProvider,
+      })
+      expect(screen.getByTestId('details--damage').textContent).toEqual(
+        'Damage: d8',
+      )
+      expect(screen.getByTestId('details--damage-melee').textContent).toEqual(
+        'Mêlée damage: d6',
+      )
+    })
+
+    it('displays doubled range penalties for smoothbore firearms', () => {
+      render(<Details item={firearmWeaponItemMock1} />, {
+        wrapper: TestingProvider,
+      })
+      expect(screen.getByTestId('details--firearms').textContent).toEqual(
+        'RangeShort: 50 ftMedium: 100 ft (-4 AB)Long: 600 ft (-8 AB)',
+      )
+    })
+
+    it('displays regular range penalties for rifled firearms', () => {
+      render(<Details item={{ ...firearmWeaponItemMock1, isRifled: true }} />, {
+        wrapper: TestingProvider,
+      })
+      expect(screen.getByTestId('details--firearms').textContent).toEqual(
+        'RangeShort: 50 ftMedium: 100 ft (-2 AB)Long: 600 ft (-4 AB)',
+      )
+    })
+
     it('displays firing mechanism for firearm items', () => {
       render(<Details item={firearmWeaponItemMock1} />, {
         wrapper: TestingProvider,
