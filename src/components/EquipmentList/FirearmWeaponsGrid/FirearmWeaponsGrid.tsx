@@ -27,7 +27,7 @@ import { useInventoryState } from '@/state/InventoryState'
 
 const gridDataProcessors: Array<GridDataProcessor> = [handlePistols]
 
-const MissileWeaponsGrid = () => {
+const FirearmWeaponsGrid = () => {
   const {
     state: { isCostRural },
   } = useInventoryState()
@@ -50,11 +50,11 @@ const MissileWeaponsGrid = () => {
 
   const gridData = useMemo(() => {
     const data = getFilteredData(isCostRural.get())
-    const { firingMechanism, riffled } = filterValues
+    const { firingMechanism, rifled } = filterValues
 
     if (costCoeff !== 1) {
       for (const firearmWeaponItem of data) {
-        firearmWeaponItem.isRiffled = riffled
+        firearmWeaponItem.isRifled = rifled
         firearmWeaponItem.firingMechanism = firingMechanism
 
         firearmWeaponItem.cityCostCp *= costCoeff
@@ -69,10 +69,6 @@ const MissileWeaponsGrid = () => {
       data,
     )
   }, [filterValues, isCostRural, costCoeff])
-
-  const onFilterChange = (values: FilterValues) => {
-    setFilterValues(values)
-  }
 
   const isSmallViewport = 'xs' === breakpoint
   const colSpan = isSmallViewport
@@ -89,7 +85,10 @@ const MissileWeaponsGrid = () => {
           </Trans>
         </p>
         <div className={'mb-2'}>
-          <FirearmsFilterPanel onChange={onFilterChange} />
+          <FirearmsFilterPanel
+            values={filterValues}
+            onChange={setFilterValues}
+          />
           <span className='ph-color-muted text-sm'>
             <Trans>Cost coefficient</Trans>: {costCoeff}
           </span>
@@ -108,4 +107,4 @@ const MissileWeaponsGrid = () => {
   )
 }
 
-export default MissileWeaponsGrid
+export default FirearmWeaponsGrid

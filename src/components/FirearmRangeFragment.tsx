@@ -3,7 +3,7 @@ import React from 'react'
 
 import type { Range } from '@/domain/weapon'
 
-const RangeFragment = ({
+const FirearmRangeFragment = ({
   range,
   compact = false,
 }: {
@@ -17,7 +17,8 @@ const RangeFragment = ({
   if (compact) {
     return (
       <>
-        {range.short}/<span title={t`Middle, -4 AB`}>{range.medium}</span>/
+        <span title={t`Short`}>{range.short}</span>/
+        <span title={t`Medium, -4 AB`}>{range.medium}</span>/
         <span title={t`Long, -8 AB`}>{range.long}</span>
       </>
     )
@@ -40,6 +41,6 @@ const RangeFragment = ({
   }
 }
 
-export default RangeFragment
+export default FirearmRangeFragment
 
 // TODO Dexterity to-hit modifiers do not apply for Medium or Long range targets.

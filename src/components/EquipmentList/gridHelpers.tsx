@@ -1,9 +1,9 @@
-import { t, Trans } from '@lingui/macro'
 import classnames from 'classnames'
 import React from 'react'
 
 import CostFragment from '@/components/CostFragment/CostFragment'
 import type { DataGridColumn } from '@/components/DataGrid/types'
+import FirearmTraitsFragment from '@/components/EquipmentList/FirearmTraitsFragment'
 import MeleeWeaponTraitsFragment from '@/components/EquipmentList/MeleeWeaponTraitsFragment'
 import { Details } from '@/components/Inventory/ItemDetails/Details'
 import {
@@ -44,6 +44,31 @@ export const renderCostGridCol: RenderFunction = (item, _, state) => {
     value: valueCp,
   }).value
 }
+
+export const renderEquipmentTitle: RenderFunction = (
+  item,
+  _,
+  __,
+  isExpanded,
+  shouldRenderDetails,
+) => (
+  <>
+    <span
+      className={classnames({
+        'ph-dashed-text cursor-pointer hover:text-red-800 active:text-red-600 transition-all duration-200':
+          shouldRenderDetails,
+      })}
+    >
+      {item.name}
+    </span>
+    {!isExpanded && isMeleeWeaponItem(item) && (
+      <MeleeWeaponTraitsFragment item={item} />
+    )}
+    {!isExpanded && isFirearmItem(item) && (
+      <FirearmTraitsFragment item={item} />
+    )}
+  </>
+)
 
 export const renderDetailsBody: RenderDetailsFunction = (item, i18n, state) => {
   const { isCostRural } = state
@@ -105,13 +130,8 @@ export const renderInventoryTitle: RenderFunction<
       {!isExpanded && isMeleeWeaponItem(item) && (
         <MeleeWeaponTraitsFragment item={item} />
       )}
-      {!isExpanded && isFirearmItem(item) && item.isTwoHanded && (
-        <p
-          title={t`weapons.melee.twoHanded`}
-          className='ph-color-muted text-sm'
-        >
-          <Trans>Two-handed</Trans>
-        </p>
+      {!isExpanded && isFirearmItem(item) && (
+        <FirearmTraitsFragment item={item} />
       )}
       {!isExpanded && !!range && (
         <p title={i18n._('Range, feet')} className='ph-color-muted text-sm'>
