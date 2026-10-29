@@ -583,6 +583,9 @@ msgstr "Magic user"
 msgid "Miscellaneous"
 msgstr "Miscellaneous"
 
+msgid "Quick Reference on the LotFP Firearms Rules"
+msgstr "Quick Reference on the LotFP Firearms Rules"
+
 msgid "Backpack"
 msgstr "Backpack"
 
@@ -1120,6 +1123,9 @@ msgstr "Dart"
 
 msgid "Export & Import"
 msgstr "Export & Import"
+
+msgid "Firearms quick reference"
+msgstr "Firearms quick reference"
 
 msgid "config.melee.polearm.details"
 msgstr "This two-handed weapon can be used to attack from the second rank, can be used to receive a charge, and receives a +1 bonus to hit opponents with an unadjusted AC of 16 or better."

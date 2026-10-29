@@ -562,6 +562,9 @@ msgstr ""
 msgid "Miscellaneous"
 msgstr ""
 
+msgid "Quick Reference on the LotFP Firearms Rules"
+msgstr ""
+
 msgid "Backpack"
 msgstr ""
 
@@ -1093,6 +1096,9 @@ msgid "Dart"
 msgstr ""
 
 msgid "Export & Import"
+msgstr ""
+
+msgid "Firearms quick reference"
 msgstr ""
 
 msgid "config.melee.polearm.details"

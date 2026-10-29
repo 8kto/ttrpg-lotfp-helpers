@@ -570,6 +570,9 @@ msgstr "Маг"
 msgid "Miscellaneous"
 msgstr "Разное"
 
+msgid "Quick Reference on the LotFP Firearms Rules"
+msgstr "Краткая справка по правилам огнестрела LotFP"
+
 msgid "Backpack"
 msgstr "Рюкзак"
 
@@ -1107,6 +1110,9 @@ msgstr "Дротик"
 
 msgid "Export & Import"
 msgstr "Экспорт и импорт"
+
+msgid "Firearms quick reference"
+msgstr "Краткая справка по огнестрелу"
 
 msgid "config.melee.polearm.details"
 msgstr "Это двуручное оружие может быть использовано для атаки из второго ряда, может быть использовано для встречи рывка (charge) и получает бонус +1 AB к противников с немодифицированным AC 16 и выше."
