@@ -155,6 +155,9 @@ msgstr "Hřeby pro vaše boty - lepší úspěch při lezení a udržování rov
 msgid "Bow, Short"
 msgstr "Luk, krátký"
 
+msgid "Pikeman's Armor"
+msgstr ""
+
 msgid "Copper"
 msgstr "Měď"
 
@@ -197,6 +200,9 @@ msgstr "Požadované pole"
 msgid "Scroll Case"
 msgstr "Pouzdro na svitek"
 
+msgid "Turn on the firearms campaign to add these items"
+msgstr ""
+
 msgid "Equipment"
 msgstr "Vybavení"
 
@@ -236,6 +242,9 @@ msgstr "volitelné"
 
 msgid "Darts for blowgun, quiver (20)"
 msgstr "Šipky pro foukačku, toulec (20)"
+
+msgid "Tassets"
+msgstr ""
 
 msgid "Rural"
 msgstr "Venkovský"
@@ -336,6 +345,9 @@ msgstr "Žádný"
 
 msgid "The Equipment tab list is scrollable."
 msgstr "Seznam karet je posuvný."
+
+msgid "×1.5 for rifled barrel (round to the nearest)"
+msgstr ""
 
 msgid "Active"
 msgstr "Aktivní"
@@ -530,6 +542,9 @@ msgstr "Různé"
 msgid "Missile weapons"
 msgstr "Střelné zbraně"
 
+msgid "Firearms campaign: the cost of armor and shields is raised by 50%."
+msgstr ""
+
 #. js-lingui-explicit-id
 msgid "Mêlée weapons"
 msgstr "Zbraně na blízko"
@@ -567,11 +582,20 @@ msgstr "Sada"
 msgid "title.encumbrancePoints"
 msgstr "title.encumbrancePoints"
 
+msgid "config.firearms.secreteHelm.details"
+msgstr ""
+
 msgid "Armor Class"
 msgstr "Třída brnění"
 
 msgid "Reset"
 msgstr "Resetovat"
+
+msgid "Firearms rules are optional. Turn on the firearms campaign above to add firearms, gear and armor to the inventory."
+msgstr ""
+
+msgid "Firearms campaign"
+msgstr ""
 
 msgid "Arrows, quiver (20)"
 msgstr "Šípy, toulec (20)"
@@ -670,6 +694,9 @@ msgstr "Detaily"
 msgid "Lightly encumbered"
 msgstr "Lehce"
 
+msgid "config.firearms.pikemansArmor.details"
+msgstr ""
+
 msgid "Pick, Miner’s"
 msgstr "Krumpáč, horníkův"
 
@@ -713,6 +740,9 @@ msgstr "Trpasličí zatížení"
 
 msgid "Precipitations, high winds"
 msgstr "Srážky, silný vítr"
+
+msgid "Helm, Morion"
+msgstr ""
 
 msgid "Emits light in a 10' radius. Burns for 2 hours."
 msgstr "Vyzařuje světlo v poloměru 10 stop. Hoří 2 hodiny."
@@ -851,6 +881,9 @@ msgstr ""
 msgid "Crossbow, Light"
 msgstr "Kuše, lehká"
 
+msgid "config.firearms.buffCoat.details"
+msgstr ""
+
 msgid "Mancatcher"
 msgstr "Chytač mužů"
 
@@ -859,6 +892,9 @@ msgstr "Odstraněno"
 
 msgid "Map, Kingdom"
 msgstr "Mapa, království"
+
+msgid "Saving throws vs physical damage"
+msgstr ""
 
 msgid "Crossbow, Heavy"
 msgstr "Kuše, těžká"
@@ -975,6 +1011,9 @@ msgstr ""
 msgid "Import"
 msgstr "Importovat"
 
+msgid "Buff Coat"
+msgstr ""
+
 msgid "Mountains, jungle, swamp"
 msgstr "Hory, džungle, bažiny"
 
@@ -984,8 +1023,14 @@ msgstr "Mačky"
 msgid "Missile Weapons"
 msgstr "Střelné zbraně"
 
+msgid "Helm, Secrete"
+msgstr ""
+
 msgid "English"
 msgstr "Angličtina"
+
+msgid "config.firearms.tassets.details"
+msgstr ""
 
 msgid "Gold pieces"
 msgstr "Zlaté kousky"
@@ -1037,6 +1082,9 @@ msgstr ""
 
 msgid "Long"
 msgstr "Dlouhý"
+
+msgid "Full Armor"
+msgstr ""
 
 msgid "Exploration"
 msgstr "Průzkum"
@@ -1095,13 +1143,16 @@ msgstr "Tato zbraň může být použita jednou rukou při náboji na koni. Jina
 msgid "Wallet"
 msgstr "Peněženka"
 
+msgid "Helm, Lobster Tail Pot"
+msgstr ""
+
 msgid "Mirror, Steel"
 msgstr "Zrcadlo, ocel"
 
 msgid "Weapon, Small"
 msgstr "Zbraň, malá"
 
-msgid "×1.5 for rifled barrel"
+msgid "Optional firearms rules: firearms can be added, basic armor and shields cost 50% more."
 msgstr ""
 
 msgid "Bottle of Wine/Liquor, Rich"
@@ -1210,6 +1261,9 @@ msgstr "Povolit automatické odečítání peněz při přidávání položek vy
 
 msgid "Tent, Pavilion"
 msgstr "Stan, pavilon"
+
+msgid "config.firearms.fullArmor.details"
+msgstr ""
 
 msgid "Dart"
 msgstr "Šipka"

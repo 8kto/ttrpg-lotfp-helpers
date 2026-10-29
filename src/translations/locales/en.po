@@ -156,6 +156,9 @@ msgstr "Spikes for your boots – better success at climbing and keeping balance
 msgid "Bow, Short"
 msgstr "Bow, Short"
 
+msgid "Pikeman's Armor"
+msgstr "Pikeman's Armor"
+
 msgid "Copper"
 msgstr "Copper"
 
@@ -198,6 +201,9 @@ msgstr "Required field"
 msgid "Scroll Case"
 msgstr "Scroll Case"
 
+msgid "Turn on the firearms campaign to add these items"
+msgstr "Turn on the firearms campaign to add these items"
+
 msgid "Equipment"
 msgstr "Equipment"
 
@@ -237,6 +243,9 @@ msgstr "optional"
 
 msgid "Darts for blowgun, quiver (20)"
 msgstr "Darts for blowgun, quiver (20)"
+
+msgid "Tassets"
+msgstr "Tassets"
 
 msgid "Rural"
 msgstr "Rural"
@@ -340,6 +349,9 @@ msgstr "None"
 
 msgid "The Equipment tab list is scrollable."
 msgstr "The Equipment tab list is scrollable."
+
+msgid "×1.5 for rifled barrel (round to the nearest)"
+msgstr "×1.5 for rifled barrel (round to the nearest)"
 
 msgid "Active"
 msgstr "Active"
@@ -534,6 +546,9 @@ msgstr "Miscellaneous"
 msgid "Missile weapons"
 msgstr "Missile weapons"
 
+msgid "Firearms campaign: the cost of armor and shields is raised by 50%."
+msgstr "Firearms campaign: the cost of armor and shields is raised by 50%."
+
 #. js-lingui-explicit-id
 msgid "Mêlée weapons"
 msgstr "Mêlée weapons"
@@ -571,11 +586,20 @@ msgstr "Set"
 msgid "title.encumbrancePoints"
 msgstr "Encumbrance Points"
 
+msgid "config.firearms.secreteHelm.details"
+msgstr "A steel skullcap worn unseen under a hat. Non-encumbering."
+
 msgid "Armor Class"
 msgstr "Armor Class"
 
 msgid "Reset"
 msgstr "Reset"
+
+msgid "Firearms rules are optional. Turn on the firearms campaign above to add firearms, gear and armor to the inventory."
+msgstr "Firearms rules are optional. Turn on the firearms campaign above to add firearms, gear and armor to the inventory."
+
+msgid "Firearms campaign"
+msgstr "Firearms campaign"
 
 msgid "Arrows, quiver (20)"
 msgstr "Arrows, quiver (20)"
@@ -674,6 +698,9 @@ msgstr "Details"
 msgid "Lightly encumbered"
 msgstr "Lightly encumbered"
 
+msgid "config.firearms.pikemansArmor.details"
+msgstr "Just the breast and back plates. +1 AC if the tassets are used."
+
 msgid "Pick, Miner’s"
 msgstr "Pick, Miner’s"
 
@@ -717,6 +744,9 @@ msgstr "Dwarven Encumbrance"
 
 msgid "Precipitations, high winds"
 msgstr "Precipitations, high winds"
+
+msgid "Helm, Morion"
+msgstr "Helm, Morion"
 
 msgid "Emits light in a 10' radius. Burns for 2 hours."
 msgstr "Emits light in a 10' radius. Burns for 2 hours."
@@ -855,6 +885,9 @@ msgstr "rifled"
 msgid "Crossbow, Light"
 msgstr "Crossbow, Light"
 
+msgid "config.firearms.buffCoat.details"
+msgstr "A yellow leather jacket used for basic protection throughout the 17th century."
+
 msgid "Mancatcher"
 msgstr "Mancatcher"
 
@@ -863,6 +896,9 @@ msgstr "Removed"
 
 msgid "Map, Kingdom"
 msgstr "Map, Kingdom"
+
+msgid "Saving throws vs physical damage"
+msgstr "Saving throws vs physical damage"
 
 msgid "Crossbow, Heavy"
 msgstr "Crossbow, Heavy"
@@ -979,6 +1015,9 @@ msgstr "Lamentations of the Flame Princess helpers, LotFP generator, LotFP equip
 msgid "Import"
 msgstr "Import"
 
+msgid "Buff Coat"
+msgstr "Buff Coat"
+
 msgid "Mountains, jungle, swamp"
 msgstr "Mountains, jungle, swamp"
 
@@ -988,8 +1027,14 @@ msgstr "Crampons"
 msgid "Missile Weapons"
 msgstr "Missile Weapons"
 
+msgid "Helm, Secrete"
+msgstr "Helm, Secrete"
+
 msgid "English"
 msgstr "English"
+
+msgid "config.firearms.tassets.details"
+msgstr "Plates protecting the upper leg. Give +1 AC when worn with Pikeman's armor."
 
 msgid "Gold pieces"
 msgstr "Gold pieces"
@@ -1041,6 +1086,9 @@ msgstr "Bandolier with 12 shots worth of powder in pre-measured containers. Usin
 
 msgid "Long"
 msgstr "Long"
+
+msgid "Full Armor"
+msgstr "Full Armor"
 
 msgid "Exploration"
 msgstr "Exploration"
@@ -1099,14 +1147,17 @@ msgstr "This weapon can be used one-handed if charging on horseback. Otherwise, 
 msgid "Wallet"
 msgstr "Wallet"
 
+msgid "Helm, Lobster Tail Pot"
+msgstr "Helm, Lobster Tail Pot"
+
 msgid "Mirror, Steel"
 msgstr "Mirror, Steel"
 
 msgid "Weapon, Small"
 msgstr "Weapon, Small"
 
-msgid "×1.5 for rifled barrel"
-msgstr "×1.5 for rifled barrel"
+msgid "Optional firearms rules: firearms can be added, basic armor and shields cost 50% more."
+msgstr "Optional firearms rules: firearms can be added, basic armor and shields cost 50% more."
 
 msgid "Bottle of Wine/Liquor, Rich"
 msgstr "Bottle of Wine/Liquor, Rich"
@@ -1214,6 +1265,9 @@ msgstr "Enable automatic subtraction of money when equipment items are added"
 
 msgid "Tent, Pavilion"
 msgstr "Tent, Pavilion"
+
+msgid "config.firearms.fullArmor.details"
+msgstr "Full plate covering head to toe, often including a helm. Cannot be combined with any other armor from the firearms rules; a shield may be used."
 
 msgid "Dart"
 msgstr "Dart"

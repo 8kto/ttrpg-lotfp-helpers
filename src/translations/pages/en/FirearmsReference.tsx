@@ -187,6 +187,12 @@ const FirearmsReference = () => {
         </header>
         <ul>
           <li>
+            Turn on the Firearms campaign switch in the equipment list to add
+            firearms, gear and armor to the inventory; the basic armor and
+            shields then cost 50% more. With the switch off, the Firearms tab
+            stays available for reference.
+          </li>
+          <li>
             Choose the firing mechanism, year and rifling on the Firearms tab of
             the equipment list; the cost coefficient is applied to the listed
             prices.
@@ -216,8 +222,9 @@ const FirearmsReference = () => {
           </li>
         </ul>
         <p>
-          The rules don&apos;t specify how to round the rifling ×1.5 or in what
-          order to apply reload modifiers; the Referee decides.
+          The rifling ×1.5 reload time is rounded to the nearest whole number.
+          The rules don&apos;t specify in what order to apply reload modifiers;
+          the Referee decides.
         </p>
       </section>
     </>

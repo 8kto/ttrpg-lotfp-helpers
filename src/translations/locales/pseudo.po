@@ -152,6 +152,9 @@ msgstr ""
 msgid "Bow, Short"
 msgstr ""
 
+msgid "Pikeman's Armor"
+msgstr ""
+
 msgid "Copper"
 msgstr ""
 
@@ -194,6 +197,9 @@ msgstr ""
 msgid "Scroll Case"
 msgstr ""
 
+msgid "Turn on the firearms campaign to add these items"
+msgstr ""
+
 msgid "Equipment"
 msgstr ""
 
@@ -227,6 +233,9 @@ msgid "optional"
 msgstr ""
 
 msgid "Darts for blowgun, quiver (20)"
+msgstr ""
+
+msgid "Tassets"
 msgstr ""
 
 msgid "Rural"
@@ -327,6 +336,9 @@ msgid "None"
 msgstr ""
 
 msgid "The Equipment tab list is scrollable."
+msgstr ""
+
+msgid "×1.5 for rifled barrel (round to the nearest)"
 msgstr ""
 
 msgid "Active"
@@ -519,6 +531,9 @@ msgstr ""
 msgid "Missile weapons"
 msgstr ""
 
+msgid "Firearms campaign: the cost of armor and shields is raised by 50%."
+msgstr ""
+
 #. js-lingui-explicit-id
 msgid "Mêlée weapons"
 msgstr ""
@@ -550,10 +565,19 @@ msgstr ""
 msgid "title.encumbrancePoints"
 msgstr ""
 
+msgid "config.firearms.secreteHelm.details"
+msgstr ""
+
 msgid "Armor Class"
 msgstr ""
 
 msgid "Reset"
+msgstr ""
+
+msgid "Firearms rules are optional. Turn on the firearms campaign above to add firearms, gear and armor to the inventory."
+msgstr ""
+
+msgid "Firearms campaign"
 msgstr ""
 
 msgid "Arrows, quiver (20)"
@@ -653,6 +677,9 @@ msgstr ""
 msgid "Lightly encumbered"
 msgstr ""
 
+msgid "config.firearms.pikemansArmor.details"
+msgstr ""
+
 msgid "Pick, Miner’s"
 msgstr ""
 
@@ -695,6 +722,9 @@ msgid "Dwarven Encumbrance"
 msgstr ""
 
 msgid "Precipitations, high winds"
+msgstr ""
+
+msgid "Helm, Morion"
 msgstr ""
 
 msgid "Emits light in a 10' radius. Burns for 2 hours."
@@ -829,6 +859,9 @@ msgstr ""
 msgid "Crossbow, Light"
 msgstr ""
 
+msgid "config.firearms.buffCoat.details"
+msgstr ""
+
 msgid "Mancatcher"
 msgstr ""
 
@@ -836,6 +869,9 @@ msgid "Removed"
 msgstr ""
 
 msgid "Map, Kingdom"
+msgstr ""
+
+msgid "Saving throws vs physical damage"
 msgstr ""
 
 msgid "Crossbow, Heavy"
@@ -953,6 +989,9 @@ msgstr ""
 msgid "Import"
 msgstr ""
 
+msgid "Buff Coat"
+msgstr ""
+
 msgid "Mountains, jungle, swamp"
 msgstr ""
 
@@ -962,7 +1001,13 @@ msgstr ""
 msgid "Missile Weapons"
 msgstr ""
 
+msgid "Helm, Secrete"
+msgstr ""
+
 msgid "English"
+msgstr ""
+
+msgid "config.firearms.tassets.details"
 msgstr ""
 
 msgid "Gold pieces"
@@ -1014,6 +1059,9 @@ msgid "config.firearms.apostles.details"
 msgstr ""
 
 msgid "Long"
+msgstr ""
+
+msgid "Full Armor"
 msgstr ""
 
 msgid "Exploration"
@@ -1073,13 +1121,16 @@ msgstr ""
 msgid "Wallet"
 msgstr ""
 
+msgid "Helm, Lobster Tail Pot"
+msgstr ""
+
 msgid "Mirror, Steel"
 msgstr ""
 
 msgid "Weapon, Small"
 msgstr ""
 
-msgid "×1.5 for rifled barrel"
+msgid "Optional firearms rules: firearms can be added, basic armor and shields cost 50% more."
 msgstr ""
 
 msgid "Bottle of Wine/Liquor, Rich"
@@ -1187,6 +1238,9 @@ msgid "Enable automatic subtraction of money when equipment items are added"
 msgstr ""
 
 msgid "Tent, Pavilion"
+msgstr ""
+
+msgid "config.firearms.fullArmor.details"
 msgstr ""
 
 msgid "Dart"

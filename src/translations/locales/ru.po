@@ -155,6 +155,9 @@ msgstr "Шипы для ботинок - помогают при лазании 
 msgid "Bow, Short"
 msgstr "Короткий лук"
 
+msgid "Pikeman's Armor"
+msgstr "Броня пикинера"
+
 msgid "Copper"
 msgstr "Медные"
 
@@ -197,6 +200,9 @@ msgstr "Обязательное поле"
 msgid "Scroll Case"
 msgstr "Футляр для свитков"
 
+msgid "Turn on the firearms campaign to add these items"
+msgstr "Включите кампанию с огнестрелом, чтобы добавлять эти предметы"
+
 msgid "Equipment"
 msgstr "Снаряжение"
 
@@ -234,6 +240,9 @@ msgstr "необязательно"
 
 msgid "Darts for blowgun, quiver (20)"
 msgstr "Дротики для духовой трубки, колчан (20)"
+
+msgid "Tassets"
+msgstr "Налядвенники"
 
 msgid "Rural"
 msgstr "Деревня"
@@ -334,6 +343,9 @@ msgstr "Нет"
 
 msgid "The Equipment tab list is scrollable."
 msgstr "Список табов прокручивается."
+
+msgid "×1.5 for rifled barrel (round to the nearest)"
+msgstr "×1,5 за нарезной ствол (округление по правилам математики)"
 
 msgid "Active"
 msgstr "Активный"
@@ -525,6 +537,9 @@ msgstr "Разное"
 msgid "Missile weapons"
 msgstr "Дальнобойное оружие"
 
+msgid "Firearms campaign: the cost of armor and shields is raised by 50%."
+msgstr "Кампания с огнестрелом: цена брони и щитов увеличена на 50%."
+
 #. js-lingui-explicit-id
 msgid "Mêlée weapons"
 msgstr "Рукопашное оружие"
@@ -558,11 +573,20 @@ msgstr "Установить"
 msgid "title.encumbrancePoints"
 msgstr "Encumbrance Points"
 
+msgid "config.firearms.secreteHelm.details"
+msgstr "Скрытный стальной шлем-купол, который незаметно носят под шляпой. Не учитывается в нагрузке."
+
 msgid "Armor Class"
 msgstr "Класс Брони"
 
 msgid "Reset"
 msgstr "Сброс"
+
+msgid "Firearms rules are optional. Turn on the firearms campaign above to add firearms, gear and armor to the inventory."
+msgstr "Правила по огнестрелу опциональны. Включите «Кампанию с огнестрелом» выше, чтобы добавлять огнестрел, снаряжение и броню в инвентарь."
+
+msgid "Firearms campaign"
+msgstr "Кампания с огнестрелом"
 
 msgid "Arrows, quiver (20)"
 msgstr "Стрелы, колчан (20)"
@@ -661,6 +685,9 @@ msgstr "Детали"
 msgid "Lightly encumbered"
 msgstr "Легко нагружен"
 
+msgid "config.firearms.pikemansArmor.details"
+msgstr "Только нагрудник и наспинник. +1 AC с налядвенниками."
+
 msgid "Pick, Miner’s"
 msgstr "Шахтёрская кирка"
 
@@ -704,6 +731,9 @@ msgstr "Выносливость гномов"
 
 msgid "Precipitations, high winds"
 msgstr "Осадки, сильный ветер"
+
+msgid "Helm, Morion"
+msgstr "Морион, шлем"
 
 msgid "Emits light in a 10' radius. Burns for 2 hours."
 msgstr "Даёт освещение в радиусе 10 футов. Горит 2 часа."
@@ -842,6 +872,9 @@ msgstr "нарезной"
 msgid "Crossbow, Light"
 msgstr "Лёгкий арбалет"
 
+msgid "config.firearms.buffCoat.details"
+msgstr "Куртка из кожи желтоватого цвета, служившая простейшей защитой на протяжении всего XVII века."
+
 msgid "Mancatcher"
 msgstr "Мэнкетчер"
 
@@ -850,6 +883,9 @@ msgstr "Удалено"
 
 msgid "Map, Kingdom"
 msgstr "Карта королевства"
+
+msgid "Saving throws vs physical damage"
+msgstr "Спасброски от физического урона"
 
 msgid "Crossbow, Heavy"
 msgstr "Тяжёлый арбалет"
@@ -966,6 +1002,9 @@ msgstr "Помощник для Lamentations of the Flame Princess, LotFP ген
 msgid "Import"
 msgstr "Импортировать"
 
+msgid "Buff Coat"
+msgstr "Кожаный колет"
+
 msgid "Mountains, jungle, swamp"
 msgstr "Горы, джунгли, болота"
 
@@ -975,8 +1014,14 @@ msgstr "Кошки (альпинистские)"
 msgid "Missile Weapons"
 msgstr "Дальнобойное оружие"
 
+msgid "Helm, Secrete"
+msgstr "Секретный шлем"
+
 msgid "English"
 msgstr "English"
+
+msgid "config.firearms.tassets.details"
+msgstr "Пластины, защищающие бёдра. Дают +1 AC вместе с бронёй пикинера."
 
 msgid "Gold pieces"
 msgstr "Золотые монеты"
@@ -1028,6 +1073,9 @@ msgstr "Патронташ с 12 зарядами пороха в отмерен
 
 msgid "Long"
 msgstr "Дальняя"
+
+msgid "Full Armor"
+msgstr "Полная броня"
 
 msgid "Exploration"
 msgstr "Исследование"
@@ -1086,14 +1134,17 @@ msgstr "Это оружие можно использовать как одно�
 msgid "Wallet"
 msgstr "Кошелёк"
 
+msgid "Helm, Lobster Tail Pot"
+msgstr "Хвост омара, шлем"
+
 msgid "Mirror, Steel"
 msgstr "Зеркало, стальное"
 
 msgid "Weapon, Small"
 msgstr "Малое оружие"
 
-msgid "×1.5 for rifled barrel"
-msgstr "×1,5 за нарезной ствол"
+msgid "Optional firearms rules: firearms can be added, basic armor and shields cost 50% more."
+msgstr "Опциональные правила по огнестрелу: огнестрел можно добавлять в инвентарь, обычная броня и щиты дорожают на 50%."
 
 msgid "Bottle of Wine/Liquor, Rich"
 msgstr "Бутылка вина/ликера, дорогая"
@@ -1201,6 +1252,9 @@ msgstr "Автоматически вычитать деньги при доба
 
 msgid "Tent, Pavilion"
 msgstr "Палатка, павильон"
+
+msgid "config.firearms.fullArmor.details"
+msgstr "Латы с головы до ног, часто вместе со шлемом. Не сочетается с другой бронёй из правил по огнестрелу; щит использовать можно."
 
 msgid "Dart"
 msgstr "Дротик"
