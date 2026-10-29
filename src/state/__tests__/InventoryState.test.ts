@@ -23,6 +23,7 @@ import {
   addEquipmentItem,
   addMeleeWeapon,
   addMissileWeapon,
+  fillMissingStateKeys,
   getInitialInventoryState,
   importEquipmentItems,
   InventoryState,
@@ -44,6 +45,33 @@ import {
 describe('InventoryState Tests', () => {
   beforeEach(() => {
     InventoryState.set(getInitialInventoryState())
+  })
+
+  describe('fillMissingStateKeys', () => {
+    it('adds keys missing in a state stored by an older version', () => {
+      const oldState: Partial<InventoryStateType> = {
+        ...getInitialInventoryState(),
+        meleeWeapons: [meleeWeaponItemMock1],
+      }
+      delete oldState.firearmWeapons
+
+      const restored = JSON.parse(
+        fillMissingStateKeys(JSON.stringify(oldState)),
+      )
+
+      expect(restored.firearmWeapons).toEqual([])
+      expect(restored.meleeWeapons).toEqual([meleeWeaponItemMock1])
+    })
+
+    it('keeps stored values', () => {
+      const stored = JSON.stringify(stateMock)
+
+      expect(JSON.parse(fillMissingStateKeys(stored))).toEqual(stateMock)
+    })
+
+    it('returns invalid JSON as is', () => {
+      expect(fillMissingStateKeys('{broken')).toEqual('{broken')
+    })
   })
 
   describe('useInventoryState Hook', () => {

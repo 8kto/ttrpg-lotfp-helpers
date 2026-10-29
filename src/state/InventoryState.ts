@@ -1,4 +1,5 @@
 import { hookstate, useHookstate } from '@hookstate/core'
+import type { StoreEngine } from '@hookstate/localstored'
 import { localstored } from '@hookstate/localstored'
 
 import type { ArmorItem } from '@/domain/armor'
@@ -73,12 +74,41 @@ export const getInitialInventoryState = (): InventoryStateType => {
 
 const LOCALSTORAGE_APP_KEY = 'lotfp-helpers'
 
+/**
+ * State stored by an older app version may lack the newer keys
+ * (e.g. firearmWeapons), so fill them in with the initial values.
+ */
+export const fillMissingStateKeys = (storedState: string): string => {
+  try {
+    return JSON.stringify({
+      ...getInitialInventoryState(),
+      ...JSON.parse(storedState),
+    })
+  } catch {
+    return storedState
+  }
+}
+
+const storageEngine: StoreEngine = {
+  getItem: (key) => {
+    const storedState = localStorage.getItem(key)
+
+    // localstored awaits getItem anyway; its type disallows a plain null
+    return Promise.resolve(
+      storedState === null ? null : fillMissingStateKeys(storedState),
+    )
+  },
+  removeItem: (key) => localStorage.removeItem(key),
+  setItem: (key, value) => localStorage.setItem(key, value),
+}
+
 export const initState = () => {
   try {
     return hookstate<InventoryStateType>(
       getInitialInventoryState(),
       typeof window !== 'undefined'
         ? localstored({
+            engine: storageEngine,
             key: LOCALSTORAGE_APP_KEY,
           })
         : undefined,

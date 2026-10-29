@@ -34,7 +34,12 @@ const InventoryList = () => {
   const hasMissileWeapons = !!missileWeapons.length
   const hasFirearmWeapons = !!firearmWeapons.length
   const hasMiscEquipment = !!miscEquipment.length
-  const hasAny = hasArmor || hasMeleeWeapons || hasArmor || hasMiscEquipment
+  const hasAny =
+    hasArmor ||
+    hasMeleeWeapons ||
+    hasMissileWeapons ||
+    hasFirearmWeapons ||
+    hasMiscEquipment
 
   return (
     <>
