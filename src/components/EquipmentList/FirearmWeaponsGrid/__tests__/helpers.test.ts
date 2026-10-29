@@ -16,6 +16,34 @@ const getArquebus = () => {
 
 describe('applyFilterValues', () => {
   it.each([
+    [false, 2, 5],
+    [true, 3, 9],
+  ])(
+    'rounds only the final copper price (rifled: %s)',
+    (rifled, cityCostCp, ruralCostCp) => {
+      const [item] = applyFilterValues(
+        [{ ...getArquebus(), cityCostCp: 1, ruralCostCp: 3 }],
+        {
+          firingMechanism: FiringMechanism.Flintlock,
+          rifled,
+          year: YearPeriod['1631-1660'],
+        },
+      )
+      expect(item.cityCostCp).toBe(cityCostCp)
+      expect(item.ruralCostCp).toBe(ruralCostCp)
+      const [unavailable] = applyFilterValues(
+        [{ ...getArquebus(), ruralCostCp: null }],
+        {
+          firingMechanism: FiringMechanism.Flintlock,
+          rifled,
+          year: YearPeriod['1631-1660'],
+        },
+      )
+      expect(unavailable.ruralCostCp).toBeNull()
+    },
+  )
+
+  it.each([
     // coefficient = 1
     [FiringMechanism.Matchlock, YearPeriod['1610-1630'], false],
     [FiringMechanism.Flintlock, YearPeriod['> 1661'], false],

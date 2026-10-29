@@ -34,11 +34,13 @@ export const applyFilterValues = (
 
   return data.map((item) => ({
     ...item,
-    cityCostCp: item.cityCostCp * costCoeff,
+    cityCostCp: Math.round(item.cityCostCp * costCoeff),
     firingMechanism,
     isRifled: rifled,
     ruralCostCp:
-      item.ruralCostCp === null ? null : item.ruralCostCp * costCoeff,
+      item.ruralCostCp === null
+        ? null
+        : Math.round(item.ruralCostCp * costCoeff),
   }))
 }
 
