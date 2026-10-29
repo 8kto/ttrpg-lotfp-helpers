@@ -17,3 +17,9 @@ export const FirearmCostCoeff: CoeffYearType = {
 }
 
 export const RifledCostCoeff = 2 as const
+
+export const FiringMechanismLabels: Record<FiringMechanism, string> = {
+  [FiringMechanism.Matchlock]: /*i18n*/ 'Matchlock',
+  [FiringMechanism.Wheellock]: /*i18n*/ 'Wheellock',
+  [FiringMechanism.Flintlock]: /*i18n*/ 'Flintlock',
+}

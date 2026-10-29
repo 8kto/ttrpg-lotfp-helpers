@@ -46,6 +46,8 @@ export interface FirearmWeaponItem extends WeaponItem {
   range: Range
   isRifled: boolean
   isTwoHanded?: boolean
+  // E.g. pistols never use the matchlock firing mechanism
+  isMatchlockIncompatible?: boolean
 }
 
 export type DamageDice = {
