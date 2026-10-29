@@ -242,6 +242,9 @@ msgstr "Дрель"
 msgid "This weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 msgstr "Это оружие имеет штраф –2 AB для противников с немодифицированным AC 15 и выше."
 
+msgid "Mêlée damage"
+msgstr "Урон в рукопашном бою"
+
 msgid "Packs"
 msgstr "Наборы"
 
@@ -543,6 +546,9 @@ msgstr "Число должно быть больше или равно 0"
 msgid "Storm conditions"
 msgstr "Буря"
 
+msgid "Long, {long} AB"
+msgstr "Дальняя, {long} AB"
+
 msgid "weapons.melee.secondRank"
 msgstr "Возможность атаки из второго ряда"
 
@@ -728,9 +734,6 @@ msgstr "Встречает рывок"
 msgid "Tent, Grand"
 msgstr "Большая палатка"
 
-msgid "Medium, -4 AB"
-msgstr "Средняя, -4 AB"
-
 msgid "Cost, sp"
 msgstr "Цена, sp"
 
@@ -872,6 +875,9 @@ msgstr "Латы"
 msgid "Battle axe"
 msgstr "Боевой топор"
 
+msgid "Medium, {medium} AB"
+msgstr "Средняя, {medium} AB"
+
 msgid "Wilderness"
 msgstr "Дикая местность"
 
@@ -907,9 +913,6 @@ msgstr "Дальнобойное оружие"
 
 msgid "English"
 msgstr "English"
-
-msgid "Long, -8 AB"
-msgstr "Дальняя, -8 AB"
 
 msgid "Gold pieces"
 msgstr "Золотые монеты"

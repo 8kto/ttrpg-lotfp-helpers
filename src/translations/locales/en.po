@@ -248,6 +248,9 @@ msgstr "Drill"
 msgid "This weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 msgstr "This weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 
+msgid "Mêlée damage"
+msgstr "Mêlée damage"
+
 msgid "Packs"
 msgstr "Packs"
 
@@ -556,6 +559,9 @@ msgstr "The number should be equal to or greater than 0"
 msgid "Storm conditions"
 msgstr "Storm conditions"
 
+msgid "Long, {long} AB"
+msgstr "Long, {long} AB"
+
 msgid "weapons.melee.secondRank"
 msgstr "Can attack from the second rank"
 
@@ -741,9 +747,6 @@ msgstr "Receives charge"
 msgid "Tent, Grand"
 msgstr "Tent, Grand"
 
-msgid "Medium, -4 AB"
-msgstr "Middle, -4 AB"
-
 msgid "Cost, sp"
 msgstr "Cost, sp"
 
@@ -885,6 +888,9 @@ msgstr "Plate"
 msgid "Battle axe"
 msgstr "Battle axe"
 
+msgid "Medium, {medium} AB"
+msgstr "Medium, {medium} AB"
+
 msgid "Wilderness"
 msgstr "Wilderness"
 
@@ -920,9 +926,6 @@ msgstr "Missile Weapons"
 
 msgid "English"
 msgstr "English"
-
-msgid "Long, -8 AB"
-msgstr "Long, -8 AB"
 
 msgid "Gold pieces"
 msgstr "Gold pieces"

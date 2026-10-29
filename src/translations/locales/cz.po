@@ -244,6 +244,9 @@ msgstr "Vrtačka"
 msgid "This weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 msgstr "Tato zbraň má penalizaci -2 k zásahu protivníků s neupraveným AC 15 nebo lepším."
 
+msgid "Mêlée damage"
+msgstr ""
+
 msgid "Packs"
 msgstr "Balíčky"
 
@@ -552,6 +555,9 @@ msgstr "Číslo by mělo být rovno nebo větší než 0"
 msgid "Storm conditions"
 msgstr "Podmínky bouře"
 
+msgid "Long, {long} AB"
+msgstr ""
+
 msgid "weapons.melee.secondRank"
 msgstr "Možnost útoku ze druhé řady"
 
@@ -737,9 +743,6 @@ msgstr "Přijímá nápor"
 msgid "Tent, Grand"
 msgstr "Stan, velký"
 
-msgid "Medium, -4 AB"
-msgstr ""
-
 msgid "Cost, sp"
 msgstr "Cena, sp"
 
@@ -881,6 +884,9 @@ msgstr "Plát"
 msgid "Battle axe"
 msgstr "Bojová sekera"
 
+msgid "Medium, {medium} AB"
+msgstr ""
+
 msgid "Wilderness"
 msgstr "Divoká příroda"
 
@@ -916,9 +922,6 @@ msgstr "Střelné zbraně"
 
 msgid "English"
 msgstr "Angličtina"
-
-msgid "Long, -8 AB"
-msgstr ""
 
 msgid "Gold pieces"
 msgstr "Zlaté kousky"

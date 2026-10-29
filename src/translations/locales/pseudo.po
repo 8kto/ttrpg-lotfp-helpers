@@ -236,6 +236,9 @@ msgstr ""
 msgid "This weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 msgstr ""
 
+msgid "Mêlée damage"
+msgstr ""
+
 msgid "Packs"
 msgstr ""
 
@@ -535,6 +538,9 @@ msgstr ""
 msgid "Storm conditions"
 msgstr ""
 
+msgid "Long, {long} AB"
+msgstr ""
+
 msgid "weapons.melee.secondRank"
 msgstr ""
 
@@ -720,9 +726,6 @@ msgstr ""
 msgid "Tent, Grand"
 msgstr ""
 
-msgid "Medium, -4 AB"
-msgstr ""
-
 msgid "Cost, sp"
 msgstr ""
 
@@ -859,6 +862,9 @@ msgstr ""
 msgid "Battle axe"
 msgstr ""
 
+msgid "Medium, {medium} AB"
+msgstr ""
+
 msgid "Wilderness"
 msgstr ""
 
@@ -893,9 +899,6 @@ msgid "Missile Weapons"
 msgstr ""
 
 msgid "English"
-msgstr ""
-
-msgid "Long, -8 AB"
 msgstr ""
 
 msgid "Gold pieces"
