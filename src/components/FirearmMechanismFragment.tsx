@@ -7,10 +7,15 @@ import type { FirearmWeaponItem } from '@/domain/weapon'
 
 const FirearmMechanismFragment = ({ item }: { item: FirearmWeaponItem }) => {
   const { _: trans } = useLingui()
+  const label = FiringMechanismLabels[item.firingMechanism]
+
+  if (!label) {
+    return null
+  }
 
   return (
     <>
-      {trans(FiringMechanismLabels[item.firingMechanism])}
+      {trans(label)}
       {item.isRifled && (
         <>
           , <Trans>rifled</Trans>

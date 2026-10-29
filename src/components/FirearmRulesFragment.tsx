@@ -18,6 +18,12 @@ const FirearmRulesFragment = ({
   paragraphClassname: string
 }) => {
   const { totalEncumbrancePoints } = useEncumbranceTotals()
+
+  // Custom inventory items may not specify a firing mechanism.
+  if (!Object.values(FiringMechanism).includes(item.firingMechanism)) {
+    return null
+  }
+
   const encumbrance = EncumbranceService.getReadableEncumbrance(
     totalEncumbrancePoints,
   )
