@@ -50,7 +50,7 @@ export default function EquipmentList() {
           {
             content: <FirearmWeaponsGrid />,
             key: 'firearm',
-            title: t`Firearms`,
+            title: t({ context: 'equipment tab', message: 'Firearms' }),
           },
         ]}
       />
