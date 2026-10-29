@@ -107,7 +107,10 @@ export const renderDetailsBody: RenderDetailsFunction = (item, i18n, state) => {
 export const renderInventoryTitle: RenderFunction<
   InventoryItem<EquipmentItem>
 > = (item, i18n, _, isExpanded, shouldRenderDetails) => {
-  const weightLabel = getWeightLabel(i18n, item.points)
+  const weightLabel =
+    item.points === EncumbranceUnit.Regular
+      ? null
+      : getWeightLabel(i18n, item.points)
   const range = (item as InventoryItem<MissileWeaponItem>).range
   const hasQty = item.qty > 1
 
@@ -160,7 +163,10 @@ export const renderInventoryTitle: RenderFunction<
 export const renderInventoryDetailsBody: RenderDetailsFunction<
   InventoryItem<EquipmentItem>
 > = (item, i18n) => {
-  const weightLabel = getWeightLabel(i18n, item.points)
+  const weightLabel =
+    item.points === EncumbranceUnit.Regular
+      ? null
+      : getWeightLabel(i18n, item.points)
 
   return (
     <>
