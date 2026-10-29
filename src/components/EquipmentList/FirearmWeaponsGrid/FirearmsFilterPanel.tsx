@@ -3,7 +3,12 @@ import { useLingui } from '@lingui/react'
 import React from 'react'
 
 import type { FilterValues } from '@/components/EquipmentList/FirearmWeaponsGrid/types'
-import { FiringMechanismLabels } from '@/config/Firearms'
+import TooltipTerm from '@/components/TooltipTerm/TooltipTerm'
+import {
+  FiringMechanismHints,
+  FiringMechanismLabels,
+  RifledHint,
+} from '@/config/Firearms'
 import { FiringMechanism, YearPeriod } from '@/domain/firearms'
 
 type FirearmsFilterPanelProps = {
@@ -59,8 +64,9 @@ const FirearmsFilterPanel = ({
               htmlFor={`${mechanism}-radio`}
               className='ml-2 cursor-pointer text-sm text-gray-900'
             >
-              {/* TODO add short tooltips */}
-              {trans(FiringMechanismLabels[mechanism])}
+              <TooltipTerm hint={trans(FiringMechanismHints[mechanism])}>
+                {trans(FiringMechanismLabels[mechanism])}
+              </TooltipTerm>
             </label>
           </div>
         ))}
@@ -109,7 +115,9 @@ const FirearmsFilterPanel = ({
         <div className='mr-4 flex items-center'>
           <h3 className='ph-color-accent font-semibold'>
             <label htmlFor='rifled-checkbox'>
-              <Trans>Rifled</Trans>
+              <TooltipTerm hint={trans(RifledHint)}>
+                <Trans>Rifled</Trans>
+              </TooltipTerm>
             </label>
           </h3>
         </div>

@@ -70,8 +70,14 @@ msgstr "Pipe"
 msgid "This one handed weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 msgstr "This one handed weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 
+msgid "{dry} in 10 in any weather"
+msgstr "{dry} in 10 in any weather"
+
 msgid "This weapon is ineffective against targets with unadjusted AC 14 or better, but allows mêlée attacks on opponents up to 10 ft away."
 msgstr "This weapon is ineffective against targets with unadjusted AC 14 or better, but allows mêlée attacks on opponents up to 10 ft away."
+
+msgid "Powder Horn"
+msgstr "Powder Horn"
 
 msgid "Flask of Lamp Oil"
 msgstr "Flask of Lamp Oil"
@@ -99,11 +105,20 @@ msgstr "Holy Symbol, Steel"
 msgid "Fighter 1"
 msgstr "Fighter 1"
 
+msgid "Dexterity to-hit modifiers do not apply at Medium and Long range."
+msgstr "Dexterity to-hit modifiers do not apply at Medium and Long range."
+
 msgid "Year"
 msgstr "Year"
 
 msgid "Damage"
 msgstr "Damage"
+
+msgid "config.firearms.powderHorn.details"
+msgstr "Holds 50 shots of powder. If the carrier is hit by a fire-based attack, they save versus Breath Weapon or take 1d3 damage for every 10 shots (round up) left in the horn."
+
+msgid "10 rounds (8 for Fighters) + Encumbrance (now {encumbrance}) – Dexterity modifier"
+msgstr "10 rounds (8 for Fighters) + Encumbrance (now {encumbrance}) – Dexterity modifier"
 
 msgid "Tent, Regular"
 msgstr "Tent, Regular"
@@ -120,6 +135,9 @@ msgstr "Shovel"
 msgid "Air Bladder"
 msgstr "Air Bladder"
 
+msgid "{dry} in 10; damp {damp} in 10, rain {wet} in 10"
+msgstr "{dry} in 10; damp {damp} in 10, rain {wet} in 10"
+
 msgid "Emits light in a 30' radius. Burns for 1 hour."
 msgstr "Emits light in a 30' radius. Burns for 1 hour."
 
@@ -128,6 +146,9 @@ msgstr "Holy Symbol, Wood"
 
 msgid "Silver pieces"
 msgstr "Silver pieces"
+
+msgid "config.firearms.powderBarrel.details"
+msgstr "2500 shots of powder. Counts as four oversized items. An exploding barrel deals 5d8 damage to all within 30' (save versus Breath Weapon for half)."
 
 msgid "Spikes for your boots – better success at climbing and keeping balance on ice"
 msgstr "Spikes for your boots – better success at climbing and keeping balance on ice"
@@ -158,6 +179,9 @@ msgstr "Hand axe"
 
 msgid "Mace"
 msgstr "Mace"
+
+msgid "Fire Bomb"
+msgstr "Fire Bomb"
 
 msgid "Riding Gear"
 msgstr "Riding Gear"
@@ -260,8 +284,14 @@ msgstr "Silver"
 msgid "Rifled"
 msgstr "Riffled"
 
+msgid "Bag of 100 round shot."
+msgstr "Bag of 100 round shot."
+
 msgid "These are small one-handed weapons including daggers and clubs, and suffer a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 msgstr "These are small one-handed weapons including daggers and clubs, and suffer a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
+
+msgid "Misfire"
+msgstr "Misfire"
 
 msgid "Weapon, Minor"
 msgstr "Weapon, Minor"
@@ -306,6 +336,9 @@ msgstr "Per day"
 msgid "Reset all equipment?"
 msgstr "Reset all equipment?"
 
+msgid "Ammunition and gear"
+msgstr "Ammunition and gear"
+
 msgid "The Equipment tab list is scrollable."
 msgstr "The Equipment tab list is scrollable."
 
@@ -344,6 +377,9 @@ msgstr ""
 "Chalk is useful for “blazing a trail” through a dungeon or\n"
 "ruin, to ensure that the adventurers can find their way\n"
 "back out again"
+
+msgid "12 Apostles"
+msgstr "12 Apostles"
 
 msgid "Filter by name"
 msgstr "Filter by name"
@@ -392,6 +428,9 @@ msgstr "Heavily"
 msgid "Heavy"
 msgstr "Heavy"
 
+msgid "Reload"
+msgstr "Reload"
+
 msgid "Holy Symbol, Silver"
 msgstr "Holy Symbol, Silver"
 
@@ -434,8 +473,14 @@ msgstr "Add coins"
 msgid "Ladder, 10'"
 msgstr "Ladder, 10'"
 
+msgid "Cord burns 10 cm per turn."
+msgstr "Cord burns 10 cm per turn."
+
 msgid "Category"
 msgstr "Category"
+
+msgid "×½ for flintlock (Fighters round down, others round up)"
+msgstr "×½ for flintlock (Fighters round down, others round up)"
 
 msgid "Specialist’s Tools"
 msgstr "Specialist’s Tools"
@@ -547,6 +592,10 @@ msgstr "Overencumbered"
 msgid "Oversized"
 msgstr "Oversized"
 
+#. js-lingui-explicit-id
+msgid "OversizedX4"
+msgstr "Oversized ×4"
+
 msgid "Garlic"
 msgstr "Garlic"
 
@@ -636,6 +685,9 @@ msgstr "Feed, Animal/Day"
 
 msgid "weapons.melee.charge"
 msgstr "Weapons that allow to receive charge (damage x2, act first): polearm, spear."
+
+msgid "ignores 5 points of armor at all ranges"
+msgstr "ignores 5 points of armor at all ranges"
 
 msgid "Lantern"
 msgstr "Lantern"
@@ -741,6 +793,9 @@ msgstr "Unadjusted AC is that of solely the armor and shield. Dexterity modifier
 msgid "Encumbrance"
 msgstr "Encumbrance"
 
+msgid "ignores 5 points of armor at Short range"
+msgstr "ignores 5 points of armor at Short range"
+
 msgid "Add equipment item"
 msgstr "Add equipment item"
 
@@ -794,6 +849,9 @@ msgstr "Shareable URL"
 msgid "Spikes are useful for spiking doors closed (or spiking them open) and may be used as crude pitons in appropriate situations."
 msgstr "Spikes are useful for spiking doors closed (or spiking them open) and may be used as crude pitons in appropriate situations."
 
+msgid "One shot of powder."
+msgstr "One shot of powder."
+
 msgid ""
 "Standard Rations include cured meats, seasonal fruits\n"
 "and vegetables, and fresh breads or biscuits, often\n"
@@ -836,6 +894,22 @@ msgstr "ft"
 
 msgid "Rope, 50'"
 msgstr "Rope, 50'"
+
+#. js-lingui-explicit-id
+msgid "firearms.hint.flintlock"
+msgstr "The lit match is replaced with a piece of flint: when the trigger is pulled, it strikes a piece of steel (the frizzen), and the spark ignites the powder in the priming pan."
+
+#. js-lingui-explicit-id
+msgid "firearms.hint.matchlock"
+msgstr "A lit match secured in a clamp. When the trigger is pulled, the clamp drops the match into the priming pan with a little fine powder, and the fire passes through a small touch hole to ignite the charge in the barrel."
+
+#. js-lingui-explicit-id
+msgid "firearms.hint.rifled"
+msgstr "Spiraling grooves inside the barrel better guide the bullet and improve accuracy. Expensive, as it is done by hand; rifled guns are slower to load."
+
+#. js-lingui-explicit-id
+msgid "firearms.hint.wheellock"
+msgstr "An internal mechanism makes the gun ready to fire with no outside source of ignition, and protects the firing mechanism and priming pan from the elements."
 
 msgid "Rock"
 msgstr "Rock"
@@ -888,6 +962,9 @@ msgstr "Road"
 msgid "Plate"
 msgstr "Plate"
 
+msgid "Shot Bag"
+msgstr "Shot Bag"
+
 msgid "Battle axe"
 msgstr "Battle axe"
 
@@ -939,6 +1016,12 @@ msgstr "Soap"
 msgid "Add"
 msgstr "Add"
 
+msgid "Armor piercing"
+msgstr "Armor piercing"
+
+msgid "Match Cord, 1 m"
+msgstr "Match Cord, 1 m"
+
 msgid "Exchange coins *"
 msgstr "Exchange coins *"
 
@@ -966,6 +1049,9 @@ msgstr "Mallet"
 msgid "config.melee.cestus.details"
 msgstr "This includes all sorts of fist wrappings and brass knuckle weapon types. Users suffer a –2 penalty to hit any opponent with an unadjusted AC of 15 or better."
 
+msgid "config.firearms.apostles.details"
+msgstr "Bandolier with 12 shots worth of powder in pre-measured containers. Using an apostle reduces the time needed to load a firearm by one round. If the wearer is hit by a fire attack, they save versus Breath Weapon for each unused apostle; each failure deals 1 damage."
+
 msgid "Long"
 msgstr "Long"
 
@@ -987,6 +1073,9 @@ msgstr "Cooking Pots"
 msgid "Select random"
 msgstr "Select random"
 
+msgid "config.firearms.fireBomb.details"
+msgstr "Fired instead of normal shot: it does not penetrate, but explodes in a small fireball on impact, dealing 1d4 damage and igniting flammables; a misfire blows it up. A character carrying fire bombs who is hit by a fire-based attack saves versus Breath Weapon each round, taking fire bomb damage for each failure."
+
 msgid "Jewelry"
 msgstr "Jewelry"
 
@@ -995,6 +1084,9 @@ msgstr "Targets at Medium range are –4 to hit, –8 to hit at Long range. Rifl
 
 msgid "Pole, 10'"
 msgstr "Pole, 10'"
+
+msgid "Scattershot"
+msgstr "Scattershot"
 
 msgid "Lance"
 msgstr "Lance"
@@ -1023,6 +1115,9 @@ msgstr "Mirror, Steel"
 msgid "Weapon, Small"
 msgstr "Weapon, Small"
 
+msgid "×1.5 for rifled barrel"
+msgstr "×1.5 for rifled barrel"
+
 msgid "Bottle of Wine/Liquor, Rich"
 msgstr "Bottle of Wine/Liquor, Rich"
 
@@ -1047,6 +1142,9 @@ msgstr "Charcoal pieces of carbonized wood, which can be used like chalk (with b
 msgid "Musket"
 msgstr "Musket"
 
+msgid "Gunpowder, Barrel"
+msgstr "Gunpowder, Barrel"
+
 msgid "Spike, Wooden"
 msgstr "Spike, Wooden"
 
@@ -1061,6 +1159,9 @@ msgstr "Czech"
 
 msgid "AC"
 msgstr "AC"
+
+msgid "1 in 4 chance to break the mechanism if used as a club."
+msgstr "1 in 4 chance to break the mechanism if used as a club."
 
 msgid "+1 AC versus mêlée attacks, +2 AC versus missile attacks."
 msgstr "+1 AC versus mêlée attacks, +2 AC versus missile attacks."
@@ -1084,6 +1185,9 @@ msgstr "Each missile weapon can be fired once per round with the exception of th
 #. js-lingui-explicit-id
 msgid "weapons.missile.range"
 msgstr "Targets at Medium range are –2 to hit, –4 to hit at Long range."
+
+msgid "Gunpowder"
+msgstr "Gunpowder"
 
 msgid "Armor"
 msgstr "Armor"
@@ -1129,6 +1233,9 @@ msgstr "Firearms quick reference"
 
 msgid "config.melee.polearm.details"
 msgstr "This two-handed weapon can be used to attack from the second rank, can be used to receive a charge, and receives a +1 bonus to hit opponents with an unadjusted AC of 16 or better."
+
+msgid "config.firearms.scattershot.details"
+msgstr "Small pellets or rocks instead of a single bullet. Ranges halved, no armor cancellation, 45° area effect doing 1d6 damage, save versus Breath Weapon for half damage."
 
 msgid "Delete all from list?"
 msgstr "Delete all from list?"

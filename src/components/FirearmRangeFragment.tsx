@@ -47,5 +47,3 @@ const FirearmRangeFragment = ({
 }
 
 export default FirearmRangeFragment
-
-// TODO Dexterity to-hit modifiers do not apply for Medium or Long range targets.

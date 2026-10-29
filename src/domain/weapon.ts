@@ -48,6 +48,8 @@ export interface FirearmWeaponItem extends WeaponItem {
   isTwoHanded?: boolean
   // E.g. pistols never use the matchlock firing mechanism
   isMatchlockIncompatible?: boolean
+  // Muskets ignore armor at all ranges, other firearms at Short range only
+  isArmorPiercingAtAllRanges?: boolean
 }
 
 export type DamageDice = {

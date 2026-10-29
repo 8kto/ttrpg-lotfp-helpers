@@ -70,7 +70,13 @@ msgstr ""
 msgid "This one handed weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 msgstr ""
 
+msgid "{dry} in 10 in any weather"
+msgstr ""
+
 msgid "This weapon is ineffective against targets with unadjusted AC 14 or better, but allows mêlée attacks on opponents up to 10 ft away."
+msgstr ""
+
+msgid "Powder Horn"
 msgstr ""
 
 msgid "Flask of Lamp Oil"
@@ -95,10 +101,19 @@ msgstr ""
 msgid "Fighter 1"
 msgstr ""
 
+msgid "Dexterity to-hit modifiers do not apply at Medium and Long range."
+msgstr ""
+
 msgid "Year"
 msgstr ""
 
 msgid "Damage"
+msgstr ""
+
+msgid "config.firearms.powderHorn.details"
+msgstr ""
+
+msgid "10 rounds (8 for Fighters) + Encumbrance (now {encumbrance}) – Dexterity modifier"
 msgstr ""
 
 msgid "Tent, Regular"
@@ -116,6 +131,9 @@ msgstr ""
 msgid "Air Bladder"
 msgstr ""
 
+msgid "{dry} in 10; damp {damp} in 10, rain {wet} in 10"
+msgstr ""
+
 msgid "Emits light in a 30' radius. Burns for 1 hour."
 msgstr ""
 
@@ -123,6 +141,9 @@ msgid "Holy Symbol, Wood"
 msgstr ""
 
 msgid "Silver pieces"
+msgstr ""
+
+msgid "config.firearms.powderBarrel.details"
 msgstr ""
 
 msgid "Spikes for your boots – better success at climbing and keeping balance on ice"
@@ -153,6 +174,9 @@ msgid "Hand axe"
 msgstr ""
 
 msgid "Mace"
+msgstr ""
+
+msgid "Fire Bomb"
 msgstr ""
 
 msgid "Riding Gear"
@@ -248,7 +272,13 @@ msgstr ""
 msgid "Rifled"
 msgstr ""
 
+msgid "Bag of 100 round shot."
+msgstr ""
+
 msgid "These are small one-handed weapons including daggers and clubs, and suffer a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
+msgstr ""
+
+msgid "Misfire"
 msgstr ""
 
 msgid "Weapon, Minor"
@@ -294,6 +324,9 @@ msgstr ""
 msgid "Reset all equipment?"
 msgstr ""
 
+msgid "Ammunition and gear"
+msgstr ""
+
 msgid "The Equipment tab list is scrollable."
 msgstr ""
 
@@ -328,6 +361,9 @@ msgid ""
 "Chalk is useful for “blazing a trail” through a dungeon or\n"
 "ruin, to ensure that the adventurers can find their way\n"
 "back out again"
+msgstr ""
+
+msgid "12 Apostles"
 msgstr ""
 
 msgid "Filter by name"
@@ -377,6 +413,9 @@ msgstr ""
 msgid "Heavy"
 msgstr ""
 
+msgid "Reload"
+msgstr ""
+
 msgid "Holy Symbol, Silver"
 msgstr ""
 
@@ -419,7 +458,13 @@ msgstr ""
 msgid "Ladder, 10'"
 msgstr ""
 
+msgid "Cord burns 10 cm per turn."
+msgstr ""
+
 msgid "Category"
+msgstr ""
+
+msgid "×½ for flintlock (Fighters round down, others round up)"
 msgstr ""
 
 msgid "Specialist’s Tools"
@@ -526,6 +571,10 @@ msgstr ""
 msgid "Oversized"
 msgstr ""
 
+#. js-lingui-explicit-id
+msgid "OversizedX4"
+msgstr ""
+
 msgid "Garlic"
 msgstr ""
 
@@ -614,6 +663,9 @@ msgid "Feed, Animal/Day"
 msgstr ""
 
 msgid "weapons.melee.charge"
+msgstr ""
+
+msgid "ignores 5 points of armor at all ranges"
 msgstr ""
 
 msgid "Lantern"
@@ -720,6 +772,9 @@ msgstr ""
 msgid "Encumbrance"
 msgstr ""
 
+msgid "ignores 5 points of armor at Short range"
+msgstr ""
+
 msgid "Add equipment item"
 msgstr ""
 
@@ -773,6 +828,9 @@ msgstr ""
 msgid "Spikes are useful for spiking doors closed (or spiking them open) and may be used as crude pitons in appropriate situations."
 msgstr ""
 
+msgid "One shot of powder."
+msgstr ""
+
 msgid ""
 "Standard Rations include cured meats, seasonal fruits\n"
 "and vegetables, and fresh breads or biscuits, often\n"
@@ -809,6 +867,22 @@ msgid "ft"
 msgstr ""
 
 msgid "Rope, 50'"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "firearms.hint.flintlock"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "firearms.hint.matchlock"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "firearms.hint.rifled"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "firearms.hint.wheellock"
 msgstr ""
 
 msgid "Rock"
@@ -862,6 +936,9 @@ msgstr ""
 msgid "Plate"
 msgstr ""
 
+msgid "Shot Bag"
+msgstr ""
+
 msgid "Battle axe"
 msgstr ""
 
@@ -913,6 +990,12 @@ msgstr ""
 msgid "Add"
 msgstr ""
 
+msgid "Armor piercing"
+msgstr ""
+
+msgid "Match Cord, 1 m"
+msgstr ""
+
 msgid "Exchange coins *"
 msgstr ""
 
@@ -940,6 +1023,9 @@ msgstr ""
 msgid "config.melee.cestus.details"
 msgstr ""
 
+msgid "config.firearms.apostles.details"
+msgstr ""
+
 msgid "Long"
 msgstr ""
 
@@ -961,6 +1047,9 @@ msgstr ""
 msgid "Select random"
 msgstr ""
 
+msgid "config.firearms.fireBomb.details"
+msgstr ""
+
 msgid "Jewelry"
 msgstr ""
 
@@ -968,6 +1057,9 @@ msgid "Targets at Medium range are –4 to hit, –8 to hit at Long range. Rifle
 msgstr ""
 
 msgid "Pole, 10'"
+msgstr ""
+
+msgid "Scattershot"
 msgstr ""
 
 msgid "Lance"
@@ -997,6 +1089,9 @@ msgstr ""
 msgid "Weapon, Small"
 msgstr ""
 
+msgid "×1.5 for rifled barrel"
+msgstr ""
+
 msgid "Bottle of Wine/Liquor, Rich"
 msgstr ""
 
@@ -1021,6 +1116,9 @@ msgstr ""
 msgid "Musket"
 msgstr ""
 
+msgid "Gunpowder, Barrel"
+msgstr ""
+
 msgid "Spike, Wooden"
 msgstr ""
 
@@ -1034,6 +1132,9 @@ msgid "Czech"
 msgstr ""
 
 msgid "AC"
+msgstr ""
+
+msgid "1 in 4 chance to break the mechanism if used as a club."
 msgstr ""
 
 msgid "+1 AC versus mêlée attacks, +2 AC versus missile attacks."
@@ -1057,6 +1158,9 @@ msgstr ""
 
 #. js-lingui-explicit-id
 msgid "weapons.missile.range"
+msgstr ""
+
+msgid "Gunpowder"
 msgstr ""
 
 msgid "Armor"
@@ -1102,6 +1206,9 @@ msgid "Firearms quick reference"
 msgstr ""
 
 msgid "config.melee.polearm.details"
+msgstr ""
+
+msgid "config.firearms.scattershot.details"
 msgstr ""
 
 msgid "Delete all from list?"

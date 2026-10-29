@@ -70,8 +70,14 @@ msgstr "Dýmka"
 msgid "This one handed weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 msgstr "Tato jednoruční zbraň má penalizaci -2 k zásahu protivníků s neupraveným AC 15 nebo lepším."
 
+msgid "{dry} in 10 in any weather"
+msgstr ""
+
 msgid "This weapon is ineffective against targets with unadjusted AC 14 or better, but allows mêlée attacks on opponents up to 10 ft away."
 msgstr "Tato zbraň je neúčinná proti cílům s neupraveným AC 14 nebo lepším, ale umožňuje mêlée útoky na protivníky až do vzdálenosti 10 stop."
+
+msgid "Powder Horn"
+msgstr ""
 
 msgid "Flask of Lamp Oil"
 msgstr "Láhev lampového oleje"
@@ -98,11 +104,20 @@ msgstr "Svatý symbol, ocel"
 msgid "Fighter 1"
 msgstr "Bojovník 1"
 
+msgid "Dexterity to-hit modifiers do not apply at Medium and Long range."
+msgstr ""
+
 msgid "Year"
 msgstr ""
 
 msgid "Damage"
 msgstr "Poškození"
+
+msgid "config.firearms.powderHorn.details"
+msgstr ""
+
+msgid "10 rounds (8 for Fighters) + Encumbrance (now {encumbrance}) – Dexterity modifier"
+msgstr ""
 
 msgid "Tent, Regular"
 msgstr "Stan, běžný"
@@ -119,6 +134,9 @@ msgstr "Lopata"
 msgid "Air Bladder"
 msgstr "Vzduchový měch"
 
+msgid "{dry} in 10; damp {damp} in 10, rain {wet} in 10"
+msgstr ""
+
 msgid "Emits light in a 30' radius. Burns for 1 hour."
 msgstr "Vyzařuje světlo v poloměru 30 stop. Hoří 1 hodinu."
 
@@ -127,6 +145,9 @@ msgstr "Svatý symbol, dřevo"
 
 msgid "Silver pieces"
 msgstr "Stříbrné kusy"
+
+msgid "config.firearms.powderBarrel.details"
+msgstr ""
 
 msgid "Spikes for your boots – better success at climbing and keeping balance on ice"
 msgstr "Hřeby pro vaše boty - lepší úspěch při lezení a udržování rovnováhy na ledu."
@@ -157,6 +178,9 @@ msgstr "Sekera"
 
 msgid "Mace"
 msgstr "Palice"
+
+msgid "Fire Bomb"
+msgstr ""
 
 msgid "Riding Gear"
 msgstr "Jízdní vybavení"
@@ -256,8 +280,14 @@ msgstr "Stříbro"
 msgid "Rifled"
 msgstr ""
 
+msgid "Bag of 100 round shot."
+msgstr ""
+
 msgid "These are small one-handed weapons including daggers and clubs, and suffer a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 msgstr "To jsou malé jednoruční zbraně včetně dýk a kyjů, které mají penalizaci -2 k zásahu protivníků s neupraveným AC 15 nebo lepším."
+
+msgid "Misfire"
+msgstr ""
 
 msgid "Weapon, Minor"
 msgstr "Zbraň, menší"
@@ -302,6 +332,9 @@ msgstr "Za den"
 msgid "Reset all equipment?"
 msgstr "Resetovat veškeré vybavení?"
 
+msgid "Ammunition and gear"
+msgstr ""
+
 msgid "The Equipment tab list is scrollable."
 msgstr "Seznam karet je posuvný."
 
@@ -340,6 +373,9 @@ msgstr ""
 "Křída je užitečná pro „vytyčení cesty“ skrz jeskyni nebo\n"
 "zříceninu, aby se zajistilo, že dobrodruzi najdou cestu\n"
 "zpět ven."
+
+msgid "12 Apostles"
+msgstr ""
 
 msgid "Filter by name"
 msgstr "Filtrovat podle názvu"
@@ -388,6 +424,9 @@ msgstr "Značně"
 msgid "Heavy"
 msgstr "Těžký"
 
+msgid "Reload"
+msgstr ""
+
 msgid "Holy Symbol, Silver"
 msgstr "Svatý symbol, stříbro"
 
@@ -430,8 +469,14 @@ msgstr "Přidat mince"
 msgid "Ladder, 10'"
 msgstr "Žebřík, 10 stop"
 
+msgid "Cord burns 10 cm per turn."
+msgstr ""
+
 msgid "Category"
 msgstr "Kategorie"
+
+msgid "×½ for flintlock (Fighters round down, others round up)"
+msgstr ""
 
 msgid "Specialist’s Tools"
 msgstr "Nástroje specialisty"
@@ -543,6 +588,10 @@ msgstr "Přetížený"
 msgid "Oversized"
 msgstr "Příliš velký"
 
+#. js-lingui-explicit-id
+msgid "OversizedX4"
+msgstr ""
+
 msgid "Garlic"
 msgstr "Česnek"
 
@@ -632,6 +681,9 @@ msgstr "Krmivo, zvíře/den"
 
 msgid "weapons.melee.charge"
 msgstr "Zbraň, která umožňuje přijmout na sebe nápor (charge) (újma x2, útočí první): kopí, hůl."
+
+msgid "ignores 5 points of armor at all ranges"
+msgstr ""
 
 msgid "Lantern"
 msgstr "Lampář"
@@ -737,6 +789,9 @@ msgstr "Neupravený Třída Brnění (Unadjusted AC) zahrnuje pouze brnění a �
 msgid "Encumbrance"
 msgstr "Zatížení"
 
+msgid "ignores 5 points of armor at Short range"
+msgstr ""
+
 msgid "Add equipment item"
 msgstr "Přidat položku vybavení"
 
@@ -790,6 +845,9 @@ msgstr "Sdílet URL"
 msgid "Spikes are useful for spiking doors closed (or spiking them open) and may be used as crude pitons in appropriate situations."
 msgstr "Hřeby jsou užitečné pro zabouchávání dveří (nebo jejich otevírání) a mohou být použity jako hrubé špice v příslušných situacích."
 
+msgid "One shot of powder."
+msgstr ""
+
 msgid ""
 "Standard Rations include cured meats, seasonal fruits\n"
 "and vegetables, and fresh breads or biscuits, often\n"
@@ -832,6 +890,22 @@ msgstr "stopa"
 
 msgid "Rope, 50'"
 msgstr "Lano, 50 stop"
+
+#. js-lingui-explicit-id
+msgid "firearms.hint.flintlock"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "firearms.hint.matchlock"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "firearms.hint.rifled"
+msgstr ""
+
+#. js-lingui-explicit-id
+msgid "firearms.hint.wheellock"
+msgstr ""
 
 msgid "Rock"
 msgstr "Skála"
@@ -884,6 +958,9 @@ msgstr "Cesta"
 msgid "Plate"
 msgstr "Plát"
 
+msgid "Shot Bag"
+msgstr ""
+
 msgid "Battle axe"
 msgstr "Bojová sekera"
 
@@ -935,6 +1012,12 @@ msgstr "Mýdlo"
 msgid "Add"
 msgstr "Přidat"
 
+msgid "Armor piercing"
+msgstr ""
+
+msgid "Match Cord, 1 m"
+msgstr ""
+
 msgid "Exchange coins *"
 msgstr "Vyměnit mince *"
 
@@ -962,6 +1045,9 @@ msgstr "Kladivo"
 msgid "config.melee.cestus.details"
 msgstr "Zahrnuje všechny typy obinadek na pěst a kastety. Trest -2 k zásahu proti jakémukoli protivníkovi s neupraveným AC 15 a vyšším."
 
+msgid "config.firearms.apostles.details"
+msgstr ""
+
 msgid "Long"
 msgstr "Dlouhý"
 
@@ -983,6 +1069,9 @@ msgstr "Vařící hrnce"
 msgid "Select random"
 msgstr "Vybrat náhodně"
 
+msgid "config.firearms.fireBomb.details"
+msgstr ""
+
 msgid "Jewelry"
 msgstr "Šperky"
 
@@ -991,6 +1080,9 @@ msgstr ""
 
 msgid "Pole, 10'"
 msgstr "Tyč, 10 stop"
+
+msgid "Scattershot"
+msgstr ""
 
 msgid "Lance"
 msgstr "Dlouhé kopí"
@@ -1019,6 +1111,9 @@ msgstr "Zrcadlo, ocel"
 msgid "Weapon, Small"
 msgstr "Zbraň, malá"
 
+msgid "×1.5 for rifled barrel"
+msgstr ""
+
 msgid "Bottle of Wine/Liquor, Rich"
 msgstr "Láhev vína/lihoviny, bohatá"
 
@@ -1043,6 +1138,9 @@ msgstr "Kousky dřevěného uhlí, které lze použít jako křídu (s černými
 msgid "Musket"
 msgstr ""
 
+msgid "Gunpowder, Barrel"
+msgstr ""
+
 msgid "Spike, Wooden"
 msgstr "Hřebík, dřevěný"
 
@@ -1057,6 +1155,9 @@ msgstr "Čeština"
 
 msgid "AC"
 msgstr "AC"
+
+msgid "1 in 4 chance to break the mechanism if used as a club."
+msgstr ""
 
 msgid "+1 AC versus mêlée attacks, +2 AC versus missile attacks."
 msgstr "+1 AC proti útokům na blízko, +2 AC proti střelným útokům."
@@ -1080,6 +1181,9 @@ msgstr "Každou vrhací zbraň lze použít jednou za kolo, kromě kuše."
 #. js-lingui-explicit-id
 msgid "weapons.missile.range"
 msgstr "Cíle na střední vzdálenosti mají –2 k zásahu, –4 k zásahu na dlouhé vzdálenosti."
+
+msgid "Gunpowder"
+msgstr ""
 
 msgid "Armor"
 msgstr "Brnění"
@@ -1125,6 +1229,9 @@ msgstr ""
 
 msgid "config.melee.polearm.details"
 msgstr "Toto dvouruční zbraň může být použita k útoku ze druhé řady, může být použita k setkání náporu (charge) a získává bonus +1 AB proti protivníkům s neupraveným AC 16 a vyšším."
+
+msgid "config.firearms.scattershot.details"
+msgstr ""
 
 msgid "Delete all from list?"
 msgstr "Odstranit vše ze seznamu?"

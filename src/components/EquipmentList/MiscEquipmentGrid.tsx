@@ -50,7 +50,13 @@ const ruralCostColumn: DataGridColumn<EquipmentItem> = {
   },
 }
 
-const MiscEquipmentGrid = () => {
+type MiscEquipmentGridProps = {
+  // Defaults to the core miscellaneous equipment list
+  items?: ReadonlyArray<EquipmentItem>
+  noFilter?: boolean
+}
+
+const MiscEquipmentGrid = ({ items, noFilter }: MiscEquipmentGridProps) => {
   const {
     state: { isCostRural },
   } = useInventoryState()
@@ -63,10 +69,10 @@ const MiscEquipmentGrid = () => {
   }, [isCostRural])
 
   const dataFilteredByCost = useMemo(() => {
-    const data = Object.values(Equipment.MiscEquipment)
+    const data = Object.values(items ?? Equipment.MiscEquipment)
 
     return isCostRural.get() ? data.filter((i) => i.ruralCostCp !== null) : data
-  }, [isCostRural])
+  }, [isCostRural, items])
 
   const filterName = (item: EquipmentItem, filterBy: string) => {
     return item.name.toLocaleLowerCase().includes(filterBy.toLocaleLowerCase())
@@ -82,6 +88,7 @@ const MiscEquipmentGrid = () => {
       filterFn={filterName}
       filterPlaceholder={t`Filter by name`}
       spanDetails={colSpan}
+      noFilter={noFilter}
     />
   )
 }

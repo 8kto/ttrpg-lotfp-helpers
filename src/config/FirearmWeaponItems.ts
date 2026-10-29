@@ -45,6 +45,7 @@ export const FirearmWeaponItems = (): ReadonlyArray<FirearmWeaponItem> => [
     damageMelee: { dice: Dice.d6, x: 1 },
     details: t`Musket is a large handheld long gun which requires a fork rest in order to fire; not having the rest levies a –2 penalty to hit. Can be used as a mêlée weapon (d6 damage).`,
     firingMechanism: FiringMechanism.Matchlock,
+    isArmorPiercingAtAllRanges: true,
     isRifled: false,
     isTwoHanded: true,
     name: t`Musket`,

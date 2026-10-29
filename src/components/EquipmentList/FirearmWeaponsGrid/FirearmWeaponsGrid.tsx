@@ -22,6 +22,8 @@ import {
   handleAddEquipmentItemClick,
   sortWeapons,
 } from '@/components/EquipmentList/helpers'
+import MiscEquipmentGrid from '@/components/EquipmentList/MiscEquipmentGrid'
+import { FirearmGearItems } from '@/config/FirearmGearItems'
 import type { FirearmWeaponItem } from '@/domain/weapon'
 import useTailwindBreakpoint from '@/shared/hooks/useTailwindBreakpoint'
 import { useInventoryState } from '@/state/InventoryState'
@@ -37,6 +39,7 @@ const FirearmWeaponsGrid = () => {
   const [filterValues, setFilterValues] =
     useState<FilterValues>(defaultFilterValues)
   const breakpoint = useTailwindBreakpoint()
+  const gearItems = useMemo(() => FirearmGearItems(), [])
 
   const columnsFilteredByCost = useMemo(() => {
     const costCol = isCostRural.get() ? ruralCostColumn : cityCostColumn
@@ -96,6 +99,11 @@ const FirearmWeaponsGrid = () => {
         spanDetails={colSpan}
         noFilter
       />
+
+      <h3 className='ph-color-accent mb-2 mt-8 font-semibold text-heading text-xl lg:text-2xl'>
+        <Trans>Ammunition and gear</Trans>
+      </h3>
+      <MiscEquipmentGrid items={gearItems} noFilter />
     </>
   )
 }

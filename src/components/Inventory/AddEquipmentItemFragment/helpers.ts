@@ -6,6 +6,7 @@ import { getAutoIncrementedId } from '@/shared/helpers/autoincrement'
 import CurrencyConverter from '@/shared/services/CurrencyConverter'
 import type { EquipmentCategoryKey } from '@/state/InventoryState'
 
+// \/*i18n*\/ marks the values for `lingui extract`; translate them with i18n._()
 export const EquipLabelsDict: Record<EquipmentCategoryKey, string> = {
   armor: /*i18n*/ 'Armor',
   firearmWeapons: /*i18n*/ 'Firearms',
@@ -14,6 +15,7 @@ export const EquipLabelsDict: Record<EquipmentCategoryKey, string> = {
   missileWeapons: /*i18n*/ 'Missile weapons',
 }
 
+// \/*i18n*\/ marks the values for `lingui extract`; translate them with i18n._()
 export const EncumbrancePointsLabelsDict: ReadonlyArray<
   [EncumbranceUnit, string]
 > = [

@@ -73,7 +73,8 @@ describe('Details component', () => {
         wrapper: TestingProvider,
       })
       expect(screen.getByTestId('details--firearms').textContent).toEqual(
-        'RangeShort: 50 ftMedium: 100 ft (-4 AB)Long: 600 ft (-8 AB)',
+        'RangeShort: 50 ftMedium: 100 ft (-4 AB)Long: 600 ft (-8 AB)' +
+          'Dexterity to-hit modifiers do not apply at Medium and Long range.',
       )
     })
 
@@ -82,7 +83,75 @@ describe('Details component', () => {
         wrapper: TestingProvider,
       })
       expect(screen.getByTestId('details--firearms').textContent).toEqual(
-        'RangeShort: 50 ftMedium: 100 ft (-2 AB)Long: 600 ft (-4 AB)',
+        'RangeShort: 50 ftMedium: 100 ft (-2 AB)Long: 600 ft (-4 AB)' +
+          'Dexterity to-hit modifiers do not apply at Medium and Long range.',
+      )
+    })
+
+    it('displays reload, misfire and armor piercing for a matchlock', () => {
+      render(<Details item={firearmWeaponItemMock1} />, {
+        wrapper: TestingProvider,
+      })
+      expect(screen.getByTestId('details--reload').textContent).toEqual(
+        'Reload: 10 rounds (8 for Fighters) + Encumbrance (now 0) – Dexterity modifier',
+      )
+      expect(screen.getByTestId('details--misfire').textContent).toEqual(
+        'Misfire: 2 in 10; damp 4 in 10, rain 8 in 10',
+      )
+      expect(screen.getByTestId('details--armor-piercing').textContent).toEqual(
+        'Armor piercing: ignores 5 points of armor at Short range',
+      )
+      expect(screen.queryByTestId('details--club')).not.toBeInTheDocument()
+    })
+
+    it('displays reload modifiers for a rifled flintlock', () => {
+      render(
+        <Details
+          item={{
+            ...firearmWeaponItemMock1,
+            firingMechanism: FiringMechanism.Flintlock,
+            isRifled: true,
+          }}
+        />,
+        { wrapper: TestingProvider },
+      )
+      expect(screen.getByTestId('details--reload').textContent).toEqual(
+        'Reload: 10 rounds (8 for Fighters) + Encumbrance (now 0) – Dexterity modifier' +
+          '; ×½ for flintlock (Fighters round down, others round up)' +
+          '; ×1.5 for rifled barrel',
+      )
+      expect(screen.getByTestId('details--misfire').textContent).toEqual(
+        'Misfire: 1 in 10; damp 2 in 10, rain 4 in 10',
+      )
+    })
+
+    it('displays wheellock specifics', () => {
+      render(
+        <Details
+          item={{
+            ...firearmWeaponItemMock1,
+            firingMechanism: FiringMechanism.Wheellock,
+          }}
+        />,
+        { wrapper: TestingProvider },
+      )
+      expect(screen.getByTestId('details--misfire').textContent).toEqual(
+        'Misfire: 2 in 10 in any weather',
+      )
+      expect(screen.getByTestId('details--club').textContent).toEqual(
+        '1 in 4 chance to break the mechanism if used as a club.',
+      )
+    })
+
+    it('displays armor piercing at all ranges for muskets', () => {
+      render(
+        <Details
+          item={{ ...firearmWeaponItemMock1, isArmorPiercingAtAllRanges: true }}
+        />,
+        { wrapper: TestingProvider },
+      )
+      expect(screen.getByTestId('details--armor-piercing').textContent).toEqual(
+        'Armor piercing: ignores 5 points of armor at all ranges',
       )
     })
 

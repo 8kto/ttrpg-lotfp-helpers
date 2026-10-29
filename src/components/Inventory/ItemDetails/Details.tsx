@@ -4,6 +4,7 @@ import React from 'react'
 import DamageFragment from '@/components/DamageFragment'
 import FirearmMechanismFragment from '@/components/FirearmMechanismFragment'
 import FirearmRangeFragment from '@/components/FirearmRangeFragment'
+import FirearmRulesFragment from '@/components/FirearmRulesFragment'
 import {
   isArmorItem,
   isFirearmItem,
@@ -70,7 +71,17 @@ export const Details = <T extends EquipmentItem>({ item }: { item: T }) => {
               <Trans>Range</Trans>
             </strong>
             <FirearmRangeFragment range={item.range} isRifled={item.isRifled} />
+            <p className='ph-color-muted text-sm'>
+              <Trans>
+                Dexterity to-hit modifiers do not apply at Medium and Long
+                range.
+              </Trans>
+            </p>
           </div>
+          <FirearmRulesFragment
+            item={item}
+            paragraphClassname={paragraphClassname}
+          />
         </>
       ) : null}
 
