@@ -308,10 +308,6 @@ msgstr "Crowbar"
 msgid "Export as a file"
 msgstr "Export as a file"
 
-#. js-lingui-explicit-id
-msgid "Cumbersome"
-msgstr "Cumbersome"
-
 msgid "Mirrors are useful for many reasons; for instance, they can be used for looking around corners or for sending signals outdoors using reflected sunlight."
 msgstr "Mirrors are useful for many reasons; for instance, they can be used for looking around corners or for sending signals outdoors using reflected sunlight."
 
@@ -338,6 +334,9 @@ msgstr "Reset all equipment?"
 
 msgid "Ammunition and gear"
 msgstr "Ammunition and gear"
+
+msgid "None"
+msgstr "None"
 
 msgid "The Equipment tab list is scrollable."
 msgstr "The Equipment tab list is scrollable."
@@ -396,6 +395,9 @@ msgstr "Fishing Gear"
 msgid "on foot: + CON mod"
 msgstr "on foot: + CON mod"
 
+msgid "Unencumbered"
+msgstr "Unencumbered"
+
 msgid "Bedroll"
 msgstr "Bedroll"
 
@@ -419,14 +421,6 @@ msgstr "Encumbrance Units"
 
 msgid "Item"
 msgstr "Item"
-
-#. js-lingui-explicit-id
-msgid "Heavily"
-msgstr "Heavily"
-
-#. js-lingui-explicit-id
-msgid "Heavy"
-msgstr "Heavy"
 
 msgid "Reload"
 msgstr "Reload"
@@ -482,6 +476,9 @@ msgstr "Category"
 msgid "×½ for flintlock (Fighters round down, others round up)"
 msgstr "×½ for flintlock (Fighters round down, others round up)"
 
+msgid "Oversized"
+msgstr "Oversized"
+
 msgid "Specialist’s Tools"
 msgstr "Specialist’s Tools"
 
@@ -490,10 +487,6 @@ msgstr "Princess Helpers"
 
 msgid "Cleric 2"
 msgstr "Cleric 2"
-
-#. js-lingui-explicit-id
-msgid "Lightly"
-msgstr "Lightly"
 
 msgid "Heavy crossbows can only be fired once in 3 rounds and ignore 4 AC points"
 msgstr "Heavy crossbows can only be fired once in 3 rounds and ignore 4 AC points"
@@ -525,6 +518,9 @@ msgstr "Club"
 #. js-lingui-explicit-id
 msgid "Matchlock"
 msgstr "Matchlock"
+
+msgid "Heavy"
+msgstr "Heavy"
 
 #. js-lingui-explicit-id
 msgid "Miscellaneous"
@@ -568,10 +564,6 @@ msgstr "Add item"
 msgid "Set"
 msgstr "Set"
 
-#. js-lingui-explicit-id
-msgid "None"
-msgstr "None"
-
 msgid "title.encumbrancePoints"
 msgstr "Encumbrance Points"
 
@@ -583,18 +575,6 @@ msgstr "Reset"
 
 msgid "Arrows, quiver (20)"
 msgstr "Arrows, quiver (20)"
-
-#. js-lingui-explicit-id
-msgid "OverEncumbered"
-msgstr "Overencumbered"
-
-#. js-lingui-explicit-id
-msgid "Oversized"
-msgstr "Oversized"
-
-#. js-lingui-explicit-id
-msgid "OversizedX4"
-msgstr "Oversized ×4"
 
 msgid "Garlic"
 msgstr "Garlic"
@@ -645,10 +625,6 @@ msgstr "Short"
 msgid "Range, feet"
 msgstr "Range, feet"
 
-#. js-lingui-explicit-id
-msgid "Regular"
-msgstr "Regular"
-
 msgid "Running"
 msgstr "Running"
 
@@ -666,10 +642,6 @@ msgstr "Blowgun"
 
 msgid "Block and Tackle"
 msgstr "Block and Tackle"
-
-#. js-lingui-explicit-id
-msgid "Severely"
-msgstr "Severely"
 
 msgid "Pistol brace"
 msgstr "Pistol brace"
@@ -695,9 +667,8 @@ msgstr "Lantern"
 msgid "Details"
 msgstr "Details"
 
-#. js-lingui-explicit-id
-msgid "Unencumbered"
-msgstr "Unencumbered"
+msgid "Lightly encumbered"
+msgstr "Lightly encumbered"
 
 msgid "Pick, Miner’s"
 msgstr "Pick, Miner’s"
@@ -710,6 +681,9 @@ msgstr "Weight"
 
 msgid "About LotFP tools project"
 msgstr "About LotFP tools project"
+
+msgid "Over encumbered"
+msgstr "Over encumbered"
 
 #. js-lingui-explicit-id
 msgid "Weight"
@@ -801,6 +775,9 @@ msgstr "Add equipment item"
 
 msgid "Receives charge"
 msgstr "Receives charge"
+
+msgid "Heavily encumbered"
+msgstr "Heavily encumbered"
 
 msgid "Tent, Grand"
 msgstr "Tent, Grand"
@@ -932,6 +909,9 @@ msgstr "Spike, Iron"
 msgid "Arquebus"
 msgstr "Arquebus"
 
+msgid "Cumbersome"
+msgstr "Cumbersome"
+
 msgid "config.melee.slingRocks.details"
 msgstr "Slings fired with stones instead of bullets have the listed range (half of the regular)."
 
@@ -1037,6 +1017,9 @@ msgstr "Russian"
 msgid "Garrote"
 msgstr "Garrote"
 
+msgid "Severely encumbered"
+msgstr "Severely encumbered"
+
 msgid "Quick Reference on Encumbrance and Movement from the LotFP Core Rules"
 msgstr "Quick Reference on Encumbrance and Movement from the LotFP Core Rules"
 
@@ -1066,6 +1049,9 @@ msgstr "Torch"
 
 msgid "Ink"
 msgstr "Ink"
+
+msgid "Oversized ×4"
+msgstr "Oversized ×4"
 
 msgid "Cooking Pots"
 msgstr "Cooking Pots"
@@ -1209,6 +1195,9 @@ msgstr "Crossbow bolts, quiver (20)"
 
 msgid "Bottle of Wine/Liquor, Decent"
 msgstr "Bottle of Wine/Liquor, Decent"
+
+msgid "Regular"
+msgstr "Regular"
 
 msgid "Chain"
 msgstr "Chain"

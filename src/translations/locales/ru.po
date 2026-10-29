@@ -302,10 +302,6 @@ msgstr "Ломик"
 msgid "Export as a file"
 msgstr "Сохранить как файл"
 
-#. js-lingui-explicit-id
-msgid "Cumbersome"
-msgstr "Громоздкий"
-
 msgid "Mirrors are useful for many reasons; for instance, they can be used for looking around corners or for sending signals outdoors using reflected sunlight."
 msgstr "Зеркала полезны по многим причинам; например, их можно использовать для подглядывания из-за угла или для отправки сигналов с помощью отраженных лучей света"
 
@@ -332,6 +328,9 @@ msgstr "Сбросить всё снаряжение?"
 
 msgid "Ammunition and gear"
 msgstr "Боеприпасы и снаряжение"
+
+msgid "None"
+msgstr "Нет"
 
 msgid "The Equipment tab list is scrollable."
 msgstr "Список табов прокручивается."
@@ -387,6 +386,9 @@ msgstr "Рыболовные снасти"
 msgid "on foot: + CON mod"
 msgstr "пешком: + модификатор CON"
 
+msgid "Unencumbered"
+msgstr "Не нагружен"
+
 msgid "Bedroll"
 msgstr "Спальный мешок"
 
@@ -410,14 +412,6 @@ msgstr "Encumbrance Units"
 
 msgid "Item"
 msgstr "Предмет"
-
-#. js-lingui-explicit-id
-msgid "Heavily"
-msgstr "Тяжёлая"
-
-#. js-lingui-explicit-id
-msgid "Heavy"
-msgstr "Тяжёлый"
 
 msgid "Reload"
 msgstr "Перезарядка"
@@ -473,6 +467,9 @@ msgstr "Категория"
 msgid "×½ for flintlock (Fighters round down, others round up)"
 msgstr "×½ за кремнёвый замок (Воины округляют вниз, остальные — вверх)"
 
+msgid "Oversized"
+msgstr "Негабаритный"
+
 msgid "Specialist’s Tools"
 msgstr "Инструменты специалиста"
 
@@ -481,10 +478,6 @@ msgstr "Princess Helpers"
 
 msgid "Cleric 2"
 msgstr "Жрец 2"
-
-#. js-lingui-explicit-id
-msgid "Lightly"
-msgstr "Легко нагружен"
 
 msgid "Heavy crossbows can only be fired once in 3 rounds and ignore 4 AC points"
 msgstr "Тяжёлый арбалет стреляет только один раз за 3 раунда и игнорирует 4 AC."
@@ -516,6 +509,9 @@ msgstr "Дубина"
 #. js-lingui-explicit-id
 msgid "Matchlock"
 msgstr "Фитильный замок"
+
+msgid "Heavy"
+msgstr "Тяжёлый"
 
 #. js-lingui-explicit-id
 msgid "Miscellaneous"
@@ -555,10 +551,6 @@ msgstr "Добавить предмет"
 msgid "Set"
 msgstr "Установить"
 
-#. js-lingui-explicit-id
-msgid "None"
-msgstr "Нет"
-
 msgid "title.encumbrancePoints"
 msgstr "Encumbrance Points"
 
@@ -570,18 +562,6 @@ msgstr "Сброс"
 
 msgid "Arrows, quiver (20)"
 msgstr "Стрелы, колчан (20)"
-
-#. js-lingui-explicit-id
-msgid "OverEncumbered"
-msgstr "Перегружен"
-
-#. js-lingui-explicit-id
-msgid "Oversized"
-msgstr "Негабаритный"
-
-#. js-lingui-explicit-id
-msgid "OversizedX4"
-msgstr "Негабаритный ×4"
 
 msgid "Garlic"
 msgstr "Чеснок"
@@ -632,10 +612,6 @@ msgstr "Ближняя"
 msgid "Range, feet"
 msgstr "Дальность, футы"
 
-#. js-lingui-explicit-id
-msgid "Regular"
-msgstr "Обычный"
-
 msgid "Running"
 msgstr "Бег"
 
@@ -653,10 +629,6 @@ msgstr "Духовая трубка"
 
 msgid "Block and Tackle"
 msgstr "Блок и полиспаст"
-
-#. js-lingui-explicit-id
-msgid "Severely"
-msgstr "Сильно нагружен"
 
 msgid "Pistol brace"
 msgstr "Спаренные пистоли"
@@ -682,9 +654,8 @@ msgstr "Фонарь"
 msgid "Details"
 msgstr "Детали"
 
-#. js-lingui-explicit-id
-msgid "Unencumbered"
-msgstr "Ненагружен"
+msgid "Lightly encumbered"
+msgstr "Легко нагружен"
 
 msgid "Pick, Miner’s"
 msgstr "Шахтёрская кирка"
@@ -697,6 +668,9 @@ msgstr "Вес"
 
 msgid "About LotFP tools project"
 msgstr "О проекте, помощники для LotFP"
+
+msgid "Over encumbered"
+msgstr "Перегружен"
 
 #. js-lingui-explicit-id
 msgid "Weight"
@@ -788,6 +762,9 @@ msgstr "Добавить предмет"
 
 msgid "Receives charge"
 msgstr "Встречает рывок"
+
+msgid "Heavily encumbered"
+msgstr "Тяжело нагружен"
 
 msgid "Tent, Grand"
 msgstr "Большая палатка"
@@ -919,6 +896,9 @@ msgstr "Шип, железный"
 msgid "Arquebus"
 msgstr "Аркебуза"
 
+msgid "Cumbersome"
+msgstr "Громоздкий"
+
 msgid "config.melee.slingRocks.details"
 msgstr "Пращи, стреляющие камнями вместо пуль, имеют указанную дальность (половина обычной)."
 
@@ -1024,6 +1004,9 @@ msgstr "Русский"
 msgid "Garrote"
 msgstr "Гаррота"
 
+msgid "Severely encumbered"
+msgstr "Сильно нагружен"
+
 msgid "Quick Reference on Encumbrance and Movement from the LotFP Core Rules"
 msgstr "Краткая справка по нагрузке и передвижению LotFP"
 
@@ -1053,6 +1036,9 @@ msgstr "Факел"
 
 msgid "Ink"
 msgstr "Чернила"
+
+msgid "Oversized ×4"
+msgstr "Негабаритный ×4"
 
 msgid "Cooking Pots"
 msgstr "Кастрюли"
@@ -1196,6 +1182,9 @@ msgstr "Арбалетные болты, колчан (20)"
 
 msgid "Bottle of Wine/Liquor, Decent"
 msgstr "Бутылка вина/ликера, приличная"
+
+msgid "Regular"
+msgstr "Обычный"
 
 msgid "Chain"
 msgstr "Кольчуга"

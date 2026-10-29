@@ -296,10 +296,6 @@ msgstr ""
 msgid "Export as a file"
 msgstr ""
 
-#. js-lingui-explicit-id
-msgid "Cumbersome"
-msgstr ""
-
 msgid "Mirrors are useful for many reasons; for instance, they can be used for looking around corners or for sending signals outdoors using reflected sunlight."
 msgstr ""
 
@@ -325,6 +321,9 @@ msgid "Reset all equipment?"
 msgstr ""
 
 msgid "Ammunition and gear"
+msgstr ""
+
+msgid "None"
 msgstr ""
 
 msgid "The Equipment tab list is scrollable."
@@ -381,6 +380,9 @@ msgstr ""
 msgid "on foot: + CON mod"
 msgstr ""
 
+msgid "Unencumbered"
+msgstr ""
+
 msgid "Bedroll"
 msgstr ""
 
@@ -403,14 +405,6 @@ msgid "title.encumbranceUnits"
 msgstr ""
 
 msgid "Item"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Heavily"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Heavy"
 msgstr ""
 
 msgid "Reload"
@@ -467,6 +461,9 @@ msgstr ""
 msgid "×½ for flintlock (Fighters round down, others round up)"
 msgstr ""
 
+msgid "Oversized"
+msgstr ""
+
 msgid "Specialist’s Tools"
 msgstr ""
 
@@ -474,10 +471,6 @@ msgid "Princess Helpers"
 msgstr ""
 
 msgid "Cleric 2"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Lightly"
 msgstr ""
 
 msgid "Heavy crossbows can only be fired once in 3 rounds and ignore 4 AC points"
@@ -509,6 +502,9 @@ msgstr ""
 
 #. js-lingui-explicit-id
 msgid "Matchlock"
+msgstr ""
+
+msgid "Heavy"
 msgstr ""
 
 #. js-lingui-explicit-id
@@ -547,10 +543,6 @@ msgstr ""
 msgid "Set"
 msgstr ""
 
-#. js-lingui-explicit-id
-msgid "None"
-msgstr ""
-
 msgid "title.encumbrancePoints"
 msgstr ""
 
@@ -561,18 +553,6 @@ msgid "Reset"
 msgstr ""
 
 msgid "Arrows, quiver (20)"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "OverEncumbered"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Oversized"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "OversizedX4"
 msgstr ""
 
 msgid "Garlic"
@@ -624,10 +604,6 @@ msgstr ""
 msgid "Range, feet"
 msgstr ""
 
-#. js-lingui-explicit-id
-msgid "Regular"
-msgstr ""
-
 msgid "Running"
 msgstr ""
 
@@ -644,10 +620,6 @@ msgid "Blowgun"
 msgstr ""
 
 msgid "Block and Tackle"
-msgstr ""
-
-#. js-lingui-explicit-id
-msgid "Severely"
 msgstr ""
 
 msgid "Pistol brace"
@@ -674,8 +646,7 @@ msgstr ""
 msgid "Details"
 msgstr ""
 
-#. js-lingui-explicit-id
-msgid "Unencumbered"
+msgid "Lightly encumbered"
 msgstr ""
 
 msgid "Pick, Miner’s"
@@ -688,6 +659,9 @@ msgid "Weight"
 msgstr ""
 
 msgid "About LotFP tools project"
+msgstr ""
+
+msgid "Over encumbered"
 msgstr ""
 
 #. js-lingui-explicit-id
@@ -779,6 +753,9 @@ msgid "Add equipment item"
 msgstr ""
 
 msgid "Receives charge"
+msgstr ""
+
+msgid "Heavily encumbered"
 msgstr ""
 
 msgid "Tent, Grand"
@@ -906,6 +883,9 @@ msgstr ""
 msgid "Arquebus"
 msgstr ""
 
+msgid "Cumbersome"
+msgstr ""
+
 msgid "config.melee.slingRocks.details"
 msgstr ""
 
@@ -1011,6 +991,9 @@ msgstr ""
 msgid "Garrote"
 msgstr ""
 
+msgid "Severely encumbered"
+msgstr ""
+
 msgid "Quick Reference on Encumbrance and Movement from the LotFP Core Rules"
 msgstr ""
 
@@ -1039,6 +1022,9 @@ msgid "Torch"
 msgstr ""
 
 msgid "Ink"
+msgstr ""
+
+msgid "Oversized ×4"
 msgstr ""
 
 msgid "Cooking Pots"
@@ -1182,6 +1168,9 @@ msgid "Crossbow bolts, quiver (20)"
 msgstr ""
 
 msgid "Bottle of Wine/Liquor, Decent"
+msgstr ""
+
+msgid "Regular"
 msgstr ""
 
 msgid "Chain"

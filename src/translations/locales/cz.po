@@ -304,10 +304,6 @@ msgstr "Páčidlo"
 msgid "Export as a file"
 msgstr "Exportovat jako soubor"
 
-#. js-lingui-explicit-id
-msgid "Cumbersome"
-msgstr "Neohrabaný"
-
 msgid "Mirrors are useful for many reasons; for instance, they can be used for looking around corners or for sending signals outdoors using reflected sunlight."
 msgstr "Zrcadla jsou užitečná z mnoha důvodů; například mohou být použita pro nahlížení za rohy nebo pro posílání signálů venku pomocí odráženého slunečního světla."
 
@@ -334,6 +330,9 @@ msgstr "Resetovat veškeré vybavení?"
 
 msgid "Ammunition and gear"
 msgstr ""
+
+msgid "None"
+msgstr "Žádný"
 
 msgid "The Equipment tab list is scrollable."
 msgstr "Seznam karet je posuvný."
@@ -392,6 +391,9 @@ msgstr "Rybářské vybavení"
 msgid "on foot: + CON mod"
 msgstr "pěšky: + mod KON"
 
+msgid "Unencumbered"
+msgstr "Nezatížený"
+
 msgid "Bedroll"
 msgstr "Spací pytel"
 
@@ -415,14 +417,6 @@ msgstr "Jednotky zatížení"
 
 msgid "Item"
 msgstr "Položka"
-
-#. js-lingui-explicit-id
-msgid "Heavily"
-msgstr "Značně"
-
-#. js-lingui-explicit-id
-msgid "Heavy"
-msgstr "Těžký"
 
 msgid "Reload"
 msgstr ""
@@ -478,6 +472,9 @@ msgstr "Kategorie"
 msgid "×½ for flintlock (Fighters round down, others round up)"
 msgstr ""
 
+msgid "Oversized"
+msgstr "Příliš velký"
+
 msgid "Specialist’s Tools"
 msgstr "Nástroje specialisty"
 
@@ -486,10 +483,6 @@ msgstr "Princess Helpers"
 
 msgid "Cleric 2"
 msgstr "Kněz 2"
-
-#. js-lingui-explicit-id
-msgid "Lightly"
-msgstr "Lehce"
 
 msgid "Heavy crossbows can only be fired once in 3 rounds and ignore 4 AC points"
 msgstr "Těžké křížové luki lze vystřelit pouze jednou za 3 kola a ignorují 4 body AC"
@@ -521,6 +514,9 @@ msgstr "Klub"
 #. js-lingui-explicit-id
 msgid "Matchlock"
 msgstr ""
+
+msgid "Heavy"
+msgstr "Těžký"
 
 #. js-lingui-explicit-id
 msgid "Miscellaneous"
@@ -564,10 +560,6 @@ msgstr "Přidat položku"
 msgid "Set"
 msgstr "Sada"
 
-#. js-lingui-explicit-id
-msgid "None"
-msgstr "Žádný"
-
 msgid "title.encumbrancePoints"
 msgstr "title.encumbrancePoints"
 
@@ -579,18 +571,6 @@ msgstr "Resetovat"
 
 msgid "Arrows, quiver (20)"
 msgstr "Šípy, toulec (20)"
-
-#. js-lingui-explicit-id
-msgid "OverEncumbered"
-msgstr "Přetížený"
-
-#. js-lingui-explicit-id
-msgid "Oversized"
-msgstr "Příliš velký"
-
-#. js-lingui-explicit-id
-msgid "OversizedX4"
-msgstr ""
 
 msgid "Garlic"
 msgstr "Česnek"
@@ -641,10 +621,6 @@ msgstr "Krátký"
 msgid "Range, feet"
 msgstr "Dosah, stopy"
 
-#. js-lingui-explicit-id
-msgid "Regular"
-msgstr "Pravidelný"
-
 msgid "Running"
 msgstr "Běh"
 
@@ -662,10 +638,6 @@ msgstr "Foukačka"
 
 msgid "Block and Tackle"
 msgstr "Kladka a táhlo"
-
-#. js-lingui-explicit-id
-msgid "Severely"
-msgstr "Vážně"
 
 msgid "Pistol brace"
 msgstr ""
@@ -691,9 +663,8 @@ msgstr "Lampář"
 msgid "Details"
 msgstr "Detaily"
 
-#. js-lingui-explicit-id
-msgid "Unencumbered"
-msgstr "Nezatížený"
+msgid "Lightly encumbered"
+msgstr "Lehce"
 
 msgid "Pick, Miner’s"
 msgstr "Krumpáč, horníkův"
@@ -706,6 +677,9 @@ msgstr "Váha"
 
 msgid "About LotFP tools project"
 msgstr "O projektu nástrojů LotFP"
+
+msgid "Over encumbered"
+msgstr "Přetížený"
 
 #. js-lingui-explicit-id
 msgid "Weight"
@@ -797,6 +771,9 @@ msgstr "Přidat položku vybavení"
 
 msgid "Receives charge"
 msgstr "Přijímá nápor"
+
+msgid "Heavily encumbered"
+msgstr "Značně"
 
 msgid "Tent, Grand"
 msgstr "Stan, velký"
@@ -928,6 +905,9 @@ msgstr "Hřebík, železný"
 msgid "Arquebus"
 msgstr ""
 
+msgid "Cumbersome"
+msgstr "Neohrabaný"
+
 msgid "config.melee.slingRocks.details"
 msgstr "Pračky střílející kameny místo střel mají uvedený dosah (polovina běžného)."
 
@@ -1033,6 +1013,9 @@ msgstr "Ruština"
 msgid "Garrote"
 msgstr "Škrtidlo"
 
+msgid "Severely encumbered"
+msgstr "Vážně"
+
 msgid "Quick Reference on Encumbrance and Movement from the LotFP Core Rules"
 msgstr "Rychlá reference na zátěž a pohyb z hlavních pravidel LotFP"
 
@@ -1062,6 +1045,9 @@ msgstr "Pochodeň"
 
 msgid "Ink"
 msgstr "Inkoust"
+
+msgid "Oversized ×4"
+msgstr ""
 
 msgid "Cooking Pots"
 msgstr "Vařící hrnce"
@@ -1205,6 +1191,9 @@ msgstr "Kušové šípy, toulec (20)"
 
 msgid "Bottle of Wine/Liquor, Decent"
 msgstr "Láhev vína/lihoviny, slušná"
+
+msgid "Regular"
+msgstr "Pravidelný"
 
 msgid "Chain"
 msgstr "Řetěz"

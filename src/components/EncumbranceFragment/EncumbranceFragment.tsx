@@ -10,6 +10,7 @@ import {
   setEncumbranceThreshold,
   useInventoryState,
 } from '@/state/InventoryState'
+import { EncumbranceLabels } from '@/translations/encumbranceLabels'
 
 const EncumbranceFragment = ({
   encumbrancePoints,
@@ -34,7 +35,9 @@ const EncumbranceFragment = ({
   return (
     <div className='flex flex-col'>
       <div className='my-1'>
-        <span className='font-semibold'>{trans(encumbrance)} </span>
+        <span className='font-semibold'>
+          {trans(EncumbranceLabels[encumbrance])}{' '}
+        </span>
         {isDevEnv() ? (
           <div className='inline text-gray-400'>
             ({encumbrancePoints.toPrecision(2)}{' '}

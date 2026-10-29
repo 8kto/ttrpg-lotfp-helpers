@@ -1,3 +1,4 @@
+import type { I18n } from '@lingui/core'
 import classnames from 'classnames'
 import React from 'react'
 
@@ -20,16 +21,18 @@ import type { EquipmentItem } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
 import type { MissileWeaponItem } from '@/domain/weapon'
 import CurrencyConverter from '@/shared/services/CurrencyConverter'
+import { WeightLabels } from '@/translations/encumbranceLabels'
 
 type RenderFunction<T extends EquipmentItem = EquipmentItem> =
   DataGridColumn<T>['render']
 type RenderDetailsFunction<T extends EquipmentItem = EquipmentItem> =
   DataGridColumn<T>['renderDetails']
 
+const getWeightLabel = (i18n: I18n, points: EncumbranceUnit) =>
+  points === EncumbranceUnit.None ? null : i18n._(WeightLabels[points])
+
 export const renderWeightGridCol: RenderFunction = (item, i18n) =>
-  item.points === EncumbranceUnit.None
-    ? '-'
-    : i18n._(EncumbranceUnit[item.points])
+  getWeightLabel(i18n, item.points) ?? '-'
 
 export const renderCostGridCol: RenderFunction = (item, _, state) => {
   const { isCostRural } = state
@@ -74,10 +77,7 @@ export const renderEquipmentTitle: RenderFunction = (
 
 export const renderDetailsBody: RenderDetailsFunction = (item, i18n, state) => {
   const { isCostRural } = state
-  const weightLabel =
-    item.points === EncumbranceUnit.None
-      ? null
-      : i18n._(EncumbranceUnit[item.points])
+  const weightLabel = getWeightLabel(i18n, item.points)
   const cost = isCostRural.get() ? item.ruralCostCp : item.cityCostCp
   const currencyRecord = CurrencyConverter.convertCopperToDefaultCurrency(
     cost || 0,
@@ -107,10 +107,7 @@ export const renderDetailsBody: RenderDetailsFunction = (item, i18n, state) => {
 export const renderInventoryTitle: RenderFunction<
   InventoryItem<EquipmentItem>
 > = (item, i18n, _, isExpanded, shouldRenderDetails) => {
-  const weightLabel =
-    item.points === EncumbranceUnit.None
-      ? null
-      : i18n._(EncumbranceUnit[item.points])
+  const weightLabel = getWeightLabel(i18n, item.points)
   const range = (item as InventoryItem<MissileWeaponItem>).range
   const hasQty = item.qty > 1
 
@@ -163,10 +160,7 @@ export const renderInventoryTitle: RenderFunction<
 export const renderInventoryDetailsBody: RenderDetailsFunction<
   InventoryItem<EquipmentItem>
 > = (item, i18n) => {
-  const weightLabel =
-    item.points === EncumbranceUnit.None
-      ? null
-      : i18n._(EncumbranceUnit[item.points])
+  const weightLabel = getWeightLabel(i18n, item.points)
 
   return (
     <>
