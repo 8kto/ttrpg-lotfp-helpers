@@ -50,11 +50,19 @@ https://princess-helpers.vercel.app
 - [x] Inventory is saved in locale storage and survives the page reload
   - [x] State can be exported and imported
 - [x] Languages support
+  - [x] EN
+  - [x] CZ
+  - [x] RU
 - [x] Responsive layout, mobile devices support
 - [x] Equipment sets
   - [x] By class
   - [x] Common
   - [x] Random
+- [x] PWA
+- [x] E2E tests
+- [x] Firearms list
+  - [x] Weapons
+  - [x] Armor
 
 <!--/FEATURES_LIST-->
 
@@ -74,11 +82,8 @@ I value your feedback and don't want to spend time on unnecessary things.
 Please reach out to me with your questions or comments through my GitHub profile,
 or create an Issue/Feature request.
 
-- [x] PWA
-- [ ] Basic E2E tests
 - [ ] Multiple Inventories
 - [ ] Mounts
-- [ ] Firearms list
 
 Content has been sourced from publicly available materials, including
 [LotFP Rules & Magic Free Version](https://preview.drivethrurpg.com/en/product/115059/LotFP-Rules--Magic-Free-Version)
