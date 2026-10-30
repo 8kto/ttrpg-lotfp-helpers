@@ -44,8 +44,8 @@ so a build may need network access to retrieve fonts.
 CI definitions are canonical: [main](../.github/workflows/main.yml) and
 [Playwright](../.github/workflows/playwright.yml). Main CI checks types, lint,
 context, and Jest, but does not run production build or formatting. Existing test
-discovery/coverage gaps and E2E repairs are tracked in [TODO](../TODO.md); an
-available test file or screenshot is not evidence of a passing run.
+discovery/coverage gaps are tracked in [TODO](../TODO.md); an available test file
+or screenshot is not evidence of a passing run.
 
 ## Catalog and translation work
 
@@ -65,11 +65,12 @@ worktrees for concurrent implementations; coordinate edits to state shape,
 category lists, package/lock files, and shared catalogs before integration.
 Do not overwrite another task's changes or reset an unfamiliar dirty tree.
 
-The current E2E setup uses port 3000 and can reuse an existing local server. Run
-such suites serially and verify which checkout owns the server. For parallel UI
-work, use isolated ports and browser profiles, and explicitly adapt the test
-configuration before claiming independent runs. Separate worktrees alone do not
-isolate ports or localStorage on the same origin.
+The E2E setup defaults to port 3100, not the dev port, and outside CI reuses
+whatever server already answers there, even an unrelated application. Verify
+which checkout owns the server, or set `E2E_PORT` to another free port. Run such
+suites serially. For
+parallel UI work, use isolated ports and browser profiles. Separate worktrees
+alone do not isolate ports or localStorage on the same origin.
 
 A handoff should contain scope, changed contracts, actual check results, and
 remaining questions. Keep temporary execution notes out of permanent agent
