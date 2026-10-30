@@ -12,10 +12,10 @@ encumbrance and movement rate (speed).
 
 ## Disclaimer
 
-This product is an independent production by [Igor Okto / undefined](https://github.com/8kto)
-and is not affiliated with Lamentations of the Flame Princess.
-Lamentations of the Flame Princess is a registered trademark owned
-by James Edward Raggi IV.
+This product is an independent production by
+[Igor Okto / undefined](https://github.com/8kto) and is not affiliated with
+Lamentations of the Flame Princess. Lamentations of the Flame Princess is a
+registered trademark owned by James Edward Raggi IV.
 
 The content utilized in this project has been sourced from publicly available materials, including but not limited to the [LotFP Rules & Magic Free Version](https://preview.drivethrurpg.com/en/product/115059/LotFP-Rules--Magic-Free-Version) and resources from [Basic Fantasy RPG](https://www.basicfantasy.org/downloads.html).
 
@@ -58,6 +58,15 @@ https://princess-helpers.vercel.app
 
 <!--/FEATURES_LIST-->
 
+### Project guide
+
+- [Product](docs/product.md): user scenarios and supported scope.
+- [Domain](docs/domain.md): concepts, rule sources, and behavior.
+- [Architecture](docs/architecture.md): modules, persistence, and boundaries.
+- [Development](docs/development.md): setup, checks, translations, and deployment.
+- [Agent instructions](AGENTS.md): shared entry point for Codex and Claude Code.
+- [TODO](TODO.md): pending work and known gaps.
+
 ### Next big things
 
 I value your feedback and don't want to spend time on unnecessary things.
@@ -70,19 +79,6 @@ or create an Issue/Feature request.
 - [ ] Mounts
 - [ ] Firearms list
 
-I would also be glad to add more languages. Please reach out to me if you're interested in volunteering.
-
-## Development
-
-```sh
-nvm use     # Use the required Node.js version
-yarn        # Install project dependencies
-yarn dev    # Start the development server
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-```sh
-# This command runs linter, tests and type checks
-yarn weok
-```
+Content has been sourced from publicly available materials, including
+[LotFP Rules & Magic Free Version](https://preview.drivethrurpg.com/en/product/115059/LotFP-Rules--Magic-Free-Version)
+and resources from [Basic Fantasy RPG](https://www.basicfantasy.org/downloads.html).
