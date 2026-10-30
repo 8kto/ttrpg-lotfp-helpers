@@ -9,7 +9,6 @@
   - пули
   - порох
   - факела...
-- fix E2E tests
 - Import/storage contract: validate parsed JSON and shared-URL data at runtime
   (categories, quantities, finite numbers, nested wallet/settings), define schema
   versioning and supported migrations, and test old/malformed exports. Current
