@@ -345,7 +345,7 @@ msgid "The Equipment tab list is scrollable."
 msgstr "Список табов прокручивается."
 
 msgid "×1.5 for rifled barrel (round to the nearest)"
-msgstr "×1,5 за нарезной ствол (округление по правилам математики)"
+msgstr "×1,5 за нарезной ствол"
 
 msgid "Active"
 msgstr "Активный"
