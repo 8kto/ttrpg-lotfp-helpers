@@ -20,7 +20,7 @@ export const getCustomEquipmentItem = (
   if (!data.name) {
     throw new Error('No name provided')
   }
-  if (!data.points) {
+  if (!data.points && data.points !== 0) {
     throw new Error('No points provided')
   }
 
