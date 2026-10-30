@@ -62,6 +62,7 @@ https://princess-helpers.vercel.app
 
 - [Product](docs/product.md): user scenarios and supported scope.
 - [Domain](docs/domain.md): concepts, rule sources, and behavior.
+- [Terminology](docs/terminology.md): Russian and English RPG term conventions.
 - [Architecture](docs/architecture.md): modules, persistence, and boundaries.
 - [Development](docs/development.md): setup, checks, translations, and deployment.
 - [Agent instructions](AGENTS.md): shared entry point for Codex and Claude Code.

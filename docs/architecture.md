@@ -74,8 +74,8 @@ configuration, not evidence that a remote synchronization is currently running.
 ## Documentation ownership
 
 Product intent belongs to [product](product.md), rule semantics to
-[domain](domain.md), and operational workflows to [development](development.md).
-Types, numeric tables, commands, and dependency versions remain in code/config.
+[domain](domain.md), RPG term conventions to [terminology](terminology.md), and
+operational workflows to [development](development.md). Types, numeric tables, commands, and dependency versions remain in code/config.
 Tests are executable examples, not proof of intent when a known defect is involved.
 Use [TODO](../TODO.md) for unresolved work. Create an ADR only for a significant
 accepted decision (for example, storage versioning or stable item identity), with

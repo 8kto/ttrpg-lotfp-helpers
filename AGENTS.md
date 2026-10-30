@@ -22,6 +22,7 @@
 | -------------------------------------------------------------- | ------------------------------------ |
 | Product scope or user scenario                                 | [Product](docs/product.md)           |
 | Equipment, money, encumbrance, movement, firearms              | [Domain](docs/domain.md)             |
+| RPG terms in Russian or English text                           | [Terminology](docs/terminology.md)   |
 | State, import/export, routing, localization, module boundaries | [Architecture](docs/architecture.md) |
 | Setup, checks, translations, deployment, parallel work         | [Development](docs/development.md)   |
 | Outstanding defects or planned work                            | [TODO](TODO.md)                      |

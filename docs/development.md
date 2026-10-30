@@ -57,6 +57,7 @@ or screenshot is not evidence of a passing run.
 4. Preserve manual translations and review locale switching and reference-page
    fallback when relevant. Use current source/test behavior rather than duplicating
    numeric tables in prose.
+5. Use the RPG terms in [terminology](terminology.md) for Russian and English text.
 
 ## Multiple agents
 
