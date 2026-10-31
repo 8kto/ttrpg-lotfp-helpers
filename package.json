@@ -15,6 +15,7 @@
     "test:e2e:all": "playwright test",
     "test:e2e:ui": "playwright test --ui",
     "test:e2e": "playwright test --project chrome --project mobileChrome",
+    "test:e2e:update": "yarn test:e2e:all -u",
     "format": "prettier . --check --experimental-cli",
     "format:fix": "yarn lint -- --fix && prettier --experimental-cli --write .",
     "weok": "yarn tsc && yarn lint && yarn format && yarn test && yarn check:context && echo WE OK",
