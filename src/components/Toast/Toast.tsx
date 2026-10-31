@@ -1,5 +1,5 @@
 import classnames from 'classnames'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import type { ShowToastPayload } from '@/shared/actions/actions'
 import Action from '@/shared/actions/actions'
@@ -7,32 +7,48 @@ import { subscribe } from '@/shared/actions/helpers'
 
 const DEFAULT_TOAST_TYPE = 'info'
 
-// TODO check multiple messages, cancel prev?
 const Toast = ({ fadeOutIn = 600 }: { fadeOutIn?: number }) => {
   const [isVisible, setToastVisible] = useState(false)
   const [toastMessage, setToastMessage] = useState('')
   const [toastType, setToastType] = useState(DEFAULT_TOAST_TYPE)
+  // A new message cancels the timers of the previous one, which would hide it
+  const timers = useRef<Array<ReturnType<typeof setTimeout>>>([])
 
   useEffect(() => {
-    return subscribe(Action.ShowToast, (event) => {
+    const clearTimers = () => {
+      timers.current.forEach(clearTimeout)
+      timers.current = []
+    }
+
+    const unsubscribe = subscribe(Action.ShowToast, (event) => {
       const { detail } = event as CustomEvent<ShowToastPayload>
       const { message, delayMs = fadeOutIn, type = DEFAULT_TOAST_TYPE } = detail
 
+      clearTimers()
       setToastVisible(true)
       setToastMessage(message)
       setToastType(type)
 
-      setTimeout(() => {
-        setToastVisible(false)
-
-        // Type change causes styles flickering during the fade out transition
-        // so this delay added
+      timers.current.push(
         setTimeout(() => {
-          setToastMessage('')
-          setToastType(DEFAULT_TOAST_TYPE)
-        }, 100)
-      }, delayMs)
+          setToastVisible(false)
+
+          // Type change causes styles flickering during the fade out transition
+          // so this delay added
+          timers.current.push(
+            setTimeout(() => {
+              setToastMessage('')
+              setToastType(DEFAULT_TOAST_TYPE)
+            }, 100),
+          )
+        }, delayMs),
+      )
     })
+
+    return () => {
+      clearTimers()
+      unsubscribe()
+    }
   }, [fadeOutIn])
 
   return (
