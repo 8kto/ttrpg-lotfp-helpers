@@ -59,13 +59,10 @@ const ImportEquipmentPackFragment = ({ onClose }: { onClose: () => void }) => {
   const handleRandomImport = (
     formikHelpers: FormikProps<ImportEquipmentPackProps>,
   ) => {
-    const keys = Object.keys(EquipmentPacks)
+    const keys = Object.keys(EquipmentPacks) as Array<EquipmentPackName>
     const randomIndex = getRandom(0, keys.length - 1)
-    void formikHelpers.setFieldValue('pack', keys[randomIndex])
-    void formikHelpers.submitForm()
 
-    void formikHelpers.resetForm()
-    handleClose()
+    handleImport({ pack: keys[randomIndex] }, formikHelpers)
   }
 
   /**
