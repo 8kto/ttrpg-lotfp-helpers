@@ -20,6 +20,12 @@ const Wallet = () => {
     state: { wallet, isCoinWeightActive, isWalletManaged },
   } = useInventoryState()
 
+  const handleResetCoins = () => {
+    if (confirm(t`Reset all coins?`)) {
+      resetCurrencies()
+    }
+  }
+
   return (
     <div className='px-0'>
       {/* 1st row */}
@@ -31,7 +37,7 @@ const Wallet = () => {
           />
         </div>
         <button
-          onClick={resetCurrencies}
+          onClick={handleResetCoins}
           title={t`Reset coins`}
           className='cursor-pointer flex-col items-center justify-center rounded p-2 text-xs text-gray-300 hover:bg-gray-100 hover:text-gray-900 lg:p-1'
         >
