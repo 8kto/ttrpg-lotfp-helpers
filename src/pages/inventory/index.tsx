@@ -2,18 +2,14 @@
 
 import { t } from '@lingui/macro'
 import type { GetStaticProps } from 'next'
-import React, { useEffect } from 'react'
+import React from 'react'
 
 import EquipmentList from '@/components/EquipmentList/EquipmentList'
 import InventoryList from '@/components/Inventory/InventoryList'
 import InventoryPageTabs from '@/components/InventoryPageTabs'
 import HeadMetadata from '@/components/layout/HeadMetadata'
 import Toast from '@/components/Toast/Toast'
-import { importSharedInventory } from '@/shared/helpers/importSharedInventory'
-import {
-  getImportUrlParameter,
-  resetUrlParams,
-} from '@/shared/helpers/shareableUrl'
+import useSharedInventoryImport from '@/shared/hooks/useSharedInventoryImport'
 import useTailwindBreakpoint from '@/shared/hooks/useTailwindBreakpoint'
 import { loadCatalog } from '@/translations/utils'
 
@@ -32,14 +28,7 @@ export default function InventoryPage() {
   const breakpoint = useTailwindBreakpoint()
   const shouldRenderTabs = ['xs', 'sm', 'md'].includes(breakpoint)
 
-  useEffect(() => {
-    const importUrlParameter = getImportUrlParameter()
-
-    if (importUrlParameter) {
-      importSharedInventory(importUrlParameter)
-      resetUrlParams()
-    }
-  }, [])
+  useSharedInventoryImport()
 
   return (
     <>

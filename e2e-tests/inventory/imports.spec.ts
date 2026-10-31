@@ -62,9 +62,9 @@ test.describe('Shared link import', () => {
     await openSharedLink(page, getStateWith('Shared idol'))
     const inventory = await openInventory(page)
 
-    expect(messages[0]).toBe(
+    expect(messages).toEqual([
       'Replace your current inventory with the shared one?',
-    )
+    ])
     await expect(inventory.getByText('Shared idol')).toBeVisible()
     await expect(inventory.getByText('Keepsake')).toBeHidden()
   })
@@ -89,7 +89,7 @@ test.describe('Shared link import', () => {
     await expect(page.getByTestId('CommandBar')).toBeVisible()
     const inventory = await openInventory(page)
 
-    expect(messages[0]).toBe('This link does not contain a valid inventory.')
+    expect(messages).toEqual(['This link does not contain a valid inventory.'])
     await expect(page.getByText('Bad things happened')).toBeHidden()
     await expect(inventory.getByText('Keepsake')).toBeVisible()
   })
