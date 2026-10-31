@@ -24,11 +24,11 @@ tracked in [TODO](../TODO.md).
 
 ### Save throws (OSR)
 
-| Russian                      | English                 |
-| ---------------------------- | ----------------------- |
-| Спасбросок (от Яда, etc.)    | Save (vs. Poison, etc.) |
-| Спасбросок от Яда            | save vs. Poison         |
-| Спасбросок от Паралича       | save vs. Paralysis      |
-| Спасбросок Дыхания           | save vs. Breath         |
-| Спасбросок от Магии          | save vs. Magic          |
-| Спасбросок от Устройств      | Save vs. Devices        |
+| Russian                   | English                 |
+| ------------------------- | ----------------------- |
+| Спасбросок (от Яда, etc.) | Save (vs. Poison, etc.) |
+| Спасбросок от Яда         | save vs. Poison         |
+| Спасбросок от Паралича    | save vs. Paralysis      |
+| Спасбросок Дыхания        | save vs. Breath         |
+| Спасбросок от Магии       | save vs. Magic          |
+| Спасбросок от Устройств   | Save vs. Devices        |
