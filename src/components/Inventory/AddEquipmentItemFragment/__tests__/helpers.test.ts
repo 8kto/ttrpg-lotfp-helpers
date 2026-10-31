@@ -4,7 +4,7 @@ import { EncumbranceUnit } from '@/domain/encumbrance'
 import type { EquipmentItemDto } from '@/domain/equipment'
 
 jest.mock('@/shared/helpers/autoincrement', () => ({
-  getAutoIncrementedId: jest.fn(() => '001'),
+  getUniqueId: jest.fn(() => '001'),
 }))
 
 describe('AddEquipmentItemFragment helpers', () => {

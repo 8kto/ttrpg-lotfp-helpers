@@ -43,6 +43,13 @@ import {
   useInventoryState,
 } from '@/state/InventoryState'
 
+const firearmWeaponItemDuplicate = {
+  ...meleeWeaponItemMock1,
+  categoryKey: 'firearmWeapons',
+  inventoryId: 'Pistol1',
+  name: 'Pistol',
+}
+
 describe('InventoryState Tests', () => {
   beforeEach(() => {
     InventoryState.set(getInitialInventoryState())
@@ -68,6 +75,24 @@ describe('InventoryState Tests', () => {
       const stored = JSON.stringify(stateMock)
 
       expect(JSON.parse(fillMissingStateKeys(stored))).toEqual(stateMock)
+    })
+
+    it('regenerates inventory IDs duplicated by an older version', () => {
+      const stored = JSON.stringify({
+        ...getInitialInventoryState(),
+        firearmWeapons: [
+          { ...firearmWeaponItemDuplicate, firingMechanism: 'Wheellock' },
+          { ...firearmWeaponItemDuplicate, firingMechanism: 'Flintlock' },
+        ],
+      })
+
+      const [first, second] = JSON.parse(
+        fillMissingStateKeys(stored),
+      ).firearmWeapons
+
+      expect(first.inventoryId).toBe('Pistol1')
+      expect(second.inventoryId).not.toBe('Pistol1')
+      expect(second.firingMechanism).toBe('Flintlock')
     })
 
     it('returns invalid JSON as is', () => {

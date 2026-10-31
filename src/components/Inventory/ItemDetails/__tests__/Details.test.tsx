@@ -29,6 +29,33 @@ describe('Details component', () => {
       })
     })
 
+    it('does not interpret markup in item details', () => {
+      const details = '<img src=x onerror="alert(1)"><b>bold</b>'
+
+      render(<Details item={{ ...armorItemMock1, details }} />, {
+        wrapper: TestingProvider,
+      })
+
+      const detailsNode = screen.getByTestId('details--details')
+      expect(detailsNode.textContent).toEqual(details)
+      expect(detailsNode.querySelector('img, b')).toBeNull()
+    })
+
+    it.each(['<br/>', '<br />', '<br>'])(
+      'keeps the %s line break of the catalog details',
+      (lineBreak) => {
+        const details = `First line.${lineBreak}Second line.`
+
+        render(<Details item={{ ...armorItemMock1, details }} />, {
+          wrapper: TestingProvider,
+        })
+
+        const detailsNode = screen.getByTestId('details--details')
+        expect(detailsNode.querySelectorAll('br')).toHaveLength(1)
+        expect(detailsNode.textContent).toEqual('First line.Second line.')
+      },
+    )
+
     it('displays armor class for armor items', () => {
       render(<Details item={armorItemMock1} />, { wrapper: TestingProvider })
       expect(screen.getByTestId('details--ac')).toBeVisible()
