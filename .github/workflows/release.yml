@@ -1,6 +1,9 @@
 name: Automated Release with Archive
 
 on:
+  push:
+    tags:
+      - 'v*'
   workflow_dispatch:
     inputs:
       tag:
@@ -8,60 +11,47 @@ on:
         required: false
         default: ''
 
+permissions:
+  contents: write
+
 jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
-      - name: Setup
-        uses: actions/setup-node@v4
-        with:
-          node-version-file: '.nvmrc'
-
       - name: Determine tag
-        id: last_tag
+        env:
+          INPUT_TAG: ${{ github.event.inputs.tag }}
         run: |
-          echo "LAST_TAG=$(git describe --tags `git rev-list --tags --max-count=1`)" >> $GITHUB_ENV
+          if [ -n "$INPUT_TAG" ]; then
+            TAG_NAME=$INPUT_TAG
+          elif [ "$GITHUB_REF_TYPE" = tag ]; then
+            TAG_NAME=$GITHUB_REF_NAME
+          else
+            TAG_NAME=$(git describe --tags "$(git rev-list --tags --max-count=1)")
+          fi
+          echo "TAG_NAME=$TAG_NAME" >> "$GITHUB_ENV"
 
       - name: Create archive
-        run: |
-          if [ -z "${{ github.event.inputs.tag }}" ]; then
-            TAG_NAME=${{ env.LAST_TAG }}
-          else
-            TAG_NAME=${{ github.event.inputs.tag }}
-          fi
-          zip -r princess-helpers-${TAG_NAME}.zip .
+        run: git archive --format=zip --output="princess-helpers-$TAG_NAME.zip" "$TAG_NAME"
 
       - name: Generate commit list
-        id: generate_commits
         run: |
-          if [ -z "${{ github.event.inputs.tag }}" ]; then
-            TAG_NAME=${{ env.LAST_TAG }}
-          else
-            TAG_NAME=${{ github.event.inputs.tag }}
-          fi
-          PREVIOUS_TAG=$(git describe --tags --abbrev=0 ${TAG_NAME}^ 2>/dev/null || echo "")
-          if [ -z "$PREVIOUS_TAG" ]; then
-            # Fallback in case there's no previous tag
-            COMMIT_LIST=$(git log --pretty=format:"- %H %s")
-          else
-            COMMIT_LIST=$(git log $PREVIOUS_TAG..$TAG_NAME --pretty=format:"- %H %s")
-          fi
-          echo "COMMIT_LIST<<EOF" >> $GITHUB_ENV
-          echo "$COMMIT_LIST" >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
+          PREVIOUS_TAG=$(git describe --tags --abbrev=0 "$TAG_NAME^" 2>/dev/null || echo "")
+          # Fallback in case there's no previous tag
+          RANGE=${PREVIOUS_TAG:+$PREVIOUS_TAG..}$TAG_NAME
+          {
+            echo "Changes:"
+            git log "$RANGE" --pretty=format:"- %H %s"
+          } > release-notes.md
 
       - name: Create GitHub release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v3
         with:
-          tag_name: ${{ env.LAST_TAG }}
-          name: ${{ env.LAST_TAG }}
-          body: |
-            Changes:
-            ${{ env.COMMIT_LIST }}
-          files: princess-helpers-${{ env.LAST_TAG }}.zip
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          tag_name: ${{ env.TAG_NAME }}
+          name: ${{ env.TAG_NAME }}
+          body_path: release-notes.md
+          files: princess-helpers-${{ env.TAG_NAME }}.zip

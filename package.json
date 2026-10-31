@@ -24,7 +24,8 @@
     "update-readme-stats": "./scripts/update_readme_stats.sh README.md",
     "translations:extract": "lingui extract --clean",
     "preversion": "[ \"$(git branch --show-current)\" = main ] || (echo 'Error: You can only bump versions on the main branch!' >&2; exit 1)",
-    "bump": "yarn version --patch"
+    "bump": "yarn version --patch",
+    "release": "./scripts/release.sh"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",

@@ -90,9 +90,15 @@ restoration is tracked in [TODO](../TODO.md). The repository does not establish
 Vercel account settings, production promotion, or the full deployment procedure.
 
 The [release workflow](../.github/workflows/release.yml) creates an archive and
-GitHub release; it is not the Vercel deployment pipeline. Version-bump scripts
-commit/tag and are release actions, not validation commands. Do not push merely
-to test a documentation change: it triggers the externally configured deployment.
+GitHub release when a `v*` tag is pushed; it is not the Vercel deployment
+pipeline. Version-bump scripts commit/tag and are release actions, not validation
+commands. Do not push merely to test a documentation change: it triggers the
+externally configured deployment.
+
+To release, bump the version on `main`, then run `yarn release`. The
+[release script](../scripts/release.sh) checks the repository state, runs
+`yarn weok`, tags `HEAD` if the bump left no tag, pushes `main` and the tag, and
+waits for the workflow. It requires an authenticated GitHub CLI.
 
 ## Context maintenance and evaluation
 
