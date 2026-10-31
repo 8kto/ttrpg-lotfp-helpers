@@ -22,6 +22,9 @@ msgstr "Монеты"
 msgid "config.misc.airBladder.details"
 msgstr "Кожаный мешочек с трубкой для рта; дополнительный глоток воздуха для подводного плавания.<br />Может использоваться и как вспомогательное плавательное средство."
 
+msgid "Let's fix them."
+msgstr "Давайте это исправим."
+
 msgid "config.melee.mancatcher.details"
 msgstr "При успешном попадании жертва должна сделать спасбросок от Паралича. В случае провала, жертва считается беспомощной, как и владелец мэнкэтчера, пока цель удерживается. Двуручное."
 
@@ -149,6 +152,9 @@ msgstr "Серебряные монеты"
 msgid "config.firearms.powderBarrel.details"
 msgstr "2500 зарядов пороха. Считается четырьмя негабаритными предметами. Взрыв бочки наносит 5d8 урона всем в пределах 30' (Спасбросок Дыхания — половина)."
 
+msgid "Try again?"
+msgstr "Попробовать ещё раз?"
+
 msgid "Spikes for your boots – better success at climbing and keeping balance on ice"
 msgstr "Шипы для ботинок - помогают при лазании и сохранении равновесия на льду"
 
@@ -172,6 +178,9 @@ msgstr "Дальность"
 
 msgid "Manacles"
 msgstr "Кандалы"
+
+msgid "Reset all coins?"
+msgstr "Сбросить все монеты?"
 
 msgid "Mirror, Glass"
 msgstr "Зеркало, стеклянное"
@@ -325,6 +334,9 @@ msgstr "RU"
 
 msgid "Arrow (1)"
 msgstr "Стрела (1)"
+
+msgid "Bad things happened"
+msgstr "Случилось что-то плохое"
 
 msgid "This file does not contain a valid inventory."
 msgstr "В этом файле нет корректного инвентаря."
@@ -606,6 +618,9 @@ msgstr "Меч"
 msgid "The number should be equal to or greater than 0"
 msgstr "Число должно быть больше или равно 0"
 
+msgid "Delete the saved inventory? This cannot be undone."
+msgstr "Удалить сохранённый инвентарь? Это действие нельзя отменить."
+
 msgid "Storm conditions"
 msgstr "Буря"
 
@@ -663,6 +678,9 @@ msgstr "Духовая трубка"
 
 msgid "Block and Tackle"
 msgstr "Блок и полиспаст"
+
+msgid "Error"
+msgstr "Ошибка"
 
 msgid "Pistol brace"
 msgstr "Спаренные пистоли"
@@ -758,6 +776,9 @@ msgstr "Указанная цена минимальная"
 
 msgid "{miPerDay, plural, =0 {miles} one {mile} two {miles} few {miles} many {miles} other {miles}}"
 msgstr "{miPerDay, plural, =0 {миль} one {миля} two {мили} few {мили} many {миль} other {миль}}"
+
+msgid "Reset saved data"
+msgstr "Сбросить сохранённые данные"
 
 msgid "Inventory"
 msgstr "Инвентарь"
@@ -1136,6 +1157,9 @@ msgstr "Спусковой механизм"
 
 msgid "Dart for blowgun (1)"
 msgstr "Дротик для духовой трубки (1)"
+
+msgid "Sometimes, the issue may be due to incompatible or corrupted saved data. Resetting it removes your stored inventory."
+msgstr "Иногда причина в несовместимых или повреждённых сохранённых данных. Их сброс удалит сохранённый инвентарь."
 
 msgid "This weapon can be used one-handed if charging on horseback. Otherwise, it is effectively a polearm (pike)"
 msgstr "Это оружие можно использовать как одноручное при атаке верхом. В противном случае, равноценно древковому оружию (пике)"
