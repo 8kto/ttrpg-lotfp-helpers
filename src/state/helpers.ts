@@ -92,7 +92,6 @@ export const updateItemQuantity = <T extends EquipmentItem>(
   })
 }
 
-const incrementQty = updateItemQuantity.bind(null, 1)
 const decrementQty = updateItemQuantity.bind(null, -1)
 
 export const addItem = <T extends EquipmentItem>(
@@ -101,9 +100,7 @@ export const addItem = <T extends EquipmentItem>(
 ) => {
   const existingItemIndex = findItemIndex(items, item)
   if (existingItemIndex !== -1) {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
-    incrementQty(items[existingItemIndex])
+    updateItemQuantity(item.qty, items[existingItemIndex])
   } else {
     items[items.length].set(item)
   }
