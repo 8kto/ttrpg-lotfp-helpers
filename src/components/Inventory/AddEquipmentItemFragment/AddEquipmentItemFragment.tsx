@@ -179,7 +179,7 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
           {/* Weight row */}
           <div className='mb-6 space-y-4'>
             <label
-              htmlFor='add-equip-item--category'
+              htmlFor='add-equip-item--points'
               className='mb-1 block font-medium text-gray-700'
             >
               <Trans>Weight</Trans>
