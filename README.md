@@ -84,6 +84,7 @@ or create an Issue/Feature request.
 
 - [ ] Multiple Inventories
 - [ ] Mounts
+- [ ] Character sheet
 
 Content has been sourced from publicly available materials, including
 [LotFP Rules & Magic Free Version](https://preview.drivethrurpg.com/en/product/115059/LotFP-Rules--Magic-Free-Version)
