@@ -16,6 +16,7 @@ export type DataGridRowProps<T extends EquipmentItem> = {
   index: number
   spanDetails: number
   onAddClick?: (item: T) => void
+  addDisabledReason?: string
   onRemoveClick?: (item: T) => void
 }
 
@@ -25,12 +26,13 @@ const DataGridRow = <T extends EquipmentItem>({
   spanDetails,
   index,
   onAddClick,
+  addDisabledReason,
   onRemoveClick,
 }: DataGridRowProps<T>) => {
   const [isExpanded, setIsExpanded] = useState(false)
 
   return (
-    <tr key={item.name} className={classnames({ 'bg-gray-50': index % 2 })}>
+    <tr className={classnames({ 'bg-gray-50': index % 2 })}>
       {columns.map((column) => (
         <DataGridCell<T>
           item={item}
@@ -47,8 +49,10 @@ const DataGridRow = <T extends EquipmentItem>({
         {typeof onAddClick === 'function' && (
           <button
             type='button'
-            className='ph-btn-secondary--off inline-flex items-center rounded bg-transparent px-4 py-2 text-sm text-gray-400 hover:text-gray-900 active:text-red-800 transition-all duration-100'
+            className='ph-btn-secondary--off inline-flex items-center rounded bg-transparent px-4 py-2 text-sm text-gray-400 hover:text-gray-900 active:text-red-800 transition-all duration-100 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:text-gray-400'
             onClick={() => onAddClick(item)}
+            disabled={!!addDisabledReason}
+            title={addDisabledReason}
           >
             <PlusIcon className='h-5 w-5 md:mr-2' />
             <span className='hidden xl:inline'>

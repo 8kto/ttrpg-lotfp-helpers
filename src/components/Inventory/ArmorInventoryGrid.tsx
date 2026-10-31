@@ -18,7 +18,7 @@ const columns: ReadonlyArray<DataGridColumn<ArmorInventoryItem>> = [
   {
     className: 'w-1/2 sm:w-1/3',
     key: 'name',
-    shouldRenderDetails: (item) => !!item.details,
+    shouldRenderDetails: (item) => !!item.details || !!item.physicalSaveBonus,
     render: renderInventoryTitle,
     renderDetails: renderInventoryDetailsBody,
     get title() {

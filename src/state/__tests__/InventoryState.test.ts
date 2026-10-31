@@ -6,6 +6,7 @@ import type { EquipmentItem } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
 import {
   armorItemMock1,
+  firearmWeaponItemMock1,
   meleeWeaponItemMock1,
   miscEquipItem1,
   missileWeaponItemMock1,
@@ -22,6 +23,7 @@ import {
   addEquipmentItem,
   addMeleeWeapon,
   addMissileWeapon,
+  fillMissingStateKeys,
   getInitialInventoryState,
   importEquipmentItems,
   InventoryState,
@@ -37,12 +39,40 @@ import {
   setWallet,
   toggleCoinsWeightActive,
   toggleCost,
+  toggleFirearmsCampaign,
   useInventoryState,
 } from '@/state/InventoryState'
 
 describe('InventoryState Tests', () => {
   beforeEach(() => {
     InventoryState.set(getInitialInventoryState())
+  })
+
+  describe('fillMissingStateKeys', () => {
+    it('adds keys missing in a state stored by an older version', () => {
+      const oldState: Partial<InventoryStateType> = {
+        ...getInitialInventoryState(),
+        meleeWeapons: [meleeWeaponItemMock1],
+      }
+      delete oldState.firearmWeapons
+
+      const restored = JSON.parse(
+        fillMissingStateKeys(JSON.stringify(oldState)),
+      )
+
+      expect(restored.firearmWeapons).toEqual([])
+      expect(restored.meleeWeapons).toEqual([meleeWeaponItemMock1])
+    })
+
+    it('keeps stored values', () => {
+      const stored = JSON.stringify(stateMock)
+
+      expect(JSON.parse(fillMissingStateKeys(stored))).toEqual(stateMock)
+    })
+
+    it('returns invalid JSON as is', () => {
+      expect(fillMissingStateKeys('{broken')).toEqual('{broken')
+    })
   })
 
   describe('useInventoryState Hook', () => {
@@ -59,20 +89,24 @@ describe('InventoryState Tests', () => {
         const meleeWeapons = result.current.state.meleeWeapons
         const missileWeapons = result.current.state.missileWeapons
         const miscEquipment = result.current.state.miscEquipment
+        const firearmWeapons = result.current.state.firearmWeapons
         const isCostRural = result.current.state.isCostRural
 
         armor[armor.length].set(armorItemMock1)
         meleeWeapons[meleeWeapons.length].set(meleeWeaponItemMock1)
         missileWeapons[missileWeapons.length].set(missileWeaponItemMock1)
         miscEquipment[miscEquipment.length].set(miscEquipItem1)
+        firearmWeapons[firearmWeapons.length].set(firearmWeaponItemMock1)
         isCostRural.set(!isCostRural.get())
       })
 
       expect(result.current.state.get()).toEqual({
         armor: [armorItemMock1],
         encumbranceThreshold: EncumbranceThreshold.Regular,
+        firearmWeapons: [firearmWeaponItemMock1],
         isCoinWeightActive: true,
         isCostRural: true,
+        isFirearmsCampaign: false,
         isWalletManaged: false,
         meleeWeapons: [meleeWeaponItemMock1],
         miscEquipment: [miscEquipItem1],
@@ -119,8 +153,10 @@ describe('InventoryState Tests', () => {
       expect(result.current.state.get()).toEqual({
         armor: [],
         encumbranceThreshold: EncumbranceThreshold.Regular,
+        firearmWeapons: [],
         isCoinWeightActive: true,
         isCostRural: true,
+        isFirearmsCampaign: false,
         isWalletManaged: false,
         meleeWeapons: [],
         miscEquipment: [],
@@ -169,6 +205,14 @@ describe('InventoryState Tests', () => {
       expect(InventoryState.isCostRural.get()).toEqual(false)
       toggleCost()
       expect(InventoryState.isCostRural.get()).toEqual(true)
+    })
+  })
+
+  describe('isFirearmsCampaign', () => {
+    it('is off by default and toggles', () => {
+      expect(InventoryState.isFirearmsCampaign.get()).toEqual(false)
+      toggleFirearmsCampaign()
+      expect(InventoryState.isFirearmsCampaign.get()).toEqual(true)
     })
   })
 
@@ -477,6 +521,19 @@ describe('InventoryState Tests', () => {
   })
 
   describe('setState', () => {
+    it('fills keys missing in an imported state of an older version', () => {
+      const oldState: Partial<InventoryStateType> = {
+        ...stateMock,
+        meleeWeapons: [meleeWeaponItemMock1],
+      }
+      delete oldState.firearmWeapons
+
+      setState(oldState as InventoryStateType)
+
+      expect(InventoryState.firearmWeapons.get()).toEqual([])
+      expect(InventoryState.meleeWeapons.get()).toEqual([meleeWeaponItemMock1])
+    })
+
     it('sets state', () => {
       setState(stateMock)
 

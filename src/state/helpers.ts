@@ -2,6 +2,7 @@ import type { State } from '@hookstate/core'
 
 import type { EquipmentItem } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
+import type { FirearmWeaponItem } from '@/domain/weapon'
 import type { InventoryStateType } from '@/state/InventoryState'
 import { EquipmentStateKeys } from '@/state/InventoryState'
 
@@ -11,11 +12,34 @@ export const combineEquipment = (equipment: State<InventoryStateType>) => {
   )
 }
 
+const isFirearm = (item: EquipmentItem): item is FirearmWeaponItem =>
+  item.categoryKey === 'firearmWeapons'
+
+/**
+ * Firearms with the same name can differ in mechanism, rifling and cost
+ * (the cost depends on the year), so they are stacked only if all match.
+ */
+const isSameItem = (a: EquipmentItem, b: EquipmentItem): boolean => {
+  if (a.name !== b.name) {
+    return false
+  }
+
+  if (isFirearm(a) && isFirearm(b)) {
+    return (
+      a.firingMechanism === b.firingMechanism &&
+      a.isRifled === b.isRifled &&
+      a.cityCostCp === b.cityCostCp
+    )
+  }
+
+  return true
+}
+
 export const findItemIndex = <T extends EquipmentItem>(
   items: ReadonlyArray<State<T>>,
   item: T,
 ): number => {
-  return items.findIndex((i) => i.get().name === item.name)
+  return items.findIndex((i) => isSameItem(i.get(), item))
 }
 
 export const updateItemQuantity = <T extends EquipmentItem>(

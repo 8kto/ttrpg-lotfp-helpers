@@ -35,6 +35,7 @@ export const ArmorItems = (): ReadonlyArray<ArmorItem> => [
   },
   {
     armorClass: '+1,+2',
+    armorClassBonus: { melee: 1, missile: 2 },
     categoryKey: 'armor',
     cityCostCp: 100,
     details: t`+1 AC versus mêlée attacks, +2 AC versus missile attacks.`,

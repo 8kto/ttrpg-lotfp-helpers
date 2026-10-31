@@ -2,6 +2,7 @@ import type { ArmorItem } from '@/domain/armor'
 import type { EquipmentItem } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
 import type {
+  FirearmWeaponItem,
   MeleeWeaponItem,
   MissileWeaponItem,
   WeaponItem,
@@ -13,7 +14,9 @@ export const isArmorItem = (item: EquipmentItem): item is ArmorItem => {
 
 export const isWeaponItem = (item: EquipmentItem): item is WeaponItem => {
   return (
-    item.categoryKey === 'meleeWeapons' || item.categoryKey === 'missileWeapons'
+    item.categoryKey === 'meleeWeapons' ||
+    item.categoryKey === 'missileWeapons' ||
+    item.categoryKey === 'firearmWeapons'
   )
 }
 
@@ -39,4 +42,10 @@ export const isMiscEquipmentItem = (
   item: EquipmentItem,
 ): item is EquipmentItem => {
   return item.categoryKey === 'miscEquipment'
+}
+
+export const isFirearmItem = (
+  item: EquipmentItem,
+): item is FirearmWeaponItem => {
+  return item.categoryKey === 'firearmWeapons'
 }

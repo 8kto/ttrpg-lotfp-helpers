@@ -10,6 +10,7 @@ import type {
   SortConfig,
   SortOrder,
 } from '@/components/DataGrid/types'
+import { isInventoryItem } from '@/components/Inventory/ItemDetails/helpers'
 import type { EquipmentItem } from '@/domain/equipment'
 
 const DataGrid = <T extends EquipmentItem>({
@@ -18,6 +19,7 @@ const DataGrid = <T extends EquipmentItem>({
   spanDetails,
   initialSortState,
   onAddClick,
+  addDisabledReason,
   onRemoveClick,
   filterFn,
   handleSort,
@@ -62,6 +64,7 @@ const DataGrid = <T extends EquipmentItem>({
   const headerCellClassnames = `p-4 text-xs font-medium tracking-wider text-left uppercase cursor-pointer`
 
   const eventHandlers: Partial<DataGridRowProps<T>> = {
+    addDisabledReason,
     onAddClick: typeof onAddClick === 'function' ? onAddClick : undefined,
     onRemoveClick:
       typeof onRemoveClick === 'function' ? onRemoveClick : undefined,
@@ -118,7 +121,7 @@ const DataGrid = <T extends EquipmentItem>({
           <tbody className='bg-white'>
             {filteredData.map((item, index) => (
               <DataGridRow<T>
-                key={item.name}
+                key={isInventoryItem(item) ? item.inventoryId : item.name}
                 columns={columns}
                 item={item}
                 index={index}

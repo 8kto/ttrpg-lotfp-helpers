@@ -1,29 +1,14 @@
 import { Trans } from '@lingui/macro'
-import React, { useMemo } from 'react'
+import React from 'react'
 
 import CostFragment from '@/components/CostFragment/CostFragment'
 import EncumbranceFragment from '@/components/EncumbranceFragment/EncumbranceFragment'
 import MovementFragment from '@/components/MovementFragment/MovementFragment'
 import Wallet from '@/components/Wallet/Wallet'
-import EncumbranceService from '@/shared/services/EncumbranceService'
-import { combineEquipment } from '@/state/helpers'
-import { useInventoryState } from '@/state/InventoryState'
+import useEncumbranceTotals from '@/shared/hooks/useEncumbranceTotals'
 
 const InventoryDetails = () => {
-  const { state: equipmentState } = useInventoryState()
-
-  const { totalEncumbrancePoints, totalCosts } = useMemo(() => {
-    const { isCoinWeightActive, wallet, encumbranceThreshold } = equipmentState
-
-    const encumbranceService = new EncumbranceService({
-      threshold: encumbranceThreshold.get(),
-    })
-
-    return encumbranceService.getTotal(
-      combineEquipment(equipmentState),
-      isCoinWeightActive.get() ? wallet.get() : null,
-    )
-  }, [equipmentState])
+  const { totalEncumbrancePoints, totalCosts } = useEncumbranceTotals()
 
   const titleClassname = 'ph-color-accent ph-font-cursive text-xl -ml-4 md:ml-0'
   const detailsRowClassname =

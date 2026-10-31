@@ -19,6 +19,12 @@ const contentComponents: Record<string, PageEntry> = {
     ),
     ru: lazy(() => import('@/translations/pages/ru/EncumbranceReference')),
   },
+  'firearms-reference': {
+    [DEFAULT_LOCALE]: lazy(
+      () => import('@/translations/pages/en/FirearmsReference'),
+    ),
+    ru: lazy(() => import('@/translations/pages/ru/FirearmsReference')),
+  },
 }
 
 export default contentComponents

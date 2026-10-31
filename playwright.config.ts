@@ -6,6 +6,10 @@ import { defineConfig, devices } from '@playwright/test'
  */
 // require('dotenv').config();
 
+/* Not 3000: outside CI an existing server on this port is reused, whatever it is. */
+const port = process.env.E2E_PORT ?? '3100'
+const baseURL = `http://localhost:${port}`
+
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
@@ -24,7 +28,7 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: 'http://localhost:3000',
+    baseURL,
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
@@ -60,8 +64,8 @@ export default defineConfig({
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'yarn dev',
-    url: 'http://localhost:3000',
+    command: `yarn dev -p ${port}`,
+    url: baseURL,
     reuseExistingServer: !process.env.CI,
   },
 })

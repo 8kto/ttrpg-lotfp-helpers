@@ -13,6 +13,18 @@ describe('AddEquipmentItemFragment helpers', () => {
   })
 
   describe('getCustomEquipmentItem', () => {
+    it('creates a non-encumbering custom item with zero weight', () => {
+      const item = getCustomEquipmentItem({
+        category: 'miscEquipment',
+        currencyType: CurrencyType.Copper,
+        details: null,
+        name: 'Feather',
+        points: EncumbranceUnit.None,
+      })
+
+      expect(item).toMatchObject({ name: 'Feather', points: 0, qty: 1 })
+    })
+
     it('creates a valid equipment item', () => {
       const data: EquipmentItemDto = {
         category: 'meleeWeapons',

@@ -46,13 +46,13 @@ const Footer = () => {
               >
                 <Trans>Princess Helpers</Trans> v{version}{' '}
               </Link>
-              <span className='ml-4'>&copy; 2023-2024 </span>
+              <span className='ml-4'>&copy; 2023-2026 </span>
               <Link
                 href='https://ivlev.blog/'
                 className={linkClassnames}
                 target='_blank'
               >
-                Igor Okto (undefined)
+                UNDEFINED OKTO
               </Link>
             </div>
           </div>

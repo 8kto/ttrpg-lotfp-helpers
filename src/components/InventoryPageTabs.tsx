@@ -1,5 +1,5 @@
 import classnames from 'classnames'
-import type { ReactComponentLike } from 'prop-types'
+import type { ComponentType } from 'react'
 import React, { useContext, useEffect, useState } from 'react'
 
 import Spinner from '@/components/Spinner'
@@ -10,7 +10,7 @@ const InventoryPageTabs = ({
 }: {
   tabs: Array<{
     title: string
-    component: ReactComponentLike
+    component: ComponentType
   }>
 }) => {
   const {

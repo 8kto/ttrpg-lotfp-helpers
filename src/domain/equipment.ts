@@ -5,6 +5,7 @@ import type { EquipmentCategoryKey } from '@/state/InventoryState'
 export interface EquipmentItem {
   name: string
   categoryKey: EquipmentCategoryKey
+  // TODO rename to cost*Cp to allow better props sorting
   cityCostCp: number
   ruralCostCp: number | null
   points: EncumbranceUnit

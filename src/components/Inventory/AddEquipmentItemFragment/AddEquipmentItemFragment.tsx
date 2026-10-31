@@ -6,7 +6,6 @@ import React from 'react'
 import * as Yup from 'yup'
 
 import {
-  EncumbrancePointsLabelsDict,
   EquipLabelsDict,
   getCustomEquipmentItem,
 } from '@/components/Inventory/AddEquipmentItemFragment/helpers'
@@ -17,6 +16,10 @@ import {
   addCustomEquipmentItem,
   EquipmentStateKeys,
 } from '@/state/InventoryState'
+import {
+  CustomItemWeights,
+  WeightLabels,
+} from '@/translations/encumbranceLabels'
 
 const formInitialValues: EquipmentItemDto = {
   points: EncumbranceUnit.Regular,
@@ -188,9 +191,9 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
               as='select'
               className='block w-full rounded border border-gray-300 bg-gray-50 p-2.5 text-gray-900 focus:border-primary-500 focus:ring-primary-500'
             >
-              {EncumbrancePointsLabelsDict.map(([key, title]) => (
-                <option key={key} value={key}>
-                  {trans(title)}
+              {CustomItemWeights.map((points) => (
+                <option key={points} value={points}>
+                  {trans(WeightLabels[points])}
                 </option>
               ))}
             </Field>

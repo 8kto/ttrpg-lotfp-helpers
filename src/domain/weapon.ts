@@ -1,4 +1,5 @@
 import type { EquipmentItem } from '@/domain/equipment'
+import type { FiringMechanism } from '@/domain/firearms'
 import type { Dice } from '@/domain/index'
 
 export type Range = {
@@ -17,6 +18,7 @@ export enum WeaponType {
   Melee = 'Melee',
   // Missiles: bow, crossbow, sling, darts etc.
   Missile = 'Missile',
+  Firearms = 'Firearms',
   Ammunition = 'Ammunition',
 }
 
@@ -26,15 +28,28 @@ export interface WeaponItem extends EquipmentItem {
 }
 
 export interface MeleeWeaponItem extends WeaponItem {
+  categoryKey: 'meleeWeapons'
   isAbleToReceiveCharge?: boolean
   isTwoHanded?: boolean
   isSecondRank?: boolean
-  categoryKey: 'meleeWeapons'
 }
 
 export interface MissileWeaponItem extends WeaponItem {
-  range: Range | null
   categoryKey: 'missileWeapons'
+  range: Range | null
+}
+
+export interface FirearmWeaponItem extends WeaponItem {
+  categoryKey: 'firearmWeapons'
+  firingMechanism: FiringMechanism
+  damageMelee: DamageDice | null
+  range: Range
+  isRifled: boolean
+  isTwoHanded?: boolean
+  // E.g. pistols never use the matchlock firing mechanism
+  isMatchlockIncompatible?: boolean
+  // Muskets ignore armor at all ranges, other firearms at Short range only
+  isArmorPiercingAtAllRanges?: boolean
 }
 
 export type DamageDice = {

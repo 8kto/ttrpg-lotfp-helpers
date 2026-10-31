@@ -1,11 +1,18 @@
+import type { I18n } from '@lingui/core'
 import classnames from 'classnames'
 import React from 'react'
 
 import CostFragment from '@/components/CostFragment/CostFragment'
 import type { DataGridColumn } from '@/components/DataGrid/types'
+import FirearmTraitsFragment from '@/components/EquipmentList/FirearmTraitsFragment'
 import MeleeWeaponTraitsFragment from '@/components/EquipmentList/MeleeWeaponTraitsFragment'
+import FirearmMechanismFragment from '@/components/FirearmMechanismFragment'
+import FirearmRangeFragment from '@/components/FirearmRangeFragment'
 import { Details } from '@/components/Inventory/ItemDetails/Details'
-import { isMeleeWeaponItem } from '@/components/Inventory/ItemDetails/helpers'
+import {
+  isFirearmItem,
+  isMeleeWeaponItem,
+} from '@/components/Inventory/ItemDetails/helpers'
 import QtyFragment from '@/components/Inventory/ItemDetails/QtyFragment'
 import RangeFragment from '@/components/RangeFragment'
 import { CurrencyType } from '@/domain/currency'
@@ -14,16 +21,18 @@ import type { EquipmentItem } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
 import type { MissileWeaponItem } from '@/domain/weapon'
 import CurrencyConverter from '@/shared/services/CurrencyConverter'
+import { WeightLabels } from '@/translations/encumbranceLabels'
 
 type RenderFunction<T extends EquipmentItem = EquipmentItem> =
   DataGridColumn<T>['render']
 type RenderDetailsFunction<T extends EquipmentItem = EquipmentItem> =
   DataGridColumn<T>['renderDetails']
 
+const getWeightLabel = (i18n: I18n, points: EncumbranceUnit) =>
+  points === EncumbranceUnit.None ? null : i18n._(WeightLabels[points])
+
 export const renderWeightGridCol: RenderFunction = (item, i18n) =>
-  item.points === EncumbranceUnit.None
-    ? '-'
-    : i18n._(EncumbranceUnit[item.points])
+  getWeightLabel(i18n, item.points) ?? '-'
 
 export const renderCostGridCol: RenderFunction = (item, _, state) => {
   const { isCostRural } = state
@@ -41,12 +50,34 @@ export const renderCostGridCol: RenderFunction = (item, _, state) => {
   }).value
 }
 
+export const renderEquipmentTitle: RenderFunction = (
+  item,
+  _,
+  __,
+  isExpanded,
+  shouldRenderDetails,
+) => (
+  <>
+    <span
+      className={classnames({
+        'ph-dashed-text cursor-pointer hover:text-red-800 active:text-red-600 transition-all duration-200':
+          shouldRenderDetails,
+      })}
+    >
+      {item.name}
+    </span>
+    {!isExpanded && isMeleeWeaponItem(item) && (
+      <MeleeWeaponTraitsFragment item={item} />
+    )}
+    {!isExpanded && isFirearmItem(item) && (
+      <FirearmTraitsFragment item={item} />
+    )}
+  </>
+)
+
 export const renderDetailsBody: RenderDetailsFunction = (item, i18n, state) => {
   const { isCostRural } = state
-  const weightLabel =
-    item.points === EncumbranceUnit.None
-      ? null
-      : i18n._(EncumbranceUnit[item.points])
+  const weightLabel = getWeightLabel(i18n, item.points)
   const cost = isCostRural.get() ? item.ruralCostCp : item.cityCostCp
   const currencyRecord = CurrencyConverter.convertCopperToDefaultCurrency(
     cost || 0,
@@ -77,9 +108,9 @@ export const renderInventoryTitle: RenderFunction<
   InventoryItem<EquipmentItem>
 > = (item, i18n, _, isExpanded, shouldRenderDetails) => {
   const weightLabel =
-    item.points === EncumbranceUnit.None
+    item.points === EncumbranceUnit.Regular
       ? null
-      : i18n._(EncumbranceUnit[item.points])
+      : getWeightLabel(i18n, item.points)
   const range = (item as InventoryItem<MissileWeaponItem>).range
   const hasQty = item.qty > 1
 
@@ -101,9 +132,28 @@ export const renderInventoryTitle: RenderFunction<
       {!isExpanded && isMeleeWeaponItem(item) && (
         <MeleeWeaponTraitsFragment item={item} />
       )}
+      {!isExpanded && isFirearmItem(item) && (
+        <>
+          <p
+            title={i18n._('Firearm mechanism')}
+            className='ph-color-muted text-sm'
+          >
+            <FirearmMechanismFragment item={item} />
+          </p>
+          <FirearmTraitsFragment item={item} />
+        </>
+      )}
       {!isExpanded && !!range && (
         <p title={i18n._('Range, feet')} className='ph-color-muted text-sm'>
-          <RangeFragment range={range} compact />
+          {isFirearmItem(item) ? (
+            <FirearmRangeFragment
+              range={range}
+              isRifled={item.isRifled}
+              compact
+            />
+          ) : (
+            <RangeFragment range={range} compact />
+          )}
         </p>
       )}
     </>
@@ -114,15 +164,15 @@ export const renderInventoryDetailsBody: RenderDetailsFunction<
   InventoryItem<EquipmentItem>
 > = (item, i18n) => {
   const weightLabel =
-    item.points === EncumbranceUnit.None
+    item.points === EncumbranceUnit.Regular
       ? null
-      : i18n._(EncumbranceUnit[item.points])
+      : getWeightLabel(i18n, item.points)
 
   return (
     <>
       <Details item={item} />
       {!!weightLabel && (
-        <p title={i18n._(`Weight`)} className='mt-2 ph-color-muted text-sm'>
+        <p title={i18n._(`Weight`)} className='ph-color-muted mt-2 text-sm'>
           {weightLabel}
         </p>
       )}

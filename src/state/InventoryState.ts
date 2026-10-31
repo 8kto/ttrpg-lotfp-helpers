@@ -1,4 +1,5 @@
 import { hookstate, useHookstate } from '@hookstate/core'
+import type { StoreEngine } from '@hookstate/localstored'
 import { localstored } from '@hookstate/localstored'
 
 import type { ArmorItem } from '@/domain/armor'
@@ -6,7 +7,11 @@ import type { CurrencyRecord, CurrencyWallet } from '@/domain/currency'
 import { EncumbranceThreshold } from '@/domain/encumbrance'
 import type { EquipmentItem } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
-import type { MeleeWeaponItem, MissileWeaponItem } from '@/domain/weapon'
+import type {
+  FirearmWeaponItem,
+  MeleeWeaponItem,
+  MissileWeaponItem,
+} from '@/domain/weapon'
 import deepclone from '@/shared/helpers/deepclone'
 import CurrencyConverter from '@/shared/services/CurrencyConverter'
 import { addItem, removeItem } from '@/state/helpers'
@@ -16,9 +21,12 @@ export type InventoryStateType = {
   wallet: CurrencyWallet
   isCoinWeightActive: boolean
   isCostRural: boolean
+  // Optional firearms rules: firearms can be bought, basic armor costs +50%
+  isFirearmsCampaign: boolean
   isWalletManaged: boolean
   meleeWeapons: ReadonlyArray<InventoryItem<MeleeWeaponItem>>
   missileWeapons: ReadonlyArray<InventoryItem<MissileWeaponItem>>
+  firearmWeapons: ReadonlyArray<InventoryItem<FirearmWeaponItem>>
   miscEquipment: ReadonlyArray<InventoryItem<EquipmentItem>>
   encumbranceThreshold: EncumbranceThreshold
 }
@@ -31,8 +39,10 @@ export type InventoryStateType = {
 const initialInventoryState: Readonly<InventoryStateType> = {
   armor: Array<InventoryItem<ArmorItem>>(),
   encumbranceThreshold: EncumbranceThreshold.Regular,
+  firearmWeapons: Array<InventoryItem<FirearmWeaponItem>>(),
   isCoinWeightActive: true,
   isCostRural: false,
+  isFirearmsCampaign: false,
   isWalletManaged: false,
   meleeWeapons: Array<InventoryItem<MeleeWeaponItem>>(),
   miscEquipment: Array<InventoryItem<EquipmentItem>>(),
@@ -44,14 +54,22 @@ const initialInventoryState: Readonly<InventoryStateType> = {
   },
 }
 
+// TODO convert to enum?
 export type EquipmentCategoryKey =
   | 'armor'
   | 'meleeWeapons'
   | 'missileWeapons'
+  | 'firearmWeapons'
   | 'miscEquipment'
 
 export const EquipmentStateKeys: ReadonlyArray<EquipmentCategoryKey> =
-  Object.freeze(['armor', 'meleeWeapons', 'missileWeapons', 'miscEquipment'])
+  Object.freeze([
+    'armor',
+    'meleeWeapons',
+    'missileWeapons',
+    'miscEquipment',
+    'firearmWeapons',
+  ])
 
 export const getInitialInventoryState = (): InventoryStateType => {
   return deepclone(initialInventoryState)
@@ -59,12 +77,45 @@ export const getInitialInventoryState = (): InventoryStateType => {
 
 const LOCALSTORAGE_APP_KEY = 'lotfp-helpers'
 
+/**
+ * State saved or exported by an older app version may lack the newer keys
+ * (e.g. firearmWeapons), so fill them in with the initial values.
+ */
+const withInitialState = (
+  state: Partial<InventoryStateType>,
+): InventoryStateType => ({
+  ...getInitialInventoryState(),
+  ...state,
+})
+
+export const fillMissingStateKeys = (storedState: string): string => {
+  try {
+    return JSON.stringify(withInitialState(JSON.parse(storedState)))
+  } catch {
+    return storedState
+  }
+}
+
+const storageEngine: StoreEngine = {
+  getItem: (key) => {
+    const storedState = localStorage.getItem(key)
+
+    // localstored awaits getItem anyway; its type disallows a plain null
+    return Promise.resolve(
+      storedState === null ? null : fillMissingStateKeys(storedState),
+    )
+  },
+  removeItem: (key) => localStorage.removeItem(key),
+  setItem: (key, value) => localStorage.setItem(key, value),
+}
+
 export const initState = () => {
   try {
     return hookstate<InventoryStateType>(
       getInitialInventoryState(),
       typeof window !== 'undefined'
         ? localstored({
+            engine: storageEngine,
             key: LOCALSTORAGE_APP_KEY,
           })
         : undefined,
@@ -91,6 +142,7 @@ export const useInventoryState = () => {
   const resetEquipment = () => {
     state.merge({
       armor: Array<InventoryItem<ArmorItem>>(),
+      firearmWeapons: Array<InventoryItem<FirearmWeaponItem>>(),
       meleeWeapons: Array<InventoryItem<MeleeWeaponItem>>(),
       miscEquipment: Array<InventoryItem<EquipmentItem>>(),
       missileWeapons: Array<InventoryItem<MissileWeaponItem>>(),
@@ -116,10 +168,19 @@ export const addEquipmentItem = (item: InventoryItem<EquipmentItem>) =>
   addItem(InventoryState.miscEquipment, item)
 export const removeEquipmentItem = (item: InventoryItem<EquipmentItem>) =>
   removeItem(InventoryState.miscEquipment, item)
+export const addFirearmWeapon = (item: InventoryItem<FirearmWeaponItem>) =>
+  addItem(InventoryState.firearmWeapons, item)
+export const removeFirearmWeapon = (item: InventoryItem<FirearmWeaponItem>) =>
+  removeItem(InventoryState.firearmWeapons, item)
 
 export const toggleCost = () => {
   const isCostRural = InventoryState.isCostRural
   isCostRural.set(!isCostRural.get())
+}
+
+export const toggleFirearmsCampaign = () => {
+  const isFirearmsCampaign = InventoryState.isFirearmsCampaign
+  isFirearmsCampaign.set(!isFirearmsCampaign.get())
 }
 
 export const toggleCoinsWeightActive = () => {
@@ -181,20 +242,23 @@ type EquipmentStateAction<T extends EquipmentItem> = {
   remove: (item: InventoryItem<T>) => void
 }
 
-type InferEquipmentItem<T> = T extends ReadonlyArray<InventoryItem<infer U>>
-  ? U
-  : never
+type InferEquipmentItem<T> =
+  T extends ReadonlyArray<InventoryItem<infer U>> ? U : never
 
 type EquipmentStateActionsType = {
-  [K in keyof InventoryStateType as K extends EquipmentCategoryKey
-    ? K
-    : never]: EquipmentStateAction<InferEquipmentItem<InventoryStateType[K]>>
+  [
+    K in keyof InventoryStateType as K extends EquipmentCategoryKey ? K : never
+  ]: EquipmentStateAction<InferEquipmentItem<InventoryStateType[K]>>
 }
 
 export const EquipmentStateActions: EquipmentStateActionsType = {
   armor: {
     add: addArmor,
     remove: removeArmor,
+  },
+  firearmWeapons: {
+    add: addFirearmWeapon,
+    remove: removeFirearmWeapon,
   },
   meleeWeapons: {
     add: addMeleeWeapon,
@@ -238,8 +302,8 @@ export const setEncumbranceThreshold = (slots: EncumbranceThreshold) => {
   InventoryState.encumbranceThreshold.set(slots)
 }
 
-export const setState = (data: InventoryStateType) => {
-  InventoryState.set(data)
+export const setState = (data: Partial<InventoryStateType>) => {
+  InventoryState.set(withInitialState(data))
 }
 
 // TODO handle errors on the local storage state restore

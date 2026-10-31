@@ -36,6 +36,8 @@ export interface DataGridProps<T extends EquipmentItem> {
   spanDetails: number
   initialSortState?: SortConfig<T>
   onAddClick?: (item: T) => void
+  // When set, the Add button is disabled and shows the reason as a hint
+  addDisabledReason?: string
   onRemoveClick?: (item: T) => void
   handleSort?: <Type extends EquipmentItem>(
     sortConfig: SortConfig<Type>,

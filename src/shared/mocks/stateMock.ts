@@ -2,6 +2,7 @@ import { EncumbranceThreshold } from '@/domain/encumbrance'
 import {
   armorItemMock1,
   armorItemMock2,
+  firearmWeaponItemMock1,
   meleeWeaponItemMock1,
   meleeWeaponItemMock2,
   miscEquipItem1,
@@ -14,8 +15,10 @@ import type { InventoryStateType } from '@/state/InventoryState'
 export const stateMock: InventoryStateType = Object.freeze({
   armor: [armorItemMock1, armorItemMock2],
   encumbranceThreshold: EncumbranceThreshold.Regular,
+  firearmWeapons: [firearmWeaponItemMock1],
   isCoinWeightActive: true,
   isCostRural: false,
+  isFirearmsCampaign: false,
   isWalletManaged: false,
   meleeWeapons: [meleeWeaponItemMock1, meleeWeaponItemMock2],
   miscEquipment: [miscEquipItem1, miscEquipItem2],

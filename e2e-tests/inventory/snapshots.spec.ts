@@ -9,6 +9,8 @@ test.describe('Inventory Snapshots Tests', () => {
 
       await expect(page).toHaveScreenshot(`default-view-${locale}.png`, {
         fullPage: true,
+        // The footer version changes on every bump
+        mask: [page.getByRole('link', { name: /Princess Helpers v/ })],
       })
     })
   }

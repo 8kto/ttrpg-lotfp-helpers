@@ -2,8 +2,12 @@ import { Trans } from '@lingui/macro'
 import React from 'react'
 
 import DamageFragment from '@/components/DamageFragment'
+import FirearmMechanismFragment from '@/components/FirearmMechanismFragment'
+import FirearmRangeFragment from '@/components/FirearmRangeFragment'
+import FirearmRulesFragment from '@/components/FirearmRulesFragment'
 import {
   isArmorItem,
+  isFirearmItem,
   isMissileItem,
   isWeaponItem,
 } from '@/components/Inventory/ItemDetails/helpers'
@@ -14,11 +18,17 @@ export const Details = <T extends EquipmentItem>({ item }: { item: T }) => {
   const paragraphClassname = ''
 
   return (
-    <div className='text-gray-600 space-y-3'>
+    <div className='space-y-3 text-gray-600'>
       {/* Armor */}
       {isArmorItem(item) ? (
         <p className={paragraphClassname} data-testid='details--ac'>
           <Trans>Armor Class</Trans>: {item.armorClass}
+        </p>
+      ) : null}
+      {isArmorItem(item) && !!item.physicalSaveBonus ? (
+        <p className={paragraphClassname} data-testid='details--physical-save'>
+          <Trans>Saving throws vs physical damage</Trans>: +
+          {item.physicalSaveBonus}
         </p>
       ) : null}
 
@@ -40,6 +50,45 @@ export const Details = <T extends EquipmentItem>({ item }: { item: T }) => {
           </strong>
           <RangeFragment range={item.range} />
         </div>
+      ) : null}
+
+      {/* Firearms weapons */}
+      {isFirearmItem(item) ? (
+        <>
+          <p className={paragraphClassname} data-testid='details--mechanism'>
+            <strong>
+              <Trans>Firearm mechanism</Trans>
+            </strong>
+            : <FirearmMechanismFragment item={item} />
+          </p>
+          {!!item.damageMelee && (
+            <p
+              className={paragraphClassname}
+              data-testid='details--damage-melee'
+            >
+              <strong>
+                <Trans>Mêlée damage</Trans>
+              </strong>
+              : <DamageFragment damage={item.damageMelee} />
+            </p>
+          )}
+          <div className={paragraphClassname} data-testid='details--firearms'>
+            <strong>
+              <Trans>Range</Trans>
+            </strong>
+            <FirearmRangeFragment range={item.range} isRifled={item.isRifled} />
+            <p className='ph-color-muted text-sm'>
+              <Trans>
+                Dexterity to-hit modifiers do not apply at Medium and Long
+                range.
+              </Trans>
+            </p>
+          </div>
+          <FirearmRulesFragment
+            item={item}
+            paragraphClassname={paragraphClassname}
+          />
+        </>
       ) : null}
 
       {/* All items */}
