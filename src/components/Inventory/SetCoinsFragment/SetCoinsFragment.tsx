@@ -2,8 +2,11 @@ import { XMarkIcon } from '@heroicons/react/24/solid'
 import { Trans } from '@lingui/macro'
 import { Field, Form, Formik } from 'formik'
 import React from 'react'
-import * as Yup from 'yup'
 
+import {
+  CoinErrorMessage,
+  coinsValidationSchema,
+} from '@/components/Inventory/coinFields'
 import { ResetFormOnDrawerClose } from '@/components/Inventory/ResetFormOnDrawerClose'
 import CurrencyConverter from '@/shared/services/CurrencyConverter'
 import { setWallet, useInventoryState } from '@/state/InventoryState'
@@ -53,11 +56,7 @@ const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
           silver: wallet.Silver,
           copper: wallet.Copper,
         }}
-        validationSchema={Yup.object({
-          gold: Yup.number().min(0),
-          silver: Yup.number().min(0),
-          copper: Yup.number().min(0),
-        })}
+        validationSchema={coinsValidationSchema}
         onSubmit={(values) => {
           handleAddCoins(values)
           handleClose()
@@ -109,6 +108,7 @@ const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
                   min={0}
                   id='coins--set-gold'
                 />
+                <CoinErrorMessage name='gold' />
 
                 {/* Silver */}
                 <label
@@ -125,6 +125,7 @@ const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
                   min={0}
                   id='coins--set-silver'
                 />
+                <CoinErrorMessage name='silver' />
 
                 {/* Copper */}
                 <label
@@ -141,6 +142,7 @@ const SetCoinsFragment = ({ onClose }: { onClose: () => void }) => {
                   min={0}
                   id='coins--set-copper'
                 />
+                <CoinErrorMessage name='copper' />
 
                 <div className='flex w-full justify-center space-x-4 pt-4'>
                   <button

@@ -22,6 +22,9 @@ msgstr ""
 msgid "config.misc.airBladder.details"
 msgstr ""
 
+msgid "Let's fix them."
+msgstr ""
+
 msgid "config.melee.mancatcher.details"
 msgstr ""
 
@@ -146,6 +149,9 @@ msgstr ""
 msgid "config.firearms.powderBarrel.details"
 msgstr ""
 
+msgid "Try again?"
+msgstr ""
+
 msgid "Spikes for your boots – better success at climbing and keeping balance on ice"
 msgstr ""
 
@@ -168,6 +174,9 @@ msgid "Range"
 msgstr ""
 
 msgid "Manacles"
+msgstr ""
+
+msgid "Reset all coins?"
 msgstr ""
 
 msgid "Mirror, Glass"
@@ -224,6 +233,9 @@ msgid "Barrel"
 msgstr ""
 
 msgid "Not enough funds in wallet"
+msgstr ""
+
+msgid "This link does not contain a valid inventory."
 msgstr ""
 
 msgid "Export or Import Inventory"
@@ -315,6 +327,12 @@ msgid "RU"
 msgstr ""
 
 msgid "Arrow (1)"
+msgstr ""
+
+msgid "Bad things happened"
+msgstr ""
+
+msgid "This file does not contain a valid inventory."
 msgstr ""
 
 msgid "Candle"
@@ -592,6 +610,9 @@ msgstr ""
 msgid "The number should be equal to or greater than 0"
 msgstr ""
 
+msgid "Delete the saved inventory? This cannot be undone."
+msgstr ""
+
 msgid "Storm conditions"
 msgstr ""
 
@@ -648,6 +669,9 @@ msgid "Blowgun"
 msgstr ""
 
 msgid "Block and Tackle"
+msgstr ""
+
+msgid "Error"
 msgstr ""
 
 msgid "Pistol brace"
@@ -745,6 +769,9 @@ msgstr ""
 msgid "{miPerDay, plural, =0 {miles} one {mile} two {miles} few {miles} many {miles} other {miles}}"
 msgstr ""
 
+msgid "Reset saved data"
+msgstr ""
+
 msgid "Inventory"
 msgstr ""
 
@@ -834,6 +861,9 @@ msgstr ""
 
 #. js-lingui-explicit-id
 msgid "details.shareableUrlSectionUrl"
+msgstr ""
+
+msgid "Replace your current inventory with the shared one?"
 msgstr ""
 
 msgid "Spikes are useful for spiking doors closed (or spiking them open) and may be used as crude pitons in appropriate situations."
@@ -1113,6 +1143,9 @@ msgid "Firearm mechanism"
 msgstr ""
 
 msgid "Dart for blowgun (1)"
+msgstr ""
+
+msgid "Sometimes, the issue may be due to incompatible or corrupted saved data. Resetting it removes your stored inventory."
 msgstr ""
 
 msgid "This weapon can be used one-handed if charging on horseback. Otherwise, it is effectively a polearm (pike)"

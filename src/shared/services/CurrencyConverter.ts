@@ -220,7 +220,7 @@ export default class CurrencyConverter {
     const copper = walletCopy.Silver * COPPER_PER_SILVER
     const remainingCopper = copper % COPPER_PER_SILVER
     walletCopy.Silver = (copper - remainingCopper) / COPPER_PER_SILVER
-    walletCopy.Copper += remainingCopper
+    walletCopy.Copper = roundTo(walletCopy.Copper + remainingCopper, 3)
 
     return walletCopy
   }

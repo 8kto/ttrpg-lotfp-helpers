@@ -18,8 +18,8 @@ page. `use client` directives do not make it an App Router application.
 | UI events                    | [actions](../src/shared/actions/actions.ts) and [dispatcher](../src/shared/actions/helpers.ts); document-level CustomEvents for drawer/tab/toast behavior, not a backend event bus.                   |
 
 Main flow: catalog → UI purchase handler → inventory state → localStorage;
-state → totals hook/services → inventory details. JSON and URL import replace
-state through the same state setter. Components may mutate Hookstate directly;
+state → totals hook/services → inventory details. JSON and URL imports are
+validated, then replace state through the same state setter. Components may mutate Hookstate directly;
 there is no enforced single application-service layer.
 
 ## Persistence and external contracts
@@ -27,23 +27,26 @@ there is no enforced single application-service layer.
 The storage key, default state, category list, and compatibility merge are defined
 in [InventoryState](../src/state/InventoryState.ts), with
 [state tests](../src/state/__tests__/InventoryState.test.ts). Missing top-level
-fields are filled from defaults. This is not recursive migration or runtime
-schema validation, and there is no persisted schema version.
+fields are filled from defaults and repeated inventory IDs are regenerated. This
+is not recursive migration, and there is no persisted schema version.
+[Import validation](../src/state/parseInventoryState.ts) rejects file and link
+data that is unsafe to render or count; state restored from localStorage is not
+validated.
 
 [File export](../src/shared/helpers/exportInventoryData.ts) writes the inventory
 state as JSON. [Sharing helpers](../src/shared/helpers/shareableUrl.ts) encode it
 in the `import` query parameter through [lz-string compression](../src/shared/helpers/compressDataForUrl.ts).
-The [inventory page](../src/pages/inventory/index.tsx) imports on mount and removes
-URL parameters by navigation. Compression is not encryption. A shared URL carries
+The [inventory page](../src/pages/inventory/index.tsx)
+[imports the link](../src/shared/helpers/importSharedInventory.ts) on mount, after
+the user confirms, and removes URL parameters by navigation. Compression is not encryption. A shared URL carries
 the snapshot itself, not an authorized server-side resource.
 
 UI context is a separate hash-based contract and is not included in the inventory
-export. Its version field is the application version, not a storage-schema
-version. [Hash parser](../src/shared/helpers/getStateFromSearchString.ts).
+export. Default terrain and weather are left out of the URL.
+[Hash parser](../src/shared/helpers/getStateFromSearchString.ts).
 
 No application API handlers, database, account, or authorization layer are present.
-[Middleware](../middleware.ts) handles locale routing; its `/api/` exclusion does
-not define an API. Vercel Analytics is mounted in the app wrapper. Production PWA
+Locale routing is Next.js built-in i18n routing. Vercel Analytics is mounted in the app wrapper. Production PWA
 registration/caching is configured by Next; generated workers are ignored by Git.
 
 ## Localization and import boundaries

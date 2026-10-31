@@ -3,6 +3,7 @@ import type { State } from '@hookstate/core'
 import type { EquipmentItem } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
 import type { FirearmWeaponItem } from '@/domain/weapon'
+import { getUniqueId } from '@/shared/helpers/autoincrement'
 import type { InventoryStateType } from '@/state/InventoryState'
 import { EquipmentStateKeys } from '@/state/InventoryState'
 
@@ -10,6 +11,38 @@ export const combineEquipment = (equipment: State<InventoryStateType>) => {
   return EquipmentStateKeys.flatMap((key) =>
     Object.values(equipment.nested(key).get()),
   )
+}
+
+/**
+ * State saved by an older version may hold repeated IDs, since these restarted
+ * from 1 on every page load. Removing such an item would remove all of them.
+ */
+export const withUniqueInventoryIds = (
+  state: InventoryStateType,
+): InventoryStateType => {
+  const seenIds = new Set<string>()
+  const repaired = { ...state }
+
+  EquipmentStateKeys.forEach((key) => {
+    const items: unknown = state[key]
+    if (!Array.isArray(items)) {
+      return
+    }
+
+    Object.assign(repaired, {
+      [key]: items.map((item: InventoryItem<EquipmentItem>) => {
+        const isDuplicate = seenIds.has(item.inventoryId)
+        const inventoryId = isDuplicate
+          ? `${item.name}${getUniqueId()}`
+          : item.inventoryId
+        seenIds.add(inventoryId)
+
+        return isDuplicate ? { ...item, inventoryId } : item
+      }),
+    })
+  })
+
+  return repaired
 }
 
 const isFirearm = (item: EquipmentItem): item is FirearmWeaponItem =>
@@ -59,7 +92,6 @@ export const updateItemQuantity = <T extends EquipmentItem>(
   })
 }
 
-const incrementQty = updateItemQuantity.bind(null, 1)
 const decrementQty = updateItemQuantity.bind(null, -1)
 
 export const addItem = <T extends EquipmentItem>(
@@ -68,9 +100,7 @@ export const addItem = <T extends EquipmentItem>(
 ) => {
   const existingItemIndex = findItemIndex(items, item)
   if (existingItemIndex !== -1) {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
-    incrementQty(items[existingItemIndex])
+    updateItemQuantity(item.qty, items[existingItemIndex])
   } else {
     items[items.length].set(item)
   }
@@ -80,7 +110,9 @@ export const removeItem = <T extends EquipmentItem>(
   items: State<readonly InventoryItem<T>[]>,
   item: InventoryItem<T>,
 ) => {
-  const existingItemIndex = findItemIndex(items, item)
+  const existingItemIndex = items.findIndex(
+    (i) => (i.get() as InventoryItem<T>).inventoryId === item.inventoryId,
+  )
 
   if (
     existingItemIndex !== -1 &&

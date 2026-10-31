@@ -25,7 +25,7 @@ const formInitialValues: EquipmentItemDto = {
   points: EncumbranceUnit.Regular,
   name: '',
   cost: 0,
-  currencyType: CurrencyType.Copper,
+  currencyType: CurrencyType.Silver,
   category: 'miscEquipment',
   details: '',
 }
@@ -148,7 +148,6 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
                   name='currencyType'
                   id='add-equip-item--isSilver'
                   value='Silver'
-                  checked
                   className='h-4 w-4 rounded border-gray-300 bg-gray-100 focus:ring-2 focus:ring-blue-500'
                 />
                 <label
@@ -180,7 +179,7 @@ const AddEquipmentItemFragment = ({ onClose }: { onClose: () => void }) => {
           {/* Weight row */}
           <div className='mb-6 space-y-4'>
             <label
-              htmlFor='add-equip-item--category'
+              htmlFor='add-equip-item--points'
               className='mb-1 block font-medium text-gray-700'
             >
               <Trans>Weight</Trans>

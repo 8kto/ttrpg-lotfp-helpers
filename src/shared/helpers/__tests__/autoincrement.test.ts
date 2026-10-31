@@ -1,6 +1,7 @@
 import {
   autoincrement,
   getAutoIncrementedId,
+  getUniqueId,
 } from '@/shared/helpers/autoincrement'
 
 describe('autoincrement util', () => {
@@ -54,6 +55,32 @@ describe('autoincrement util', () => {
       expect(getAutoIncrementedId()).toBe(1)
       expect(getAutoIncrementedId()).toBe(2)
       expect(getAutoIncrementedId()).toBe(3)
+    })
+  })
+
+  describe('getUniqueId', () => {
+    const getIdAfterPageLoad = (nowMs: number) => {
+      const dateSpy = jest.spyOn(Date, 'now').mockReturnValue(nowMs)
+      let id = ''
+
+      jest.isolateModules(() => {
+        id = jest.requireActual('@/shared/helpers/autoincrement').getUniqueId()
+      })
+      dateSpy.mockRestore()
+
+      return id
+    }
+
+    it('should not repeat an ID within a page load', () => {
+      expect(getUniqueId()).not.toBe(getUniqueId())
+    })
+
+    it('should not repeat an ID after a page reload', () => {
+      expect(getIdAfterPageLoad(1000)).not.toBe(getIdAfterPageLoad(2000))
+    })
+
+    it('should contain digits only', () => {
+      expect(getUniqueId()).toMatch(/^\d+$/)
     })
   })
 })

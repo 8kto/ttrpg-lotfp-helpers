@@ -1,4 +1,7 @@
+import { t, Trans } from '@lingui/macro'
 import React, { Component } from 'react'
+
+import { clearStoredInventory } from '@/state/InventoryState'
 
 interface ErrorBoundaryState {
   hasError: boolean
@@ -24,26 +27,35 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
     console.error({ error, errorInfo })
   }
 
+  handleResetClick = () => {
+    if (confirm(t`Delete the saved inventory? This cannot be undone.`)) {
+      clearStoredInventory()
+      window.location.reload()
+    }
+  }
+
   render() {
     if (this.state.hasError) {
       return (
         <div className='relative flex flex-grow flex-col pt-16 mt-10'>
           <main className='mx-auto w-full max-w-screen-2xl flex-grow px-2.5 sm:px-6 lg:px-8'>
             <h1 className='mb-4 hidden text-2xl font-extrabold text-red-900 sm:text-3xl lg:inline-block'>
-              Bad things happened
+              <Trans>Bad things happened</Trans>
             </h1>
 
-            <p className='mt-2'>Let&apos;s fix them.</p>
+            <p className='mt-2'>
+              <Trans>Let&apos;s fix them.</Trans>
+            </p>
 
             <p className='mt-2'>
-              Error: <code>{this.state.errorMessage ?? 'NA'}</code>
+              <Trans>Error</Trans>:{' '}
+              <code>{this.state.errorMessage ?? 'NA'}</code>
             </p>
             <p className='mt-2'>
-              Sometimes, the issue may be due to incompatible or corrupted
-              <code>localStorage</code> state. Try clearing the cache and
-              website data in your browser, then reload the page.
-              <br />
-              <strong>Note</strong>: This action will remove any stored data.
+              <Trans>
+                Sometimes, the issue may be due to incompatible or corrupted
+                saved data. Resetting it removes your stored inventory.
+              </Trans>
             </p>
 
             <button
@@ -54,7 +66,14 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
                 window.location.reload()
               }}
             >
-              Try again?
+              <Trans>Try again?</Trans>
+            </button>
+            <button
+              type='button'
+              className='ph-btn-secondary ml-2 mt-4 justify-center rounded px-5 py-2.5 text-center font-medium focus:outline-none focus:ring-4 focus:ring-primary-300'
+              onClick={this.handleResetClick}
+            >
+              <Trans>Reset saved data</Trans>
             </button>
           </main>
         </div>

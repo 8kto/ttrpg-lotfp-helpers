@@ -49,8 +49,12 @@ file describes application semantics, not another copy of their tables.
   require that the UI not invent mechanism rules.
 - Clearing equipment preserves the wallet and settings; full reset replaces
   everything with defaults. [State operations](../src/state/InventoryState.ts).
-- JSON/URL import replaces inventory state. Compatibility and validation limits
-  belong to [architecture](architecture.md); they are not guaranteed invariants.
+- JSON/URL import replaces inventory state after validation; a shared link also
+  needs the user's confirmation. Compatibility limits belong to
+  [architecture](architecture.md).
+- Inventory IDs stay unique across page loads. Item details are plain text; the
+  only markup rendered is the catalog's line break.
+  [Details](../src/components/Inventory/ItemDetails/Details.tsx).
 
 ## Optional firearms
 
@@ -79,7 +83,7 @@ not a complete equipped-character AC calculation.
 
 The owner wants an active wallet to prevent spending more than available across
 purchase paths. Pack/custom-item paths do not yet consistently implement that
-intent. Import validation, repeated pack quantities, and this wallet gap are
+intent. Storage versioning and this wallet gap are
 tracked in [TODO](../TODO.md); do not describe them as fixed.
 
 Open question: two identical items bought for different prices currently share a

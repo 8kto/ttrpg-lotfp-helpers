@@ -1,6 +1,8 @@
 import type { Locator, Page } from '@playwright/test'
 import { expect, test } from '@playwright/test'
 
+import { openEquipment, openInventory } from '../shared/helpers'
+
 const openFirearmsTab = async (page: Page) => {
   await page.getByTestId('Tab-firearm').click()
 }
@@ -27,27 +29,6 @@ const getAddButton = (row: Locator) => row.getByRole('button').last()
 
 const buyPistol = async (page: Page) => {
   await getAddButton(getEquipmentRow(page, pistolRowName)).click()
-}
-
-/* Small screens show equipment and inventory in tabs, larger ones in columns */
-const openInventory = async (page: Page) => {
-  const inventoryTab = page.getByRole('tab', { name: 'Inventory' })
-
-  if (await inventoryTab.isVisible()) {
-    await inventoryTab.click()
-
-    return page.locator('.ph-active-tabpanel')
-  }
-
-  return page.locator('.ph-inventory-page-content--columns > div').nth(1)
-}
-
-const openEquipment = async (page: Page) => {
-  const equipmentTab = page.getByRole('tab', { name: 'Equipment' })
-
-  if (await equipmentTab.isVisible()) {
-    await equipmentTab.click()
-  }
 }
 
 test.describe('Firearms Tests', () => {

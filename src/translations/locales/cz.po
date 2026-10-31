@@ -22,6 +22,9 @@ msgstr "Mince"
 msgid "config.misc.airBladder.details"
 msgstr "Kožený sáček s trubičkou pro ústa; dodatečný nádech vzduchu pro podvodní plavání.<br />Může být použit i jako pomocný plavecký prostředek."
 
+msgid "Let's fix them."
+msgstr "Pojďme to napravit."
+
 msgid "config.melee.mancatcher.details"
 msgstr "Při úspěšném zásahu touto zbraní musí oběť provést záchraný hod proti Paralýze. V případě neúspěchu je oběť považována za bezbrannou, stejně jako majitel mancatcheru, dokud je cíl držen pro obranu před útoky. Tuto zbraň je nutné držet oběma rukama."
 
@@ -149,6 +152,9 @@ msgstr "Stříbrné kusy"
 msgid "config.firearms.powderBarrel.details"
 msgstr ""
 
+msgid "Try again?"
+msgstr "Zkusit znovu?"
+
 msgid "Spikes for your boots – better success at climbing and keeping balance on ice"
 msgstr "Hřeby pro vaše boty - lepší úspěch při lezení a udržování rovnováhy na ledu."
 
@@ -172,6 +178,9 @@ msgstr "Rozsah"
 
 msgid "Manacles"
 msgstr "Pouta"
+
+msgid "Reset all coins?"
+msgstr "Resetovat všechny mince?"
 
 msgid "Mirror, Glass"
 msgstr "Zrcadlo, sklo"
@@ -233,6 +242,9 @@ msgstr "Sud"
 
 msgid "Not enough funds in wallet"
 msgstr "V peněžence není dostatek prostředků"
+
+msgid "This link does not contain a valid inventory."
+msgstr "Tento odkaz neobsahuje platný inventář."
 
 msgid "Export or Import Inventory"
 msgstr "Exportovat nebo Importovat Inventář"
@@ -324,6 +336,12 @@ msgstr "RU"
 
 msgid "Arrow (1)"
 msgstr "Šíp (1)"
+
+msgid "Bad things happened"
+msgstr "Stalo se něco špatného"
+
+msgid "This file does not contain a valid inventory."
+msgstr "Tento soubor neobsahuje platný inventář."
 
 msgid "Candle"
 msgstr "Svíčka"
@@ -609,6 +627,9 @@ msgstr "Meč"
 msgid "The number should be equal to or greater than 0"
 msgstr "Číslo by mělo být rovno nebo větší než 0"
 
+msgid "Delete the saved inventory? This cannot be undone."
+msgstr "Smazat uložený inventář? Tuto akci nelze vrátit zpět."
+
 msgid "Storm conditions"
 msgstr "Podmínky bouře"
 
@@ -666,6 +687,9 @@ msgstr "Foukačka"
 
 msgid "Block and Tackle"
 msgstr "Kladka a táhlo"
+
+msgid "Error"
+msgstr "Chyba"
 
 msgid "Pistol brace"
 msgstr ""
@@ -762,6 +786,9 @@ msgstr "Uvedená cena je minimální"
 msgid "{miPerDay, plural, =0 {miles} one {mile} two {miles} few {miles} many {miles} other {miles}}"
 msgstr "{miPerDay, plural, =0 {mil} one {mil} two {míle} few {míle} many {mil} other {mil}}"
 
+msgid "Reset saved data"
+msgstr "Resetovat uložená data"
+
 msgid "Inventory"
 msgstr "Inventář"
 
@@ -852,6 +879,9 @@ msgstr "Soubor"
 #. js-lingui-explicit-id
 msgid "details.shareableUrlSectionUrl"
 msgstr "Sdílet URL"
+
+msgid "Replace your current inventory with the shared one?"
+msgstr "Nahradit současný inventář inventářem z odkazu?"
 
 msgid "Spikes are useful for spiking doors closed (or spiking them open) and may be used as crude pitons in appropriate situations."
 msgstr "Hřeby jsou užitečné pro zabouchávání dveří (nebo jejich otevírání) a mohou být použity jako hrubé špice v příslušných situacích."
@@ -1136,6 +1166,9 @@ msgstr ""
 
 msgid "Dart for blowgun (1)"
 msgstr "Šipka pro foukačku (1)"
+
+msgid "Sometimes, the issue may be due to incompatible or corrupted saved data. Resetting it removes your stored inventory."
+msgstr "Příčinou mohou být nekompatibilní nebo poškozená uložená data. Jejich resetováním odstraníte uložený inventář."
 
 msgid "This weapon can be used one-handed if charging on horseback. Otherwise, it is effectively a polearm (pike)"
 msgstr "Tato zbraň může být použita jednou rukou při náboji na koni. Jinak je to v podstatě hůlka (píka)"

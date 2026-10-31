@@ -1,15 +1,18 @@
 import { XMarkIcon } from '@heroicons/react/24/solid'
-import { Trans } from '@lingui/macro'
+import { t, Trans } from '@lingui/macro'
 import { useRouter } from 'next/router'
 import React, { useMemo, useRef } from 'react'
 
 import ShareableUrlControl from '@/components/Inventory/ExportInventoryFragment/ShareableUrlControl'
+import Action from '@/shared/actions/actions'
+import { dispatchAction } from '@/shared/actions/helpers'
 import exportInventoryData from '@/shared/helpers/exportInventoryData'
 import {
   getShareableUrl,
   getStateFromJson,
 } from '@/shared/helpers/shareableUrl'
 import { setState, useInventoryState } from '@/state/InventoryState'
+import { parseInventoryState } from '@/state/parseInventoryState'
 
 const ExportInventoryFragment = ({ onClose }: { onClose: () => void }) => {
   const { state } = useInventoryState()
@@ -37,14 +40,25 @@ const ExportInventoryFragment = ({ onClose }: { onClose: () => void }) => {
     event: React.ChangeEvent<HTMLInputElement>,
   ) => {
     const file = event.target.files?.[0]
+    // Otherwise choosing the same file again would not fire the change event
+    event.target.value = ''
 
     if (file) {
       try {
-        const json = await getStateFromJson(file)
-        setState(json)
+        const importedState = parseInventoryState(await getStateFromJson(file))
+        if (!importedState) {
+          throw new Error('Invalid inventory file')
+        }
+
+        setState(importedState)
         onClose()
       } catch (error) {
         console.error(error)
+        dispatchAction(Action.ShowToast, {
+          delayMs: 3000,
+          message: t`This file does not contain a valid inventory.`,
+          type: 'error',
+        })
       }
     }
   }

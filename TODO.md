@@ -1,3 +1,5 @@
+- Next.js 16
+- use schema+validation for imports
 - version for the storage, handling the incompatibilities
 - export
   - CSV
@@ -9,14 +11,8 @@
   - пули
   - порох
   - факела...
-- Import/storage contract: validate parsed JSON and shared-URL data at runtime
-  (categories, quantities, finite numbers, nested wallet/settings), define schema
-  versioning and supported migrations, and test old/malformed exports. Current
-  default filling is shallow and is not validation.
-- Repeated equipment-pack import: add the incoming quantity to an existing stack,
-  rather than incrementing it by one; cover packs containing quantities above one.
-- Test discovery/coverage: include `src/shared/helpers/__tests__/movement.ts` in
-  Jest discovery and review `collectCoverageFrom` so TSX/UI coverage is not omitted.
+- Storage contract: define schema versioning and supported migrations, and test
+  old exports. Imports are validated, but state restored from localStorage is not.
 - Managed wallet: apply affordability checks consistently to pack/custom-item
   purchase paths. An active wallet should not allow spending more than available.
   Define acquisition versus restoration semantics and campaign restrictions for
@@ -31,6 +27,14 @@
   it still uses `save versus Breath Weapon` and `saving throw versus ...`.
 - Multiple inventories.
 - Mounts.
+
+## Minor review findings
+
+- Pack prices ignore the firearms-campaign armor increase, so packs with armor are
+  undervalued in that campaign. Source: [equipmentPack](src/shared/helpers/equipmentPack.ts).
+- Rules question: 26 or more regular items show Over Encumbered, but the item table
+  stops adding points at 21 items, which gives Severely.
+  Source: [EncumbranceService](src/shared/services/EncumbranceService.ts).
 
 ## TODO/FIXME из исходников и тестов
 
@@ -47,9 +51,6 @@
   Источник: [InventoryState](src/state/InventoryState.ts).
 - Поддержать пользовательские предметы с заданным весом в наборах снаряжения.
   Источник: [getEquipmentPackItems](src/shared/helpers/equipmentPack.ts).
-- Проверить последовательные toast-сообщения и решить, нужно ли отменять
-  таймеры предыдущего сообщения при показе нового.
-  Источник: [Toast](src/components/Toast/Toast.tsx).
 - Проверить, можно ли удалить inline-стиль `display` у `ModalMessage`,
   дублирующий управление видимостью через CSS-классы.
   Источник: [Modal](src/components/Modal/Modal.tsx).

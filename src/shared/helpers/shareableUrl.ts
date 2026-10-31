@@ -66,6 +66,10 @@ export const getStateFromJson = (file: File): Promise<InventoryStateType> => {
       }
     }
 
+    reader.onerror = () => {
+      reject(new Error('Cannot read file'))
+    }
+
     reader.readAsText(file)
   })
 }

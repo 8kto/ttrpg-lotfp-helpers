@@ -14,7 +14,7 @@ import type {
 } from '@/domain/weapon'
 import deepclone from '@/shared/helpers/deepclone'
 import CurrencyConverter from '@/shared/services/CurrencyConverter'
-import { addItem, removeItem } from '@/state/helpers'
+import { addItem, removeItem, withUniqueInventoryIds } from '@/state/helpers'
 
 export type InventoryStateType = {
   armor: ReadonlyArray<InventoryItem<ArmorItem>>
@@ -83,10 +83,15 @@ const LOCALSTORAGE_APP_KEY = 'lotfp-helpers'
  */
 const withInitialState = (
   state: Partial<InventoryStateType>,
-): InventoryStateType => ({
-  ...getInitialInventoryState(),
-  ...state,
-})
+): InventoryStateType =>
+  withUniqueInventoryIds({
+    ...getInitialInventoryState(),
+    ...state,
+  })
+
+export const clearStoredInventory = () => {
+  localStorage.removeItem(LOCALSTORAGE_APP_KEY)
+}
 
 export const fillMissingStateKeys = (storedState: string): string => {
   try {
