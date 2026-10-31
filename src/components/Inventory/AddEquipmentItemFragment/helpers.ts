@@ -1,7 +1,7 @@
 import { CurrencyType } from '@/domain/currency'
 import type { EquipmentItem, EquipmentItemDto } from '@/domain/equipment'
 import type { InventoryItem } from '@/domain/inventory'
-import { getAutoIncrementedId } from '@/shared/helpers/autoincrement'
+import { getUniqueId } from '@/shared/helpers/autoincrement'
 import CurrencyConverter from '@/shared/services/CurrencyConverter'
 import type { EquipmentCategoryKey } from '@/state/InventoryState'
 
@@ -37,7 +37,7 @@ export const getCustomEquipmentItem = (
     categoryKey: data.category,
     cityCostCp: costCp,
     details: data.details || null,
-    inventoryId: data.name + getAutoIncrementedId(),
+    inventoryId: data.name + getUniqueId(),
     lockedCostCp: costCp,
     name: data.name,
     points: Number(data.points),
