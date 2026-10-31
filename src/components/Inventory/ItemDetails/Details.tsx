@@ -14,6 +14,8 @@ import {
 import RangeFragment from '@/components/RangeFragment'
 import type { EquipmentItem } from '@/domain/equipment'
 
+const LINE_BREAK = /<br\s*\/?>/i
+
 export const Details = <T extends EquipmentItem>({ item }: { item: T }) => {
   const paragraphClassname = ''
 
@@ -93,11 +95,16 @@ export const Details = <T extends EquipmentItem>({ item }: { item: T }) => {
 
       {/* All items */}
       {!!item.details ? (
-        <p
-          data-testid='details--details'
-          className={paragraphClassname}
-          dangerouslySetInnerHTML={{ __html: item.details }}
-        />
+        <p data-testid='details--details' className={paragraphClassname}>
+          {/* The text may come from an imported inventory: never render it as
+              HTML. A line break is the only markup the catalog uses. */}
+          {item.details.split(LINE_BREAK).map((line, index) => (
+            <React.Fragment key={index}>
+              {index > 0 && <br />}
+              {line}
+            </React.Fragment>
+          ))}
+        </p>
       ) : null}
     </div>
   )
