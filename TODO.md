@@ -1,3 +1,4 @@
+- Next.js 16
 - use schema+validation for imports
 - version for the storage, handling the incompatibilities
 - export
@@ -12,10 +13,6 @@
   - факела...
 - Storage contract: define schema versioning and supported migrations, and test
   old exports. Imports are validated, but state restored from localStorage is not.
-- Repeated equipment-pack import: add the incoming quantity to an existing stack,
-  rather than incrementing it by one; cover packs containing quantities above one.
-- Test discovery/coverage: include `src/shared/helpers/__tests__/movement.ts` in
-  Jest discovery and review `collectCoverageFrom` so TSX/UI coverage is not omitted.
 - Managed wallet: apply affordability checks consistently to pack/custom-item
   purchase paths. An active wallet should not allow spending more than available.
   Define acquisition versus restoration semantics and campaign restrictions for
@@ -33,45 +30,11 @@
 
 ## Minor review findings
 
-- Wallet float noise: mixed-coin subtraction can leave values such as
-  `3.000000000000057` copper, visible in the Set coins form. Keep the wallet in
-  integer copper arithmetic while subtracting.
-  Source: [CurrencyConverter](src/shared/services/CurrencyConverter.ts).
-- Same-name stacks: removing a row decrements the first stack with that name,
-  not the clicked one, so a custom item can reduce another stack with a
-  different weight or cost. Source: [removeItem](src/state/helpers.ts).
-- Validate URL-hash UI state. An unknown `weather` or `terrain` value crashes the
-  page into the error boundary; a non-numeric or out-of-range tab ID shows no tab
-  content. Source: [getStateFromSearchString](src/shared/helpers/getStateFromSearchString.ts).
-- File import: `FileReader` errors are not handled, and selecting the same file
-  again does not fire `change`.
-  Sources: [ExportInventoryFragment](src/components/Inventory/ExportInventoryFragment/ExportInventoryFragment.tsx),
-  [getStateFromJson](src/shared/helpers/shareableUrl.ts).
-- Error boundary: its text is untranslated, and recovery means clearing site data
-  by hand. Offer a reset action in the app.
-  Source: [ErrorBoundary](src/components/ErrorBoundary.tsx).
-- Coin forms reject invalid values without showing a message.
-  Sources: [AddCoinsFragment](src/components/Inventory/AddCoinsFragment/AddCoinsFragment.tsx),
-  [SetCoinsFragment](src/components/Inventory/SetCoinsFragment/SetCoinsFragment.tsx).
-- Reset coins has no confirmation, unlike the other destructive inventory actions.
-  Source: [Wallet](src/components/Wallet/Wallet.tsx).
-- Every UI-state change adds a browser history entry because the hash is assigned
-  directly. Use `history.replaceState`.
-  Source: [updateHashState](src/shared/helpers/updateHashState.ts).
 - Pack prices ignore the firearms-campaign armor increase, so packs with armor are
   undervalued in that campaign. Source: [equipmentPack](src/shared/helpers/equipmentPack.ts).
 - Rules question: 26 or more regular items show Over Encumbered, but the item table
   stops adding points at 21 items, which gives Severely.
   Source: [EncumbranceService](src/shared/services/EncumbranceService.ts).
-- Middleware checks for a `default` locale that is not configured, so its redirect
-  and `NEXT_LOCALE` handling never run. Remove it or configure the locale.
-  Source: [middleware](middleware.ts).
-- The custom-item Weight label points at the category field instead of the weight
-  field. Source: [AddEquipmentItemFragment](src/components/Inventory/AddEquipmentItemFragment/AddEquipmentItemFragment.tsx).
-- Remove the unused `@vercel/speed-insights` dependency.
-  Source: [package.json](package.json).
-- Main CI uses `actions/checkout@v2` and an unfrozen `yarn install`.
-  Source: [main workflow](.github/workflows/main.yml).
 
 ## TODO/FIXME из исходников и тестов
 
@@ -88,9 +51,6 @@
   Источник: [InventoryState](src/state/InventoryState.ts).
 - Поддержать пользовательские предметы с заданным весом в наборах снаряжения.
   Источник: [getEquipmentPackItems](src/shared/helpers/equipmentPack.ts).
-- Проверить последовательные toast-сообщения и решить, нужно ли отменять
-  таймеры предыдущего сообщения при показе нового.
-  Источник: [Toast](src/components/Toast/Toast.tsx).
 - Проверить, можно ли удалить inline-стиль `display` у `ModalMessage`,
   дублирующий управление видимостью через CSS-классы.
   Источник: [Modal](src/components/Modal/Modal.tsx).
