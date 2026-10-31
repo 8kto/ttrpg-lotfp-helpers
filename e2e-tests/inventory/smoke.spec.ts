@@ -1,5 +1,7 @@
 import { expect, test } from '@playwright/test'
 
+import { openInventory } from '../shared/helpers'
+
 test.describe('Inventory Smoke Tests', () => {
   test('has title', async ({ page }) => {
     await page.goto('/en/inventory')
@@ -23,6 +25,25 @@ test.describe('Inventory Smoke Tests', () => {
       await page.goto('/en/inventory#activeEquipmentTabId=99')
 
       await expect(page.getByTestId('DataGrid__Table').first()).toBeVisible()
+    })
+
+    test('should show only the tabs and changed adjustments', async ({
+      page,
+    }) => {
+      await page.goto('/en/inventory')
+      await expect(page).toHaveURL(/#activeEquipmentTabId=0&activeTabId=0$/)
+
+      await openInventory(page)
+      await page.locator('#weather-adjustments').selectOption('Storm')
+
+      await expect(page).toHaveURL(/#.*weather=Storm/)
+      await expect(page).not.toHaveURL(/terrain=|version=/)
+    })
+
+    test('should restore adjustments from the URL', async ({ page }) => {
+      await page.goto('/en/inventory#terrain=Forest')
+
+      await expect(page.locator('#terrain-adjustments')).toHaveValue('Forest')
     })
 
     test('should not add history entries on UI changes', async ({ page }) => {

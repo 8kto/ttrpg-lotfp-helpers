@@ -42,8 +42,8 @@ the user confirms, and removes URL parameters by navigation. Compression is not 
 the snapshot itself, not an authorized server-side resource.
 
 UI context is a separate hash-based contract and is not included in the inventory
-export. Its version field is the application version, not a storage-schema
-version. [Hash parser](../src/shared/helpers/getStateFromSearchString.ts).
+export. Default terrain and weather are left out of the URL.
+[Hash parser](../src/shared/helpers/getStateFromSearchString.ts).
 
 No application API handlers, database, account, or authorization layer are present.
 Locale routing is Next.js built-in i18n routing. Vercel Analytics is mounted in the app wrapper. Production PWA

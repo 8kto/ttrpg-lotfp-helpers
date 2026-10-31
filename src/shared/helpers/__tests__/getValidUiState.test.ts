@@ -7,7 +7,6 @@ describe('getValidUiState', () => {
       activeEquipmentTabId: 4,
       activeTabId: 1,
       terrain: TerrainAdjustment.Forest,
-      version: '1.0.0',
       weather: WeatherAdjustment.Storm,
     }
 
@@ -23,8 +22,8 @@ describe('getValidUiState', () => {
     ['activeEquipmentTabId', 5],
     ['activeEquipmentTabId', 1.5],
   ])('drops an invalid %s (%s)', (key, value) => {
-    expect(getValidUiState({ [key]: value, version: '1.0.0' })).toEqual({
-      version: '1.0.0',
-    })
+    expect(getValidUiState({ activeTabId: 1, [key]: value })).toEqual(
+      key === 'activeTabId' ? {} : { activeTabId: 1 },
+    )
   })
 })

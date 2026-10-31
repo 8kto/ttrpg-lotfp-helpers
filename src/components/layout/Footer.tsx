@@ -1,18 +1,16 @@
 import { Trans } from '@lingui/macro'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 
 import NavigationLinks from '@/components/layout/NavigationLinks'
 import { PROJECT_URL } from '@/config/AppMetadata'
-import UiContext from '@/shared/context/uiContext'
 import isDevEnv from '@/shared/helpers/isDevEnv'
+
+import packageJson from '../../../package.json'
 
 const Footer = () => {
   const [viewportDebugHidden, setViewportDebugHidden] = useState(false)
-  const {
-    uiState: { version },
-  } = useContext(UiContext)
   const linkClassnames =
     'whitespace-nowrap underline-offset-4 hover:underline decoration-gray-400'
 
@@ -44,7 +42,7 @@ const Footer = () => {
                 className={linkClassnames}
                 target='_blank'
               >
-                <Trans>Princess Helpers</Trans> v{version}{' '}
+                <Trans>Princess Helpers</Trans> v{packageJson.version}{' '}
               </Link>
               <span className='ml-4'>&copy; 2023-2026 </span>
               <Link

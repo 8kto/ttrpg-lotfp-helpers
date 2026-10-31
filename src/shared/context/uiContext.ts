@@ -2,8 +2,6 @@ import { createContext } from 'react'
 
 import { TerrainAdjustment, WeatherAdjustment } from '@/domain/movement'
 
-import packageJson from '../../../package.json'
-
 export const INVENTORY_TABS_COUNT = 2
 export const EQUIPMENT_TABS_COUNT = 5
 
@@ -15,7 +13,6 @@ export type UiContextType = {
     activeEquipmentTabId: number
     terrain: TerrainAdjustment
     weather: WeatherAdjustment
-    version: string
   }
   updateUiState: (newState: Partial<UiContextType['uiState']>) => void
 }
@@ -25,7 +22,6 @@ export const defaultUiState: UiContextType = {
     activeEquipmentTabId: 0,
     activeTabId: 0,
     terrain: TerrainAdjustment.Road,
-    version: packageJson.version,
     weather: WeatherAdjustment.Regular,
   },
   updateUiState: () => defaultUiState,
