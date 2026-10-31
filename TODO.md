@@ -1,3 +1,4 @@
+- use schema+validation for imports
 - version for the storage, handling the incompatibilities
 - export
   - CSV
