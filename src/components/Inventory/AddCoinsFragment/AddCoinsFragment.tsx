@@ -3,8 +3,11 @@ import { XMarkIcon } from '@heroicons/react/24/solid'
 import { Trans } from '@lingui/macro'
 import { Field, Form, Formik } from 'formik'
 import React from 'react'
-import * as Yup from 'yup'
 
+import {
+  CoinErrorMessage,
+  coinsValidationSchema,
+} from '@/components/Inventory/coinFields'
 import { mergeWallets } from '@/state/InventoryState'
 
 const formInitialValues = {
@@ -34,11 +37,7 @@ const AddCoinsFragment = ({ onClose }: { onClose: () => void }) => {
   return (
     <Formik
       initialValues={formInitialValues}
-      validationSchema={Yup.object({
-        gold: Yup.number().min(0),
-        silver: Yup.number().min(0),
-        copper: Yup.number().min(0),
-      })}
+      validationSchema={coinsValidationSchema}
       onSubmit={(values, formikHelpers) => {
         handleAddCoins(values)
         formikHelpers.resetForm()
@@ -81,6 +80,7 @@ const AddCoinsFragment = ({ onClose }: { onClose: () => void }) => {
               min={0}
               id='coins--add-gold'
             />
+            <CoinErrorMessage name='gold' />
 
             {/* Silver */}
             <label
@@ -97,6 +97,7 @@ const AddCoinsFragment = ({ onClose }: { onClose: () => void }) => {
               min={0}
               id='coins--add-silver'
             />
+            <CoinErrorMessage name='silver' />
 
             {/* Copper */}
             <label
@@ -113,6 +114,7 @@ const AddCoinsFragment = ({ onClose }: { onClose: () => void }) => {
               min={0}
               id='coins--add-copper'
             />
+            <CoinErrorMessage name='copper' />
 
             <div className='bottom-0 left-0 flex w-full justify-center space-x-4 pb-4 md:absolute md:px-4'>
               <button
