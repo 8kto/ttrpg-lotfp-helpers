@@ -89,6 +89,10 @@ const withInitialState = (
     ...state,
   })
 
+export const clearStoredInventory = () => {
+  localStorage.removeItem(LOCALSTORAGE_APP_KEY)
+}
+
 export const fillMissingStateKeys = (storedState: string): string => {
   try {
     return JSON.stringify(withInitialState(JSON.parse(storedState)))
