@@ -43,9 +43,9 @@
 - Validate URL-hash UI state. An unknown `weather` or `terrain` value crashes the
   page into the error boundary; a non-numeric or out-of-range tab ID shows no tab
   content. Source: [getStateFromSearchString](src/shared/helpers/getStateFromSearchString.ts).
-- Import feedback: a failed file or link import only logs to the console.
-  `FileReader` errors are not handled, and selecting the same file again does not
-  fire `change`. Sources: [ExportInventoryFragment](src/components/Inventory/ExportInventoryFragment/ExportInventoryFragment.tsx),
+- File import: `FileReader` errors are not handled, and selecting the same file
+  again does not fire `change`.
+  Sources: [ExportInventoryFragment](src/components/Inventory/ExportInventoryFragment/ExportInventoryFragment.tsx),
   [getStateFromJson](src/shared/helpers/shareableUrl.ts).
 - Error boundary: its text is untranslated, and recovery means clearing site data
   by hand. Offer a reset action in the app.
