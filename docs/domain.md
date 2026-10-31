@@ -83,7 +83,7 @@ not a complete equipped-character AC calculation.
 
 The owner wants an active wallet to prevent spending more than available across
 purchase paths. Pack/custom-item paths do not yet consistently implement that
-intent. Storage versioning, repeated pack quantities, and this wallet gap are
+intent. Storage versioning and this wallet gap are
 tracked in [TODO](../TODO.md); do not describe them as fixed.
 
 Open question: two identical items bought for different prices currently share a

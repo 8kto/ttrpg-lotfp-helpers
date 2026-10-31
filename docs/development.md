@@ -46,9 +46,8 @@ so a build may need network access to retrieve fonts.
 
 CI definitions are canonical: [main](../.github/workflows/main.yml) and
 [Playwright](../.github/workflows/playwright.yml). Main CI checks types, lint,
-context, and Jest, but does not run production build or formatting. Existing test
-discovery/coverage gaps are tracked in [TODO](../TODO.md); an available test file
-or screenshot is not evidence of a passing run.
+context, and Jest, but does not run production build or formatting. An available
+test file or screenshot is not evidence of a passing run.
 
 ## Catalog and translation work
 

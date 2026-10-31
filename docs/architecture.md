@@ -46,8 +46,7 @@ export. Its version field is the application version, not a storage-schema
 version. [Hash parser](../src/shared/helpers/getStateFromSearchString.ts).
 
 No application API handlers, database, account, or authorization layer are present.
-[Middleware](../middleware.ts) handles locale routing; its `/api/` exclusion does
-not define an API. Vercel Analytics is mounted in the app wrapper. Production PWA
+Locale routing is Next.js built-in i18n routing. Vercel Analytics is mounted in the app wrapper. Production PWA
 registration/caching is configured by Next; generated workers are ignored by Git.
 
 ## Localization and import boundaries
