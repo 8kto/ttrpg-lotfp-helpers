@@ -1,6 +1,6 @@
 {
   "name": "ttrpg-lotfp-helpers",
-  "version": "0.4.8",
+  "version": "1.0.0",
   "license": "CC-BY-NC-4.0",
   "engines": {
     "node": ">=26"
