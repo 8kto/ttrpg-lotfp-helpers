@@ -25,12 +25,14 @@ if gh release view "$tag" >/dev/null 2>&1; then
     fail "release $tag already exists; bump the version first"
 fi
 
+# Before the HEAD check: a pushed tag can't be moved, so its release is settled
+if [ -n "$(git ls-remote origin "refs/tags/$tag")" ]; then
+    fail "tag $tag is already on origin, so its release workflow has run or is running; bump the version for a new release, or retry with: gh workflow run release.yml -f tag=$tag"
+fi
+
 head=$(git rev-parse HEAD)
 if git rev-parse -q --verify "refs/tags/$tag" >/dev/null; then
-    [ "$(git rev-parse "$tag^{commit}")" = "$head" ] || fail "tag $tag is not on HEAD; bump the version first"
-fi
-if [ -n "$(git ls-remote origin "refs/tags/$tag")" ]; then
-    fail "tag $tag is already pushed; to retry, run: gh workflow run release.yml -f tag=$tag"
+    [ "$(git rev-parse "$tag^{commit}")" = "$head" ] || fail "tag $tag is behind HEAD: there are commits after the bump; bump again, or move the tag with: git tag -f $tag"
 fi
 
 yarn weok
