@@ -40,6 +40,8 @@ const ExportInventoryFragment = ({ onClose }: { onClose: () => void }) => {
     event: React.ChangeEvent<HTMLInputElement>,
   ) => {
     const file = event.target.files?.[0]
+    // Otherwise choosing the same file again would not fire the change event
+    event.target.value = ''
 
     if (file) {
       try {
