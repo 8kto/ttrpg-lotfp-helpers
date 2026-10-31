@@ -232,6 +232,9 @@ msgstr "Бочка"
 msgid "Not enough funds in wallet"
 msgstr "Не хватает денег"
 
+msgid "This link does not contain a valid inventory."
+msgstr "В этой ссылке нет корректного инвентаря."
+
 msgid "Export or Import Inventory"
 msgstr "Экспорт или Импорт инвентаря"
 
@@ -322,6 +325,9 @@ msgstr "RU"
 
 msgid "Arrow (1)"
 msgstr "Стрела (1)"
+
+msgid "This file does not contain a valid inventory."
+msgstr "В этом файле нет корректного инвентаря."
 
 msgid "Candle"
 msgstr "Свеча"
@@ -843,6 +849,9 @@ msgstr "Файл"
 #. js-lingui-explicit-id
 msgid "details.shareableUrlSectionUrl"
 msgstr "Поделиться URL"
+
+msgid "Replace your current inventory with the shared one?"
+msgstr "Заменить текущий инвентарь инвентарём из ссылки?"
 
 msgid "Spikes are useful for spiking doors closed (or spiking them open) and may be used as crude pitons in appropriate situations."
 msgstr "Шипы полезны для блокировки дверей и могут использоваться как грубые крюки в подходящих ситуациях."
