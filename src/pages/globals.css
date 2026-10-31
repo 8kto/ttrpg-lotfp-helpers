@@ -21,7 +21,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-cursive);
+  font-family: var(--font-cursive), var(--font-regular);
 }
 
 /** IMPORTANT: prefix all custom css classes with ph- suffix **/
@@ -93,7 +93,7 @@ details.ph-details-bullet[open] .ph-custom-indicator {
 /*---- /LISTS ----*/
 
 .ph-font-cursive {
-  font-family: var(--font-cursive);
+  font-family: var(--font-cursive), var(--font-regular);
 }
 
 .ph-dashed-text {

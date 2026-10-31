@@ -8,6 +8,9 @@ export const regularFont = Regular({
 })
 
 export const cursiveFont = Cursive({
+  // Philosopher lacks ě, ř, č, ů. Disable the generated fallback, it would cover
+  // these glyphs with a system font instead of Bitter set in globals.css.
+  adjustFontFallback: false,
   subsets: ['latin'],
   variable: '--font-cursive',
   weight: '400',
