@@ -21,7 +21,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-cursive), var(--font-regular);
+  font-family: var(--font-cursive);
 }
 
 /** IMPORTANT: prefix all custom css classes with ph- suffix **/
