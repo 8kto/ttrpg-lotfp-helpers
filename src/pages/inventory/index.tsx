@@ -9,14 +9,12 @@ import InventoryList from '@/components/Inventory/InventoryList'
 import InventoryPageTabs from '@/components/InventoryPageTabs'
 import HeadMetadata from '@/components/layout/HeadMetadata'
 import Toast from '@/components/Toast/Toast'
-import { decompressDataFromUrl } from '@/shared/helpers/compressDataForUrl'
+import { importSharedInventory } from '@/shared/helpers/importSharedInventory'
 import {
   getImportUrlParameter,
   resetUrlParams,
 } from '@/shared/helpers/shareableUrl'
 import useTailwindBreakpoint from '@/shared/hooks/useTailwindBreakpoint'
-import type { InventoryStateType } from '@/state/InventoryState'
-import { setState } from '@/state/InventoryState'
 import { loadCatalog } from '@/translations/utils'
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
@@ -38,12 +36,7 @@ export default function InventoryPage() {
     const importUrlParameter = getImportUrlParameter()
 
     if (importUrlParameter) {
-      const state =
-        decompressDataFromUrl<InventoryStateType>(importUrlParameter)
-      if (state) {
-        setState(state)
-      }
-
+      importSharedInventory(importUrlParameter)
       resetUrlParams()
     }
   }, [])
