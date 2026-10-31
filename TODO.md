@@ -21,6 +21,9 @@
   purchase paths. An active wallet should not allow spending more than available.
   Define acquisition versus restoration semantics and campaign restrictions for
   imports/custom items before implementing them.
+- Mixed-price stacks: decide how to value identical items bought at different
+  prices, which currently keep the first unit cost. See the open question in
+  [domain](docs/domain.md).
 - Restore deployment scripts and document the Vercel integration, preview URLs,
   and production promotion. Owner confirms every GitHub push of a commit deploys
   to a temporary Vercel URL; the original scripts are lost.
