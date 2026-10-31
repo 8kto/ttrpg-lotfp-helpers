@@ -4,6 +4,9 @@ import { TerrainAdjustment, WeatherAdjustment } from '@/domain/movement'
 
 import packageJson from '../../../package.json'
 
+export const INVENTORY_TABS_COUNT = 2
+export const EQUIPMENT_TABS_COUNT = 5
+
 export type UiContextType = {
   uiState: {
     // Tabs: Inventory, Equipment ...
