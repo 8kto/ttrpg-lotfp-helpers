@@ -110,7 +110,9 @@ export const removeItem = <T extends EquipmentItem>(
   items: State<readonly InventoryItem<T>[]>,
   item: InventoryItem<T>,
 ) => {
-  const existingItemIndex = findItemIndex(items, item)
+  const existingItemIndex = items.findIndex(
+    (i) => (i.get() as InventoryItem<T>).inventoryId === item.inventoryId,
+  )
 
   if (
     existingItemIndex !== -1 &&
