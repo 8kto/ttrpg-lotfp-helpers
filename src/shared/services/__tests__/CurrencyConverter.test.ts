@@ -732,4 +732,15 @@ describe('CurrencyConverter', () => {
       ).toEqual(CurrencyConverter.getWalletValue(expected, CurrencyType.Copper))
     })
   })
+
+  it('does not leave float noise after a mixed subtraction', () => {
+    const wallet = { Copper: 20, Gold: 2, Silver: 23 }
+
+    expect(
+      CurrencyConverter.subtract(
+        { currency: CurrencyType.Copper, value: 797 },
+        wallet,
+      ),
+    ).toEqual({ Copper: 3, Gold: 0, Silver: 45 })
+  })
 })

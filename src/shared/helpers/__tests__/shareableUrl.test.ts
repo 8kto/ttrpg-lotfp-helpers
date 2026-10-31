@@ -30,6 +30,23 @@ describe('shareable URL helpers', () => {
     windowSpy.mockRestore()
   })
 
+  describe('getStateFromJson read errors', () => {
+    it('should reject when the file cannot be read', async () => {
+      const readSpy = jest
+        .spyOn(FileReader.prototype, 'readAsText')
+        .mockImplementation(function (this: FileReader) {
+          this.onerror?.(
+            new ProgressEvent('error') as ProgressEvent<FileReader>,
+          )
+        })
+
+      await expect(getStateFromJson(new File([''], 'a.json'))).rejects.toThrow(
+        'Cannot read file',
+      )
+      readSpy.mockRestore()
+    })
+  })
+
   describe('getImportUrlParameter', () => {
     it('should return null when there is no import parameter', () => {
       Object.defineProperty(globalThis, 'window', {

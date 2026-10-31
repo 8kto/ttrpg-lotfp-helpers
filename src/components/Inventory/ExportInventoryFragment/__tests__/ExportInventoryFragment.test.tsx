@@ -52,6 +52,26 @@ describe('ExportInventoryFragment', () => {
     expect(InventoryState.wallet.get()).toEqual(stateMock.wallet)
   })
 
+  it('allows choosing the same file again', async () => {
+    const onClose = jest.fn()
+    const { container } = render(
+      <I18nProvider i18n={i18n}>
+        <ExportInventoryFragment onClose={onClose} />
+      </I18nProvider>,
+    )
+    const input = container.querySelector('input[type=file]')!
+    const setValue = jest.fn()
+    Object.defineProperty(input, 'value', { set: setValue })
+
+    fireEvent.change(input, {
+      target: { files: [new File(['{}'], 'export.json')] },
+    })
+
+    expect(setValue).toHaveBeenCalledWith('')
+    // The import must finish here, it would change the state of the next test
+    await waitFor(() => expect(onClose).toHaveBeenCalled())
+  })
+
   it('keeps the inventory and shows an error for a malformed file', async () => {
     jest.spyOn(console, 'error').mockImplementation(() => undefined)
     const onToast = jest.fn()

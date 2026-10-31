@@ -63,6 +63,18 @@ describe('AddEquipmentItemFragment', () => {
     expect(await submitItemCosting(container, '10')).toBe(100)
   })
 
+  it('should label the weight field', () => {
+    const { container, getByLabelText } = render(
+      <I18nProvider i18n={i18n}>
+        <AddEquipmentItemFragment onClose={jest.fn()} />
+      </I18nProvider>,
+    )
+
+    expect(getByLabelText('Weight')).toBe(
+      container.querySelector('#add-equip-item--points'),
+    )
+  })
+
   it('should allow switching back to copper', async () => {
     const container = renderForm()
 

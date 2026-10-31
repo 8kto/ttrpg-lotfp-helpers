@@ -127,6 +127,35 @@ describe('Inventory helpers', () => {
     })
   })
 
+  describe('removeItem with same-name stacks', () => {
+    it('changes only the stack that was clicked', () => {
+      const clicked = { ...miscEquipItem1, inventoryId: 'clicked', qty: 1 }
+      const other = { ...miscEquipItem1, inventoryId: 'other', qty: 3 }
+      const mockEquipmentState = createStateMock({
+        miscEquipment: [other, clicked],
+      } as unknown as InventoryStateType)
+
+      removeItem(mockEquipmentState.miscEquipment, clicked)
+
+      expect(mockEquipmentState.miscEquipment.get()).toEqual([other])
+    })
+
+    it('decrements the stack that was clicked', () => {
+      const clicked = { ...miscEquipItem1, inventoryId: 'clicked', qty: 2 }
+      const other = { ...miscEquipItem1, inventoryId: 'other', qty: 3 }
+      const mockEquipmentState = createStateMock({
+        miscEquipment: [other, clicked],
+      } as unknown as InventoryStateType)
+
+      removeItem(mockEquipmentState.miscEquipment, clicked)
+
+      expect(mockEquipmentState.miscEquipment.get()).toEqual([
+        other,
+        { ...clicked, qty: 1 },
+      ])
+    })
+  })
+
   describe('addItem', () => {
     it('adds new item if it does not exist', () => {
       const mockEmptyEquipmentState = createStateMock({
@@ -152,6 +181,21 @@ describe('Inventory helpers', () => {
       expect(mockEmptyEquipmentState.miscEquipment.get()).toEqual([
         { ...miscEquipItem1, qty: 2 },
         miscEquipItem2,
+      ])
+    })
+
+    it('adds the whole incoming quantity to an existing stack', () => {
+      const mockEquipmentState = createStateMock({
+        miscEquipment: [miscEquipItem1],
+      } as unknown as InventoryStateType)
+
+      addItem(mockEquipmentState.miscEquipment, {
+        ...miscEquipItem1,
+        inventoryId: '10',
+        qty: 3,
+      })
+      expect(mockEquipmentState.miscEquipment.get()).toEqual([
+        { ...miscEquipItem1, qty: 4 },
       ])
     })
 
