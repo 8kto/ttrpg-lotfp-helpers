@@ -33,6 +33,8 @@ packages brought in by test tools.
 server startup, retries, and artifacts. Install its browsers with
 `yarn playwright install --with-deps` when the environment needs them. Screenshot
 baselines are platform-specific; do not regenerate them merely to silence a failure.
+Czech locale snapshots run locally only; [test locales](../e2e-tests/shared/consts.ts)
+exclude them on CI.
 
 Production offline verification must load the application online, allow the
 service worker to activate, then exercise reload and inventory operations offline.
