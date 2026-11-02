@@ -17,6 +17,7 @@ const linguiConfig = require('./lingui.config')
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  devIndicators: false,
   experimental: {
     swcPlugins: [['@lingui/swc-plugin', {}]],
     forceSwcTransforms: true,
