@@ -19,6 +19,7 @@
     "ecmaVersion": 2020
   },
   "settings": {
+    "import/ignore": ["@lingui/macro"],
     "import/resolver": {
       "typescript": {}
     }

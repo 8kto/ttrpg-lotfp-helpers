@@ -1,3 +1,8 @@
+import { i18n } from '@lingui/core'
+
+// Catalogs call t() when read, which throws without an active locale
+i18n.loadAndActivate({ locale: 'en', messages: {} })
+
 // Custom matcher for number or null
 expect.extend({
   toBeNullOrTypeOf(received, argument) {
