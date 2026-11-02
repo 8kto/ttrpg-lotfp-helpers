@@ -31,7 +31,8 @@ const formInitialValues: ImportEquipmentPackProps = {
  * fresh and relevant each time the drawer is reopened.
  */
 const ImportEquipmentPackFragment = ({ onClose }: { onClose: () => void }) => {
-  const { _: trans } = useLingui()
+  // Re-render on a locale change, the pack names are translated by their getters
+  useLingui()
   const [selectedPack, setSelectedPack] = useState<EquipmentPack>(
     EquipmentPacks.Basic,
   )
@@ -133,7 +134,7 @@ const ImportEquipmentPackFragment = ({ onClose }: { onClose: () => void }) => {
                   {Object.entries(EquipmentPacks).map(([key, pack]) => {
                     return (
                       <option key={key} value={key}>
-                        {trans(pack.name)}
+                        {pack.name}
                       </option>
                     )
                   })}

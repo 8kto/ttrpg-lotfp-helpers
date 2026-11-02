@@ -59,3 +59,17 @@ test.describe('Inventory Smoke Tests', () => {
     })
   })
 })
+
+test('404 page is translated', async ({ page }) => {
+  await page.goto('/ru/no-such-page')
+
+  await expect(
+    page.getByRole('link', { name: 'Дисклеймер' }).first(),
+  ).toBeVisible()
+})
+
+test('renders the layout once', async ({ page }) => {
+  await page.goto('/en/inventory')
+
+  await expect(page.getByRole('contentinfo')).toHaveCount(1)
+})
