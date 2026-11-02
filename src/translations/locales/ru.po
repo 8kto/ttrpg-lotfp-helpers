@@ -13,27 +13,6 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-msgid "Writing ink: Stored in a small ceramic jar or tin and sufficient for 50 pages of normal writing. Required for mapping."
-msgstr "Писчие чернила: Хранятся в небольшой керамической баночке или жестяной коробке, достаточно для 50 страниц обычного письма. Обязательны для рисования карт."
-
-msgid "Coins"
-msgstr "Монеты"
-
-msgid "config.misc.airBladder.details"
-msgstr "Кожаный мешочек с трубкой для рта; дополнительный глоток воздуха для подводного плавания.<br />Может использоваться и как вспомогательное плавательное средство."
-
-msgid "Let's fix them."
-msgstr "Давайте это исправим."
-
-msgid "config.melee.mancatcher.details"
-msgstr "При успешном попадании жертва должна сделать спасбросок от Паралича. В случае провала, жертва считается беспомощной, как и владелец мэнкэтчера, пока цель удерживается. Двуручное."
-
-msgid "Clothing, Poor"
-msgstr "Одежда, простая"
-
-msgid "Weapon, Medium"
-msgstr "Среднее оружие"
-
 msgid "Middle, -2 AB"
 msgstr "Средняя, -2 AB"
 
@@ -48,6 +27,27 @@ msgstr "Большой топор"
 
 msgid "Fighter 3"
 msgstr "Воин 3"
+
+msgid "Writing ink: Stored in a small ceramic jar or tin and sufficient for 50 pages of normal writing. Required for mapping."
+msgstr "Писчие чернила: Хранятся в небольшой керамической баночке или жестяной коробке, достаточно для 50 страниц обычного письма. Обязательны для рисования карт."
+
+msgid "Coins"
+msgstr "Монеты"
+
+msgid "config.misc.airBladder.details"
+msgstr "Кожаный мешочек с трубкой для рта; дополнительный глоток воздуха для подводного плавания.<br />Может использоваться и как вспомогательное плавательное средство."
+
+msgid "config.melee.mancatcher.details"
+msgstr "При успешном попадании жертва должна сделать спасбросок от Паралича. В случае провала, жертва считается беспомощной, как и владелец мэнкэтчера, пока цель удерживается. Двуручное."
+
+msgid "Let's fix them."
+msgstr "Давайте это исправим."
+
+msgid "Clothing, Poor"
+msgstr "Одежда, простая"
+
+msgid "Weapon, Medium"
+msgstr "Среднее оружие"
 
 msgid "Leather"
 msgstr "Кожаная броня"
@@ -64,23 +64,17 @@ msgstr "Пайки, железные/День"
 msgid "Long, -4 AB"
 msgstr "Дальняя, -4 AB"
 
-msgid "Nails"
-msgstr "Гвозди"
-
 msgid "Pipe"
 msgstr "Трубка"
+
+msgid "Nails"
+msgstr "Гвозди"
 
 msgid "This one handed weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 msgstr "Штраф -2 AB на атаку противников с AC 15 или выше."
 
 msgid "{dry} in 10 in any weather"
 msgstr "{dry} из 10 при любой погоде"
-
-msgid "This weapon is ineffective against targets with unadjusted AC 14 or better, but allows mêlée attacks on opponents up to 10 ft away."
-msgstr "Это оружие неэффективно против целей с немодифицированным AC 14 и выше, но позволяет атаковать на расстоянии до 10 футов."
-
-msgid "Powder Horn"
-msgstr "Пороховой рожок"
 
 msgid "Flask of Lamp Oil"
 msgstr "Фляга с маслом для ламп"
@@ -98,35 +92,41 @@ msgstr ""
 msgid "Saddlebag"
 msgstr "Седельная сумка"
 
+msgid "This weapon is ineffective against targets with unadjusted AC 14 or better, but allows mêlée attacks on opponents up to 10 ft away."
+msgstr "Это оружие неэффективно против целей с немодифицированным AC 14 и выше, но позволяет атаковать на расстоянии до 10 футов."
+
 msgid "Using a crowbar adds a +1 bonus to the Open Doors roll chances."
 msgstr "Использование ломика добавляет бонус в +1 для броска на Открытие Дверей"
+
+msgid "Powder Horn"
+msgstr "Пороховой рожок"
 
 msgid "Holy Symbol, Steel"
 msgstr "Священный символ, стальной"
 
-msgid "Fighter 1"
-msgstr "Воин 1"
-
-msgid "Dexterity to-hit modifiers do not apply at Medium and Long range."
-msgstr "Модификатор Ловкости к попаданию не применяется на Средней и Дальней дистанции."
-
-msgid "Year"
-msgstr "Год"
-
-msgid "Damage"
-msgstr "Урон"
-
 msgid "config.firearms.powderHorn.details"
 msgstr "Вмещает 50 зарядов пороха. Если владельца поразила огненная атака, он делает Спасбросок Дыхания или получает 1d3 урона за каждые 10 оставшихся в рожке зарядов (с округлением вверх)."
+
+msgid "Fighter 1"
+msgstr "Воин 1"
 
 msgid "10 rounds (8 for Fighters) + Encumbrance (now {encumbrance}) – Dexterity modifier"
 msgstr "10 раундов (8 для Воинов) + нагрузка (сейчас {encumbrance}) – модификатор Ловкости"
 
+msgid "Dexterity to-hit modifiers do not apply at Medium and Long range."
+msgstr "Модификатор Ловкости к попаданию не применяется на Средней и Дальней дистанции."
+
 msgid "Tent, Regular"
 msgstr "Палатка, обычная"
 
+msgid "Year"
+msgstr "Год"
+
 msgid "Map, Local"
 msgstr "Карта, локальная"
+
+msgid "Damage"
+msgstr "Урон"
 
 msgid "City"
 msgstr "Город"
@@ -149,14 +149,14 @@ msgstr "Священный символ, деревянный"
 msgid "Silver pieces"
 msgstr "Серебряные монеты"
 
+msgid "Spikes for your boots – better success at climbing and keeping balance on ice"
+msgstr "Шипы для ботинок - помогают при лазании и сохранении равновесия на льду"
+
 msgid "config.firearms.powderBarrel.details"
 msgstr "2500 зарядов пороха. Считается четырьмя негабаритными предметами. Взрыв бочки наносит 5d8 урона всем в пределах 30' (Спасбросок Дыхания — половина)."
 
 msgid "Try again?"
 msgstr "Попробовать ещё раз?"
-
-msgid "Spikes for your boots – better success at climbing and keeping balance on ice"
-msgstr "Шипы для ботинок - помогают при лазании и сохранении равновесия на льду"
 
 msgid "Bow, Short"
 msgstr "Короткий лук"
@@ -167,12 +167,6 @@ msgstr "Броня пикинера"
 msgid "Copper"
 msgstr "Медные"
 
-msgid "Mêlée"
-msgstr "Ближний бой"
-
-msgid "Name"
-msgstr "Название"
-
 msgid "Range"
 msgstr "Дальность"
 
@@ -182,8 +176,11 @@ msgstr "Кандалы"
 msgid "Reset all coins?"
 msgstr "Сбросить все монеты?"
 
-msgid "Mirror, Glass"
-msgstr "Зеркало, стеклянное"
+msgid "Mêlée"
+msgstr "Ближний бой"
+
+msgid "Name"
+msgstr "Название"
 
 msgid "Hand axe"
 msgstr "Ручной топор"
@@ -194,20 +191,23 @@ msgstr "Булава"
 msgid "Fire Bomb"
 msgstr "Огненная бомба"
 
+msgid "Mirror, Glass"
+msgstr "Зеркало, стеклянное"
+
 msgid "Riding Gear"
 msgstr "Снаряжение для верховой езды"
 
 msgid "Emits light in a 30' radius. Burns for 4 hours. Uses flasks of oil as fuel."
 msgstr "Даёт освещение в радиусе 30 футов. Горит 4 часа. Использует фляги с маслом как топливо."
 
-msgid "Book, Spell (Blank)"
-msgstr "Книга заклинаний (пустая)"
-
 msgid "Required field"
 msgstr "Обязательное поле"
 
 msgid "Scroll Case"
 msgstr "Футляр для свитков"
+
+msgid "Book, Spell (Blank)"
+msgstr "Книга заклинаний (пустая)"
 
 msgid "Turn on the firearms campaign to add these items"
 msgstr "Включите кампанию с огнестрелом, чтобы добавлять эти предметы"
@@ -235,8 +235,16 @@ msgstr ""
 "вина. Стандартный мешок для воды вмещает\n"
 "одну кварту жидкости, что является минимальным количеством для обычного персонажа за один день."
 
+#. placeholder {0}: 1250
+#. placeholder {1}: 2
+msgid "* Exchange and sort coins, e.g., turn <0>{0} cp</0> into <1>{1} gp 25 sp</1>."
+msgstr "* Конвертировать и сортировать по монетам. Например, разменять <0>{0} cp</0> на <1>{1} gp 25 sp</1>."
+
 msgid "Barrel"
 msgstr "Бочка"
+
+msgid "Quiver"
+msgstr "Колчан"
 
 msgid "Not enough funds in wallet"
 msgstr "Не хватает денег"
@@ -247,8 +255,11 @@ msgstr "В этой ссылке нет корректного инвентар�
 msgid "Export or Import Inventory"
 msgstr "Экспорт или Импорт инвентаря"
 
-msgid "optional"
-msgstr "необязательно"
+msgid "Arquebus is a handheld long gun which does not require a fork rest in order to fire properly. Can be used as a mêlée weapon (d6 damage)."
+msgstr "Аркебуза — ручное длинное ружьё, которому для стрельбы не нужна вилочная подпорка. Можно использовать как рукопашное оружие (урон d6)."
+
+msgid "Medium"
+msgstr "Средняя"
 
 msgid "Darts for blowgun, quiver (20)"
 msgstr "Дротики для духовой трубки, колчан (20)"
@@ -259,9 +270,23 @@ msgstr "Налядвенники"
 msgid "Rural"
 msgstr "Деревня"
 
+msgid "CZ"
+msgstr "CZ"
+
 #. js-lingui-explicit-id
 msgid "Armor"
 msgstr "Броня"
+
+#. js-lingui-explicit-id
+msgid "armor.baseAc"
+msgstr "Персонажи без доспехов имеют базовый AC 12."
+
+#. js-lingui-explicit-id
+msgid "armor.unadjustedAc"
+msgstr "Немодифицированный Класс Доспеха (Unadjusted AC) — это только броня и щит. Модификаторы ловкости, магические модификаторы или любые другие не учитываются."
+
+msgid "Book, Blank"
+msgstr "Книга, пустая"
 
 msgid ""
 "A Tinderbox is generally purchased with a flint and steel;\n"
@@ -272,14 +297,32 @@ msgstr "Трутница, как правило, приобретается вм
 msgid "A rock for throwing, not an ammunition"
 msgstr "Камень для метания, не боеприпас"
 
+msgid "optional"
+msgstr "необязательно"
+
+msgid "Import Equipment set"
+msgstr "Импорт набора снаряжения"
+
 msgid "Clothing, Extravagant"
 msgstr "Одежда, роскошная"
 
 msgid "Sling bullets (10)"
 msgstr "Снаряды для пращи (10)"
 
+msgid "Encumbrance"
+msgstr "Нагрузка"
+
+msgid "Silver"
+msgstr "Серебряные"
+
 msgid "Magic-Users and Elves start with spellbooks containing their initial spells."
 msgstr "Маги и Эльфы начинают игру с книгой заклинаний, содержащей их стартовые заклинания."
+
+msgid "ignores 5 points of armor at Short range"
+msgstr "игнорирует 5 пунктов брони на Короткой дистанции"
+
+msgid "Add equipment item"
+msgstr "Добавить предмет"
 
 msgid "Drill"
 msgstr "Дрель"
@@ -290,17 +333,17 @@ msgstr "Это оружие имеет штраф –2 AB для противн�
 msgid "Mêlée damage"
 msgstr "Урон в рукопашном бою"
 
-msgid "Packs"
-msgstr "Наборы"
-
-msgid "Silver"
-msgstr "Серебряные"
-
 msgid "Rifled"
 msgstr "Нарезной"
 
+msgid "Receives charge"
+msgstr "Встречает рывок"
+
 msgid "Bag of 100 round shot."
 msgstr "Мешок со 100 пулями."
+
+msgid "Packs"
+msgstr "Наборы"
 
 msgid "These are small one-handed weapons including daggers and clubs, and suffer a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 msgstr "Это небольшое одноручное оружие, включая кинжалы и булавы, даёт штраф -2 AB для противников с AC 15 или выше."
@@ -311,533 +354,35 @@ msgstr "Осечка"
 msgid "Weapon, Minor"
 msgstr "Мелкое оружие"
 
-msgid "Encumbrance calculator, inventory manager for the LotFP TTRPG system"
-msgstr "Калькулятор нагрузки, инвентарь для LotFP"
-
-msgid "Slings fired with stones instead of bullets have half the listed range."
-msgstr "Пращи, стреляющие камнями вместо пуль, имеют половину указанной дальности"
-
 msgid "Crowbar"
 msgstr "Ломик"
-
-msgid "Export as a file"
-msgstr "Сохранить как файл"
-
-msgid "Mirrors are useful for many reasons; for instance, they can be used for looking around corners or for sending signals outdoors using reflected sunlight."
-msgstr "Зеркала полезны по многим причинам; например, их можно использовать для подглядывания из-за угла или для отправки сигналов с помощью отраженных лучей света"
-
-msgid "An aromatic herb that repels vampires and some other undead monsters."
-msgstr "Ароматное растение, что отпугивает вампиров и некоторую другую нежить."
-
-msgid "RU"
-msgstr "RU"
-
-msgid "Arrow (1)"
-msgstr "Стрела (1)"
-
-msgid "Bad things happened"
-msgstr "Случилось что-то плохое"
-
-msgid "This file does not contain a valid inventory."
-msgstr "В этом файле нет корректного инвентаря."
-
-msgid "Candle"
-msgstr "Свеча"
-
-msgid "Waterskin"
-msgstr "Бурдюк"
-
-msgid "Per day"
-msgstr "В день"
-
-msgid "Reset all equipment?"
-msgstr "Сбросить всё снаряжение?"
-
-msgid "Ammunition and gear"
-msgstr "Боеприпасы и снаряжение"
-
-msgid "None"
-msgstr "Нет"
-
-msgid "The Equipment tab list is scrollable."
-msgstr "Список табов прокручивается."
-
-msgid "×1.5 for rifled barrel (round to the nearest)"
-msgstr "×1,5 за нарезной ствол"
-
-msgid "Active"
-msgstr "Активный"
-
-msgid "Second rank"
-msgstr "Второй ряд"
-
-msgid "Tent, Personal"
-msgstr "Палатка, одиночная"
-
-msgid "Pistol"
-msgstr "Пистоль"
-
-msgid "Gold"
-msgstr "Золотые"
-
-#. js-lingui-explicit-id
-msgid "Firearm mechanism"
-msgstr "Спусковой механизм"
-
-#. js-lingui-explicit-id
-msgid "Firearms"
-msgstr "Огнестрельное оружие"
-
-#. js-lingui-explicit-id
-msgid "Flintlock"
-msgstr "Кремнёвый замок"
-
-msgid ""
-"Chalk is useful for “blazing a trail” through a dungeon or\n"
-"ruin, to ensure that the adventurers can find their way\n"
-"back out again"
-msgstr "Мел может быть использован для меток, чтобы отмечать путь"
-
-msgid "12 Apostles"
-msgstr "12 Апостолов"
-
-msgid "Filter by name"
-msgstr "Фильтр по названию"
-
-msgid "Wolvesbane"
-msgstr "Аконит (Wolvesbane)"
-
-msgid "Firearms"
-msgstr "Огнестрельное оружие"
-
-msgid "Fishing Gear"
-msgstr "Рыболовные снасти"
-
-msgid "on foot: + CON mod"
-msgstr "пешком: + модификатор CON"
-
-msgid "Unencumbered"
-msgstr "Не нагружен"
-
-msgid "Bedroll"
-msgstr "Спальный мешок"
-
-msgctxt "equipment tab"
-msgid "Firearms"
-msgstr "Огнестрельное"
-
-msgid "Include the extended encumbrance ability."
-msgstr "Включить расширенную нагрузку"
-
-msgid "config.missile.blowgun.details"
-msgstr "Длинные полые трубки из металла или дерева, используют силу лёгких владельца для стрельбы небольшими дротиками (или, возможно, другими снарядами). Обычно имеет длину около 4 футов, но нередко бывают и до 7 футов."
-
-msgid "Whistle"
-msgstr "Свисток"
-
-msgid "These are one-handed weapons, including swords, battle axes, maces"
-msgstr "Одноручное оружие, включая мечи, боевые топоры, булавы."
-
-msgid "Lock"
-msgstr "Замок"
-
-msgid "title.encumbranceUnits"
-msgstr "Encumbrance Units"
-
-msgid "Item"
-msgstr "Предмет"
-
-msgid "Reload"
-msgstr "Перезарядка"
-
-msgid "Holy Symbol, Silver"
-msgstr "Священный символ, серебряный"
-
-msgid "Polearm"
-msgstr "Древковое оружие"
-
-msgid "Enable the weight of coins for encumbrance calculations."
-msgstr "Учитывать вес монет для нагрузки."
-
-msgid "Cost"
-msgstr "Цена"
-
-msgid "Dungeon"
-msgstr "Подземелье"
-
-msgid "Clear, plains, trail"
-msgstr "Равнины, тропы"
-
-msgid "Equipment pack"
-msgstr "Набор снаряжения"
-
-msgid "EN"
-msgstr "EN"
-
-msgid "Set coins"
-msgstr "Монеты"
-
-msgid "Reset coins"
-msgstr "Сбросить монеты"
-
-msgid "Book, Reading"
-msgstr "Книга, для чтения"
-
-msgid "Aconite, also known as wolvesbane (wolfsbane) is sold dried or fresh in single sprigs. This herb is used to drive off lycanthropes, who cannot stand it."
-msgstr "Аконит, также известный как волчий корень или волкобой, продаётся сушёным или свежим, отдельными веточками. Используется для отпугивания оборотней."
-
-msgid "Add coins"
-msgstr "Добавить монет"
-
-msgid "Ladder, 10'"
-msgstr "Лестница, 10 футов"
-
-msgid "Cord burns 10 cm per turn."
-msgstr "Шнур горит 10 см за ход."
-
-msgid "Category"
-msgstr "Категория"
-
-msgid "×½ for flintlock (Fighters round down, others round up)"
-msgstr "×½ за кремнёвый замок (Воины округляют вниз, остальные — вверх)"
-
-msgid "Oversized"
-msgstr "Негабаритный"
-
-msgid "Specialist’s Tools"
-msgstr "Инструменты специалиста"
-
-msgid "Princess Helpers"
-msgstr "Princess Helpers"
-
-msgid "Cleric 2"
-msgstr "Жрец 2"
-
-msgid "Heavy crossbows can only be fired once in 3 rounds and ignore 4 AC points"
-msgstr "Тяжёлый арбалет стреляет только один раз за 3 раунда и игнорирует 4 AC."
-
-msgid "config.misc.caltrop.details"
-msgstr "Ежи (caltrop) — это металлические шипы, которые выглядят как распорки, у которых один острый конец всегда направлен вверх."
-
-msgid "Use of this weapon requires an attack from surprise, or a successful grapple. If a hit is scored, the target is considered grappled and will take 1d6 damage per round."
-msgstr "Требует неожиданной атаки или успешного захвата. Если атака успешная, цель считается захваченной и получает 1d6 урона за раунд."
-
-msgid "Chest"
-msgstr "Сундук"
-
-msgid "Pseudo"
-msgstr "Псевдо"
-
-msgid "Missiles"
-msgstr "Дальнобойное"
-
-msgid "Bottle of Wine/Liquor, Poor"
-msgstr "Бутылка вина/ликёра, простая"
-
-msgid "Vial or Bottle"
-msgstr "Флакон или Бутылка"
-
-msgid "Club"
-msgstr "Дубина"
-
-#. js-lingui-explicit-id
-msgid "Matchlock"
-msgstr "Фитильный замок"
-
-msgid "Heavy"
-msgstr "Тяжёлый"
-
-#. js-lingui-explicit-id
-msgid "Miscellaneous"
-msgstr "Разное"
-
-#. js-lingui-explicit-id
-msgid "Missile weapons"
-msgstr "Дальнобойное оружие"
-
-msgid "Firearms campaign: the cost of armor and shields is raised by 50%."
-msgstr "Кампания с огнестрелом: цена брони и щитов увеличена на 50%."
-
-#. js-lingui-explicit-id
-msgid "Mêlée weapons"
-msgstr "Рукопашное оружие"
-
-msgid ""
-"A hammer or mallet with a head made of\n"
-"treated wood, plant resins, or other materials. The head of\n"
-"this hammer makes very little sound when striking things\n"
-"(such as a stake, nail, or head). This does not keep what\n"
-"is being hit from making noise – a glass window will still\n"
-"make noise when it shatters."
-msgstr ""
-"Киянка или молоток с головкой из обработанного дерева, растительных смол или других материалов. Киянка издает очень мало звука при ударе по вещам. Это не предотвращает шума от того,\n"
-"что бьётся - стеклянное окно все равно будет звенеть, когда разобьётся."
-
-msgid "Dagger"
-msgstr "Кинжал"
-
-msgid "Two-handed sword"
-msgstr "Двуручный меч"
-
-msgid "Forest, desert, hills"
-msgstr "Леса, пустыни, холмы"
-
-msgid "Add item"
-msgstr "Добавить предмет"
-
-msgid "Set"
-msgstr "Установить"
-
-msgid "title.encumbrancePoints"
-msgstr "Encumbrance Points"
-
-msgid "config.firearms.secreteHelm.details"
-msgstr "Скрытный стальной шлем-купол, который незаметно носят под шляпой. Не учитывается в нагрузке."
-
-msgid "Armor Class"
-msgstr "Класс Брони"
-
-msgid "Reset"
-msgstr "Сброс"
-
-msgid "Firearms rules are optional. Turn on the firearms campaign above to add firearms, gear and armor to the inventory."
-msgstr "Правила по огнестрелу опциональны. Включите «Кампанию с огнестрелом» выше, чтобы добавлять огнестрел, снаряжение и броню в инвентарь."
-
-msgid "Firearms campaign"
-msgstr "Кампания с огнестрелом"
-
-msgid "Arrows, quiver (20)"
-msgstr "Стрелы, колчан (20)"
-
-msgid "Garlic"
-msgstr "Чеснок"
-
-msgid "Sword"
-msgstr "Меч"
-
-msgid "The number should be equal to or greater than 0"
-msgstr "Число должно быть больше или равно 0"
-
-msgid "Delete the saved inventory? This cannot be undone."
-msgstr "Удалить сохранённый инвентарь? Это действие нельзя отменить."
-
-msgid "Storm conditions"
-msgstr "Буря"
-
-msgid "Long, {long} AB"
-msgstr "Дальняя, {long} AB"
-
-msgid "weapons.melee.secondRank"
-msgstr "Возможность атаки из второго ряда"
-
-msgid "Clothing, Normal"
-msgstr "Одежда, обычная"
-
-msgid "Rapier"
-msgstr "Рапира"
-
-msgid "OR"
-msgstr "ИЛИ"
-
-msgid "Sling"
-msgstr "Праща"
-
-msgid "Magic user"
-msgstr "Маг"
-
-msgid "Miscellaneous"
-msgstr "Разное"
-
-msgid "Quick Reference on the LotFP Firearms Rules"
-msgstr "Краткая справка по правилам огнестрела LotFP"
-
-msgid "Backpack"
-msgstr "Рюкзак"
-
-msgid "Short"
-msgstr "Ближняя"
-
-#. js-lingui-explicit-id
-msgid "Range, feet"
-msgstr "Дальность, футы"
-
-msgid "Running"
-msgstr "Бег"
-
-msgid "Mirror, Silver"
-msgstr "Зеркало, серебряное"
-
-msgid "Sling bullets, rocks (10)"
-msgstr "Снаряды для пращи, камни (10)"
-
-msgid "page.title.suffix"
-msgstr " — Princess Helpers, генератор инвентаря, расчёт нагрузки"
-
-msgid "Blowgun"
-msgstr "Духовая трубка"
-
-msgid "Block and Tackle"
-msgstr "Блок и полиспаст"
-
-msgid "Error"
-msgstr "Ошибка"
-
-msgid "Pistol brace"
-msgstr "Спаренные пистоли"
-
-msgid "Lard"
-msgstr "Сало"
-
-msgid "Sack"
-msgstr "Мешок"
-
-msgid "Feed, Animal/Day"
-msgstr "Корм для животных/День"
-
-msgid "weapons.melee.charge"
-msgstr "Оружие, позволяющее принимать на себя рывок (charge) (урон х2, атакует первым): древковое оружие, копьё."
-
-msgid "ignores 5 points of armor at all ranges"
-msgstr "игнорирует 5 пунктов брони на всех дистанциях"
-
-msgid "Lantern"
-msgstr "Фонарь"
-
-msgid "Details"
-msgstr "Детали"
-
-msgid "Lightly encumbered"
-msgstr "Легко нагружен"
-
-msgid "config.firearms.pikemansArmor.details"
-msgstr "Только нагрудник и наспинник. +1 AC с налядвенниками."
-
-msgid "Pick, Miner’s"
-msgstr "Шахтёрская кирка"
-
-msgid "Gem"
-msgstr "Драгоценный камень"
-
-msgid "Weight"
-msgstr "Вес"
-
-msgid "About LotFP tools project"
-msgstr "О проекте, помощники для LotFP"
-
-msgid "Over encumbered"
-msgstr "Перегружен"
-
-#. js-lingui-explicit-id
-msgid "Weight"
-msgstr "Вес"
-
-#. js-lingui-explicit-id
-msgid "Wheellock"
-msgstr "Колесцовый замок"
-
-msgid "Pistols are about the size of a man’s forearm and require one hand to fire. Pistols never use the matchlock firing mechanism. Can be used as a mêlée weapon (d4 damage)."
-msgstr "Пистоли размером с человеческое предплечье, для стрельбы нужна одна рука. Пистоли никогда не используют фитильный замок. Можно использовать как рукопашное оружие (урон d4)."
-
-msgid "Tobacco"
-msgstr "Табак"
-
-msgid "Encumbrance quick reference"
-msgstr "Краткая справка по нагрузке LotFP"
-
-msgid "Rations, Standard/Day"
-msgstr "Пайки, стандартные/День"
-
-msgid "Chain, per foot"
-msgstr "Цепь, за фут"
-
-msgid "Dwarven Encumbrance"
-msgstr "Выносливость гномов"
-
-msgid "Precipitations, high winds"
-msgstr "Осадки, сильный ветер"
-
-msgid "Helm, Morion"
-msgstr "Морион, шлем"
-
-msgid "Emits light in a 10' radius. Burns for 2 hours."
-msgstr "Даёт освещение в радиусе 10 футов. Горит 2 часа."
-
-msgid "Cost coefficient"
-msgstr "Коэффициент цены"
-
-msgid "These weapons must be wielded with two hands. Two-handed swords, mauls, and great axes are included in this category."
-msgstr "Это оружие держат двумя руками. В эту категорию входят двуручные мечи, булавы и большие топоры."
-
-msgid "Loading..."
-msgstr "Загрузка..."
-
-msgid "Provided price is minimal"
-msgstr "Указанная цена минимальная"
-
-msgid "{miPerDay, plural, =0 {miles} one {mile} two {miles} few {miles} many {miles} other {miles}}"
-msgstr "{miPerDay, plural, =0 {миль} one {миля} two {мили} few {мили} many {миль} other {миль}}"
-
-msgid "Reset saved data"
-msgstr "Сбросить сохранённые данные"
-
-msgid "Inventory"
-msgstr "Инвентарь"
-
-msgid "* Exchange and sort coins, e.g., turn <0>{0} cp</0> into <1>{1} gp 25 sp</1>."
-msgstr "* Конвертировать и сортировать по монетам. Например, разменять <0>{0} cp</0> на <1>{1} gp 25 sp</1>."
-
-msgid "Arquebus is a handheld long gun which does not require a fork rest in order to fire properly. Can be used as a mêlée weapon (d6 damage)."
-msgstr "Аркебуза — ручное длинное ружьё, которому для стрельбы не нужна вилочная подпорка. Можно использовать как рукопашное оружие (урон d6)."
-
-msgid "Book, Blank"
-msgstr "Книга, пустая"
-
-msgid "Import Equipment set"
-msgstr "Импорт набора снаряжения"
-
-msgid "Quiver"
-msgstr "Колчан"
-
-msgid "Medium"
-msgstr "Средняя"
-
-msgid "CZ"
-msgstr "CZ"
-
-#. js-lingui-explicit-id
-msgid "armor.baseAc"
-msgstr "Персонажи без доспехов имеют базовый AC 12."
-
-#. js-lingui-explicit-id
-msgid "armor.unadjustedAc"
-msgstr "Немодифицированный Класс Доспеха (Unadjusted AC) — это только броня и щит. Модификаторы ловкости, магические модификаторы или любые другие не учитываются."
-
-msgid "Encumbrance"
-msgstr "Нагрузка"
-
-msgid "ignores 5 points of armor at Short range"
-msgstr "игнорирует 5 пунктов брони на Короткой дистанции"
-
-msgid "Add equipment item"
-msgstr "Добавить предмет"
-
-msgid "Receives charge"
-msgstr "Встречает рывок"
 
 msgid "Heavily encumbered"
 msgstr "Тяжело нагружен"
 
-msgid "Tent, Grand"
-msgstr "Большая палатка"
-
 msgid "Cost, sp"
 msgstr "Цена, sp"
+
+msgid "Export as a file"
+msgstr "Сохранить как файл"
 
 msgid "Combat"
 msgstr "Бой"
 
+msgid "Encumbrance calculator, inventory manager for the LotFP TTRPG system"
+msgstr "Калькулятор нагрузки, инвентарь для LotFP"
+
+msgid "Tent, Grand"
+msgstr "Большая палатка"
+
+msgid "Slings fired with stones instead of bullets have half the listed range."
+msgstr "Пращи, стреляющие камнями вместо пуль, имеют половину указанной дальности"
+
 msgid "Grappling Hook"
 msgstr "Крюк-кошка"
+
+msgid "Mirrors are useful for many reasons; for instance, they can be used for looking around corners or for sending signals outdoors using reflected sunlight."
+msgstr "Зеркала полезны по многим причинам; например, их можно использовать для подглядывания из-за угла или для отправки сигналов с помощью отраженных лучей света"
 
 msgid "Specialist"
 msgstr "Специалист"
@@ -845,11 +390,11 @@ msgstr "Специалист"
 msgid "Brace of two pistols."
 msgstr "Два пистоля, соединённые скобой."
 
-msgid "Bow, Long"
-msgstr "Длинный лук"
+msgid "An aromatic herb that repels vampires and some other undead monsters."
+msgstr "Ароматное растение, что отпугивает вампиров и некоторую другую нежить."
 
-msgid "config.armor.plate.details"
-msgstr "Путешественники, передвигающиеся в лязгающих латах по каменным полам, не могут никого застать врасплох (PCB стр. 56)."
+msgid "RU"
+msgstr "RU"
 
 #. js-lingui-explicit-id
 msgid "details.shareableJson1"
@@ -870,6 +415,24 @@ msgstr "Файл"
 #. js-lingui-explicit-id
 msgid "details.shareableUrlSectionUrl"
 msgstr "Поделиться URL"
+
+msgid "Bow, Long"
+msgstr "Длинный лук"
+
+msgid "Arrow (1)"
+msgstr "Стрела (1)"
+
+msgid "Bad things happened"
+msgstr "Случилось что-то плохое"
+
+msgid "This file does not contain a valid inventory."
+msgstr "В этом файле нет корректного инвентаря."
+
+msgid "Candle"
+msgstr "Свеча"
+
+msgid "config.armor.plate.details"
+msgstr "Путешественники, передвигающиеся в лязгающих латах по каменным полам, не могут никого застать врасплох (PCB стр. 56)."
 
 msgid "Replace your current inventory with the shared one?"
 msgstr "Заменить текущий инвентарь инвентарём из ссылки?"
@@ -893,17 +456,26 @@ msgstr ""
 "обычно сохраняются всего несколько дней во всех климатах, кроме самых холодных\n"
 "или сухих (до 1 недели)"
 
+msgid "Waterskin"
+msgstr "Бурдюк"
+
+msgid "None"
+msgstr "Нет"
+
 msgid "Cestus"
 msgstr "Цест"
+
+msgid "Per day"
+msgstr "В день"
+
+msgid "config.firearms.buffCoat.details"
+msgstr "Куртка из кожи желтоватого цвета, служившая простейшей защитой на протяжении всего XVII века."
 
 msgid "rifled"
 msgstr "нарезной"
 
-msgid "Crossbow, Light"
-msgstr "Лёгкий арбалет"
-
-msgid "config.firearms.buffCoat.details"
-msgstr "Куртка из кожи желтоватого цвета, служившая простейшей защитой на протяжении всего XVII века."
+msgid "Reset all equipment?"
+msgstr "Сбросить всё снаряжение?"
 
 msgid "Mancatcher"
 msgstr "Мэнкетчер"
@@ -911,23 +483,46 @@ msgstr "Мэнкетчер"
 msgid "Removed"
 msgstr "Удалено"
 
+msgid "Ammunition and gear"
+msgstr "Боеприпасы и снаряжение"
+
+msgid "The Equipment tab list is scrollable."
+msgstr "Список табов прокручивается."
+
+msgid "Crossbow, Light"
+msgstr "Лёгкий арбалет"
+
 msgid "Map, Kingdom"
 msgstr "Карта королевства"
 
 msgid "Saving throws vs physical damage"
 msgstr "Спасброски от физического урона"
 
+msgid "×1.5 for rifled barrel (round to the nearest)"
+msgstr "×1,5 за нарезной ствол"
+
+msgid "Active"
+msgstr "Активный"
+
 msgid "Crossbow, Heavy"
 msgstr "Тяжёлый арбалет"
-
-msgid "Short sword"
-msgstr "Короткий меч"
 
 msgid "ft"
 msgstr "фт"
 
+msgid "Short sword"
+msgstr "Короткий меч"
+
 msgid "Rope, 50'"
 msgstr "Веревка, 50 футов"
+
+#. js-lingui-explicit-id
+msgid "Firearm mechanism"
+msgstr "Спусковой механизм"
+
+#. js-lingui-explicit-id
+msgid "Firearms"
+msgstr "Огнестрельное оружие"
 
 #. js-lingui-explicit-id
 msgid "firearms.hint.flintlock"
@@ -945,11 +540,36 @@ msgstr "Спиральные канавки внутри ствола лучше
 msgid "firearms.hint.wheellock"
 msgstr "Внутренний механизм: оружие готово к выстрелу без внешнего огня, а сам механизм и полка с порохом защищены от непогоды."
 
+#. js-lingui-explicit-id
+msgid "Flintlock"
+msgstr "Кремнёвый замок"
+
+msgid "Second rank"
+msgstr "Второй ряд"
+
+msgid "Tent, Personal"
+msgstr "Палатка, одиночная"
+
+msgid "Pistol"
+msgstr "Пистоль"
+
+msgid "Gold"
+msgstr "Золотые"
+
 msgid "Rock"
 msgstr "Камень"
 
+msgid ""
+"Chalk is useful for “blazing a trail” through a dungeon or\n"
+"ruin, to ensure that the adventurers can find their way\n"
+"back out again"
+msgstr "Мел может быть использован для меток, чтобы отмечать путь"
+
 msgid "Whip"
 msgstr "Кнут"
+
+msgid "12 Apostles"
+msgstr "12 Апостолов"
 
 msgid "Tinderbox"
 msgstr "Трутница"
@@ -957,53 +577,147 @@ msgstr "Трутница"
 msgid "Reset all equipment"
 msgstr "Сбросить всё снаряжение"
 
-msgid "Paper"
-msgstr "Бумага"
-
-msgid "Spike, Iron"
-msgstr "Шип, железный"
+msgid "Wolvesbane"
+msgstr "Аконит (Wolvesbane)"
 
 msgid "Arquebus"
 msgstr "Аркебуза"
 
+msgid "Firearms"
+msgstr "Огнестрельное оружие"
+
+msgid "Fishing Gear"
+msgstr "Рыболовные снасти"
+
+msgid "on foot: + CON mod"
+msgstr "пешком: + модификатор CON"
+
+msgid "Unencumbered"
+msgstr "Не нагружен"
+
 msgid "Cumbersome"
 msgstr "Громоздкий"
+
+msgid "Bedroll"
+msgstr "Спальный мешок"
 
 msgid "config.melee.slingRocks.details"
 msgstr "Пращи, стреляющие камнями вместо пуль, имеют указанную дальность (половина обычной)."
 
+msgid "Paper"
+msgstr "Бумага"
+
+msgid "Filter by name"
+msgstr "Фильтр по названию"
+
+msgid "Spike, Iron"
+msgstr "Шип, железный"
+
+msgctxt "equipment tab"
+msgid "Firearms"
+msgstr "Огнестрельное"
+
+msgid "Include the extended encumbrance ability."
+msgstr "Включить расширенную нагрузку"
+
+msgid "config.missile.blowgun.details"
+msgstr "Длинные полые трубки из металла или дерева, используют силу лёгких владельца для стрельбы небольшими дротиками (или, возможно, другими снарядами). Обычно имеет длину около 4 футов, но нередко бывают и до 7 футов."
+
+msgid "Whistle"
+msgstr "Свисток"
+
 msgid "Coins weigh"
 msgstr "Учитывать вес монет"
+
+msgid "These are one-handed weapons, including swords, battle axes, maces"
+msgstr "Одноручное оружие, включая мечи, боевые топоры, булавы."
+
+msgid "Lock"
+msgstr "Замок"
+
+msgid "title.encumbranceUnits"
+msgstr "Encumbrance Units"
 
 msgid "Added"
 msgstr "Добавлено"
 
+msgid "Reload"
+msgstr "Перезарядка"
+
+msgid "Item"
+msgstr "Предмет"
+
 msgid "Shield"
 msgstr "Щит"
+
+msgid "Holy Symbol, Silver"
+msgstr "Священный символ, серебряный"
+
+msgid "Polearm"
+msgstr "Древковое оружие"
+
+msgid "Enable the weight of coins for encumbrance calculations."
+msgstr "Учитывать вес монет для нагрузки."
 
 msgid "Copper pieces"
 msgstr "Медные монеты"
 
+msgid "Cost"
+msgstr "Цена"
+
 msgid "Disclaimer"
 msgstr "Дисклеймер"
-
-msgid "Light crossbows can only be fired every once in 2 rounds and ignore 2 AC points"
-msgstr "Лёгкий арбалет стреляет раз в 2 раунда и игнорирует 2 пункта AC"
-
-msgid "Charcoal"
-msgstr "Уголь"
 
 msgid "Road"
 msgstr "Дорога"
 
+msgid "Light crossbows can only be fired every once in 2 rounds and ignore 2 AC points"
+msgstr "Лёгкий арбалет стреляет раз в 2 раунда и игнорирует 2 пункта AC"
+
+msgid "Dungeon"
+msgstr "Подземелье"
+
+msgid "Clear, plains, trail"
+msgstr "Равнины, тропы"
+
+msgid "Charcoal"
+msgstr "Уголь"
+
+msgid "Equipment pack"
+msgstr "Набор снаряжения"
+
+msgid "EN"
+msgstr "EN"
+
+msgid "Set coins"
+msgstr "Монеты"
+
+msgid "Aconite, also known as wolvesbane (wolfsbane) is sold dried or fresh in single sprigs. This herb is used to drive off lycanthropes, who cannot stand it."
+msgstr "Аконит, также известный как волчий корень или волкобой, продаётся сушёным или свежим, отдельными веточками. Используется для отпугивания оборотней."
+
+msgid "Add coins"
+msgstr "Добавить монет"
+
+msgid "Ladder, 10'"
+msgstr "Лестница, 10 футов"
+
 msgid "Plate"
 msgstr "Латы"
 
-msgid "Shot Bag"
-msgstr "Мешок снарядов"
+msgid "Reset coins"
+msgstr "Сбросить монеты"
 
 msgid "Battle axe"
 msgstr "Боевой топор"
+
+msgid "Book, Reading"
+msgstr "Книга, для чтения"
+
+msgid "Cord burns 10 cm per turn."
+msgstr "Шнур горит 10 см за ход."
+
+msgid "Shot Bag"
+msgstr "Мешок снарядов"
 
 msgid "Medium, {medium} AB"
 msgstr "Средняя, {medium} AB"
@@ -1014,11 +728,23 @@ msgstr "Дикая местность"
 msgid "Musket is a large handheld long gun which requires a fork rest in order to fire; not having the rest levies a –2 penalty to hit. Can be used as a mêlée weapon (d6 damage)."
 msgstr "Мушкет — большое ручное длинное ружьё, которому для стрельбы нужна вилочная подпорка; без упора –2 к попаданию. Можно использовать как рукопашное оружие (урон d6)."
 
-msgid "Inventory cost"
-msgstr "Стоимость инвентаря"
+msgid "Category"
+msgstr "Категория"
 
 msgid "Cleric 1"
 msgstr "Жрец 1"
+
+msgid "Inventory cost"
+msgstr "Стоимость инвентаря"
+
+msgid "×½ for flintlock (Fighters round down, others round up)"
+msgstr "×½ за кремнёвый замок (Воины округляют вниз, остальные — вверх)"
+
+msgid "Oversized"
+msgstr "Негабаритный"
+
+msgid "Specialist’s Tools"
+msgstr "Инструменты специалиста"
 
 msgid "Adventurer"
 msgstr "Авантюрист"
@@ -1041,29 +767,84 @@ msgstr "Горы, джунгли, болота"
 msgid "Crampons"
 msgstr "Кошки (альпинистские)"
 
-msgid "Missile Weapons"
-msgstr "Дальнобойное оружие"
-
-msgid "Helm, Secrete"
-msgstr "Секретный шлем"
-
-msgid "English"
-msgstr "English"
-
 msgid "config.firearms.tassets.details"
 msgstr "Пластины, защищающие бёдра. Дают +1 AC вместе с бронёй пикинера."
 
 msgid "Gold pieces"
 msgstr "Золотые монеты"
 
+msgid "Missile Weapons"
+msgstr "Дальнобойное оружие"
+
+msgid "Heavy crossbows can only be fired once in 3 rounds and ignore 4 AC points"
+msgstr "Тяжёлый арбалет стреляет только один раз за 3 раунда и игнорирует 4 AC."
+
+msgid "Helm, Secrete"
+msgstr "Секретный шлем"
+
 msgid "Soap"
 msgstr "Мыло"
+
+msgid "config.misc.caltrop.details"
+msgstr "Ежи (caltrop) — это металлические шипы, которые выглядят как распорки, у которых один острый конец всегда направлен вверх."
+
+msgid "Princess Helpers"
+msgstr "Princess Helpers"
+
+msgid "Use of this weapon requires an attack from surprise, or a successful grapple. If a hit is scored, the target is considered grappled and will take 1d6 damage per round."
+msgstr "Требует неожиданной атаки или успешного захвата. Если атака успешная, цель считается захваченной и получает 1d6 урона за раунд."
+
+msgid "Cleric 2"
+msgstr "Жрец 2"
+
+msgid "English"
+msgstr "English"
+
+msgid "Chest"
+msgstr "Сундук"
 
 msgid "Add"
 msgstr "Добавить"
 
+msgid "Pseudo"
+msgstr "Псевдо"
+
+msgid "Missiles"
+msgstr "Дальнобойное"
+
 msgid "Armor piercing"
 msgstr "Бронебойность"
+
+msgid "Bottle of Wine/Liquor, Poor"
+msgstr "Бутылка вина/ликёра, простая"
+
+#. js-lingui-explicit-id
+msgid "Matchlock"
+msgstr "Фитильный замок"
+
+msgid "Heavy"
+msgstr "Тяжёлый"
+
+#. js-lingui-explicit-id
+msgid "Mêlée weapons"
+msgstr "Рукопашное оружие"
+
+msgid "Vial or Bottle"
+msgstr "Флакон или Бутылка"
+
+msgid "Club"
+msgstr "Дубина"
+
+#. js-lingui-explicit-id
+msgid "Miscellaneous"
+msgstr "Разное"
+
+#. js-lingui-explicit-id
+msgid "Missile weapons"
+msgstr "Дальнобойное оружие"
+
+msgid "Firearms campaign: the cost of armor and shields is raised by 50%."
+msgstr "Кампания с огнестрелом: цена брони и щитов увеличена на 50%."
 
 msgid "Match Cord, 1 m"
 msgstr "Фитильный шнур, 1 м"
@@ -1074,14 +855,43 @@ msgstr "Разменять *"
 msgid "Two-handed"
 msgstr "Двуручное"
 
-msgid "Caltrop"
-msgstr "Ёж"
+msgid ""
+"A hammer or mallet with a head made of\n"
+"treated wood, plant resins, or other materials. The head of\n"
+"this hammer makes very little sound when striking things\n"
+"(such as a stake, nail, or head). This does not keep what\n"
+"is being hit from making noise – a glass window will still\n"
+"make noise when it shatters."
+msgstr ""
+"Киянка или молоток с головкой из обработанного дерева, растительных смол или других материалов. Киянка издает очень мало звука при ударе по вещам. Это не предотвращает шума от того,\n"
+"что бьётся - стеклянное окно все равно будет звенеть, когда разобьётся."
+
+msgid "Dagger"
+msgstr "Кинжал"
+
+msgid "Two-handed sword"
+msgstr "Двуручный меч"
+
+msgid "Forest, desert, hills"
+msgstr "Леса, пустыни, холмы"
+
+msgid "Set"
+msgstr "Установить"
 
 msgid "Russian"
 msgstr "Русский"
 
+msgid "Caltrop"
+msgstr "Ёж"
+
+msgid "Add item"
+msgstr "Добавить предмет"
+
 msgid "Garrote"
 msgstr "Гаррота"
+
+msgid "title.encumbrancePoints"
+msgstr "Encumbrance Points"
 
 msgid "Severely encumbered"
 msgstr "Сильно нагружен"
@@ -1092,20 +902,50 @@ msgstr "Краткая справка по нагрузке и передвиж�
 msgid "Movement"
 msgstr "Передвижение"
 
+msgid "Reset"
+msgstr "Сброс"
+
+msgid "Firearms rules are optional. Turn on the firearms campaign above to add firearms, gear and armor to the inventory."
+msgstr "Правила по огнестрелу опциональны. Включите «Кампанию с огнестрелом» выше, чтобы добавлять огнестрел, снаряжение и броню в инвентарь."
+
+msgid "Firearms campaign"
+msgstr "Кампания с огнестрелом"
+
+msgid "config.firearms.secreteHelm.details"
+msgstr "Скрытный стальной шлем-купол, который незаметно носят под шляпой. Не учитывается в нагрузке."
+
+msgid "Armor Class"
+msgstr "Класс Брони"
+
 msgid "Mallet"
 msgstr "Киянка"
-
-msgid "config.melee.cestus.details"
-msgstr "Включает в себя все виды повязок для кулака и кастеты. Штраф –2 к попаданию по любому противнику с немодифицированным AC 15 и выше."
 
 msgid "config.firearms.apostles.details"
 msgstr "Патронташ с 12 зарядами пороха в отмеренных контейнерах. Апостол сокращает время заряжания огнестрела на один раунд. Если владельца поразила огненная атака, он делает Спасбросок Дыхания за каждого неиспользованного апостола; каждый провал — 1 урон."
 
+msgid "Arrows, quiver (20)"
+msgstr "Стрелы, колчан (20)"
+
 msgid "Long"
 msgstr "Дальняя"
 
+msgid "config.melee.cestus.details"
+msgstr "Включает в себя все виды повязок для кулака и кастеты. Штраф –2 к попаданию по любому противнику с немодифицированным AC 15 и выше."
+
+msgid "Garlic"
+msgstr "Чеснок"
+
+msgid "Sword"
+msgstr "Меч"
+
 msgid "Full Armor"
 msgstr "Полная броня"
+
+msgid "The number should be equal to or greater than 0"
+msgstr "Число должно быть больше или равно 0"
+
+msgid "Delete the saved inventory? This cannot be undone."
+msgstr "Удалить сохранённый инвентарь? Это действие нельзя отменить."
 
 msgid "Exploration"
 msgstr "Исследование"
@@ -1119,38 +959,78 @@ msgstr "Факел"
 msgid "Ink"
 msgstr "Чернила"
 
+msgid "Select random"
+msgstr "Выбрать случайный"
+
 msgid "Oversized ×4"
 msgstr "Негабаритный ×4"
 
-msgid "Cooking Pots"
-msgstr "Кастрюли"
-
-msgid "Select random"
-msgstr "Выбрать случайный"
+msgid "Storm conditions"
+msgstr "Буря"
 
 msgid "config.firearms.fireBomb.details"
 msgstr "Используется вместо обычного снаряда: не пробивает цель, а взрывается небольшим огненным шаром — 1d4 урона, поджигает горючее; при осечке взрывается. Если персонажа с огненными бомбами поразила огненная атака, он делает один Спасбросок Дыхания за каждую переносимую огненную бомбу и за каждый провал получает урон огненной бомбы."
 
+msgid "Cooking Pots"
+msgstr "Кастрюли"
+
+msgid "Long, {long} AB"
+msgstr "Дальняя, {long} AB"
+
+msgid "Rapier"
+msgstr "Рапира"
+
+msgid "OR"
+msgstr "ИЛИ"
+
+msgid "weapons.melee.secondRank"
+msgstr "Возможность атаки из второго ряда"
+
+msgid "Clothing, Normal"
+msgstr "Одежда, обычная"
+
 msgid "Jewelry"
 msgstr "Украшения"
+
+msgid "Sling"
+msgstr "Праща"
 
 msgid "Targets at Medium range are –4 to hit, –8 to hit at Long range. Rifled barrels halve the range penalties, but cost twice as much."
 msgstr "Цели на Средней дистанции –4 к попаданию, на Дальней дистанции –8 к попаданию. Нарезные стволы вдвое сокращают штраф, но стоят вдвое дороже."
 
-msgid "Pole, 10'"
-msgstr "Шест, 10 футов"
+#. js-lingui-explicit-id
+msgid "Range, feet"
+msgstr "Дальность, футы"
 
-msgid "Scattershot"
-msgstr "Дробь"
+msgid "Magic user"
+msgstr "Маг"
 
-msgid "Lance"
-msgstr "Длинное копьё"
+msgid "Miscellaneous"
+msgstr "Разное"
 
 msgid "No encumbrance if empty"
 msgstr "Нет нагрузки, если пустая"
 
+msgid "Pole, 10'"
+msgstr "Шест, 10 футов"
+
+msgid "Quick Reference on the LotFP Firearms Rules"
+msgstr "Краткая справка по правилам огнестрела LotFP"
+
 msgid "Hourglass"
 msgstr "Песочные часы"
+
+msgid "Running"
+msgstr "Бег"
+
+msgid "Backpack"
+msgstr "Рюкзак"
+
+msgid "Scattershot"
+msgstr "Дробь"
+
+msgid "Mirror, Silver"
+msgstr "Зеркало, серебряное"
 
 msgid "Firearm mechanism"
 msgstr "Спусковой механизм"
@@ -1158,8 +1038,20 @@ msgstr "Спусковой механизм"
 msgid "Dart for blowgun (1)"
 msgstr "Дротик для духовой трубки (1)"
 
+msgid "Short"
+msgstr "Ближняя"
+
+msgid "Sling bullets, rocks (10)"
+msgstr "Снаряды для пращи, камни (10)"
+
 msgid "Sometimes, the issue may be due to incompatible or corrupted saved data. Resetting it removes your stored inventory."
 msgstr "Иногда причина в несовместимых или повреждённых сохранённых данных. Их сброс удалит сохранённый инвентарь."
+
+msgid "page.title.suffix"
+msgstr " — Princess Helpers, генератор инвентаря, расчёт нагрузки"
+
+msgid "Lance"
+msgstr "Длинное копьё"
 
 msgid "This weapon can be used one-handed if charging on horseback. Otherwise, it is effectively a polearm (pike)"
 msgstr "Это оружие можно использовать как одноручное при атаке верхом. В противном случае, равноценно древковому оружию (пике)"
@@ -1167,17 +1059,44 @@ msgstr "Это оружие можно использовать как одно�
 msgid "Wallet"
 msgstr "Кошелёк"
 
+msgid "Blowgun"
+msgstr "Духовая трубка"
+
+msgid "Error"
+msgstr "Ошибка"
+
 msgid "Helm, Lobster Tail Pot"
 msgstr "Хвост омара, шлем"
+
+msgid "Block and Tackle"
+msgstr "Блок и полиспаст"
 
 msgid "Mirror, Steel"
 msgstr "Зеркало, стальное"
 
+msgid "Pistol brace"
+msgstr "Спаренные пистоли"
+
+msgid "Lard"
+msgstr "Сало"
+
+msgid "weapons.melee.charge"
+msgstr "Оружие, позволяющее принимать на себя рывок (charge) (урон х2, атакует первым): древковое оружие, копьё."
+
 msgid "Weapon, Small"
 msgstr "Малое оружие"
 
+msgid "ignores 5 points of armor at all ranges"
+msgstr "игнорирует 5 пунктов брони на всех дистанциях"
+
 msgid "Optional firearms rules: firearms can be added, basic armor and shields cost 50% more."
 msgstr "Опциональные правила по огнестрелу: огнестрел можно добавлять в инвентарь, обычная броня и щиты дорожают на 50%."
+
+msgid "Sack"
+msgstr "Мешок"
+
+msgid "Feed, Animal/Day"
+msgstr "Корм для животных/День"
 
 msgid "Bottle of Wine/Liquor, Rich"
 msgstr "Бутылка вина/ликера, дорогая"
@@ -1185,11 +1104,17 @@ msgstr "Бутылка вина/ликера, дорогая"
 msgid "Pouch"
 msgstr "Мешочек"
 
-msgid "Staff"
-msgstr "Посох"
+msgid "Lantern"
+msgstr "Фонарь"
+
+msgid "Details"
+msgstr "Детали"
 
 msgid "Maul"
 msgstr "Молот"
+
+msgid "Staff"
+msgstr "Посох"
 
 msgid "About"
 msgstr "О проекте"
@@ -1200,6 +1125,9 @@ msgstr "Инструменты специалиста необходимы Сп�
 msgid "Charcoal pieces of carbonized wood, which can be used like chalk (with black markings), or to add to tinder"
 msgstr "Кусочки угля, которые можно использовать так же, как и мел, или добавлять в трут."
 
+msgid "Lightly encumbered"
+msgstr "Легко нагружен"
+
 msgid "Musket"
 msgstr "Мушкет"
 
@@ -1208,6 +1136,12 @@ msgstr "Порох, бочка"
 
 msgid "Spike, Wooden"
 msgstr "Шип, деревянный"
+
+msgid "config.firearms.pikemansArmor.details"
+msgstr "Только нагрудник и наспинник. +1 AC с налядвенниками."
+
+msgid "Pick, Miner’s"
+msgstr "Шахтёрская кирка"
 
 msgid "weapons.melee.twoHanded"
 msgstr "Это оружие занимает обе руки"
@@ -1218,14 +1152,8 @@ msgstr "Одежда для зимних путешествий"
 msgid "Czech"
 msgstr "Czech"
 
-msgid "AC"
-msgstr "AC"
-
-msgid "1 in 4 chance to break the mechanism if used as a club."
-msgstr "1 из 4 сломать механизм, если бить оружием как дубинкой."
-
-msgid "+1 AC versus mêlée attacks, +2 AC versus missile attacks."
-msgstr "+1 AC против рукопашных, +2 AC против дальнобойных атак."
+msgid "Over encumbered"
+msgstr "Перегружен"
 
 #. js-lingui-explicit-id
 msgid "weapons.melee.charge"
@@ -1247,26 +1175,52 @@ msgstr "Каждое дальнобойное оружие можно испол
 msgid "weapons.missile.range"
 msgstr "Цели на средней дистанции имеют –2 к попаданию, –4 к попаданию на длинной дистанции."
 
+#. js-lingui-explicit-id
+msgid "Weight"
+msgstr "Вес"
+
+msgid "Gem"
+msgstr "Драгоценный камень"
+
+#. js-lingui-explicit-id
+msgid "Wheellock"
+msgstr "Колесцовый замок"
+
 msgid "Gunpowder"
 msgstr "Порох"
 
 msgid "Armor"
 msgstr "Броня"
 
+msgid "Weight"
+msgstr "Вес"
+
 msgid "Spear"
 msgstr "Копьё"
+
+msgid "AC"
+msgstr "AC"
+
+msgid "About LotFP tools project"
+msgstr "О проекте, помощники для LotFP"
+
+msgid "1 in 4 chance to break the mechanism if used as a club."
+msgstr "1 из 4 сломать механизм, если бить оружием как дубинкой."
+
+msgid "+1 AC versus mêlée attacks, +2 AC versus missile attacks."
+msgstr "+1 AC против рукопашных, +2 AC против дальнобойных атак."
 
 msgid "Fighter 2"
 msgstr "Воин 2"
 
+msgid "Dwarven Encumbrance"
+msgstr "Выносливость гномов"
+
 msgid "Required for mapping."
 msgstr "Обязательна для рисования карт."
 
-msgid "Spyglass"
-msgstr "Подзорная труба"
-
-msgid "Crossbow bolts, quiver (20)"
-msgstr "Арбалетные болты, колчан (20)"
+msgid "Pistols are about the size of a man’s forearm and require one hand to fire. Pistols never use the matchlock firing mechanism. Can be used as a mêlée weapon (d4 damage)."
+msgstr "Пистоли размером с человеческое предплечье, для стрельбы нужна одна рука. Пистоли никогда не используют фитильный замок. Можно использовать как рукопашное оружие (урон d4)."
 
 msgid "Bottle of Wine/Liquor, Decent"
 msgstr "Бутылка вина/ликера, приличная"
@@ -1274,14 +1228,47 @@ msgstr "Бутылка вина/ликера, приличная"
 msgid "Regular"
 msgstr "Обычный"
 
+msgid "Tobacco"
+msgstr "Табак"
+
+msgid "Precipitations, high winds"
+msgstr "Осадки, сильный ветер"
+
 msgid "Chain"
 msgstr "Кольчуга"
+
+msgid "Helm, Morion"
+msgstr "Морион, шлем"
+
+msgid "Encumbrance quick reference"
+msgstr "Краткая справка по нагрузке LotFP"
+
+msgid "Rations, Standard/Day"
+msgstr "Пайки, стандартные/День"
 
 msgid "Mêlée Weapons"
 msgstr "Ближний бой"
 
+msgid "Spyglass"
+msgstr "Подзорная труба"
+
+msgid "Crossbow bolts, quiver (20)"
+msgstr "Арбалетные болты, колчан (20)"
+
+msgid "Chain, per foot"
+msgstr "Цепь, за фут"
+
+msgid "Emits light in a 10' radius. Burns for 2 hours."
+msgstr "Даёт освещение в радиусе 10 футов. Горит 2 часа."
+
 msgid "Enable automatic subtraction of money when equipment items are added"
 msgstr "Автоматически вычитать деньги при добавлении предметов"
+
+msgid "Cost coefficient"
+msgstr "Коэффициент цены"
+
+msgid "These weapons must be wielded with two hands. Two-handed swords, mauls, and great axes are included in this category."
+msgstr "Это оружие держат двумя руками. В эту категорию входят двуручные мечи, булавы и большие топоры."
 
 msgid "Tent, Pavilion"
 msgstr "Палатка, павильон"
@@ -1298,14 +1285,29 @@ msgstr "Экспорт и импорт"
 msgid "Firearms quick reference"
 msgstr "Краткая справка по огнестрелу"
 
-msgid "config.melee.polearm.details"
-msgstr "Это двуручное оружие может быть использовано для атаки из второго ряда, может быть использовано для встречи рывка (charge) и получает бонус +1 AB к противников с немодифицированным AC 16 и выше."
-
-msgid "config.firearms.scattershot.details"
-msgstr "Мелкая дробь или камни вместо одной пули. Дальность вдвое меньше, броня не игнорируется, урон 1d6 в секторе 45°, Спасбросок Дыхания — половина урона."
+msgid "Loading..."
+msgstr "Загрузка..."
 
 msgid "Delete all from list?"
 msgstr "Удалить всё из списка?"
 
+msgid "Provided price is minimal"
+msgstr "Указанная цена минимальная"
+
+msgid "config.melee.polearm.details"
+msgstr "Это двуручное оружие может быть использовано для атаки из второго ряда, может быть использовано для встречи рывка (charge) и получает бонус +1 AB к противников с немодифицированным AC 16 и выше."
+
 msgid "Instrument"
 msgstr "Инструмент"
+
+msgid "{miPerDay, plural, =0 {miles} one {mile} two {miles} few {miles} many {miles} other {miles}}"
+msgstr "{miPerDay, plural, =0 {миль} one {миля} two {мили} few {мили} many {миль} other {миль}}"
+
+msgid "Reset saved data"
+msgstr "Сбросить сохранённые данные"
+
+msgid "Inventory"
+msgstr "Инвентарь"
+
+msgid "config.firearms.scattershot.details"
+msgstr "Мелкая дробь или камни вместо одной пули. Дальность вдвое меньше, броня не игнорируется, урон 1d6 в секторе 45°, Спасбросок Дыхания — половина урона."
