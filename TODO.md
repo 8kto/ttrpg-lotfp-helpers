@@ -1,3 +1,4 @@
+- Моб версия: Лейбл Цена переносится, нужно в одну строку с радио
 - Next.js 16: replace `next-pwa` (webpack-only, no releases since 2022) and the
   `next lint` script (removed in 16). `@hookstate/core` peers only React up to 18,
   which matters if the upgrade also moves to React 19. `@lingui/swc-plugin` must
