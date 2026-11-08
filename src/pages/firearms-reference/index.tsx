@@ -7,7 +7,7 @@ import React from 'react'
 import HeadMetadata from '@/components/layout/HeadMetadata'
 import PageLayout from '@/components/layout/PageLayout'
 import type { LOCALE_SHORT } from '@/translations/languages'
-import { getTranslatedPageContent, loadCatalog } from '@/translations/utils'
+import { loadCatalog, TranslatedPageContent } from '@/translations/utils'
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const translation = await loadCatalog(ctx.locale!)
@@ -25,11 +25,6 @@ export default function FirearmsReferencePage({
 }: {
   locale: LOCALE_SHORT
 }) {
-  const ContentComponent = getTranslatedPageContent(
-    'firearms-reference',
-    locale,
-  )
-
   return (
     <>
       <HeadMetadata
@@ -37,7 +32,7 @@ export default function FirearmsReferencePage({
         description={t`Quick Reference on the LotFP Firearms Rules`}
       />
       <PageLayout>
-        <ContentComponent />
+        <TranslatedPageContent pageName='firearms-reference' locale={locale} />
       </PageLayout>
     </>
   )

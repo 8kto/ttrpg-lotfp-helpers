@@ -24,6 +24,8 @@ const LocaleSwitcher = () => {
     const newLocale = event.target.value as LOCALE
 
     const newUrl = `${window.location.origin}/${newLocale}${router.pathname}${window.location.hash}`
+    // A full reload on purpose, see 866b8b8 "Reload the page on locale change"
+    // eslint-disable-next-line @next/next/no-location-assign-relative-destination
     window.location.href = newUrl
   }
 

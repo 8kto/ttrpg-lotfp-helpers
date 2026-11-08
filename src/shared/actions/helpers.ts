@@ -1,5 +1,5 @@
-import type { DispatchActionFunction } from '@/shared/actions/actions'
 import type Action from '@/shared/actions/actions'
+import type { DispatchActionFunction } from '@/shared/actions/actions'
 
 export const dispatchAction: DispatchActionFunction = <T = unknown>(
   actionName: Action,

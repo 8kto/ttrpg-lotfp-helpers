@@ -1,4 +1,3 @@
-/* eslint-disable sort-keys */
 import { XMarkIcon } from '@heroicons/react/24/solid'
 import { Trans } from '@lingui/macro'
 import { Field, Form, Formik } from 'formik'

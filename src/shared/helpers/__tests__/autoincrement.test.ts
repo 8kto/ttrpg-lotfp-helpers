@@ -31,7 +31,6 @@ describe('autoincrement util', () => {
       let count = 0
       let lastValue
 
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       for (const value of generator) {
         lastValue = value
