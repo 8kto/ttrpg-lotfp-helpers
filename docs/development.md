@@ -71,8 +71,8 @@ Do not overwrite another task's changes or reset an unfamiliar dirty tree.
 The E2E setup defaults to port 3100, not the dev port, and outside CI reuses
 whatever server already answers there, even an unrelated application. Verify
 which checkout owns the server, or set `E2E_PORT` to another free port. Run such
-suites serially. Next allows one dev server per checkout, so E2E cannot start
-its own while `yarn dev` runs in the same directory; use another worktree. For
+suites serially. Next locks a build directory for one dev server, so the E2E
+server builds into `build-e2e` and can run next to `yarn dev`. For
 parallel UI work, use isolated ports and browser profiles. Separate worktrees
 alone do not isolate ports or localStorage on the same origin.
 
