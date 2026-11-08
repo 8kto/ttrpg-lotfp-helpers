@@ -1,17 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-const isProd = process.env.NODE_ENV === 'production'
-
-const runtimeCaching = require('next-pwa/cache')
-const withPwa = require('next-pwa')({
-  dest: 'public',
-  register: true,
-  skipWaiting: true,
-  disableDevLogs: isProd,
-  runtimeCaching,
-  disable: !isProd,
-})
-
 const linguiConfig = require('./lingui.config')
 
 /** @type {import('next').NextConfig} */
@@ -19,8 +7,18 @@ const nextConfig = {
   reactStrictMode: true,
   devIndicators: false,
   experimental: {
-    swcPlugins: [['@lingui/swc-plugin', {}]],
-    forceSwcTransforms: true,
+    swcPlugins: [['@lingui/swc-plugin', { useLinguiV5IdGeneration: true }]],
+    // The t macro uses the global i18n instance, so pages prerendered in
+    // parallel switch each other's locale mid-render
+    staticGenerationMaxConcurrency: 1,
+  },
+  turbopack: {
+    rules: {
+      '*.po': {
+        loaders: ['@lingui/loader'],
+        as: '*.js',
+      },
+    },
   },
   i18n: {
     locales: linguiConfig.locales,
@@ -38,4 +36,4 @@ const nextConfig = {
   },
 }
 
-module.exports = withPwa(nextConfig)
+module.exports = nextConfig
