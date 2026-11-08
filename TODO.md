@@ -1,9 +1,20 @@
+- Сохранять язык в сессии
 - Моб версия: Лейбл Цена переносится, нужно в одну строку с радио
 - Лейбл с передвижением на всех языках на мид скринах слипается со второй колонкой
-- Next.js 16: replace `next-pwa` (webpack-only, no releases since 2022) and the
-  `next lint` script (removed in 16). `@hookstate/core` peers only React up to 18,
-  which matters if the upgrade also moves to React 19. `@lingui/swc-plugin` must
-  match the SWC version of the Next release.
+- Restore PWA and offline support. `next-pwa` was removed because it is
+  webpack-only and unmaintained; [sw.js](public/sw.js) now only removes the
+  worker and caches it left in browsers. Pick a replacement that works with
+  Turbopack, then reuse or drop the [offline fallback](src/pages/_offline.tsx).
+- `@hookstate/core` 4 is unmaintained and peers only React up to 18; it runs on
+  React 19 but needs plain copies in props, see the inventory grids. Consider
+  replacing it.
+- Prerendering runs one page at a time per worker, because the `t` macro uses the
+  global i18n instance. Per-request i18n instances would allow parallel
+  prerendering; [check:prerender](scripts/check_prerender.mjs) detects the race.
+- ESLint 9 with flat config, then `eslint-config-next` 16. `lint` runs ESLint 8
+  directly with `eslint-config-next` 15, since `next lint` is gone in Next 16.
+- Lingui 6: `@lingui/swc-plugin` 6 runs with `useLinguiV5IdGeneration` so that
+  message IDs match the Lingui 5 catalogs. Drop the option after moving to Lingui 6.
 - Move `@lingui/macro` imports to `@lingui/core/macro` and `@lingui/react/macro`,
   including the ESLint import restrictions, then drop its `import/ignore` entry.
 - export
