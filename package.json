@@ -3,7 +3,7 @@
   "version": "1.1.0",
   "license": "CC-BY-NC-4.0",
   "engines": {
-    "node": ">=26"
+    "node": "26.x"
   },
   "scripts": {
     "dev": "next dev",
@@ -63,7 +63,7 @@
     "@typescript-eslint/eslint-plugin": "^6.10.0",
     "@typescript-eslint/parser": "^6.10.0",
     "autoprefixer": "^10.0.1",
-    "eslint": "^8",
+    "eslint": "^8.57.1",
     "eslint-config-next": "15.5.28",
     "eslint-config-prettier": "^9.0.0",
     "eslint-import-resolver-typescript": "^3.5.2",
