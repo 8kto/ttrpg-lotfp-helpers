@@ -72,6 +72,9 @@ test.describe('Inventory items', () => {
   test('removing an item bought after a reload should keep the others', async ({
     page,
   }) => {
+    const pageErrors: string[] = []
+    page.on('pageerror', (error) => pageErrors.push(error.message))
+
     const buyPistol = () =>
       page
         .getByTestId('DataGrid__Table')
@@ -102,5 +105,6 @@ test.describe('Inventory items', () => {
     await rows.first().getByRole('button').last().click()
 
     await expect(rows).toHaveCount(1)
+    expect(pageErrors).toEqual([])
   })
 })
