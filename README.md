@@ -58,7 +58,7 @@ https://princess-helpers.vercel.app
   - [x] By class
   - [x] Common
   - [x] Random
-- [x] PWA
+- [ ] PWA (disabled for now, see [TODO](TODO.md))
 - [x] E2E tests
 - [x] Firearms list
   - [x] Weapons
