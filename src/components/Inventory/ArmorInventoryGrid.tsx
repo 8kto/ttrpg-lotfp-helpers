@@ -10,6 +10,7 @@ import {
 import { handleRemoveEquipmentItemClick } from '@/components/EquipmentList/helpers'
 import type { ArmorItem } from '@/domain/armor'
 import type { InventoryItem } from '@/domain/inventory'
+import deepclone from '@/shared/helpers/deepclone'
 import { useInventoryState } from '@/state/InventoryState'
 
 type ArmorInventoryItem = InventoryItem<ArmorItem>
@@ -40,7 +41,8 @@ const ArmorInventoryGrid = () => {
 
   return (
     <DataGrid<ArmorInventoryItem>
-      data={armor.get()}
+      // A plain copy: React 19 dev builds read the props of a removed row
+      data={deepclone(armor.get())}
       columns={columns}
       onRemoveClick={handleRemoveEquipmentItemClick}
       spanDetails={columns.length}
