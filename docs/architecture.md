@@ -46,8 +46,9 @@ export. Default terrain and weather are left out of the URL.
 [Hash parser](../src/shared/helpers/getStateFromSearchString.ts).
 
 No application API handlers, database, account, or authorization layer are present.
-Locale routing is Next.js built-in i18n routing. Vercel Analytics is mounted in the app wrapper. Production PWA
-registration/caching is configured by Next; generated workers are ignored by Git.
+Locale routing is Next.js built-in i18n routing. Vercel Analytics is mounted in the app wrapper. There is no
+service worker: [sw.js](../public/sw.js) only removes the one installed by the
+former `next-pwa` setup, and its caches.
 
 ## Localization and import boundaries
 

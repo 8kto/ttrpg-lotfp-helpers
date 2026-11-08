@@ -28,10 +28,9 @@ simulator. Attribution and public links belong in the [README](../README.md).
 - Supported browser/device targets are the projects in
   [Playwright configuration](../playwright.config.ts), as confirmed by the owner.
   That configuration is the source of truth, not a second list in documentation.
-- PWA support exists. The configured browser targets also define the intended
-  offline support scope, but current E2E tests run a development server and do
-  not establish production service-worker behavior. See
-  [development checks](development.md).
+- PWA and offline support are disabled until a replacement for `next-pwa` is
+  chosen; restoration is tracked in [TODO](../TODO.md). The configured browser
+  targets also define the intended offline support scope.
 - Locale availability is defined in [Lingui configuration](../lingui.config.js).
   Long-form reference content falls back to English where a translation is
   missing; listing a locale does not imply complete translation.
