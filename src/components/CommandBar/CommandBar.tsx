@@ -33,38 +33,40 @@ const CommandBar = () => {
           <Trans>Firearms campaign</Trans>
         </Toggle>
       </div>
-      <div className='mr-4 flex items-center'>
-        <h3 className='font-semibold ph-color-accent'>
-          <Trans>Cost</Trans>
-        </h3>
-      </div>
-      <div className='mr-4 flex items-center'>
-        <input
-          id='city-radio'
-          type='radio'
-          value='city'
-          name='inline-radio-group'
-          checked={!isCostRural.get()}
-          onChange={handleCostToggle}
-          className={radioClassnames}
-        />
-        <label htmlFor='city-radio' className={labelClassnames}>
-          <Trans>City</Trans>
-        </label>
-      </div>
-      <div className='mr-4 flex items-center'>
-        <input
-          id='rural-radio'
-          type='radio'
-          value='rural'
-          name='inline-radio-group'
-          className={radioClassnames}
-          checked={isCostRural.get()}
-          onChange={handleCostToggle}
-        />
-        <label htmlFor='rural-radio' className={labelClassnames}>
-          <Trans>Rural</Trans>
-        </label>
+      <div className='flex items-center whitespace-nowrap'>
+        <div className='mr-4 flex items-center'>
+          <h3 className='font-semibold ph-color-accent'>
+            <Trans>Cost</Trans>
+          </h3>
+        </div>
+        <div className='mr-4 flex items-center'>
+          <input
+            id='city-radio'
+            type='radio'
+            value='city'
+            name='inline-radio-group'
+            checked={!isCostRural.get()}
+            onChange={handleCostToggle}
+            className={radioClassnames}
+          />
+          <label htmlFor='city-radio' className={labelClassnames}>
+            <Trans>City</Trans>
+          </label>
+        </div>
+        <div className='mr-4 flex items-center'>
+          <input
+            id='rural-radio'
+            type='radio'
+            value='rural'
+            name='inline-radio-group'
+            className={radioClassnames}
+            checked={isCostRural.get()}
+            onChange={handleCostToggle}
+          />
+          <label htmlFor='rural-radio' className={labelClassnames}>
+            <Trans>Rural</Trans>
+          </label>
+        </div>
       </div>
     </div>
   )
