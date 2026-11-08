@@ -29,5 +29,5 @@
     ".next/types/**/*.ts",
     "build/types/**/*.ts"
   ],
-  "exclude": ["node_modules", "build/dev"]
+  "exclude": ["node_modules", "build/dev", "build-e2e"]
 }

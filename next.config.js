@@ -24,7 +24,8 @@ const nextConfig = {
     locales: linguiConfig.locales,
     defaultLocale: linguiConfig.sourceLocale,
   },
-  distDir: 'build',
+  // E2E tests use another directory: Next locks it for a single dev server
+  distDir: process.env.NEXT_DIST_DIR ?? 'build',
   async redirects() {
     return [
       {
