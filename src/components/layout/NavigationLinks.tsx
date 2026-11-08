@@ -14,7 +14,6 @@ type NavLinkProps = {
 const NavLink: React.FC<NavLinkProps> = ({ href, title }) => {
   const pathname = usePathname()
   const isActive = pathname === href
-  const { _: trans } = useLingui()
 
   return (
     <Link
@@ -27,12 +26,15 @@ const NavLink: React.FC<NavLinkProps> = ({ href, title }) => {
         },
       )}
     >
-      {trans(title)}
+      {title}
     </Link>
   )
 }
 
 const NavigationLinks = () => {
+  // Re-render on a locale change, getNavLinks() returns translated titles
+  useLingui()
+
   return (
     <>
       {getNavLinks().map((link) => (

@@ -65,6 +65,8 @@ export default defineConfig({
   /* Run your local dev server before starting the tests */
   webServer: {
     command: `yarn dev -p ${port}`,
+    /* Its own build directory, so that it runs next to a yarn dev server */
+    env: { NEXT_DIST_DIR: 'build-e2e' },
     url: baseURL,
     reuseExistingServer: !process.env.CI,
   },

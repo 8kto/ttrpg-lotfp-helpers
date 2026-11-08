@@ -8,7 +8,7 @@ import { DEFAULT_LOCALE } from '@/translations/languages'
 import contentComponents from '@/translations/pages/contentComponents'
 
 export async function loadCatalog(locale: string) {
-  const catalog = await import(`@lingui/loader!./locales/${locale}.po`)
+  const catalog = await import(`./locales/${locale}.po`)
 
   return catalog.messages
 }
@@ -24,7 +24,7 @@ export function useLinguiInit(messages: Messages) {
     // to avoid calling loadAndActivate for (worst case) each request, but right now that's what we do
     i18n.loadAndActivate({ locale, messages })
   }
-  if (isClient && i18n.locale === undefined) {
+  if (isClient && !i18n.locale) {
     // first client render
     i18n.loadAndActivate({ locale, messages })
   }

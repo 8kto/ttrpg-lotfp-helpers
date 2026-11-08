@@ -13,27 +13,6 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-msgid "Writing ink: Stored in a small ceramic jar or tin and sufficient for 50 pages of normal writing. Required for mapping."
-msgstr "Writing ink: Stored in a small ceramic jar or tin and sufficient for 50 pages of normal writing. Required for mapping."
-
-msgid "Coins"
-msgstr "Coins"
-
-msgid "config.misc.airBladder.details"
-msgstr "A leather pouch with a tube fitting into the user’s mouth; it will hold an extra breath of air, allowing a swimmer to extend his or her range.<br/>Along with helping breathe underwater, the air bladder may also be used to help a character float."
-
-msgid "Let's fix them."
-msgstr "Let's fix them."
-
-msgid "config.melee.mancatcher.details"
-msgstr "A successful hit with this weapon requires the victim to make a saving throw versus Paralysis. If unsuccessful, the victim is considered helpless, as is the wielder of the mancatcher while the target is being held for purposes of defending against attacks. This weapon must be wielded with two hands."
-
-msgid "Clothing, Poor"
-msgstr "Clothing, Poor"
-
-msgid "Weapon, Medium"
-msgstr "Weapon, Medium"
-
 msgid "Middle, -2 AB"
 msgstr "Middle, -2 AB"
 
@@ -48,6 +27,27 @@ msgstr "Great axe"
 
 msgid "Fighter 3"
 msgstr "Fighter 3"
+
+msgid "Writing ink: Stored in a small ceramic jar or tin and sufficient for 50 pages of normal writing. Required for mapping."
+msgstr "Writing ink: Stored in a small ceramic jar or tin and sufficient for 50 pages of normal writing. Required for mapping."
+
+msgid "Coins"
+msgstr "Coins"
+
+msgid "config.misc.airBladder.details"
+msgstr "A leather pouch with a tube fitting into the user’s mouth; it will hold an extra breath of air, allowing a swimmer to extend his or her range.<br/>Along with helping breathe underwater, the air bladder may also be used to help a character float."
+
+msgid "config.melee.mancatcher.details"
+msgstr "A successful hit with this weapon requires the victim to make a saving throw versus Paralysis. If unsuccessful, the victim is considered helpless, as is the wielder of the mancatcher while the target is being held for purposes of defending against attacks. This weapon must be wielded with two hands."
+
+msgid "Let's fix them."
+msgstr "Let's fix them."
+
+msgid "Clothing, Poor"
+msgstr "Clothing, Poor"
+
+msgid "Weapon, Medium"
+msgstr "Weapon, Medium"
 
 msgid "Leather"
 msgstr "Leather"
@@ -64,23 +64,17 @@ msgstr "Rations, Iron/Day"
 msgid "Long, -4 AB"
 msgstr "Long, -4 AB"
 
-msgid "Nails"
-msgstr "Nails"
-
 msgid "Pipe"
 msgstr "Pipe"
+
+msgid "Nails"
+msgstr "Nails"
 
 msgid "This one handed weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 msgstr "This one handed weapon suffers a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 
 msgid "{dry} in 10 in any weather"
 msgstr "{dry} in 10 in any weather"
-
-msgid "This weapon is ineffective against targets with unadjusted AC 14 or better, but allows mêlée attacks on opponents up to 10 ft away."
-msgstr "This weapon is ineffective against targets with unadjusted AC 14 or better, but allows mêlée attacks on opponents up to 10 ft away."
-
-msgid "Powder Horn"
-msgstr "Powder Horn"
 
 msgid "Flask of Lamp Oil"
 msgstr "Flask of Lamp Oil"
@@ -99,35 +93,41 @@ msgstr ""
 msgid "Saddlebag"
 msgstr "Saddlebag"
 
+msgid "This weapon is ineffective against targets with unadjusted AC 14 or better, but allows mêlée attacks on opponents up to 10 ft away."
+msgstr "This weapon is ineffective against targets with unadjusted AC 14 or better, but allows mêlée attacks on opponents up to 10 ft away."
+
 msgid "Using a crowbar adds a +1 bonus to the Open Doors roll chances."
 msgstr "Using a crowbar adds a +1 bonus to the Open Doors roll chances."
+
+msgid "Powder Horn"
+msgstr "Powder Horn"
 
 msgid "Holy Symbol, Steel"
 msgstr "Holy Symbol, Steel"
 
-msgid "Fighter 1"
-msgstr "Fighter 1"
-
-msgid "Dexterity to-hit modifiers do not apply at Medium and Long range."
-msgstr "Dexterity to-hit modifiers do not apply at Medium and Long range."
-
-msgid "Year"
-msgstr "Year"
-
-msgid "Damage"
-msgstr "Damage"
-
 msgid "config.firearms.powderHorn.details"
 msgstr "Holds 50 shots of powder. If the carrier is hit by a fire-based attack, they save versus Breath Weapon or take 1d3 damage for every 10 shots (round up) left in the horn."
+
+msgid "Fighter 1"
+msgstr "Fighter 1"
 
 msgid "10 rounds (8 for Fighters) + Encumbrance (now {encumbrance}) – Dexterity modifier"
 msgstr "10 rounds (8 for Fighters) + Encumbrance (now {encumbrance}) – Dexterity modifier"
 
+msgid "Dexterity to-hit modifiers do not apply at Medium and Long range."
+msgstr "Dexterity to-hit modifiers do not apply at Medium and Long range."
+
 msgid "Tent, Regular"
 msgstr "Tent, Regular"
 
+msgid "Year"
+msgstr "Year"
+
 msgid "Map, Local"
 msgstr "Map, Local"
+
+msgid "Damage"
+msgstr "Damage"
 
 msgid "City"
 msgstr "City"
@@ -150,14 +150,14 @@ msgstr "Holy Symbol, Wood"
 msgid "Silver pieces"
 msgstr "Silver pieces"
 
+msgid "Spikes for your boots – better success at climbing and keeping balance on ice"
+msgstr "Spikes for your boots – better success at climbing and keeping balance on ice"
+
 msgid "config.firearms.powderBarrel.details"
 msgstr "2500 shots of powder. Counts as four oversized items. An exploding barrel deals 5d8 damage to all within 30' (save versus Breath Weapon for half)."
 
 msgid "Try again?"
 msgstr "Try again?"
-
-msgid "Spikes for your boots – better success at climbing and keeping balance on ice"
-msgstr "Spikes for your boots – better success at climbing and keeping balance on ice"
 
 msgid "Bow, Short"
 msgstr "Bow, Short"
@@ -168,12 +168,6 @@ msgstr "Pikeman's Armor"
 msgid "Copper"
 msgstr "Copper"
 
-msgid "Mêlée"
-msgstr "Mêlée"
-
-msgid "Name"
-msgstr "Name"
-
 msgid "Range"
 msgstr "Range"
 
@@ -183,8 +177,11 @@ msgstr "Manacles"
 msgid "Reset all coins?"
 msgstr "Reset all coins?"
 
-msgid "Mirror, Glass"
-msgstr "Mirror, Glass"
+msgid "Mêlée"
+msgstr "Mêlée"
+
+msgid "Name"
+msgstr "Name"
 
 msgid "Hand axe"
 msgstr "Hand axe"
@@ -195,20 +192,23 @@ msgstr "Mace"
 msgid "Fire Bomb"
 msgstr "Fire Bomb"
 
+msgid "Mirror, Glass"
+msgstr "Mirror, Glass"
+
 msgid "Riding Gear"
 msgstr "Riding Gear"
 
 msgid "Emits light in a 30' radius. Burns for 4 hours. Uses flasks of oil as fuel."
 msgstr "Emits light in a 30' radius. Burns for 4 hours. Uses flasks of oil as fuel."
 
-msgid "Book, Spell (Blank)"
-msgstr "Book, Spell (Blank)"
-
 msgid "Required field"
 msgstr "Required field"
 
 msgid "Scroll Case"
 msgstr "Scroll Case"
+
+msgid "Book, Spell (Blank)"
+msgstr "Book, Spell (Blank)"
 
 msgid "Turn on the firearms campaign to add these items"
 msgstr "Turn on the firearms campaign to add these items"
@@ -238,8 +238,16 @@ msgstr ""
 "one quart of liquid, which is the minimum amount\n"
 "required by a normal character in a single day."
 
+#. placeholder {0}: 1250
+#. placeholder {1}: 2
+msgid "* Exchange and sort coins, e.g., turn <0>{0} cp</0> into <1>{1} gp 25 sp</1>."
+msgstr "* Exchange and sort coins, e.g., turn <0>{0} cp</0> into <1>{1} gp 25 sp</1>."
+
 msgid "Barrel"
 msgstr "Barrel"
+
+msgid "Quiver"
+msgstr "Quiver"
 
 msgid "Not enough funds in wallet"
 msgstr "Not enough funds in wallet"
@@ -250,8 +258,11 @@ msgstr "This link does not contain a valid inventory."
 msgid "Export or Import Inventory"
 msgstr "Export or Import Inventory"
 
-msgid "optional"
-msgstr "optional"
+msgid "Arquebus is a handheld long gun which does not require a fork rest in order to fire properly. Can be used as a mêlée weapon (d6 damage)."
+msgstr "Arquebus is a handheld long gun which does not require a fork rest in order to fire properly. Can be used as a mêlée weapon (d6 damage)."
+
+msgid "Medium"
+msgstr "Medium"
 
 msgid "Darts for blowgun, quiver (20)"
 msgstr "Darts for blowgun, quiver (20)"
@@ -262,9 +273,23 @@ msgstr "Tassets"
 msgid "Rural"
 msgstr "Rural"
 
+msgid "CZ"
+msgstr "CZ"
+
 #. js-lingui-explicit-id
 msgid "Armor"
 msgstr "Armor"
+
+#. js-lingui-explicit-id
+msgid "armor.baseAc"
+msgstr "Unarmored characters have a Base AC of 12."
+
+#. js-lingui-explicit-id
+msgid "armor.unadjustedAc"
+msgstr "Unadjusted AC is that of solely the armor and shield. Dexterity modifiers, magical modifiers, or any other adjustments are not counted."
+
+msgid "Book, Blank"
+msgstr "Book, Blank"
 
 msgid ""
 "A Tinderbox is generally purchased with a flint and steel;\n"
@@ -278,14 +303,32 @@ msgstr ""
 msgid "A rock for throwing, not an ammunition"
 msgstr "A rock for throwing, not an ammunition"
 
+msgid "optional"
+msgstr "optional"
+
+msgid "Import Equipment set"
+msgstr "Import Equipment set"
+
 msgid "Clothing, Extravagant"
 msgstr "Clothing, Extravagant"
 
 msgid "Sling bullets (10)"
 msgstr "Sling bullets (10)"
 
+msgid "Encumbrance"
+msgstr "Encumbrance"
+
+msgid "Silver"
+msgstr "Silver"
+
 msgid "Magic-Users and Elves start with spellbooks containing their initial spells."
 msgstr "Magic-Users and Elves start with spellbooks containing their initial spells."
+
+msgid "ignores 5 points of armor at Short range"
+msgstr "ignores 5 points of armor at Short range"
+
+msgid "Add equipment item"
+msgstr "Add equipment item"
 
 msgid "Drill"
 msgstr "Drill"
@@ -296,17 +339,17 @@ msgstr "This weapon suffers a –2 penalty to hit opponents with an unadjusted A
 msgid "Mêlée damage"
 msgstr "Mêlée damage"
 
-msgid "Packs"
-msgstr "Packs"
-
-msgid "Silver"
-msgstr "Silver"
-
 msgid "Rifled"
 msgstr "Riffled"
 
+msgid "Receives charge"
+msgstr "Receives charge"
+
 msgid "Bag of 100 round shot."
 msgstr "Bag of 100 round shot."
+
+msgid "Packs"
+msgstr "Packs"
 
 msgid "These are small one-handed weapons including daggers and clubs, and suffer a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
 msgstr "These are small one-handed weapons including daggers and clubs, and suffer a –2 penalty to hit opponents with an unadjusted AC of 15 or better."
@@ -317,26 +360,70 @@ msgstr "Misfire"
 msgid "Weapon, Minor"
 msgstr "Weapon, Minor"
 
-msgid "Encumbrance calculator, inventory manager for the LotFP TTRPG system"
-msgstr "Encumbrance calculator, inventory manager for the LotFP TTRPG system"
-
-msgid "Slings fired with stones instead of bullets have half the listed range."
-msgstr "Slings fired with stones instead of bullets have half the listed range."
-
 msgid "Crowbar"
 msgstr "Crowbar"
+
+msgid "Heavily encumbered"
+msgstr "Heavily encumbered"
+
+msgid "Cost, sp"
+msgstr "Cost, sp"
 
 msgid "Export as a file"
 msgstr "Export as a file"
 
+msgid "Combat"
+msgstr "Combat"
+
+msgid "Encumbrance calculator, inventory manager for the LotFP TTRPG system"
+msgstr "Encumbrance calculator, inventory manager for the LotFP TTRPG system"
+
+msgid "Tent, Grand"
+msgstr "Tent, Grand"
+
+msgid "Slings fired with stones instead of bullets have half the listed range."
+msgstr "Slings fired with stones instead of bullets have half the listed range."
+
+msgid "Grappling Hook"
+msgstr "Grappling Hook"
+
 msgid "Mirrors are useful for many reasons; for instance, they can be used for looking around corners or for sending signals outdoors using reflected sunlight."
 msgstr "Mirrors are useful for many reasons; for instance, they can be used for looking around corners or for sending signals outdoors using reflected sunlight."
+
+msgid "Specialist"
+msgstr "Specialist"
+
+msgid "Brace of two pistols."
+msgstr "Brace of two pistols."
 
 msgid "An aromatic herb that repels vampires and some other undead monsters."
 msgstr "An aromatic herb that repels vampires and some other undead monsters."
 
 msgid "RU"
 msgstr "RU"
+
+#. js-lingui-explicit-id
+msgid "details.shareableJson1"
+msgstr "Exported data is a plain JSON file, that can be used for restoring."
+
+#. js-lingui-explicit-id
+msgid "details.shareableUrl1"
+msgstr "This link provides access to your current inventory. Please note that due to URL length restrictions in some browsers, it may not function properly, despite the URL itself being compressed."
+
+#. js-lingui-explicit-id
+msgid "details.shareableUrl2"
+msgstr "The URL, which may exceed 2000 characters, is compatible with most major browsers, but it is not supported by Edge, for example."
+
+#. js-lingui-explicit-id
+msgid "details.shareableUrlSectionFiles"
+msgstr "Files"
+
+#. js-lingui-explicit-id
+msgid "details.shareableUrlSectionUrl"
+msgstr "Shareable URL"
+
+msgid "Bow, Long"
+msgstr "Bow, Long"
 
 msgid "Arrow (1)"
 msgstr "Arrow (1)"
@@ -350,29 +437,118 @@ msgstr "This file does not contain a valid inventory."
 msgid "Candle"
 msgstr "Candle"
 
+msgid "config.armor.plate.details"
+msgstr "Explorers traveling with metal armor clomping on stone floors are not able to surprise anything or anyone (PCB p.56)."
+
+msgid "Replace your current inventory with the shared one?"
+msgstr "Replace your current inventory with the shared one?"
+
+msgid "Spikes are useful for spiking doors closed (or spiking them open) and may be used as crude pitons in appropriate situations."
+msgstr "Spikes are useful for spiking doors closed (or spiking them open) and may be used as crude pitons in appropriate situations."
+
+msgid "One shot of powder."
+msgstr "One shot of powder."
+
+msgid ""
+"Standard Rations include cured meats, seasonal fruits\n"
+"and vegetables, and fresh breads or biscuits, often\n"
+"wrapped in cloth. These are tastier than dry rations, but\n"
+"will generally only keep for a few days in all but the coldest\n"
+"or driest climates (up to 1 week)"
+msgstr ""
+"Standard Rations include cured meats, seasonal fruits\n"
+"and vegetables, and fresh breads or biscuits, often\n"
+"wrapped in cloth. These are tastier than dry rations, but\n"
+"will generally only keep for a few days in all but the coldest\n"
+"or driest climates (up to 1 week)"
+
 msgid "Waterskin"
 msgstr "Waterskin"
-
-msgid "Per day"
-msgstr "Per day"
-
-msgid "Reset all equipment?"
-msgstr "Reset all equipment?"
-
-msgid "Ammunition and gear"
-msgstr "Ammunition and gear"
 
 msgid "None"
 msgstr "None"
 
+msgid "Cestus"
+msgstr "Cestus"
+
+msgid "Per day"
+msgstr "Per day"
+
+msgid "config.firearms.buffCoat.details"
+msgstr "A yellow leather jacket used for basic protection throughout the 17th century."
+
+msgid "rifled"
+msgstr "rifled"
+
+msgid "Reset all equipment?"
+msgstr "Reset all equipment?"
+
+msgid "Mancatcher"
+msgstr "Mancatcher"
+
+msgid "Removed"
+msgstr "Removed"
+
+msgid "Ammunition and gear"
+msgstr "Ammunition and gear"
+
 msgid "The Equipment tab list is scrollable."
 msgstr "The Equipment tab list is scrollable."
+
+msgid "Crossbow, Light"
+msgstr "Crossbow, Light"
+
+msgid "Map, Kingdom"
+msgstr "Map, Kingdom"
+
+msgid "Saving throws vs physical damage"
+msgstr "Saving throws vs physical damage"
 
 msgid "×1.5 for rifled barrel (round to the nearest)"
 msgstr "×1.5 for rifled barrel (round to the nearest)"
 
 msgid "Active"
 msgstr "Active"
+
+msgid "Crossbow, Heavy"
+msgstr "Crossbow, Heavy"
+
+msgid "ft"
+msgstr "ft"
+
+msgid "Short sword"
+msgstr "Short sword"
+
+msgid "Rope, 50'"
+msgstr "Rope, 50'"
+
+#. js-lingui-explicit-id
+msgid "Firearm mechanism"
+msgstr "Firearm mechanism"
+
+#. js-lingui-explicit-id
+msgid "Firearms"
+msgstr "Firearms"
+
+#. js-lingui-explicit-id
+msgid "firearms.hint.flintlock"
+msgstr "The lit match is replaced with a piece of flint: when the trigger is pulled, it strikes a piece of steel (the frizzen), and the spark ignites the powder in the priming pan."
+
+#. js-lingui-explicit-id
+msgid "firearms.hint.matchlock"
+msgstr "A lit match secured in a clamp. When the trigger is pulled, the clamp drops the match into the priming pan with a little fine powder, and the fire passes through a small touch hole to ignite the charge in the barrel."
+
+#. js-lingui-explicit-id
+msgid "firearms.hint.rifled"
+msgstr "Spiraling grooves inside the barrel better guide the bullet and improve accuracy. Expensive, as it is done by hand; rifled guns are slower to load."
+
+#. js-lingui-explicit-id
+msgid "firearms.hint.wheellock"
+msgstr "An internal mechanism makes the gun ready to fire with no outside source of ignition, and protects the firing mechanism and priming pan from the elements."
+
+#. js-lingui-explicit-id
+msgid "Flintlock"
+msgstr "Flintlock"
 
 msgid "Second rank"
 msgstr "Second rank"
@@ -386,17 +562,8 @@ msgstr "Pistol"
 msgid "Gold"
 msgstr "Gold"
 
-#. js-lingui-explicit-id
-msgid "Firearm mechanism"
-msgstr "Firearm mechanism"
-
-#. js-lingui-explicit-id
-msgid "Firearms"
-msgstr "Firearms"
-
-#. js-lingui-explicit-id
-msgid "Flintlock"
-msgstr "Flintlock"
+msgid "Rock"
+msgstr "Rock"
 
 msgid ""
 "Chalk is useful for “blazing a trail” through a dungeon or\n"
@@ -407,14 +574,23 @@ msgstr ""
 "ruin, to ensure that the adventurers can find their way\n"
 "back out again"
 
+msgid "Whip"
+msgstr "Whip"
+
 msgid "12 Apostles"
 msgstr "12 Apostles"
 
-msgid "Filter by name"
-msgstr "Filter by name"
+msgid "Tinderbox"
+msgstr "Tinderbox"
+
+msgid "Reset all equipment"
+msgstr "Reset all equipment"
 
 msgid "Wolvesbane"
 msgstr "Wolvesbane"
+
+msgid "Arquebus"
+msgstr "Arquebus"
 
 msgid "Firearms"
 msgstr "Firearms"
@@ -428,8 +604,23 @@ msgstr "on foot: + CON mod"
 msgid "Unencumbered"
 msgstr "Unencumbered"
 
+msgid "Cumbersome"
+msgstr "Cumbersome"
+
 msgid "Bedroll"
 msgstr "Bedroll"
+
+msgid "config.melee.slingRocks.details"
+msgstr "Slings fired with stones instead of bullets have the listed range (half of the regular)."
+
+msgid "Paper"
+msgstr "Paper"
+
+msgid "Filter by name"
+msgstr "Filter by name"
+
+msgid "Spike, Iron"
+msgstr "Spike, Iron"
 
 msgctxt "equipment tab"
 msgid "Firearms"
@@ -444,6 +635,9 @@ msgstr "Blowguns are long, hollow tubes of metal or wood, which use the wielders
 msgid "Whistle"
 msgstr "Whistle"
 
+msgid "Coins weigh"
+msgstr "Coins weigh"
+
 msgid "These are one-handed weapons, including swords, battle axes, maces"
 msgstr "These are one-handed weapons, including swords, battle axes, maces"
 
@@ -453,11 +647,17 @@ msgstr "Lock"
 msgid "title.encumbranceUnits"
 msgstr "Encumbrance Units"
 
-msgid "Item"
-msgstr "Item"
+msgid "Added"
+msgstr "Added"
 
 msgid "Reload"
 msgstr "Reload"
+
+msgid "Item"
+msgstr "Item"
+
+msgid "Shield"
+msgstr "Shield"
 
 msgid "Holy Symbol, Silver"
 msgstr "Holy Symbol, Silver"
@@ -468,14 +668,29 @@ msgstr "Polearm"
 msgid "Enable the weight of coins for encumbrance calculations."
 msgstr "Enable the weight of coins for encumbrance calculations."
 
+msgid "Copper pieces"
+msgstr "Copper pieces"
+
 msgid "Cost"
 msgstr "Cost"
+
+msgid "Disclaimer"
+msgstr "Disclaimer"
+
+msgid "Road"
+msgstr "Road"
+
+msgid "Light crossbows can only be fired every once in 2 rounds and ignore 2 AC points"
+msgstr "Light crossbows can only be fired every once in 2 rounds and ignore 2 AC points"
 
 msgid "Dungeon"
 msgstr "Dungeon"
 
 msgid "Clear, plains, trail"
 msgstr "Clear, plains, trail"
+
+msgid "Charcoal"
+msgstr "Charcoal"
 
 msgid "Equipment pack"
 msgstr "Equipment pack"
@@ -486,12 +701,6 @@ msgstr "EN"
 msgid "Set coins"
 msgstr "Set coins"
 
-msgid "Reset coins"
-msgstr "Reset coins"
-
-msgid "Book, Reading"
-msgstr "Book, Reading"
-
 msgid "Aconite, also known as wolvesbane (wolfsbane) is sold dried or fresh in single sprigs. This herb is used to drive off lycanthropes, who cannot stand it."
 msgstr "Aconite, also known as wolvesbane (wolfsbane) is sold dried or fresh in single sprigs. This herb is used to drive off lycanthropes, who cannot stand it."
 
@@ -501,11 +710,41 @@ msgstr "Add coins"
 msgid "Ladder, 10'"
 msgstr "Ladder, 10'"
 
+msgid "Plate"
+msgstr "Plate"
+
+msgid "Reset coins"
+msgstr "Reset coins"
+
+msgid "Battle axe"
+msgstr "Battle axe"
+
+msgid "Book, Reading"
+msgstr "Book, Reading"
+
 msgid "Cord burns 10 cm per turn."
 msgstr "Cord burns 10 cm per turn."
 
+msgid "Shot Bag"
+msgstr "Shot Bag"
+
+msgid "Medium, {medium} AB"
+msgstr "Medium, {medium} AB"
+
+msgid "Wilderness"
+msgstr "Wilderness"
+
+msgid "Musket is a large handheld long gun which requires a fork rest in order to fire; not having the rest levies a –2 penalty to hit. Can be used as a mêlée weapon (d6 damage)."
+msgstr "Musket is a large handheld long gun which requires a fork rest in order to fire; not having the rest levies a –2 penalty to hit. Can be used as a mêlée weapon (d6 damage)."
+
 msgid "Category"
 msgstr "Category"
+
+msgid "Cleric 1"
+msgstr "Cleric 1"
+
+msgid "Inventory cost"
+msgstr "Inventory cost"
 
 msgid "×½ for flintlock (Fighters round down, others round up)"
 msgstr "×½ for flintlock (Fighters round down, others round up)"
@@ -516,23 +755,65 @@ msgstr "Oversized"
 msgid "Specialist’s Tools"
 msgstr "Specialist’s Tools"
 
-msgid "Princess Helpers"
-msgstr "Princess Helpers"
+msgid "Adventurer"
+msgstr "Adventurer"
 
-msgid "Cleric 2"
-msgstr "Cleric 2"
+msgid "Crossbow bolt (1)"
+msgstr "Crossbow bolt (1)"
+
+msgid "Lamentations of the Flame Princess helpers, LotFP generator, LotFP equipment, LotFP inventory"
+msgstr "Lamentations of the Flame Princess helpers, LotFP generator, LotFP equipment, LotFP inventory"
+
+msgid "Import"
+msgstr "Import"
+
+msgid "Buff Coat"
+msgstr "Buff Coat"
+
+msgid "Mountains, jungle, swamp"
+msgstr "Mountains, jungle, swamp"
+
+msgid "Crampons"
+msgstr "Crampons"
+
+msgid "config.firearms.tassets.details"
+msgstr "Plates protecting the upper leg. Give +1 AC when worn with Pikeman's armor."
+
+msgid "Gold pieces"
+msgstr "Gold pieces"
+
+msgid "Missile Weapons"
+msgstr "Missile Weapons"
 
 msgid "Heavy crossbows can only be fired once in 3 rounds and ignore 4 AC points"
 msgstr "Heavy crossbows can only be fired once in 3 rounds and ignore 4 AC points"
 
+msgid "Helm, Secrete"
+msgstr "Helm, Secrete"
+
+msgid "Soap"
+msgstr "Soap"
+
 msgid "config.misc.caltrop.details"
 msgstr "Caltrops are metal spikes that look like large jacks, shaped so that there is always one sharp point facing up."
+
+msgid "Princess Helpers"
+msgstr "Princess Helpers"
 
 msgid "Use of this weapon requires an attack from surprise, or a successful grapple. If a hit is scored, the target is considered grappled and will take 1d6 damage per round."
 msgstr "Use of this weapon requires an attack from surprise, or a successful grapple. If a hit is scored, the target is considered grappled and will take 1d6 damage per round."
 
+msgid "Cleric 2"
+msgstr "Cleric 2"
+
+msgid "English"
+msgstr "English"
+
 msgid "Chest"
 msgstr "Chest"
+
+msgid "Add"
+msgstr "Add"
 
 msgid "Pseudo"
 msgstr "Pseudo"
@@ -540,14 +821,11 @@ msgstr "Pseudo"
 msgid "Missiles"
 msgstr "Missiles"
 
+msgid "Armor piercing"
+msgstr "Armor piercing"
+
 msgid "Bottle of Wine/Liquor, Poor"
 msgstr "Bottle of Wine/Liquor, Poor"
-
-msgid "Vial or Bottle"
-msgstr "Vial or Bottle"
-
-msgid "Club"
-msgstr "Club"
 
 #. js-lingui-explicit-id
 msgid "Matchlock"
@@ -555,6 +833,16 @@ msgstr "Matchlock"
 
 msgid "Heavy"
 msgstr "Heavy"
+
+#. js-lingui-explicit-id
+msgid "Mêlée weapons"
+msgstr "Mêlée weapons"
+
+msgid "Vial or Bottle"
+msgstr "Vial or Bottle"
+
+msgid "Club"
+msgstr "Club"
 
 #. js-lingui-explicit-id
 msgid "Miscellaneous"
@@ -567,9 +855,14 @@ msgstr "Missile weapons"
 msgid "Firearms campaign: the cost of armor and shields is raised by 50%."
 msgstr "Firearms campaign: the cost of armor and shields is raised by 50%."
 
-#. js-lingui-explicit-id
-msgid "Mêlée weapons"
-msgstr "Mêlée weapons"
+msgid "Match Cord, 1 m"
+msgstr "Match Cord, 1 m"
+
+msgid "Exchange coins *"
+msgstr "Exchange coins *"
+
+msgid "Two-handed"
+msgstr "Two-handed"
 
 msgid ""
 "A hammer or mallet with a head made of\n"
@@ -595,506 +888,23 @@ msgstr "Two-handed sword"
 msgid "Forest, desert, hills"
 msgstr "Forest, desert, hills"
 
-msgid "Add item"
-msgstr "Add item"
-
 msgid "Set"
 msgstr "Set"
-
-msgid "title.encumbrancePoints"
-msgstr "Encumbrance Points"
-
-msgid "config.firearms.secreteHelm.details"
-msgstr "A steel skullcap worn unseen under a hat. Non-encumbering."
-
-msgid "Armor Class"
-msgstr "Armor Class"
-
-msgid "Reset"
-msgstr "Reset"
-
-msgid "Firearms rules are optional. Turn on the firearms campaign above to add firearms, gear and armor to the inventory."
-msgstr "Firearms rules are optional. Turn on the firearms campaign above to add firearms, gear and armor to the inventory."
-
-msgid "Firearms campaign"
-msgstr "Firearms campaign"
-
-msgid "Arrows, quiver (20)"
-msgstr "Arrows, quiver (20)"
-
-msgid "Garlic"
-msgstr "Garlic"
-
-msgid "Sword"
-msgstr "Sword"
-
-msgid "The number should be equal to or greater than 0"
-msgstr "The number should be equal to or greater than 0"
-
-msgid "Delete the saved inventory? This cannot be undone."
-msgstr "Delete the saved inventory? This cannot be undone."
-
-msgid "Storm conditions"
-msgstr "Storm conditions"
-
-msgid "Long, {long} AB"
-msgstr "Long, {long} AB"
-
-msgid "weapons.melee.secondRank"
-msgstr "Can attack from the second rank"
-
-msgid "Clothing, Normal"
-msgstr "Clothing, Normal"
-
-msgid "Rapier"
-msgstr "Rapier"
-
-msgid "OR"
-msgstr "OR"
-
-msgid "Sling"
-msgstr "Sling"
-
-msgid "Magic user"
-msgstr "Magic user"
-
-msgid "Miscellaneous"
-msgstr "Miscellaneous"
-
-msgid "Quick Reference on the LotFP Firearms Rules"
-msgstr "Quick Reference on the LotFP Firearms Rules"
-
-msgid "Backpack"
-msgstr "Backpack"
-
-msgid "Short"
-msgstr "Short"
-
-#. js-lingui-explicit-id
-msgid "Range, feet"
-msgstr "Range, feet"
-
-msgid "Running"
-msgstr "Running"
-
-msgid "Mirror, Silver"
-msgstr "Mirror, Silver"
-
-msgid "Sling bullets, rocks (10)"
-msgstr "Sling bullets, rocks (10)"
-
-msgid "page.title.suffix"
-msgstr " — Princess Helpers"
-
-msgid "Blowgun"
-msgstr "Blowgun"
-
-msgid "Block and Tackle"
-msgstr "Block and Tackle"
-
-msgid "Error"
-msgstr "Error"
-
-msgid "Pistol brace"
-msgstr "Pistol brace"
-
-msgid "Lard"
-msgstr "Lard"
-
-msgid "Sack"
-msgstr "Sack"
-
-msgid "Feed, Animal/Day"
-msgstr "Feed, Animal/Day"
-
-msgid "weapons.melee.charge"
-msgstr "Weapons that allow to receive charge (damage x2, act first): polearm, spear."
-
-msgid "ignores 5 points of armor at all ranges"
-msgstr "ignores 5 points of armor at all ranges"
-
-msgid "Lantern"
-msgstr "Lantern"
-
-msgid "Details"
-msgstr "Details"
-
-msgid "Lightly encumbered"
-msgstr "Lightly encumbered"
-
-msgid "config.firearms.pikemansArmor.details"
-msgstr "Just the breast and back plates. +1 AC if the tassets are used."
-
-msgid "Pick, Miner’s"
-msgstr "Pick, Miner’s"
-
-msgid "Gem"
-msgstr "Gem"
-
-msgid "Weight"
-msgstr "Weight"
-
-msgid "About LotFP tools project"
-msgstr "About LotFP tools project"
-
-msgid "Over encumbered"
-msgstr "Over encumbered"
-
-#. js-lingui-explicit-id
-msgid "Weight"
-msgstr "Weight"
-
-#. js-lingui-explicit-id
-msgid "Wheellock"
-msgstr "Wheellock"
-
-msgid "Pistols are about the size of a man’s forearm and require one hand to fire. Pistols never use the matchlock firing mechanism. Can be used as a mêlée weapon (d4 damage)."
-msgstr "Pistols are about the size of a man’s forearm and require one hand to fire. Pistols never use the matchlock firing mechanism. Can be used as a mêlée weapon (d4 damage)."
-
-msgid "Tobacco"
-msgstr "Tobacco"
-
-msgid "Encumbrance quick reference"
-msgstr "Encumbrance quick reference"
-
-msgid "Rations, Standard/Day"
-msgstr "Rations, Standard/Day"
-
-msgid "Chain, per foot"
-msgstr "Chain, per foot"
-
-msgid "Dwarven Encumbrance"
-msgstr "Dwarven Encumbrance"
-
-msgid "Precipitations, high winds"
-msgstr "Precipitations, high winds"
-
-msgid "Helm, Morion"
-msgstr "Helm, Morion"
-
-msgid "Emits light in a 10' radius. Burns for 2 hours."
-msgstr "Emits light in a 10' radius. Burns for 2 hours."
-
-msgid "Cost coefficient"
-msgstr "Cost coefficient"
-
-msgid "These weapons must be wielded with two hands. Two-handed swords, mauls, and great axes are included in this category."
-msgstr "These weapons must be wielded with two hands. Two-handed swords, mauls, and great axes are included in this category."
-
-msgid "Loading..."
-msgstr "Loading..."
-
-msgid "Provided price is minimal"
-msgstr "Provided price is minimal"
-
-msgid "{miPerDay, plural, =0 {miles} one {mile} two {miles} few {miles} many {miles} other {miles}}"
-msgstr "{miPerDay, plural, =0 {miles} one {mile} two {miles} few {miles} many {miles} other {miles}}"
-
-msgid "Reset saved data"
-msgstr "Reset saved data"
-
-msgid "Inventory"
-msgstr "Inventory"
-
-msgid "* Exchange and sort coins, e.g., turn <0>{0} cp</0> into <1>{1} gp 25 sp</1>."
-msgstr "* Exchange and sort coins, e.g., turn <0>{0} cp</0> into <1>{1} gp 25 sp</1>."
-
-msgid "Arquebus is a handheld long gun which does not require a fork rest in order to fire properly. Can be used as a mêlée weapon (d6 damage)."
-msgstr "Arquebus is a handheld long gun which does not require a fork rest in order to fire properly. Can be used as a mêlée weapon (d6 damage)."
-
-msgid "Book, Blank"
-msgstr "Book, Blank"
-
-msgid "Import Equipment set"
-msgstr "Import Equipment set"
-
-msgid "Quiver"
-msgstr "Quiver"
-
-msgid "Medium"
-msgstr "Medium"
-
-msgid "CZ"
-msgstr "CZ"
-
-#. js-lingui-explicit-id
-msgid "armor.baseAc"
-msgstr "Unarmored characters have a Base AC of 12."
-
-#. js-lingui-explicit-id
-msgid "armor.unadjustedAc"
-msgstr "Unadjusted AC is that of solely the armor and shield. Dexterity modifiers, magical modifiers, or any other adjustments are not counted."
-
-msgid "Encumbrance"
-msgstr "Encumbrance"
-
-msgid "ignores 5 points of armor at Short range"
-msgstr "ignores 5 points of armor at Short range"
-
-msgid "Add equipment item"
-msgstr "Add equipment item"
-
-msgid "Receives charge"
-msgstr "Receives charge"
-
-msgid "Heavily encumbered"
-msgstr "Heavily encumbered"
-
-msgid "Tent, Grand"
-msgstr "Tent, Grand"
-
-msgid "Cost, sp"
-msgstr "Cost, sp"
-
-msgid "Combat"
-msgstr "Combat"
-
-msgid "Grappling Hook"
-msgstr "Grappling Hook"
-
-msgid "Specialist"
-msgstr "Specialist"
-
-msgid "Brace of two pistols."
-msgstr "Brace of two pistols."
-
-msgid "Bow, Long"
-msgstr "Bow, Long"
-
-msgid "config.armor.plate.details"
-msgstr "Explorers traveling with metal armor clomping on stone floors are not able to surprise anything or anyone (PCB p.56)."
-
-#. js-lingui-explicit-id
-msgid "details.shareableJson1"
-msgstr "Exported data is a plain JSON file, that can be used for restoring."
-
-#. js-lingui-explicit-id
-msgid "details.shareableUrl1"
-msgstr "This link provides access to your current inventory. Please note that due to URL length restrictions in some browsers, it may not function properly, despite the URL itself being compressed."
-
-#. js-lingui-explicit-id
-msgid "details.shareableUrl2"
-msgstr "The URL, which may exceed 2000 characters, is compatible with most major browsers, but it is not supported by Edge, for example."
-
-#. js-lingui-explicit-id
-msgid "details.shareableUrlSectionFiles"
-msgstr "Files"
-
-#. js-lingui-explicit-id
-msgid "details.shareableUrlSectionUrl"
-msgstr "Shareable URL"
-
-msgid "Replace your current inventory with the shared one?"
-msgstr "Replace your current inventory with the shared one?"
-
-msgid "Spikes are useful for spiking doors closed (or spiking them open) and may be used as crude pitons in appropriate situations."
-msgstr "Spikes are useful for spiking doors closed (or spiking them open) and may be used as crude pitons in appropriate situations."
-
-msgid "One shot of powder."
-msgstr "One shot of powder."
-
-msgid ""
-"Standard Rations include cured meats, seasonal fruits\n"
-"and vegetables, and fresh breads or biscuits, often\n"
-"wrapped in cloth. These are tastier than dry rations, but\n"
-"will generally only keep for a few days in all but the coldest\n"
-"or driest climates (up to 1 week)"
-msgstr ""
-"Standard Rations include cured meats, seasonal fruits\n"
-"and vegetables, and fresh breads or biscuits, often\n"
-"wrapped in cloth. These are tastier than dry rations, but\n"
-"will generally only keep for a few days in all but the coldest\n"
-"or driest climates (up to 1 week)"
-
-msgid "Cestus"
-msgstr "Cestus"
-
-msgid "rifled"
-msgstr "rifled"
-
-msgid "Crossbow, Light"
-msgstr "Crossbow, Light"
-
-msgid "config.firearms.buffCoat.details"
-msgstr "A yellow leather jacket used for basic protection throughout the 17th century."
-
-msgid "Mancatcher"
-msgstr "Mancatcher"
-
-msgid "Removed"
-msgstr "Removed"
-
-msgid "Map, Kingdom"
-msgstr "Map, Kingdom"
-
-msgid "Saving throws vs physical damage"
-msgstr "Saving throws vs physical damage"
-
-msgid "Crossbow, Heavy"
-msgstr "Crossbow, Heavy"
-
-msgid "Short sword"
-msgstr "Short sword"
-
-msgid "ft"
-msgstr "ft"
-
-msgid "Rope, 50'"
-msgstr "Rope, 50'"
-
-#. js-lingui-explicit-id
-msgid "firearms.hint.flintlock"
-msgstr "The lit match is replaced with a piece of flint: when the trigger is pulled, it strikes a piece of steel (the frizzen), and the spark ignites the powder in the priming pan."
-
-#. js-lingui-explicit-id
-msgid "firearms.hint.matchlock"
-msgstr "A lit match secured in a clamp. When the trigger is pulled, the clamp drops the match into the priming pan with a little fine powder, and the fire passes through a small touch hole to ignite the charge in the barrel."
-
-#. js-lingui-explicit-id
-msgid "firearms.hint.rifled"
-msgstr "Spiraling grooves inside the barrel better guide the bullet and improve accuracy. Expensive, as it is done by hand; rifled guns are slower to load."
-
-#. js-lingui-explicit-id
-msgid "firearms.hint.wheellock"
-msgstr "An internal mechanism makes the gun ready to fire with no outside source of ignition, and protects the firing mechanism and priming pan from the elements."
-
-msgid "Rock"
-msgstr "Rock"
-
-msgid "Whip"
-msgstr "Whip"
-
-msgid "Tinderbox"
-msgstr "Tinderbox"
-
-msgid "Reset all equipment"
-msgstr "Reset all equipment"
-
-msgid "Paper"
-msgstr "Paper"
-
-msgid "Spike, Iron"
-msgstr "Spike, Iron"
-
-msgid "Arquebus"
-msgstr "Arquebus"
-
-msgid "Cumbersome"
-msgstr "Cumbersome"
-
-msgid "config.melee.slingRocks.details"
-msgstr "Slings fired with stones instead of bullets have the listed range (half of the regular)."
-
-msgid "Coins weigh"
-msgstr "Coins weigh"
-
-msgid "Added"
-msgstr "Added"
-
-msgid "Shield"
-msgstr "Shield"
-
-msgid "Copper pieces"
-msgstr "Copper pieces"
-
-msgid "Disclaimer"
-msgstr "Disclaimer"
-
-msgid "Light crossbows can only be fired every once in 2 rounds and ignore 2 AC points"
-msgstr "Light crossbows can only be fired every once in 2 rounds and ignore 2 AC points"
-
-msgid "Charcoal"
-msgstr "Charcoal"
-
-msgid "Road"
-msgstr "Road"
-
-msgid "Plate"
-msgstr "Plate"
-
-msgid "Shot Bag"
-msgstr "Shot Bag"
-
-msgid "Battle axe"
-msgstr "Battle axe"
-
-msgid "Medium, {medium} AB"
-msgstr "Medium, {medium} AB"
-
-msgid "Wilderness"
-msgstr "Wilderness"
-
-msgid "Musket is a large handheld long gun which requires a fork rest in order to fire; not having the rest levies a –2 penalty to hit. Can be used as a mêlée weapon (d6 damage)."
-msgstr "Musket is a large handheld long gun which requires a fork rest in order to fire; not having the rest levies a –2 penalty to hit. Can be used as a mêlée weapon (d6 damage)."
-
-msgid "Inventory cost"
-msgstr "Inventory cost"
-
-msgid "Cleric 1"
-msgstr "Cleric 1"
-
-msgid "Adventurer"
-msgstr "Adventurer"
-
-msgid "Crossbow bolt (1)"
-msgstr "Crossbow bolt (1)"
-
-msgid "Lamentations of the Flame Princess helpers, LotFP generator, LotFP equipment, LotFP inventory"
-msgstr "Lamentations of the Flame Princess helpers, LotFP generator, LotFP equipment, LotFP inventory"
-
-msgid "Import"
-msgstr "Import"
-
-msgid "Buff Coat"
-msgstr "Buff Coat"
-
-msgid "Mountains, jungle, swamp"
-msgstr "Mountains, jungle, swamp"
-
-msgid "Crampons"
-msgstr "Crampons"
-
-msgid "Missile Weapons"
-msgstr "Missile Weapons"
-
-msgid "Helm, Secrete"
-msgstr "Helm, Secrete"
-
-msgid "English"
-msgstr "English"
-
-msgid "config.firearms.tassets.details"
-msgstr "Plates protecting the upper leg. Give +1 AC when worn with Pikeman's armor."
-
-msgid "Gold pieces"
-msgstr "Gold pieces"
-
-msgid "Soap"
-msgstr "Soap"
-
-msgid "Add"
-msgstr "Add"
-
-msgid "Armor piercing"
-msgstr "Armor piercing"
-
-msgid "Match Cord, 1 m"
-msgstr "Match Cord, 1 m"
-
-msgid "Exchange coins *"
-msgstr "Exchange coins *"
-
-msgid "Two-handed"
-msgstr "Two-handed"
-
-msgid "Caltrop"
-msgstr "Caltrop"
 
 msgid "Russian"
 msgstr "Russian"
 
+msgid "Caltrop"
+msgstr "Caltrop"
+
+msgid "Add item"
+msgstr "Add item"
+
 msgid "Garrote"
 msgstr "Garrote"
+
+msgid "title.encumbrancePoints"
+msgstr "Encumbrance Points"
 
 msgid "Severely encumbered"
 msgstr "Severely encumbered"
@@ -1105,20 +915,50 @@ msgstr "Quick Reference on Encumbrance and Movement from the LotFP Core Rules"
 msgid "Movement"
 msgstr "Movement"
 
+msgid "Reset"
+msgstr "Reset"
+
+msgid "Firearms rules are optional. Turn on the firearms campaign above to add firearms, gear and armor to the inventory."
+msgstr "Firearms rules are optional. Turn on the firearms campaign above to add firearms, gear and armor to the inventory."
+
+msgid "Firearms campaign"
+msgstr "Firearms campaign"
+
+msgid "config.firearms.secreteHelm.details"
+msgstr "A steel skullcap worn unseen under a hat. Non-encumbering."
+
+msgid "Armor Class"
+msgstr "Armor Class"
+
 msgid "Mallet"
 msgstr "Mallet"
-
-msgid "config.melee.cestus.details"
-msgstr "This includes all sorts of fist wrappings and brass knuckle weapon types. Users suffer a –2 penalty to hit any opponent with an unadjusted AC of 15 or better."
 
 msgid "config.firearms.apostles.details"
 msgstr "Bandolier with 12 shots worth of powder in pre-measured containers. Using an apostle reduces the time needed to load a firearm by one round. If the wearer is hit by a fire attack, they save versus Breath Weapon for each unused apostle; each failure deals 1 damage."
 
+msgid "Arrows, quiver (20)"
+msgstr "Arrows, quiver (20)"
+
 msgid "Long"
 msgstr "Long"
 
+msgid "config.melee.cestus.details"
+msgstr "This includes all sorts of fist wrappings and brass knuckle weapon types. Users suffer a –2 penalty to hit any opponent with an unadjusted AC of 15 or better."
+
+msgid "Garlic"
+msgstr "Garlic"
+
+msgid "Sword"
+msgstr "Sword"
+
 msgid "Full Armor"
 msgstr "Full Armor"
+
+msgid "The number should be equal to or greater than 0"
+msgstr "The number should be equal to or greater than 0"
+
+msgid "Delete the saved inventory? This cannot be undone."
+msgstr "Delete the saved inventory? This cannot be undone."
 
 msgid "Exploration"
 msgstr "Exploration"
@@ -1132,38 +972,78 @@ msgstr "Torch"
 msgid "Ink"
 msgstr "Ink"
 
+msgid "Select random"
+msgstr "Select random"
+
 msgid "Oversized ×4"
 msgstr "Oversized ×4"
 
-msgid "Cooking Pots"
-msgstr "Cooking Pots"
-
-msgid "Select random"
-msgstr "Select random"
+msgid "Storm conditions"
+msgstr "Storm conditions"
 
 msgid "config.firearms.fireBomb.details"
 msgstr "Fired instead of normal shot: it does not penetrate, but explodes in a small fireball on impact, dealing 1d4 damage and igniting flammables; a misfire blows it up. A character carrying fire bombs who is hit by a fire-based attack makes one saving throw versus Breath Weapon for each fire bomb carried, taking fire bomb damage for each failure."
 
+msgid "Cooking Pots"
+msgstr "Cooking Pots"
+
+msgid "Long, {long} AB"
+msgstr "Long, {long} AB"
+
+msgid "Rapier"
+msgstr "Rapier"
+
+msgid "OR"
+msgstr "OR"
+
+msgid "weapons.melee.secondRank"
+msgstr "Can attack from the second rank"
+
+msgid "Clothing, Normal"
+msgstr "Clothing, Normal"
+
 msgid "Jewelry"
 msgstr "Jewelry"
+
+msgid "Sling"
+msgstr "Sling"
 
 msgid "Targets at Medium range are –4 to hit, –8 to hit at Long range. Rifled barrels halve the range penalties, but cost twice as much."
 msgstr "Targets at Medium range are –4 to hit, –8 to hit at Long range. Rifled barrels halve the range penalties, but cost twice as much."
 
-msgid "Pole, 10'"
-msgstr "Pole, 10'"
+#. js-lingui-explicit-id
+msgid "Range, feet"
+msgstr "Range, feet"
 
-msgid "Scattershot"
-msgstr "Scattershot"
+msgid "Magic user"
+msgstr "Magic user"
 
-msgid "Lance"
-msgstr "Lance"
+msgid "Miscellaneous"
+msgstr "Miscellaneous"
 
 msgid "No encumbrance if empty"
 msgstr "No encumbrance if empty"
 
+msgid "Pole, 10'"
+msgstr "Pole, 10'"
+
+msgid "Quick Reference on the LotFP Firearms Rules"
+msgstr "Quick Reference on the LotFP Firearms Rules"
+
 msgid "Hourglass"
 msgstr "Hourglass"
+
+msgid "Running"
+msgstr "Running"
+
+msgid "Backpack"
+msgstr "Backpack"
+
+msgid "Scattershot"
+msgstr "Scattershot"
+
+msgid "Mirror, Silver"
+msgstr "Mirror, Silver"
 
 msgid "Firearm mechanism"
 msgstr "Firearm mechanism"
@@ -1171,8 +1051,20 @@ msgstr "Firearm mechanism"
 msgid "Dart for blowgun (1)"
 msgstr "Dart for blowgun (1)"
 
+msgid "Short"
+msgstr "Short"
+
+msgid "Sling bullets, rocks (10)"
+msgstr "Sling bullets, rocks (10)"
+
 msgid "Sometimes, the issue may be due to incompatible or corrupted saved data. Resetting it removes your stored inventory."
 msgstr "Sometimes, the issue may be due to incompatible or corrupted saved data. Resetting it removes your stored inventory."
+
+msgid "page.title.suffix"
+msgstr " — Princess Helpers"
+
+msgid "Lance"
+msgstr "Lance"
 
 msgid "This weapon can be used one-handed if charging on horseback. Otherwise, it is effectively a polearm (pike)"
 msgstr "This weapon can be used one-handed if charging on horseback. Otherwise, it is effectively a polearm (pike)"
@@ -1180,17 +1072,44 @@ msgstr "This weapon can be used one-handed if charging on horseback. Otherwise, 
 msgid "Wallet"
 msgstr "Wallet"
 
+msgid "Blowgun"
+msgstr "Blowgun"
+
+msgid "Error"
+msgstr "Error"
+
 msgid "Helm, Lobster Tail Pot"
 msgstr "Helm, Lobster Tail Pot"
+
+msgid "Block and Tackle"
+msgstr "Block and Tackle"
 
 msgid "Mirror, Steel"
 msgstr "Mirror, Steel"
 
+msgid "Pistol brace"
+msgstr "Pistol brace"
+
+msgid "Lard"
+msgstr "Lard"
+
+msgid "weapons.melee.charge"
+msgstr "Weapons that allow to receive charge (damage x2, act first): polearm, spear."
+
 msgid "Weapon, Small"
 msgstr "Weapon, Small"
 
+msgid "ignores 5 points of armor at all ranges"
+msgstr "ignores 5 points of armor at all ranges"
+
 msgid "Optional firearms rules: firearms can be added, basic armor and shields cost 50% more."
 msgstr "Optional firearms rules: firearms can be added, basic armor and shields cost 50% more."
+
+msgid "Sack"
+msgstr "Sack"
+
+msgid "Feed, Animal/Day"
+msgstr "Feed, Animal/Day"
 
 msgid "Bottle of Wine/Liquor, Rich"
 msgstr "Bottle of Wine/Liquor, Rich"
@@ -1198,11 +1117,17 @@ msgstr "Bottle of Wine/Liquor, Rich"
 msgid "Pouch"
 msgstr "Pouch"
 
-msgid "Staff"
-msgstr "Staff"
+msgid "Lantern"
+msgstr "Lantern"
+
+msgid "Details"
+msgstr "Details"
 
 msgid "Maul"
 msgstr "Maul"
+
+msgid "Staff"
+msgstr "Staff"
 
 msgid "About"
 msgstr "About"
@@ -1213,6 +1138,9 @@ msgstr "Specialist tools are required for Specialists to utilize their Search sk
 msgid "Charcoal pieces of carbonized wood, which can be used like chalk (with black markings), or to add to tinder"
 msgstr "Charcoal pieces of carbonized wood, which can be used like chalk (with black markings), or to add to tinder"
 
+msgid "Lightly encumbered"
+msgstr "Lightly encumbered"
+
 msgid "Musket"
 msgstr "Musket"
 
@@ -1221,6 +1149,12 @@ msgstr "Gunpowder, Barrel"
 
 msgid "Spike, Wooden"
 msgstr "Spike, Wooden"
+
+msgid "config.firearms.pikemansArmor.details"
+msgstr "Just the breast and back plates. +1 AC if the tassets are used."
+
+msgid "Pick, Miner’s"
+msgstr "Pick, Miner’s"
 
 msgid "weapons.melee.twoHanded"
 msgstr "These weapons must be wielded with two hands."
@@ -1231,14 +1165,8 @@ msgstr "Clothing, Winter Travel"
 msgid "Czech"
 msgstr "Czech"
 
-msgid "AC"
-msgstr "AC"
-
-msgid "1 in 4 chance to break the mechanism if used as a club."
-msgstr "1 in 4 chance to break the mechanism if used as a club."
-
-msgid "+1 AC versus mêlée attacks, +2 AC versus missile attacks."
-msgstr "+1 AC versus mêlée attacks, +2 AC versus missile attacks."
+msgid "Over encumbered"
+msgstr "Over encumbered"
 
 #. js-lingui-explicit-id
 msgid "weapons.melee.charge"
@@ -1260,26 +1188,52 @@ msgstr "Each missile weapon can be fired once per round with the exception of th
 msgid "weapons.missile.range"
 msgstr "Targets at Medium range are –2 to hit, –4 to hit at Long range."
 
+#. js-lingui-explicit-id
+msgid "Weight"
+msgstr "Weight"
+
+msgid "Gem"
+msgstr "Gem"
+
+#. js-lingui-explicit-id
+msgid "Wheellock"
+msgstr "Wheellock"
+
 msgid "Gunpowder"
 msgstr "Gunpowder"
 
 msgid "Armor"
 msgstr "Armor"
 
+msgid "Weight"
+msgstr "Weight"
+
 msgid "Spear"
 msgstr "Spear"
+
+msgid "AC"
+msgstr "AC"
+
+msgid "About LotFP tools project"
+msgstr "About LotFP tools project"
+
+msgid "1 in 4 chance to break the mechanism if used as a club."
+msgstr "1 in 4 chance to break the mechanism if used as a club."
+
+msgid "+1 AC versus mêlée attacks, +2 AC versus missile attacks."
+msgstr "+1 AC versus mêlée attacks, +2 AC versus missile attacks."
 
 msgid "Fighter 2"
 msgstr "Fighter 2"
 
+msgid "Dwarven Encumbrance"
+msgstr "Dwarven Encumbrance"
+
 msgid "Required for mapping."
 msgstr "Required for mapping."
 
-msgid "Spyglass"
-msgstr "Spyglass"
-
-msgid "Crossbow bolts, quiver (20)"
-msgstr "Crossbow bolts, quiver (20)"
+msgid "Pistols are about the size of a man’s forearm and require one hand to fire. Pistols never use the matchlock firing mechanism. Can be used as a mêlée weapon (d4 damage)."
+msgstr "Pistols are about the size of a man’s forearm and require one hand to fire. Pistols never use the matchlock firing mechanism. Can be used as a mêlée weapon (d4 damage)."
 
 msgid "Bottle of Wine/Liquor, Decent"
 msgstr "Bottle of Wine/Liquor, Decent"
@@ -1287,14 +1241,47 @@ msgstr "Bottle of Wine/Liquor, Decent"
 msgid "Regular"
 msgstr "Regular"
 
+msgid "Tobacco"
+msgstr "Tobacco"
+
+msgid "Precipitations, high winds"
+msgstr "Precipitations, high winds"
+
 msgid "Chain"
 msgstr "Chain"
+
+msgid "Helm, Morion"
+msgstr "Helm, Morion"
+
+msgid "Encumbrance quick reference"
+msgstr "Encumbrance quick reference"
+
+msgid "Rations, Standard/Day"
+msgstr "Rations, Standard/Day"
 
 msgid "Mêlée Weapons"
 msgstr "Mêlée Weapons"
 
+msgid "Spyglass"
+msgstr "Spyglass"
+
+msgid "Crossbow bolts, quiver (20)"
+msgstr "Crossbow bolts, quiver (20)"
+
+msgid "Chain, per foot"
+msgstr "Chain, per foot"
+
+msgid "Emits light in a 10' radius. Burns for 2 hours."
+msgstr "Emits light in a 10' radius. Burns for 2 hours."
+
 msgid "Enable automatic subtraction of money when equipment items are added"
 msgstr "Enable automatic subtraction of money when equipment items are added"
+
+msgid "Cost coefficient"
+msgstr "Cost coefficient"
+
+msgid "These weapons must be wielded with two hands. Two-handed swords, mauls, and great axes are included in this category."
+msgstr "These weapons must be wielded with two hands. Two-handed swords, mauls, and great axes are included in this category."
 
 msgid "Tent, Pavilion"
 msgstr "Tent, Pavilion"
@@ -1311,14 +1298,29 @@ msgstr "Export & Import"
 msgid "Firearms quick reference"
 msgstr "Firearms quick reference"
 
-msgid "config.melee.polearm.details"
-msgstr "This two-handed weapon can be used to attack from the second rank, can be used to receive a charge, and receives a +1 bonus to hit opponents with an unadjusted AC of 16 or better."
-
-msgid "config.firearms.scattershot.details"
-msgstr "Small pellets or rocks instead of a single bullet. Ranges halved, no armor cancellation, 45° area effect doing 1d6 damage, save versus Breath Weapon for half damage."
+msgid "Loading..."
+msgstr "Loading..."
 
 msgid "Delete all from list?"
 msgstr "Delete all from list?"
 
+msgid "Provided price is minimal"
+msgstr "Provided price is minimal"
+
+msgid "config.melee.polearm.details"
+msgstr "This two-handed weapon can be used to attack from the second rank, can be used to receive a charge, and receives a +1 bonus to hit opponents with an unadjusted AC of 16 or better."
+
 msgid "Instrument"
 msgstr "Instrument"
+
+msgid "{miPerDay, plural, =0 {miles} one {mile} two {miles} few {miles} many {miles} other {miles}}"
+msgstr "{miPerDay, plural, =0 {miles} one {mile} two {miles} few {miles} many {miles} other {miles}}"
+
+msgid "Reset saved data"
+msgstr "Reset saved data"
+
+msgid "Inventory"
+msgstr "Inventory"
+
+msgid "config.firearms.scattershot.details"
+msgstr "Small pellets or rocks instead of a single bullet. Ranges halved, no armor cancellation, 45° area effect doing 1d6 damage, save versus Breath Weapon for half damage."

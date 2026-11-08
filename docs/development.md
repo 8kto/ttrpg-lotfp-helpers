@@ -27,7 +27,7 @@ packages brought in by test tools.
 | Documentation or context            | `yarn check:context`, formatting of changed files, and manually follow a representative task through AGENTS → document → source/test. |
 | Domain/state behavior               | Regression test in the owning `__tests__` directory, including boundary values and persistence compatibility when relevant.           |
 | UI or browser behavior              | Relevant component tests and `yarn test:e2e`; `yarn test:e2e:all` exercises the supported project matrix.                             |
-| Build dependencies, Next/Lingui/PWA | `yarn build`; for production behavior start with `yarn start` and inspect it in the target browser.                                   |
+| Build dependencies, Next/Lingui/PWA | `yarn build` and `yarn check:prerender`; for production behavior start with `yarn start` and inspect it in the target browser.        |
 
 [Playwright configuration](../playwright.config.ts) owns browser/device targets,
 server startup, retries, and artifacts. Install its browsers with
@@ -37,11 +37,11 @@ After an intended visual change, regenerate them with `yarn test:e2e:update`.
 Czech locale snapshots run locally only; [test locales](../e2e-tests/shared/consts.ts)
 exclude them on CI.
 
-Production offline verification must load the application online, allow the
-service worker to activate, then exercise reload and inventory operations offline.
-The current Playwright server is development mode, where PWA is disabled, so its
-success does not prove offline support. Use the configured browser/device targets
-for that verification too. Fonts use [next/font/google](../src/components/layout/fonts.ts),
+PWA is disabled until a Turbopack-compatible replacement is chosen, see
+[TODO](../TODO.md). When it returns, production offline verification must load the
+application online, allow the service worker to activate, then exercise reload
+and inventory operations offline; the Playwright server runs in development mode
+and does not prove offline support. Fonts use [next/font/google](../src/components/layout/fonts.ts),
 so a build may need network access to retrieve fonts.
 
 CI definitions are canonical: [main](../.github/workflows/main.yml) and
@@ -71,7 +71,8 @@ Do not overwrite another task's changes or reset an unfamiliar dirty tree.
 The E2E setup defaults to port 3100, not the dev port, and outside CI reuses
 whatever server already answers there, even an unrelated application. Verify
 which checkout owns the server, or set `E2E_PORT` to another free port. Run such
-suites serially. For
+suites serially. Next locks a build directory for one dev server, so the E2E
+server builds into `build-e2e` and can run next to `yarn dev`. For
 parallel UI work, use isolated ports and browser profiles. Separate worktrees
 alone do not isolate ports or localStorage on the same origin.
 

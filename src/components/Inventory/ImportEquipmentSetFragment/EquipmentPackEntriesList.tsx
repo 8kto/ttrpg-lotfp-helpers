@@ -1,5 +1,4 @@
 import { Trans } from '@lingui/macro'
-import { useLingui } from '@lingui/react'
 import React from 'react'
 
 import CostFragment from '@/components/CostFragment/CostFragment'
@@ -8,7 +7,6 @@ import { getEquipmentPackCost } from '@/shared/helpers/equipmentPack'
 import CurrencyConverter from '@/shared/services/CurrencyConverter'
 
 export const EquipmentPackEntriesList = ({ pack }: { pack: EquipmentPack }) => {
-  const { _: trans } = useLingui()
   const currencyRecord = getEquipmentPackCost(pack)
 
   return (
@@ -28,9 +26,7 @@ export const EquipmentPackEntriesList = ({ pack }: { pack: EquipmentPack }) => {
               key={name}
               className={'grid grid-cols-3 px-0 py-1 align-baseline sm:gap-2'}
             >
-              <dt className={`ph-font-cursive col-span-2 text-lg`}>
-                {trans(name)}
-              </dt>
+              <dt className={`ph-font-cursive col-span-2 text-lg`}>{name}</dt>
               <dd className='col-span-1 mt-1 flex items-center leading-6 text-gray-700 sm:mt-0'>
                 {qty}
               </dd>
