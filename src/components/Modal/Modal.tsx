@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
 
 export const ModalMessage = ({ message }: { message: string }) => {
-  const [isVisible, setIsVisible] = useState(false)
+  // A new message is shown until the timer hides it
+  const [hiddenMessage, setHiddenMessage] = useState<string | null>(null)
+  const isVisible = hiddenMessage !== message
 
   useEffect(() => {
-    setIsVisible(true)
-
     const timer = setTimeout(() => {
-      setIsVisible(false)
+      setHiddenMessage(message)
     }, 1000)
 
     return () => clearTimeout(timer)

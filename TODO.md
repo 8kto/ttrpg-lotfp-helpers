@@ -1,5 +1,4 @@
 - Сохранять язык в сессии, выбирать локаль браузера
-- Моб версия: Лейбл Цена переносится, нужно в одну строку с радио
 - Лейбл с передвижением на всех языках на мид скринах слипается со второй колонкой
 - Restore PWA and offline support. `next-pwa` was removed because it is
   webpack-only and unmaintained; [sw.js](public/sw.js) now only removes the
@@ -11,8 +10,9 @@
 - Prerendering runs one page at a time per worker, because the `t` macro uses the
   global i18n instance. Per-request i18n instances would allow parallel
   prerendering; [check:prerender](scripts/check_prerender.mjs) detects the race.
-- ESLint 9 with flat config, then `eslint-config-next` 16. `lint` runs ESLint 8
-  directly with `eslint-config-next` 15, since `next lint` is gone in Next 16.
+- ESLint 10: `eslint-plugin-import`, used by our config and by
+  `eslint-config-next`, supports ESLint up to 9. `eslint-plugin-sort-keys-fix`
+  has had no release since 2020; replace it if it breaks.
 - Lingui 6: `@lingui/swc-plugin` 6 runs with `useLinguiV5IdGeneration` so that
   message IDs match the Lingui 5 catalogs. Drop the option after moving to Lingui 6.
 - Move `@lingui/macro` imports to `@lingui/core/macro` and `@lingui/react/macro`,

@@ -61,7 +61,7 @@ export const getStateFromJson = (file: File): Promise<InventoryStateType> => {
         const json = JSON.parse(text.toString())
 
         resolve(json as InventoryStateType)
-      } catch (err) {
+      } catch {
         reject(new Error('Cannot parse JSON file'))
       }
     }

@@ -288,16 +288,12 @@ export const importEquipmentItems = (
       throw new Error('Cannot find category')
     }
 
-    const equipmentStateCategory = InventoryState.nested(
-      categoryKey as EquipmentCategoryKey,
-    )
-
-    type StateCategory = typeof equipmentStateCategory
+    type StateCategory = (typeof InventoryState)[EquipmentCategoryKey]
     type StateCategoryItem = StateCategory[keyof StateCategory]
 
     try {
       EquipmentStateActions[categoryKey].add(item as StateCategoryItem)
-    } catch (err) {
+    } catch {
       throw new Error(`Unknown InventoryState category [${categoryKey}]`)
     }
   })

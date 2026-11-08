@@ -1,7 +1,7 @@
 import type { Messages } from '@lingui/core'
 import { i18n } from '@lingui/core'
 import { useRouter } from 'next/router'
-import { type ComponentType, useEffect } from 'react'
+import { type ComponentType, createElement, useEffect } from 'react'
 
 import type { LOCALE_SHORT } from '@/translations/languages'
 import { DEFAULT_LOCALE } from '@/translations/languages'
@@ -50,3 +50,15 @@ export const getTranslatedPageContent = (
 
   return (pageEntry[locale] || pageEntry[DEFAULT_LOCALE]) as ComponentType
 }
+
+/**
+ * Renders the long-form content of a page in the given locale. The content
+ * components are defined at module level, so their identity is stable.
+ */
+export const TranslatedPageContent = ({
+  locale,
+  pageName,
+}: {
+  locale: LOCALE_SHORT
+  pageName: string
+}) => createElement(getTranslatedPageContent(pageName, locale))

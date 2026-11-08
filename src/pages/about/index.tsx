@@ -7,7 +7,7 @@ import React from 'react'
 import HeadMetadata from '@/components/layout/HeadMetadata'
 import PageLayout from '@/components/layout/PageLayout'
 import type { LOCALE_SHORT } from '@/translations/languages'
-import { getTranslatedPageContent, loadCatalog } from '@/translations/utils'
+import { loadCatalog, TranslatedPageContent } from '@/translations/utils'
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const translation = await loadCatalog(ctx.locale!)
@@ -21,8 +21,6 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 }
 
 export default function AboutPage({ locale }: { locale: LOCALE_SHORT }) {
-  const ContentComponent = getTranslatedPageContent('about', locale)
-
   return (
     <>
       <HeadMetadata
@@ -30,7 +28,7 @@ export default function AboutPage({ locale }: { locale: LOCALE_SHORT }) {
         description={t`About LotFP tools project`}
       />
       <PageLayout>
-        <ContentComponent />
+        <TranslatedPageContent pageName='about' locale={locale} />
       </PageLayout>
     </>
   )

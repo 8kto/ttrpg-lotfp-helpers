@@ -1,9 +1,11 @@
 import classnames from 'classnames'
 import type { ComponentType } from 'react'
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useSyncExternalStore } from 'react'
 
 import Spinner from '@/components/Spinner'
 import UiContext from '@/shared/context/uiContext'
+
+const subscribeToNothing = () => () => {}
 
 const InventoryPageTabs = ({
   tabs,
@@ -17,11 +19,12 @@ const InventoryPageTabs = ({
     uiState: { activeTabId },
     updateUiState,
   } = useContext(UiContext)
-  // Fix the SSR hydration quirks
-  const [isMounted, setIsMounted] = useState(false)
-  useEffect(() => {
-    setIsMounted(true)
-  }, [])
+  // Fix the SSR hydration quirks: false on the server and during hydration
+  const isMounted = useSyncExternalStore(
+    subscribeToNothing,
+    () => true,
+    () => false,
+  )
 
   if (!isMounted) {
     return (

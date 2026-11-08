@@ -7,7 +7,7 @@ import React from 'react'
 import HeadMetadata from '@/components/layout/HeadMetadata'
 import PageLayout from '@/components/layout/PageLayout'
 import type { LOCALE_SHORT } from '@/translations/languages'
-import { getTranslatedPageContent, loadCatalog } from '@/translations/utils'
+import { loadCatalog, TranslatedPageContent } from '@/translations/utils'
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const translation = await loadCatalog(ctx.locale!)
@@ -25,11 +25,6 @@ export default function EncumbranceReferencePage({
 }: {
   locale: LOCALE_SHORT
 }) {
-  const ContentComponent = getTranslatedPageContent(
-    'encumbrance-reference',
-    locale,
-  )
-
   return (
     <>
       <HeadMetadata
@@ -37,7 +32,10 @@ export default function EncumbranceReferencePage({
         description={t`Quick Reference on Encumbrance and Movement from the LotFP Core Rules`}
       />
       <PageLayout>
-        <ContentComponent />
+        <TranslatedPageContent
+          pageName='encumbrance-reference'
+          locale={locale}
+        />
       </PageLayout>
     </>
   )

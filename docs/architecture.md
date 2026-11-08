@@ -53,7 +53,7 @@ former `next-pwa` setup, and its caches.
 ## Localization and import boundaries
 
 The canonical enforced import restrictions are in
-[ESLint configuration](../.eslintrc.json). Keep them as architectural boundaries:
+[ESLint configuration](../eslint.config.mjs). Keep them as architectural boundaries:
 
 - Domain files cannot import `@lingui/core` or `@lingui/macro`: domain shapes and
   values must not depend on translation activation or translated messages.
