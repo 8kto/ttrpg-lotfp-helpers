@@ -1,6 +1,6 @@
 import { i18n } from '@lingui/core'
 import { I18nProvider } from '@lingui/react'
-import { render, screen } from '@testing-library/react'
+import { act, render, screen } from '@testing-library/react'
 
 import { useLinguiInit } from '@/translations/utils'
 
@@ -20,7 +20,7 @@ const App = () => {
 
 describe('useLinguiInit', () => {
   afterEach(() => {
-    i18n.activate('en')
+    act(() => i18n.activate('en'))
   })
 
   it('activates the locale before the first render', () => {

@@ -8,7 +8,7 @@ import { DEFAULT_LOCALE } from '@/translations/languages'
 import contentComponents from '@/translations/pages/contentComponents'
 
 export async function loadCatalog(locale: string) {
-  const catalog = await import(`@lingui/loader!./locales/${locale}.po`)
+  const catalog = await import(`./locales/${locale}.po`)
 
   return catalog.messages
 }
