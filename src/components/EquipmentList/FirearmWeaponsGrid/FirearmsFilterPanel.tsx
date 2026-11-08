@@ -1,5 +1,5 @@
-import { Trans } from '@lingui/react/macro'
 import { useLingui } from '@lingui/react'
+import { Trans } from '@lingui/react/macro'
 import React from 'react'
 
 import type { FilterValues } from '@/components/EquipmentList/FirearmWeaponsGrid/types'
