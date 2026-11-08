@@ -1,4 +1,4 @@
-import { Trans } from '@lingui/macro'
+import { Trans } from '@lingui/react/macro'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
@@ -28,7 +28,11 @@ const Footer = () => {
               GitHub
             </Link>
           </div>
-          <div className='flex items-center'>
+          {/* Full width, so that its size does not depend on the version */}
+          <div
+            className='flex w-full items-center justify-center text-sm text-gray-600'
+            data-testid='Footer__version'
+          >
             <Image
               src='/icons/favicon-64x64.png'
               alt='Flame Princess'
@@ -36,23 +40,19 @@ const Footer = () => {
               height='32'
               className='mr-1'
             />
-            <div className='inline-block text-sm text-gray-600'>
-              <Link
-                href={PROJECT_URL}
-                className={linkClassnames}
-                target='_blank'
-              >
-                <Trans>Princess Helpers</Trans> v{packageJson.version}{' '}
-              </Link>
-              <span className='ml-4'>&copy; 2023-2026 </span>
-              <Link
-                href='https://ivlev.blog/'
-                className={linkClassnames}
-                target='_blank'
-              >
-                UNDEFINED OKTO
-              </Link>
-            </div>
+            <Link href={PROJECT_URL} className={linkClassnames} target='_blank'>
+              <Trans>Princess Helpers</Trans> v{packageJson.version}
+            </Link>
+          </div>
+          <div className='mt-1 text-sm text-gray-600'>
+            <span>&copy; 2023-2026 </span>
+            <Link
+              href='https://ivlev.blog/'
+              className={linkClassnames}
+              target='_blank'
+            >
+              UNDEFINED OKTO
+            </Link>
           </div>
         </div>
         {isDevEnv() && (
