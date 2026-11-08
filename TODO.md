@@ -1,5 +1,4 @@
 - Сохранять язык в сессии, выбирать локаль браузера
-- Моб версия: Лейбл Цена переносится, нужно в одну строку с радио
 - Лейбл с передвижением на всех языках на мид скринах слипается со второй колонкой
 - Restore PWA and offline support. `next-pwa` was removed because it is
   webpack-only and unmaintained; [sw.js](public/sw.js) now only removes the
